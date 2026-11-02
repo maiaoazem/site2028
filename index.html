@@ -55,11 +55,13 @@ em{font-style:italic}
 .assin nav a{border:0;font-size:12px;letter-spacing:.09em;text-transform:uppercase}
 
 /* abertura */
-.abertura .campo{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:40px;align-items:end;padding-block:clamp(40px,7vw,96px) 0}
+.abertura .campo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:40px;align-items:end;padding-block:clamp(40px,7vw,96px) 0}
 .abertura h1{font-family:var(--serif);font-weight:300;font-size:clamp(64px,10.5vw,168px);line-height:.88;letter-spacing:-.025em;margin:0}
 .abertura h1 em{display:block}
 .abertura .tese{font-family:var(--serif);font-size:clamp(24px,2.6vw,34px);line-height:1.2;max-width:22ch;margin-top:clamp(28px,4vw,48px);padding-bottom:clamp(32px,5vw,64px);text-wrap:balance}
 .retrato{width:100%;max-width:100%;height:auto;display:block}
+.retrato-esc{width:100%;max-width:380px;height:auto;display:block}
+@media (max-width:860px){.retrato-esc{max-width:300px}}
 .editorias{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
 .ed{display:flex;gap:14px;align-items:flex-start;padding-block:18px 22px;padding-right:20px;min-width:0}
 .ed svg{width:34px;height:34px;flex:none}
@@ -157,7 +159,7 @@ section{padding-bottom:clamp(64px,9vw,128px)}
   .titulo h2,.titulo .lede,.cartao .card{grid-column:1}
   .cab > :first-child:empty{display:none}
   .abertura .campo{grid-template-columns:1fr}
-  .abertura .retrato{max-width:420px}
+  .abertura .retrato{max-width:100%}
   .editorias{grid-template-columns:1fr}
   .ed{padding-block:12px;border-top:1px solid var(--tinta)}
   .ed:first-child{border-top:0}
@@ -256,7 +258,7 @@ body{font-variant-emoji:text}
         <span>Maia Oazem · laborateliê</span>
       </span>
       <nav aria-label="Seções">
-        <a href="#bio" data-en="about">quem é</a><a href="#servicos" data-en="services">serviços</a><a href="#laborateliê">laborateliê</a><a href="#imprensa" data-en="featured in">citada em</a><a href="#escritora" data-en="writer">escritora</a><a href="#contato" data-en="contact">contato</a>
+        <a href="#bio" data-en="about">quem é</a><a href="#servicos" data-en="services">serviços</a><a href="#laborateliê">laborateliê</a><a href="#imprensa" data-en="featured in">citada em</a><a href="#escritora" data-en="writer">escritora</a><a href="cv.html">cv</a><a href="#contato" data-en="contact">contato</a>
       </nav>
       <span class="idiomas" role="group" aria-label="Idioma / Language">
         <button type="button" data-lang="pt" aria-pressed="true" lang="pt-BR">PT-BR</button>
@@ -269,7 +271,7 @@ body{font-variant-emoji:text}
         <h1 data-en="Maia Oazem, <em>time artist</em>">Maia Oazem, <em>artista temporal</em></h1>
         <p class="tese" data-en="For companies, organizations and people asking themselves what their next thing is.">Para empresas, organizações e pessoas que se perguntam qual é a sua próxima coisa.</p>
       </div>
-      <img class="retrato" src="maia-retrato.png" alt="Retrato de Maia Oazem em meio-tom, tinta preta sobre rosa" data-en-alt="Halftone portrait of Maia Oazem, black ink on pink" width="1200" height="1800">
+      <img class="retrato" src="maia-olho.jpg" alt="Olho de Maia Oazem em close, com delineado lilás" data-en-alt="Close-up of Maia Oazem's eye, with lilac eyeliner" width="784" height="530">
     </div>
     <hr class="fio">
     <div class="editorias">
@@ -400,7 +402,7 @@ body{font-variant-emoji:text}
     <hr class="fio">
     <div class="titulo"><h2 data-en="wri<em>ter</em>">escri<em>tora</em></h2></div>
     <div class="cols">
-      <div></div>
+      <img class="retrato-esc" src="maia-escritora.png" alt="Retrato de Maia Oazem em meio-tom, tinta preta sobre amarelo" data-en-alt="Halftone portrait of Maia Oazem, black ink on yellow" width="1200" height="1800" loading="lazy">
       <div class="esc-txt">
         <p class="primeira" data-en="Fiction is the vehicle Maia uses to walk through possible futures and their other things. It is also one of her products.">A ficção é o veículo com que Maia caminha pelos futuros possíveis e por suas outras coisas. É também um de seus produtos.</p>
         <p data-en="She studied screenwriting at several schools, including Robert McKee’s seminars in New York. Her science fiction screenplays have been selected beyond Brazil: in Canada, the United States, India, Italy and Japan.">Estudou roteiro em diversas escolas, inclusive nos seminários de Robert McKee, em Nova York. Seus roteiros de ficção científica foram selecionados para além do Brasil: no Canadá, nos Estados Unidos, na Índia, na Itália e no Japão.</p>
@@ -437,7 +439,7 @@ body{font-variant-emoji:text}
       </div>
       <svg class="logo-m" viewBox="20 19 576 656" role="img" aria-label="Maia Oazem"><use href="#m"/></svg>
     </div>
-    <div class="pe meta"><span>Maia Oazem · gira.</span><span>2016 — 2027</span></div>
+    <div class="pe meta"><span>Maia Oazem · gira. · <a href="cv.html" data-en="curriculum vitae">currículo</a></span><span>2016 — 2027</span></div>
   </div>
 </footer>
 
@@ -457,8 +459,8 @@ document.querySelectorAll('.copiar').forEach(function(b){
 (function(){
   var els = document.querySelectorAll('[data-en]');
   els.forEach(function(el){ el.setAttribute('data-pt', el.innerHTML); });
-  var foto = document.querySelector('[data-en-alt]');
-  if (foto) foto.setAttribute('data-pt-alt', foto.alt);
+  var fotos = document.querySelectorAll('[data-en-alt]');
+  fotos.forEach(function(f){ f.setAttribute('data-pt-alt', f.alt); });
   var COPIA = { pt:{ok:'copiado', sel:'selecionado'}, en:{ok:'copied', sel:'selected'} };
   window.__idioma = 'pt';
   function aplicar(l){
@@ -466,7 +468,7 @@ document.querySelectorAll('.copiar').forEach(function(b){
     window.__idioma = l;
     document.documentElement.lang = l === 'en' ? 'en' : 'pt-BR';
     els.forEach(function(el){ el.innerHTML = el.getAttribute(l === 'en' ? 'data-en' : 'data-pt'); });
-    if (foto) foto.alt = foto.getAttribute(l === 'en' ? 'data-en-alt' : 'data-pt-alt');
+    fotos.forEach(function(f){ f.alt = f.getAttribute(l === 'en' ? 'data-en-alt' : 'data-pt-alt'); });
     document.querySelectorAll('[data-lang]').forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.lang === l)); });
     try { localStorage.setItem('idioma', l); } catch(e){}
     try {
