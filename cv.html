@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Maia Oazem · CV</title>
+<meta name="description" content="CV de Maia Oazem, artista temporal: trabalho, formação e prêmios.">
+<meta property="og:title" content="Maia Oazem · CV">
+<meta property="og:image" content="/maia-retrato.png">
+<meta name="theme-color" content="#f6b4d0">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap">
+<style>
+/* CV · Design System Maia Oazem. Papel + tinta + rosa. Fios de ponta a ponta, serifa nos títulos, grotesca nas fichas. */
+:root{
+  --rosa:#f6b4d0; --papel:#fbf8f4; --tinta:#141414; --cinza:#5b5754; --fio-claro:#d8d2cb;
+  --serif:"Cormorant Garamond", Garamond, "Times New Roman", serif;
+  --sans:"Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;font-variant-emoji:text}
+img{max-width:100%}
+a{color:inherit;text-decoration:none;border-bottom:1px solid currentColor}
+a:hover{opacity:.6}
+p{margin:0}
+h1,h2,h3{margin:0;font-weight:300;font-family:var(--serif)}
+em{font-style:italic}
+:focus-visible{outline:1px solid var(--tinta);outline-offset:3px}
+.in{max-width:1360px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.rosa{background:var(--rosa)}
+.tinta{background:var(--tinta);color:var(--papel)}
+.fio{border:0;border-top:1px solid currentColor;margin:0}
+.meta{font-size:12px;letter-spacing:.09em;text-transform:uppercase}
+.cinza{color:var(--cinza)}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:40px}
+
+/* moldura */
+.assin{display:flex;justify-content:space-between;align-items:center;gap:10px 22px;flex-wrap:wrap;padding-block:14px;font-size:15px}
+.assin .marca{display:flex;align-items:center;gap:12px;border:0}
+.assin .marca svg{display:block}
+.acoes{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.acoes a,.acoes button{font:inherit;font-size:12px;letter-spacing:.09em;text-transform:uppercase;border:0;background:none;color:inherit;padding:0;cursor:pointer}
+.idiomas{display:flex;gap:4px}
+.idiomas button{border:1px solid transparent;padding:4px 7px;line-height:1;text-transform:none}
+.idiomas button[aria-pressed="true"]{border-color:currentColor}
+
+/* abertura */
+.abertura .campo{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:40px;align-items:end;padding-block:clamp(36px,6vw,80px) 0}
+.abertura h1{font-size:clamp(60px,9.5vw,148px);line-height:.88;letter-spacing:-.025em}
+.abertura h1 em{display:block}
+.abertura .tese{font-family:var(--serif);font-size:clamp(22px,2.3vw,30px);line-height:1.25;max-width:30ch;margin-top:clamp(24px,3vw,40px);padding-bottom:clamp(28px,4vw,56px)}
+.retrato{width:100%;max-width:420px;height:auto;display:block;justify-self:end}
+.dados-topo{display:flex;gap:8px 28px;flex-wrap:wrap;padding-block:14px}
+
+/* seções */
+.cab{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:40px;padding-block:14px}
+section{padding-bottom:clamp(56px,8vw,104px)}
+.titulo-sec{font-size:clamp(44px,6vw,88px);line-height:.95;letter-spacing:-.015em;padding-block:clamp(28px,4vw,48px) clamp(20px,3vw,36px)}
+.bio p{font-family:var(--serif);font-size:clamp(20px,1.9vw,25px);line-height:1.45;max-width:60ch}
+.bio p + p{margin-top:18px}
+.bio p.primeira{font-size:clamp(26px,2.6vw,34px);line-height:1.22;font-weight:300}
+
+.destaque{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:40px;border-top:1px solid var(--tinta);border-bottom:1px solid var(--tinta);padding-block:22px;margin-bottom:8px;align-items:baseline}
+.destaque b{white-space:nowrap;font-weight:300;font-family:var(--serif);font-size:clamp(52px,7vw,104px);line-height:.9;letter-spacing:-.02em}
+.destaque p{font-family:var(--serif);font-size:clamp(20px,2vw,26px);line-height:1.3;max-width:40ch}
+
+.linhas{list-style:none;padding:0;margin:0}
+.linhas > li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:40px;padding-block:18px;border-bottom:1px solid var(--tinta)}
+.linhas .onde{display:flex;flex-direction:column;gap:4px}
+.linhas .org{font-family:var(--serif);font-size:clamp(24px,2.3vw,30px);line-height:1.1}
+.linhas .ano{font-size:13px;color:var(--cinza);font-variant-numeric:tabular-nums}
+.linhas .cargo{font-family:var(--serif);font-style:italic;font-size:clamp(19px,1.8vw,22px);line-height:1.3}
+.linhas ul{list-style:none;padding:0;margin:8px 0 0;display:flex;flex-direction:column;gap:4px}
+.linhas ul li{font-size:15px;padding-left:16px;position:relative;max-width:70ch}
+.linhas ul li::before{content:"";position:absolute;left:0;top:.72em;width:8px;border-top:1px solid var(--tinta)}
+.linhas .texto{font-size:15px;max-width:70ch}
+
+.rodape{padding-block:clamp(40px,6vw,72px) 24px;display:flex;flex-direction:column;gap:28px}
+.rodape .corpo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;gap:32px;align-items:end}
+.rodape .nm{font-family:var(--serif);font-size:clamp(34px,3.6vw,50px);line-height:1.05}
+.rodape .nm em{display:block;font-weight:300}
+.rodape .dados{font-family:var(--serif);font-size:clamp(20px,2vw,25px);line-height:1.45}
+.rodape .logo{width:clamp(90px,11vw,150px);color:var(--rosa)}
+.rodape .pe{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#a9a39c;border-top:1px solid rgba(251,248,244,.35);padding-top:14px}
+
+@media (max-width:860px){
+  .cols,.cab,.destaque,.linhas > li,.rodape .corpo{grid-template-columns:1fr;gap:10px}
+  .abertura .campo{grid-template-columns:1fr}
+  .retrato{justify-self:start;max-width:320px}
+  .cab > span:first-child:empty{display:none}
+}
+@media print{
+  @page{margin:14mm}
+  body{font-size:11px}
+  .acoes{display:none}
+  .rosa,.tinta{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .linhas > li,.destaque{break-inside:avoid}
+  section{padding-bottom:28px}
+  .abertura h1{font-size:64px}
+  .retrato{max-width:200px}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="fagulha" viewBox="0 0 100 100"><path fill="currentColor" d="M53 8L91 72H15Z"/><path fill="currentColor" d="M43 94L9 36H77Z"/></symbol>
+</defs></svg>
+
+<!-- ABERTURA · rosa -->
+<header class="rosa abertura">
+  <div class="in">
+    <hr class="fio">
+    <div class="assin">
+      <a class="marca" href="/"><svg width="22" height="22" viewBox="0 0 100 100" aria-hidden="true"><use href="#fagulha"/></svg><span>Maia Oazem · CV</span></a>
+      <span class="acoes">
+        <a href="/" data-en="site">site</a>
+        <a id="baixar" href="maia-oazem-cv-pt.pdf" download data-en="download PDF">baixar PDF</a>
+        <span class="idiomas" role="group" aria-label="Idioma / Language">
+          <button type="button" data-lang="pt" aria-pressed="true" lang="pt-BR">PT-BR</button>
+          <button type="button" data-lang="en" aria-pressed="false" lang="en">EN</button>
+        </span>
+      </span>
+    </div>
+    <hr class="fio">
+    <div class="campo">
+      <div>
+        <h1 data-en="Maia Oazem, <em>time artist</em>">Maia Oazem, <em>artista temporal</em></h1>
+        <p class="tese" data-en="For more than 15 years, she has designed methods and structures for more than 50 companies, turning futures into desirable narratives, possible strategies and testable realities.">Há mais de 15 anos, desenha métodos e estruturas para mais de 50 empresas, transformando futuros em narrativas desejáveis, estratégias possíveis e realidades testáveis.</p>
+      </div>
+      <img class="retrato" src="maia-retrato.png" alt="Retrato de Maia Oazem em meio-tom, tinta preta sobre rosa" data-en-alt="Halftone portrait of Maia Oazem, black ink on pink" width="1200" height="1800">
+    </div>
+    <hr class="fio">
+    <div class="dados-topo meta">
+      <span data-en="b. 1990 · São Paulo, Brazil">n. 1990 · São Paulo, Brasil</span>
+      <span>maiaoazem@gira.guru</span>
+      <span>+55 11 94153-7453</span>
+      <span>linkedin.com/in/mateusoazem</span>
+    </div>
+  </div>
+</header>
+
+<!-- BIO -->
+<div class="in">
+  <div class="cab"><span class="meta cinza">I</span><span class="meta cinza">bio</span></div>
+  <hr class="fio">
+</div>
+<section class="in bio" style="padding-top:clamp(28px,4vw,48px)">
+  <div class="cols">
+    <div></div>
+    <div>
+      <p class="primeira" data-en="Maia Oazem is a time artist born and based in São Paulo. Her practice spans cultural research, futures design and creative strategy, and takes shape as science fiction, speculative design and the transformation of organizations.">Maia Oazem é uma artista temporal nascida e baseada em São Paulo. Sua prática atravessa pesquisa cultural, elaboração de futuros e estratégia criativa, e toma forma em ficção científica, design especulativo e transformação de organizações.</p>
+      <p data-en="Born in 1990, she belongs to a generation that grew up logging on and off the internet until mobile arrived, and now studies, from that experience, what happens to us with post-AI. She spent fifteen years building other possible things inside Oracle, Salesforce, Google and Capgemini, while keeping her experimental flow at gira., a lab that in 2027 opens its second decade as laborateliê. She is known for using fiction to guide strategy, and for strategy born from what, until then, looked like fiction.">Nascida em 1990, pertence a uma geração que cresceu entrando e saindo da internet até a chegada do mobile, e agora estuda, a partir dessa vivência, o que nos acontece com o pós-IA. Passou quinze anos construindo outras coisas possíveis por dentro da Oracle, da Salesforce, do Google e da Capgemini, enquanto mantinha seu fluxo experimental na gira., laboratório que em 2027 abre sua segunda década como laborateliê. É conhecida por usar a ficção para guiar as estratégias, e pela estratégia nascida do que até então parecia ficção.</p>
+      <p data-en="Her work has been featured by Veja, Época Negócios, Estadão and CNBC, and presented at Febraban Tech and Abradi. She teaches futures and applied AI at ESPM, sits on the board of the Brazilian Futures Association, is a signatory of IFE's Society Centered Design project, and was part of Google's AI ethics group. Her science fiction screenplays have been selected in Brazil, Canada, the United States, India, Italy and Japan.">Seu trabalho foi destacado pela Veja, pela Época Negócios, pelo Estadão e pela CNBC, e apresentado no Febraban Tech e na Abradi. Leciona futuros e IA aplicada na ESPM, integra a diretoria da Associação Brasileira de Futuros, é signatária do projeto Design Centrado na Sociedade, do IFE, e fez parte do grupo de ética em IA do Google. Seus roteiros de ficção científica foram selecionados no Brasil, no Canadá, nos Estados Unidos, na Índia, na Itália e no Japão.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TRABALHO -->
+<div class="in">
+  <div class="cab"><span class="meta cinza">II</span><span class="meta cinza" data-en="work">trabalho</span></div>
+  <hr class="fio">
+  <h2 class="titulo-sec" data-en="work">trabalho</h2>
+</div>
+<section class="in">
+  <div class="destaque">
+    <b data-en="BRL 1 bn+">R$ 1 bi+</b>
+    <p data-en="in emerging technology proposals (cloud, AI and systems integration) for Tier 1 accounts across Latin America.">em propostas de tecnologias emergentes (cloud, IA e integração de sistemas) para contas Tier 1 na América Latina.</p>
+  </div>
+  <ul class="linhas">
+    <li>
+      <div class="onde"><span class="org">gira. · laborateliê</span><span class="ano" data-en="2016 – present">2016 – hoje</span></div>
+      <div><p class="cargo" data-en="Founder">Fundadora</p><ul>
+        <li data-en="Speculative worldbuilding for a Disney science fiction series, 2024">Worldbuilding especulativo para uma série de ficção científica da Disney, 2024</li>
+        <li data-en="Original foresight methods: <em>Design f(R)iction</em>, <em>spec(S)</em>, <em>Future Stories Deck</em>">Métodos autorais de foresight: <em>Design f(R)iction</em>, <em>spec(S)</em>, <em>Future Stories Deck</em></li>
+        <li data-en="Impact projects: <em>Ingresso Social</em>, <em>Contrate uma Mãe</em>, <em>Saulo e a Saia</em>">Projetos de impacto: <em>Ingresso Social</em>, <em>Contrate uma Mãe</em>, <em>Saulo e a Saia</em></li>
+      </ul></div>
+    </li>
+    <li>
+      <div class="onde"><span class="org">Capgemini</span><span class="ano">2024 – 2026</span></div>
+      <div><p class="cargo" data-en="Senior Manager, Storytelling and Future Narratives">Gerente Sênior, Storytelling e Narrativas Futuras</p><ul>
+        <li data-en="<em>Papillon</em>, a post-AI redesign of the organization, piloted with the commercial leadership · 2× Transformer Award"><em>Papillon</em>, redesenho da organização para o pós-IA, pilotado com a diretoria comercial · 2× Transformer Award</li>
+        <li data-en="<em>Futures of Finance</em>, presented at Febraban Tech 2025"><em>Futuros das Finanças</em>, apresentado no Febraban Tech 2025</li>
+        <li data-en="<em>Post-AI Futures</em>"><em>Futuros Pós-IA</em></li>
+        <li data-en="One of the company's largest proactive sales projects">Um dos maiores projetos de venda proativa da empresa</li>
+      </ul></div>
+    </li>
+    <li>
+      <div class="onde"><span class="org">Google Cloud</span><span class="ano">2021 – 2024</span></div>
+      <div><p class="cargo" data-en="Consultant, Storytelling and Future Narratives">Consultora, Storytelling e Narrativas Futuras</p><ul>
+        <li data-en="Creator of the <em>Future Narratives</em> method, later also applied at Capgemini">Criadora do método <em>Narrativas Futuras</em>, aplicado também na Capgemini</li>
+        <li data-en="Generative AI executive positioning for industries in Latin America">Posicionamento executivo de IA generativa para indústrias na América Latina</li>
+        <li data-en="<em>story(fy)</em>, sales positioning rebuilt through storytelling and futures"><em>story(fy)</em>, posicionamento de vendas reestruturado com storytelling e futuros</li>
+        <li data-en="AI ethics group">Grupo de ética em IA</li>
+      </ul></div>
+    </li>
+    <li>
+      <div class="onde"><span class="org">Grupo WPP</span><span class="ano">2020 – 2021</span></div>
+      <div><p class="cargo" data-en="Consultant, Content and Strategy">Consultora, Conteúdo e Estratégia</p><ul>
+        <li data-en="With Foster, a redesign of the content production strategy">Com a Foster, redesenho da estratégia de produção de conteúdo</li>
+        <li data-en="The <em>MAIA</em> persona and virtual agents for omnichannel retail in Latin America">Persona <em>MAIA</em> e agentes virtuais para o varejo omnichannel na América Latina</li>
+      </ul></div>
+    </li>
+    <li>
+      <div class="onde"><span class="org">Salesforce</span><span class="ano">2020</span></div>
+      <div><p class="cargo" data-en="Consultant, Innovation">Consultora, Inovação</p><ul>
+        <li data-en="Industry futures practice, <em>Futures of X</em>">Frente de futuros para indústrias, <em>Futures of X</em></li>
+        <li data-en="Live-selling project for The Body Shop (Natura &amp;Co) and Brazil's part in Unilever's global research">Projeto de live-selling para a The Body Shop (Natura &amp;Co) e participação brasileira na pesquisa global da Unilever</li>
+      </ul></div>
+    </li>
+    <li>
+      <div class="onde"><span class="org">Oracle</span><span class="ano">2018 – 2020</span></div>
+      <div><p class="cargo" data-en="Consultant, Storytelling and Innovation">Consultora, Storytelling e Inovação</p><ul>
+        <li data-en="Created the <em>Spark Lab</em> and Casa Oracle">Criação do <em>Spark Lab</em> e da Casa Oracle</li>
+        <li data-en="Narratives that took TIM and Banco de Chile to the cloud">Narrativas que levaram TIM e Banco de Chile à nuvem</li>
+        <li>Startup Spirit Award · Top Contributor Brazil</li>
+      </ul></div>
+    </li>
+    <li>
+      <div class="onde"><span class="org">Teamworker</span><span class="ano">2016 – 2018</span></div>
+      <div><p class="cargo" data-en="VP, Innovation and Strategy">VP de Inovação e Estratégia</p><ul>
+        <li data-en="<em>Contrate uma Mãe</em>, the first platform for rehiring mothers"><em>Contrate uma Mãe</em>, primeira plataforma de recontratação de mães</li>
+      </ul></div>
+    </li>
+    <li>
+      <div class="onde"><span class="org">Fundación Telefónica</span><span class="ano">2015 – 2016</span></div>
+      <div><p class="cargo" data-en="Volunteering and Social Innovation">Voluntariado e Inovação Social</p><ul>
+        <li data-en="<em>Game do Bem</em>, a digital volunteering platform · Global Corporate Volunteering Awards, IAVE"><em>Game do Bem</em>, plataforma de voluntariado digital · Global Corporate Volunteering Awards, IAVE</li>
+      </ul></div>
+    </li>
+    <li>
+      <div class="onde"><span class="org">Claro</span><span class="ano">2013 – 2015</span></div>
+      <div><p class="cargo" data-en="Corporate Communications">Comunicação Corporativa</p></div>
+    </li>
+    <li>
+      <div class="onde"><span class="org">Foster · Grupo WPP</span><span class="ano">2009 – 2013</span></div>
+      <div><p class="cargo" data-en="Digital Planning">Planejamento Digital</p><ul>
+        <li data-en="Transmedia content unit">Núcleo de conteúdo transmídia</li>
+      </ul></div>
+    </li>
+  </ul>
+</section>
+
+<!-- FORMAÇÃO -->
+<div class="in">
+  <div class="cab"><span class="meta cinza">III</span><span class="meta cinza" data-en="education">formação</span></div>
+  <hr class="fio">
+  <h2 class="titulo-sec" data-en="education">formação</h2>
+</div>
+<section class="in">
+  <ul class="linhas">
+    <li><div class="onde"><span class="org">FAAP</span><span class="ano" data-en="2026 – present">2026 – hoje</span></div><div><p class="cargo" data-en="Graduate studies in Psychoanalysis: Theory and Clinical Practice">Pós-graduação em Psicanálise: Teoria e Clínica</p></div></li>
+    <li><div class="onde"><span class="org">PUC-SP</span><span class="ano">2026</span></div><div><p class="cargo" data-en="Graduate studies in Futures Thinking">Pós-graduação em Futures Thinking</p></div></li>
+    <li><div class="onde"><span class="org">IED</span><span class="ano">2016</span></div><div><p class="cargo" data-en="Graduate studies in Strategic Design and Innovation">Pós-graduação em Design Estratégico e Inovação</p></div></li>
+    <li><div class="onde"><span class="org">Centro Universitário Belas Artes</span><span class="ano">2012</span></div><div><p class="cargo" data-en="Bachelor's degree in Advertising">Bacharelado em Publicidade e Propaganda</p></div></li>
+    <li><div class="onde"><span class="org" data-en="Further studies">Estudos livres</span></div><div><p class="texto" data-en="Copenhagen Institute for Futures Studies · Hyper Island · Escola Internacional de Cinema · Roteiraria · Robert McKee seminars, New York">Copenhagen Institute for Futures Studies · Hyper Island · Escola Internacional de Cinema · Roteiraria · seminários de Robert McKee, Nova York</p></div></li>
+  </ul>
+</section>
+
+<!-- PRÊMIOS -->
+<div class="in">
+  <div class="cab"><span class="meta cinza">IV</span><span class="meta cinza" data-en="awards">prêmios</span></div>
+  <hr class="fio">
+  <h2 class="titulo-sec" data-en="awards">prêmios</h2>
+</div>
+<section class="in">
+  <ul class="linhas">
+    <li><div class="onde"><span class="org" data-en="Brazil Design Award">Prêmio Brasileiro de Design</span><span class="ano">5×</span></div>
+      <div><p class="texto"><em>Contrate uma Mãe</em> (2017) · <em>Saulo e a Saia</em> (2017) · <em>Ingresso Social</em> (2018) · <em>Future Stories Deck</em> (2020) · <em>spec(S)</em> (2023)</p></div></li>
+    <li><div class="onde"><span class="org">Prémios Lusófonos da Criatividade</span><span class="ano" data-en="2× · Portugal">2× · Portugal</span></div>
+      <div><p class="texto" data-en="Gold, Experimental Design, <em>Design f(R)iction</em> (2025) · <em>Pensamentos Recorrentes</em> (2019)">Ouro, Design Experimental, <em>Design f(R)iction</em> (2025) · <em>Pensamentos Recorrentes</em> (2019)</p></div></li>
+    <li><div class="onde"><span class="org">Fast Company World Changing Ideas</span><span class="ano" data-en="2019 · USA">2019 · EUA</span></div>
+      <div><p class="texto" data-en="Finalist, Experimental category, <em>Ingresso Social</em>">Finalista, categoria Experimental, <em>Ingresso Social</em></p></div></li>
+    <li><div class="onde"><span class="org">MIT Global Hackathon</span><span class="ano">2020</span></div>
+      <div><p class="texto" data-en="Digital Solutions for Mental Health, <em>livestream.now</em>">Soluções Digitais para Saúde Mental, <em>livestream.now</em></p></div></li>
+    <li><div class="onde"><span class="org" data-en="Young Lions Brazil">Young Lions Brasil</span></div>
+      <div><p class="texto" data-en="Public Relations, <em>Contrate uma Mãe</em>">Relações Públicas, <em>Contrate uma Mãe</em></p></div></li>
+    <li><div class="onde"><span class="org" data-en="Film festival selections">Seleções em festivais</span></div>
+      <div><ul style="margin-top:0">
+        <li data-en="<em>Onírico</em> (2025): Independent Shorts Awards, USA · Rome Prisma, Italy · Genre Celebration, Tokyo"><em>Onírico</em> (2025): Independent Shorts Awards, EUA · Rome Prisma, Itália · Genre Celebration, Tóquio</li>
+        <li data-en="<em>Me Chame Pelo Meu Nome</em> (2019): Diversity Film Festival, Canada · Hyperwave, USA · Calcutta International Cult, India · Golden Fox, India · Rome Prisma, Italy"><em>Me Chame Pelo Meu Nome</em> (2019): Diversity Film Festival, Canadá · Hyperwave, EUA · Calcutta International Cult, Índia · Golden Fox, Índia · Rome Prisma, Itália</li>
+        <li data-en="<em>Você Falou Cancelamento?</em> (2019): Hyperwave, USA · Rome Prisma, Italy"><em>Você Falou Cancelamento?</em> (2019): Hyperwave, EUA · Rome Prisma, Itália</li>
+        <li data-en="<em>Rolina</em> (2020): FRAPA, Porto Alegre"><em>Rolina</em> (2020): FRAPA, Porto Alegre</li>
+        <li data-en="<em>Avisos de um Futuro Qualquer</em> (2021): selected for production"><em>Avisos de um Futuro Qualquer</em> (2021): selecionada para produção</li>
+      </ul></div></li>
+  </ul>
+</section>
+
+<!-- RODAPÉ · tinta -->
+<footer class="tinta">
+  <div class="in rodape">
+    <div class="corpo">
+      <p class="nm">Maia Oazem<em><i data-en="Time Artist">Artista Temporal</i></em></p>
+      <div class="dados">
+        <p>maiaoazem@gira.guru</p>
+        <p>+55 11 94153-7453</p>
+        <p data-en="São Paulo, SP, Brazil">São Paulo, SP, Brasil</p>
+      </div>
+      <svg class="logo" viewBox="0 0 100 100" role="img" aria-label="laborateliê"><use href="#fagulha"/></svg>
+    </div>
+    <div class="pe meta"><span data-en="Futures-Informed Creativity">Criatividade Informada por Futuros</span><span>gira. · laborateliê</span></div>
+  </div>
+</footer>
+
+<script>
+// Idioma: PT-BR (padrão) ou EN. Cada texto traduzível tem o inglês no atributo data-en.
+(function(){
+  var els = document.querySelectorAll('[data-en]');
+  els.forEach(function(el){ el.setAttribute('data-pt', el.innerHTML); });
+  var foto = document.querySelector('[data-en-alt]');
+  if (foto) foto.setAttribute('data-pt-alt', foto.alt);
+  function aplicar(l){
+    l = l === 'en' ? 'en' : 'pt';
+    document.documentElement.lang = l === 'en' ? 'en' : 'pt-BR';
+    els.forEach(function(el){ el.innerHTML = el.getAttribute(l === 'en' ? 'data-en' : 'data-pt'); });
+    if (foto) foto.alt = foto.getAttribute(l === 'en' ? 'data-en-alt' : 'data-pt-alt');
+    document.querySelectorAll('[data-lang]').forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.lang === l)); });
+    var bx = document.getElementById('baixar');
+    if (bx) bx.setAttribute('href', l === 'en' ? 'maia-oazem-cv-en.pdf' : 'maia-oazem-cv-pt.pdf');
+    try { localStorage.setItem('idioma', l); } catch(e){}
+    try {
+      var u = new URL(location.href);
+      if (/^https?:$/.test(u.protocol)) {
+        if (l === 'en') u.searchParams.set('lang','en'); else u.searchParams.delete('lang');
+        history.replaceState(null, '', u.pathname + u.search + u.hash);
+      }
+    } catch(e){}
+  }
+  document.querySelectorAll('[data-lang]').forEach(function(b){ b.addEventListener('click', function(){ aplicar(b.dataset.lang); }); });
+  var inicial = null;
+  try { inicial = new URLSearchParams(location.search).get('lang'); } catch(e){}
+  if (!inicial) { try { inicial = localStorage.getItem('idioma'); } catch(e){} }
+  if (!inicial) inicial = /^pt/i.test(navigator.language || 'pt') ? 'pt' : 'en';
+  aplicar(inicial);
+})();
+</script>
+</body>
+</html>
