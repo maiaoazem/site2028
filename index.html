@@ -60,7 +60,11 @@ em{font-style:italic}
 .abertura h1 em{display:block}
 .abertura .tese{font-family:var(--serif);font-size:clamp(24px,2.6vw,34px);line-height:1.2;max-width:22ch;margin-top:clamp(28px,4vw,48px);padding-bottom:clamp(32px,5vw,64px);text-wrap:balance}
 .retrato{width:100%;max-width:100%;height:auto;display:block}
-.abertura .retrato{max-width:min(100%,460px);align-self:center;justify-self:end;margin-top:clamp(-96px,-7vw,-40px)}
+.abertura .campo{grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:40px;align-items:center}
+.abertura .campo > div{display:contents}
+.abertura h1{grid-column:1 / -1}
+.abertura .tese{grid-column:1;align-self:start}
+.abertura .retrato{grid-column:2;max-width:min(100%,460px);justify-self:start;align-self:start;margin-top:clamp(28px,4vw,48px);margin-bottom:clamp(32px,5vw,64px)}
 .retrato-esc{width:100%;max-width:380px;height:auto;display:block}
 @media (max-width:860px){.retrato-esc{max-width:300px}}
 .editorias{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
@@ -160,7 +164,8 @@ section{padding-bottom:clamp(64px,9vw,128px)}
   .titulo h2,.titulo .lede,.cartao .card{grid-column:1}
   .cab > :first-child:empty{display:none}
   .abertura .campo{grid-template-columns:1fr}
-  .abertura .retrato{max-width:min(100%,460px);justify-self:start;margin:0 0 32px}
+  .abertura .tese,.abertura .retrato{grid-column:1}
+  .abertura .retrato{max-width:min(100%,460px);margin:0 0 32px}
   .editorias{grid-template-columns:1fr}
   .ed{padding-block:12px;border-top:1px solid var(--tinta)}
   .ed:first-child{border-top:0}
