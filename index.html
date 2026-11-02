@@ -221,6 +221,15 @@ body{font-variant-emoji:text}
   .vinc2 li,.editora{grid-template-columns:1fr;gap:6px}
   .rodape2 .corpo{grid-template-columns:1fr;gap:28px}
 }
+
+/* seletor de idioma */
+.assin{row-gap:10px}
+.idiomas{display:flex;gap:4px;align-items:center;margin-left:auto}
+.idiomas button{font:inherit;font-size:12px;letter-spacing:.09em;background:none;border:1px solid transparent;color:inherit;padding:4px 7px;cursor:pointer;line-height:1}
+.idiomas button[aria-pressed="true"]{border-color:currentColor}
+.idiomas button:hover{text-decoration:underline;text-underline-offset:3px}
+.assin nav + .idiomas{margin-left:22px}
+@media (max-width:860px){.assin nav + .idiomas{margin-left:auto}}
 </style>
 </head>
 <body>
@@ -247,22 +256,26 @@ body{font-variant-emoji:text}
         <span>Maia Oazem · laborateliê</span>
       </span>
       <nav aria-label="Seções">
-        <a href="#bio">quem é</a><a href="#servicos">serviços</a><a href="#laborateliê">laborateliê</a><a href="#imprensa">citada em</a><a href="#escritora">escritora</a><a href="#contato">contato</a>
+        <a href="#bio" data-en="about">quem é</a><a href="#servicos" data-en="services">serviços</a><a href="#laborateliê">laborateliê</a><a href="#imprensa" data-en="featured in">citada em</a><a href="#escritora" data-en="writer">escritora</a><a href="#contato" data-en="contact">contato</a>
       </nav>
+      <span class="idiomas" role="group" aria-label="Idioma / Language">
+        <button type="button" data-lang="pt" aria-pressed="true" lang="pt-BR">PT-BR</button>
+        <button type="button" data-lang="en" aria-pressed="false" lang="en">EN</button>
+      </span>
     </div>
     <hr class="fio">
     <div class="campo">
       <div>
-        <h1>Maia Oazem, <em>artista temporal</em></h1>
-        <p class="tese">Para empresas, organizações e pessoas que se perguntam qual é a sua próxima coisa.</p>
+        <h1 data-en="Maia Oazem, <em>time artist</em>">Maia Oazem, <em>artista temporal</em></h1>
+        <p class="tese" data-en="For companies, organizations and people asking themselves what their next thing is.">Para empresas, organizações e pessoas que se perguntam qual é a sua próxima coisa.</p>
       </div>
-      <img class="retrato" src="maia-retrato.png" alt="Retrato de Maia Oazem em meio-tom, tinta preta sobre rosa" width="1200" height="1800">
+      <img class="retrato" src="maia-retrato.png" alt="Retrato de Maia Oazem em meio-tom, tinta preta sobre rosa" data-en-alt="Halftone portrait of Maia Oazem, black ink on pink" width="1200" height="1800">
     </div>
     <hr class="fio">
     <div class="editorias">
-      <div class="ed"><svg aria-hidden="true"><use href="#lente"/></svg><div><b>Pesquisa Cultural</b><i>como e onde olhar</i></div></div>
-      <div class="ed"><svg aria-hidden="true"><use href="#avanco"/></svg><div><b>Elaboração de Futuros</b><i>o que pode vir a ser</i></div></div>
-      <div class="ed"><svg aria-hidden="true"><use href="#losangos"/></svg><div><b>Estratégia Criativa</b><i>caminhos ainda não percorridos</i></div></div>
+      <div class="ed"><svg aria-hidden="true"><use href="#lente"/></svg><div><b data-en="Cultural Research">Pesquisa Cultural</b><i data-en="how and where to look">como e onde olhar</i></div></div>
+      <div class="ed"><svg aria-hidden="true"><use href="#avanco"/></svg><div><b data-en="Futures Design">Elaboração de Futuros</b><i data-en="what may come to be">o que pode vir a ser</i></div></div>
+      <div class="ed"><svg aria-hidden="true"><use href="#losangos"/></svg><div><b data-en="Creative Strategy">Estratégia Criativa</b><i data-en="paths not yet taken">caminhos ainda não percorridos</i></div></div>
     </div>
     <hr class="fio">
     <div class="assin meta" style="font-size:12px"><span>São Paulo</span><span>2027</span></div>
@@ -271,25 +284,25 @@ body{font-variant-emoji:text}
 
 <!-- 2 · QUEM É · papel -->
 <div class="in" id="bio">
-  <div class="cab"><span class="meta cinza">I · quem é</span><span class="meta cinza">bio</span></div>
+  <div class="cab"><span class="meta cinza" data-en="I · about">I · quem é</span><span class="meta cinza">bio</span></div>
   <hr class="fio">
 </div>
 <section class="in" style="padding-top:clamp(36px,5vw,64px)">
   <div class="cols">
     <dl class="ficha" aria-label="Ficha técnica">
-      <div><dt>15+</dt><dd>anos em criatividade, inovação e futuros</dd></div>
-      <div><dt>50+</dt><dd>empresas atendidas</dd></div>
-      <div><dt>R$ 1 bi+</dt><dd>em propostas de tecnologias emergentes</dd></div>
-      <div><dt>5×</dt><dd>Prêmio Brasileiro de Design</dd></div>
-      <div><dt>2×</dt><dd>Prémios Lusófonos da Criatividade</dd></div>
-      <div><dt>finalista</dt><dd>Ideias que Mudam o Mundo, Fast Company, EUA</dd></div>
-      <div><dt>6 países</dt><dd>com roteiros selecionados</dd></div>
+      <div><dt>15+</dt><dd data-en="years in creativity, innovation and futures">anos em criatividade, inovação e futuros</dd></div>
+      <div><dt>50+</dt><dd data-en="companies served">empresas atendidas</dd></div>
+      <div><dt data-en="BRL 1 bn+">R$ 1 bi+</dt><dd data-en="in emerging technology proposals">em propostas de tecnologias emergentes</dd></div>
+      <div><dt>5×</dt><dd data-en="Brazil Design Award">Prêmio Brasileiro de Design</dd></div>
+      <div><dt>2×</dt><dd data-en="Prémios Lusófonos da Criatividade, Portugal">Prémios Lusófonos da Criatividade</dd></div>
+      <div><dt data-en="finalist">finalista</dt><dd data-en="World Changing Ideas, Fast Company, USA">Ideias que Mudam o Mundo, Fast Company, EUA</dd></div>
+      <div><dt data-en="6 countries">6 países</dt><dd data-en="with selected screenplays">com roteiros selecionados</dd></div>
     </dl>
     <div class="bio-txt">
-      <p class="primeira">Maia trabalha o tempo como matéria: lê o presente, imagina futuros e constrói a ponte entre os dois.</p>
-      <p>Construiu outras coisas possíveis dentro de grandes empresas pela América Latina. Na Oracle e na Salesforce, foi a inovação: o laboratório Spark, as narrativas que levaram TIM e Banco de Chile à nuvem e uma frente de futuros para indústrias. No Google Cloud e na Capgemini, foi a inteligência artificial: o posicionamento de IA generativa para a região, os Futuros das Finanças, apresentados no Febraban Tech, e o Papillon, um redesenho da organização para o pós-IA, duas vezes reconhecido com o Transformer Award.</p>
-      <p>E é <a href="#escritora">escritora</a>.</p>
-      <p class="formacao">Belas Artes · IED · PUC · Escola Internacional de Cinema · Roteiraria · Hyper Island · Copenhagen Institute for Futures Studies · seminários de Robert McKee, Nova York</p>
+      <p class="primeira" data-en="Maia works with time as her material: she reads the present, imagines futures and builds the bridge between the two.">Maia trabalha o tempo como matéria: lê o presente, imagina futuros e constrói a ponte entre os dois.</p>
+      <p data-en="She has built other possible things inside large companies across Latin America. At Oracle and Salesforce, it was innovation: the Spark lab, the narratives that took TIM and Banco de Chile to the cloud, and an industry futures practice. At Google Cloud and Capgemini, it was artificial intelligence: the generative AI positioning for the region, the Futures of Finance, presented at Febraban Tech, and Papillon, a post-AI redesign of the organization, twice recognized with the Transformer Award.">Construiu outras coisas possíveis dentro de grandes empresas pela América Latina. Na Oracle e na Salesforce, foi a inovação: o laboratório Spark, as narrativas que levaram TIM e Banco de Chile à nuvem e uma frente de futuros para indústrias. No Google Cloud e na Capgemini, foi a inteligência artificial: o posicionamento de IA generativa para a região, os Futuros das Finanças, apresentados no Febraban Tech, e o Papillon, um redesenho da organização para o pós-IA, duas vezes reconhecido com o Transformer Award.</p>
+      <p data-en="And she is a <a href=&quot;#escritora&quot;>writer</a>.">E é <a href="#escritora">escritora</a>.</p>
+      <p class="formacao" data-en="Belas Artes · IED · PUC · Escola Internacional de Cinema · Roteiraria · Hyper Island · Copenhagen Institute for Futures Studies · Robert McKee seminars, New York">Belas Artes · IED · PUC · Escola Internacional de Cinema · Roteiraria · Hyper Island · Copenhagen Institute for Futures Studies · seminários de Robert McKee, Nova York</p>
     </div>
   </div>
 </section>
@@ -297,33 +310,33 @@ body{font-variant-emoji:text}
 <!-- 3 · SERVIÇOS · roxo -->
 <div class="faixa roxo" id="servicos">
   <div class="in banda">
-    <div class="cab" style="padding-top:0"><span class="meta cinza">II · serviços</span><span class="meta cinza">três olhares</span></div>
+    <div class="cab" style="padding-top:0"><span class="meta cinza" data-en="II · services">II · serviços</span><span class="meta cinza" data-en="three lenses">três olhares</span></div>
     <hr class="fio">
     <div class="chamada" style="padding-top:clamp(40px,6vw,80px)">
-      <p>outra coisa é possível. <em>qual é a sua?</em></p>
+      <p data-en="something else is possible. <em>what is yours?</em>">outra coisa é possível. <em>qual é a sua?</em></p>
       <hr class="fio" style="margin-top:clamp(36px,5vw,64px)">
-      <div class="assinatura meta"><span>Maia Oazem</span><span>Criatividade Informada por Futuros</span></div>
+      <div class="assinatura meta"><span>Maia Oazem</span><span data-en="Futures-Informed Creativity">Criatividade Informada por Futuros</span></div>
     </div>
     <div class="tempos">
       <article class="tempo">
-        <p class="q"><span class="olhar">um olhar sobre o presente</span>o que está acontecendo?</p>
+        <p class="q" data-en="<span class=&quot;olhar&quot;>a look at the present</span>what is happening?"><span class="olhar">um olhar sobre o presente</span>o que está acontecendo?</p>
         <div>
-          <h3><svg aria-hidden="true"><use href="#lente"/></svg>Pesquisa Cultural</h3>
-          <p>Um olhar curioso e crítico sobre os acontecimentos, o comportamento e a tecnologia, organizado para decisão. Pesquisas pontuais ou acompanhamento mensal, trimestral e semestral, <a href="mailto:maiaoazem@gira.guru">sob encomenda</a>.</p>
+          <h3 data-en="<svg aria-hidden=&quot;true&quot;><use href=&quot;#lente&quot;/></svg>Cultural Research"><svg aria-hidden="true"><use href="#lente"/></svg>Pesquisa Cultural</h3>
+          <p data-en="A curious and critical look at events, behavior and technology, organized for decision-making. One-off studies or monthly, quarterly and half-yearly tracking, <a href=&quot;mailto:maiaoazem@gira.guru&quot;>made to order</a>.">Um olhar curioso e crítico sobre os acontecimentos, o comportamento e a tecnologia, organizado para decisão. Pesquisas pontuais ou acompanhamento mensal, trimestral e semestral, <a href="mailto:maiaoazem@gira.guru">sob encomenda</a>.</p>
         </div>
       </article>
       <article class="tempo">
-        <p class="q"><span class="olhar">olhares sobre os futuros</span>o que pode vir a ser?</p>
+        <p class="q" data-en="<span class=&quot;olhar&quot;>looks at the futures</span>what may come to be?"><span class="olhar">olhares sobre os futuros</span>o que pode vir a ser?</p>
         <div>
-          <h3><svg aria-hidden="true"><use href="#avanco"/></svg>Elaboração de Futuros</h3>
-          <p>Cenários, visões e hipóteses de futuros possíveis e desejáveis para produtos, serviços, processos e empresas. É a base da estratégia de Criatividade Informada por Futuros.</p>
+          <h3 data-en="<svg aria-hidden=&quot;true&quot;><use href=&quot;#avanco&quot;/></svg>Futures Design"><svg aria-hidden="true"><use href="#avanco"/></svg>Elaboração de Futuros</h3>
+          <p data-en="Scenarios, visions and hypotheses of possible and desirable futures for products, services, processes and companies. It is the foundation of Futures-Informed Creativity.">Cenários, visões e hipóteses de futuros possíveis e desejáveis para produtos, serviços, processos e empresas. É a base da estratégia de Criatividade Informada por Futuros.</p>
         </div>
       </article>
       <article class="tempo">
-        <p class="q"><span class="olhar">a ponte</span>como ligar os futuros ao presente?</p>
+        <p class="q" data-en="<span class=&quot;olhar&quot;>the bridge</span>how do we connect the futures to the present?"><span class="olhar">a ponte</span>como ligar os futuros ao presente?</p>
         <div>
-          <h3><svg aria-hidden="true"><use href="#losangos"/></svg>Estratégia Criativa</h3>
-          <p>Os futuros escolhidos viram estratégias e hipóteses: negócios, processos, posicionamentos e caminhos de ação variados. É o grande foco da gira., de Mateus e, agora, de Maia.</p>
+          <h3 data-en="<svg aria-hidden=&quot;true&quot;><use href=&quot;#losangos&quot;/></svg>Creative Strategy"><svg aria-hidden="true"><use href="#losangos"/></svg>Estratégia Criativa</h3>
+          <p data-en="The chosen futures become strategies and hypotheses: businesses, processes, positionings and many paths of action. It is the main focus of gira., of Mateus and, now, of Maia.">Os futuros escolhidos viram estratégias e hipóteses: negócios, processos, posicionamentos e caminhos de ação variados. É o grande foco da gira., de Mateus e, agora, de Maia.</p>
         </div>
       </article>
     </div>
@@ -332,50 +345,50 @@ body{font-variant-emoji:text}
 
 <!-- 4 · LABORATELIÊ · papel -->
 <div class="in" id="laborateliê">
-  <div class="cab" style="margin-top:clamp(48px,7vw,96px)"><span class="meta cinza">III · de onde vem</span><span class="meta cinza">gira. · desde 2016</span></div>
+  <div class="cab" style="margin-top:clamp(48px,7vw,96px)"><span class="meta cinza" data-en="III · where it comes from">III · de onde vem</span><span class="meta cinza" data-en="gira. · since 2016">gira. · desde 2016</span></div>
   <hr class="fio">
   <div class="titulo">
-    <h2>o método <em>tem casa</em></h2>
+    <h2 data-en="the method <em>has a home</em>">o método <em>tem casa</em></h2>
   </div>
 </div>
 <section class="in">
   <div class="cols">
     <div class="lab-marca"><svg viewBox="0 0 100 100" role="img" aria-label="fagulha do laborateliê"><use href="#fagulha"/></svg><span>laborateliê</span></div>
     <div class="lab-txt">
-      <p class="subt">laborateliê, a nova estrutura da gira.</p>
-      <p>A gira. nasceu em 2016 como um meta-laboratório: a cada virada, leu seus sinais, imaginou sua próxima forma e se refez. Foi laboratório criativo, depois de narrativas, depois de futuros. Em 2027 abre a segunda década como laborateliê: laboratório que testa hipóteses no mundo, ateliê onde a criação acontece.</p>
-      <p>Em dez anos, atendeu, direta e indiretamente, marcas como Disney, Renner, Fundación Telefónica e Google Cloud, além de criar de forma autoral obras que vão de roteiros até plataformas, ferramentas até podcasts, baralhos até aplicativos.</p>
+      <p class="subt" data-en="laborateliê, the new structure of gira.">laborateliê, a nova estrutura da gira.</p>
+      <p data-en="gira. was born in 2016 as a meta-laboratory: at every turn, it read its own signals, imagined its next form and remade itself. It was a creative lab, then a narrative lab, then a futures lab. In 2027 it opens its second decade as laborateliê: a laboratory that tests hypotheses in the world, an atelier where creation happens.">A gira. nasceu em 2016 como um meta-laboratório: a cada virada, leu seus sinais, imaginou sua próxima forma e se refez. Foi laboratório criativo, depois de narrativas, depois de futuros. Em 2027 abre a segunda década como laborateliê: laboratório que testa hipóteses no mundo, ateliê onde a criação acontece.</p>
+      <p data-en="In ten years, it has served, directly and indirectly, brands such as Disney, Renner, Fundación Telefónica and Google Cloud, and has created original works ranging from screenplays to platforms, tools to podcasts, card decks to apps.">Em dez anos, atendeu, direta e indiretamente, marcas como Disney, Renner, Fundación Telefónica e Google Cloud, além de criar de forma autoral obras que vão de roteiros até plataformas, ferramentas até podcasts, baralhos até aplicativos.</p>
     </div>
   </div>
   <ul class="obras" aria-label="Obras autorais premiadas">
-    <li><span class="nome">Contrate uma Mãe</span><span class="desc"><span>a primeira plataforma de recontratação de mães</span><span>Prêmio Brasileiro de Design</span></span></li>
-    <li><span class="nome">Saulo e a Saia</span><span class="desc"><span>o primeiro livro infantil sobre neutralidade de gênero</span><span>Prêmio Brasileiro de Design</span></span></li>
-    <li><span class="nome">Ingresso Social</span><span class="desc"><span>um ingresso com preço recalculado pela desigualdade</span><span>Prêmio Brasileiro de Design · finalista, World Changing Ideas, Fast Company</span></span></li>
-    <li><span class="nome">Future Stories Deck</span><span class="desc"><span>um baralho para criar e contar futuros</span><span>Prêmio Brasileiro de Design</span></span></li>
-    <li><span class="nome">spec(S)</span><span class="desc"><span>foresight experimental com inteligência artificial generativa</span><span>Prêmio Brasileiro de Design</span></span></li>
-    <li><span class="nome">Design f(R)iction</span><span class="desc"><span>método de foresight com design fiction</span><span>Ouro, Prémios Lusófonos da Criatividade</span></span></li>
-    <li><span class="nome">Pensamentos Recorrentes</span><span class="desc"><span>um podcast sobre saúde mental entrelaçando ficção e entrevistas</span><span>Prémios Lusófonos da Criatividade</span></span></li>
+    <li><span class="nome">Contrate uma Mãe</span><span class="desc"><span data-en="the first platform for rehiring mothers">a primeira plataforma de recontratação de mães</span><span data-en="Brazil Design Award">Prêmio Brasileiro de Design</span></span></li>
+    <li><span class="nome">Saulo e a Saia</span><span class="desc"><span data-en="the first children’s book on gender neutrality">o primeiro livro infantil sobre neutralidade de gênero</span><span data-en="Brazil Design Award">Prêmio Brasileiro de Design</span></span></li>
+    <li><span class="nome">Ingresso Social</span><span class="desc"><span data-en="a ticket repriced by inequality">um ingresso com preço recalculado pela desigualdade</span><span data-en="Brazil Design Award · finalist, World Changing Ideas, Fast Company">Prêmio Brasileiro de Design · finalista, World Changing Ideas, Fast Company</span></span></li>
+    <li><span class="nome">Future Stories Deck</span><span class="desc"><span data-en="a card deck to create and tell futures">um baralho para criar e contar futuros</span><span data-en="Brazil Design Award">Prêmio Brasileiro de Design</span></span></li>
+    <li><span class="nome">spec(S)</span><span class="desc"><span data-en="experimental foresight with generative AI">foresight experimental com inteligência artificial generativa</span><span data-en="Brazil Design Award">Prêmio Brasileiro de Design</span></span></li>
+    <li><span class="nome">Design f(R)iction</span><span class="desc"><span data-en="a foresight method with design fiction">método de foresight com design fiction</span><span data-en="Gold, Prémios Lusófonos da Criatividade">Ouro, Prémios Lusófonos da Criatividade</span></span></li>
+    <li><span class="nome">Pensamentos Recorrentes</span><span class="desc"><span data-en="a podcast on mental health weaving fiction and interviews">um podcast sobre saúde mental entrelaçando ficção e entrevistas</span><span data-en="Prémios Lusófonos da Criatividade">Prémios Lusófonos da Criatividade</span></span></li>
   </ul>
 </section>
 
 <!-- 5 · CITADA EM · verde -->
 <div class="faixa verde" id="imprensa">
   <div class="in banda">
-    <div class="cab" style="padding-top:0"><span class="meta cinza">IV · citada em</span><span class="meta cinza">imprensa, palco e vínculos</span></div>
+    <div class="cab" style="padding-top:0"><span class="meta cinza" data-en="IV · featured in">IV · citada em</span><span class="meta cinza" data-en="press, stage and affiliations">imprensa, palco e vínculos</span></div>
     <hr class="fio">
     <div class="mastros" style="padding-top:clamp(32px,5vw,56px)" aria-hidden="true"><span>Veja</span><span>Época Negócios</span><span>Estadão</span><span>CNBC</span><span>Abradi</span><span>MIT Media Lab</span></div>
     <ul class="clip">
-      <li><span class="meta">Veja · Planeta IA</span><span class="tit"><a href="https://veja.abril.com.br/coluna/planeta-ia/nove-tendencias-de-ia-e-tecnologia-para-2026/" target="_blank" rel="noopener">Nove tendências de IA e tecnologia para 2026<span class="seta" aria-hidden="true"></span></a><small>Futuros Pós-IA</small></span></li>
-      <li><span class="meta">Época Negócios · 2025</span><span class="tit"><a href="https://epocanegocios.globo.com/tecnologia/noticia/2025/06/ia-agentica-automacao-hubs-regenerativos-os-futuros-possiveis-para-os-bancos-segundo-a-capgemini.ghtml" target="_blank" rel="noopener">IA agêntica, automação, hubs regenerativos: os futuros possíveis para os bancos<span class="seta" aria-hidden="true"></span></a><small>Futuros das Finanças</small></span></li>
-      <li><span class="meta">Estadão · TecMundo</span><span class="tit"><a href="https://www.estadao.com.br/tecmundo/big-techs/279538-google-agencia-foster-lancam-curso-ia-foco-negocios/" target="_blank" rel="noopener">Google e Foster lançam curso de IA com foco em negócios<span class="seta" aria-hidden="true"></span></a><small>Curso, com Elaine Coimbra</small></span></li>
-      <li><span class="meta">CNBC · Febraban Tech 2025</span><span class="tit"><a href="https://www.youtube.com/watch?v=MitEfv5J088" target="_blank" rel="noopener">Futuros Presentes<span class="seta" aria-hidden="true"></span></a><small>Futuros das Finanças</small></span></li>
-      <li><span class="meta">Abradi</span><span class="tit"><a href="https://www.youtube.com/watch?v=IDo8rdZ8YL0" target="_blank" rel="noopener">Palestra sobre futuros<span class="seta" aria-hidden="true"></span></a><small>Associação Brasileira dos Agentes Digitais</small></span></li>
-      <li><span class="meta">MIT Media Lab · 2019</span><span class="tit"><a href="https://www.media.mit.edu/articles/world-changing-ideas-2019-all-the-winners-finalists-and-honorable-mentions/" target="_blank" rel="noopener">World Changing Ideas 2019<span class="seta" aria-hidden="true"></span></a><small>Ingresso Social, finalista na categoria Experimental, ao lado de IBM, Intel, Mastercard e Salesforce</small></span></li>
+      <li><span class="meta">Veja · Planeta IA</span><span class="tit"><a href="https://veja.abril.com.br/coluna/planeta-ia/nove-tendencias-de-ia-e-tecnologia-para-2026/" target="_blank" rel="noopener" data-en="Nine AI and technology trends for 2026<span class=&quot;seta&quot; aria-hidden=&quot;true&quot;></span>">Nove tendências de IA e tecnologia para 2026<span class="seta" aria-hidden="true"></span></a><small data-en="Post-AI Futures · in Portuguese">Futuros Pós-IA</small></span></li>
+      <li><span class="meta">Época Negócios · 2025</span><span class="tit"><a href="https://epocanegocios.globo.com/tecnologia/noticia/2025/06/ia-agentica-automacao-hubs-regenerativos-os-futuros-possiveis-para-os-bancos-segundo-a-capgemini.ghtml" target="_blank" rel="noopener" data-en="Agentic AI, automation, regenerative hubs: the possible futures for banks<span class=&quot;seta&quot; aria-hidden=&quot;true&quot;></span>">IA agêntica, automação, hubs regenerativos: os futuros possíveis para os bancos<span class="seta" aria-hidden="true"></span></a><small data-en="Futures of Finance · in Portuguese">Futuros das Finanças</small></span></li>
+      <li><span class="meta">Estadão · TecMundo</span><span class="tit"><a href="https://www.estadao.com.br/tecmundo/big-techs/279538-google-agencia-foster-lancam-curso-ia-foco-negocios/" target="_blank" rel="noopener" data-en="Google and Foster launch a business-focused AI course<span class=&quot;seta&quot; aria-hidden=&quot;true&quot;></span>">Google e Foster lançam curso de IA com foco em negócios<span class="seta" aria-hidden="true"></span></a><small data-en="Course, with Elaine Coimbra · in Portuguese">Curso, com Elaine Coimbra</small></span></li>
+      <li><span class="meta">CNBC · Febraban Tech 2025</span><span class="tit"><a href="https://www.youtube.com/watch?v=MitEfv5J088" target="_blank" rel="noopener" data-en="Present Futures<span class=&quot;seta&quot; aria-hidden=&quot;true&quot;></span>">Futuros Presentes<span class="seta" aria-hidden="true"></span></a><small data-en="Futures of Finance · in Portuguese">Futuros das Finanças</small></span></li>
+      <li><span class="meta">Abradi</span><span class="tit"><a href="https://www.youtube.com/watch?v=IDo8rdZ8YL0" target="_blank" rel="noopener" data-en="Talk on futures<span class=&quot;seta&quot; aria-hidden=&quot;true&quot;></span>">Palestra sobre futuros<span class="seta" aria-hidden="true"></span></a><small data-en="Brazilian Association of Digital Agencies · in Portuguese">Associação Brasileira dos Agentes Digitais</small></span></li>
+      <li><span class="meta">MIT Media Lab · 2019</span><span class="tit"><a href="https://www.media.mit.edu/articles/world-changing-ideas-2019-all-the-winners-finalists-and-honorable-mentions/" target="_blank" rel="noopener">World Changing Ideas 2019<span class="seta" aria-hidden="true"></span></a><small data-en="Ingresso Social, finalist in the Experimental category, alongside IBM, Intel, Mastercard and Salesforce">Ingresso Social, finalista na categoria Experimental, ao lado de IBM, Intel, Mastercard e Salesforce</small></span></li>
     </ul>
     <ul class="vinc2" aria-label="Vínculos">
-      <li><span class="sigla">ABF</span><span class="nm">Diretoria da Associação Brasileira de Futuros</span></li>
-      <li><span class="sigla">IFE</span><span class="nm">Signatária do Design Centrado na Sociedade</span></li>
-      <li><span class="sigla">Google</span><span class="nm">Integrou o grupo de ética em IA</span></li>
+      <li><span class="sigla">ABF</span><span class="nm" data-en="Board, Brazilian Futures Association">Diretoria da Associação Brasileira de Futuros</span></li>
+      <li><span class="sigla">IFE</span><span class="nm" data-en="Signatory of Society Centered Design">Signatária do Design Centrado na Sociedade</span></li>
+      <li><span class="sigla">Google</span><span class="nm" data-en="Former member of the AI ethics group">Integrou o grupo de ética em IA</span></li>
     </ul>
   </div>
 </div>
@@ -383,26 +396,26 @@ body{font-variant-emoji:text}
 <!-- 6 · ESCRITORA · amarelo -->
 <div class="faixa amarelo" id="escritora">
   <div class="in banda">
-    <div class="cab" style="padding-top:0"><span class="meta cinza">V · escritora</span><span class="meta cinza">ficção científica</span></div>
+    <div class="cab" style="padding-top:0"><span class="meta cinza" data-en="V · writer">V · escritora</span><span class="meta cinza" data-en="science fiction">ficção científica</span></div>
     <hr class="fio">
-    <div class="titulo"><h2>escri<em>tora</em></h2></div>
+    <div class="titulo"><h2 data-en="wri<em>ter</em>">escri<em>tora</em></h2></div>
     <div class="cols">
       <div></div>
       <div class="esc-txt">
-        <p class="primeira">A ficção é o veículo com que Maia caminha pelos futuros possíveis e por suas outras coisas. É também um de seus produtos.</p>
-        <p>Estudou roteiro em diversas escolas, inclusive nos seminários de Robert McKee, em Nova York. Seus roteiros de ficção científica foram selecionados para além do Brasil: no Canadá, nos Estados Unidos, na Índia, na Itália e no Japão.</p>
+        <p class="primeira" data-en="Fiction is the vehicle Maia uses to walk through possible futures and their other things. It is also one of her products.">A ficção é o veículo com que Maia caminha pelos futuros possíveis e por suas outras coisas. É também um de seus produtos.</p>
+        <p data-en="She studied screenwriting at several schools, including Robert McKee’s seminars in New York. Her science fiction screenplays have been selected beyond Brazil: in Canada, the United States, India, Italy and Japan.">Estudou roteiro em diversas escolas, inclusive nos seminários de Robert McKee, em Nova York. Seus roteiros de ficção científica foram selecionados para além do Brasil: no Canadá, nos Estados Unidos, na Índia, na Itália e no Japão.</p>
       </div>
     </div>
     <ul class="obras" aria-label="Roteiros selecionados">
-      <li><span class="nome">Onírico</span><span class="desc"><span>Estados Unidos · Itália · Japão</span><span></span></span></li>
-      <li><span class="nome">Me Chame Pelo Meu Nome</span><span class="desc"><span>Canadá · Estados Unidos · Índia · Itália</span><span></span></span></li>
-      <li><span class="nome">Você Falou Cancelamento?</span><span class="desc"><span>Estados Unidos · Itália</span><span></span></span></li>
-      <li><span class="nome">Rolina</span><span class="desc"><span>Brasil</span><span></span></span></li>
-      <li><span class="nome">Avisos de um Futuro Qualquer</span><span class="desc"><span>Brasil</span><span>selecionada para produção</span></span></li>
+      <li><span class="nome">Onírico</span><span class="desc"><span data-en="United States · Italy · Japan">Estados Unidos · Itália · Japão</span><span></span></span></li>
+      <li><span class="nome">Me Chame Pelo Meu Nome</span><span class="desc"><span data-en="Canada · United States · India · Italy">Canadá · Estados Unidos · Índia · Itália</span><span></span></span></li>
+      <li><span class="nome">Você Falou Cancelamento?</span><span class="desc"><span data-en="United States · Italy">Estados Unidos · Itália</span><span></span></span></li>
+      <li><span class="nome">Rolina</span><span class="desc"><span data-en="Brazil">Brasil</span><span></span></span></li>
+      <li><span class="nome">Avisos de um Futuro Qualquer</span><span class="desc"><span data-en="Brazil">Brasil</span><span data-en="selected for production">selecionada para produção</span></span></li>
     </ul>
     <div class="editora">
-      <span class="meta">editoras e produtoras</span>
-      <div class="contato"><span class="v" id="email-esc">maiaoazem@gira.guru</span><button class="copiar" id="copiar-email-esc" data-alvo="email-esc" type="button">copiar e-mail</button></div>
+      <span class="meta" data-en="publishers and producers">editoras e produtoras</span>
+      <div class="contato"><span class="v" id="email-esc">maiaoazem@gira.guru</span><button class="copiar" id="copiar-email-esc" data-alvo="email-esc" type="button" data-en="copy email">copiar e-mail</button></div>
     </div>
   </div>
 </div>
@@ -412,15 +425,15 @@ body{font-variant-emoji:text}
   <div class="in rodape2">
     <div class="linha">
       <span class="lab"><svg viewBox="0 0 100 100" role="img" aria-label="laborateliê"><use href="#fagulha"/></svg>laborateliê</span>
-      <span class="lab"><em>laboratório:ateliê</em></span>
+      <span class="lab"><em data-en="laboratory:atelier">laboratório:ateliê</em></span>
     </div>
     <div class="corpo">
-      <p class="nm">Maia Oazem<em><i>Artista Temporal</i></em></p>
+      <p class="nm">Maia Oazem<em><i data-en="Time Artist">Artista Temporal</i></em></p>
       <div class="dados">
-        <p><span class="v" id="email">maiaoazem@gira.guru</span><button class="copiar" id="copiar-email" data-alvo="email" type="button">copiar</button></p>
-        <p><span class="v" id="tel">+55 11 94153-7453</span><button class="copiar" id="copiar-tel" data-alvo="tel" type="button">copiar</button></p>
-        <p>São Paulo, SP, Brasil</p>
-        <em>Criatividade Informada por Futuros</em>
+        <p><span class="v" id="email">maiaoazem@gira.guru</span><button class="copiar" id="copiar-email" data-alvo="email" type="button" data-en="copy">copiar</button></p>
+        <p><span class="v" id="tel">+55 11 94153-7453</span><button class="copiar" id="copiar-tel" data-alvo="tel" type="button" data-en="copy">copiar</button></p>
+        <p data-en="São Paulo, SP, Brazil">São Paulo, SP, Brasil</p>
+        <em data-en="Futures-Informed Creativity">Criatividade Informada por Futuros</em>
       </div>
       <svg class="logo-m" viewBox="20 19 576 656" role="img" aria-label="Maia Oazem"><use href="#m"/></svg>
     </div>
@@ -431,12 +444,46 @@ body{font-variant-emoji:text}
 <script>
 document.querySelectorAll('.copiar').forEach(function(b){
   b.addEventListener('click', function(){
-    var alvo=document.getElementById(b.dataset.alvo), orig=b.textContent;
+    var alvo=document.getElementById(b.dataset.alvo); var orig=b.textContent;
     function volta(t){ b.textContent=t; setTimeout(function(){ b.textContent=orig; },1600); }
-    function seleciona(){ var r=document.createRange(); r.selectNodeContents(alvo); var s=window.getSelection(); s.removeAllRanges(); s.addRange(r); volta('selecionado'); }
-    try{ navigator.clipboard.writeText(alvo.textContent.trim()).then(function(){ volta('copiado'); }, seleciona); }catch(e){ seleciona(); }
+    function seleciona(){ var r=document.createRange(); r.selectNodeContents(alvo); var s=window.getSelection(); s.removeAllRanges(); s.addRange(r); volta(window.__copia ? window.__copia('sel') : 'selecionado'); }
+    try{ navigator.clipboard.writeText(alvo.textContent.trim()).then(function(){ volta(window.__copia ? window.__copia('ok') : 'copiado'); }, seleciona); }catch(e){ seleciona(); }
   });
 });
+</script>
+
+<script>
+// Idioma: PT-BR (padrão) ou EN. Cada texto traduzível tem o inglês no atributo data-en.
+(function(){
+  var els = document.querySelectorAll('[data-en]');
+  els.forEach(function(el){ el.setAttribute('data-pt', el.innerHTML); });
+  var foto = document.querySelector('[data-en-alt]');
+  if (foto) foto.setAttribute('data-pt-alt', foto.alt);
+  var COPIA = { pt:{ok:'copiado', sel:'selecionado'}, en:{ok:'copied', sel:'selected'} };
+  window.__idioma = 'pt';
+  function aplicar(l){
+    l = l === 'en' ? 'en' : 'pt';
+    window.__idioma = l;
+    document.documentElement.lang = l === 'en' ? 'en' : 'pt-BR';
+    els.forEach(function(el){ el.innerHTML = el.getAttribute(l === 'en' ? 'data-en' : 'data-pt'); });
+    if (foto) foto.alt = foto.getAttribute(l === 'en' ? 'data-en-alt' : 'data-pt-alt');
+    document.querySelectorAll('[data-lang]').forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.lang === l)); });
+    try { localStorage.setItem('idioma', l); } catch(e){}
+    try {
+      var u = new URL(location.href);
+      if (/^https?:$/.test(u.protocol)) {
+        if (l === 'en') u.searchParams.set('lang','en'); else u.searchParams.delete('lang');
+        history.replaceState(null, '', u.pathname + u.search + u.hash);
+      }
+    } catch(e){}
+  }
+  document.querySelectorAll('[data-lang]').forEach(function(b){ b.addEventListener('click', function(){ aplicar(b.dataset.lang); }); });
+  var inicial = null; try { inicial = new URLSearchParams(location.search).get('lang'); } catch(e){}
+  if (!inicial) { try { inicial = localStorage.getItem('idioma'); } catch(e){} }
+  if (!inicial) inicial = /^pt/i.test(navigator.language || 'pt') ? 'pt' : 'en';
+  aplicar(inicial);
+  window.__copia = function(chave){ return COPIA[window.__idioma][chave]; };
+})();
 </script>
 </body>
 </html>
