@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f6b4d0">
+  <meta name="description" content="Diagnóstico do Humano Biônico — uma autoavaliação da capacidade crítico-criativa e da agência sobre inteligência artificial, pelo Clube de Contexto.">
+  <title>diagnóstico do humano biônico · c/txt.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Instrument+Sans:wght@400;500&family=Courier+Prime&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rosa:#f6b4d0; --rosa-tinta:#c81e66; --roxo:#cdb8f4; --verde:#b5e7c6;
+      --azul:#bcd0fb; --amarelo:#f9ea8c; --papel:#fbf8f4;
+      --tinta:#141414; --mesa:#232323;
+      --serifa:"Cormorant Garamond",Garamond,Georgia,serif;
+      --grotesca:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+      --mono:"Courier Prime","Courier New",monospace;
+      --margem:clamp(22px,4.5vw,76px); --fio:1px;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--papel);color:var(--tinta);font:400 17px/1.47 var(--grotesca);-webkit-font-smoothing:antialiased}
+    button,input,textarea{font:inherit}
+    button{cursor:pointer}
+    button:disabled{cursor:not-allowed;opacity:.42}
+    button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--rosa-tinta);outline-offset:4px}
+    ::selection{background:var(--rosa);color:var(--tinta)}
+    [hidden]{display:none!important}
+    .wrap{width:min(100%,1680px);margin-inline:auto;padding-inline:var(--margem)}
+    .eyebrow{font:400 11px/1.3 var(--grotesca);letter-spacing:.14em;text-transform:uppercase}
+    .folio{font:400 26px/1 var(--serifa)}
+    .rule{height:1px;background:currentColor;opacity:.9}
+    .rule--thick{height:2px}
+    .masthead{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:69px;border-bottom:1px solid currentColor}
+    .brand{display:flex;align-items:baseline;gap:12px;white-space:nowrap}
+    .brand__name{font:400 30px/1 var(--serifa);letter-spacing:-.045em}
+    .brand__name i{font-weight:300}
+    .brand__sub{font-size:11px;letter-spacing:.05em}
+    .masthead__right{display:flex;gap:20px;align-items:center;font-size:12px}
+    .masthead__right span:first-child{letter-spacing:.07em}
+    .top-signature{display:flex;justify-content:space-between;align-items:center;padding:11px 0 10px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid currentColor}
+    .stage{min-height:calc(100svh - 70px);position:relative}
+    .stage--intro{background:var(--rosa)}
+    .intro__hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(265px,30%);gap:clamp(35px,7vw,110px);min-height:min(730px,76vh);align-items:end;padding-top:90px;padding-bottom:76px}
+    .intro__main{align-self:end}
+    .intro__issue{display:flex;gap:14px;align-items:center;margin-bottom:26px;font:300 clamp(60px,10vw,150px)/.8 var(--serifa)}
+    .intro__issue span{font:400 11px/1.2 var(--grotesca);letter-spacing:.12em;text-transform:uppercase;max-width:105px}
+    h1,h2,h3,p{margin-top:0}
+    .hero-title{font:300 clamp(64px,10.8vw,168px)/.77 var(--serifa);letter-spacing:-.05em;max-width:1050px;margin:0}
+    .hero-title i{font-weight:300}
+    .intro__aside{padding-bottom:10px}
+    .intro__aside p{font:400 clamp(17px,1.55vw,23px)/1.43 var(--grotesca);max-width:340px;margin:20px 0 38px}
+    .cta{display:inline-flex;align-items:center;justify-content:space-between;gap:45px;background:var(--tinta);color:var(--papel);border:1px solid var(--tinta);border-radius:0;padding:17px 20px;min-height:59px;text-align:left;transition:background .2s,color .2s;line-height:1.3}
+    .cta:hover{background:transparent;color:var(--tinta)}
+    .cta--outline{background:transparent;color:var(--tinta)}
+    .cta--outline:hover{background:var(--tinta);color:var(--papel)}
+    .cta--inverse{background:var(--papel);color:var(--tinta);border-color:var(--papel)}
+    .cta--inverse:hover{background:transparent;color:var(--papel)}
+    .cta__arrow{font:400 25px/1 var(--serifa)}
+    .intro__bottom{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid currentColor;padding:18px 0 35px;gap:32px}
+    .intro__bottom dt{font:400 10px/1.5 var(--grotesca);text-transform:uppercase;letter-spacing:.14em;margin-bottom:4px}
+    .intro__bottom dd{margin:0;font-size:14px;line-height:1.4}
+    .intro__after{padding-top:28px;padding-bottom:90px;display:grid;grid-template-columns:1fr 1.2fr;gap:12vw}
+    .intro__after h2{font:300 clamp(35px,5vw,72px)/.97 var(--serifa);letter-spacing:-.03em;margin-top:16px}
+    .intro__after p{max-width:470px;font-size:17px}
+    .intro__after ul{list-style:none;padding:0;margin:28px 0 0}
+    .intro__after li{padding:14px 0;border-top:1px solid currentColor;display:flex;gap:12px;justify-content:space-between}
+    .intro__after li:last-child{border-bottom:1px solid currentColor}
+    .page-header{padding-top:16px}
+    .page-header__row{display:flex;gap:12px;justify-content:space-between;align-items:center;padding-bottom:14px}
+    .meter{width:100%;height:2px;background:#d5d0ca;position:relative;overflow:hidden}
+    .meter__bar{height:100%;width:0;background:var(--tinta);transition:width .3s ease}
+    .question-page{min-height:calc(100svh - 69px);padding-bottom:35px}
+    .question-layout{display:grid;grid-template-columns:minmax(180px,30%) minmax(0,1fr);column-gap:clamp(38px,7vw,110px);padding-top:clamp(32px,6vw,100px)}
+    .question-side{align-self:start}
+    .question-side__num{font:300 clamp(95px,13vw,200px)/.8 var(--serifa);letter-spacing:-.045em;margin-bottom:24px}
+    .question-side__category{margin-top:20px;font:300 clamp(32px,4vw,58px)/.95 var(--serifa)}
+    .question-side__desc{font-size:14px;max-width:220px;line-height:1.5;margin-top:15px}
+    .question-main{max-width:850px}
+    .question-main__label{margin:8px 0 22px}
+    .question-main h2{font:300 clamp(39px,5.3vw,80px)/1.03 var(--serifa);letter-spacing:-.025em;min-height:140px;margin:0 0 clamp(42px,5.5vw,85px)}
+    .question-main h2 i{font-weight:300}
+    .options{border-top:2px solid var(--tinta);border-bottom:1px solid var(--tinta);display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
+    .choice{display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:22px;width:100%;min-width:0;background:transparent;color:var(--tinta);border:0;border-right:1px solid var(--tinta);border-radius:0;min-height:154px;padding:16px 14px 15px;text-align:left;transition:background .12s ease}
+    .choice:last-child{border-right:0}
+    .choice:hover{background:rgba(246,180,208,.22)}
+    .choice[aria-checked="true"]{background:var(--rosa)}
+    .choice__num{font:300 clamp(43px,4.7vw,72px)/.9 var(--serifa)}
+    .choice__check{font-size:18px;line-height:1;align-self:end}
+    .choice__label{font-size:12px;line-height:1.25;overflow-wrap:break-word;hyphens:auto}
+    .choice__footer{display:flex;justify-content:space-between;align-items:end;gap:3px;width:100%}
+    .choice:focus-visible{outline:2px solid var(--tinta);outline-offset:-4px;position:relative;z-index:2}
+    .question-foot{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:24px}
+    .plain-btn{border:0;background:transparent;color:inherit;padding:10px 0;text-decoration:none;font-size:13px;border-radius:0}
+    .plain-btn:hover{text-decoration:underline;text-underline-offset:4px}
+    .next-btn{display:inline-flex;gap:25px;align-items:center;background:transparent;color:var(--tinta);border:1px solid var(--tinta);border-radius:0;padding:12px 17px;min-height:45px;font-size:13px}
+    .next-btn:hover{background:var(--tinta);color:var(--papel)}
+    .keyboard{margin-top:33px;color:#605b58;font-size:11px}
+    .lead-section{padding:clamp(32px,5vw,76px) 0 110px;display:grid;grid-template-columns:minmax(210px,.9fr) minmax(0,1.1fr);gap:clamp(40px,8vw,140px)}
+    .lead-section h2{font:300 clamp(56px,7.2vw,108px)/.9 var(--serifa);letter-spacing:-.035em;max-width:530px;margin:23px 0 30px}
+    .lead-section h2 i{font-weight:300}
+    .lead-section__about{font-size:17px;max-width:410px}
+    .lead-number{font:300 96px/1 var(--serifa);margin-top:45px}
+    .lead-form{padding-top:10px}
+    .field-row{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+    .field{margin:0 0 27px}
+    .field label,.field-label{display:block;font-size:11px;letter-spacing:.11em;text-transform:uppercase;margin-bottom:10px}
+    .field input{display:block;width:100%;border:0;border-radius:0;border-bottom:1px solid var(--tinta);padding:10px 0 14px;outline:none;background:transparent;color:var(--tinta);font:400 19px/1.3 var(--grotesca)}
+    .field input:focus{border-bottom-width:2px;outline:none}
+    .field input::placeholder{color:#827f7a}
+    .field__hint{display:block;font-size:12px;color:#625e5b;margin-top:7px}
+    .field__error{color:#a21a42;margin-top:7px;font-size:12px;min-height:0}
+    .tool-list{border-top:2px solid var(--tinta);display:grid;grid-template-columns:1fr 1fr;margin-top:13px}
+    .tool-choice{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 9px 13px 0;border-bottom:1px solid var(--tinta);font-size:14px;cursor:pointer}
+    .tool-choice:nth-child(odd){margin-right:24px}
+    .tool-choice input{appearance:none;display:inline-grid;place-items:center;flex-shrink:0;order:2;width:18px;height:18px;border:1px solid var(--tinta);border-radius:0;background:transparent;margin:0;cursor:pointer}
+    .tool-choice input:checked{background:var(--tinta)}
+    .tool-choice input:checked::after{content:"✓";color:var(--papel);font-size:12px}
+    .tool-choice:has(input:focus-visible){outline:2px solid var(--rosa-tinta);outline-offset:2px}
+    .privacy{border-top:1px solid var(--tinta);padding-top:18px;margin-top:24px;font-size:13px;line-height:1.45;color:#47433f}
+    .privacy a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+    .consent-line{display:flex;align-items:flex-start;gap:11px;margin:16px 0 0;font-size:13px;cursor:pointer}
+    .consent-line input{margin:3px 0 0;width:17px;height:17px;accent-color:var(--tinta);flex-shrink:0}
+    .lead-actions{margin-top:33px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}
+    .lead-status{font-size:13px;color:#a21a42;min-height:18px;margin-top:17px}
+    .result-surface{background:var(--papel)}
+    .result-title-section{background:var(--rosa);padding-bottom:65px}
+    .result-title-layout{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(40px,8vw,140px);padding-top:64px;padding-bottom:60px;align-items:end}
+    .result-title-layout h2{font:300 clamp(57px,7.7vw,118px)/.88 var(--serifa);letter-spacing:-.04em;margin:10px 0 22px}
+    .result-title-layout h2 i{font-weight:300}
+    .result-title-layout__aside{max-width:480px;padding-bottom:8px}
+    .result-title-layout__aside p{font:400 clamp(18px,2vw,29px)/1.22 var(--grotesca)}
+    .result-meta{border-top:1px solid currentColor;border-bottom:1px solid currentColor;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding:15px 0;gap:25px}
+    .result-meta .eyebrow{margin-bottom:6px}
+    .result-meta div div:last-child{font-size:14px}
+    .result-main{padding-top:70px;padding-bottom:90px}
+    .result-main__grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(270px,.9fr);gap:clamp(45px,8vw,130px)}
+    .result-persona h3{font:300 clamp(45px,6.3vw,91px)/.92 var(--serifa);letter-spacing:-.03em;margin:15px 0 25px}
+    .result-persona__text{font:400 19px/1.45 var(--grotesca);max-width:570px;margin-bottom:28px}
+    .result-book{border-top:1px solid currentColor;padding:15px 0 0;font:300 27px/1.12 var(--serifa)}
+    .result-book em{font-weight:400}
+    .score-title{display:flex;justify-content:space-between;gap:20px;align-items:baseline;border-top:1px solid currentColor;padding-top:17px;margin-top:28px}
+    .score-title > span{font-size:14px}
+    .score-title strong{font:300 58px/.9 var(--serifa)}
+    .score-title strong small{font:400 15px/1 var(--grotesca);vertical-align:middle}
+    .score-line{height:2px;background:#d5d0ca;position:relative;margin-top:15px}
+    .score-line span{display:block;height:100%;background:var(--tinta)}
+    .score-explain{font-size:13px;color:#6c655e;margin-top:13px;max-width:380px}
+    .matrix-wrap{margin-top:70px;border-top:2px solid var(--tinta);padding-top:20px}
+    .matrix-heading{display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
+    .matrix-heading h3{font:300 42px/1 var(--serifa);margin-bottom:22px}
+    .matrix-heading p{font-size:12px;margin-bottom:22px}
+    .matrix-outer{padding:18px 26px 45px 56px;max-width:920px;margin-inline:auto;position:relative}
+    .matrix-axis-y{position:absolute;left:0;top:50%;transform:translate(-36%,-50%) rotate(-90deg);white-space:nowrap;font:400 11px/1 var(--grotesca);text-transform:uppercase;letter-spacing:.09em}
+    .matrix-axis-x{position:absolute;bottom:0;left:53%;transform:translateX(-50%);white-space:nowrap;font:400 11px/1 var(--grotesca);text-transform:uppercase;letter-spacing:.09em}
+    .matrix{position:relative;aspect-ratio:1.48;border-left:1px solid var(--tinta);border-bottom:1px solid var(--tinta);border-top:1px solid var(--tinta);border-right:1px solid var(--tinta);display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}
+    .matrix::before,.matrix::after{content:"";position:absolute;z-index:0;background:var(--tinta);opacity:.55}
+    .matrix::before{top:0;bottom:0;left:50%;width:1px}
+    .matrix::after{left:0;right:0;top:50%;height:1px}
+    .matrix-cell{padding:clamp(10px,2.5vw,24px);display:flex;align-items:flex-start;justify-content:flex-start;z-index:1}
+    .matrix-cell:nth-child(n+3){align-items:flex-end}
+    .matrix-cell__label{font:300 clamp(16px,2.25vw,30px)/1 var(--serifa);max-width:180px}
+    .matrix-dot{position:absolute;z-index:5;left:50%;bottom:50%;transform:translate(-50%,50%);width:20px;height:20px;background:var(--rosa);border:3px solid var(--tinta);border-radius:50%;outline:3px solid var(--papel);outline-offset:2px}
+    .matrix-dot::after{content:"VOCÊ";position:absolute;white-space:nowrap;left:25px;top:-4px;font:400 10px/1 var(--grotesca);letter-spacing:.07em}
+    .takeaways{padding-top:65px;padding-bottom:65px;border-top:2px solid var(--tinta)}
+    .takeaways h3{font:300 clamp(38px,5vw,70px)/.98 var(--serifa);max-width:800px;margin:25px 0 40px}
+    .takeaways__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px}
+    .takeaway{border-top:1px solid var(--tinta);padding-top:14px}
+    .takeaway__n{font:300 36px/1 var(--serifa);margin-bottom:24px}
+    .takeaway h4{font-size:15px;font-weight:500;margin:0 0 10px}
+    .takeaway p{font-size:14px;line-height:1.5;margin:0}
+    .note-panel{background:var(--tinta);color:var(--papel);padding:60px 0}
+    .note-panel .wrap{display:grid;grid-template-columns:1fr 1fr;gap:90px}
+    .note-panel h3{font:300 clamp(43px,6vw,85px)/.95 var(--serifa);letter-spacing:-.03em;margin:20px 0}
+    .note-panel p{font-size:15px;line-height:1.55;max-width:470px;margin:18px 0 0}
+    .result-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:34px}
+    .site-footer{background:var(--papel);color:var(--tinta);padding-bottom:23px}
+    .footer-top{border-top:1px solid currentColor;display:flex;justify-content:space-between;gap:28px;align-items:center;padding-top:18px;padding-bottom:45px}
+    .footer-top .footer-name{font:300 44px/1 var(--serifa)}
+    .footer-bottom{border-top:1px solid currentColor;padding-top:12px;display:flex;gap:24px;justify-content:space-between;font-size:11px;letter-spacing:.03em}
+    .preview-banner{display:flex;gap:24px;align-items:baseline;border-top:2px solid var(--tinta);border-bottom:1px solid var(--tinta);padding-top:16px;padding-bottom:16px;margin-top:25px;font-size:14px;line-height:1.45}
+    .preview-banner .eyebrow{min-width:175px}
+    @media(max-width:650px){.preview-banner{display:block}.preview-banner .eyebrow{display:block;margin-bottom:10px}}
+    .screen-reader-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+    @media (max-width:920px){
+      .intro__hero{grid-template-columns:1fr;align-items:end;gap:50px;min-height:0;padding-top:75px}
+      .intro__aside{display:grid;grid-template-columns:1fr auto;gap:25px;align-items:end;padding:0}
+      .intro__aside p{margin:0;max-width:470px}
+      .intro__after{gap:40px}
+      .question-layout{grid-template-columns:175px 1fr;gap:30px}
+      .lead-section{grid-template-columns:1fr;gap:30px}
+      .lead-section__header{display:grid;grid-template-columns:1fr auto;gap:28px}
+      .lead-number{margin-top:35px}
+    }
+    @media (max-width:650px){
+      :root{--margem:22px}
+      body{font-size:15px}
+      .masthead{min-height:60px}
+      .brand__name{font-size:28px}
+      .brand__sub{display:none}
+      .masthead__right{gap:9px}
+      .masthead__right span:first-child{display:none}
+      .top-signature{font-size:9px;line-height:1.2}
+      .top-signature span:last-child{text-align:right;max-width:125px}
+      .intro__hero{padding-top:75px;padding-bottom:48px;gap:75px}
+      .intro__issue{font-size:75px;margin-bottom:20px}
+      .intro__hero .hero-title{font-size:clamp(65px,17vw,110px)}
+      .intro__aside{display:block}
+      .intro__aside p{font-size:17px;margin:0 0 28px}
+      .intro__bottom{grid-template-columns:1fr 1fr;gap:22px}
+      .intro__bottom>div:last-child{grid-column:span 2}
+      .intro__after{grid-template-columns:1fr;padding-top:60px;padding-bottom:70px}
+      .intro__after h2{font-size:58px}
+      .question-page{padding-bottom:40px}
+      .question-layout{display:block;padding-top:22px}
+      .question-side{display:flex;align-items:center;gap:20px;padding-bottom:22px;border-bottom:1px solid var(--tinta);margin-bottom:20px}
+      .question-side__num{font-size:67px;margin:0}
+      .question-side__meta{flex:1}
+      .question-side__meta .eyebrow{font-size:10px}
+      .question-side__category{font-size:28px;margin:7px 0 0}
+      .question-side__desc{display:none}
+      .question-main__label{font-size:10px;margin:0 0 13px}
+      .question-main h2{font-size:clamp(37px,10vw,56px);min-height:0;margin-bottom:36px}
+      .choice{min-height:142px;padding:12px 6px 12px;gap:17px}
+      .choice__num{font-size:48px}
+      .choice__label{font-size:10px;letter-spacing:-.018em}
+      .choice__check{font-size:13px}
+      .question-foot{margin-top:14px}
+      .keyboard{display:none}
+      .lead-section{padding-top:35px;padding-bottom:65px}
+      .lead-section__header{display:block}
+      .lead-section h2{font-size:68px;max-width:450px}
+      .lead-number{display:none}
+      .field-row{grid-template-columns:1fr;gap:0}
+      .tool-list{grid-template-columns:1fr 1fr}
+      .tool-choice{font-size:12px}
+      .result-title-section{padding-bottom:30px}
+      .result-title-layout{display:block;padding-top:52px;padding-bottom:35px}
+      .result-title-layout h2{font-size:76px}
+      .result-title-layout__aside p{font-size:18px;margin-top:35px}
+      .result-meta{grid-template-columns:1fr 1fr;gap:18px}
+      .result-meta>div:nth-child(3){grid-column:span 2}
+      .result-main{padding-top:45px;padding-bottom:45px}
+      .result-main__grid{display:block}
+      .result-persona h3{font-size:59px}
+      .result-book{margin-bottom:55px}
+      .score-panel{margin-bottom:40px}
+      .matrix-wrap{margin-top:38px}
+      .matrix-heading h3{font-size:35px}
+      .matrix-outer{padding:12px 9px 40px 29px}
+      .matrix-axis-y{font-size:9px;left:0;transform:translate(-44%,-50%) rotate(-90deg)}
+      .matrix-axis-x{font-size:9px}
+      .matrix{aspect-ratio:1.08}
+      .matrix-cell{padding:10px}
+      .matrix-cell__label{font-size:17px}
+      .matrix-dot{width:16px;height:16px;border-width:2px;outline-width:2px;outline-offset:1px}
+      .matrix-dot::after{left:19px;font-size:8px}
+      .takeaways{padding-top:40px;padding-bottom:50px}
+      .takeaways h3{font-size:52px}
+      .takeaways__grid{grid-template-columns:1fr;gap:32px}
+      .takeaway__n{margin-bottom:12px}
+      .note-panel{padding:45px 0}
+      .note-panel .wrap{display:block}
+      .note-panel h3{font-size:56px}
+      .note-panel p{margin-top:28px}
+      .footer-top{align-items:flex-start;gap:15px}
+      .footer-top .footer-name{font-size:35px}
+      .footer-bottom{display:block}
+      .footer-bottom>span{display:block;margin-bottom:7px}
+    }
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+    @media print{
+      @page{size:A4;margin:15mm}
+      body{background:white!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;font-size:12pt}
+      .masthead,.site-footer,.result-actions,.note-panel .result-actions,.cta,.plain-btn{display:none!important}
+      .stage--intro,.question-page,.lead-page{display:none!important}
+      .result-surface{display:block!important}
+      .result-title-layout{padding:25px 0 15px;grid-template-columns:1fr 1fr}
+      .result-title-layout h2{font-size:56pt}
+      .result-title-layout__aside p{font-size:14pt}
+      .result-title-section{padding-bottom:15px}
+      .result-meta{padding:10px 0}
+      .result-main{padding-top:25px;padding-bottom:20px}
+      .result-main__grid{gap:30px}
+      .result-persona h3{font-size:43pt}
+      .result-persona__text{font-size:11pt}
+      .matrix-wrap{margin-top:20px;break-inside:avoid}
+      .matrix{aspect-ratio:1.8}
+      .takeaways{padding-top:18px;padding-bottom:15px}
+      .takeaways h3{font-size:32pt;margin:14px 0 20px}
+      .takeaways__grid{gap:15px}
+      .note-panel{background:white!important;color:black!important;border-top:2px solid black;padding:20px 0}
+      .note-panel .wrap{grid-template-columns:1fr 1fr;gap:30px}
+      .note-panel h3{font-size:30pt}
+      .note-panel p{font-size:10pt}
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap" id="siteHeader">
+    <div class="masthead">
+      <div class="brand" aria-label="Clube de Contexto">
+        <span class="brand__name">c/<i>txt.</i></span>
+        <span class="brand__sub">clube de contexto</span>
+      </div>
+      <div class="masthead__right"><span>laborateliê · gira.</span><span class="eyebrow">nº 001 / pós-IA</span></div>
+    </div>
+  </header>
+
+  <main id="app">
+    <section id="intro" class="stage stage--intro" aria-labelledby="introTitle">
+      <div class="wrap">
+        <div class="top-signature"><span>protocolo anti-brainrot</span><span>uma investigação crítico-criativa</span></div>
+        <div class="intro__hero">
+          <div class="intro__main">
+            <div class="intro__issue" aria-hidden="true">I <span>um estudo<br>sobre nós</span></div>
+            <h1 id="introTitle" class="hero-title">humano<br><i>biônico.</i></h1>
+          </div>
+          <div class="intro__aside">
+            <div class="rule rule--thick"></div>
+            <p>A inteligência artificial está ampliando sua capacidade de pensar e criar — ou substituindo parte do exercício de fazê-lo?</p>
+            <button type="button" class="cta" id="startBtn"><span>começar autoavaliação</span><span class="cta__arrow" aria-hidden="true">↗</span></button>
+          </div>
+        </div>
+        <div class="intro__bottom">
+          <div><dt>instrumento</dt><dd>20 questões · aproximadamente 5 a 7 minutos</dd></div>
+          <div><dt>dois eixos</dt><dd>musculatura crítico-criativa<br>agência sobre a IA</dd></div>
+          <div><dt>resultado</dt><dd>um mapa individual e práticas para exercitar o pensamento</dd></div>
+        </div>
+      </div>
+    </section>
+    <section id="introAfter" aria-labelledby="aboutTitle">
+      <div class="wrap intro__after">
+        <div><span class="eyebrow">[ a mente no pós-IA ]</span><h2 id="aboutTitle">o que ainda<br><i>exercitamos?</i></h2></div>
+        <div>
+          <p>Este instrumento explora como você percebe seus próprios hábitos de leitura, escrita, imaginação, dúvida e colaboração com ferramentas de IA.</p>
+          <p>Responda pensando nos <em>últimos 30 dias</em>, não no que seria ideal fazer. Não há respostas certas. Tempo estimado: <em>5 a 7 minutos</em>.</p>
+          <ul aria-label="Etapas do diagnóstico">
+            <li><span>01 · 20 afirmações sobre práticas de pensamento</span><span>↗</span></li>
+            <li><span>02 · identificação profissional para acessar o mapa</span><span>↗</span></li>
+            <li><span>03 · resultado, quadrante e propostas de exercício</span><span>↗</span></li>
+          </ul>
+          <p style="margin-top:22px;font-size:12px;color:#665f58">Instrumento exploratório de autopercepção, não validado como teste psicológico ou clínico. Na demonstração, não há coleta ou envio de dados a um servidor.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="questionStage" class="question-page" hidden aria-labelledby="questionText">
+      <div class="wrap">
+        <div class="page-header">
+          <div class="page-header__row"><span class="eyebrow" id="questionAxisMeta">01 / musculatura crítico-criativa</span><span class="eyebrow" id="progressText">01 de 20</span></div>
+          <div class="meter" role="progressbar" aria-label="Progresso da avaliação" aria-valuemin="0" aria-valuemax="20" aria-valuenow="0" id="progress"><div class="meter__bar" id="progressBar"></div></div>
+        </div>
+        <div class="question-layout">
+          <aside class="question-side">
+            <div class="question-side__num" aria-hidden="true" id="questionNo">01</div>
+            <div class="question-side__meta">
+              <span class="eyebrow" id="questionKind">[ leitura ]</span>
+              <div class="question-side__category" id="questionCategory">leitura</div>
+              <p class="question-side__desc" id="questionSideDesc">Como o pensamento humano é exercitado.</p>
+            </div>
+          </aside>
+          <div class="question-main">
+            <div class="eyebrow question-main__label">nos últimos 30 dias, com que frequência isto aconteceu?</div>
+            <h2 id="questionText" tabindex="-1"></h2>
+            <div id="choices" class="options" role="radiogroup" aria-label="Escolha sua frequência"></div>
+            <div class="question-foot">
+              <button type="button" class="plain-btn" id="prevQuestion">← questão anterior</button>
+              <span class="eyebrow" aria-live="polite">toque em 1–5 para avançar →</span>
+            </div>
+            <div class="keyboard">Atalho: use as teclas 1–5 para responder e avançar. Você pode voltar e alterar qualquer resposta.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="leadStage" class="lead-page" hidden aria-labelledby="leadTitle">
+      <div class="wrap">
+        <div class="page-header"><div class="page-header__row"><span class="eyebrow">20 / 20 · respostas concluídas</span><span class="eyebrow">acesso ao resultado</span></div><div class="rule rule--thick"></div></div>
+        <div class="lead-section">
+          <div class="lead-section__header">
+            <div><span class="eyebrow">[ quase lá ]</span><h2 id="leadTitle">seu mapa<br><i>começa aqui.</i></h2><p class="lead-section__about">Para acessar seu perfil, informe seus dados profissionais e quais sistemas de IA fazem parte da sua rotina de trabalho.</p></div>
+            <div class="lead-number" aria-hidden="true">II</div>
+          </div>
+          <form class="lead-form" id="leadForm" novalidate>
+            <div class="field-row">
+              <div class="field"><label for="leadName">01 / nome</label><input id="leadName" name="name" autocomplete="name" placeholder="Como podemos te chamar?" required maxlength="120"><div class="field__error" id="nameError"></div></div>
+              <div class="field"><label for="leadCompany">02 / empresa</label><input id="leadCompany" name="company" autocomplete="organization" placeholder="Nome da organização" required maxlength="120"><div class="field__error" id="companyError"></div></div>
+            </div>
+            <div class="field"><label for="leadEmail">03 / e-mail corporativo</label><input id="leadEmail" name="email" type="email" inputmode="email" autocomplete="email" placeholder="voce@empresa.com" required maxlength="254"><span class="field__hint">Utilize um endereço profissional, não um e-mail pessoal.</span><div class="field__error" id="emailError"></div></div>
+            <div class="field"><span class="field-label" id="toolsLabel">04 / quais IAs você usa no trabalho?</span><span class="field__hint">Selecione todas as opções que fazem parte da sua rotina profissional.</span><div class="tool-list" id="toolsList" role="group" aria-labelledby="toolsLabel"></div><div class="field__error" id="toolsError"></div></div>
+            <div class="field" id="otherToolField" hidden><label for="otherTool">Outras ferramentas</label><input id="otherTool" name="otherTool" placeholder="Quais?" maxlength="150"></div>
+            <div class="privacy" id="privacyNote">Esta versão é uma demonstração: nome, e-mail, empresa, ferramentas e respostas são processados apenas nesta sessão do navegador. Nada é enviado ou armazenado em servidores. Para captar cadastros em um site publicado, é necessário configurar a integração de dados.</div>
+            <div id="turnstileContainer" aria-label="Verificação de segurança" hidden></div>
+            <div id="productionConsents" hidden>
+              <label class="consent-line"><input type="checkbox" id="privacyConsent"><span>Li as informações de privacidade e concordo com o processamento dos meus dados para gerar e disponibilizar a autoavaliação.</span></label>
+              <label class="consent-line"><input type="checkbox" id="marketingConsent"><span>Quero receber comunicações e informações sobre as iniciativas do Clube de Contexto. <em>(Opcional.)</em></span></label>
+            </div>
+            <div class="lead-actions"><button type="button" class="plain-btn" id="backToQuestions">← revisar respostas</button><button type="submit" class="cta" id="getResultBtn"><span>revelar meu mapa</span><span class="cta__arrow" aria-hidden="true">↗</span></button></div>
+            <div id="leadStatus" class="lead-status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="resultStage" class="result-surface" hidden aria-labelledby="resultMainTitle">
+      <div class="wrap preview-banner" id="demoNotice" hidden role="status">
+        <span class="eyebrow">modo de demonstração</span>
+        <span>Este é um resultado calculado neste navegador. Seu nome, e-mail, empresa e respostas não foram enviados nem armazenados em uma base de dados.</span>
+      </div>
+      <div class="result-title-section">
+        <div class="wrap">
+          <div class="top-signature"><span>diagnóstico do humano biônico</span><span>c/txt. · mapa individual</span></div>
+          <div class="result-title-layout">
+            <div><span class="eyebrow">[ iii / seu resultado ]</span><h2 id="resultMainTitle">seu jeito<br>de <i>pensar.</i></h2></div>
+            <div class="result-title-layout__aside"><p>Uma fotografia de como você percebe seu exercício crítico-criativo e sua relação com a IA neste momento.</p></div>
+          </div>
+          <div class="result-meta">
+            <div><div class="eyebrow">participante</div><div id="resultName">—</div></div>
+            <div><div class="eyebrow">organização</div><div id="resultCompany">—</div></div>
+            <div><div class="eyebrow">data da leitura</div><div id="resultDate">—</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="wrap result-main">
+        <div class="result-main__grid">
+          <div class="result-persona">
+            <span class="eyebrow">[ padrão predominante · leitura exploratória ]</span>
+            <h3 id="personaName">o humano biônico.</h3>
+            <p class="result-persona__text" id="personaDescription"></p>
+            <p class="result-book"><span class="eyebrow" style="display:block;margin-bottom:9px">livro que conversa com este quadrante</span><em id="personaBook">—</em><br><span id="personaAuthor" style="font:400 13px/1.4 var(--grotesca)"></span></p>
+          </div>
+          <div class="score-panel">
+            <span class="eyebrow">[ dois eixos · 0–100 ]</span>
+            <div class="score-title"><span>musculatura crítico-criativa</span><strong><span id="scoreX">—</span><small>/100</small></strong></div>
+            <div class="score-line"><span id="scoreBarX" style="width:0%"></span></div>
+            <div class="score-explain">Leitura, reflexão, escrita, criação, autoria e tolerância à ambiguidade.</div>
+            <div class="score-title"><span>agência sobre a IA</span><strong><span id="scoreY">—</span><small>/100</small></strong></div>
+            <div class="score-line"><span id="scoreBarY" style="width:0%"></span></div>
+            <div class="score-explain">Dúvida, verificação, contextualização, divergência e transferência de aprendizagem.</div>
+            <div class="score-explain" style="margin-top:30px;border-top:1px solid var(--tinta);padding-top:15px">Pontuações relativas a respostas de frequência. Não equivalem a percentuais de capacidade objetiva, nem a um índice psicométrico validado.</div>
+          </div>
+        </div>
+        <div class="matrix-wrap">
+          <div class="matrix-heading"><h3>o mapa de <i>autonomia.</i></h3><p>Quanto mais à direita, maior a musculatura. Quanto mais acima, maior a agência.</p></div>
+          <div class="matrix-outer">
+            <span class="matrix-axis-y">agência crítica sobre a IA ↑</span>
+            <div class="matrix" id="resultMatrix" role="img" aria-label="Matriz de quatro quadrantes; posição do participante determinada pelas duas pontuações">
+              <div class="matrix-cell"><span class="matrix-cell__label">cético<br><i>exausto</i></span></div>
+              <div class="matrix-cell"><span class="matrix-cell__label">humano<br><i>biônico</i></span></div>
+              <div class="matrix-cell"><span class="matrix-cell__label">estágio<br><i>brainrot</i></span></div>
+              <div class="matrix-cell"><span class="matrix-cell__label">sedentário<br><i>iludido</i></span></div>
+              <div class="matrix-dot" id="matrixDot" aria-hidden="true"></div>
+            </div>
+            <span class="matrix-axis-x">musculatura crítico-criativa →</span>
+          </div>
+        </div>
+      </div>
+      <div class="wrap takeaways">
+        <span class="eyebrow">[ próximos movimentos ]</span><h3>três exercícios para<br><i>continuar pensando.</i></h3>
+        <div class="takeaways__grid" id="takeawayList"></div>
+      </div>
+      <div class="note-panel">
+        <div class="wrap">
+          <div><span class="eyebrow">[ a leitura do resultado ]</span><h3>não é um<br><i>diagnóstico clínico.</i></h3></div>
+          <div><p>Este questionário é um instrumento exploratório de autopercepção dos últimos 30 dias. Os quadrantes são metáforas narrativas; não classificam a inteligência, o valor profissional ou a saúde mental de ninguém.</p><p>O ponto médio de cada eixo é usado apenas para posicionamento visual. A ferramenta ainda exige validação e não permite concluir que a IA causou ganho ou perda de capacidade. Se você não usa IA, o eixo de agência deve ser interpretado com cautela.</p><p>O Clube de Contexto propõe exercitar essas práticas por meio de leitura profunda, debate crítico, escrita humana e produção de contextos para a IA.</p>
+            <div class="result-actions"><button type="button" class="cta cta--inverse" id="printBtn"><span>salvar ou imprimir resultado</span><span class="cta__arrow" aria-hidden="true">↗</span></button><button type="button" class="cta cta--inverse" id="copyBtn"><span>copiar resumo</span><span class="cta__arrow" aria-hidden="true">↗</span></button></div>
+            <p id="copyStatus" aria-live="polite" style="font-size:12px"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap"><div class="footer-top"><span class="footer-name">c/<i>txt.</i></span><span class="eyebrow">Clube de Contexto · laborateliê</span></div><div class="footer-bottom"><span>Maia Oazem · Artista Temporal</span><span>é preciso pensar a mente no pós-IA</span><span>© 2026 · gira. laboratório de futuros</span></div></div>
+  </footer>
+  <script>
+  (() => {
+    'use strict';
+    // Para operar como captação de leads, configure um endpoint HTTPS que receba
+    // JSON POST e responda com status 2xx. Leia o README antes de publicar.
+    const CONFIG = {
+      leadEndpoint: '',
+      privacyPolicyUrl: '',
+      turnstileSiteKey: '',
+      dataController: 'Clube de Contexto · gira. laboratório de futuros'
+    };
+    const QUESTIONS = [
+      {axis:'x',tag:'Leitura',text:'Para me atualizar, eu leio documentos, artigos, notícias, livros e fontes originais, antes de ler, ver, ouvir ou produzir resumos com IA.',practice:'Reservar um período de leitura de uma fonte original antes de consultar a síntese automática.'},
+      {axis:'x',tag:'Escrita',text:'Para ter ideias e argumentos, eu primeiro elaboro algo manualmente ou digitalmente, sem apoio da IA, e depois comparo com as visões da IA.',practice:'Começar um problema escrevendo livremente sua interpretação em papel, teclado ou mapa visual.'},
+      {axis:'x',tag:'Discussão',text:'Participo de discussões que confrontam premissas, argumentos e interpretações diferentes, em vez de buscar rapidamente um consenso.',practice:'Levar uma hipótese para uma conversa e convidar duas pessoas a construir objeções a ela.'},
+      {axis:'x',tag:'Reflexão',text:'Reservo momentos para pensar sobre problemas e ideias sem recorrer imediatamente a uma interface de IA.',practice:'Proteger um intervalo de reflexão sem chat nem notificações para formular uma pergunta própria.'},
+      {axis:'x',tag:'Imaginação',text:'Quando preciso criar algo novo, eu tenho prazer e confiança em explorar associações e ideias próprias antes de me apoiar nas sugestões da IA.',practice:'Inventar três alternativas diferentes antes de pedir repertório adicional à IA.'},
+      {axis:'x',tag:'Ambiguidade',text:'Consigo sustentar a incerteza e a ausência de respostas imediatas enquanto elaboro uma ideia ou solução.',practice:'Permanecer com uma pergunta aberta e registrar hipóteses concorrentes antes de buscar uma resposta.'},
+      {axis:'x',tag:'Conexões',text:'Faço conexões entre conhecimentos, experiências, referências culturais e assuntos aparentemente distantes para desenvolver novas perspectivas.',practice:'Conectar duas referências de áreas diferentes e escrever uma ideia que não apareça em nenhuma delas isoladamente.'},
+      {axis:'x',tag:'Experimentação',text:'Experimento diferentes caminhos, formatos e possibilidades criativas antes de considerar uma solução suficientemente desenvolvida.',practice:'Prototipar duas versões realmente diferentes da mesma ideia e comparar o que cada uma revela.'},
+      {axis:'x',tag:'Autoria',text:'Consigo explicar e defender as ideias centrais de um trabalho sem depender das formulações produzidas pela IA.',practice:'Explicar o argumento principal de um projeto com palavras próprias, sem consultar a conversa com IA.'},
+      {axis:'x',tag:'Terceirização',text:'Percebo que tenho recorrido cada vez mais à IA para iniciar tarefas de leitura, escrita, reflexão ou criação que antes conseguia desenvolver por conta própria.',reverse:true,practice:'Escolher uma tarefa de elaboração para começar sem IA e comparar depois o que a ferramenta amplia.'},
+      {axis:'y',tag:'Contestação',text:'Questiono respostas da IA, identificando premissas frágeis, lacunas, contradições e limitações.',practice:'Pedir evidências e identificar três pressupostos nas respostas que parecerem mais convincentes.'},
+      {axis:'y',tag:'Verificação',text:'Procuro evidências, fontes e perspectivas independentes antes de incorporar informações ou recomendações relevantes da IA.',practice:'Conferir uma afirmação da IA em fontes primárias e registrar o que mudou na sua conclusão.'},
+      {axis:'y',tag:'Autonomia',text:'Consigo discordar da recomendação da IA e sustentar uma decisão diferente quando meus critérios apontam para outro caminho.',practice:'Escrever seus critérios de decisão antes de confrontá-los com a recomendação da ferramenta.'},
+      {axis:'y',tag:'Discernimento',text:'Consigo perceber quando é preciso investigar as premissas de uma resposta da IA, mesmo quando ela parece articulada e convincente.',practice:'Diante de uma resposta confiante, listar o que precisaria ser verdadeiro para ela estar correta.'},
+      {axis:'y',tag:'Fricção',text:'Peço à IA que confronte minhas ideias, apresente contra-argumentos, explore alternativas e revele pontos cegos.',practice:'Pedir à IA o melhor argumento contrário à sua ideia — e decidir o que merece revisão.'},
+      {axis:'y',tag:'Contextualização',text:'Forneço à IA referências, experiências, objetivos, restrições e critérios próprios para orientar a qualidade de suas respostas.',practice:'Criar um pequeno contexto autoral com objetivos, fontes, critérios e exemplos antes de executar uma tarefa.'},
+      {axis:'y',tag:'Estruturas',text:'Desenvolvo e atualizo métodos, frameworks, repertórios e orientações que ajudam a IA a trabalhar de acordo com contextos específicos.',practice:'Transformar uma experiência de trabalho num conjunto de perguntas e critérios reutilizáveis pela equipe.'},
+      {axis:'y',tag:'Diversidade',text:'Utilizo a IA para explorar perspectivas que divergem das minhas e questionar soluções convencionais, em vez de apenas confirmar minhas ideias.',practice:'Explorar com a IA três visões divergentes sobre um problema e registrar onde elas abrem possibilidades.'},
+      {axis:'y',tag:'Experimentação',text:'Utilizo diferentes interações e abordagens com a IA para investigar possibilidades, testar hipóteses e aprofundar problemas.',practice:'Testar uma hipótese com duas estratégias de exploração diferentes e observar seus limites.'},
+      {axis:'y',tag:'Transferência',text:'Transformo aprendizados das interações com IA em conhecimentos e práticas que consigo aplicar posteriormente, inclusive sem a ferramenta.',practice:'Após uma interação útil, registrar o aprendizado e reaplicá-lo numa tarefa posterior sem consultar a IA.'}
+    ];
+    const CHOICES = ['Nunca ou quase nunca','Raramente','Às vezes','Frequentemente','Sempre ou quase sempre'];
+    const TOOLS = ['ChatGPT','Microsoft Copilot','Google Gemini','Claude','Perplexity','GitHub Copilot','Notion AI','Grok','Outras','Não utilizo IA no trabalho'];
+    const PERSONAS = {
+      'high-high': {name:'o humano biônico.',book:'A teoria da bolsa de ficção',author:'Ursula K. Le Guin',description:'Você relata exercício próprio de leitura, elaboração e criação, combinado à capacidade de orientar e questionar a IA. Nesse padrão, a ferramenta pode funcionar como ampliação do repertório e da experimentação, sem substituir o julgamento humano.'},
+      'low-high': {name:'o cético exausto.',book:'O mundo assombrado pelos demônios',author:'Carl Sagan',description:'Você relata capacidade de questionar e orientar a IA, mas menos frequência de práticas próprias de elaboração e criação. O próximo movimento pode ser converter esse olhar crítico em mais leitura, escrita, reflexão e experimentação humana.'},
+      'high-low': {name:'o sedentário iludido.',book:'Pensar, rápido e devagar',author:'Daniel Kahneman',description:'Você relata repertório e exercício criativo próprios, mas menos práticas de contestação, contextualização e verificação da IA. O ponto de atenção é a possibilidade de aceitar soluções fluentes da máquina sem submetê-las ao mesmo rigor do seu próprio pensamento.'},
+      'low-low': {name:'o estágio brainrot.',book:'Admirável mundo novo',author:'Aldous Huxley',description:'Você relata menor frequência tanto de práticas próprias de elaboração quanto de agência crítica diante da IA. O termo é uma provocação narrativa sobre hábitos observados, não um diagnóstico ou característica pessoal. Há espaço para reconstruir rotinas de leitura, imaginação, debate e revisão.'}
+    };
+    const PERSONAL_DOMAINS = new Set(['gmail.com','googlemail.com','hotmail.com','hotmail.com.br','outlook.com','outlook.com.br','live.com','live.com.br','yahoo.com','yahoo.com.br','yahoo.com.ar','icloud.com','me.com','mac.com','aol.com','proton.me','protonmail.com','pm.me','bol.com.br','uol.com.br','terra.com.br','ig.com.br','msn.com','mail.com','gmx.com','gmx.net','zoho.com','yandex.com','yandex.ru','qq.com','163.com']);
+    const state = {answers:Array(20).fill(null),index:0,profile:null,results:null};
+    const byId = id => document.getElementById(id);
+    const sections = ['intro','introAfter','questionStage','leadStage','resultStage'];
+    const setText = (id,text) => {byId(id).textContent = text};
+    function show(stage){
+      sections.forEach(s => {byId(s).hidden = stage === 'intro' ? !(s==='intro'||s==='introAfter') : s!==stage;});
+      document.body.style.background = stage==='intro' ? 'var(--rosa)' : 'var(--papel)';
+      window.scrollTo({top:0,behavior:'instant'});
+    }
+    function renderQuestion(){
+      const i=state.index, q=QUESTIONS[i];
+      setText('questionNo',String(i+1).padStart(2,'0'));
+      setText('questionAxisMeta',i<10?'01 / musculatura crítico-criativa':'02 / agência sobre a IA');
+      setText('progressText',`${String(i+1).padStart(2,'0')} de 20`);
+      setText('questionKind',`[ ${q.tag.toLowerCase()} ]`);
+      setText('questionCategory',q.tag.toLowerCase());
+      setText('questionSideDesc',q.axis==='x'?'Como exercitamos nossa capacidade de pensar e criar.':'Como questionamos, orientamos e aprendemos com a máquina.');
+      setText('questionText',q.text);
+      const answered=state.answers.filter(a=>a!==null).length;
+      byId('progressBar').style.width=`${answered/20*100}%`;
+      byId('progress').setAttribute('aria-valuenow',String(answered));
+      const options=byId('choices');options.replaceChildren();
+      CHOICES.forEach((label,j)=>{
+        const value=j+1, btn=document.createElement('button');
+        btn.type='button';btn.className='choice';btn.setAttribute('role','radio');
+        btn.setAttribute('aria-checked',String(state.answers[i]===value));
+        btn.setAttribute('aria-label',`${value}: ${label}`);
+        const n=document.createElement('span');n.className='choice__num';n.textContent=String(value);
+        const name=document.createElement('span');name.className='choice__label';name.textContent=label;
+        const tick=document.createElement('span');tick.className='choice__check';tick.setAttribute('aria-hidden','true');tick.textContent=state.answers[i]===value?'✓':'';
+        const bottom=document.createElement('span');bottom.className='choice__footer';bottom.append(name,tick);
+        btn.append(n,bottom);
+        btn.addEventListener('click',()=>choose(value));options.append(btn);
+      });
+      byId('prevQuestion').textContent=i===0?'← voltar ao início':'← questão anterior';
+
+    }
+    function choose(value){state.answers[state.index]=value;next();}
+    function next(){
+      if(state.answers[state.index]===null)return;
+      if(state.index===19){show('leadStage');mountTurnstile();byId('leadName').focus({preventScroll:true});return;}
+      state.index++;renderQuestion();window.scrollTo({top:0,behavior:'instant'});byId('questionText').focus({preventScroll:true});
+    }
+    function prev(){if(state.index===0){show('intro');return;}state.index--;renderQuestion();window.scrollTo({top:0,behavior:'instant'});byId('questionText').focus({preventScroll:true});}
+    function renderTools(){
+      const list=byId('toolsList');
+      TOOLS.forEach(tool=>{
+        const label=document.createElement('label');label.className='tool-choice';
+        const name=document.createElement('span');name.textContent=tool;
+        const input=document.createElement('input');input.type='checkbox';input.name='aiTools';input.value=tool;
+        input.addEventListener('change',()=>{
+          if(input.checked && tool==='Não utilizo IA no trabalho'){
+            list.querySelectorAll('input').forEach(x=>{if(x!==input)x.checked=false;});
+          }else if(input.checked){const none=[...list.querySelectorAll('input')].find(x=>x.value==='Não utilizo IA no trabalho');if(none)none.checked=false;}
+          byId('otherToolField').hidden=![...list.querySelectorAll('input:checked')].some(x=>x.value==='Outras');
+          byId('toolsError').textContent='';
+        });label.append(name,input);list.append(label);
+      });
+    }
+    const adjust=(value,reverse)=>reverse?6-value:value;
+    function calcResults(){
+      const scores=QUESTIONS.map((q,i)=>adjust(state.answers[i],!!q.reverse));
+      const xRaw=scores.slice(0,10).reduce((a,b)=>a+b,0),yRaw=scores.slice(10).reduce((a,b)=>a+b,0);
+      const x=Math.round((xRaw-10)/40*100),y=Math.round((yRaw-10)/40*100);
+      return {x,y,xRaw,yRaw,scores,key:`${xRaw>=30?'high':'low'}-${yRaw>=30?'high':'low'}`};
+    }
+    function privacySetup(){
+      if(demoMode || !CONFIG.leadEndpoint){
+        byId('privacyNote').textContent='Prévia local: as informações fornecidas são utilizadas somente para apresentar o mapa nesta aba. Não existe envio ou gravação de cadastro. A publicação com captação requer configurar a API, o banco D1 e a política de privacidade.';
+        byId('productionConsents').hidden=true;
+        return;
+      }
+      const info=`${CONFIG.dataController} processará os dados informados para disponibilizar seu resultado e avaliar o instrumento. A autorização para outras comunicações é opcional.`;
+      byId('privacyNote').textContent=info+' Verifique a política de privacidade para informações sobre guarda, acesso e exclusão de dados.';
+      if(CONFIG.privacyPolicyUrl){const a=document.createElement('a');a.href=CONFIG.privacyPolicyUrl;a.target='_blank';a.rel='noopener noreferrer';a.textContent=' Política de privacidade.';byId('privacyNote').append(a);}
+      byId('productionConsents').hidden=false;
+    }
+    let turnstileWidgetId=null;
+    let turnstileToken='';
+    let cloudflareReady=false;
+    let demoMode=!CONFIG.leadEndpoint;
+    function setDemoMode(message){
+      demoMode=true;cloudflareReady=false;
+      byId('getResultBtn').disabled=false;
+      byId('getResultBtn').querySelector('span').textContent='visualizar meu mapa (prévia)';
+      privacySetup();
+      if(message)setText('leadStatus',message);
+    }
+    async function loadCloudflareConfig(){
+      if(!CONFIG.leadEndpoint){setDemoMode();return;}
+      try{
+        const response=await fetch('/api/config',{headers:{'Accept':'application/json'},cache:'no-store'});
+        if(!response.ok)throw new Error('A configuração da API não pôde ser carregada.');
+        const data=await response.json();
+        if(data.siteKey)CONFIG.turnstileSiteKey=data.siteKey;
+        if(data.privacyPolicyUrl)CONFIG.privacyPolicyUrl=data.privacyPolicyUrl;
+        if(data.dataController)CONFIG.dataController=data.dataController;
+        cloudflareReady=data.ready===true;
+        if(!cloudflareReady){
+          setDemoMode('A captação de dados ainda não está configurada na Cloudflare. Você pode visualizar o mapa em modo de demonstração, mas o cadastro não será gravado.');
+        }else{
+          demoMode=false;
+          byId('getResultBtn').disabled=false;
+          byId('getResultBtn').querySelector('span').textContent='revelar meu mapa';
+          privacySetup();
+          setText('leadStatus','');
+          if(!byId('leadStage').hidden)mountTurnstile();
+        }
+      }catch(error){
+        setDemoMode('Não foi possível conectar à API. Você pode visualizar o mapa em modo de demonstração, sem envio de informações. Para receber cadastros, publique o Worker e configure D1 e Turnstile.');
+      }
+    }
+    function mountTurnstile(){
+      if(demoMode || !CONFIG.turnstileSiteKey || turnstileWidgetId!==null)return;
+      const container=byId('turnstileContainer');container.hidden=false;
+      const render=()=>{
+        if(!window.turnstile){setTimeout(render,120);return;}
+        if(turnstileWidgetId!==null)return;
+        turnstileWidgetId=window.turnstile.render(container,{
+          sitekey:CONFIG.turnstileSiteKey,
+          callback:token=>{turnstileToken=token;setText('leadStatus','');},
+          'expired-callback':()=>{turnstileToken='';},
+          'error-callback':()=>{turnstileToken='';setText('leadStatus','A verificação de segurança falhou. Tente novamente.');}
+        });
+      };
+      if(window.turnstile){render();return;}
+      if(!document.querySelector('script[data-ctxt-turnstile]')){
+        const script=document.createElement('script');script.dataset.ctxtTurnstile='1';
+        script.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+        script.async=true;script.defer=true;script.onload=render;
+        script.onerror=()=>setText('leadStatus','Não foi possível carregar a verificação de segurança.');
+        document.head.append(script);
+      }else{render();}
+    }
+    function validateLead(){
+      ['nameError','companyError','emailError','toolsError'].forEach(x=>setText(x,''));setText('leadStatus','');
+      const name=byId('leadName').value.trim(),company=byId('leadCompany').value.trim(),email=byId('leadEmail').value.trim().toLowerCase();
+      const tools=[...byId('toolsList').querySelectorAll('input:checked')].map(x=>x.value);
+      let focusEl=null;
+      const err=(id,message,input)=>{setText(id,message);if(!focusEl)focusEl=input};
+      if(name.length<2)err('nameError','Informe seu nome.',byId('leadName'));
+      if(company.length<2)err('companyError','Informe sua organização.',byId('leadCompany'));
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email))err('emailError','Informe um endereço de e-mail válido.',byId('leadEmail'));
+      else if(PERSONAL_DOMAINS.has(email.split('@')[1]))err('emailError','Este endereço é pessoal. Informe um e-mail corporativo.',byId('leadEmail'));
+      if(!tools.length)err('toolsError','Selecione ao menos uma opção (inclusive “Não utilizo”).',byId('toolsList'));
+      if(tools.includes('Outras') && !byId('otherTool').value.trim())err('toolsError','Informe quais são as outras ferramentas.',byId('otherTool'));
+      if(!demoMode && CONFIG.leadEndpoint && !byId('privacyConsent').checked)err('leadStatus','Leia e aceite os termos de processamento para continuar.',byId('privacyConsent'));
+      if(!demoMode && CONFIG.turnstileSiteKey && !turnstileToken)err('leadStatus','Conclua a verificação de segurança para continuar.',byId('turnstileContainer'));
+      if(focusEl){focusEl.focus();return null;}
+      const adjustedTools=tools.filter(t=>t!=='Outras');if(tools.includes('Outras'))adjustedTools.push('Outras: '+byId('otherTool').value.trim());
+      return {name,company,email,aiTools:adjustedTools,marketingConsent:!demoMode && CONFIG.leadEndpoint?byId('marketingConsent').checked:false};
+    }
+    function tailorTakeaways(results){
+      const idx=results.scores.map((n,i)=>({i,n})).sort((a,b)=>a.n-b.n || a.i-b.i);
+      let selected=[];let axes=new Set();
+      for(const item of idx){const axis=QUESTIONS[item.i].axis;if(!axes.has(axis)){selected.push(item.i);axes.add(axis);}}
+      // Completa com um exercício de emergência criativa, mantendo três práticas.
+      const base=[6,15,3,18,1];
+      for(const i of base)if(selected.length<3&&!selected.includes(i))selected.push(i);
+      return selected.map((i,ix)=>({n:ix+1,title:QUESTIONS[i].tag,text:QUESTIONS[i].practice}));
+    }
+    function renderResult(){
+      const result=state.results,persona=PERSONAS[result.key],profile=state.profile;
+      setText('resultName',profile.name);setText('resultCompany',profile.company);
+      setText('resultDate',new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'long',year:'numeric'}).format(new Date()));
+      setText('personaName',persona.name);setText('personaDescription',persona.description);
+      setText('personaBook',persona.book);setText('personaAuthor',persona.author);
+      setText('scoreX',String(result.x));setText('scoreY',String(result.y));
+      byId('scoreBarX').style.width=`${result.x}%`;byId('scoreBarY').style.width=`${result.y}%`;
+      const dot=byId('matrixDot');dot.style.left=`${Math.max(4,Math.min(94,result.x))}%`;dot.style.bottom=`${Math.max(6,Math.min(94,result.y))}%`;
+      const plane=byId('resultMatrix');plane.setAttribute('aria-label',`Matriz de autonomia: musculatura crítico-criativa ${result.x} de 100, agência sobre IA ${result.y} de 100; perfil ${persona.name}`);
+      const list=byId('takeawayList');list.replaceChildren();
+      tailorTakeaways(result).forEach(item=>{
+        const card=document.createElement('article');card.className='takeaway';
+        const n=document.createElement('div');n.className='takeaway__n';n.textContent=String(item.n).padStart(2,'0');
+        const h=document.createElement('h4');h.textContent=item.title;
+        const p=document.createElement('p');p.textContent=item.text;
+        card.append(n,h,p);list.append(card);
+      });
+    }
+    async function submitLead(event){
+      event.preventDefault();
+      if(state.answers.some(a=>a===null)){setText('leadStatus','Faltam respostas na avaliação.');return;}
+      const profile=validateLead();if(!profile)return;
+      const results=calcResults();
+      const payload={schemaVersion:'1.1',submittedAt:new Date().toISOString(),...profile,turnstileToken:turnstileToken||null,privacyConsent:!demoMode && CONFIG.leadEndpoint?byId('privacyConsent').checked:null,answers:state.answers.map((raw,i)=>({number:i+1,dimension:QUESTIONS[i].axis,tag:QUESTIONS[i].tag,raw,adjusted:results.scores[i]})),scores:{xRaw:results.xRaw,yRaw:results.yRaw,x:results.x,y:results.y,quadrant:results.key}};
+      const btn=byId('getResultBtn');btn.disabled=true;
+      if(CONFIG.leadEndpoint && !demoMode){
+        setText('leadStatus','Enviando as informações com segurança…');
+        try{
+          const response=await fetch(CONFIG.leadEndpoint,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload),credentials:'omit'});
+          const recorded=await response.json().catch(()=>null);
+          if(!response.ok || recorded?.ok===false)throw new Error(recorded?.error||'Serviço indisponível.');
+          if(recorded?.scores){results.x=recorded.scores.x;results.y=recorded.scores.y;results.xRaw=recorded.scores.xRaw;results.yRaw=recorded.scores.yRaw;results.key=recorded.scores.quadrant;}
+          turnstileToken='';
+        }catch(error){setText('leadStatus','Não foi possível registrar os dados: '+(error.message||'Falha no serviço.')+' O resultado não será liberado sem o registro.');if(window.turnstile&&turnstileWidgetId!==null){window.turnstile.reset(turnstileWidgetId);turnstileToken='';}btn.disabled=false;return;}
+      }
+      state.profile=profile;state.results=results;
+      renderResult();byId('demoNotice').hidden=!demoMode;show('resultStage');byId('resultMainTitle').setAttribute('tabindex','-1');byId('resultMainTitle').focus({preventScroll:true});btn.disabled=false;
+    }
+    function copySummary(){
+      if(!state.results)return;
+      const {x,y}=state.results,persona=PERSONAS[state.results.key];
+      const msg=`Diagnóstico do Humano Biônico · c/txt.\nPerfil: ${persona.name}\nMusculatura crítico-criativa: ${x}/100\nAgência sobre a IA: ${y}/100\nInstrumento exploratório de autopercepção (não validado).`;
+      const indicate=()=>{setText('copyStatus','Resumo copiado.');};
+      if(navigator.clipboard?.writeText){navigator.clipboard.writeText(msg).then(indicate,()=>setText('copyStatus','Não foi possível copiar automaticamente neste navegador.'));}
+      else{const el=document.createElement('textarea');el.value=msg;el.style.position='fixed';el.style.opacity='0';document.body.append(el);el.select();try{document.execCommand('copy');indicate();}catch(err){setText('copyStatus','Use o comando de copiar do navegador.');}el.remove();}
+    }
+    byId('startBtn').addEventListener('click',()=>{state.index=0;renderQuestion();show('questionStage');byId('questionText').focus({preventScroll:true});});
+    byId('prevQuestion').addEventListener('click',prev);
+    byId('backToQuestions').addEventListener('click',()=>{state.index=19;renderQuestion();show('questionStage');byId('questionText').focus({preventScroll:true});});
+    byId('leadForm').addEventListener('submit',submitLead);
+    byId('printBtn').addEventListener('click',()=>window.print());
+    byId('copyBtn').addEventListener('click',copySummary);
+    document.addEventListener('keydown',e=>{
+      if(byId('questionStage').hidden||e.altKey||e.ctrlKey||e.metaKey)return;
+      if(e.target.closest('input,textarea,select'))return;
+      if(/^[1-5]$/.test(e.key)){choose(Number(e.key));e.preventDefault();}
+    });
+    renderTools();privacySetup();show('intro');loadCloudflareConfig();
+  })();
+  </script>
+</body>
+</html>
