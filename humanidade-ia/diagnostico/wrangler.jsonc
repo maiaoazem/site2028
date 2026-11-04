@@ -10,11 +10,11 @@
     {
       "binding": "DB",
       "database_name": "ctxt-humano-bionico",
-      "database_id": "SUBSTITUA_PELO_ID_D1_NA_CLOUDFLARE"
+      "database_id": "402be5e9-dcf9-45b6-accf-e2ae77cf90e0"
     }
   ],
   "vars": {
-    "RETENTION_DAYS": "90"
+    "RETENTION_DAYS": "180"
   },
   "triggers": {
     "crons": ["0 3 * * *"]
