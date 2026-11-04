@@ -1,0 +1,22 @@
+{
+  "name": "ctxt-humano-bionico",
+  "main": "./worker.js",
+  "compatibility_date": "2026-11-04",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "ctxt-humano-bionico",
+      "database_id": "SUBSTITUA_PELO_ID_D1_NA_CLOUDFLARE"
+    }
+  ],
+  "vars": {
+    "RETENTION_DAYS": "90"
+  },
+  "triggers": {
+    "crons": ["0 3 * * *"]
+  }
+}
