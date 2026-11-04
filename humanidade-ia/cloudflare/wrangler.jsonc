@@ -8,7 +8,7 @@
     "binding": "ASSETS"
   },
   "vars": {
-    "RETENTION_DAYS": "90"
+    "RETENTION_DAYS": "180"
   },
   "triggers": {
     "crons": ["0 3 * * *"]
