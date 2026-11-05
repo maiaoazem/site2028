@@ -1,0 +1,246 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Gerador de Encontros</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Instrument+Sans:wght@400;500&display=swap">
+<style>
+/* layout: decisores à esquerda, a imagem grande à direita sobre a mesa; no celular, imagem em cima */
+:root {
+  --branco: #ffffff; --papel: #fbf8f4; --tinta: #141414; --tinta-suave: #5e5b57; --fio-suave: #d8d4cf;
+  --rosa-tinta: #c81e66; --mesa: #ece9e4;
+  --serifa: "Cormorant Garamond", Garamond, Georgia, serif;
+  --grotesca: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+body { background: var(--branco); color: var(--tinta); font-family: var(--grotesca); font-size: 14px; line-height: 1.4; }
+* { box-sizing: border-box; }
+.app { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 20px 48px; max-width: 1680px; margin: 0 auto; }
+.barra { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; padding-bottom: 14px; border-bottom: 1px solid var(--tinta); }
+.barra h1 { font-family: var(--serifa); font-weight: 300; font-size: clamp(34px, 5vw, 64px); line-height: .95; margin: 0; letter-spacing: -.02em; }
+.barra h1 em { font-style: italic; }
+.marca { font-family: var(--serifa); font-weight: 400; font-size: 24px; margin: 0; }
+.rot { font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; }
+.grade { display: grid; grid-template-columns: minmax(280px, 360px) minmax(0, 1fr); gap: 40px; margin-top: 28px; align-items: start; }
+.palco { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 16px); min-width: 0; display: grid; gap: 14px; }
+.mesa { background: var(--mesa); display: grid; place-items: center; padding: clamp(16px, 3vw, 40px); }
+canvas { display: block; max-width: 100%; height: auto; }
+.mesa.v canvas { max-height: 78vh; width: auto; }
+.acoes { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.botao { appearance: none; background: var(--tinta); color: var(--branco); border: 1px solid var(--tinta); border-radius: 0; padding: 12px 20px; font: inherit; cursor: pointer; }
+.botao:hover { background: var(--rosa-tinta); border-color: var(--rosa-tinta); }
+.contorno { appearance: none; background: transparent; color: var(--tinta); border: 1px solid var(--tinta); border-radius: 0; padding: 11px 18px; font: inherit; cursor: pointer; }
+.contorno:hover { color: var(--rosa-tinta); border-color: var(--rosa-tinta); }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--rosa-tinta); outline-offset: 2px; }
+.painel { display: grid; min-width: 0; }
+details.grupo { border-top: 1px solid var(--tinta); }
+details.grupo:last-of-type { border-bottom: 1px solid var(--tinta); }
+details.grupo > summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: baseline; padding: 12px 0; font-size: 22px; letter-spacing: -.01em; }
+details.grupo > summary::-webkit-details-marker { display: none; }
+details.grupo > summary::after { content: "↓"; font-size: 16px; transition: transform .2s; }
+details.grupo[open] > summary::after { transform: rotate(180deg); color: var(--rosa-tinta); }
+details.grupo > summary:hover { color: var(--rosa-tinta); }
+.miolo { display: grid; gap: 16px; padding: 4px 0 22px; }
+.campo { display: grid; gap: 6px; }
+.linha { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.linha output { font-variant-numeric: tabular-nums; color: var(--tinta-suave); font-size: 12px; }
+.seg { display: flex; flex-wrap: wrap; gap: 6px; }
+.seg button { appearance: none; background: transparent; border: 1px solid var(--fio-suave); color: var(--tinta); padding: 7px 11px; font: inherit; font-size: 13px; cursor: pointer; border-radius: 0; }
+.seg button[aria-pressed="true"] { border-color: var(--tinta); box-shadow: inset 0 -2px 0 var(--rosa-tinta); }
+.seg button:hover { border-color: var(--tinta); }
+.cores { display: flex; flex-wrap: wrap; gap: 8px 10px; padding-bottom: 16px; }
+.cores button { width: 36px; height: 36px; border: 1px solid var(--fio-suave); padding: 0; cursor: pointer; border-radius: 0; position: relative; }
+.cores button[aria-pressed="true"] { outline: 2px solid var(--tinta); outline-offset: 2px; }
+.cores button span { position: absolute; left: -4px; right: -4px; top: 100%; font-size: 10px; margin-top: 4px; color: var(--tinta); white-space: nowrap; text-align: center; }
+input[type="range"] { width: 100%; accent-color: var(--tinta); }
+.chk { display: flex; gap: 10px; align-items: center; cursor: pointer; }
+.chk input { accent-color: var(--tinta); width: 16px; height: 16px; }
+.nota { font-size: 12px; color: var(--tinta-suave); }
+@media (max-width: 860px) {
+  .grade { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .palco { position: static; order: -1; }
+  .mesa.v canvas { max-height: 70vh; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="app">
+  <header class="barra">
+    <h1>gerador de <em>imagens</em></h1>
+    <p class="marca">c/txt. <span class="rot" style="font-family:var(--grotesca);color:var(--tinta-suave)">· Maia Oazem</span></p>
+  </header>
+
+  <div class="grade">
+    <section class="painel" aria-label="Decisores">
+      <details class="grupo" open>
+        <summary>Formato</summary>
+        <div class="miolo">
+          <div class="seg" id="seg-formato"><button type="button" data-v="h">16:9 · 1920×1080</button><button type="button" data-v="v">9:16 · 1080×1920</button></div>
+        </div>
+      </details>
+
+      <details class="grupo" open>
+        <summary>Cor</summary>
+        <div class="miolo">
+          <div class="campo"><span class="rot">Fundo</span><div class="cores" id="cores-fundo"></div></div>
+          <div class="campo"><span class="rot">Acento · anel ativo</span><div class="cores" id="cores-acento"></div></div>
+          <div class="campo"><span class="rot">Intersecção</span><div class="seg" id="seg-inter"><button type="button" data-v="traco">Cor do traço</button><button type="button" data-v="rosa">Rosa</button><button type="button" data-v="acento">Acento</button><button type="button" data-v="vazia">Vazia</button></div></div>
+          <p class="nota">Branco vem do Clube de Contexto; papel e pastéis, de Maia Oazem. Sobre tinta, o traço vira papel.</p>
+        </div>
+      </details>
+
+      <details class="grupo" open>
+        <summary>Formas</summary>
+        <div class="miolo">
+          <div class="campo"><span class="rot">Desenho</span><div class="seg" id="seg-forma"><button type="button" data-v="lente">Lente</button><button type="button" data-v="avanco">Avanço</button><button type="button" data-v="losangos">Losangos</button><button type="button" data-v="edicao">Edição</button><button type="button" data-v="tangentes">Tangentes</button><button type="button" data-v="concentricos">Concêntricos</button></div></div>
+          <div class="campo"><div class="linha"><label for="r-qtd" id="l-qtd">Pares</label><output id="o-qtd"></output></div><input type="range" id="r-qtd" min="1" max="6" step="1"></div>
+          <div class="campo"><div class="linha"><label for="r-escala">Escala</label><output id="o-escala"></output></div><input type="range" id="r-escala" min="40" max="220" step="1"></div>
+          <div class="campo"><div class="linha"><label for="r-sob">Sobreposição</label><output id="o-sob"></output></div><input type="range" id="r-sob" min="10" max="90" step="1"></div>
+          <div class="campo"><div class="linha"><label for="r-disp">Dispersão</label><output id="o-disp"></output></div><input type="range" id="r-disp" min="0" max="100" step="1"></div>
+          <div class="campo"><div class="linha"><label for="r-giro">Giro</label><output id="o-giro"></output></div><input type="range" id="r-giro" min="0" max="180" step="5"></div>
+          <div class="campo"><div class="linha"><label for="r-traco">Traço</label><output id="o-traco"></output></div><input type="range" id="r-traco" min="1" max="6" step="0.5"></div>
+          <label class="chk"><input type="checkbox" id="c-fio"> Fio que atravessa a imagem</label>
+          <label class="chk"><input type="checkbox" id="c-nos"> Nós nos cruzamentos</label>
+          <button type="button" class="contorno" id="b-semente">Outra composição</button>
+        </div>
+      </details>
+      <p class="nota" style="margin-top:14px">As escolhas ficam guardadas neste navegador.</p>
+    </section>
+
+    <section class="palco" aria-label="Imagem">
+      <div class="mesa" id="mesa"><canvas id="tela" width="1920" height="1080" role="img" aria-label="Imagem gerada"></canvas></div>
+      <div class="acoes">
+        <button type="button" class="botao" id="b-baixar">Baixar PNG</button>
+        <button type="button" class="contorno" id="b-reset">Voltar ao modelo</button>
+        <span class="nota" id="aviso" role="status"></span>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+(function(){
+var C = { branco:'#ffffff', papel:'#fbf8f4', rosa:'#f6b4d0', amarelo:'#f9ea8c', azul:'#bcd0fb', roxo:'#cdb8f4', verde:'#b5e7c6', tinta:'#141414',
+  'rosa-tinta':'#c81e66', 'azul-tinta':'#2638c9', 'roxo-tinta':'#5530c4', 'verde-tinta':'#0b5c3b', 'amarelo-tinta':'#7a6200' };
+var PADRAO = { formato:'h', fundo:'rosa', acento:'rosa-tinta', inter:'traco', forma:'lente', qtd:3, escala:100, sob:55, disp:40, giro:0, traco:2, fio:true, nos:false, semente:7 };
+var S;
+try { S = Object.assign({}, PADRAO, JSON.parse(localStorage.getItem('cc-gerador-img') || '{}')); } catch (e) { S = Object.assign({}, PADRAO); }
+function guardar(){ try { localStorage.setItem('cc-gerador-img', JSON.stringify(S)); } catch (e) {} }
+
+function rng(seed){ var s = seed >>> 0 || 1; return function(){ s ^= s << 13; s ^= s >>> 17; s ^= s << 5; return ((s >>> 0) % 100000) / 100000; }; }
+function circ(p, x, y, r){ p.moveTo(x + r, y); p.arc(x, y, r, 0, Math.PI*2); }
+function poly(p, pts){ p.moveTo(pts[0][0], pts[0][1]); for (var i = 1; i < pts.length; i++) p.lineTo(pts[i][0], pts[i][1]); p.closePath(); }
+function par(forma, o){
+  var a = new Path2D(), b = new Path2D();
+  if (forma === 'lente') { circ(a, -o, 0, 28); circ(b, o, 0, 28); }
+  else if (forma === 'avanco') { var t = function(p, dx){ poly(p, [[dx-23,-30],[dx-23,30],[dx+23,0]]); }; t(a, -o); t(b, o); }
+  else if (forma === 'losangos') { var d = function(p, dx){ poly(p, [[dx,-28],[dx+28,0],[dx,28],[dx-28,0]]); }; d(a, -o); d(b, o); }
+  else { var f = o / 13; a.rect(-22 - 11*f, -22 + 11*f, 44, 44); circ(b, 11*f, -11*f, 26); }
+  return [a, b];
+}
+
+var tela = document.getElementById('tela'), ctx = tela.getContext('2d');
+function desenhar(){
+  var H16 = S.formato === 'h', W = H16 ? 1920 : 1080, H = H16 ? 1080 : 1920;
+  if (tela.width !== W) { tela.width = W; tela.height = H; }
+  document.getElementById('mesa').classList.toggle('v', !H16);
+  var escuro = S.fundo === 'tinta', fundo = C[S.fundo], traco = escuro ? C.papel : C.tinta;
+  var acento = escuro ? C.rosa : C[S.acento];
+  var interCor = S.inter === 'traco' ? traco : S.inter === 'rosa' ? (S.fundo === 'rosa' ? traco : C.rosa) : S.inter === 'acento' ? acento : null;
+
+  ctx.fillStyle = fundo; ctx.fillRect(0, 0, W, H);
+  var r = rng(S.semente * 977 + 13), disp = S.disp / 100, giro = S.giro * Math.PI / 180;
+  var lw = S.traco * 1.5;
+  ctx.strokeStyle = traco; ctx.lineJoin = 'miter'; ctx.lineCap = 'square';
+  var no = function(x, y){ ctx.beginPath(); ctx.arc(x, y, 6 + lw * .5, 0, Math.PI*2); ctx.fillStyle = fundo; ctx.fill(); ctx.lineWidth = lw * .8; ctx.strokeStyle = traco; ctx.stroke(); };
+
+  if (S.forma === 'tangentes' || S.forma === 'concentricos') {
+    var n = S.qtd + 1, cx = W * (0.5 + (r() - .5) * disp * .5), R = Math.min(W, H) * 0.42 * S.escala / 100;
+    var topo = H * .5 - R + (r() - .5) * disp * H * .25, ativo = Math.floor(r() * n);
+    var raios = []; for (var i = 0; i < n; i++) raios.push(R * (0.22 + 0.78 * Math.pow((i + 1) / n, 1.1)));
+    ctx.save(); ctx.translate(cx, topo + R); ctx.rotate(giro); ctx.translate(-cx, -(topo + R));
+    if (S.forma === 'tangentes') {
+      if (interCor) { ctx.beginPath(); ctx.arc(cx, topo + raios[0], raios[0], 0, Math.PI*2); ctx.fillStyle = interCor; ctx.fill(); }
+      for (var j = n - 1; j >= 0; j--) { ctx.beginPath(); ctx.arc(cx, topo + raios[j], raios[j], 0, Math.PI*2); ctx.lineWidth = j === ativo ? lw * 2 : lw; ctx.strokeStyle = j === ativo ? acento : traco; ctx.stroke(); }
+      for (var k = 0; k < n - 1; k++) { var y = topo + 2 * raios[k], c2 = topo + raios[k+1], hw = Math.sqrt(Math.max(0, raios[k+1]*raios[k+1] - (y - c2)*(y - c2))); ctx.strokeStyle = traco; ctx.lineWidth = lw; ctx.beginPath(); ctx.moveTo(cx - hw, y); ctx.lineTo(cx + hw, y); ctx.stroke(); no(cx - hw, y); no(cx, y); no(cx + hw, y); }
+      no(cx, topo);
+    } else {
+      var cy = topo + R;
+      if (interCor) { ctx.beginPath(); ctx.arc(cx, cy, raios[0], 0, Math.PI*2); ctx.fillStyle = interCor; ctx.fill(); }
+      for (var q = n - 1; q >= 0; q--) { ctx.beginPath(); ctx.arc(cx, cy, raios[q], 0, Math.PI*2); ctx.lineWidth = q === ativo ? lw * 2 : lw; ctx.strokeStyle = q === ativo ? acento : traco; ctx.stroke(); }
+      ctx.strokeStyle = traco; ctx.lineWidth = lw; ctx.beginPath(); ctx.moveTo(cx - raios[n-1], cy); ctx.lineTo(cx + raios[n-1], cy); ctx.stroke();
+      raios.forEach(function(rr){ no(cx, cy - rr); }); no(cx - raios[n-1], cy); no(cx + raios[n-1], cy);
+    }
+    ctx.restore();
+    if (S.fio) { ctx.strokeStyle = traco; ctx.lineWidth = lw; ctx.beginPath(); ctx.moveTo(0, topo); ctx.lineTo(W, topo); ctx.stroke(); }
+  } else {
+    var N = S.qtd, o = 28 * (1 - S.sob / 100) * 1.6, vertical = H > W, base = Math.min(W, H) * 0.0055 * S.escala / 100, primeiro = null, cruz = [];
+    for (var p = 0; p < N; p++) {
+      var t = (p + .5) / N, cross = 0.5 + (r() - .5) * (0.25 + disp * 1.1), along = t + (r() - .5) * disp * (0.9 / N);
+      var px = vertical ? W * cross : W * along, py = vertical ? H * along : H * cross;
+      var k2 = base * (N === 1 ? 2.4 : (0.7 + r() * (0.5 + disp * 1.2)) * (1.6 / Math.sqrt(N)));
+      var rot = giro + (r() - .5) * disp * 0.9;
+      if (!primeiro) primeiro = [px, py];
+      var ps = par(S.forma, o);
+      ctx.save(); ctx.translate(px, py); ctx.rotate(rot); ctx.scale(k2, k2);
+      if (interCor) { ctx.save(); ctx.clip(ps[0]); ctx.fillStyle = interCor; ctx.fill(ps[1]); ctx.restore(); }
+      ctx.lineWidth = lw / k2; ctx.strokeStyle = traco; ctx.stroke(ps[0]); ctx.stroke(ps[1]);
+      ctx.restore();
+      if (S.nos) { var dx = Math.cos(rot) * o * k2, dy = Math.sin(rot) * o * k2; cruz.push([px - dx, py - dy], [px, py], [px + dx, py + dy]); }
+    }
+    if (S.fio && primeiro) { ctx.strokeStyle = traco; ctx.lineWidth = lw; ctx.beginPath(); ctx.moveTo(0, primeiro[1]); ctx.lineTo(W, primeiro[1]); ctx.stroke(); }
+    cruz.forEach(function(c){ no(c[0], c[1]); });
+  }
+}
+
+function $(id){ return document.getElementById(id); }
+function seg(id, chave){
+  var bs = $(id).querySelectorAll('button');
+  function marcar(){ bs.forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.v === String(S[chave])); }); }
+  bs.forEach(function(b){ b.addEventListener('click', function(){ S[chave] = b.dataset.v; marcar(); mudou(); }); });
+  return marcar;
+}
+function cores(id, chave, lista){
+  var el = $(id);
+  var bs = lista.map(function(n){ var b = document.createElement('button'); b.type = 'button'; b.style.background = C[n]; b.setAttribute('aria-label', n); b.innerHTML = '<span>' + n.replace('-tinta', '') + '</span>'; b.addEventListener('click', function(){ S[chave] = n; marcar(); mudou(); }); el.appendChild(b); return [n, b]; });
+  function marcar(){ bs.forEach(function(x){ x[1].setAttribute('aria-pressed', x[0] === S[chave]); }); }
+  return marcar;
+}
+var faixas = { 'r-qtd':['qtd',''], 'r-escala':['escala','%'], 'r-sob':['sob','%'], 'r-disp':['disp','%'], 'r-giro':['giro','°'], 'r-traco':['traco',''] };
+var caixas = { 'c-fio':'fio', 'c-nos':'nos' };
+var marcadores = [
+  seg('seg-formato', 'formato'), seg('seg-inter', 'inter'), seg('seg-forma', 'forma'),
+  cores('cores-fundo', 'fundo', ['branco','papel','rosa','amarelo','azul','roxo','verde','tinta']),
+  cores('cores-acento', 'acento', ['rosa-tinta','azul-tinta','roxo-tinta','verde-tinta','amarelo-tinta'])
+];
+function rotulos(){
+  var circular = S.forma === 'tangentes' || S.forma === 'concentricos';
+  $('l-qtd').textContent = circular ? 'Anéis' : 'Pares';
+  $('o-qtd').textContent = circular ? (Number(S.qtd) + 1) : S.qtd;
+}
+function preencher(){
+  Object.keys(faixas).forEach(function(id){ var f = faixas[id]; $(id).value = S[f[0]]; $('o' + id.slice(1)).textContent = S[f[0]] + f[1]; });
+  Object.keys(caixas).forEach(function(id){ $(id).checked = !!S[caixas[id]]; });
+  marcadores.forEach(function(m){ m(); }); rotulos();
+}
+var pendente = null;
+function mudou(){ rotulos(); guardar(); if (pendente) return; pendente = requestAnimationFrame(function(){ pendente = null; desenhar(); }); }
+Object.keys(faixas).forEach(function(id){ $(id).addEventListener('input', function(){ var f = faixas[id]; S[f[0]] = Number(this.value); $('o' + id.slice(1)).textContent = this.value + f[1]; mudou(); }); });
+Object.keys(caixas).forEach(function(id){ $(id).addEventListener('change', function(){ S[caixas[id]] = this.checked; mudou(); }); });
+$('b-semente').addEventListener('click', function(){ S.semente = Math.floor(Math.random() * 100000); mudou(); });
+$('b-reset').addEventListener('click', function(){ S = Object.assign({}, PADRAO); preencher(); mudou(); aviso('Voltou ao modelo.'); });
+
+function aviso(t){ $('aviso').textContent = t; }
+var downloads = null, MSG = 'Para salvar, clique com o botão direito na imagem e escolha salvar.';
+if (window.claude && claude.use) claude.use('downloads').then(function(d){ downloads = d; if (!d) aviso(MSG); });
+$('b-baixar').addEventListener('click', function(){
+  if (!downloads) { aviso(MSG); return; }
+  tela.toBlob(function(blob){
+    var nome = 'c-txt-' + S.forma + '-' + S.fundo + '-' + (S.formato === 'h' ? '16x9' : '9x16') + '.png';
+    downloads.save({ filename: nome, data: blob }).then(function(){ aviso('Salvo: ' + nome); }).catch(function(e){ aviso(e && e.code === 'declined' ? 'Download cancelado.' : 'Não foi possível salvar aqui. ' + MSG); });
+  }, 'image/png');
+});
+
+preencher(); desenhar();
+})();
+</script>
+
+</body></html>
