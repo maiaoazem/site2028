@@ -16,7 +16,7 @@
 /* lab aberto · Design System Maia Oazem. Papel + tinta; cada ferramenta é uma capa LIV na sua cor. */
 :root{
   --papel:#fbf8f4; --tinta:#141414; --cinza:#5b5754;
-  --rosa:#f6b4d0; --amarelo:#f9ea8c; --azul:#bcd0fb;
+  --rosa:#f6b4d0; --amarelo:#f9ea8c; --roxo:#cdb8f4;--verde:#b5e7c6;--azul:#bcd0fb;
   --serif:"Cormorant Garamond", Garamond, "Times New Roman", serif;
   --sans:"Instrument Sans", "Helvetica Neue", Arial, sans-serif;
   color-scheme:light;
@@ -54,7 +54,7 @@ h1,h2{margin:0;font-weight:300;font-family:var(--serif)}
 .ferramenta > a:hover{opacity:1}
 .capa{position:relative;aspect-ratio:5/7;max-width:100%;overflow:hidden;color:var(--tinta);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
 .ferramenta > a:hover .capa,.ferramenta > a:focus-visible .capa{transform:translateY(-6px)}
-.capa.rosa{background:var(--rosa)} .capa.amarelo{background:var(--amarelo)} .capa.azul{background:var(--azul)}
+.capa.rosa{background:var(--rosa)} .capa.amarelo{background:var(--amarelo)} .capa.azul{background:var(--azul)} .capa.roxo{background:var(--roxo)} .capa.verde{background:var(--verde)}
 .capa svg{position:absolute;inset:0;width:100%;height:100%}
 .capa svg .l{fill:none;stroke:currentColor;stroke-width:1.4;vector-effect:non-scaling-stroke}
 .capa svg .s{fill:currentColor}
@@ -105,7 +105,7 @@ footer em{font-family:var(--serif);font-size:20px}
     <p class="lede" data-en="The tools the laborateliê uses and shares, in use and under construction.">As ferramentas que o laborateliê usa e compartilha, em uso e em construção.</p>
   </div>
   <hr class="fio">
-  <div class="assin meta"><span data-en="tools">ferramentas</span><span>3</span></div>
+  <div class="assin meta"><span data-en="tools">ferramentas</span><span>5</span></div>
   <hr class="fio">
 </header>
 
@@ -113,7 +113,7 @@ footer em{font-family:var(--serif);font-size:20px}
   <ul class="capas">
     <!-- MARCA · rosa -->
     <li class="ferramenta">
-      <a href="/marca" aria-label="marca">
+      <a href="/lab/marca/" aria-label="marca">
         <div class="capa rosa">
           <svg viewBox="0 0 100 140" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
             <path class="l" d="M30 16L72 58L30 100L-12 58Z"/><path class="l" d="M70 16L112 58L70 100L28 58Z"/>
@@ -134,7 +134,7 @@ footer em{font-family:var(--serif);font-size:20px}
 
     <!-- PRENSA · amarelo -->
     <li class="ferramenta">
-      <a href="/prensa" aria-label="prensa">
+      <a href="/lab/prensa/" aria-label="prensa">
         <div class="capa amarelo">
           <svg viewBox="0 0 100 140" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
             <path class="l" d="M14 50H58V94H14Z"/><circle class="l" cx="58" cy="50" r="26"/>
@@ -155,7 +155,7 @@ footer em{font-family:var(--serif);font-size:20px}
 
     <!-- PROJETOR · azul -->
     <li class="ferramenta">
-      <a href="/projetor" aria-label="projetor">
+      <a href="/lab/projetor/" aria-label="projetor">
         <div class="capa azul">
           <svg viewBox="0 0 100 140" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
             <path class="l" d="M-4 22V102L58 62Z"/><path class="l" d="M36 22V102L98 62Z"/>
@@ -171,6 +171,48 @@ footer em{font-family:var(--serif);font-size:20px}
       <div class="ficha">
         <div class="nome"><b>/projetor</b><span class="data" data-en="2 Nov 2026">2 nov. 2026</span></div>
         <p data-en="A tool for putting together reels of speculative artifacts.">Uma ferramenta para montar reels de artefatos especulativos.</p>
+      </div>
+    </li>
+
+    <!-- ENCONTROS · roxo -->
+    <li class="ferramenta">
+      <a href="/lab/encontros/" aria-label="encontros">
+        <div class="capa roxo">
+          <svg viewBox="0 0 100 140" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <circle class="l" cx="34" cy="62" r="30"/><circle class="l" cx="66" cy="62" r="30"/>
+            <path class="s" d="M50 36.6A30 30 0 0 1 50 87.4A30 30 0 0 1 50 36.6Z"/>
+          </svg>
+          <div class="linha" style="top:6%"><span data-en="tool">ferramenta</span><span>04</span></div>
+          <div class="fio-capa" style="top:10.5%"></div>
+          <div class="t">/<em data-en="encounters">encontros</em></div>
+          <div class="fio-capa" style="bottom:10.5%"></div>
+          <div class="linha" style="bottom:6%"><span>laborateliê</span><span>gira.guru</span></div>
+        </div>
+      </a>
+      <div class="ficha">
+        <div class="nome"><b>/encontros</b><span class="data" data-en="5 Nov 2026">5 nov. 2026</span></div>
+        <p data-en="An abstract image generator: pairs of shapes that meet, with structure sliders (scale, overlap, dispersion, rotation and stroke).">Um gerador de imagens abstratas: pares de formas que se encontram, com sliders de estrutura (escala, sobreposição, dispersão, giro e traço).</p>
+      </div>
+    </li>
+
+    <!-- ABSTRATO · verde -->
+    <li class="ferramenta">
+      <a href="/lab/abstrato/" aria-label="abstrato">
+        <div class="capa verde">
+          <svg viewBox="0 0 100 140" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <path class="l" d="M50 18L82 74H18Z"/><path class="l" d="M50 46L82 102H18Z"/>
+            <path class="s" d="M50 46L66 74H34Z"/>
+          </svg>
+          <div class="linha" style="top:6%"><span data-en="tool">ferramenta</span><span>05</span></div>
+          <div class="fio-capa" style="top:10.5%"></div>
+          <div class="t">/<em data-en="abstract">abstrato</em></div>
+          <div class="fio-capa" style="bottom:10.5%"></div>
+          <div class="linha" style="bottom:6%"><span>laborateliê</span><span>gira.guru</span></div>
+        </div>
+      </a>
+      <div class="ficha">
+        <div class="nome"><b>/abstrato</b><span class="data" data-en="5 Nov 2026">5 nov. 2026</span></div>
+        <p data-en="Form studies: abstract compositions with primary shapes, intersections and free gestures, in the inks and meanings of the Design System.">Estudos de forma: composições abstratas com formas primárias, intersecções e gestos livres, nas tintas e nos sentidos do Design System.</p>
       </div>
     </li>
   </ul>
