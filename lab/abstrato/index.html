@@ -80,6 +80,24 @@ footer{max-width:1600px;margin:0 auto;padding:0 56px 35px}
 </style>
 </head>
 <body>
+<nav class="lab-nav" aria-label="Navegação">
+<style>
+.lab-nav{position:relative;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:8px 18px;flex-wrap:wrap;margin:0;padding:10px max(16px,env(safe-area-inset-left,0px));background:#fbf8f4;color:#141414;border-bottom:1px solid #141414;font:12px/1.2 "Instrument Sans","Helvetica Neue",Arial,sans-serif;letter-spacing:.09em;text-transform:uppercase;box-sizing:border-box;width:100%}
+.lab-nav a{color:inherit;text-decoration:none;border:0;display:inline-flex;align-items:center;gap:8px}
+.lab-nav a:hover{opacity:.6}
+.lab-nav .lab-nav-trilha{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.lab-nav .lab-nav-sep{opacity:.45}
+.lab-nav .lab-nav-atual{color:#5b5754}
+</style>
+<span class="lab-nav-trilha">
+<a href="/"><svg width="14" height="14" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M53 8L91 72H15Z"/><path fill="currentColor" d="M43 94L9 36H77Z"/></svg>Maia Oazem</a>
+<span class="lab-nav-sep" aria-hidden="true">/</span>
+<a href="/lab/">lab aberto</a>
+<span class="lab-nav-sep" aria-hidden="true">/</span>
+<span class="lab-nav-atual" aria-current="page">abstrato</span>
+</span>
+</nav>
+
 <header>
  <div class="topline"><span>Maia Oazem · laboratório de formas</span><span>Estudos de composição / Nº 01</span><span>Ferramenta generativa</span></div>
  <h1>formas <em>possíveis.</em></h1>
