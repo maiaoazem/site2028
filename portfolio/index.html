@@ -124,6 +124,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:1px solid 
 .lg-b:last-child{border-right:0}
 .lg-fm{width:20px;height:20px;flex:none}
 .lg-nm{font-family:var(--serif);font-size:clamp(18px,1.6vw,22px);line-height:1.15}
+.fr-nm .l1,.fr-nm .l2,.lg-nm .l1,.lg-nm .l2{display:block;white-space:nowrap}
 .lg-b:hover .lg-nm{font-style:italic}
 .lg-b[aria-pressed="true"]{background:var(--rosa)}
 
@@ -280,14 +281,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .fr-b:nth-child(odd){border-right:1px solid currentColor}
   .fr-b:nth-last-child(-n+2){border-bottom:0}
   .fr-b .ic{width:22px;height:22px}
-  .fr-nm{font-size:19px}
+  .fr-nm{font-size:18px}
   .circ .lbl,.circ .ano:not(.maior),.circ .guia,.circ .no,.circ .mono,.circ .barras{display:none}
   .circ .ano.maior{font-size:48px}
-  .legenda{grid-template-columns:1fr 1fr}
-  .lg-b{border-right:0;border-bottom:1px solid var(--tinta);padding:12px 10px}
-  .lg-b:nth-child(odd){border-right:1px solid var(--tinta)}
-  .lg-b:nth-last-child(-n+2){border-bottom:0}
-  .lg-nm{font-size:17px}
+  .lg-nm{font-size:15px}
   .mq-p{font-size:22px} .mq-c{gap:18px;padding-right:48px}
   .frase .apoio{grid-template-columns:1fr} .frase .apoio span{grid-column:1}
   .circ .centro{font-size:120px} .circ .centro-s{font-size:32px}
@@ -351,6 +348,22 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .lb-x:hover{opacity:.6}
 body.lb-on{overflow:hidden}
 
+/* legenda: 4 colunas largas; 2 em telas médias; 1 no celular, para "reconhecimento nacional" caber numa linha */
+@media (max-width:1180px){
+  .legenda{grid-template-columns:1fr 1fr}
+  .lg-b{border-right:0;border-bottom:1px solid var(--tinta)}
+  .lg-b:nth-child(odd){border-right:1px solid var(--tinta)}
+  .lg-b:nth-last-child(-n+2){border-bottom:0}
+}
+@media (max-width:560px){
+  .legenda{grid-template-columns:1fr}
+  .lg-b,.lg-b:nth-child(odd){border-right:0;border-bottom:1px solid var(--tinta);padding:10px 4px}
+  .lg-b:nth-last-child(-n+2){border-bottom:1px solid var(--tinta)}
+  .lg-b:last-child{border-bottom:0}
+  .lg-nm .l1,.lg-nm .l2{display:inline}
+  .lg-nm .l2::before{content:" "}
+}
+
 </style>
 </head>
 <body>
@@ -375,7 +388,7 @@ body.lb-on{overflow:hidden}
       <a class="voltar" href="/" data-en="home">início</a>
     </div>
     <hr class="fio">
-    <nav class="frentes" aria-label="Frentes de atuação"><button type="button" class="fr-b" data-frente="fut" aria-pressed="false" style="--c:#5530c4;--p:#cdb8f4"><svg class="ic" viewBox="0 0 100 100" aria-hidden="true"><use href="#avanco"/></svg><span class="fr-nm" data-en="Futures Designer">Designer de Futuros</span></button><button type="button" class="fr-b" data-frente="pes" aria-pressed="false" style="--c:#2638c9;--p:#bcd0fb"><svg class="ic" viewBox="0 0 100 100" aria-hidden="true"><use href="#lente"/></svg><span class="fr-nm" data-en="Cultural Researcher">Pesquisadora Cultural</span></button><button type="button" class="fr-b" data-frente="est" aria-pressed="false" style="--c:#0b5c3b;--p:#b5e7c6"><svg class="ic" viewBox="0 0 100 100" aria-hidden="true"><use href="#losangos"/></svg><span class="fr-nm" data-en="Creative Strategist">Estrategista Criativa</span></button><button type="button" class="fr-b" data-frente="esc" aria-pressed="false" style="--c:#7a6200;--p:#f9ea8c"><svg class="ic" viewBox="0 0 100 100" aria-hidden="true"><use href="#edicao"/></svg><span class="fr-nm" data-en="Writer">Escritora</span></button></nav>
+    <nav class="frentes" aria-label="Frentes de atuação"><button type="button" class="fr-b" data-frente="fut" aria-pressed="false" style="--c:#5530c4;--p:#cdb8f4"><svg class="ic" viewBox="0 0 100 100" aria-hidden="true"><use href="#avanco"/></svg><span class="fr-nm" data-en="&lt;span class=&quot;l1&quot;&gt;Futures&lt;/span&gt;&lt;span class=&quot;l2&quot;&gt;Designer&lt;/span&gt;"><span class="l1">Designer de</span><span class="l2">Futuros</span></span></button><button type="button" class="fr-b" data-frente="pes" aria-pressed="false" style="--c:#2638c9;--p:#bcd0fb"><svg class="ic" viewBox="0 0 100 100" aria-hidden="true"><use href="#lente"/></svg><span class="fr-nm" data-en="&lt;span class=&quot;l1&quot;&gt;Cultural&lt;/span&gt;&lt;span class=&quot;l2&quot;&gt;Researcher&lt;/span&gt;"><span class="l1">Pesquisadora</span><span class="l2">Cultural</span></span></button><button type="button" class="fr-b" data-frente="est" aria-pressed="false" style="--c:#0b5c3b;--p:#b5e7c6"><svg class="ic" viewBox="0 0 100 100" aria-hidden="true"><use href="#losangos"/></svg><span class="fr-nm" data-en="&lt;span class=&quot;l1&quot;&gt;Creative&lt;/span&gt;&lt;span class=&quot;l2&quot;&gt;Strategist&lt;/span&gt;"><span class="l1">Estrategista</span><span class="l2">Criativa</span></span></button><button type="button" class="fr-b" data-frente="esc" aria-pressed="false" style="--c:#7a6200;--p:#f9ea8c"><svg class="ic" viewBox="0 0 100 100" aria-hidden="true"><use href="#edicao"/></svg><span class="fr-nm" data-en="&lt;span class=&quot;l1&quot;&gt;Writer&lt;/span&gt;&lt;span class=&quot;l2&quot;&gt;&amp;nbsp;&lt;/span&gt;"><span class="l1">Escritora</span><span class="l2">&nbsp;</span></span></button></nav>
     <hr class="fio">
     <div class="circ-w"><svg class="circ" viewBox="0 0 1500 1280" role="img" aria-labelledby="circ-t"><title id="circ-t" data-en="Timeline from 2016 to 2026 opening onto 2027: organizations as arcs, projects as markers, awards as asterisks">Linha do tempo de 2016 a 2026, abrindo para 2027: organizações em arcos, projetos em marcadores, prêmios em asteriscos</title>
 <g class="globo" aria-hidden="true"><line class="eixo" x1="750.0" y1="176.0" x2="750.0" y2="1104.0"/><line class="eixo" x1="421.9" y1="311.9" x2="1078.1" y2="968.1"/><line class="eixo" x1="286.0" y1="640.0" x2="1214.0" y2="640.0"/><line class="eixo" x1="421.9" y1="968.1" x2="1078.1" y2="311.9"/><ellipse class="grade" cx="750" cy="640" rx="464" ry="162.4"/><ellipse class="grade" cx="750" cy="640" rx="464" ry="324.8"/><ellipse class="grade" cx="750" cy="640" rx="162.4" ry="464"/><ellipse class="grade" cx="750" cy="640" rx="324.8" ry="464"/><g transform="rotate(-16 750 640)"><ellipse class="mer" id="mer1" cx="750" cy="640" rx="287.7" ry="464"/><ellipse class="mer" id="mer2" cx="750" cy="640" rx="417.6" ry="464"/><path class="mer-mk" id="merk1" d="M0 -9L9 7H-9Z"/><path class="mer-mk" id="merk2" d="M0 -9L9 7H-9Z"/></g><ellipse class="orb" cx="750" cy="640" rx="170" ry="34"/><ellipse class="orb" cx="750" cy="640" rx="92" ry="17"/><line class="mira" x1="706" y1="640" x2="794" y2="640"/><line class="mira" x1="750" y1="596" x2="750" y2="684"/><circle class="sol" cx="750" cy="640" r="13"/><circle class="orb-p" id="orbp0" cx="750" cy="640" r="5.5"/><circle class="orb-p" id="orbp1" cx="750" cy="640" r="5.5"/><circle class="orb-p" id="orbp2" cx="750" cy="640" r="5.5"/><circle class="orb-p" id="orbp3" cx="750" cy="640" r="5.5"/></g>
@@ -519,7 +532,7 @@ body.lb-on{overflow:hidden}
 <text class="centro-s" x="750" y="732" text-anchor="middle">2016 — 2026</text>
 </svg></div>
     <hr class="fio">
-    <div class="legenda" role="group" aria-label="Escopo e reconhecimento"><button type="button" class="lg-b" data-classe="nat" aria-pressed="false"><svg class="lg-fm" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="miter"><circle cx="50" cy="52" r="38"/></g></svg><span class="lg-nm" data-en="National project">Projeto nacional</span></button><button type="button" class="lg-b" data-classe="natR" aria-pressed="false"><svg class="lg-fm" viewBox="0 0 100 100" aria-hidden="true"><g fill="currentColor" stroke="currentColor" stroke-width="9" stroke-linejoin="miter"><circle cx="50" cy="52" r="38"/></g></svg><span class="lg-nm" data-en="Project with national recognition">Projeto com reconhecimento nacional</span></button><button type="button" class="lg-b" data-classe="int" aria-pressed="false"><svg class="lg-fm" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="miter"><path d="M50 10L92 86H8Z"/></g></svg><span class="lg-nm" data-en="International project">Projeto internacional</span></button><button type="button" class="lg-b" data-classe="intR" aria-pressed="false"><svg class="lg-fm" viewBox="0 0 100 100" aria-hidden="true"><g fill="currentColor" stroke="currentColor" stroke-width="9" stroke-linejoin="miter"><path d="M50 10L92 86H8Z"/></g></svg><span class="lg-nm" data-en="Internationally recognized project">Projeto reconhecido internacionalmente</span></button></div>
+    <div class="legenda" role="group" aria-label="Escopo e reconhecimento"><button type="button" class="lg-b" data-classe="nat" aria-pressed="false"><svg class="lg-fm" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="miter"><circle cx="50" cy="52" r="38"/></g></svg><span class="lg-nm" data-en="&lt;span class=&quot;l1&quot;&gt;National&lt;/span&gt;&lt;span class=&quot;l2&quot;&gt;project&lt;/span&gt;"><span class="l1">Projeto</span><span class="l2">nacional</span></span></button><button type="button" class="lg-b" data-classe="natR" aria-pressed="false"><svg class="lg-fm" viewBox="0 0 100 100" aria-hidden="true"><g fill="currentColor" stroke="currentColor" stroke-width="9" stroke-linejoin="miter"><circle cx="50" cy="52" r="38"/></g></svg><span class="lg-nm" data-en="&lt;span class=&quot;l1&quot;&gt;Project with&lt;/span&gt;&lt;span class=&quot;l2&quot;&gt;national recognition&lt;/span&gt;"><span class="l1">Projeto com</span><span class="l2">reconhecimento nacional</span></span></button><button type="button" class="lg-b" data-classe="int" aria-pressed="false"><svg class="lg-fm" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="miter"><path d="M50 10L92 86H8Z"/></g></svg><span class="lg-nm" data-en="&lt;span class=&quot;l1&quot;&gt;International&lt;/span&gt;&lt;span class=&quot;l2&quot;&gt;project&lt;/span&gt;"><span class="l1">Projeto</span><span class="l2">internacional</span></span></button><button type="button" class="lg-b" data-classe="intR" aria-pressed="false"><svg class="lg-fm" viewBox="0 0 100 100" aria-hidden="true"><g fill="currentColor" stroke="currentColor" stroke-width="9" stroke-linejoin="miter"><path d="M50 10L92 86H8Z"/></g></svg><span class="lg-nm" data-en="&lt;span class=&quot;l1&quot;&gt;Internationally&lt;/span&gt;&lt;span class=&quot;l2&quot;&gt;recognized project&lt;/span&gt;"><span class="l1">Projeto reconhecido</span><span class="l2">internacionalmente</span></span></button></div>
     <hr class="fio">
   </div>
 </header>
