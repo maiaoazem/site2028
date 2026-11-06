@@ -239,6 +239,12 @@ body{font-variant-emoji:text}
 .assin nav + .idiomas{margin-left:22px}
 @media (max-width:860px){.assin nav + .idiomas{margin-left:auto}}
 
+/* links desta página, em linha no topo */
+.secoes{display:flex;flex-wrap:wrap;gap:6px 28px;padding-block:12px;font-size:12px;letter-spacing:.09em;text-transform:uppercase}
+.secoes a{border:0}
+.secoes a:hover,.secoes a:focus-visible{opacity:1;text-decoration:underline;text-underline-offset:4px}
+@media (max-width:560px){.secoes{flex-wrap:nowrap;overflow-x:auto;gap:22px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.secoes::-webkit-scrollbar{display:none}.secoes a{white-space:nowrap}}
+
 /* menu sanduíche */
 .menu-botao{font:inherit;font-size:12px;letter-spacing:.09em;text-transform:uppercase;background:none;border:0;color:inherit;padding:4px 0;cursor:pointer;display:flex;align-items:center;gap:10px}
 .menu-botao:hover{opacity:.6}
@@ -292,6 +298,15 @@ body.menu-aberto{overflow:hidden}
       </span>
       <button type="button" class="menu-botao" id="menu-botao" aria-expanded="false" aria-controls="menu-painel"><span class="tracos" aria-hidden="true"><i></i><i></i><i></i></span><span data-en="menu">menu</span></button>
     </div>
+    <hr class="fio">
+    <nav class="secoes" aria-label="Nesta página">
+      <a href="#bio" data-en="about">quem é</a>
+      <a href="#servicos" data-en="services">serviços</a>
+      <a href="#laborateliê">laborateliê</a>
+      <a href="#imprensa" data-en="featured in">citada em</a>
+      <a href="#escritora" data-en="writer">escritora</a>
+      <a href="#contato" data-en="contact">contato</a>
+    </nav>
     <hr class="fio">
     <div class="campo">
       <div>
@@ -480,18 +495,12 @@ body.menu-aberto{overflow:hidden}
       <button type="button" class="menu-botao" id="menu-fechar"><span class="tracos fechar" aria-hidden="true"><i></i><i></i></span><span data-en="close">fechar</span></button>
     </div>
     <hr class="fio">
-    <nav class="menu-lista" aria-label="Seções">
-      <span class="meta" data-en="menu">menu</span>
+    <nav class="menu-lista" aria-label="Outras páginas">
+      <span class="meta" data-en="other pages">outras páginas</span>
       <ul>
-          <li><a href="#bio" data-en="about">quem é</a></li>
-          <li><a href="#servicos" data-en="services">serviços</a></li>
-          <li><a href="#laborateliê">laborateliê</a></li>
-          <li><a href="#imprensa" data-en="featured in">citada em</a></li>
-          <li><a href="#escritora" data-en="writer">escritora</a></li>
           <li><a href="/portfolio" data-en="<span class=&quot;seta antes&quot; aria-hidden=&quot;true&quot;></span>portfolio"><span class="seta antes" aria-hidden="true"></span>portfólio</a></li>
           <li><a href="/lab" data-en="<span class=&quot;seta antes&quot; aria-hidden=&quot;true&quot;></span>open lab"><span class="seta antes" aria-hidden="true"></span>lab aberto</a></li>
           <li><a href="cv.html"><span class="seta antes" aria-hidden="true"></span>cv</a></li>
-          <li><a href="#contato" data-en="contact">contato</a></li>
       </ul>
     </nav>
     <hr class="fio">
