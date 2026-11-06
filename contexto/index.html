@@ -1,0 +1,1430 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Clube de Contexto</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="c/txt. · Clube de Contexto / Academia da Mente — como fortalecer a mente crítico-criativa na era da IA?">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Instrument+Sans:wght@400;500;600&family=Courier+Prime&display=swap">
+<style>
+/* layout: DS Clube de Contexto — chão branco, metade vazia, rótulos pendurados em 240px, blocos que abrem um de cada vez, círculos e pontos como hierarquia */
+:root {
+  --branco: #ffffff; --papel: #fbf8f4; --tinta: #141414; --tinta-suave: #5e5b57; --fio-suave: #d8d4cf; --apagado: #bdb8b2;
+  --rosa: #f6b4d0; --rosa-tinta: #c81e66; --amarelo-tinta: #7a6200;
+  --acento: var(--rosa-tinta);
+  --serifa: "Cormorant Garamond", Garamond, Georgia, serif;
+  --grotesca: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "Courier Prime", "Courier New", monospace;
+  --margem: clamp(20px, 4.45vw, 64px);
+  --respiro: clamp(104px, 13.3vw, 192px);
+  --topo: 60px;
+  color-scheme: light;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--branco); color: var(--tinta); font-family: var(--grotesca); font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+* { box-sizing: border-box; }
+p, h1, h2, h3, h4, ul, ol, figure { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+strong { font-weight: 600; }
+:focus-visible { outline: 2px solid var(--acento); outline-offset: 3px; }
+[id] { scroll-margin-top: calc(var(--topo) + 24px); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--branco); }
+
+.m { padding-left: max(var(--margem), env(safe-area-inset-left, 0px)); padding-right: max(var(--margem), env(safe-area-inset-right, 0px)); }
+.larg { max-width: 1440px; margin: 0 auto; }
+
+/* tipo */
+.ser { font-family: var(--serifa); font-weight: 300; letter-spacing: -.015em; }
+.it { font-style: italic; }
+.display { font-family: var(--serifa); font-weight: 300; font-size: clamp(64px, 11.1vw, 160px); line-height: .88; letter-spacing: -.03em; text-wrap: balance; }
+.titulo { font-family: var(--serifa); font-weight: 300; font-size: clamp(46px, 6.7vw, 96px); line-height: .94; letter-spacing: -.02em; text-wrap: balance; }
+.titulo-secao { font-family: var(--serifa); font-weight: 300; font-size: clamp(30px, 3.9vw, 56px); line-height: 1.02; letter-spacing: -.015em; text-wrap: balance; }
+.frase { font-family: var(--serifa); font-weight: 300; font-size: clamp(26px, 2.8vw, 40px); line-height: 1.14; letter-spacing: -.01em; }
+.frase strong, .titulo-secao strong { font-weight: 500; }
+.recuo { text-indent: clamp(40px, 6.7vw, 96px); }
+.leitura { font-family: var(--serifa); font-weight: 400; font-size: clamp(19px, 1.46vw, 21px); line-height: 1.5; max-width: 36em; }
+.leitura p + p { text-indent: 2em; margin-top: .2em; }
+.numero { font-family: var(--serifa); font-weight: 300; font-style: italic; font-size: clamp(24px, 2.1vw, 30px); line-height: 1; color: var(--amarelo-tinta); }
+.lista { font-size: clamp(21px, 2.2vw, 32px); line-height: 1.1; letter-spacing: -.02em; }
+.abertura { font-size: clamp(18px, 1.53vw, 22px); line-height: 1.38; letter-spacing: -.01em; text-wrap: pretty; }
+.lf { color: var(--tinta-suave); max-width: 34em; }
+.ui { font-size: 14px; line-height: 1.4; }
+.rotulo { font-size: 12px; line-height: 1.3; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; }
+.meta { font-size: 12px; line-height: 1.35; color: var(--tinta-suave); }
+.codigo { font-family: var(--mono); font-size: 13px; }
+.suave { color: var(--tinta-suave); }
+.fio { border: 0; border-top: 1px solid var(--tinta); margin: 0; height: 0; }
+.pend { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 28px; align-items: start; }
+.pend > .rotulo { padding-top: .7em; }
+.link { color: var(--tinta); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.link:hover { color: var(--acento); }
+.cita { font-size: 13px; color: var(--tinta-suave); }
+.cita a { color: var(--tinta-suave); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.cita a:hover { color: var(--acento); }
+.secao { padding-top: var(--respiro); }
+
+/* botões */
+.botao { appearance: none; display: inline-flex; align-items: center; gap: 10px; background: var(--tinta); color: var(--branco); border: 1px solid var(--tinta); border-radius: 0; padding: 12px 20px; font-size: 14px; cursor: pointer; text-decoration: none; transition: background .2s, border-color .2s; }
+.botao:hover { background: var(--acento); border-color: var(--acento); }
+.contorno { appearance: none; display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--tinta); border: 1px solid var(--tinta); border-radius: 0; padding: 9px 14px; font-size: 13px; cursor: pointer; text-decoration: none; transition: color .2s, border-color .2s; }
+.contorno:hover, .contorno[aria-pressed="true"] { color: var(--acento); border-color: var(--acento); }
+.contorno svg { width: 14px; height: 14px; flex: none; }
+.aviso-voto { font-family: var(--mono); font-size: 12px; color: var(--acento); }
+
+/* cabeça */
+.cabeca { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--branco); border-bottom: 1px solid var(--tinta); }
+.cabeca .larg { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: var(--topo); }
+.marca { font-family: var(--serifa); font-weight: 400; font-size: 26px; letter-spacing: -.01em; text-decoration: none; }
+.nav { display: flex; gap: 22px; font-size: 14px; }
+.nav a { text-decoration: none; }
+.nav a:hover { color: var(--acento); }
+.contador { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.contador .ponto { width: 9px; height: 9px; border-radius: 50%; background: var(--tinta); transition: transform .3s, background .3s; }
+.contador.pulsa .ponto { transform: scale(1.8); background: var(--acento); }
+.contador .num { font-family: var(--mono); font-size: 15px; font-variant-numeric: tabular-nums; }
+.contador .rot { font-size: 11px; color: var(--tinta-suave); line-height: 1.15; max-width: 80px; }
+
+/* abertura */
+.heroi { padding-top: clamp(40px, 5vw, 80px); }
+.heroi .barra-rot { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: baseline; padding: 12px 0 0; }
+.heroi h1 { margin-top: clamp(40px, 5vw, 72px); }
+.heroi .sub { display: block; font-size: clamp(30px, 4.2vw, 60px); line-height: 1; margin-top: .2em; color: var(--tinta); }
+.heroi .pergunta { margin-top: clamp(40px, 5vw, 72px); max-width: 22em; }
+.troca { display: inline-block; font-style: italic; color: var(--acento); transition: opacity .35s, transform .35s; }
+.troca.sai { opacity: 0; transform: translateY(-.25em); }
+.rede { position: relative; height: clamp(560px, 44vw, 620px); margin-top: clamp(40px, 5vw, 64px); border-top: 1px solid var(--tinta); overflow: hidden; }
+.rede canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.rede .dica { position: absolute; left: 0; top: 12px; z-index: 2; pointer-events: none; }
+.pal { position: absolute; left: 0; top: 0; z-index: 3; height: var(--ph, 42px); display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--tinta); border-radius: 999px; background: var(--branco); color: var(--tinta); font-size: clamp(14px, 1.2vw, 17px); white-space: nowrap; overflow: hidden; cursor: pointer; padding: 0; transition: width .9s cubic-bezier(.2,.8,.2,1), height .9s cubic-bezier(.2,.8,.2,1), background .4s, color .3s, border-color .3s; will-change: transform; }
+.pal span { padding: 0 1.05em; transition: opacity .5s .45s; }
+.pal.semente { height: 14px; background: var(--tinta); }
+.pal.semente span { opacity: 0; transition: none; }
+.pal:hover, .pal:focus-visible { border-color: var(--acento); color: var(--acento); }
+.pal[aria-pressed="true"] { background: var(--tinta); border-color: var(--tinta); color: var(--branco); }
+.pal.visto::after { content: ""; position: absolute; right: 7px; top: 7px; width: 5px; height: 5px; border-radius: 50%; background: var(--acento); }
+.painel { border-top: 1px solid var(--tinta); border-bottom: 1px solid var(--tinta); padding: 20px 0 28px; display: grid; grid-template-columns: 240px minmax(0, 1fr) minmax(0, 1fr) 150px; gap: 28px; align-items: start; min-height: 190px; }
+.painel h3 { font-family: var(--serifa); font-weight: 300; font-size: clamp(30px, 3vw, 44px); line-height: 1; letter-spacing: -.015em; }
+.painel .col p { font-size: 16px; line-height: 1.5; margin-top: 8px; }
+.painel .pontos { display: grid; justify-items: start; gap: 2px; }
+.painel .pontos .n { font-family: var(--serifa); font-weight: 300; font-size: 48px; line-height: 1; color: var(--amarelo-tinta); font-variant-numeric: lining-nums tabular-nums; }
+.painel.troca-on .col, .painel.troca-on h3 { animation: abre .35s ease; }
+
+/* revelar com a rolagem */
+.revelar .w { color: var(--apagado); transition: color .35s; }
+.revelar .w.on { color: var(--tinta); }
+
+/* benefícios do projeto */
+.benef { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; margin-top: 72px; }
+.benef h3 { font-family: var(--serifa); font-weight: 300; font-size: clamp(28px, 2.8vw, 40px); line-height: 1; padding-bottom: 14px; border-bottom: 1px solid var(--tinta); }
+.benef ol { display: grid; }
+.benef li a { display: grid; grid-template-columns: 22px minmax(0, 1fr) auto; gap: 12px; align-items: baseline; padding: 12px 0; border-bottom: 1px solid var(--fio-suave); text-decoration: none; }
+.benef li a::before { content: ""; width: 9px; height: 9px; border-radius: 50%; border: 1px solid var(--tinta); transform: translateY(-1px); transition: background .2s, border-color .2s; }
+.benef li a:hover { color: var(--acento); }
+.benef li a:hover::before { background: var(--acento); border-color: var(--acento); }
+.benef li .nome { font-size: 18px; }
+.benef li .conc { font-size: 13px; color: var(--tinta-suave); text-align: right; }
+.roi { background: var(--rosa); margin-top: 28px; padding: clamp(28px, 4vw, 56px); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 28px; align-items: end; }
+.roi .titulo-secao { font-size: clamp(36px, 4.6vw, 68px); }
+.roi .frase { font-size: clamp(22px, 2.2vw, 32px); }
+
+/* notas */
+.termo { appearance: none; background: none; border: 0; padding: 0 0 2px; cursor: pointer; font-family: var(--serifa); font-weight: 500; font-size: inherit; color: var(--tinta); border-bottom: 1px dashed var(--acento); display: inline-flex; align-items: baseline; gap: .35em; }
+.termo::after { content: ""; width: .32em; height: .32em; border-radius: 50%; background: var(--acento); transform: translateY(-.55em); }
+.termo:hover, .termo[aria-expanded="true"] { color: var(--acento); }
+.nota { border-top: 1px solid var(--fio-suave); margin-top: 24px; padding-top: 20px; display: grid; grid-template-columns: minmax(0, 1fr) 180px; gap: 28px; align-items: start; animation: abre .35s ease; }
+.nota .medidor { display: grid; justify-items: start; gap: 4px; }
+.nota .medidor .n { font-family: var(--serifa); font-weight: 300; font-size: 64px; line-height: 1; color: var(--amarelo-tinta); font-variant-numeric: lining-nums tabular-nums; }
+@keyframes abre { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+
+/* blocos */
+.blocos { margin-top: 72px; }
+.bloco { border-top: 1px solid var(--tinta); }
+.blocos > .bloco:last-child { border-bottom: 1px solid var(--tinta); }
+.bloco > summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 240px minmax(0, 1fr) 40px; gap: 28px; align-items: center; padding: clamp(22px, 2.4vw, 34px) 0; }
+.bloco > summary::-webkit-details-marker { display: none; }
+.bloco > summary .titulo-secao { transition: color .2s; }
+.bloco > summary:hover .titulo-secao { color: var(--acento); }
+.bloco > summary .meta { margin-top: 8px; }
+.bloco > summary .mais { justify-self: end; width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--tinta); display: grid; place-items: center; transition: transform .3s, background .3s, border-color .3s; }
+.bloco > summary .mais svg { width: 12px; height: 12px; }
+.bloco[open] > summary .mais { transform: rotate(45deg); background: var(--tinta); color: var(--branco); }
+.bloco .conteudo { padding: 8px 0 clamp(72px, 8vw, 120px); animation: abre .4s ease; position: relative; }
+
+/* tangentes */
+.tang { display: grid; grid-template-columns: minmax(0, 480px) minmax(0, 1fr); gap: clamp(28px, 4vw, 64px); align-items: start; margin-top: 56px; }
+.tang svg { width: 100%; height: auto; display: block; overflow: visible; }
+.tang .anel { fill: transparent; stroke: var(--tinta); stroke-width: 1; cursor: pointer; transition: stroke .2s, stroke-width .2s; }
+.tang .anel:hover { stroke: var(--acento); }
+.tang .anel.ativo { stroke: var(--acento); stroke-width: 2.2; }
+.tang .corda { stroke: var(--tinta); stroke-width: 1; }
+.tang .no { fill: var(--branco); stroke: var(--tinta); stroke-width: 1; }
+.tang .no.ativo { fill: var(--acento); stroke: var(--acento); }
+.tang text { font-family: var(--serifa); font-size: 21px; font-weight: 300; fill: var(--tinta); pointer-events: none; }
+.tang text.num { font-family: var(--grotesca); font-size: 12px; letter-spacing: .04em; }
+.tang text.ativo { fill: var(--acento); font-style: italic; }
+.itens-t { display: grid; }
+.item-t { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 16px; padding: 18px 0 22px; border-top: 1px solid var(--fio-suave); cursor: pointer; }
+.item-t:first-child { border-top-color: var(--tinta); }
+.item-t .numero { transition: color .2s; }
+.item-t.ativo .numero { color: var(--acento); }
+.item-t p { font-size: 17px; line-height: 1.5; }
+.voto { margin-top: 18px; display: grid; gap: 12px; }
+.voto .botoes { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.premio { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 20px; align-items: center; margin-top: 8px; padding-top: 16px; border-top: 1px solid var(--fio-suave); animation: abre .35s ease; }
+.premio canvas { width: 120px; height: 120px; }
+.premio .n { font-family: var(--serifa); font-weight: 300; font-size: 48px; line-height: 1; color: var(--amarelo-tinta); }
+
+/* convergência */
+.conv-wrap { margin-top: 24px; }
+.conv-cab { display: none; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+.conv svg { display: block; width: 100%; height: auto; overflow: visible; }
+.conv .curva { fill: none; stroke: #8f8a84; stroke-width: 1.3; transition: stroke .2s, stroke-width .2s; }
+.conv .curva.on { stroke: var(--acento); stroke-width: 2; }
+.conv text.lbl { font-family: var(--grotesca); fill: var(--tinta-suave); }
+.conv a text.lbl { cursor: pointer; transition: fill .2s; }
+.conv a:hover text.lbl, .conv a:focus text.lbl, .conv a.on text.lbl { fill: var(--acento); }
+.conv a:focus { outline: none; }
+.conv .cab { font-family: var(--serifa); font-weight: 400; fill: var(--tinta); }
+.conv .centro { font-family: var(--serifa); font-weight: 400; fill: var(--tinta); }
+.conv .pulso { fill: var(--acento); }
+.cta-linha { display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center; margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--fio-suave); }
+
+/* dobras */
+.dobras { margin-top: 40px; }
+.dobra { border-top: 1px solid var(--tinta); }
+.dobras > .dobra:last-child { border-bottom: 1px solid var(--tinta); }
+.dobra > summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 64px minmax(0, 1fr) 24px; gap: 16px; align-items: start; padding: 18px 0 20px; }
+.dobra > summary::-webkit-details-marker { display: none; }
+.dobra > summary .seta { width: 18px; height: 18px; margin-top: 8px; transition: transform .25s ease; }
+.dobra[open] > summary .seta { transform: rotate(180deg); color: var(--acento); }
+.dobra > summary:hover .lista { color: var(--acento); }
+.dobra > summary .resumo { color: var(--tinta-suave); margin-top: 6px; font-size: 16px; }
+.dobra .miolo { padding: 4px 40px 40px 80px; animation: abre .3s ease; }
+.piscar > summary .lista, .piscar > summary .titulo-secao { color: var(--acento); }
+.conceito { display: grid; gap: 14px; max-width: 46em; }
+.conceito h4 { font-family: var(--serifa); font-weight: 400; font-size: clamp(24px, 2vw, 30px); line-height: 1.15; }
+.corte { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+.recolhido.aberto .corte { display: block; -webkit-line-clamp: unset; }
+.revelar-btn { appearance: none; background: none; border: 0; padding: 0; font-size: 14px; cursor: pointer; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; justify-self: start; }
+.revelar-btn:hover { color: var(--acento); }
+
+/* pesquisas */
+.pesqs { margin-top: 32px; display: grid; }
+.pesq { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 28px; padding: 22px 0 26px; border-top: 1px solid var(--fio-suave); }
+.pesq .dado { display: grid; align-content: start; gap: 8px; }
+.pesq .dado .n { font-family: var(--serifa); font-weight: 300; font-size: clamp(38px, 3.4vw, 52px); line-height: .95; letter-spacing: -.02em; color: var(--amarelo-tinta); font-variant-numeric: lining-nums; }
+.pesq .dado .n.palavra { font-size: clamp(28px, 2.4vw, 36px); font-style: italic; }
+.pesq .dado .ins { font-size: 15px; line-height: 1.38; color: var(--tinta); }
+.pesq .p1 { font-size: 18.5px; line-height: 1.45; max-width: 40em; }
+.pesq .p2 { font-size: 15px; line-height: 1.55; max-width: 46em; margin-top: 10px; color: #2c2b29; }
+.pesq .cita { margin-top: 10px; }
+.pesq .acoes { display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; margin-top: 16px; }
+.pesq .ganho { font-family: var(--mono); font-size: 12px; color: var(--tinta-suave); margin-left: 4px; }
+.salvar svg path { fill: none; stroke: currentColor; stroke-width: 1.6; }
+.salvar[aria-pressed="true"] svg path { fill: currentColor; }
+
+/* participar */
+.tempo { margin-top: 64px; }
+.tempo .dobra > summary { grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) 24px; gap: 28px; }
+.tempo .quando { display: grid; gap: 6px; }
+.tempo .quando .ser { font-size: clamp(28px, 3vw, 44px); line-height: 1; }
+.tempo .dobra .miolo { padding: 0 40px 48px 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 28px; }
+.tempo .corpo { display: grid; gap: 18px; grid-column: 2; }
+.ganhos { display: grid; gap: 14px; }
+.ganhos li { display: grid; grid-template-columns: 16px minmax(0, 1fr); gap: 12px; }
+.ganhos li::before { content: ""; width: 9px; height: 9px; border-radius: 50%; border: 1px solid var(--tinta); margin-top: 7px; }
+.esperados { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin-top: 8px; }
+.esperado { border-top: 1px solid var(--tinta); padding-top: 18px; display: grid; gap: 12px; align-content: start; }
+.esperado svg { width: 72px; height: 72px; }
+.esperado h4 { font-family: var(--serifa); font-weight: 400; font-size: clamp(24px, 2.2vw, 32px); line-height: 1.05; }
+.esperado p { font-size: 15.5px; line-height: 1.5; }
+.esperado.destaque h4 { color: var(--acento); }
+.contato { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; padding-top: 8px; }
+.email { font-family: var(--serifa); font-size: 20px; }
+
+/* relógio */
+.prot-wrap { position: relative; }
+.prot-wrap .neuro { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+.prot-wrap > *:not(canvas) { position: relative; z-index: 1; }
+.relogio-grade { display: grid; grid-template-columns: minmax(0, 460px) minmax(0, 1fr); gap: clamp(28px, 5vw, 80px); margin-top: 48px; align-items: start; }
+.relogio { position: sticky; top: calc(var(--topo) + env(safe-area-inset-top, 0px) + 24px); }
+.relogio svg { width: 100%; height: auto; display: block; overflow: visible; }
+.relogio .min { fill: var(--fio-suave); transition: fill .15s; }
+.relogio .min.feito { fill: var(--tinta); }
+.relogio .marco { fill: var(--branco); stroke: var(--tinta); stroke-width: 1; }
+.relogio .marco.on { fill: var(--acento); stroke: var(--acento); }
+.relogio .mrot { font-family: var(--grotesca); font-size: 12px; fill: var(--tinta); letter-spacing: .04em; }
+.relogio .hora { font-family: var(--serifa); font-weight: 300; font-size: 68px; fill: var(--tinta); font-variant-numeric: lining-nums tabular-nums; }
+.relogio .etapa { font-family: var(--serifa); font-style: italic; font-weight: 400; font-size: 25px; fill: var(--acento); }
+.relogio .total { font-family: var(--grotesca); font-size: 12px; fill: var(--tinta-suave); letter-spacing: .12em; }
+.relogio .sobe { font-family: var(--grotesca); font-size: 14px; letter-spacing: .02em; }
+.relogio .ponteiro { stroke: var(--acento); stroke-width: 1.5; }
+.passos { display: grid; }
+.passo { padding: 22px 0 56px; border-top: 1px solid var(--fio-suave); min-height: calc(var(--dur) * 9px); transition: border-color .3s; }
+.passo:first-child { border-top-color: var(--tinta); }
+.passo.ativo { border-top-color: var(--acento); }
+.passo .cab-p { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; }
+.passo h3 { font-weight: 400; margin-top: 10px; }
+.passo.ativo h3 { color: var(--acento); }
+.passo > p { margin-top: 12px; font-size: 17px; max-width: 34em; }
+.passo .estudo { margin-top: 18px; padding-top: 14px; border-top: 1px dashed var(--fio-suave); display: grid; gap: 10px; max-width: 38em; }
+.passo .estudo h4 { font-family: var(--serifa); font-weight: 500; font-size: 22px; }
+.passo .estudo li { font-size: 15.5px; line-height: 1.5; }
+.passo .estudo li + li { margin-top: 8px; }
+
+/* corpo e mente */
+.cm { width: 100%; height: clamp(240px, 26vw, 360px); display: block; margin-top: 24px; }
+.assinatura { margin-top: 40px; padding-top: 22px; border-top: 1px solid var(--tinta); display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 28px; align-items: end; }
+.assinatura p.ass { font-family: var(--serifa); font-style: italic; font-weight: 300; font-size: clamp(36px, 5vw, 76px); line-height: 1; letter-spacing: -.02em; }
+.assinatura .quem { text-align: right; display: grid; gap: 4px; justify-items: end; }
+
+/* números grandes */
+.numeros { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin-top: 40px; }
+.numeros .grande { font-family: var(--serifa); font-weight: 300; font-size: clamp(80px, 11vw, 160px); line-height: .85; letter-spacing: -.04em; color: var(--amarelo-tinta); font-variant-numeric: lining-nums; }
+.numeros p { margin-top: 14px; font-size: 17px; max-width: 26em; }
+
+/* estante */
+.estante { overflow: hidden; margin-top: 40px; padding: 8px 0 12px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.trilho { display: flex; gap: 28px; width: max-content; animation: passa 90s linear infinite; }
+.estante:hover .trilho, .estante:focus-within .trilho { animation-play-state: paused; }
+@keyframes passa { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 14px)); } }
+.livro { width: clamp(170px, 16vw, 220px); display: grid; gap: 10px; flex: none; }
+.livro svg { width: 100%; height: auto; display: block; }
+
+/* fechamento */
+.preto { background: var(--tinta); color: var(--papel); margin-top: var(--respiro); }
+.preto .larg { padding-block: clamp(96px, 11vw, 160px) 72px; }
+.preto .fio { border-top-color: var(--papel); }
+.preto .leitura { color: var(--papel); }
+.preto .leitura strong { font-weight: 600; }
+.preto .cita { color: #bdb8b2; }
+.preto .final { font-family: var(--serifa); font-weight: 300; font-size: clamp(34px, 4.4vw, 64px); line-height: 1.02; letter-spacing: -.015em; max-width: 20ch; text-wrap: balance; margin-top: clamp(48px, 6vw, 96px); }
+.junte { display: grid; justify-items: center; gap: 18px; margin-top: clamp(72px, 8vw, 120px); text-align: center; }
+.junte a { font-family: var(--serifa); font-weight: 300; font-size: clamp(34px, 4.6vw, 68px); line-height: 1; letter-spacing: -.015em; background: var(--papel); color: var(--tinta); text-decoration: none; padding: .38em .9em .44em; border: 1px solid var(--papel); transition: background .25s, border-color .25s; }
+.junte a:hover { background: var(--rosa); border-color: var(--rosa); }
+
+/* outra coisa é possível */
+.rosa-final { background: var(--rosa); }
+.rosa-final .larg { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; align-items: center; padding-block: clamp(72px, 8vw, 120px); }
+.rosa-final canvas { width: 100%; max-width: 440px; aspect-ratio: 1; justify-self: end; display: block; }
+
+.rodape { padding-block: 28px 40px; }
+.rodape .linha { display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: center; padding-top: 16px; }
+.rodape .par { display: flex; gap: 14px; align-items: center; }
+.rodape .autoria { display: flex; gap: 12px; align-items: center; justify-content: flex-end; }
+.rodape .autoria svg { width: 28px; height: auto; }
+
+.toast { position: fixed; left: max(var(--margem), env(safe-area-inset-left, 0px)); bottom: calc(20px + env(safe-area-inset-bottom, 0px)); z-index: 40; background: var(--tinta); color: var(--branco); padding: 12px 18px; font-size: 14px; max-width: min(440px, calc(100vw - 40px)); transform: translateY(16px); opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s; }
+.toast.on { opacity: 1; transform: none; }
+.voo { position: fixed; left: 0; top: 0; z-index: 45; width: 7px; height: 7px; border-radius: 50%; background: var(--acento); pointer-events: none; }
+
+@media (max-width: 1080px) { .nav { display: none; } .painel { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .painel .tit { grid-column: 1 / -1; } }
+@media (max-width: 860px) {
+  .pend { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .pend > .rotulo { padding-top: 0; }
+  .painel { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .benef { grid-template-columns: minmax(0, 1fr); gap: 48px; }
+  .roi { grid-template-columns: minmax(0, 1fr); }
+  .bloco > summary { grid-template-columns: 44px minmax(0, 1fr) 32px; gap: 12px; }
+  .tang { grid-template-columns: minmax(0, 1fr); }
+  .tang svg { max-width: 420px; }
+  .nota { grid-template-columns: minmax(0, 1fr); }
+  .conv-cab { display: flex; }
+  .dobra > summary { grid-template-columns: 40px minmax(0, 1fr) 20px; gap: 10px; }
+  .dobra .miolo { padding: 0 0 32px 0; }
+  .pesq { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .tempo .dobra > summary { grid-template-columns: minmax(0, 1fr) 20px; }
+  .tempo .dobra > summary .quando, .tempo .dobra > summary .tit { grid-column: 1; }
+  .tempo .dobra > summary .seta { grid-column: 2; grid-row: 1; }
+  .tempo .dobra .miolo { grid-template-columns: minmax(0, 1fr); padding-right: 0; }
+  .tempo .corpo { grid-column: 1; }
+  .esperados { grid-template-columns: minmax(0, 1fr); }
+  .relogio-grade { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .relogio { top: calc(var(--topo) + env(safe-area-inset-top, 0px)); z-index: 2; background: var(--branco); padding: 10px 0; border-bottom: 1px solid var(--fio-suave); }
+  .relogio svg { max-width: 240px; margin: 0 auto; }
+  .passo { min-height: 0; }
+  .numeros { grid-template-columns: minmax(0, 1fr); }
+  .assinatura { grid-template-columns: minmax(0, 1fr); }
+  .assinatura .quem { justify-items: start; text-align: left; }
+  .rosa-final .larg { grid-template-columns: minmax(0, 1fr); }
+  .rosa-final canvas { justify-self: center; max-width: 320px; }
+  .rodape .linha { grid-template-columns: minmax(0, 1fr); }
+  .rodape .autoria { justify-content: flex-start; }
+  .contador .rot { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+  .revelar .w { color: var(--tinta); }
+  .estante { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+}
+</style>
+
+<header class="cabeca m">
+  <div class="larg">
+    <a class="marca" href="#topo">c/txt.</a>
+    <nav class="nav" aria-label="Seções">
+      <a href="#o-projeto">O projeto</a><a href="#duplo-foco">Duplo foco</a><a href="#bl-humanos">Benefícios</a><a href="#participar">Participar</a><a href="#bl-empresas">Empresas</a><a href="#bl-ler">Livros</a>
+    </nav>
+    <a class="contador" id="contador" href="#rodape" title="Contador simbólico do seu percurso de leitura neste site">
+      <span class="ponto" aria-hidden="true"></span>
+      <span class="num" id="ativ-num">0000</span>
+      <span class="rot">ativações neuronais</span>
+    </a>
+  </div>
+</header>
+
+<main id="topo">
+  <!-- ABERTURA -->
+  <section class="heroi m" aria-labelledby="h-titulo">
+    <div class="larg">
+      <hr class="fio">
+      <div class="barra-rot"><p class="ui suave">Um protocolo presencial de leitura, debate e escrita para equipes que trabalham com IA.</p><p class="rotulo suave">São Paulo · 2026</p></div>
+      <h1 class="display" id="h-titulo">clube de <span class="it">contexto</span><span class="sub ser">/ academia da mente</span></h1>
+      <p class="frase pergunta">Como <span class="troca" id="troca">fortalecer</span> a mente crítico-criativa na era da IA?</p>
+      <div class="rede" id="rede">
+        <canvas aria-hidden="true"></canvas>
+        <p class="rotulo suave dica">palavras-chave · toque para abrir</p>
+        <button class="pal semente" type="button" data-t="duplo"><span>duplo foco</span></button>
+        <button class="pal semente" type="button" data-t="neuro"><span>neuroplasticidade</span></button>
+        <button class="pal semente" type="button" data-t="leitura"><span>leitura profunda</span></button>
+        <button class="pal semente" type="button" data-t="debate"><span>debate aberto</span></button>
+        <button class="pal semente" type="button" data-t="escrita"><span>escrita manual</span></button>
+        <button class="pal semente" type="button" data-t="contextos"><span>contextos autorais</span></button>
+        <button class="pal semente" type="button" data-t="bionico"><span>humano biônico</span></button>
+        <button class="pal semente" type="button" data-t="atencao"><span>atenção</span></button>
+        <button class="pal semente" type="button" data-t="interpretacao"><span>interpretação</span></button>
+        <button class="pal semente" type="button" data-t="interdisciplinaridade"><span>interdisciplinaridade</span></button>
+        <button class="pal semente" type="button" data-t="critica"><span>crítica</span></button>
+        <button class="pal semente" type="button" data-t="criatividade"><span>criatividade</span></button>
+        <button class="pal semente" type="button" data-t="memoria"><span>memória</span></button>
+        <button class="pal semente" type="button" data-t="decisao"><span>decisão</span></button>
+        <button class="pal semente" type="button" data-t="diferenciacao"><span>diferenciação</span></button>
+        <button class="pal semente" type="button" data-t="protocolo"><span>protocolo</span></button>
+      </div>
+      <div class="painel" id="painel" aria-live="polite">
+        <div class="tit"><p class="rotulo suave">palavra-chave</p><h3 id="p-termo" style="margin-top:10px">humano biônico</h3></div>
+        <div class="col"><p class="rotulo">o que é</p><p id="p-oque"></p></div>
+        <div class="col"><p class="rotulo">como o clube ajuda · humano e máquina</p><p id="p-como"></p></div>
+        <div class="pontos"><span class="n" id="p-n">+8</span><span class="meta" id="p-msg">ativações ao abrir cada palavra</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O PROJETO -->
+  <section class="secao m" id="o-projeto" aria-label="O projeto">
+    <div class="larg">
+      <div class="pend">
+        <p class="rotulo">o projeto</p>
+        <div>
+          <p class="frase recuo revelar" style="font-size:clamp(28px,3.4vw,48px)">Um protocolo de exercícios para proteção da capacidade crítica e criativa humana, pensado para essa nova era em que se tornou possível terceirizar o pensamento humano para as máquinas.</p>
+          <p class="abertura" style="margin-top:48px;max-width:36em">O processo combina <strong>leitura profunda</strong>, <strong>debate aberto</strong>, <strong>escrita manual</strong> e a <strong>construção de contextos autorais</strong> para a IA, potencializando as duas partes dessa nova dupla corporativa, o humano biônico.</p>
+        </div>
+      </div>
+
+      <div class="benef">
+        <div>
+          <h3>benefícios <span class="it">humanos</span></h3>
+          <ol>
+            <li><a href="#mh-atencao" data-ir="#mh-atencao"><span class="nome">Atenção</span><span class="conc">Anti-Preguiça Cognitiva</span></a></li>
+            <li><a href="#mh-interpretacao" data-ir="#mh-interpretacao"><span class="nome">Interpretação</span><span class="conc">A Leitura é Aprendida Culturalmente</span></a></li>
+            <li><a href="#mh-interdisciplinaridade" data-ir="#mh-interdisciplinaridade"><span class="nome">Interdisciplinaridade</span><span class="conc">Pensamento Sistêmico</span></a></li>
+            <li><a href="#mh-critica" data-ir="#mh-critica"><span class="nome">Crítica</span><span class="conc">Capacidade de Crítica</span></a></li>
+            <li><a href="#mh-criatividade" data-ir="#mh-criatividade"><span class="nome">Criatividade</span><span class="conc">Ampliação Criativa na Zona Média</span></a></li>
+            <li><a href="#mh-memoria" data-ir="#mh-memoria"><span class="nome">Memória</span><span class="conc">A Aprendizagem é um Processo de Apropriação</span></a></li>
+            <li><a href="#mh-decisao" data-ir="#mh-decisao"><span class="nome">Decisão</span><span class="conc">A Máquina Sempre Sabe</span></a></li>
+          </ol>
+        </div>
+        <div>
+          <h3>benefícios de <span class="it">máquina</span></h3>
+          <ol>
+            <li><a href="#ms-autoralidade" data-ir="#ms-autoralidade"><span class="nome">Autoralidade</span><span class="conc">Emergência da Cultura Sintética e Híbrida</span></a></li>
+            <li><a href="#ms-diferenciacao" data-ir="#ms-diferenciacao"><span class="nome">Diferenciação</span><span class="conc">Fuga da Média de Cognição e Elaboração</span></a></li>
+            <li><a href="#mh-critica" data-ir="#mh-critica"><span class="nome">Respostas melhores</span><span class="conc">quanto melhor a crítica humana, melhor a da IA</span></a></li>
+          </ol>
+        </div>
+      </div>
+      <div class="roi">
+        <div><p class="rotulo">o ganho que sustenta os outros</p><p class="titulo-secao" style="margin-top:14px">proteção do <span class="it">ROI humano</span></p></div>
+        <div><p class="frase">Proteger quem usa a IA é proteger o investimento em IA.</p><p class="ui" style="margin-top:14px;max-width:34em">O ganho imediato de produtividade da IA não pode custar a capacidade cognitiva que sustenta os próximos anos.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DUPLO FOCO -->
+  <section class="secao m" id="duplo-foco" aria-labelledby="h-duplo">
+    <div class="larg">
+      <hr class="fio">
+      <div class="pend" style="padding-top:14px">
+        <p class="rotulo">duplo foco</p>
+        <div>
+          <h2 class="titulo" id="h-duplo">duplo foco: o humano e a <span class="it">máquina</span></h2>
+          <p class="abertura lf" style="margin-top:20px">Por que o uso da IA no trabalho pede um novo cuidado com a mente.</p>
+        </div>
+      </div>
+      <div class="pend" style="margin-top:56px">
+        <span></span>
+        <div class="leitura">
+          <p>O projeto não é uma recusa ao uso da Inteligência Artificial, mas a necessária compreensão de que, do mesmo jeito que a mudança para o trabalho de escritório e de computador mudou nossas necessidades corporais, com mais cuidado com ergonomia e tempo de corpo parado, <strong>a terceirização dos trabalhos críticos e criativos também faz necessário nascer novas estruturas adaptativas para que não percamos nossas habilidades mentais</strong>, e o que nos faz humanos, capazes de pensar qual a próxima coisa possível e necessária.</p>
+          <p style="text-indent:0;margin-top:28px"><span class="rotulo" style="font-family:var(--grotesca);margin-right:14px">nota</span><button class="termo" id="nota-neuro" type="button" aria-expanded="false" aria-controls="nota-neuro-c">Neuroplasticidade</button></p>
+          <div class="nota" id="nota-neuro-c" hidden>
+            <div><p><strong>Neuroplasticidade</strong>: é a capacidade contínua do sistema nervoso de reorganizar sua estrutura, funções e conexões em resposta a novas experiências, aprendizados, estímulos ou lesões. <strong>Se o cérebro deixa de ser requisitado para ler, elaborar, conectar, criticar, sintetizar, escrever, imaginar, prototipar, quais são os caminhos que perdemos a força muscular? E o que perdemos com o que acreditamos que estamos ganhando?</strong></p></div>
+            <div class="medidor" aria-live="polite"><span class="n" id="nota-neuro-n">0</span><span class="meta">ativações neuronais com esta nota</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="blocos">
+        <details class="bloco" id="bl-maquina" data-grupo="bloco">
+          <summary><span class="numero">(01)</span><span><span class="titulo-secao" style="display:block">A máquina dá. A máquina <span class="it">tira.</span></span><span class="meta" style="display:block">3 estudos · 1 pergunta para você</span></span><span class="mais" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M6 0V12M0 6H12" stroke="currentColor" stroke-width="1.4"/></svg></span></summary>
+          <div class="conteudo">
+            <div class="pend"><span></span><p class="frase recuo">O que <strong>delegamos às tecnologias, como a IA, tende a enfraquecer em nós</strong>, como aconteceu com a memória espacial com a chegada do GPS.</p></div>
+            <div class="tang">
+              <div id="tang-svg"></div>
+              <ol class="itens-t" id="itens-t">
+                <li class="item-t ativo"><span class="numero">(01)</span><div><p>É o caso dos <strong>Taxistas de Londres</strong>: pela necessidade de saber todas as ruas da cidade, o que era medido para tirar a licença, tinham o hipocampo maior que a média da população.</p><p class="cita" style="margin-top:6px">(Maguire et al., 2000)</p></div></li>
+                <li class="item-t"><span class="numero">(02)</span><div><p>E podemos correlacionar com um estudo de <strong>20 anos depois, nos Estados Unidos, após a chegada do GPS.</strong> Com <strong>50</strong> motoristas, conseguiram conectar o maior uso dos GPSs a uma pior memória espacial e uma mudança no hipocampo.</p><p class="cita" style="margin-top:6px">(Dahmani e Bohbot, Scientific Reports 2020)</p></div></li>
+                <li class="item-t"><span class="numero">(03)</span><div>
+                  <p>A IA é um acelerador desses riscos, já documentados desde o início da queda do nível de leitura na população, e aumento do consumo de vídeos curtos.</p>
+                  <div class="voto" id="voto-q1">
+                    <p class="rotulo">você concorda com esta afirmação?</p>
+                    <div class="botoes"><button class="contorno" type="button" data-voto="sim" aria-pressed="false">Concordo</button><button class="contorno" type="button" data-voto="nao" aria-pressed="false">Discordo</button></div>
+                    <div class="premio" id="premio" hidden>
+                      <canvas width="240" height="240" aria-hidden="true"></canvas>
+                      <div><p class="n">+<span id="premio-n">0</span></p><p class="ui">ativações neuronais por pensar sobre isso.</p><p class="meta" style="margin-top:4px" id="premio-txt"></p></div>
+                    </div>
+                  </div>
+                </div></li>
+              </ol>
+            </div>
+          </div>
+        </details>
+
+        <!-- BENEFÍCIOS PARA HUMANOS -->
+        <details class="bloco" id="bl-humanos" data-grupo="bloco">
+          <summary><span class="numero">(02)</span><span><span class="titulo-secao" style="display:block">Benefícios do Clube para <span class="it">Humanos</span></span><span class="meta" style="display:block">a mente humana · 7 benefícios · 12 pesquisas</span></span><span class="mais" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M6 0V12M0 6H12" stroke="currentColor" stroke-width="1.4"/></svg></span></summary>
+          <div class="conteudo">
+            <p class="abertura lf">Sete capacidades que o uso acrítico da IA enfraquece e que as cinco etapas do clube exercitam, com o que as pesquisas mostram sobre cada uma.</p>
+            <div class="conv-wrap">
+              <div class="conv-cab"><p class="rotulo">o clube</p><p class="rotulo">benefícios</p></div>
+              <div class="conv" id="conv-h"></div>
+            </div>
+            <div class="cta-linha"><a class="link ui" href="#mh-lista" data-ir-lista="#mh-lista">Veja os benefícios ↓</a><p class="meta">Toque num benefício para abrir as pesquisas.</p></div>
+            <div class="dobras" id="mh-lista">
+              <details class="dobra" id="mh-atencao" data-grupo="mh">
+                <summary><span class="numero">(01)</span><span><span class="lista" style="display:block">A Atenção</span><span class="resumo" style="display:block">Anti-Preguiça Cognitiva</span></span><svg class="seta" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8V88M22 60L50 88L78 60" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="square"/></svg></summary>
+                <div class="miolo">
+                  <div class="conceito"><h4>Anti-Preguiça Cognitiva</h4><p class="leitura">Se nossa capacidade de atenção já vinha diminuindo com as mudanças de consumo pós-internet e pós-mobile, a tendência parece se avolumar e se acelerar no pós-IA. A ponta inicial de toda capacidade crítica, que é a atenção, está ainda mais em risco.</p></div>
+                  <div class="pesqs">
+                    <article class="pesq" data-id="liu2026"><div class="dado"><span class="n">10 min</span><span class="ins">de assistência com IA já dificulta performar tarefas complexas</span></div><div><p class="p1">Pesquisadores já se debruçam para compreender quanto a terceirização do pensamento pode produzir efeitos mesmo após interações breves.</p><p class="p2">Em experimentos randomizados com <strong>1.222</strong> participantes, já <strong>observaram que cerca de dez minutos de assistência com IA foram suficientes para reduzir a persistência diante de problemas e prejudicar o desempenho posterior sem a ferramenta</strong>. A IA ajudava a resolver os exercícios imediatamente, mas os participantes se tornavam menos propensos a continuar tentando quando precisavam agir por conta própria.</p><p class="cita">(<a href="https://arxiv.org/abs/2604.04721" target="_blank" rel="noopener">Liu et al., 2026</a>)</p></div></article>
+                    <article class="pesq" data-id="ft2025"><div class="dado"><span class="n">2010</span><span class="ins">início das quedas em leitura e raciocínio e jovens com dificuldade de pensar</span></div><div><p class="p1">Nossa capacidade de sustentar a atenção já apresentava sinais de dificuldade antes da popularização da inteligência artificial generativa.</p><p class="p2"><strong>Uma análise do Financial Times, reunindo dados de avaliações internacionais e pesquisas longitudinais, identificou quedas no desempenho em leitura e raciocínio desde o início dos anos 2010, além de um aumento, a partir de meados da década, na proporção de jovens que relatam dificuldades para pensar, concentrar-se e aprender</strong>. A análise relaciona essas tendências às transformações no consumo de informação, especialmente à passagem da exploração ativa para o consumo passivo de conteúdos digitais.</p><p class="cita">(<a href="https://www.ft.com/content/a8016c64-63b7-458b-a371-e0e1c54a13fc" target="_blank" rel="noopener">Burn-Murdoch, 2025</a>)</p></div></article>
+                  </div>
+                </div>
+              </details>
+              <details class="dobra" id="mh-interpretacao" data-grupo="mh">
+                <summary><span class="numero">(02)</span><span><span class="lista" style="display:block">A Interpretação</span><span class="resumo" style="display:block">A Leitura é Aprendida Culturalmente</span></span><svg class="seta" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8V88M22 60L50 88L78 60" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="square"/></svg></summary>
+                <div class="miolo">
+                  <div class="conceito"><h4>A Leitura é Aprendida Culturalmente</h4><p class="leitura">Se a fala é adquirida espontaneamente, a leitura ainda exige ensino deliberado e depende de manutenção cultural. O cérebro ainda não evoluiu para ler. O cérebro aprende a ler reaproveitando uma parte do córtex visual, que vai se especializando em letras: a "área da forma visual da palavra", a "caixa de letras" de Dehaene. A parte da mente que faz a gente reconhecer uma maçã, independente de seu formato, é a que faz a gente reconhecer um A ou um B, independente de seu formato.</p></div>
+                  <div class="pesqs">
+                    <article class="pesq" data-id="wilson2013"><div class="dado"><span class="n">32%</span><span class="ins">mais lento é o declínio cognitivo de quem lê e escreve com frequência</span></div><div><p class="p1">Ler, escrever e interpretar informações são atividades que mobilizam nossas capacidades cognitivas, são um exercício que proporcionam e fazem a manutenção da estrutura de cognição.</p><p class="p2">Em um estudo que acompanhou <strong>294</strong> pessoas idosas até a morte, com avaliações anuais e autópsias cerebrais, pesquisadores identificaram que <strong>a prática frequente de atividades intelectualmente estimulantes, como leitura e escrita, estava associada a um declínio cognitivo 32% mais lento</strong>. Entre participantes com pouca atividade cognitiva, esse declínio foi <strong>48%</strong> mais rápido, em comparação com aqueles de atividade mediana.</p><p class="cita">(<a href="https://doi.org/10.1212/WNL.0b013e31829c5e8a" target="_blank" rel="noopener">Wilson et al., 2013</a>)</p></div></article>
+                  </div>
+                </div>
+              </details>
+              <details class="dobra" id="mh-interdisciplinaridade" data-grupo="mh">
+                <summary><span class="numero">(03)</span><span><span class="lista" style="display:block">A Interdisciplinaridade</span><span class="resumo" style="display:block">Pensamento Sistêmico</span></span><svg class="seta" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8V88M22 60L50 88L78 60" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="square"/></svg></summary>
+                <div class="miolo">
+                  <div class="conceito"><h4>Pensamento Sistêmico</h4><p class="leitura">Como o contexto não é extraído de um único livro, e emerge do encontro entre leituras diferentes de pessoas diferentes, há uma abertura da mente coletiva e individual para melhor <strong>compreender os sistemas complexos</strong> onde estamos inseridos e suas relações.</p></div>
+                  <div class="pesqs">
+                    <article class="pesq" data-id="chi2026"><div class="dado"><span class="n">55</span><span class="ins">estudos mostram que cruzar áreas amplia a criatividade</span></div><div><p class="p1">Cruzar conhecimentos de diferentes áreas pode ampliar nossa capacidade de produzir ideias e interpretações originais.</p><p class="p2"><strong>Uma meta-análise de 55 estudos, envolvendo 7.490 estudantes, identificou efeitos positivos significativos do ensino interdisciplinar sobre a criatividade, especialmente nos processos de pensamento criativo e na capacidade de aplicar novas ideias.</strong> Os pesquisadores apontam a recombinação de conhecimentos, a integração de perspectivas e a transferência de ideias entre contextos como mecanismos que podem favorecer esse desenvolvimento.</p><p class="cita">(<a href="https://doi.org/10.1016/j.tsc.2026.102379" target="_blank" rel="noopener">Chi et al., 2026</a>)</p></div></article>
+                  </div>
+                </div>
+              </details>
+              <details class="dobra" id="mh-critica" data-grupo="mh">
+                <summary><span class="numero">(04)</span><span><span class="lista" style="display:block">A Crítica</span><span class="resumo" style="display:block">Capacidade de Crítica</span></span><svg class="seta" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8V88M22 60L50 88L78 60" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="square"/></svg></summary>
+                <div class="miolo">
+                  <div class="conceito"><h4>Capacidade de Crítica</h4><p class="leitura">A terceirização do raciocínio analítico e da tomada de decisão para os algoritmos já está sendo estudada a fundo pelas consultorias de negócios, pois o possível ganho de produtividade no presente pode gradativamente corroer o ROI humano da organização, e sua capacidade estratégica.</p></div>
+                  <div class="pesqs">
+                    <article class="pesq" data-id="bcg-deskilling"><div class="dado"><span class="n palavra">de-skilling</span><span class="ins">distribuído: a erosão coletiva das habilidades críticas de uma empresa</span></div><div><p class="p1">O assunto já virou <strong>termo corporativo, o "de-skilling distribuído"</strong>, que é quando o uso excessivo ou sem critérios da Inteligência Artificial provoca uma erosão coletiva e simultânea de habilidades críticas humanas dentro de uma empresa.</p><p class="cita">(Boston Consulting Group, 2026)</p></div></article>
+                    <article class="pesq" data-id="anthropic2026"><div class="dado"><span class="n">0,92</span><span class="ins">de correlação: quanto melhor o prompt humano, melhor a resposta da IA</span></div><div><p class="p1">E outra análise, com aproximadamente <strong>1 milhão</strong> de conversas dentro do Claude, a Anthropic identificou uma correlação superior a <strong>0,92</strong> entre a complexidade educacional dos prompts humanos e das respostas produzidas pela IA.</p><p class="p2"><strong>Um reforço de que quanto melhor a capacidade crítica do humano, melhor a capacidade crítica da IA</strong>.</p><p class="cita">(<a href="https://www.anthropic.com/research/anthropic-economic-index-january-2026-report" target="_blank" rel="noopener">Anthropic</a>, 2026)</p></div></article>
+                    <article class="pesq" data-id="lee2025"><div class="dado"><span class="n">319</span><span class="ins">trabalhadores: quanto mais confiança na IA, menos esforço crítico</span></div><div><p class="p1">Corroborado por um estudo da Microsoft com <strong>319</strong> trabalhadores.</p><p class="p2">Quanto maior a confiança na IA, menor o esforço crítico relatado. <strong>Achar que a máquina tudo sabe faz com que invalidemos o que sabemos e a necessidade ou possibilidade de questionar o que ela disse.</strong> A pesquisa também encontrou uma mudança na natureza do trabalho crítico, direcionado à verificação e integração de respostas. A crítica e a síntese se perdem.</p><p class="cita">(<a href="https://www.microsoft.com/en-us/research/publication/the-impact-of-generative-ai-on-critical-thinking-self-reported-reductions-in-cognitive-effort-and-confidence-effects-from-a-survey-of-knowledge-workers/" target="_blank" rel="noopener">Lee et al., Microsoft/CMU, 2025</a>)</p></div></article>
+                    <article class="pesq" data-id="gerlich2025"><div class="dado"><span class="n">666</span><span class="ins">pessoas: uso frequente de IA ligado a pior pensamento crítico</span></div><div><p class="p1">O que é ainda pior nos jovens, principalmente entre <strong>17 e 25</strong> anos, formando sua opinião crítica sobre o mundo.</p><p class="p2"><strong>Survey e teste com 666 pessoas correlacionou o uso frequente de IA com pior pensamento crítico, mediado por essa terceirização da razão</strong>; Uma juventude com dificuldade de pensar fora da máquina, e, assim, de pensar para além dos limites do pensamento da máquina.</p><p class="cita">(<a href="https://www.mdpi.com/2075-4698/15/1/6" target="_blank" rel="noopener">Gerlich, Societies 2025</a>)</p></div></article>
+                  </div>
+                </div>
+              </details>
+              <details class="dobra" id="mh-criatividade" data-grupo="mh">
+                <summary><span class="numero">(05)</span><span><span class="lista" style="display:block">A Criatividade</span><span class="resumo" style="display:block">Ampliação Criativa na Zona Média</span></span><svg class="seta" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8V88M22 60L50 88L78 60" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="square"/></svg></summary>
+                <div class="miolo">
+                  <div class="conceito"><h4>Ampliação Criativa na Zona Média</h4><p class="leitura">Apesar de o indivíduo, frente à IA, acreditar que o resultado obtido com o cérebro sintético é mais inédito e criativo do que sua produção individual seria (o que pode ser verdade em alguns casos), como a derivação da IA encaminha as respostas à média, o resultado é achatado em similaridade.</p></div>
+                  <div class="pesqs">
+                    <article class="pesq" data-id="herdagdelen2026"><div class="dado"><span class="n">86%</span><span class="ins">das vezes, especialistas adotaram as escolhas da máquina como suas</span></div><div><p class="p1">É o caso inclusive para os especialistas em seus temas, comprovado pela pesquisa da Anthropic sobre a influência invisível dos agentes de Inteligência Artificial.</p><p class="p2">Pela forte deferência às sugestões do algoritmo, e a necessidade de acelerar as tarefas analíticas complexas, <strong>especialistas adotaram as escolhas da máquina em 86% das vezes e replicaram seus argumentos</strong>, mantendo a falsa sensação de autoria sobre a decisão final.</p><p class="cita">(Herdağdelen et al., 2026)</p></div></article>
+                  </div>
+                </div>
+              </details>
+              <details class="dobra" id="mh-memoria" data-grupo="mh">
+                <summary><span class="numero">(06)</span><span><span class="lista" style="display:block">A Memória</span><span class="resumo" style="display:block">A Aprendizagem é um Processo de Apropriação</span></span><svg class="seta" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8V88M22 60L50 88L78 60" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="square"/></svg></summary>
+                <div class="miolo">
+                  <div class="conceito recolhido" id="rec-memoria"><h4>A Aprendizagem é um Processo de Apropriação</h4><p class="leitura corte">O que aprendemos, ou tentamos compreender, com o apoio de IAs tem sua capacidade de sedimentação na memória muito reduzida. Temos o contato com a coisa, conseguimos aplicá-la contextualmente no momento, mas aquilo se esvai com maior facilidade quando a ferramenta não está. Há uma falsa sensação de aprendizagem, e uma dependência da estrutura sintética para saber o que a gente acreditava saber. Já vivemos uma realidade de memória estendida pela máquina, e que o humano que era criado continuamente pelo trabalho, sabendo mais e mais sobre o que fazia, é substituído por um humano que sabe como fez, mas não o que fez.</p><button class="revelar-btn" type="button" data-alvo="rec-memoria" aria-expanded="false">Continuar lendo</button></div>
+                  <div class="pesqs">
+                    <article class="pesq" data-id="bastani2025"><div class="dado"><span class="n">−17%</span><span class="ins">de desempenho quando a IA é retirada, depois de +48% com ela</span></div><div><p class="p1">Em um experimento com quase mil estudantes, o acesso ao ChatGPT melhorou o desempenho nos exercícios de matemática em <strong>48%</strong>.</p><p class="p2">Entretanto, quando a ferramenta foi retirada, esses mesmos estudantes tiveram resultados <strong>17%</strong> inferiores aos de colegas que nunca haviam utilizado a IA.</p><p class="cita">(<a href="https://doi.org/10.1073/pnas.2422633122" target="_blank" rel="noopener">Bastani et al., 2025</a>)</p></div></article>
+                    <article class="pesq" data-id="kosmyna2025"><div class="dado"><span class="n">83,3%</span><span class="ins">não conseguiam citar o que tinham acabado de escrever com IA</span></div><div><p class="p1">Na escrita autoral, medida por EEG, foi comprovada uma conectividade cerebral mais fraca ao escrever as redações com IA;</p><p class="p2"><strong>54</strong> estudantes, e, desses, <strong>83,3%</strong> não conseguiam citar o que haviam escrito, contra <strong>11,1%</strong>, quando escrito sem LLM; A comprovação de um menor senso de autoria e da ideia de "dívida cognitiva", nem o que é lido fica, e nem o que é "criado" fica.</p><p class="cita">(<a href="https://www.media.mit.edu/projects/your-brain-on-chatgpt/overview/" target="_blank" rel="noopener">Kosmyna et al., MIT, 2025</a>)</p></div></article>
+                  </div>
+                </div>
+              </details>
+              <details class="dobra" id="mh-decisao" data-grupo="mh">
+                <summary><span class="numero">(07)</span><span><span class="lista" style="display:block">A Decisão</span><span class="resumo" style="display:block">A Máquina Sempre Sabe</span></span><svg class="seta" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8V88M22 60L50 88L78 60" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="square"/></svg></summary>
+                <div class="miolo">
+                  <div class="conceito"><h4>A Máquina Sempre Sabe</h4><p class="leitura">A datacracia de Byung-Chul Han é a compreensão que em nossa sociedade há uma grande crença de que a resposta está nos dados, e que, pela complexidade do mundo, o ser humano é incapaz de responder melhor que um sistema inteligente bem estruturado. E essa crença segue conosco em toda interação humano-máquina, mesmo acreditando que estamos na decisão, estamos fazendo apontando para onde a máquina nos disse que é melhor caminhar. Somos o corpo físico da IA no mundo e isso não é, mesmo aos tecno-otimistas, um elogio.</p></div>
+                  <div class="pesqs">
+                    <article class="pesq" data-id="marcoccia2026"><div class="dado"><span class="n">44% → 3%</span><span class="ins">caiu a disposição para dizer "não sei" com apoio da IA, e a confiança subiu</span></div><div><p class="p1">Em cinco experimentos com <strong>3.132</strong> participantes, os pesquisadores escolheram perguntas nas quais a IA errava deliberadamente e colocou a máquina para dar sugestões aos usuários.</p><p class="p2">Em uma replicação, <strong>a disposição para responder "não sei" caiu de 44% para 3%, quando com suporte da IA; E, com esse aconselhamento incorreto, não só a precisão dos humanos caiu, como a confiança aumentou.</strong> Acertavam menos, mas estavam <strong>2,5x</strong> mais confiantes em suas respostas.</p><p class="cita">(<a href="https://arxiv.org/abs/2607.13562" target="_blank" rel="noopener">Marcoccia et al., 2026</a>)</p></div></article>
+                  </div>
+                </div>
+              </details>
+            </div>
+            <div class="cta-linha" style="margin-top:40px;border-top:0">
+              <a class="botao" data-wa="Maia, me encaminha as pesquisas do Clube de Contexto?" href="https://wa.me/5511941537453" target="_blank" rel="noopener">Peça as pesquisas para leitura →</a>
+              <p class="ui suave"><span id="salvos-n">0</span> pesquisas salvas neste dispositivo</p>
+            </div>
+          </div>
+        </details>
+
+        <!-- BENEFÍCIOS PARA MÁQUINAS -->
+        <details class="bloco" id="bl-maquinas" data-grupo="bloco">
+          <summary><span class="numero">(03)</span><span><span class="titulo-secao" style="display:block">Benefícios do Clube para <span class="it">Máquinas</span></span><span class="meta" style="display:block">a mente sintética · ganhos de máquinas · 2 benefícios</span></span><span class="mais" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M6 0V12M0 6H12" stroke="currentColor" stroke-width="1.4"/></svg></span></summary>
+          <div class="conteudo">
+            <p class="abertura lf">O que a IA da sua empresa ganha quando recebe contextos escritos pelo seu time.</p>
+            <div class="conv-wrap">
+              <div class="conv-cab"><p class="rotulo">o clube</p><p class="rotulo">ganhos de máquinas</p></div>
+              <div class="conv" id="conv-m"></div>
+            </div>
+            <div class="dobras">
+              <details class="dobra" id="ms-autoralidade" data-grupo="ms">
+                <summary><span class="numero">(01)</span><span><span class="lista" style="display:block">A Autoralidade</span><span class="resumo" style="display:block">Emergência da Cultura Sintética e Híbrida</span></span><svg class="seta" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8V88M22 60L50 88L78 60" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="square"/></svg></summary>
+                <div class="miolo"><div class="conceito"><h4>Emergência da Cultura Sintética e Híbrida</h4><p class="leitura">misturar livros diferentes obriga o grupo a criar algo que nenhum livro diz sozinho, o que não existe em nenhum lugar no mundo. O contexto é uma emergência do grupo, e um pilar de autoralidade da organização.</p></div></div>
+              </details>
+              <details class="dobra" id="ms-diferenciacao" data-grupo="ms">
+                <summary><span class="numero">(02)</span><span><span class="lista" style="display:block">A Diferenciação</span><span class="resumo" style="display:block">Fuga da Média de Cognição e Elaboração</span></span><svg class="seta" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8V88M22 60L50 88L78 60" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="square"/></svg></summary>
+                <div class="miolo">
+                  <div class="conceito"><h4>Fuga da Média de Cognição e Elaboração</h4><p class="leitura">Como a maioria das empresas usam as mesmas IAs, e as IAs são treinadas em bases de conhecimento muito semelhantes, as respostas tendem a convergir, sumindo o debate e a diferenciação crítico-criativa.</p></div>
+                  <div class="pesqs">
+                    <article class="pesq" data-id="abdali2025"><div class="dado"><span class="n palavra">dialética</span><span class="ins">como contexto melhora o raciocínio da IA</span></div><div><p class="p1">Podemos ensinar à IA maneiras diferentes de elaborar ideias, <strong>oferecendo estruturas de pensamento como parte do contexto</strong>.</p><p class="p2">Pesquisadores da Microsoft demonstraram que, ao orientar modelos de linguagem com um método inspirado na dialética hegeliana, baseado na formulação de ideias, na crítica de suas contradições e na construção de sínteses, foi possível <strong>melhorar seu desempenho em tarefas de raciocínio</strong>. Isso abre caminho para a criação de contextos autorais, nos quais nossos próprios modelos de pensamento orientam a maneira como a IA interpreta, questiona e elabora respostas.</p><p class="cita">(<a href="https://arxiv.org/abs/2501.14917" target="_blank" rel="noopener">Abdali et al., 2025</a>)</p></div></article>
+                  </div>
+                </div>
+              </details>
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO PARTICIPAR -->
+  <section class="secao m" id="participar" aria-labelledby="h-part">
+    <div class="larg">
+      <hr class="fio">
+      <div class="pend" style="padding-top:14px">
+        <p class="rotulo">participar</p>
+        <div>
+          <h2 class="titulo" id="h-part">como participar do <span class="it">clube?</span></h2>
+          <p class="abertura lf" style="margin-top:20px">Três formatos, do time inteiro na empresa à prática individual.</p>
+        </div>
+      </div>
+      <div class="tempo dobras">
+        <details class="dobra" id="part-empresas" data-grupo="part" open>
+          <summary><span class="quando"><span class="meta">Lançamento</span><span class="ser">06/11/2026</span></span><span class="tit"><span class="lista" style="display:block">Empresas e Organizações</span><span class="resumo" style="display:block">Turmas semanais dentro da empresa.</span></span><svg class="seta" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8V88M22 60L50 88L78 60" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="square"/></svg></summary>
+          <div class="miolo">
+            <div class="corpo">
+              <p style="font-size:17px"><strong>Foco</strong> na construção de contextos autorais de diferenciação crítico-criativa, proteção do capital humano (o ROI humano e o ROI simbiótico), melhor entendimento das capacidades e limitações das IAs corporativas (IA Literacy) e evolução da geração de ideias e críticas;</p>
+            </div>
+            <div class="esperados">
+              <p class="rotulo" style="grid-column:1/-1">Ganhos esperados</p>
+              <div class="esperado">
+                <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="37" cy="50" r="28" fill="none" stroke="#141414" stroke-width="2"/><circle cx="63" cy="50" r="28" fill="none" stroke="#141414" stroke-width="2"/><path d="M50 25.3A28 28 0 0 1 50 74.7A28 28 0 0 1 50 25.3Z" fill="#141414"/></svg>
+                <h4>Pensamento Crítico em Alta</h4>
+                <p>O relatório <a class="link" href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/3-skills-outlook/" target="_blank" rel="noopener"><em>Future of Jobs 2025</em></a> confirma que o pensamento analítico ocupa o primeiro lugar entre as competências consideradas essenciais pelos empregadores, pelo terceiro relatório consecutivo, e o pensamento criativo em quarto lugar.</p>
+              </div>
+              <div class="esperado destaque">
+                <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M37 22L65 50L37 78L9 50Z" fill="none" stroke="#141414" stroke-width="2"/><path d="M63 22L91 50L63 78L35 50Z" fill="none" stroke="#141414" stroke-width="2"/><path d="M35 50L50 35L65 50L50 65Z" fill="#c81e66"/></svg>
+                <h4>ROI do Capital humano</h4>
+                <p>o ganho imediato de produtividade da IA não pode custar a capacidade cognitiva que sustenta os próximos anos. Proteger quem usa a IA é proteger o investimento em IA.</p>
+              </div>
+              <div class="esperado">
+                <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="38" cy="40" r="22" fill="none" stroke="#141414" stroke-width="2"/><circle cx="62" cy="40" r="22" fill="none" stroke="#141414" stroke-width="2"/><circle cx="50" cy="61" r="22" fill="none" stroke="#141414" stroke-width="2"/><circle cx="50" cy="47" r="7" fill="#141414"/></svg>
+                <h4>Comunidade</h4>
+                <p>encontros presenciais entre áreas criam vínculo e repertório comum onde o trabalho híbrido e a IA individual isolaram.</p>
+              </div>
+            </div>
+            <div class="contato" style="grid-column:1/-1"><a class="botao" data-wa="Maia, quero pedir uma conversa sobre o Clube de Contexto para Empresas e Organizações." href="https://wa.me/5511941537453" target="_blank" rel="noopener">Pedir uma conversa no WhatsApp →</a><a class="email link" href="mailto:maiaoazem@gira.guru?subject=Clube%20de%20Contexto%20%C2%B7%20Empresas">maiaoazem@gira.guru</a><button class="contorno copiar" type="button" data-copiar="maiaoazem@gira.guru">Copiar e-mail</button></div>
+          </div>
+        </details>
+        <details class="dobra" id="part-grupos" data-grupo="part">
+          <summary><span class="quando"><span class="meta">Lançamento</span><span class="ser">Novembro, 2026</span></span><span class="tit"><span class="lista" style="display:block">Grupos e Coletivos</span><span class="resumo" style="display:block">Encontro 01: 28/11, sábado, das 8h30 às 12h30.</span></span><svg class="seta" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8V88M22 60L50 88L78 60" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="square"/></svg></summary>
+          <div class="miolo"><div class="corpo">
+            <p style="font-size:17px"><strong>Foco</strong> na compreensão de como essas máquinas inteligentes funcionam (contexto, vieses, deferência, convergência / IA Literacy), apropriação do método de Clube de Contexto para replicação, treinamento da capacidade de atenção, interpretação, crítica e criatividade, amparada ou não por IAs;</p>
+            <p style="font-size:17px"><strong>Local</strong>: Estúdio Praxe, República, São Paulo; <strong>Encontro 01</strong>: 28/11, sábado, das 8h30 às 12h30.</p>
+            <div class="contato"><a class="botao" data-wa="Maia, tenho interesse no Clube de Contexto para Grupos e Coletivos." href="https://wa.me/5511941537453" target="_blank" rel="noopener">Dizer que tenho interesse →</a><a class="email link" href="mailto:maiaoazem@gira.guru?subject=Clube%20de%20Contexto%20%C2%B7%20Grupos%20e%20Coletivos">maiaoazem@gira.guru</a><button class="contorno copiar" type="button" data-copiar="maiaoazem@gira.guru">Copiar e-mail</button></div>
+          </div></div>
+        </details>
+        <details class="dobra" id="part-individual" data-grupo="part">
+          <summary><span class="quando"><span class="meta">Lançamento</span><span class="ser">Janeiro, 2027</span></span><span class="tit"><span class="lista" style="display:block">Individual</span><span class="resumo" style="display:block">Encontros físicos, formação online e assinatura.</span></span><svg class="seta" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8V88M22 60L50 88L78 60" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="square"/></svg></summary>
+          <div class="miolo"><div class="corpo">
+            <p style="font-size:17px"><strong>Foco</strong> em desenvolver uma rotina de reconexão com a leitura, o pensamento crítico biológico, e a criatividade aberta, além de preparar o indivíduo e a máquina, via contexto, para uma melhor interação.</p>
+            <ul class="ganhos">
+              <li><p><strong>Encontros físicos</strong>: Estúdio Praxe, República, São Paulo;</p></li>
+              <li><p><strong>Formação</strong>: Online, assíncrona;</p></li>
+              <li><p><strong>Modelo de recorrência</strong>: Assinatura, recebimento das cartas de contexto com páginas de livros, escritos autorais, recortes de revistas e outros itens que apoiem a construção de um contexto crítico-criativo autoral.</p></li>
+            </ul>
+            <div class="contato"><a class="botao" data-wa="Maia, tenho interesse no Clube de Contexto Individual." href="https://wa.me/5511941537453" target="_blank" rel="noopener">Dizer que tenho interesse →</a><a class="email link" href="mailto:maiaoazem@gira.guru?subject=Clube%20de%20Contexto%20%C2%B7%20Individual">maiaoazem@gira.guru</a><button class="contorno copiar" type="button" data-copiar="maiaoazem@gira.guru">Copiar e-mail</button></div>
+          </div></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMPRESAS, ANALOGIA, LIDERANÇAS, LIVROS -->
+  <section class="secao m" aria-label="O clube em empresas">
+    <div class="larg">
+      <div class="blocos" style="margin-top:0">
+        <details class="bloco" id="bl-empresas" data-grupo="bloco">
+          <summary><span class="numero">(04)</span><span><span class="titulo-secao" style="display:block">O Clube em <span class="it">Empresas</span></span><span class="meta" style="display:block">critical mission · 120 minutos · 5 etapas</span></span><span class="mais" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M6 0V12M0 6H12" stroke="currentColor" stroke-width="1.4"/></svg></span></summary>
+          <div class="conteudo prot-wrap" id="prot-wrap">
+            <canvas class="neuro" id="neuro" aria-hidden="true"></canvas>
+            <p class="abertura"><strong>Estrutura do Protocolo</strong>: 120 minutos, semanal, em cinco etapas.</p>
+            <p class="abertura lf" style="margin-top:8px">Como funciona um encontro semanal dentro da empresa, minuto a minuto.</p>
+            <div class="relogio-grade">
+              <div class="relogio" id="relogio" aria-hidden="true"></div>
+              <ol class="passos" id="passos">
+                <li class="passo" id="passo-checkin" style="--dur:20" data-ini="0" data-dur="20" data-nome="check-in"><div class="cab-p"><span class="numero">(01)</span><span class="codigo suave">20 min</span></div><h3 class="lista"><strong>Check-in</strong></h3><p><strong>Check-in</strong> de chegada, por 20 minutos, fazendo atualização dos usos de IAs e questões que estão emergindo no trabalho e na vida;</p></li>
+                <li class="passo" id="passo-leitura" style="--dur:25" data-ini="20" data-dur="25" data-nome="leitura"><div class="cab-p"><span class="numero">(02)</span><span class="codigo suave">25 min</span></div><h3 class="lista"><strong>Leitura</strong></h3><p><strong>Leitura</strong> profunda individual, por 25 min, fazendo marcações nos livros, grifos e estruturas de contexto em anotações;</p>
+                  <div class="estudo"><h4>O Papel Ganha da Tela</h4><ul><li>Meta-análise de <strong>54</strong> estudos e <strong>171.055</strong> participantes confirma: Vantagem pequena, mas estatisticamente significativa, do papel sobre as telas (g ≈ <strong>0,21</strong>). <span class="cita">(<a href="https://www.sciencedirect.com/science/article/pii/S1747938X18300101" target="_blank" rel="noopener">Delgado et al., 2018</a>)</span></li></ul></div></li>
+                <li class="passo" id="passo-debate" style="--dur:45" data-ini="45" data-dur="45" data-nome="debate"><div class="cab-p"><span class="numero">(03)</span><span class="codigo suave">45 min</span></div><h3 class="lista"><strong>Debate</strong></h3><p><strong>Debate</strong> e agrupamento das leituras, por 45 min, fazendo, ao menos, 01 contexto escolhido por consenso;</p>
+                  <div class="estudo"><h4>Discutir e Construir</h4><ul><li>Diferentes abordagens de discussão, como encontros mediados por perguntas abertas, nos quais participantes apresentam argumentos, examinam contradições e precisam justificar suas interpretações, melhoram aspectos da compreensão <span class="cita">(<a href="https://eric.ed.gov/?id=EJ961480" target="_blank" rel="noopener">Graham e Hebert, 2011</a>)</span></li><li>Estudo complementar identificou raciocínios mais elaborados em discussões crítico-analíticas, com perguntas autênticas e construção sobre as falas anteriores. <span class="cita">(<a href="https://www.sciencedirect.com/science/article/pii/S0883035509000020" target="_blank" rel="noopener">Soter et al., 2008</a>)</span></li></ul></div></li>
+                <li class="passo" id="passo-escrita" style="--dur:20" data-ini="90" data-dur="20" data-nome="escrita"><div class="cab-p"><span class="numero">(04)</span><span class="codigo suave">20 min</span></div><h3 class="lista"><strong>Escrita</strong></h3><p><strong>Escrita</strong> humana manual, por 20 min, fazendo um texto do grupo para o contexto da máquina;</p>
+                  <div class="estudo"><h4>A Escrita Salva (na Memória)</h4><ul><li>Escrever sobre o que foi lido melhorou a compreensão em comparação com atividades tradicionais de leitura, incluindo releitura e discussão. <span class="cita">(<a href="https://eric.ed.gov/?id=EJ961480" target="_blank" rel="noopener">Graham e Hebert, 2011</a>)</span></li></ul></div></li>
+                <li class="passo" id="passo-contexto" style="--dur:10" data-ini="110" data-dur="10" data-nome="contexto"><div class="cab-p"><span class="numero">(05)</span><span class="codigo suave">10 min</span></div><h3 class="lista"><strong>Contexto</strong></h3><p><strong>Contexto</strong> de máquina, por 10 min, com suporte da IA fazendo um arquivo .md para ser testado durante a semana;</p><p class="codigo suave" style="margin-top:14px">contextos/semana.md</p></li>
+              </ol>
+            </div>
+            <div class="pend" style="margin-top:96px"><span></span><p class="frase">Turmas de até <strong>15 pessoas,</strong> com <strong>medição mensal da percepção de transformação humana</strong>, individual e coletiva, e das <strong>máquinas</strong>, capacidade crítica e criativa.</p></div>
+          </div>
+        </details>
+
+        <details class="bloco" id="bl-analogia" data-grupo="bloco" open>
+          <summary><span class="numero">(05)</span><span><span class="titulo-secao" style="display:block">Analogia corpo–<span class="it">mente</span></span><span class="meta" style="display:block">academia para a mente</span></span><span class="mais" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M6 0V12M0 6H12" stroke="currentColor" stroke-width="1.4"/></svg></span></summary>
+          <div class="conteudo">
+            <div class="pend"><span></span><p class="leitura" style="max-width:40em"><strong>Analogia corpo–mente:</strong> quando o trabalho deixou de exigir o corpo, criamos academias e benefícios para manter o corpo em uso. Quando a IA passa a fazer parte do nosso trabalho mental, precisamos de estruturas para manter essa mente crítico-criativa em uso.</p></div>
+            <canvas class="cm" id="corpo-mente" role="img" aria-label="As palavras corpo e mente, feitas de pontos, trocando pontos entre si"></canvas>
+            <div class="assinatura">
+              <p class="ass">A nova assinatura de academia será para a mente.</p>
+              <div class="quem"><p class="ser" style="font-size:26px;font-weight:400">c/txt.</p><p class="meta">clube de contexto · academia da mente</p></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="bloco" id="bl-liderancas" data-grupo="bloco">
+          <summary><span class="numero">(06)</span><span><span class="titulo-secao" style="display:block">As lideranças já têm a necessidade. O Clube tem uma boa <span class="it">resposta.</span></span><span class="meta" style="display:block">Boston Consulting Group · 17 de junho de 2026</span></span><span class="mais" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M6 0V12M0 6H12" stroke="currentColor" stroke-width="1.4"/></svg></span></summary>
+          <div class="conteudo">
+            <div class="pend"><span></span><div>
+              <p class="abertura" style="max-width:36em">O estudo publicado em 17 de junho de 2026, pela Boston Consulting Group, com autoria de Sagar Goel, David Martin e Charikleia Kaffe, demonstrou como esse medo já vai se alastrando pelas organizações.</p>
+              <div class="numeros">
+                <div><p class="grande">50%</p><p>já observam <strong>perda de habilidades associada</strong> ao uso de IA (aceitação das respostas de IA sem questionamento, desenvolvimento mais lento de profissionais juniores e menor diversidade de pensamento, tudo percebido por mais 40%)</p></div>
+                <div><p class="grande">60%+</p><p>preveem uma ameaça material nos próximos 3 a 5 anos</p></div>
+              </div>
+              <p class="cita" style="margin-top:32px"><strong>Referência completa</strong>: Goel, S., Martin, D., &amp; Kaffe, C. (2026). <a href="https://www.bcg.com/publications/2026/when-everyone-uses-ai-companies-risk-critical-skills" target="_blank" rel="noopener">When Everyone Uses AI, Companies Risk Losing Critical Skills</a>. Boston Consulting Group, 17 de junho de 2026.</p>
+            </div></div>
+          </div>
+        </details>
+
+        <details class="bloco" id="bl-ler" data-grupo="bloco">
+          <summary><span class="numero">(07)</span><span><span class="titulo-secao" style="display:block">O que vamos <span class="it">ler?</span></span><span class="meta" style="display:block">13 livros da estante do clube</span></span><span class="mais" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M6 0V12M0 6H12" stroke="currentColor" stroke-width="1.4"/></svg></span></summary>
+          <div class="conteudo">
+            <p class="abertura lf">As leituras que formam a estrutura de pensamento da gira. e alimentam as edições do clube.</p>
+            <div class="estante" id="estante" role="list"><div class="trilho" id="trilho"></div></div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FECHAMENTO -->
+  <section class="preto m" aria-label="Junte-se ao Clube">
+    <div class="larg">
+      <hr class="fio">
+      <p class="final">A inteligência artificial amplia nossas capacidades intelectuais ao mesmo tempo que substitui justamente os processos pelos quais desenvolvemos essas <span class="it">capacidades.</span></p>
+      <div class="pend" style="margin-top:80px">
+        <span></span>
+        <div class="leitura">
+          <p>Melhores respostas com ajuda da IA não significa aprender mais, nem significa melhores entregas. E a dependência dessas respostas prontas compromete o desempenho no mundo, quando sem as tais ferramentas, além da capacidade de perseguir tarefas difíceis e de manter autonomia de julgamento.</p>
+          <p><strong>O uso recorrente e acrítico da IA afeta a nossa capacidade de ser alguém crítico criativo no mundo. O uso recorrente da IA afeta nossa capacidade de alterar o mundo numa direção autoral.</strong></p>
+          <p>Se a questão, no curto prazo, não parece poder ser sobre usar ou não essas ferramentas, então <strong>ela precisa ser sobre quais capacidades humanas estamos deixando de exercitar durante essa produção, e como religar e exercitar essas sinapses</strong>.</p>
+        </div>
+      </div>
+      <div class="junte">
+        <a href="#participar">Junte-se ao Clube.</a>
+        <p class="cita">(Bastani et al., 2025; Kosmyna et al., 2025; Liu et al., 2026; Herdağdelen et al., 2026).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTRA COISA É POSSÍVEL -->
+  <section class="rosa-final m" aria-label="Outra coisa é possível">
+    <div class="larg">
+      <div><hr class="fio"><p class="titulo" style="margin-top:clamp(48px,6vw,96px)">outra coisa é <span class="it">possível</span></p></div>
+      <canvas id="anel-rosa" width="880" height="880" aria-hidden="true"></canvas>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape m" id="rodape">
+  <div class="larg">
+    <div class="linha">
+      <p class="ui">c/txt. · clube de contexto</p>
+      <div class="par"><svg width="22" height="22" viewBox="0 0 100 100" aria-label="laborateliê"><path d="M53 8L91 72H15Z" fill="#141414"/><path d="M43 94L9 36H77Z" fill="#141414"/></svg><div><p class="ser it" style="font-size:18px;line-height:1.1">making it make sense</p><p class="meta" style="color:var(--tinta)">Criatividade Informada por Futuros</p></div></div>
+      <div class="autoria"><svg xmlns="http://www.w3.org/2000/svg" viewBox="20 19 576 656" role="img" aria-label="Maia Oazem"><path fill="currentColor" fill-rule="evenodd" d="M483 670.6C481.7 669.9 475 659.3 474.2 656.7C474 656.2 473.3 654.9 472.6 653.7C470.8 650.7 467.8 644.5 467.2 642.5C467 641.6 466.1 639.4 465.2 637.7C464.4 635.9 463.4 633.4 462.9 632.2C462.4 630.9 461.6 628.7 461 627.3C460.5 626 459.6 623.6 459 622C458.4 620.4 457.3 617.7 456.6 615.8C455.9 614 455.3 611.9 455.3 611.1C455.3 610.4 454.9 609 454.3 607.8C453.8 606.7 453.3 605.7 453.3 605.5C453.3 605.3 452.7 603 451.8 600.5C451 597.9 450.3 595.6 450.3 595.2C450.3 594.9 450 594.1 449.7 593.3C449.3 592.6 449 591.6 449 591C449 590.4 448.6 589.1 448.2 588C447.4 586.1 446.5 582.8 445.9 579.7C445.7 578.7 445.3 577.4 444.9 576.9C444.4 576.2 444.1 575.1 444 573.5C443.9 571.8 443.5 570.6 442.7 569.1C441.9 567.5 441.7 566.6 441.7 565.2C441.7 563.9 441.4 562.8 440.9 561.8C440.1 560.2 439.5 558.5 438.5 555.3C438.2 554.5 437.6 552.3 437 550.5C436.5 548.7 435.6 545.7 435.2 543.8C433.8 538.5 433 535.4 432.1 532.5C431.7 531 431.1 528.7 430.9 527.3C430.6 525.9 430 524.1 429.7 523.3C429.3 522.5 429 521.3 429 520.6C429 520 428.7 518.6 428.3 517.5C427.5 515.1 426 508.9 426 507.9C426 507.4 425.7 506.4 425.2 505.6C424.8 504.8 424 502.3 423.5 500C423 497.7 422.4 495.1 422.1 494.2C421.8 493.4 421.4 491.6 421.2 490.2C420.9 488.9 420.4 486.7 420 485.4C419.6 484 419.3 482.4 419.3 481.9C419.3 481.4 419.1 480.4 418.7 479.7C418 478.2 417.5 476.3 416.8 471.8C416.1 466.7 415.7 465 414.8 463.4C414 461.7 412.8 457.1 412.5 454.5C412.4 453.6 412 452.1 411.6 451.3C411.3 450.4 411 449.1 411 448.3C411 447.6 410.4 445.2 409.7 443C408.9 440.8 408.3 438.6 408.3 438C408.3 437 406.1 427.2 405.1 424.2C404.9 423.2 404.5 421.4 404.3 420.2C404.2 418.9 403.7 416.6 403.4 415C402.8 412.4 402.8 412.1 403.2 410.7C403.8 409.2 403.6 408.3 402.9 408.3C401.8 408.3 400.7 404.3 400.7 400.1C400.7 399.3 400.3 397.7 399.8 396.4C398.8 393.6 398.8 392.3 400.1 391.7C401.6 391 401.3 389.2 399.6 389.1C398.1 388.9 397.6 388.4 397.3 386.2C397.2 385.3 396.8 383.3 396.4 381.8C396 380.4 395.7 378.7 395.7 378.1C395.7 377.6 395.4 376.2 395 375.1C394 371.9 392.2 362.5 392.4 361.2C392.5 360.3 392.6 360.2 393.4 360.3C395.4 360.5 396 358.9 394.4 357.6C393.8 357.2 393.2 356.3 392.9 355.7C392.5 355.1 392 354.3 391.7 354C391.3 353.7 390.9 352.8 390.8 352.1C390.7 351.4 390.2 350.3 389.8 349.6C388.4 347.4 388.5 344.5 390 345.8C391.6 347.3 392.7 344.6 391.3 342.4C391 341.8 390.7 340.9 390.7 340.4C390.7 338.8 389.9 338.5 389.1 339.6C388.4 340.4 388.3 340.5 387.8 340C387 339.2 386 334.4 385.9 330.7C385.8 329.8 385.6 328.9 385.4 328.5C385.3 328.1 385 327.4 384.9 326.8C384.8 326.2 384.3 325.2 383.8 324.5C383.3 323.7 383 322.8 383 322.1C383 320.1 382 315.6 381.1 314C380.7 313.1 379.9 310.4 379.4 308C378.8 305.6 378.2 303.4 378 303C377.5 302.1 377 298.1 377.2 297.2C377.4 296.5 377.6 296.3 378.3 296.3C380.9 296.3 380.9 293.7 378.3 293C376.7 292.6 375.5 290.9 375 288.7C374.9 287.8 374.3 285.8 373.7 284.2C372.5 280.8 372.4 278.5 373.3 276.9C374.5 274.9 374.1 272.6 372.6 273.3C371.6 273.9 370.3 272.5 370.3 270.8C370.3 269.8 369.4 266.7 367.5 260.7C366.7 258.4 365.7 254.6 364.8 250.7C364.4 248.7 363.9 246.7 363.7 246.2C363 244.5 363.2 241.7 364.2 240.6C365.7 238.8 364.9 237.5 362.4 237.5C361.6 237.4 360.2 237.3 359.5 237.2C358.4 237 357.6 237.1 356 237.7C354.2 238.4 353.6 238.4 350.3 238.2C347.2 238 346.5 238.1 345.8 238.5C345.2 238.9 344.6 239 343.6 238.9C342.8 238.7 341.5 238.6 340.7 238.7C339.8 238.7 339 238.5 338.6 238.1C337.9 237.4 334 237.2 330.7 237.7C327.7 238.2 327.4 238.3 327.6 239.7C327.9 241.6 325.2 241.5 324.7 239.6C324.4 238.2 323.7 238.1 321.5 239.2C320.2 239.9 319.5 240 318.8 239.8C315.4 239 313.1 239.3 311.5 240.7C309.2 242.7 307 243.1 304.3 241.8C302.8 241.2 302.3 241.1 301.3 241.3C300.7 241.5 299.3 241.6 298.2 241.6C293.8 241.6 290.4 241.9 289.1 242.4C288.3 242.7 287.2 242.9 286.7 242.8C285.9 242.6 285.6 242.8 284.8 243.8C283.7 245.3 281.8 245.5 280.7 244.2C279.9 243.1 279.3 243.1 278.1 244.4C277.2 245.3 277.1 245.4 275.5 245.2C274.6 245.1 272.8 244.9 271.6 244.9C270 244.9 269.2 244.7 268.7 244.2C268 243.6 268 243.6 266.8 244.7C265.7 245.6 265.4 245.7 264.3 245.5C263.1 245.3 261.7 246.3 261.7 247.4C261.7 247.6 261.3 248.3 260.8 248.9C260.1 249.8 260 250.2 260.2 251.4C260.4 252.7 260.3 253 259.2 254.3C258.3 255.4 258 256.2 258 257C258 257.9 257.7 258.6 257 259.5C255.8 261 255.8 260.9 256.5 262.4C257.4 264.5 256.7 265.5 254.8 265.2C253.5 264.9 253.4 265.3 254.2 266.7C255.1 268.3 254.8 269.8 253.2 271.5C251.5 273.2 251 274.9 252.3 274.5C253.7 274.1 253.9 277.3 252.5 277.8C252.2 277.9 252 278.5 252 279.7C251.9 281.9 251.7 282.6 250.7 283.1C249.4 283.7 249.4 284.7 250.5 284.6C251.2 284.5 251.5 284.7 251.6 285.1C251.8 285.9 251.1 286.7 250.3 286.7C249.7 286.7 249.6 286.8 249.8 287.8C250.4 290.9 250.4 291.3 249.7 293.8C249.2 295.5 249 297.3 249 299.4C249 302.7 248.2 304.3 246.7 303.8C245.9 303.6 245.8 304.2 246.5 304.5C247 304.6 247 305 246.9 306.1C246.7 306.9 246.7 308.5 246.7 309.6C246.7 311.6 246.6 311.8 245.6 312.9C244.6 314 244.6 314 245 315.3C245.6 317.1 243.7 323.6 241.7 326.6C241.3 327.3 241.3 327.5 241.8 328.7C242.4 329.9 242.4 330 241.7 331.6C241.2 332.8 241 334.2 240.8 336.7C240.4 345.1 239.7 348.8 238.1 350.5C236.9 351.8 236.8 352.2 236.6 355.5C236.5 357 236.2 358.3 235.7 359.2C235.2 360.3 235 361.2 235 363.4C235 365.5 234.8 366.7 234.2 368.5C233.7 369.8 233.3 371.6 233.3 372.5C233.3 373.5 233.1 374.9 232.8 375.7C232.5 376.6 232.3 378 232.4 379.3C232.4 380.5 232.3 382.8 232.1 384.5C231.8 387 231.8 387.8 232.2 389.3C232.6 391.2 232.4 392.6 231.6 392.7C230.3 392.9 226.8 393 224.4 393C219.3 393 217.5 391.6 216.2 386.8C215.8 385.7 215.2 384.2 214.8 383.3C214.4 382.5 213.8 381 213.5 380C213.2 379 212.7 377.8 212.5 377.3C211.9 376.3 211.5 375.2 209.1 368.2C207.5 363.5 207.3 362.6 207.5 361.1C207.7 359.2 207.5 358.6 205.8 356.4C204 354 203 347.2 204.6 347.8C206.6 348.7 207.5 346.5 206 344.2C205.6 343.6 205.3 342.8 205.3 342.5C205.3 342.1 205 341.2 204.7 340.4C204.3 339.6 203.9 337.9 203.8 336.5C203.7 334.9 203.4 333.8 202.8 333C202.4 332.4 202 331.5 201.8 331C201.7 330.6 201.3 329.8 200.9 329.3C200.4 328.6 200.3 327.8 200.2 325.8C200.2 323.6 200 322.8 199.1 320.9C197.8 318.1 197.3 318.1 197.3 320.7C197.3 323.1 196.8 323.3 195.7 321.2C194.5 318.7 194.8 317.2 196.7 317.2C198.3 317.2 198.4 313 196.9 311.1C195.8 309.8 194.9 307.2 194.9 304.8C194.8 303.3 194.5 302.3 193.7 300.8C192.7 298.9 192.6 298.5 192.6 295.3C192.5 292 192.5 291.8 191.4 290.4C190 288.5 189.7 287.5 189.4 283.2C189.1 280.1 188.9 279.4 188.1 278.1C185.5 274 184.9 272.4 185.1 269.8C185.4 267.4 185.3 267.4 184.3 266.3C183.5 265.5 183.3 265 183.3 263.7C183.3 262 183 261.3 180.8 258.9C179.9 257.9 179.3 257 179.3 256.5C179.3 256.1 179 254.4 178.5 252.9C178.1 251.4 177.6 249.4 177.5 248.5C177.4 247.6 177.1 246.3 176.8 245.6C176.3 244.6 176.3 244.3 176.8 243C177.3 241.3 177.1 240.7 175.9 240C173.2 238.6 171 233.1 170.8 227.5C170.7 224.7 170.5 222.9 170.1 222.3C169.5 221.1 168.4 215.8 168.1 212.8C167.9 210.9 167.6 210.2 166.7 209C165.9 207.9 165.7 207.2 165.7 206.1C165.7 205.3 165.4 204.1 165 203.4C164.7 202.7 164.3 201.4 164.2 200.5C164 199.6 163.7 198.4 163.4 197.8C163.1 197.2 162.8 195.9 162.8 194.5C162.8 192.9 162.5 191.4 161.9 189.7C161.4 188.3 160.8 186.4 160.6 185.5C160.1 183.6 159.5 183.2 159 184.5C158.4 185.7 157.8 185.5 157 183.7C156 181.2 156.1 179.3 157.5 179.3C159 179.3 159.6 177.4 158.9 174.2C158.6 172.7 158.3 170.8 158.3 170C158.3 169.1 158.1 168.2 157.6 167.6C156.4 165.9 155.6 163.1 155.4 159.1C155.2 155.9 155 155.2 154.4 154.4C152.6 152.2 152.7 152.3 153.3 150.1C153.9 147.7 153.7 147.2 152.2 146.5C151.6 146.3 150.9 145.8 150.7 145.4C150 144.2 149.5 145.4 150 147.1C150.2 147.9 150.5 149.2 150.5 150.2C150.7 151.8 150.7 151.8 149.8 150.9C149.4 150.4 149 149.7 149 149.4C149 149.1 148.6 148.1 148.2 147.2C146.6 143.8 146 142.1 145.7 140.2C145.5 139.1 145.2 137.8 145.1 137.3C145 136.6 145.1 136.3 145.8 135.8C146.7 135.2 147 133.7 146.2 133.5C144.3 133 143.8 132.7 142.8 131.3C142.3 130.5 141.5 129.8 141.2 129.8C140.3 129.8 137.7 133.3 137.7 134.5C137.7 135.2 137.4 135.7 136.8 136.2C135.9 136.9 135.9 137 136.3 137.8C137 139.4 136.8 141.2 135.7 142.4C134.5 143.8 134.5 144.1 135.2 145.2C135.8 146.1 135.7 146.8 134.7 150.2C133.5 153.9 132.7 157.4 132.7 158.8C132.6 159.6 132.4 160.8 132.2 161.5C131.9 162.2 131.7 163.6 131.7 164.5C131.7 165.8 131.5 166.5 130.8 167.3C130.3 168.1 130 168.9 130 169.8C130 170.6 129.7 171.7 129.3 172.4C129 173.1 128.7 174.3 128.7 175C128.7 176.9 127.2 180.3 125.8 181.5C124.5 182.7 124.4 183.4 125.4 184.6C126.1 185.6 126 187 125.1 188.8C124.8 189.4 124.4 190.6 124.2 191.5C123.8 193.1 123.4 193.6 121.9 194.1C121.7 194.2 122 194.9 122.4 195.7C123.4 197.4 123.7 200.1 122.9 201.4C122.3 202.7 120 205.2 119.1 205.7C118 206.3 117.7 207.5 118.5 208.4C119.7 209.7 119.4 213.1 117.7 216C116.7 217.8 116.3 218.9 116.4 219.9C116.4 224.4 115.8 228.2 114.9 229.3C114.1 230.3 114 230.6 114.2 231.8C114.3 232.9 114.2 233.4 113.5 234.5C112.8 235.4 112.7 236 112.8 236.7C113.1 238.1 112.2 239.8 111.1 240.4C110 240.9 109.5 243.2 110.5 243.5C111.3 243.9 111.1 244.7 110.2 244.7C109.2 244.7 108.8 245.8 109.2 247.4C110.3 252 109.1 256.7 106.6 257.7C105 258.4 104.8 259.1 106 260.4C107.3 261.7 107.3 263.2 106.2 264.6C105.7 265.2 105.1 266.1 104.9 266.7C104.7 267.3 104.3 268.2 103.9 268.7C103.2 269.8 103.2 270.1 103.9 271.4C104.8 273.1 103.5 276.2 102.3 275.2C100.9 273.9 100.2 277.6 101.5 279.5C102.7 281.2 102.6 282.1 101 283.5C100.1 284.4 99.7 285.1 99.7 285.7C99.7 286.2 99.3 286.9 98.8 287.4C98.1 288 98 288.3 98.2 289.3C98.3 290 98.4 291.6 98.5 292.8C98.5 294.1 98.6 295.5 98.8 295.9C99.1 296.8 98.6 297.6 97.5 298C96.5 298.4 96 300.1 96.2 302C96.3 302.8 96.3 303.5 96 303.8C95.8 304 95.7 305.3 95.7 306.9C95.8 310.2 95.2 311.4 93.3 312.1C91.8 312.7 91.6 313.5 92.7 314.4C94 315.6 93.4 318 91.5 319.3C89.3 320.8 88.4 324.9 89.7 327.9C90.1 328.9 90.1 329.2 89.6 330C89.3 330.6 89 331.5 89 332C89 332.6 88.7 333.5 88.3 334C87.7 334.8 87.6 335.2 87.8 336.5C88 338 88 338 86.7 338.5C85.1 339.2 84.7 340.1 85.3 341.7C85.8 343.3 85.8 344.2 85 345.3C84.6 345.8 84.2 347.1 84 348.4C83.8 349.7 83.1 351.9 82.3 353.7C80.6 357.5 80.2 360.5 81.1 362.7C82.3 365.6 81.4 369 79.5 369C78.9 369 78.9 369 79.3 370.2C79.6 370.8 79.5 371.4 79 372.5C78.6 373.3 78.3 374.4 78.3 374.9C78.3 375.4 78 376.3 77.5 376.8C76.9 377.7 76.7 378.3 76.8 379.6C76.8 381 76.7 381.5 75.7 382.9C74.3 384.8 73.7 388.4 74.4 390.4C74.9 392 74.6 393 73.3 393.8C72 394.7 71.3 395.9 71.3 397.5C71.3 398.1 71.2 399.3 71 400.1C70.8 400.9 70.5 402.3 70.3 403.3C70 404.6 70 405.4 70.3 406.5C70.8 408.1 70.5 409.1 68.9 411.4C67.8 413.1 67.5 414.8 68.2 416.6C68.9 418.7 68.8 419.3 67.7 420.3C66.5 421.4 66.3 423 67.2 425.4C67.8 426.9 67.8 426.9 67 428C66.6 428.5 66.2 429.8 66 430.7C65.9 431.6 65.5 432.8 65.1 433.3C64.6 433.9 64.4 434.9 64.3 436.7C64.1 438.8 63.9 439.6 63 441.2C61.8 443.3 61.3 445.5 61.2 449.4C61.2 450.6 61 451.8 60.8 452C59.8 453.2 59.5 456.2 60.3 457.4C61.3 459.1 61.2 459.7 59.5 461.2C57.8 462.8 57.3 464.8 58 466.9C58.7 469.3 58 472.8 56.4 474.5C54.8 476.2 54.8 476.2 55.8 477.7C57.1 479.4 56.6 481 55 480.5C53.8 480.1 53.3 480.9 53.3 483C53.3 484 53.2 485 53 485.2C51.8 486.5 50.8 496.1 51.8 497C52.5 497.5 52.5 498.6 51.8 499.6C51.5 500.1 51.3 500.7 51.4 501.3C51.7 502.6 51.2 503.6 50 503.8C48.9 504.1 48.9 504.1 49.1 505.8C49.3 507.3 49.1 507.9 48.3 509.5C47.3 511.5 47.3 512.2 48.4 512.5C49.2 512.8 49.2 513.8 48.3 515.2C47.6 516.3 47.6 516.3 48.2 517.9C48.8 519.6 48.8 519.6 47.9 521.6C47.4 522.7 47 523.7 47 523.9C47 524.1 46.7 524.8 46.3 525.4C45.9 526.1 45.5 527.4 45.3 528.5C45.1 529.7 44.7 530.7 44.2 531.4C43.2 532.5 42.8 533.8 43.2 534.6C43.3 534.9 43.6 535.9 43.7 536.8C43.9 537.8 44.1 539.1 44.2 539.7C44.4 541 43.8 542 42.2 542.9C41 543.6 40.8 548.9 41.8 550C43 551.2 42.7 553.7 41 555.9C40.5 556.5 40.4 557.1 40.6 558.3C40.7 559.9 40.7 560 39.7 560.5C38.3 561.2 37.9 562.4 38.3 563.9C38.5 564.6 38.6 565.9 38.4 566.9C38.3 568.2 38.4 569 38.8 570C39.3 571 39.4 571.7 39.2 572.7C39 573.5 38.9 575.2 38.9 576.4C38.8 578.3 38.7 578.7 37.8 579.8C36.7 581 36.7 581 36.9 584.9C37 589.8 36.6 592.2 35.5 592.7C34.1 593.4 26.5 591.6 25.2 590.3C24.5 589.6 24.9 585.9 25.8 584C26.1 583.5 26.2 582.6 26.1 582.1C25.8 580.5 26.9 571.3 27.5 570.7C28.8 569.4 29.7 572.7 28.9 575.7C28.6 576.8 28.3 578.1 28.3 578.7C28.4 579.8 28.4 579.8 28.8 579C30 576.9 30.6 573.8 30.7 569.4C30.7 569 31 567.9 31.4 567C32.1 565.2 32.2 560.3 31.4 560.1C30.9 559.9 30 562 30 563.6C30 564.3 29.7 565.4 29.4 566.2L28.8 567.5L28.5 565.7C28.4 564.7 28.4 563.1 28.6 561.9C29.5 556.6 29.7 555.7 30.2 553.3C30.4 552 30.7 550.3 30.7 549.6C30.7 548.9 30.8 548 31 547.4C31.3 546.9 31.5 545 31.6 543.3C31.8 540.7 32 539.8 32.6 539C33.2 538.2 33.3 537.8 33.1 536.4C33 535.3 33.2 534 33.8 531.9C34.3 530.3 34.7 528.5 34.7 527.8C34.7 527.1 35 525.5 35.3 524.1C35.7 522.6 36 520.6 36.2 519.5C36.3 518.4 36.6 516.8 36.8 515.8C37.1 514.9 37.5 513 37.7 511.5C37.9 510 38.3 507.9 38.7 506.8C39 505.7 39.5 503.9 39.6 502.7C39.8 501.5 40.1 500.1 40.3 499.5C40.5 498.9 41 496.6 41.4 494.2C42 490 42.6 486.8 43.4 483.8C43.6 483.1 44 481 44.4 479.2C44.7 477.3 45.5 473.7 46.2 471.2C46.8 468.6 47.5 465.3 47.7 463.8C47.9 462.4 48.4 459.9 48.9 458.3C50.8 451.1 51.3 449.1 51.3 448.3C51.3 447.8 51.7 446 52.2 444.2C52.6 442.4 53 440.5 53 439.8C53 439.2 53.3 437.9 53.7 436.9C54 436 54.5 434.2 54.7 433C54.8 431.7 55.2 430.2 55.5 429.6C55.8 428.9 56 427.8 56 427.1C56 426.4 56.2 425.3 56.4 424.7C57 422.7 59.5 410.8 60 407.5C60.2 406.4 60.6 404.7 60.9 403.7C61.6 401.7 62.3 398.3 62.3 396.9C62.3 396 63.1 392.4 64.3 388.2C65.1 385.1 65.9 381.6 66.3 379.3C66.5 378.3 67 376.1 67.5 374.3C68 372.6 68.5 370 68.7 368.6C68.9 367.2 69.2 365.4 69.5 364.6C69.8 363.8 70.2 362 70.4 360.6C70.5 359.1 71.1 356.8 71.5 355.4C71.9 354 72.8 350.6 73.5 347.8C74.1 345.1 75.3 340.4 76 337.5C76.7 334.6 77.7 330.3 78.2 328C78.7 325.7 79.4 323 79.7 322C80.4 320 83.1 309.9 83.9 306.3C84.2 305.1 84.6 303.3 84.9 302.3C85.5 300.3 86.4 296.4 87.2 293C87.4 291.8 87.9 290.3 88.1 289.6C88.4 288.9 88.7 287.9 88.7 287.3C88.7 286.7 89.2 284.7 89.8 282.8C90.5 281 91 279.1 91 278.7C91 278.2 91.4 276.8 91.8 275.5C92.3 274.2 92.7 272.6 92.7 271.9C92.7 271.2 92.9 270.1 93.3 269.4C93.6 268.7 94 267.1 94.2 265.8C94.3 264.6 94.7 262.9 95 262.3C95.4 261.6 95.7 260.7 95.7 260.3C95.7 260 96 258.6 96.5 257.3C97 255.8 97.3 254.2 97.3 253C97.3 251.6 97.6 250.5 98.2 249.3C98.6 248.3 99 246.9 99 246.2C99 245.4 99.3 244.2 99.7 243.3C100.1 242.5 100.5 240.9 100.6 239.7C100.7 238.5 101 237 101.3 236.3C101.6 235.7 102 234.3 102.1 233.2C102.2 232 102.5 230.7 103 230C103.3 229.4 103.7 228.4 103.7 227.9C103.7 226.6 104.8 221.7 106 217.9C106.5 216.1 107 214.2 107 213.7C107 213.2 107.2 212.1 107.5 211.3C107.8 210.5 108.4 208 108.8 205.8C109.3 203.6 110 200.8 110.3 199.5C111 197.2 111.2 196.1 112.2 191.3C112.5 190 113 188 113.3 187C113.6 185.9 113.8 183.5 113.9 181.3C114 177.9 114.1 177.1 114.8 175.8C115.2 174.9 115.7 173.4 115.8 172.4C115.9 171.5 116.3 170 116.8 169.1C117.2 168.2 117.7 166.7 117.8 165.7C118.1 163.6 119.2 159 119.8 157.6C120.6 155.7 122 150.2 122 148.8C122 148.1 122.4 146.8 122.8 145.8C123.3 144.9 123.7 143.9 123.7 143.5C123.7 142.9 124.9 138.4 127.5 129.7C128.6 125.7 130.1 121.9 131.9 118.1C133.2 115.4 135.4 114.5 140.3 114.6C142.3 114.7 142.7 114.8 144.3 116C145.2 116.7 146.4 117.4 147 117.5C148.9 117.9 151 120.5 152 123.7C152.3 124.9 152.9 126.8 153.3 128C153.7 129.2 154.3 130.8 154.6 131.7C154.8 132.5 155.2 133.9 155.3 134.8C155.5 135.8 155.8 137.3 155.9 138.3C156.1 139.4 156.5 140.4 157.1 140.9C159.3 143.3 160 144.9 159.8 146.6C159.6 147.9 159.7 148.5 160.3 149.5C160.8 150.5 160.9 151.1 160.8 153.3C160.6 155.8 160.6 156.1 161.4 157.2C162.2 158.4 162.2 158.9 162.3 161.8C162.3 165.6 162.8 168.1 163.7 169.3C164.1 169.7 164.3 170.5 164.3 170.9C164.3 171.4 164.7 172.2 165.3 172.8C166.3 173.8 166.3 173.8 166 177C165.8 180.1 165.8 180.2 166.6 181.1C167.2 181.8 167.4 182.2 167.2 182.9C166.8 184.6 166.3 188.4 166.5 188.9C166.6 189.1 167.2 189.6 167.9 190C169.5 190.8 170.1 191.9 170.8 195.4C171.1 196.9 171.4 198.2 171.5 198.5C171.6 198.7 171.3 199.4 170.9 199.9C169.8 201.2 169.8 201.2 170.9 202.2C171.8 202.9 171.8 202.9 171.1 203.9C169.5 206.1 170.1 208.4 172.2 207.7C173.8 207 174.7 208.2 174.7 211.1C174.7 212.5 174.9 213.1 175.4 213.9C176.2 214.8 176.8 219.1 176.7 223C176.7 224.1 176.8 224.6 177.5 225.3C177.9 225.8 178.4 226.7 178.6 227.4C179.4 230.4 184.4 235 186.9 235C187.2 235 189.3 235.4 191.5 235.8C199 237.3 221 237.6 236.3 236.5C240.3 236.2 245.2 235.9 247.3 235.8C251.9 235.6 251.9 235.6 252.4 232.3C252.6 230.9 253 229 253.4 228C254.5 225 255.3 221.9 255.3 220.7C255.3 220 255.6 219.1 255.9 218.7C256.2 218.3 256.8 216.2 257.2 214C257.6 211.8 258.2 209.4 258.5 208.8C258.8 208.1 259.2 206.7 259.3 205.8C259.6 204.1 264.5 188.4 265.6 186C265.9 185.4 266.4 183.6 266.8 182C267.9 178.1 270.2 171.4 270.8 170.5C271.1 170 271.3 169.5 271.3 169.2C271.3 168.9 271.8 167.7 272.3 166.6C272.8 165.4 273.4 163.9 273.5 163.2C273.6 162.4 274.3 160.6 275 159C275.7 157.4 276.7 154.9 277.3 153.3C277.9 151.8 278.8 149.7 279.2 148.7C279.6 147.7 280.2 146.1 280.5 145.1C280.8 144.2 281.6 142.1 282.2 140.6C282.9 139.1 283.6 137.2 283.8 136.5C284.1 135.8 284.7 134.1 285.3 132.8C287.9 126.8 288.3 125.8 288.8 124.8C289.1 124.3 289.3 123.6 289.3 123.3C289.3 123 290.1 121.2 291 119.3C292 117.4 293 115.1 293.3 114.2C293.7 113.2 294.8 110.6 295.9 108.3C297 106 298.4 103 299 101.6C299.5 100.2 300.3 98.5 300.7 97.8C301 97.1 301.3 96.3 301.3 96.1C301.3 95.4 303.2 90.9 303.8 90.4C304.7 89.4 309.6 89.4 311.4 90.3C312.1 90.7 313.5 91.1 314.5 91.2C315.4 91.3 316.7 91.7 317.3 92C320.2 93.5 328.1 103.2 328.6 105.8C328.8 106.8 329.5 108 331.1 109.9C333.3 112.7 333.3 112.7 333.3 115C333.3 117.2 333.4 117.3 334.6 118.3C335.8 119.3 335.8 119.3 335.9 122.1C335.9 123.8 336.1 125.3 336.4 125.9C336.7 126.4 337.1 127.3 337.4 127.8C339.4 131.5 339.7 132.4 339.7 134.5C339.7 136.4 339.8 136.9 341 138.8C341.8 140 342.6 141.8 342.8 142.9C343.4 145.4 344.1 147.5 345.1 149.2C345.7 150.3 345.8 151 345.8 153.6C345.8 156.3 345.9 156.7 346.6 157.4C347.1 158 347.4 158.7 347.5 159.6C347.5 160.3 347.8 161.3 348.3 161.8C348.9 162.7 349 163.1 348.9 165.2C348.8 167.5 348.9 167.6 350.1 169.2C350.8 170.1 351.3 171.1 351.3 171.5C351.3 172 351.7 172.6 352.2 173C353.5 174 354.2 179.3 353.4 181.6C352.8 183 352.8 183 354 184.1C355.2 185.2 355.7 186.3 356.2 188.8C356.3 189.7 356.8 190.5 357.9 191.5C359.3 192.9 359.4 193.1 359.3 194.3C359.1 195.1 359.3 196 359.9 197.1C360.4 198.1 360.7 199.2 360.7 200.5C360.7 201.7 360.9 202.8 361.5 204C362 204.9 362.5 206.6 362.7 207.7C363 209.3 363.3 210.1 364.2 211.1C365 212 365.3 212.6 365.3 213.5C365.3 214.3 365.6 214.8 366.3 215.4C367.7 216.5 367.9 217.1 368.2 220.9C368.5 224.9 368.3 224.8 372.5 224.6C376.9 224.3 383.3 223.7 383.6 223.5C383.8 223.4 385.9 223.3 388.3 223.2C390.8 223 392.9 222.9 393.1 222.8C393.3 222.6 394.8 222.5 396.5 222.5C398.1 222.4 400 222.2 400.7 222C401.9 221.6 406.6 221.2 416 220.7C419.2 220.5 423.9 220.2 426.3 220C428.8 219.9 433.5 219.6 436.8 219.4C440.1 219.1 443.7 218.8 444.7 218.7C445.7 218.5 448.5 218.3 450.9 218.3C453.2 218.3 455.7 218.2 456.3 218C457.5 217.6 463.6 217.2 474.2 216.7C477.3 216.6 480 216.4 480.2 216.3C480.3 216.2 483.7 216 487.7 215.9C491.7 215.7 495.4 215.5 495.9 215.4C496.5 215.2 500 215.1 503.7 215.2C507.5 215.2 510.9 215.1 511.5 214.9C512.9 214.5 537.5 214.3 540.6 214.7C541.9 214.9 545.6 215.1 548.8 215.2C556.1 215.3 563.7 216 568.2 217C570.8 217.5 577 218.7 578.8 219C583 219.7 584.4 220 585.8 220.5C586.7 220.8 587.7 221 588.1 221C590.1 221 592.2 225.8 590.8 227C589.6 228 582.5 227.8 579.9 226.6C577.5 225.5 577.5 225.5 572.6 225.6C569.8 225.7 567.1 225.5 566.3 225.3C564.3 224.8 561.7 224.8 560.3 225.3C559.2 225.7 559 225.7 558.1 225C556.7 224 553.3 223.7 551.9 224.5C550.8 225.1 550.8 225.1 549.2 224.2C547.1 222.9 544.1 223.2 542.1 224.7C540.2 226.2 535.4 226.2 532.7 224.6C530.8 223.5 530.8 223.5 518.7 223.5C508.1 223.6 506.2 223.6 504.3 224.1C503.1 224.5 501.6 224.9 501 225C500.4 225.1 499.3 225.5 498.7 225.8C497.4 226.5 496.2 226.3 495.1 225.2C494.6 224.8 493.9 224.5 493.1 224.6C480.3 225 480.3 225 480.3 226.5C480.3 228.7 477.1 229 475.6 227C474.7 225.7 474.7 225.7 472.3 227.4C470.6 228.5 470 228.8 468.9 228.7C465.3 228.6 462.4 228.7 461.6 229C460.8 229.4 460.4 229.3 458.6 228.5C455.3 227 446 227.4 443.5 229.1C441.7 230.3 440.8 230.3 439.5 228.8C438.4 227.6 437.7 227.4 437 228.2C436.6 228.6 436.2 228.7 434.6 228.5C432.7 228.3 432.7 228.3 431.4 229.6C429.8 231.3 429.3 231.5 427.1 230.8C425.4 230.2 425.3 230.2 423.9 230.9C422 231.9 421.9 231.9 420.7 230.8C419.6 229.9 419.6 229.9 414.1 229.9C408.2 229.8 407.8 229.9 404.3 232.1C403.8 232.4 403.3 232.3 402 231.9C400.3 231.3 400.3 231.3 398.9 232.2C397.8 232.9 397.4 233 397 232.7C395.2 231.4 392 231.5 391 233C390.1 234.2 386.1 234.7 384.7 233.7C381.7 231.7 377.7 232.1 378.2 234.3C378.4 235.3 377.5 236.1 377.2 235.2C377.1 234.9 376.9 234.5 376.9 234.2C376.7 233.6 374.8 233.2 374.1 233.6C373.7 233.8 373.5 234.4 373.5 235.2C373.4 235.9 373.3 237.5 373.1 238.8C372.7 241 372.7 241.2 373.5 242.3C373.9 243 374.4 244.2 374.5 245C374.6 245.9 375.2 247.1 375.8 248C377 249.7 377.2 255 376.2 256.6C375.3 257.8 375.4 257.9 378.4 261.8C378.8 262.3 379.2 263.3 379.2 264.1C379.4 266.8 379.9 268.9 380.4 269.5C380.8 269.8 381 270.6 381 271.2C381 271.9 381.3 272.8 381.7 273.3C382.4 274.3 382.4 274.4 381.9 275.6C381.5 276.6 381.4 278 381.6 279.8C381.7 279.9 382.1 280 382.7 280C384.3 280 384.6 281.1 383.4 282.3C381.8 283.8 382 284.7 384.3 287.8C386.2 290.3 387.2 292.6 387.9 295.7C388 296.3 388.5 297.4 388.9 298.1C389.7 299.2 389.7 299.6 389.6 301.3C389.4 303.1 389.4 303.5 390.5 305.5C391.9 308.1 391.9 308.7 390.9 310.3C389.7 312.1 390 315.1 391.5 316C393.1 317 393.3 317.3 393.3 318.5C393.3 319.1 393.5 319.7 393.7 319.8C393.8 319.9 394.2 320.7 394.5 321.6C394.7 322.5 395.2 323.8 395.5 324.5C396.4 327 396.5 330.7 395.8 332C395.1 333.2 395 333 397.4 334.7C398.3 335.4 399.2 339.4 398.7 340.8C398.4 341.4 398.5 341.8 399.2 342.7C399.9 343.7 400 344.2 400 346.5C400 348.5 400.2 349.6 400.7 350.7C401.1 351.7 401.3 352.9 401.3 354.3C401.3 355.8 401.5 356.6 402 357.3C404 360.2 404.9 367.3 403.2 367.3C402.5 367.3 402 368.2 402.2 368.8C402.5 369.5 403.3 369.5 403.5 368.8C403.9 368 404.2 368.3 404.8 369.9C405.6 372 405.6 373.2 404.5 374.3C403.5 375.4 403.5 375.7 404.3 376.5C404.7 376.8 405 377.4 405 377.9C405 378.7 405.8 379.7 406.5 379.7C407.3 379.7 408 380.9 408 382.3C408 383.2 408.3 384.2 408.7 384.9C409.4 386.1 409.4 386.1 408.7 387.8C407.8 390 407.8 390 409.4 391.3C411 392.7 411.3 393.9 411.3 398.1C411.3 400.4 411.5 401.3 412 402.3C412.4 403.1 412.7 404 412.7 404.3C412.7 404.7 413 405.6 413.3 406.4C414 407.7 414 407.7 413.2 409.5C412.2 411.5 412.3 412.3 413.8 413.7C415.2 414.9 415.7 416.1 415.7 418.3C415.7 419.8 415.8 420.4 416.2 420.6C416.8 420.9 417.7 424.2 417.7 426.2C417.7 427.6 418.2 429.7 419.3 432C420.2 434.1 420.5 436.7 420 438.5C419.6 439.9 419.6 440.1 420.3 440.8C420.6 441.2 421.1 442.2 421.3 443C421.5 443.8 421.9 445 422.1 445.7C423.1 448.2 423.1 449.5 422.2 450.6C421.6 451.3 421.3 451.9 421.4 452.4C421.8 453.8 423.4 457.5 424 458.2C425 459.3 426.2 462.1 426.4 463.8C426.6 464.6 426.9 465.9 427.3 466.6C427.9 467.8 428.8 472.5 428.8 474.4C428.8 474.9 428.4 475.7 428 476.1C427.1 477.2 427.2 478 428.5 478.4C429.9 478.9 430.1 479.2 429.8 481.7C429.6 483.9 429.6 483.9 431.1 485.6C432.9 487.6 433.2 488.6 433.4 492.8C433.6 495.8 433.7 496.2 434.5 497C435.2 497.7 435.5 498.4 435.7 500.5C435.9 501.9 436.3 503.6 436.7 504.3C437 504.9 437.3 505.9 437.3 506.5C437.3 507 437.6 508.3 437.8 509.3C438.1 510.3 438.6 512.6 439 514.3C439.4 516.1 440.1 518.2 440.6 519C441.2 520 441.4 520.7 441.2 521.5C441.1 522.2 441.3 523 441.7 523.9C442 524.5 442.6 526.2 443 527.6C443.4 529 444 531 444.4 531.9C444.7 532.9 445 534.3 445 535C445 535.7 445.5 537.2 446.4 539C447.6 541.5 447.8 542.1 447.7 543.8C447.5 547.5 447.6 547.8 448.3 550.2C448.7 551.6 449 552.9 449 553.3C449 553.6 449.5 554.6 450.2 555.3C450.8 556.1 451.4 557.1 451.5 557.6C451.6 558.1 452 559.5 452.3 560.7C452.7 561.9 452.9 563.4 452.8 564.1C452.6 565 452.8 565.7 453.6 567.1C454.1 568 454.7 569.5 454.8 570.3C454.9 571.2 455.4 572.7 455.8 573.8C456.4 575.1 456.7 576 456.5 576.6C456.4 577.1 456.5 578 456.8 578.8C457.1 579.4 457.3 580.5 457.3 581.1C457.3 581.7 457.6 582.5 457.9 583C458.2 583.5 458.5 584.7 458.6 586.2C458.7 588.5 458.8 588.7 460.1 590C462.2 592.1 465.7 601.7 465 603.5C464.7 604.2 464.8 604.6 465.5 605.8C466 606.7 466.4 608 466.6 609.3C466.7 611.1 466.9 611.6 467.8 612.4C468.7 613.1 469 613.7 469.1 615C469.4 617 471.4 623.2 472.5 625.3C472.9 626.2 473.5 627.8 473.7 629C473.9 630.2 474.4 631.6 474.7 632.1C475.1 632.5 475.3 633.4 475.3 633.9C475.3 634.4 475.6 635.3 476 635.8C476.4 636.4 476.7 637.4 476.7 638C476.7 639.4 477.7 641.6 479.5 643.8C480.1 644.7 481.1 646.7 481.7 648.4C482.3 650.3 483.2 651.9 483.7 652.5C484.5 653.3 484.8 654.1 485 655.5C485.1 656.6 485.9 659 486.6 660.8C487.4 662.5 488 664.2 488 664.5C488 664.8 488.5 665.9 489.1 666.9C490.4 669.2 490.2 669.6 487.1 670.4C484.3 671.1 484.1 671.1 483 670.6ZM222.5 363.8C223.2 362 224.5 356.2 225.1 352.5C225.2 351.2 225.7 349.6 226.1 349C226.5 348.4 226.8 347.2 226.9 346.3C226.9 345.5 227.1 344.1 227.3 343.2C227.5 342.2 227.8 340.5 228 339.3C228.3 338.1 228.7 336.8 229 336.3C229.4 335.8 229.5 335 229.4 334.1C229.3 333.1 229.4 332.4 229.9 331.8C230.4 331 230.6 330.1 230.7 327.3C230.9 325 231.1 323.4 231.5 322.7C232 321.7 232.6 318.7 233 314.9C233.2 312.1 233.6 311.7 235 312.5C236.3 313.3 236.5 313.1 237.2 309.9C237.9 306.8 237.7 306.5 235.9 307.7C234.4 308.8 234.4 305.5 235.8 303.3C236.4 302.5 236.6 301.9 236.4 301.1C236.3 300.4 236.5 299.7 236.8 299.2C237.1 298.7 237.3 297.7 237.3 297C237.3 296.3 237.6 294.6 238 293.3C238.4 291.9 238.7 290.4 238.7 289.8C238.7 288.6 239.9 283.4 240.6 281.3C241.2 279.9 241.3 279.8 242.4 279.8C244.5 279.7 245 278.2 243.2 277.4C241.7 276.7 241.5 275.6 242.5 271.8C242.9 270 243.3 268.2 243.3 268C243.3 267.7 243.7 266.7 244.2 265.8C244.8 264.6 245 263.6 245 262.2C245 260.8 245.4 259.1 246.1 256.7C248.9 248.1 248.8 247.8 244.7 248.1C241.9 248.3 241.9 248.3 240.9 247.3C239.9 246.3 239.9 246.3 238.6 246.8C237.9 247.2 237 247.3 236.5 247.2C236 247.1 234.8 247.3 233.4 247.7C229.5 248.9 221.9 249.5 219.5 248.7C218.6 248.4 217.7 248.4 214.8 248.8C212.9 249.1 211 249.3 210.7 249.1C210.4 249 208.1 248.8 205.5 248.6C202.9 248.5 200 248.2 199 248C198 247.8 195.9 247.5 194.3 247.5C191.8 247.5 191.1 247.3 188.2 246C183.7 244.1 181.5 244.6 183.8 247C185 248.2 186.1 252 185.9 254.1C185.6 255.7 186.7 258.7 188.7 261.5C189.1 262.2 189.3 263.1 189.3 264.2C189.3 265.8 189.4 266 190.5 266.7C191.8 267.5 192.2 268.5 191.7 270C190.9 272.4 191.4 273.7 193.1 273.7C194.5 273.7 196 277.3 196 280.7C196 281.3 196.3 282.3 196.7 282.9C197.1 283.6 197.3 284.3 197.2 284.8C197.1 285.2 197.4 286.2 197.8 287.3C198.9 289.5 198.9 289.8 197.7 291.1C197.1 291.6 196.7 292.2 196.7 292.2C196.7 292.6 197.5 293.9 198 294.2C198.3 294.5 199.2 295.8 199.9 297.2C200.7 298.7 201.6 300.5 202.1 301.2C202.6 302.2 202.7 302.8 202.5 303.1C201.1 305 201.1 305.2 201.3 307.5C201.5 309.7 201.6 310 202.8 311.3C204.2 312.9 205.3 315.2 205.3 316.6C205.3 317.1 205.7 318.1 206.2 318.9C207.1 320.5 207.1 321.5 206.3 323.6C205.9 324.7 205.9 324.8 206.7 325.4C208.5 326.7 208.4 326.7 208.2 329C208 331.3 208 331.3 209.5 333.2C210.5 334.4 211 335.5 211 336.1C211 336.6 211.2 337.6 211.5 338.2C211.8 338.9 212.1 340.3 212.1 341.3C212.2 342.6 212.5 343.4 213.3 344.5C214.3 345.9 214.4 346.2 214.2 347.6C214.1 348.8 214.2 349.5 214.9 350.8C215.3 351.8 215.7 353.1 215.7 353.8C215.7 354.8 216 355.7 216.8 357C217.5 358 218 359 218 359.3C218 359.6 218.4 360.4 218.8 361.1C219.2 361.9 219.7 363 219.8 363.7C220.4 366.2 221.5 366.3 222.5 363.8ZM278.7 233.6C280.8 233.4 284.7 233.1 287.3 232.8C290 232.6 292.8 232.4 293.5 232.4C295.7 232.4 303.1 231.7 304.1 231.4C304.6 231.2 305.8 231 306.7 231C307.6 231 309.7 230.8 311.3 230.5C313 230.2 314.6 230 314.9 230.1C315.2 230.2 316.1 230.1 316.8 229.9C317.6 229.7 320.3 229.5 323 229.3C328.4 229 332.1 228.6 334.3 228.1C335.2 227.9 337.5 227.7 339.6 227.7C341.7 227.7 343.5 227.6 343.7 227.5C344 227.3 347.4 226.9 353.9 226.4C356 226.2 357.2 226 357.6 225.6C357.9 225.3 358.7 225 359.2 225C361.4 225 361.5 222.6 359.5 220.6C358.4 219.6 358.3 219.4 358.5 218.1C358.6 217.3 358.6 216.3 358.5 215.8C358.3 214.9 356.8 214.1 356.2 214.7C355.6 215.3 355.1 215 354 213.4C352.3 210.7 353.1 208.7 354.9 211C355.8 212 355.9 212 356.3 211.5C357.1 210.5 356.2 207 353.8 201.8C353.4 200.9 353 199.6 353 198.9C353 197.1 352 196.1 350.8 196.6C349.6 197.2 348.9 196.9 348 195.3C347 193.4 347.2 192.5 348.6 192.5C351.2 192.5 350.6 188.9 348.1 188.7C345.9 188.6 345.6 187.6 347.1 186.2C348.7 184.7 348.8 183.6 347.2 182.6C346 181.9 346 181.9 346.2 180C346.3 178.7 346.3 177.8 345.9 176.9C345.6 176.2 345.3 175 345.3 174.2C345.3 172.8 344.1 170.4 342.2 168.4C341.3 167.4 341.3 167.3 341.5 165.4C341.7 163.4 341.7 163.4 340.5 162.1C339.4 160.8 339.3 160.7 339.3 158.1C339.3 156.4 339.2 155.2 338.8 154.5C338.5 154 338.1 152.8 338 152C337.5 149.6 336.3 146.6 335.5 145.7C334.5 144.5 333.3 142.2 333.3 141.2C333.3 140.7 333 139.5 332.5 138.5C331.9 137.3 331.7 136.4 331.8 135.9C332.1 134.8 331.4 134.4 331 135.5C330.4 137 328.3 136 328.3 134.2C328.3 133.8 328 132.8 327.5 131.9C326.8 130.5 325.9 127.9 325.5 125.7C325.4 125.1 325.6 124 325.9 123.1C326.5 121.1 326.4 119.5 325.5 119.4C323.7 119.1 323.3 118.9 322.7 117.9C322.3 117.3 322 116.4 322 115.8C322 114.1 321.3 112.3 320.2 111.1C319.6 110.4 318.9 109.3 318.7 108.6C318.3 107.4 314.4 101.9 313.4 101.1C312.6 100.4 312 100.6 311.7 101.6C311.5 102.1 311 103 310.7 103.7C310.3 104.4 309.8 105.8 309.5 106.9C309.2 108.2 308.6 109.5 307.9 110.5C306.9 111.8 306.7 112.4 306.7 113.6C306.6 115.9 305.9 117.7 304.5 118.8C303.9 119.3 303.3 119.9 303.3 120.2C303.3 120.4 303 121 302.5 121.6C301.9 122.3 301.7 123.1 301.5 125.1C301.2 128.4 301.1 128.7 299 131.3C298 132.6 297.3 133.7 297.3 134.3C297.3 136 296.7 137.6 295.5 138.6C294.7 139.4 294.3 140 294.3 140.6C294.3 141.9 292.3 147.3 291.3 148.7C290.8 149.3 290.2 150.7 290 151.8C289.8 152.9 289.3 154.4 289 155.2C288.6 155.9 288.1 157.4 287.8 158.4C287.5 159.5 286.8 161 286.1 161.9C285.4 162.8 284.7 164.2 284.5 165.3C284.1 166.7 283.7 167.4 282.7 168.3C281.2 169.6 281.1 170.3 281.8 172.1C282.2 173.1 282.2 173.3 281.6 174.6C281.3 175.4 281 176.4 281 176.9C281 177.6 280.9 177.7 279.7 177.7C278.2 177.7 277.8 178.4 279 179C280.2 179.6 279.8 182.5 278 185.1C277.3 186.3 277.2 186.8 277.2 189.5C277.1 192.5 276.4 195.2 275.4 195.8C275.2 195.9 274.8 196.8 274.5 197.7C273.9 199.5 273.3 200 271.9 199.9C270.8 199.8 270.7 200.4 271.7 200.9C272.9 201.5 273.1 202.2 272.4 203.8C271.9 204.8 271.5 205.3 271 205.4C269.7 205.6 269.5 206.4 270.3 208C271.1 209.9 270.9 211.1 269.2 213.5C268.3 214.8 268 215.5 268 216.6C268 217.6 267.8 218.1 267.2 218.5C266.5 219 266.5 219.3 266.5 223.1C266.5 226.6 266.4 227.4 265.7 228.8C264.6 231.2 264.6 233.7 265.7 234C266.7 234.3 273.3 234.1 278.7 233.6ZM303.3 57.2C299.2 56 297.2 54.9 295.9 52.9C294.4 50.6 294.2 50.5 289.5 50.2C284.8 49.9 284.7 49.8 282.5 45.3C278.6 37.3 280.6 33.5 291 29.4C295.3 27.7 296.2 27.4 303.2 25.6C311.9 23.4 318.5 25.5 320.7 31.2C321.6 33.6 321.8 39.9 321.1 41.6C320.9 42.3 320.7 43.9 320.7 45.3C320.7 49.7 318.6 52.9 315.1 54.2C314.2 54.5 312.3 55.3 310.8 56C307.7 57.5 305.5 57.8 303.3 57.2Z"></path></svg><p class="ui">por Maia Oazem</p></div>
+    </div>
+    <p class="meta" style="margin-top:24px">As ativações neuronais são um contador simbólico do seu percurso de leitura neste site. Votos e pesquisas salvas ficam só neste dispositivo.</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+'use strict';
+var $ = function(s, c){ return (c || document).querySelector(s); };
+var $$ = function(s, c){ return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+var RM = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var COR = { tinta:'#141414', suave:'#5e5b57', fio:'#d8d4cf', acento:'#c81e66', rosa:'#f6b4d0', branco:'#ffffff' };
+var WA = '5511941537453';
+var NS = 'http://www.w3.org/2000/svg';
+function el(t, a, p){ var e = document.createElementNS(NS, t); for (var k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; }
+function visivel(x){ return x && x.getClientRects().length > 0; }
+
+/* ---------- estado local ---------- */
+var CHAVE = 'ctxt.site.v1';
+var E = { ativ: 0, notas: {}, votos: {}, salvos: {}, ganhos: {}, abertos: {}, termos: {}, relogio: 0 };
+try { var g = JSON.parse(localStorage.getItem(CHAVE) || 'null'); if (g && typeof g === 'object') E = Object.assign(E, g); } catch (e) {}
+E.termos = E.termos || {}; E.relogio = E.relogio || 0;
+function guardar(){ try { localStorage.setItem(CHAVE, JSON.stringify(E)); } catch (e) {} }
+
+/* ---------- contador ---------- */
+var numEl = $('#ativ-num'), contEl = $('#contador'), mostrado = E.ativ;
+function fmt(n){ return String(Math.max(0, Math.round(n))).padStart(4, '0'); }
+numEl.textContent = fmt(E.ativ);
+function contar(alvo, de, ate, dur, f){
+  f = f || function(n){ return String(Math.round(n)); };
+  if (RM) { alvo.textContent = f(ate); return; }
+  var t0 = performance.now();
+  (function passo(t){ var p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3); alvo.textContent = f(de + (ate - de) * e); if (p < 1) requestAnimationFrame(passo); })(t0);
+}
+function pulsar(){ contEl.classList.add('pulsa'); setTimeout(function(){ contEl.classList.remove('pulsa'); }, 450); }
+function voo(origem){
+  if (RM || !origem || !visivel(origem)) return;
+  var a = origem.getBoundingClientRect(), b = $('.ponto', contEl).getBoundingClientRect();
+  for (var i = 0; i < 6; i++) {
+    var d = document.createElement('span'); d.className = 'voo'; document.body.appendChild(d);
+    var x0 = a.left + a.width / 2 + (Math.random() - .5) * 40, y0 = a.top + a.height / 2 + (Math.random() - .5) * 20;
+    var x1 = b.left + b.width / 2 - 3.5, y1 = b.top + b.height / 2 - 3.5;
+    var mx = (x0 + x1) / 2 + (Math.random() - .5) * 220, my = Math.min(y0, y1) - 60 - Math.random() * 120;
+    var an = d.animate([{ transform: 'translate(' + x0 + 'px,' + y0 + 'px) scale(.4)', opacity: 0 }, { transform: 'translate(' + mx + 'px,' + my + 'px) scale(1)', opacity: 1, offset: .45 }, { transform: 'translate(' + x1 + 'px,' + y1 + 'px) scale(.6)', opacity: .9 }], { duration: 800 + i * 70, easing: 'cubic-bezier(.4,0,.2,1)', fill: 'forwards' });
+    an.onfinish = (function(n){ return function(){ n.remove(); }; })(d);
+  }
+}
+function ganhar(n, origem){
+  var de = mostrado; E.ativ += n; mostrado = E.ativ; guardar(); voo(origem);
+  setTimeout(function(){ contar(numEl, de, E.ativ, 900, fmt); pulsar(); }, RM ? 0 : 650);
+}
+function ganharLeve(n){ E.ativ += n; mostrado = E.ativ; guardar(); numEl.textContent = fmt(E.ativ); pulsar(); }
+var toastEl = $('#toast'), toastT = null;
+function toast(msg){ toastEl.textContent = msg; toastEl.classList.add('on'); clearTimeout(toastT); toastT = setTimeout(function(){ toastEl.classList.remove('on'); }, 3600); }
+
+/* ---------- whatsapp e cópia ---------- */
+$$('[data-wa]').forEach(function(a){ a.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(a.getAttribute('data-wa')); });
+$$('.copiar').forEach(function(b){
+  b.addEventListener('click', function(){
+    var t = b.getAttribute('data-copiar');
+    var ok = function(){ toast('E-mail copiado: ' + t); };
+    var falha = function(){ var s = b.previousElementSibling; if (s) { var r = document.createRange(); r.selectNodeContents(s); var sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); } toast('Selecionei o e-mail. Copie com Ctrl+C ou ⌘C.'); };
+    try { navigator.clipboard.writeText(t).then(ok, falha); } catch (e) { falha(); }
+  });
+});
+
+/* ---------- blocos e dobras: abre um, fecha os outros ---------- */
+var aoAbrir = {};
+function quandoAbrir(id, fn){ (aoAbrir[id] = aoAbrir[id] || []).push(fn); }
+$$('details[data-grupo]').forEach(function(d){
+  if (d.open) E.abertos[d.id] = 1;
+  d.addEventListener('toggle', function(){
+    if (!d.open) return;
+    var gr = d.getAttribute('data-grupo');
+    $$('details[data-grupo="' + gr + '"]').forEach(function(o){ if (o !== d && o.open) o.open = false; });
+    (aoAbrir[d.id] || []).forEach(function(fn){ fn(); });
+    if (!E.abertos[d.id]) { E.abertos[d.id] = 1; ganhar(d.classList.contains('bloco') ? 4 : 6, $('summary', d)); }
+  });
+});
+function navegar(sel){
+  var alvo = $(sel); if (!alvo) return;
+  var bl = alvo.closest('details.bloco'); if (bl && !bl.open) bl.open = true;
+  if (alvo.tagName === 'DETAILS') alvo.open = true;
+  setTimeout(function(){ alvo.scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: 'start' }); }, 60);
+  alvo.classList.add('piscar'); setTimeout(function(){ alvo.classList.remove('piscar'); }, 1800);
+}
+$$('[data-ir]').forEach(function(a){ a.addEventListener('click', function(e){ e.preventDefault(); navegar(a.getAttribute('data-ir')); }); });
+$$('[data-ir-lista]').forEach(function(a){ a.addEventListener('click', function(e){ e.preventDefault(); $(a.getAttribute('data-ir-lista')).scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: 'start' }); }); });
+
+/* ---------- fortalecer / proteger ---------- */
+(function(){
+  var t = $('#troca'), ps = ['fortalecer', 'proteger'], i = 0;
+  if (RM) return;
+  setInterval(function(){
+    t.classList.add('sai');
+    setTimeout(function(){ i = 1 - i; t.textContent = ps[i]; t.classList.remove('sai'); }, 360);
+  }, 2800);
+})();
+
+/* ---------- 1. rede de palavras e painel do termo ---------- */
+var TERMOS = {
+  duplo: ['duplo foco', 'Cuidar ao mesmo tempo das duas partes que hoje trabalham juntas: a pessoa e a IA que ela usa.', 'Cada encontro exercita a mente das pessoas e termina num contexto escrito por elas, que melhora as respostas da máquina.'],
+  neuro: ['neuroplasticidade', 'A capacidade do cérebro de reorganizar estruturas e conexões a partir do que vive, lê e aprende.', 'O clube devolve ao cérebro o que vinha sendo delegado à IA: ler, conectar, criticar e escrever. A máquina recebe o resultado desse exercício.'],
+  leitura: ['leitura profunda', 'Ler devagar, no papel, marcando, grifando e anotando.', '25 minutos de leitura individual em livros físicos. O que cada pessoa grifa vira matéria-prima do contexto que a IA vai receber.'],
+  debate: ['debate aberto', 'Conversa guiada por perguntas abertas, em que cada pessoa justifica a sua interpretação.', '45 minutos de debate que terminam em um contexto escolhido por consenso: uma leitura que nenhuma IA daria sozinha.'],
+  escrita: ['escrita manual', 'Escrever à mão antes de digitar, para que o pensamento fique em quem escreve.', '20 minutos de escrita do grupo, à mão. O texto humano é a base do contexto da máquina, e a autoria fica com as pessoas.'],
+  contextos: ['contextos autorais', 'Arquivos com o modo de pensar de um grupo, entregues à IA como contexto.', 'Cada encontro gera um arquivo .md testado durante a semana, para a IA responder a partir do repertório da empresa e não da média.'],
+  bionico: ['humano biônico', 'A nova dupla de trabalho: uma pessoa e a sua IA.', 'O clube potencializa as duas partes: a pessoa pensa melhor e a máquina recebe um contexto melhor.'],
+  atencao: ['atenção', 'A capacidade de sustentar o foco, ponta inicial de toda capacidade crítica.', 'Duas horas de leitura e conversa contínuas, sem resposta pronta. A atenção treinada pergunta melhor à máquina.'],
+  interpretacao: ['interpretação', 'Dar sentido ao que se lê. A leitura é aprendida e precisa de manutenção.', 'Ler e escrever toda semana mantém a estrutura de cognição. A interpretação do grupo vira o contexto que orienta a IA.'],
+  interdisciplinaridade: ['interdisciplinaridade', 'Cruzar áreas, livros e pessoas diferentes.', 'O contexto nasce do encontro de leituras diferentes. A IA ganha um repertório que não é o de todo mundo.'],
+  critica: ['crítica', 'Questionar, comparar e julgar o que se recebe, inclusive da máquina.', 'O debate exercita o questionamento. Quanto melhor a capacidade crítica do humano, melhor a capacidade crítica da IA.'],
+  criatividade: ['criatividade', 'Produzir ideias fora da média.', 'As ideias nascem no grupo antes da máquina, o que evita adotar as escolhas da IA como se fossem nossas.'],
+  memoria: ['memória', 'O que fica quando a ferramenta não está.', 'O que se lê, discute e escreve à mão fica. A IA recebe o que o grupo de fato aprendeu.'],
+  decisao: ['decisão', 'Escolher, e saber dizer "não sei" quando for o caso.', 'O grupo decide por consenso antes de consultar a máquina. A IA entra como apoio, não como autoridade.'],
+  diferenciacao: ['diferenciação', 'Respostas que não convergem para a média de todas as empresas.', 'Contextos autorais dão à IA da empresa estruturas de pensamento próprias.'],
+  protocolo: ['protocolo', '120 minutos por semana em cinco etapas: check-in, leitura, debate, escrita e contexto.', 'Um treino recorrente, com medição mensal da transformação percebida nas pessoas e nas máquinas.']
+};
+(function(){
+  var rede = $('#rede'), cv = $('canvas', rede), ctx = cv.getContext('2d'), pals = $$('.pal', rede);
+  var nos = [], arestas = [], pulsos = [], W = 0, H = 0, dpr = 1, foco = -1, sel = -1, vivo = true, ultimo = 0, abertas = false, VAL = 8;
+  var painel = $('#painel');
+  function mostrarTermo(k, i, clicado){
+    var t = TERMOS[k]; if (!t) return;
+    $('#p-termo').textContent = t[0]; $('#p-oque').textContent = t[1]; $('#p-como').textContent = t[2];
+    painel.classList.remove('troca-on'); void painel.offsetWidth; painel.classList.add('troca-on');
+    sel = i;
+    if (!clicado) return;
+    pals.forEach(function(p, j){ p.setAttribute('aria-pressed', j === i); });
+    if (!E.termos[k]) { E.termos[k] = 1; guardar(); ganhar(VAL, pals[i]); contar($('#p-n'), 0, VAL, 900, function(n){ return '+' + Math.round(n); }); $('#p-msg').textContent = 'ativações neuronais com esta palavra'; }
+    else { $('#p-n').textContent = '+' + VAL; $('#p-msg').textContent = 'você já ganhou as ativações desta palavra'; }
+    pals[i].classList.add('visto');
+    var r = painel.getBoundingClientRect();
+    if (r.bottom > innerHeight || r.top < 0) painel.scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: 'nearest' });
+  }
+  function rng(s){ return function(){ s = (s * 16807) % 2147483647; return (s - 1) / 2147483646; }; }
+  function montar(){
+    W = rede.clientWidth; H = rede.clientHeight; dpr = Math.min(2, window.devicePixelRatio || 1);
+    cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var estreito = W < 640, ph = estreito ? 34 : 42, r = rng(1171);
+    rede.style.setProperty('--ph', ph + 'px');
+    var rects = [], topo = 44, mx = estreito ? 6 : 24;
+    nos = [];
+    if (estreito) {
+      var linhas = [], atual = [], larg = 0, dispo = W - 2 * mx;
+      pals.forEach(function(p){ var w = $('span', p).scrollWidth + 2; p.dataset.w = w; if (atual.length && larg + w + 10 > dispo) { linhas.push(atual); atual = []; larg = 0; } atual.push({ p: p, w: w }); larg += w + 10; });
+      if (atual.length) linhas.push(atual);
+      var passoY = (H - topo - 10) / linhas.length;
+      linhas.forEach(function(l, li){
+        var soma = l.reduce(function(a, o){ return a + o.w; }, 0), sobra = Math.max(0, dispo - soma), x = mx;
+        var cortes = l.map(function(){ return r(); }), tot = cortes.reduce(function(a, b){ return a + b; }, 0) + r();
+        l.forEach(function(o, k){
+          x += sobra * cortes[k] / tot; var cy = topo + passoY * (li + .5) + (r() - .5) * Math.max(0, passoY - ph - 8);
+          rects.push({ x: x + o.w / 2, y: cy, w: o.w, h: ph });
+          nos.push({ pal: o.p, bx: x + o.w / 2, by: cy, w: o.w, h: ph, amp: 2 + r() * 2, ph: r() * 6.28, sp: .00035 + r() * .0003 });
+          x += o.w;
+        });
+      });
+    } else {
+      pals.forEach(function(p){
+        var w = $('span', p).scrollWidth + 2, h = ph, x, y, ok = false;
+        for (var t = 0; t < 600 && !ok; t++) {
+          x = mx + w / 2 + r() * (W - w - 2 * mx); y = topo + h / 2 + r() * (H - h - topo - 14);
+          ok = rects.every(function(q){ return Math.abs(x - q.x) > (w + q.w) / 2 + 26 || Math.abs(y - q.y) > (h + q.h) / 2 + 18; });
+        }
+        rects.push({ x: x, y: y, w: w, h: h }); p.dataset.w = w;
+        nos.push({ pal: p, bx: x, by: y, w: w, h: h, amp: 3 + r() * 5, ph: r() * 6.28, sp: .00035 + r() * .0003 });
+      });
+    }
+    var nd = estreito ? 16 : 46;
+    for (var k = 0; k < nd; k++) {
+      var x2, y2, ok2 = false;
+      for (var t2 = 0; t2 < 200 && !ok2; t2++) {
+        x2 = 8 + r() * (W - 16); y2 = topo + r() * (H - topo - 8);
+        ok2 = rects.every(function(q){ return Math.abs(x2 - q.x) > q.w / 2 + 16 || Math.abs(y2 - q.y) > q.h / 2 + 16; });
+      }
+      nos.push({ bx: x2, by: y2, r: 2.5 + r() * 4.5, cheio: r() > .35, amp: 6 + r() * 12, ph: r() * 6.28, sp: .0003 + r() * .0004 });
+    }
+    arestas = [];
+    var lim = estreito ? 120 : 190;
+    nos.forEach(function(a, i){
+      var viz = nos.map(function(b, j){ return { j: j, d: Math.hypot(a.bx - b.bx, a.by - b.by) }; }).filter(function(o){ return o.j !== i && o.d < lim; }).sort(function(p, q){ return p.d - q.d; }).slice(0, a.pal ? 3 : 2);
+      viz.forEach(function(o){ var lo = Math.min(i, o.j), hi = Math.max(i, o.j); if (!arestas.some(function(e){ return e[0] === lo && e[1] === hi; })) arestas.push([lo, hi]); });
+    });
+    pals.forEach(function(p){ p.style.width = p.classList.contains('semente') ? '14px' : p.dataset.w + 'px'; });
+    pos(performance.now()); desenhar(performance.now());
+  }
+  function idx(p){ for (var i = 0; i < nos.length; i++) if (nos[i].pal === p) return i; return -1; }
+  function pos(t){
+    nos.forEach(function(n){ n.x = n.bx + Math.sin(t * n.sp + n.ph) * (RM ? 0 : n.amp); n.y = n.by + Math.cos(t * n.sp * .8 + n.ph) * (RM ? 0 : n.amp * .7); if (n.pal) n.pal.style.transform = 'translate(' + n.x.toFixed(1) + 'px,' + n.y.toFixed(1) + 'px) translate(-50%,-50%)'; });
+  }
+  function desenhar(t){
+    ctx.clearRect(0, 0, W, H);
+    var f = foco >= 0 ? foco : (sel >= 0 ? idx(pals[sel]) : -1);
+    arestas.forEach(function(e){
+      var a = nos[e[0]], b = nos[e[1]], on = f >= 0 && (e[0] === f || e[1] === f);
+      ctx.strokeStyle = on ? COR.acento : COR.fio; ctx.lineWidth = on ? 1.4 : 1;
+      ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+    });
+    nos.forEach(function(n){ if (n.pal) return; ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, 6.2832); if (n.cheio) { ctx.fillStyle = COR.tinta; ctx.fill(); } else { ctx.fillStyle = COR.branco; ctx.fill(); ctx.strokeStyle = COR.tinta; ctx.lineWidth = 1; ctx.stroke(); } });
+    pulsos = pulsos.filter(function(p){ return t - p.t0 < p.dur; });
+    pulsos.forEach(function(p){
+      var e = arestas[p.e]; if (!e) return; var a = nos[p.dir ? e[0] : e[1]], b = nos[p.dir ? e[1] : e[0]], k = (t - p.t0) / p.dur;
+      ctx.beginPath(); ctx.arc(a.x + (b.x - a.x) * k, a.y + (b.y - a.y) * k, 3, 0, 6.2832); ctx.fillStyle = COR.acento; ctx.fill();
+    });
+  }
+  function laco(t){
+    if (!vivo) return;
+    pos(t);
+    var f = foco >= 0 ? foco : (sel >= 0 ? idx(pals[sel]) : -1);
+    if (!RM && t - ultimo > (f >= 0 ? 160 : 320) && arestas.length) {
+      ultimo = t;
+      var cand = f >= 0 ? arestas.map(function(e, i){ return (e[0] === f || e[1] === f) ? i : -1; }).filter(function(i){ return i >= 0; }) : null;
+      var ei = cand && cand.length && Math.random() < .7 ? cand[Math.floor(Math.random() * cand.length)] : Math.floor(Math.random() * arestas.length);
+      pulsos.push({ e: ei, t0: t, dur: 700 + Math.random() * 600, dir: f >= 0 ? arestas[ei][0] === f : Math.random() > .5 });
+    }
+    desenhar(t);
+    requestAnimationFrame(laco);
+  }
+  function abrir(){
+    if (abertas) return; abertas = true;
+    pals.forEach(function(p, i){
+      var fn = function(){ p.classList.remove('semente'); p.style.width = p.dataset.w + 'px'; };
+      if (RM) fn(); else setTimeout(fn, 250 + i * 110);
+    });
+  }
+  pals.forEach(function(p, i){
+    p.setAttribute('aria-pressed', 'false');
+    if (E.termos[p.getAttribute('data-t')]) p.classList.add('visto');
+    p.addEventListener('mouseenter', function(){ foco = idx(p); });
+    p.addEventListener('mouseleave', function(){ foco = -1; });
+    p.addEventListener('focus', function(){ foco = idx(p); });
+    p.addEventListener('blur', function(){ foco = -1; });
+    p.addEventListener('click', function(){ mostrarTermo(p.getAttribute('data-t'), i, true); });
+  });
+  var rz; window.addEventListener('resize', function(){ clearTimeout(rz); rz = setTimeout(montar, 180); });
+  montar();
+  mostrarTermo('bionico', pals.findIndex(function(p){ return p.getAttribute('data-t') === 'bionico'; }), false);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ montar(); abrir(); }); else abrir();
+  setTimeout(abrir, 1500);
+  if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ var v = es[0].isIntersecting; if (v && !vivo) { vivo = true; requestAnimationFrame(laco); } else if (!v) vivo = false; }).observe(rede);
+  requestAnimationFrame(laco);
+})();
+
+/* ---------- 2. texto que aparece com a rolagem ---------- */
+(function(){
+  var alvos = $$('.revelar');
+  alvos.forEach(function(x){
+    var walker = document.createTreeWalker(x, NodeFilter.SHOW_TEXT), nodes = [], n;
+    while ((n = walker.nextNode())) nodes.push(n);
+    nodes.forEach(function(tn){
+      var frag = document.createDocumentFragment();
+      tn.nodeValue.split(/(\s+)/).forEach(function(parte){
+        if (!parte) return;
+        if (/^\s+$/.test(parte)) frag.appendChild(document.createTextNode(parte));
+        else { var s = document.createElement('span'); s.className = 'w'; s.textContent = parte; frag.appendChild(s); }
+      });
+      tn.parentNode.replaceChild(frag, tn);
+    });
+    x._w = $$('.w', x); x._k = -1;
+  });
+  function rolar(){
+    var vh = innerHeight;
+    alvos.forEach(function(x){
+      var r = x.getBoundingClientRect(), p = (vh * .92 - r.top) / (r.height + vh * .45);
+      var k = Math.floor(Math.max(0, Math.min(1, p)) * x._w.length * 1.08);
+      if (k === x._k) return; x._k = k;
+      x._w.forEach(function(w, i){ w.classList.toggle('on', i < k); });
+    });
+  }
+  window.addEventListener('scroll', rolar, { passive: true }); window.addEventListener('resize', rolar); rolar();
+})();
+
+/* ---------- 3. nota da neuroplasticidade ---------- */
+(function(){
+  var b = $('#nota-neuro'), c = $('#nota-neuro-c'), n = $('#nota-neuro-n'), VAL = 27;
+  if (E.notas.neuro) n.textContent = VAL;
+  b.addEventListener('click', function(){
+    var abrir = c.hidden; c.hidden = !abrir; b.setAttribute('aria-expanded', abrir);
+    if (abrir && !E.notas.neuro) { E.notas.neuro = true; contar(n, 0, VAL, 1400); ganhar(VAL, b); }
+  });
+})();
+
+/* ---------- 4. círculos tangentes: Londres, GPS, IA ---------- */
+(function(){
+  var box = $('#tang-svg'), itens = $$('.item-t');
+  var R = [82, 160, 232], cx = 240, y0 = 34, W = 480, H = y0 + 2 * R[2] + 20;
+  var svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, role: 'img', 'aria-label': 'Três círculos tangentes: taxistas de Londres, GPS e IA' }, box);
+  var nomes = ['Londres · 2000', 'GPS · 2020', 'IA'], aneis = [], textos = [], nos = [];
+  for (var i = 2; i >= 0; i--) aneis[i] = el('circle', { cx: cx, cy: y0 + R[i], r: R[i], class: 'anel', tabindex: 0, 'aria-label': nomes[i] }, svg);
+  nos[0] = [el('circle', { cx: cx, cy: y0, r: 4.5, class: 'no' }, svg)];
+  for (var k = 0; k < 2; k++) {
+    var y = y0 + 2 * R[k], c2 = y0 + R[k + 1], hw = Math.sqrt(R[k + 1] * R[k + 1] - (y - c2) * (y - c2));
+    el('line', { x1: cx - hw, y1: y, x2: cx + hw, y2: y, class: 'corda' }, svg);
+    nos[k + 1] = [cx - hw, cx, cx + hw].map(function(x){ return el('circle', { cx: x, cy: y, r: 4.5, class: 'no' }, svg); });
+  }
+  for (var j = 0; j < 3; j++) {
+    var top = j === 0 ? y0 : y0 + 2 * R[j - 1], bot = y0 + 2 * R[j];
+    var t = el('text', { x: cx, y: (top + bot) / 2 + 8, 'text-anchor': 'middle' }, svg); t.textContent = nomes[j]; textos[j] = t;
+    var nt = el('text', { x: cx, y: top + 24, 'text-anchor': 'middle', class: 'num' }, svg); nt.textContent = '0' + (j + 1);
+  }
+  function ativar(i){
+    aneis.forEach(function(a, x){ a.classList.toggle('ativo', x === i); });
+    textos.forEach(function(a, x){ a.classList.toggle('ativo', x === i); });
+    nos.forEach(function(gg, x){ gg.forEach(function(n){ n.classList.toggle('ativo', x === i); }); });
+    itens.forEach(function(a, x){ a.classList.toggle('ativo', x === i); });
+  }
+  aneis.forEach(function(a, i){ a.addEventListener('click', function(){ ativar(i); }); a.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); ativar(i); } }); });
+  itens.forEach(function(it, i){ it.addEventListener('mouseenter', function(){ ativar(i); }); it.addEventListener('click', function(e){ if (!e.target.closest('button')) ativar(i); }); });
+  ativar(0);
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) ativar(itens.indexOf(e.target)); }); }, { rootMargin: '-45% 0px -45% 0px' });
+    itens.forEach(function(it){ io.observe(it); });
+  }
+})();
+
+/* ---------- anel de pontos ---------- */
+function anelPontos(cv, op){
+  var ctx = cv.getContext('2d'), S = cv.width, c = S / 2, pts = [], aneis = op.aneis || [8, 16, 24, 32], raio = S * .42, t0 = performance.now(), vivo = true;
+  aneis.forEach(function(n, k){ var r = raio * (k + 1) / aneis.length; for (var i = 0; i < n; i++) { var a = i / n * 6.2832 + k * .3; pts.push({ k: k, a: a, r: r, sx: Math.random() * S, sy: Math.random() * S }); } });
+  var soltos = []; for (var s = 0; s < (op.soltos || 0); s++) soltos.push({ x: Math.random() * S, y: Math.random() * S, vx: (Math.random() - .5) * .5, vy: (Math.random() - .5) * .5 });
+  function ease(x){ return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; }
+  function forma(t){
+    if (op.modo === 'montar') return Math.min(1, (t - t0) / 1500);
+    var u = ((t - t0) % 8200) / 1000;
+    if (u < 3.2) return 1; if (u < 4.6) return 1 - (u - 3.2) / 1.4; if (u < 5.6) return 0; if (u < 7.4) return (u - 5.6) / 1.8; return 1;
+  }
+  function quadro(t){
+    if (!vivo) return;
+    var f = RM ? 1 : ease(forma(t)), rot = RM ? 0 : t * .00004;
+    ctx.clearRect(0, 0, S, S);
+    pts.forEach(function(p){
+      var a = p.a + rot * (p.k % 2 ? -1 : 1), tx = c + Math.cos(a) * p.r, ty = c + Math.sin(a) * p.r;
+      ctx.beginPath(); ctx.arc(p.sx + (tx - p.sx) * f, p.sy + (ty - p.sy) * f, op.r || S * .011, 0, 6.2832); ctx.fillStyle = op.cor; ctx.fill();
+    });
+    soltos.forEach(function(p){ if (!RM) { p.x += p.vx; p.y += p.vy; if (p.x < 0 || p.x > S) p.vx *= -1; if (p.y < 0 || p.y > S) p.vy *= -1; } ctx.beginPath(); ctx.arc(p.x, p.y, (op.r || S * .011) * .8, 0, 6.2832); ctx.fillStyle = op.cor; ctx.fill(); });
+    if ((op.modo === 'montar' && forma(t) >= 1 && !op.soltos) || RM) return;
+    requestAnimationFrame(quadro);
+  }
+  requestAnimationFrame(quadro);
+  return { parar: function(){ vivo = false; }, seguir: function(){ if (!vivo) { vivo = true; requestAnimationFrame(quadro); } } };
+}
+
+/* ---------- 5. voto e prêmio ---------- */
+(function(){
+  var box = $('#voto-q1'), bs = $$('[data-voto]', box), pr = $('#premio'), VAL = 40;
+  function txt(){ return 'Você ' + (E.votos.q1 === 'sim' ? 'concorda' : 'discorda') + '. Sua resposta ficou salva neste dispositivo.'; }
+  function marcar(){ bs.forEach(function(b){ b.setAttribute('aria-pressed', E.votos.q1 === b.getAttribute('data-voto')); }); }
+  function mostrar(animar){
+    pr.hidden = false; $('#premio-txt').textContent = txt();
+    anelPontos($('canvas', pr), { modo: 'montar', aneis: [6, 12, 18], cor: COR.tinta, r: 4.5 });
+    if (animar) contar($('#premio-n'), 0, VAL, 1300); else $('#premio-n').textContent = VAL;
+  }
+  bs.forEach(function(b){ b.addEventListener('click', function(){
+    var primeira = !E.votos.q1; E.votos.q1 = b.getAttribute('data-voto'); guardar(); marcar();
+    if (primeira) { mostrar(true); ganhar(VAL, b); } else $('#premio-txt').textContent = txt();
+  }); });
+  marcar(); if (E.votos.q1) mostrar(false);
+})();
+
+/* ---------- 6. outra coisa é possível ---------- */
+(function(){
+  var cv = $('#anel-rosa'), a = anelPontos(cv, { modo: 'ciclo', aneis: [8, 16, 24, 32, 40], cor: COR.tinta, soltos: 9, r: 7 });
+  if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ if (es[0].isIntersecting) a.seguir(); else a.parar(); }).observe(cv);
+})();
+
+/* ---------- 7. diagramas: etapas → c/txt. → benefícios ---------- */
+function convergencia(box, esq, dir, cabs){
+  var curvasE = [], curvasD = [], vivo = false, pulsos = [], ultimo = 0, gp, montado = false;
+  function montar(){
+    var W = box.clientWidth; if (!W) return;
+    box.innerHTML = ''; curvasE = []; curvasD = []; pulsos = [];
+    var est = W < 720, fs = est ? 12.5 : 15, g = est ? 30 : 36;
+    var nT = Math.max(Math.ceil(esq.length / 2), Math.ceil(dir.length / 2)), nB = Math.max(Math.floor(esq.length / 2), Math.floor(dir.length / 2));
+    var xL = est ? 92 : Math.max(200, W * .19), xR = est ? W - 112 : Math.min(W - 230, W * .79), cx = (xL + xR) / 2, cy = 26 + (nT + .5) * g, H = cy + (nB + 1) * g + 16;
+    var svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, role: 'img', 'aria-label': 'As cinco etapas do clube convergem em c/txt. e saem como benefícios' }, box);
+    var gc = el('g', {}, svg); gp = el('g', {}, svg);
+    function ys(n){ var top = Math.ceil(n / 2), out = []; for (var i = 0; i < n; i++) out.push(i < top ? cy - (top - i + .5) * g : cy + (i - top + 1.5) * g); return out; }
+    function curva(x0, y, lado){ var a = x0 + lado * 36, k = (cx - a) * .42; return 'M' + x0 + ' ' + y + 'L' + a + ' ' + y + 'C' + (a + k) + ' ' + y + ' ' + (cx - k) + ' ' + cy + ' ' + cx + ' ' + cy; }
+    function rotulo(txt, alvo, x, y, anchor, path){
+      var pai = alvo ? el('a', { href: alvo }, svg) : el('g', {}, svg);
+      var t = el('text', { x: x, y: y + fs * .35, 'text-anchor': anchor, 'font-size': fs, class: 'lbl' }, pai); t.textContent = txt;
+      pai.addEventListener('mouseenter', function(){ path.classList.add('on'); pai.classList.add('on'); });
+      pai.addEventListener('mouseleave', function(){ path.classList.remove('on'); pai.classList.remove('on'); });
+      if (alvo) { pai.addEventListener('click', function(e){ e.preventDefault(); navegar(alvo); }); pai.addEventListener('focus', function(){ path.classList.add('on'); }); pai.addEventListener('blur', function(){ path.classList.remove('on'); }); }
+    }
+    var yE = ys(esq.length), yD = ys(dir.length);
+    esq.forEach(function(it, i){ var p = el('path', { d: curva(xL + 8, yE[i], 1), class: 'curva' }, gc); curvasE.push(p); rotulo(it[0], it[1], xL, yE[i], 'end', p); });
+    dir.forEach(function(it, i){ var p = el('path', { d: curva(xR - 8, yD[i], -1), class: 'curva' }, gc); curvasD.push(p); rotulo(it[0], it[1], xR, yD[i], 'start', p); });
+    if (!est) {
+      var t1 = el('text', { x: xL + 12, y: cy + 8, class: 'cab', 'font-size': 22 }, svg); t1.textContent = cabs[0];
+      var t2 = el('text', { x: xR - 12, y: cy + 8, class: 'cab', 'font-size': 22, 'text-anchor': 'end' }, svg); t2.textContent = cabs[1];
+    }
+    var tc = el('text', { x: cx, y: cy - (est ? 18 : 26), class: 'centro', 'font-size': est ? 20 : 28, 'text-anchor': 'middle' }, svg); tc.textContent = 'c/txt.';
+    el('circle', { cx: cx, cy: cy, r: est ? 6 : 8, fill: '#141414' }, svg);
+    curvasE.concat(curvasD).forEach(function(c){ c._len = c.getTotalLength(); });
+    montado = true;
+  }
+  function laco(t){
+    if (!vivo) return;
+    if (!RM && t - ultimo > 300 && curvasE.length) {
+      ultimo = t;
+      var d = el('circle', { r: 3, class: 'pulso' }, gp);
+      pulsos.push({ a: curvasE[Math.floor(Math.random() * curvasE.length)], b: curvasD[Math.floor(Math.random() * curvasD.length)], d: d, t0: t, dur: 2200 + Math.random() * 600 });
+    }
+    pulsos = pulsos.filter(function(p){
+      var k = (t - p.t0) / p.dur; if (k >= 1) { p.d.remove(); return false; }
+      var pt = k < .5 ? p.a.getPointAtLength(k * 2 * p.a._len) : p.b.getPointAtLength((1 - (k - .5) * 2) * p.b._len);
+      p.d.setAttribute('cx', pt.x); p.d.setAttribute('cy', pt.y); return true;
+    });
+    requestAnimationFrame(laco);
+  }
+  var rz; window.addEventListener('resize', function(){ clearTimeout(rz); rz = setTimeout(function(){ if (visivel(box)) montar(); }, 200); });
+  function ligar(){ if (box.clientWidth) montar(); if (!vivo) { vivo = true; requestAnimationFrame(laco); } }
+  if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ if (es[0].isIntersecting) { if (!montado) montar(); if (!vivo) { vivo = true; requestAnimationFrame(laco); } } else vivo = false; }).observe(box);
+  return { ligar: ligar };
+}
+var ETAPAS = [['Check-in', null], ['Leitura', null], ['Debate', null], ['Escrita', null], ['Contexto', null]];
+var convH = convergencia($('#conv-h'), ETAPAS, [['Atenção', '#mh-atencao'], ['Interpretação', '#mh-interpretacao'], ['Interdisciplinaridade', '#mh-interdisciplinaridade'], ['Crítica', '#mh-critica'], ['Criatividade', '#mh-criatividade'], ['Memória', '#mh-memoria'], ['Decisão', '#mh-decisao']], ['o clube', 'para humanos']);
+var convM = convergencia($('#conv-m'), ETAPAS, [['Autoralidade', '#ms-autoralidade'], ['Diferenciação', '#ms-diferenciacao']], ['o clube', 'para máquinas']);
+quandoAbrir('bl-humanos', function(){ setTimeout(convH.ligar, 30); });
+quandoAbrir('bl-maquinas', function(){ setTimeout(convM.ligar, 30); });
+
+/* ---------- 8. pesquisas: salvar, concordar, discordar ---------- */
+(function(){
+  var ICONE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5H18V20.5L12 15.8L6 20.5Z"/></svg>';
+  function nSalvos(){ $('#salvos-n').textContent = Object.keys(E.salvos).filter(function(k){ return E.salvos[k]; }).length; }
+  $$('.pesq').forEach(function(p){
+    var id = p.getAttribute('data-id'), txt = $$('.p1, .p2', p).map(function(x){ return x.textContent; }).join(' ').trim(), n = Math.max(12, Math.round(txt.split(/\s+/).length / 2.2));
+    var acoes = document.createElement('div'); acoes.className = 'acoes';
+    acoes.innerHTML = '<button class="contorno salvar" type="button" aria-pressed="false">' + ICONE + '<span>Salvar</span></button>' +
+      '<button class="contorno" type="button" data-v="sim" aria-pressed="false">Concordo</button>' +
+      '<button class="contorno" type="button" data-v="nao" aria-pressed="false">Discordo</button>' +
+      '<span class="ganho">esta leitura: +' + n + ' ativações</span>';
+    var aviso = document.createElement('p'); aviso.className = 'aviso-voto'; aviso.setAttribute('role', 'status'); aviso.style.marginTop = '8px';
+    var cont = $('.p1', p).parentNode; cont.appendChild(acoes); cont.appendChild(aviso);
+    var sv = $('.salvar', acoes), vs = $$('[data-v]', acoes);
+    function marcar(){ sv.setAttribute('aria-pressed', !!E.salvos[id]); $('span', sv).textContent = E.salvos[id] ? 'Salva' : 'Salvar'; vs.forEach(function(b){ b.setAttribute('aria-pressed', E.votos[id] === b.getAttribute('data-v')); }); }
+    sv.addEventListener('click', function(){
+      E.salvos[id] = !E.salvos[id]; guardar(); marcar(); nSalvos();
+      if (E.salvos[id]) {
+        if (!E.ganhos['s-' + id]) { E.ganhos['s-' + id] = 1; ganhar(n, sv); toast('Salvo só neste dispositivo · +' + n + ' ativações neuronais com esta leitura.'); }
+        else toast('Salvo só neste dispositivo.');
+      } else toast('Removida das pesquisas salvas deste dispositivo.');
+    });
+    vs.forEach(function(b){ b.addEventListener('click', function(){
+      var primeira = !E.votos[id]; E.votos[id] = b.getAttribute('data-v'); guardar(); marcar();
+      var qual = E.votos[id] === 'sim' ? 'Você concorda' : 'Você discorda';
+      if (primeira) { ganhar(5, b); aviso.textContent = '+5 ativações neuronais · ' + qual + '. Resposta salva neste dispositivo.'; }
+      else aviso.textContent = qual + '. Resposta atualizada neste dispositivo.';
+    }); });
+    marcar();
+  });
+  nSalvos();
+})();
+
+$$('.revelar-btn').forEach(function(b){
+  b.addEventListener('click', function(){ var r = document.getElementById(b.getAttribute('data-alvo')), ab = r.classList.toggle('aberto'); b.textContent = ab ? 'Recolher' : 'Continuar lendo'; b.setAttribute('aria-expanded', ab); });
+});
+
+/* ---------- 9. relógio do protocolo ---------- */
+(function(){
+  var box = $('#relogio'), passos = $$('.passo'), bloco = $('#bl-empresas');
+  var S = 460, c = S / 2, R = 182, svg = el('svg', { viewBox: '0 0 ' + S + ' ' + S }, box), mins = [], marcos = [];
+  el('circle', { cx: c, cy: c, r: R - 34, fill: 'none', stroke: '#d8d4cf', 'stroke-width': 1 }, svg);
+  for (var i = 0; i < 120; i++) { var a = i / 120 * 6.2832 - 1.5708; mins.push(el('circle', { cx: c + Math.cos(a) * R, cy: c + Math.sin(a) * R, r: 3.4, class: 'min' }, svg)); }
+  var pont = el('line', { x1: c, y1: c - R + 34, x2: c, y2: c - R + 10, class: 'ponteiro' }, svg), ponta = el('circle', { cx: c, cy: c - R, r: 6, fill: '#c81e66' }, svg);
+  passos.forEach(function(p, k){
+    var ini = +p.getAttribute('data-ini'), a = ini / 120 * 6.2832 - 1.5708;
+    marcos.push(el('circle', { cx: c + Math.cos(a) * (R + 16), cy: c + Math.sin(a) * (R + 16), r: 6, class: 'marco' }, svg));
+    var t = el('text', { x: c + Math.cos(a) * (R + 38), y: c + Math.sin(a) * (R + 38) + 4, 'text-anchor': 'middle', class: 'mrot' }, svg); t.textContent = '0' + (k + 1);
+  });
+  var total = el('text', { x: c, y: c - 78, 'text-anchor': 'middle', class: 'total' }, svg); total.textContent = '120 MIN';
+  var hora = el('text', { x: c, y: c - 8, 'text-anchor': 'middle', class: 'hora' }, svg);
+  var etapa = el('text', { x: c, y: c + 28, 'text-anchor': 'middle', class: 'etapa' }, svg);
+  var gSobe = el('g', {}, svg);
+  var ultimoN = -1;
+  function atualizar(){
+    if (!bloco.open) return;
+    var linha = innerHeight * .5, m = 0, ativo = -1;
+    passos.forEach(function(p, k){
+      var r = p.getBoundingClientRect(), ini = +p.getAttribute('data-ini'), dur = +p.getAttribute('data-dur');
+      if (r.top <= linha) { ativo = k; m = ini + Math.min(1, (linha - r.top) / r.height) * dur; }
+    });
+    var ult = passos[passos.length - 1].getBoundingClientRect(); if (ult.bottom < linha) m = 120;
+    m = Math.max(0, Math.min(120, m));
+    var n = Math.floor(m);
+    if (n !== ultimoN) { mins.forEach(function(d, i){ d.classList.toggle('feito', i < n); }); ultimoN = n; }
+    if (n > E.relogio) { ganharLeve(n - E.relogio); E.relogio = n; guardar(); }
+    var ang = m / 120 * 6.2832 - 1.5708;
+    pont.setAttribute('x1', c + Math.cos(ang) * (R - 34)); pont.setAttribute('y1', c + Math.sin(ang) * (R - 34)); pont.setAttribute('x2', c + Math.cos(ang) * (R - 10)); pont.setAttribute('y2', c + Math.sin(ang) * (R - 10));
+    ponta.setAttribute('cx', c + Math.cos(ang) * R); ponta.setAttribute('cy', c + Math.sin(ang) * R);
+    var hh = Math.floor(m / 60), mm = Math.floor(m % 60);
+    hora.textContent = (hh < 10 ? '0' : '') + hh + ':' + (mm < 10 ? '0' : '') + mm;
+    etapa.textContent = ativo >= 0 ? passos[ativo].getAttribute('data-nome') : 'chegada';
+    passos.forEach(function(p, k){ p.classList.toggle('ativo', k === ativo); });
+    marcos.forEach(function(d, k){ d.classList.toggle('on', k <= ativo); });
+  }
+  window.addEventListener('scroll', atualizar, { passive: true }); window.addEventListener('resize', atualizar);
+  quandoAbrir('bl-empresas', function(){ setTimeout(atualizar, 30); });
+  hora.textContent = '00:00'; etapa.textContent = 'chegada';
+  atualizar();
+  /* palavras dos benefícios subindo dentro do relógio */
+  var PALAVRAS = ['atenção', 'interpretação', 'autoralidade', 'crítica', 'interdisciplinaridade', 'criatividade', 'diferenciação', 'memória', 'decisão', 'ROI humano'];
+  var sobem = [], ultimo = 0, iw = 0, vivo = false;
+  function laco(t){
+    if (!vivo) return;
+    if (t - ultimo > 1150) {
+      ultimo = t; var w = PALAVRAS[iw++ % PALAVRAS.length], maq = /autoralidade|diferenciação/.test(w);
+      var tx = el('text', { x: c, y: c + 126, 'text-anchor': 'middle', class: 'sobe', fill: maq ? '#c81e66' : '#141414', opacity: 0 }, gSobe); tx.textContent = w;
+      sobem.push({ t: tx, t0: t });
+    }
+    sobem = sobem.filter(function(s){
+      var k = (t - s.t0) / 3200; if (k >= 1) { s.t.remove(); return false; }
+      s.t.setAttribute('y', (c + 126 - k * 82).toFixed(1));
+      s.t.setAttribute('opacity', (k < .25 ? k / .25 : k > .7 ? (1 - k) / .3 : 1).toFixed(2));
+      return true;
+    });
+    requestAnimationFrame(laco);
+  }
+  if (!RM && 'IntersectionObserver' in window) new IntersectionObserver(function(es){ var v = es[0].isIntersecting; if (v && !vivo) { vivo = true; requestAnimationFrame(laco); } else if (!v) vivo = false; }).observe(box);
+})();
+
+/* ---------- 10. pontos neuronais passeando no protocolo ---------- */
+(function(){
+  var cv = $('#neuro'), sec = $('#prot-wrap'), ctx = cv.getContext('2d'), pts = [], W, H, XW, dpr, vivo = false;
+  function montar(){
+    W = sec.clientWidth; H = sec.clientHeight; if (!W) return; dpr = Math.min(2, devicePixelRatio || 1);
+    cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var n = W < 700 ? 12 : 30; pts = []; XW = W < 860 ? W : Math.min(W * .38, 560);
+    for (var i = 0; i < n; i++) pts.push({ x: Math.random() * XW, y: Math.random() * H, vx: (Math.random() - .5) * .35, vy: (Math.random() - .5) * .35, r: 1.8 + Math.random() * 3, cheio: Math.random() > .4 });
+  }
+  function quadro(){
+    if (!vivo) return;
+    ctx.clearRect(0, 0, W, H);
+    var top = -sec.getBoundingClientRect().top, vh = innerHeight, fraco = W < 860;
+    pts.forEach(function(p){ p.x += p.vx; p.y += p.vy; if (p.x < 0 || p.x > XW) p.vx *= -1; if (p.y < 0 || p.y > H) p.vy *= -1; });
+    ctx.lineWidth = 1;
+    for (var i = 0; i < pts.length; i++) { var a = pts[i]; if (a.y < top - 200 || a.y > top + vh + 200) continue;
+      for (var j = i + 1; j < pts.length; j++) { var b = pts[j], d = Math.hypot(a.x - b.x, a.y - b.y); if (d < 170) { ctx.strokeStyle = 'rgba(216,212,207,' + (1 - d / 170).toFixed(2) + ')'; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); } } }
+    pts.forEach(function(p){ ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.2832); if (p.cheio) { ctx.fillStyle = fraco ? 'rgba(20,20,20,.18)' : 'rgba(20,20,20,.5)'; ctx.fill(); } else { ctx.strokeStyle = fraco ? 'rgba(20,20,20,.18)' : 'rgba(20,20,20,.45)'; ctx.stroke(); } });
+    requestAnimationFrame(quadro);
+  }
+  quandoAbrir('bl-empresas', function(){ setTimeout(montar, 40); });
+  if ('ResizeObserver' in window) new ResizeObserver(function(){ if (sec.clientWidth) montar(); }).observe(sec);
+  if (!RM && 'IntersectionObserver' in window) new IntersectionObserver(function(es){ var v = es[0].isIntersecting; if (v && !vivo) { if (!pts.length) montar(); vivo = true; requestAnimationFrame(quadro); } else if (!v) vivo = false; }).observe(sec);
+})();
+
+/* ---------- 11. corpo e mente trocando pontos ---------- */
+(function(){
+  var cv = $('#corpo-mente'), ctx = cv.getContext('2d'), W, H, dpr, parts = [], vivo = false, ultimo = 0, rp = 2;
+  function montar(){
+    W = cv.clientWidth; H = cv.clientHeight; if (!W) return; dpr = Math.min(2, devicePixelRatio || 1);
+    cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var est = W < 640, fs = est ? Math.min(H * .42, W / 3.3) : Math.min(H * .78, W / 6), off = document.createElement('canvas'); off.width = W; off.height = H;
+    var o = off.getContext('2d'); o.fillStyle = '#000'; o.font = '300 ' + fs + 'px "Cormorant Garamond", Georgia, serif'; o.textBaseline = 'middle';
+    var passo = Math.max(4, Math.round(fs / 24)); rp = passo * .36;
+    function amostra(txt, x, y){ o.clearRect(0, 0, W, H); o.textAlign = 'center'; o.fillText(txt, x, y); var d = o.getImageData(0, 0, W, H).data, out = []; for (var yy = 0; yy < H; yy += passo) for (var xx = 0; xx < W; xx += passo) if (d[(yy * W + xx) * 4 + 3] > 140) out.push({ x: xx, y: yy }); return out; }
+    var sA = est ? amostra('corpo', W / 2, H * .27) : amostra('corpo', W * .27, H * .5);
+    var sB = est ? amostra('mente', W / 2, H * .73) : amostra('mente', W * .73, H * .5);
+    parts = [];
+    sA.forEach(function(s){ parts.push({ x: s.x, y: s.y, alvo: s, de: null, t0: 0, grupo: 'A' }); });
+    sB.forEach(function(s){ parts.push({ x: s.x, y: s.y, alvo: s, de: null, t0: 0, grupo: 'B' }); });
+    quadro(performance.now(), true);
+  }
+  function trocar(t){
+    var A = parts.filter(function(p){ return p.grupo === 'A' && !p.de; }), B = parts.filter(function(p){ return p.grupo === 'B' && !p.de; });
+    for (var k = 0; k < 7 && A.length && B.length; k++) {
+      var a = A.splice(Math.floor(Math.random() * A.length), 1)[0], b = B.splice(Math.floor(Math.random() * B.length), 1)[0];
+      var sa = a.alvo; a.de = { x: a.x, y: a.y }; b.de = { x: b.x, y: b.y }; a.alvo = b.alvo; b.alvo = sa; a.grupo = 'B'; b.grupo = 'A';
+      a.t0 = t + k * 60; b.t0 = t + k * 60; a.cima = Math.random() > .5; b.cima = !a.cima;
+    }
+  }
+  function quadro(t, unico){
+    if (!vivo && !unico) return;
+    if (!unico && !RM && t - ultimo > 1100) { ultimo = t; trocar(t); }
+    ctx.clearRect(0, 0, W, H);
+    parts.forEach(function(p){
+      var movendo = false;
+      if (p.de) {
+        var k = Math.max(0, Math.min(1, (t - p.t0) / 1500)), e = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+        var mx = (p.de.x + p.alvo.x) / 2, my = (p.de.y + p.alvo.y) / 2 + (p.cima ? -1 : 1) * H * .35;
+        p.x = (1 - e) * (1 - e) * p.de.x + 2 * (1 - e) * e * mx + e * e * p.alvo.x;
+        p.y = (1 - e) * (1 - e) * p.de.y + 2 * (1 - e) * e * my + e * e * p.alvo.y;
+        movendo = k < 1; if (k >= 1) p.de = null;
+      }
+      ctx.beginPath(); ctx.arc(p.x, p.y, movendo ? rp * 1.25 : rp, 0, 6.2832); ctx.fillStyle = movendo ? COR.acento : COR.tinta; ctx.fill();
+    });
+    if (!unico) requestAnimationFrame(quadro);
+  }
+  function iniciar(){ if (!cv.clientWidth) return; montar(); }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(iniciar); else iniciar();
+  quandoAbrir('bl-analogia', function(){ setTimeout(iniciar, 40); });
+  var rz; window.addEventListener('resize', function(){ clearTimeout(rz); rz = setTimeout(iniciar, 200); });
+  if (!RM && 'IntersectionObserver' in window) new IntersectionObserver(function(es){ var v = es[0].isIntersecting; if (v && !vivo) { if (!parts.length) iniciar(); vivo = true; requestAnimationFrame(quadro); } else if (!v) vivo = false; }).observe(cv);
+})();
+
+/* ---------- 12. estante passando ---------- */
+(function(){
+  var livros = [
+    ['Ursula K. Le Guin', 'A Teoria da Bolsa de Ficção', 'lente'],
+    ['Achille Mbembe', 'Democracia como Comunidade de Vida', 'avanco'],
+    ['Byung-Chul Han', 'O Espírito da Esperança', 'losangos'],
+    ['Ailton Krenak', 'Futuro Ancestral', 'edicao'],
+    ['bell hooks', 'Ensinando Pensamento Crítico', 'lente'],
+    ['bell hooks', 'Tudo sobre o Amor', 'avanco'],
+    ['Humberto Maturana', 'Amar e Brincar', 'losangos'],
+    ['D. W. Winnicott', 'O Brincar e a Realidade', 'edicao'],
+    ['Paul B. Preciado', 'Eu Sou o Monstro que Vos Fala', 'lente'],
+    ['Ian Angus', 'Enfrentando o Antropoceno', 'avanco'],
+    ['Alfred Gell', 'Arte e Agência', 'losangos'],
+    ['Byung-Chul Han', 'Infocracia', 'edicao'],
+    ['Marcello Tarì', '20 Teses sobre a Subversão da Metrópole', 'lente']
+  ];
+  var FORMAS = {
+    lente: '<circle cx="37" cy="50" r="28" fill="none" stroke="#141414" stroke-width="3"/><circle cx="63" cy="50" r="28" fill="none" stroke="#141414" stroke-width="3"/><path d="M50 25.3A28 28 0 0 1 50 74.7A28 28 0 0 1 50 25.3Z" fill="#141414"/>',
+    avanco: '<path d="M10 20V80L56 50Z" fill="none" stroke="#141414" stroke-width="3"/><path d="M40 20V80L86 50Z" fill="none" stroke="#141414" stroke-width="3"/><path d="M40 39.6L56 50L40 60.4Z" fill="#141414"/>',
+    losangos: '<path d="M37 22L65 50L37 78L9 50Z" fill="none" stroke="#141414" stroke-width="3"/><path d="M63 22L91 50L63 78L35 50Z" fill="none" stroke="#141414" stroke-width="3"/><path d="M35 50L50 35L65 50L50 65Z" fill="#141414"/>',
+    edicao: '<path d="M16 41H60V85H16Z" fill="none" stroke="#141414" stroke-width="3"/><circle cx="60" cy="41" r="26" fill="none" stroke="#141414" stroke-width="3"/><path d="M60 41H34A26 26 0 0 0 60 67Z" fill="#141414"/>'
+  };
+  function linhas(t, max){ var out = [], l = ''; t.split(' ').forEach(function(w){ var n = l ? l + ' ' + w : w; if (n.length > max && l) { out.push(l); l = w; } else l = n; }); out.push(l); return out; }
+  function esc(s){ return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
+  function capa(b, i, oculto){
+    var ls = linhas(b[1], 14), fs = ls.length > 3 ? 21 : 24;
+    var tit = ls.map(function(l, k){ return '<text x="18" y="' + (96 + k * fs * 1.02) + '" font-family="Cormorant Garamond, Georgia, serif" font-weight="300" font-size="' + fs + '" fill="#141414" letter-spacing="-.3">' + esc(l) + '</text>'; }).join('');
+    var svg = '<svg viewBox="0 0 200 300" ' + (oculto ? 'aria-hidden="true"' : 'role="img" aria-label="' + esc(b[1]) + ', ' + esc(b[0]) + '"') + '>' +
+      '<rect x=".5" y=".5" width="199" height="299" fill="#ffffff" stroke="#d8d4cf"/>' +
+      '<line x1="18" y1="44" x2="182" y2="44" stroke="#141414" stroke-width="1"/>' +
+      '<text x="18" y="34" font-family="Instrument Sans, Arial, sans-serif" font-size="8.5" font-weight="500" letter-spacing="1.4" fill="#141414">' + esc(b[0].toUpperCase()) + '</text>' +
+      tit + '<g transform="translate(18 214) scale(.5)">' + FORMAS[b[2]] + '</g>' +
+      '<line x1="18" y1="272" x2="182" y2="272" stroke="#141414" stroke-width="1"/>' +
+      '<text x="18" y="288" font-family="Cormorant Garamond, Georgia, serif" font-size="13" fill="#141414">c/txt.</text>' +
+      '<text x="182" y="288" text-anchor="end" font-family="Courier Prime, monospace" font-size="9" fill="#5e5b57">(' + (i + 1 < 10 ? '0' : '') + (i + 1) + ')</text></svg>';
+    var f = document.createElement('figure'); f.className = 'livro'; if (oculto) f.setAttribute('aria-hidden', 'true'); else f.setAttribute('role', 'listitem');
+    f.innerHTML = svg + '<figcaption class="meta">' + esc(b[0]) + ' · <span style="color:#141414">' + esc(b[1]) + '</span></figcaption>';
+    return f;
+  }
+  var tr = $('#trilho');
+  livros.forEach(function(b, i){ tr.appendChild(capa(b, i, false)); });
+  if (!RM) livros.forEach(function(b, i){ tr.appendChild(capa(b, i, true)); });
+  else tr.style.animation = 'none';
+})();
+
+})();
+</script>
+
+</body></html>
