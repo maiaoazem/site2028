@@ -30,7 +30,7 @@
 /* blocos colados */
 .secao.modulo-detalhe {padding-top:0;}
 .secao-empresas + .modulo-detalhe {padding-top:0;}
-#participar + .modulo-detalhe {padding-top:clamp(40px,5vw,72px);}
+.modulo-estatico + .modulo-detalhe {padding-top:clamp(40px,5vw,72px);}
 .modulo-detalhe + .modulo-detalhe .bloco {border-top:0;}
 /* painel da palavra-chave: ação */
 .painel .painel-acao {grid-column:2 / -1; display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center; padding-top:6px;}
@@ -46,6 +46,15 @@
 .bio-dados dt {font-size:11px; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:var(--tinta-suave);}
 .bio-dados dd {margin:4px 0 0; font-size:15px; line-height:1.45;}
 @media (max-width:860px) { .bio {grid-template-columns:minmax(0,1fr);} .bio-foto {max-width:300px;} .bio-dados {grid-template-columns:minmax(0,1fr);} }
+/* carrossel arrastável */
+.estante {cursor:grab; touch-action:pan-y; user-select:none; -webkit-user-select:none;}
+.estante.arrastando {cursor:grabbing;}
+.estante .trilho {animation:none;}
+/* foto: caracteres -> original */
+.bio-quadro {position:relative; cursor:pointer; outline-offset:4px;}
+.bio-quadro canvas {display:block; width:100%; aspect-ratio:2/3; background:var(--branco);}
+.bio-original {position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .6s ease;}
+.bio-quadro:hover .bio-original, .bio-quadro:focus-visible .bio-original, .bio-quadro.ver .bio-original {opacity:1;}
 /* junte-se antes do texto */
 .junte-topo {display:grid; justify-items:center; margin-top:clamp(56px,6vw,96px);}
 </style></head><body>
@@ -756,6 +765,77 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     </div>
   </section>
 
+
+<!-- A estante do clube · bloco 07 -->
+  <section class="secao m modulo-detalhe livros-secao" aria-label="A estante do clube · bloco 07">
+    <div class="larg"><div class="blocos"><details class="bloco" id="bl-ler" data-grupo="bloco">
+          <summary><span class="numero">(07)</span><span><span class="titulo-secao" style="display:block">O que vamos <span class="it">ler?</span></span><span class="meta" style="display:block">13 livros da estante de +100 do clube</span></span><span class="mais" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M6 0V12M0 6H12" stroke="currentColor" stroke-width="1.4"/></svg></span></summary>
+          <div class="conteudo">
+            <p class="abertura lf">As leituras que formam a estrutura de pensamento da gira. e alimentam as edições do clube.</p>
+            <div class="estante" id="estante" role="list"><div class="trilho" id="trilho"></div></div>
+          </div>
+        </details></div></div>
+  </section>
+
+<!-- QUEM FACILITA O CLUBE -->
+  <section class="secao m facilitadora" id="quem-facilita" aria-labelledby="h-quem-facilita">
+    <div class="larg">
+      <hr class="fio">
+      <div class="bio">
+        <figure class="bio-foto">
+          <div class="bio-quadro" id="bio-quadro" tabindex="0" role="img" aria-label="Retrato de Maia Oazem. Passe o mouse ou toque para ver a foto original.">
+            <canvas id="matrix" aria-hidden="true"></canvas>
+            <img class="bio-original" src="maia-retrato.png" alt="" loading="lazy">
+          </div>
+          <figcaption class="meta">Passe o mouse para ver a foto · Naira Mattia, Estúdio Praxe</figcaption>
+        </figure>
+        <div class="bio-info">
+          <p class="rotulo">quem cria e facilita o clube</p>
+          <h2 class="titulo-secao" id="h-quem-facilita">maia <span class="it">oazem</span></h2>
+          <p class="ui suave">Artista Temporal · criadora do método do Clube de Contexto</p>
+          <div class="recolhido" id="rec-bio">
+            <p class="abertura">Maia Oazem estuda o que acontece com o pensamento humano quando a IA entra no trabalho. Criou o Clube de Contexto para que equipes voltem a ler, debater e escrever juntas, e para que esse pensamento vire contexto para as máquinas.</p>
+            <div class="bio-mais leitura" style="margin-top:1em">
+              <p>Nascida em 1990, cresceu entre a internet discada e o celular, e hoje pesquisa o que muda na mente com o pós-IA. Por quinze anos estruturou áreas de inovação e futuros por dentro da Oracle, da Salesforce, do Google Cloud e da Capgemini, onde criou o Papillon, projeto de transformação pós-IA, e os estudos Futuros Pós-IA e Futuros das Finanças.</p>
+              <p>Seu trabalho foi destacado pela Veja, pela Época Negócios, pelo Estadão e pela CNBC, e apresentado no Febraban Tech. Leciona futuros e IA aplicada na ESPM e integra a diretoria da Associação Brasileira de Futuros. Desde 2016 conduz a gira., laboratório de futuros e estratégia criativa de onde vêm o método e a estante de mais de 100 livros do clube.</p>
+            </div>
+          </div>
+          <button class="revelar-btn" type="button" data-alvo="rec-bio" aria-expanded="false">Continuar lendo</button>
+          <dl class="bio-dados">
+            <div><dt>no clube</dt><dd>Criação do método, curadoria dos livros e facilitação dos encontros</dd></div>
+            <div><dt>trajetória</dt><dd>Oracle · Salesforce · Google Cloud · Capgemini · gira.</dd></div>
+            <div><dt>ensino</dt><dd>Futuros e IA aplicada na ESPM · diretoria da ABF</dd></div>
+          </dl>
+          <p><a class="link ui" href="https://gira.guru/cv" target="_blank" rel="noopener noreferrer">Currículo e projetos de Maia Oazem ↗</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="preto m" aria-label="Junte-se ao Clube">
+    <div class="larg">
+      <hr class="fio">
+      <p class="final">A inteligência artificial amplia nossas capacidades intelectuais ao mesmo tempo que substitui justamente os processos pelos quais desenvolvemos essas <span class="it">capacidades.</span></p>
+      <div class="junte junte-topo"><a href="#participar">Junte-se ao Clube.</a></div>
+      <div class="pend" style="margin-top:80px">
+        <span></span>
+        <div class="leitura">
+          <p>Melhores respostas com ajuda da IA não significa aprender mais, nem significa melhores entregas. E a dependência dessas respostas prontas compromete o desempenho no mundo, quando sem as tais ferramentas, além da capacidade de perseguir tarefas difíceis e de manter autonomia de julgamento.</p>
+          <p><strong>O uso recorrente e acrítico da IA afeta a nossa capacidade de ser alguém crítico criativo no mundo. O uso recorrente da IA afeta nossa capacidade de alterar o mundo numa direção autoral.</strong></p>
+          <p>Se a questão, no curto prazo, não parece poder ser sobre usar ou não essas ferramentas, então <strong>ela precisa ser sobre quais capacidades humanas estamos deixando de exercitar durante essa produção, e como religar e exercitar essas sinapses</strong>.</p>
+        </div>
+      </div>
+      <p class="cita" style="margin-top:56px">(Bastani et al., 2025; Kosmyna et al., 2025; Liu et al., 2026; Herdağdelen et al., 2026).</p>
+    </div>
+  </section>
+
+<section class="rosa-final m" aria-label="Outra coisa é possível">
+    <div class="larg">
+      <div><hr class="fio"><p class="titulo" style="margin-top:clamp(48px,6vw,96px)">outra coisa é <span class="it">possível</span></p></div>
+      <canvas id="anel-rosa" width="880" height="880" aria-hidden="true"></canvas>
+    </div>
+  </section>
+
 <!-- TRÊS FORMAS DE PARTICIPAR -->
   <section class="secao m" id="participar" aria-labelledby="h-part">
     <div class="larg">
@@ -818,74 +898,6 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       </div>
     </div>
   </section>
-
-<!-- A estante do clube · bloco 07 -->
-  <section class="secao m modulo-detalhe livros-secao" aria-label="A estante do clube · bloco 07">
-    <div class="larg"><div class="blocos"><details class="bloco" id="bl-ler" data-grupo="bloco">
-          <summary><span class="numero">(07)</span><span><span class="titulo-secao" style="display:block">O que vamos <span class="it">ler?</span></span><span class="meta" style="display:block">13 livros da estante do clube</span></span><span class="mais" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M6 0V12M0 6H12" stroke="currentColor" stroke-width="1.4"/></svg></span></summary>
-          <div class="conteudo">
-            <p class="abertura lf">As leituras que formam a estrutura de pensamento da gira. e alimentam as edições do clube.</p>
-            <div class="estante" id="estante" role="list"><div class="trilho" id="trilho"></div></div>
-          </div>
-        </details></div></div>
-  </section>
-
-<!-- QUEM FACILITA O CLUBE -->
-  <section class="secao m facilitadora" id="quem-facilita" aria-labelledby="h-quem-facilita">
-    <div class="larg">
-      <hr class="fio">
-      <div class="bio">
-        <figure class="bio-foto">
-          <canvas id="matrix" role="img" aria-label="Retrato de Maia Oazem feito de caracteres em chuva de código"></canvas>
-          <figcaption class="meta">Maia Oazem · foto de Naira Mattia, Estúdio Praxe</figcaption>
-        </figure>
-        <div class="bio-info">
-          <p class="rotulo">quem facilita o clube</p>
-          <h2 class="titulo-secao" id="h-quem-facilita">maia <span class="it">oazem</span></h2>
-          <p class="ui suave">Artista Temporal · Pesquisadora Cultural · Estrategista Criativa</p>
-          <div class="recolhido" id="rec-bio">
-            <p class="abertura">Maia Oazem é uma artista temporal nascida e baseada em São Paulo. Sua prática atravessa pesquisa cultural, elaboração de futuros e estratégia criativa, e toma forma em ficção científica, design especulativo e transformação de organizações.</p>
-            <div class="bio-mais leitura" style="margin-top:1em">
-              <p>Nascida em 1990, pertence a uma geração que cresceu entrando e saindo da internet até a chegada do mobile, e agora estuda, a partir dessa vivência, o que nos acontece com o pós-IA. Passou quinze anos construindo outras coisas possíveis por dentro da Oracle, da Salesforce, do Google e da Capgemini, enquanto mantinha seu fluxo experimental na gira., laboratório que em 2027 abre sua segunda década como laborateliê. É conhecida por usar a ficção para guiar as estratégias, e pela estratégia nascida do que até então parecia ficção.</p>
-              <p>Seu trabalho foi destacado pela Veja, pela Época Negócios, pelo Estadão e pela CNBC, e apresentado no Febraban Tech e na Abradi. Leciona futuros e IA aplicada na ESPM, integra a diretoria da Associação Brasileira de Futuros, é signatária do projeto Design Centrado na Sociedade, do IF, e fez parte do grupo de ética em IA do Google. Seus roteiros de ficção científica foram selecionados no Brasil, no Canadá, nos Estados Unidos, na Índia, na Itália e no Japão.</p>
-            </div>
-          </div>
-          <button class="revelar-btn" type="button" data-alvo="rec-bio" aria-expanded="false">Continuar lendo</button>
-          <dl class="bio-dados">
-            <div><dt>trajetória</dt><dd>Oracle · Salesforce · Google · Capgemini · gira.</dd></div>
-            <div><dt>ensino e conselhos</dt><dd>ESPM · Associação Brasileira de Futuros</dd></div>
-            <div><dt>base</dt><dd>São Paulo · Brasil</dd></div>
-          </dl>
-          <p><a class="link ui" href="https://gira.guru/cv" target="_blank" rel="noopener noreferrer">Currículo e projetos de Maia Oazem ↗</a></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<section class="preto m" aria-label="Junte-se ao Clube">
-    <div class="larg">
-      <hr class="fio">
-      <p class="final">A inteligência artificial amplia nossas capacidades intelectuais ao mesmo tempo que substitui justamente os processos pelos quais desenvolvemos essas <span class="it">capacidades.</span></p>
-      <div class="junte junte-topo"><a href="#participar">Junte-se ao Clube.</a></div>
-      <div class="pend" style="margin-top:80px">
-        <span></span>
-        <div class="leitura">
-          <p>Melhores respostas com ajuda da IA não significa aprender mais, nem significa melhores entregas. E a dependência dessas respostas prontas compromete o desempenho no mundo, quando sem as tais ferramentas, além da capacidade de perseguir tarefas difíceis e de manter autonomia de julgamento.</p>
-          <p><strong>O uso recorrente e acrítico da IA afeta a nossa capacidade de ser alguém crítico criativo no mundo. O uso recorrente da IA afeta nossa capacidade de alterar o mundo numa direção autoral.</strong></p>
-          <p>Se a questão, no curto prazo, não parece poder ser sobre usar ou não essas ferramentas, então <strong>ela precisa ser sobre quais capacidades humanas estamos deixando de exercitar durante essa produção, e como religar e exercitar essas sinapses</strong>.</p>
-        </div>
-      </div>
-      <p class="cita" style="margin-top:56px">(Bastani et al., 2025; Kosmyna et al., 2025; Liu et al., 2026; Herdağdelen et al., 2026).</p>
-    </div>
-  </section>
-
-<section class="rosa-final m" aria-label="Outra coisa é possível">
-    <div class="larg">
-      <div><hr class="fio"><p class="titulo" style="margin-top:clamp(48px,6vw,96px)">outra coisa é <span class="it">possível</span></p></div>
-      <canvas id="anel-rosa" width="880" height="880" aria-hidden="true"></canvas>
-    </div>
-  </section>
-
 </main>
 
 <footer class="rodape m" id="rodape">
@@ -1670,6 +1682,37 @@ $$('.revelar-btn').forEach(function(b){
     visto = es[0].isIntersecting;
     if (visto && !vivo && pronto && !RM) { vivo = true; requestAnimationFrame(quadro); } else if (!visto) vivo = false;
   }).observe(cv);
+})();
+
+/* ---------- estante arrastável ---------- */
+(function(){
+  var est = $('#estante'), tr = $('#trilho'); if (!est || !tr) return;
+  tr.style.animation = 'none';
+  var x = 0, arr = false, sobre = false, sx = 0, x0 = 0, ult = performance.now(), moveu = false;
+  function periodo(){ return (tr.scrollWidth + 28) / 2; }
+  function ajustar(){ var p = periodo(); if (!p) return; x = x % p; if (x > 0) x -= p; }
+  function laco(t){
+    var dt = Math.min(64, t - ult); ult = t;
+    if (est.getClientRects().length) {
+      if (!arr && !sobre && !RM) x -= dt * .035;
+      ajustar(); tr.style.transform = 'translateX(' + x.toFixed(1) + 'px)';
+    }
+    requestAnimationFrame(laco);
+  }
+  est.addEventListener('pointerdown', function(e){ arr = true; moveu = false; sx = e.clientX; x0 = x; est.classList.add('arrastando'); try { est.setPointerCapture(e.pointerId); } catch (er) {} });
+  est.addEventListener('pointermove', function(e){ if (!arr) return; var d = e.clientX - sx; if (Math.abs(d) > 3) moveu = true; x = x0 + d; });
+  function soltar(){ arr = false; est.classList.remove('arrastando'); }
+  est.addEventListener('pointerup', soltar); est.addEventListener('pointercancel', soltar);
+  est.addEventListener('mouseenter', function(){ sobre = true; }); est.addEventListener('mouseleave', function(){ sobre = false; soltar(); });
+  est.addEventListener('dragstart', function(e){ e.preventDefault(); });
+  requestAnimationFrame(laco);
+})();
+
+/* ---------- foto: tocar mostra a original ---------- */
+(function(){
+  var q = $('#bio-quadro'); if (!q) return;
+  q.addEventListener('click', function(){ q.classList.toggle('ver'); });
+  q.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); q.classList.toggle('ver'); } });
 })();
 })();
 </script>
