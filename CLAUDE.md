@@ -31,3 +31,7 @@ Ao criar uma página nova no lab, sempre:
 </span>
 </nav>
 ```
+
+## Subdomínios
+
+`_worker.js` entrega uma pasta do repositório num subdomínio (hoje: `contexto.gira.guru` → `contexto/`). Para um subdomínio novo: acrescentar a linha em `SUBDOMINIOS` dentro de `_worker.js` e adicionar o domínio no Cloudflare (Workers & Pages → maia-oazem → Settings → Domains & Routes → Add → Custom domain). Links internos dessas páginas podem ser relativos (`#secao`) ou começar pela pasta (`/contexto/...`).
