@@ -1,0 +1,1960 @@
+<!doctype html>
+
+<html lang="en"><head><meta charset="utf-8"/>
+<title>Context Club · c/txt.</title>
+<meta content="How can we strengthen critical and creative thinking in the age of AI? A continuing program of reading, dialogue, and collaborative thinking for teams and organizations." name="description"/>
+<meta content="website" property="og:type"/>
+<meta content="c/txt. · Context Club" property="og:site_name"/>
+<meta content="https://contexto.gira.guru/en/" property="og:url"/>
+<meta content="Context Club / a gym for the mind" property="og:title"/>
+<meta content="Strengthening critical and creative thinking in the age of AI. Reading, dialogue, and collaborative thinking for organizations." property="og:description"/>
+<meta content="https://contexto.gira.guru/og.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Context Club / a gym for the mind" property="og:image:alt"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Context Club / a gym for the mind" name="twitter:title"/>
+<meta content="How can we strengthen critical and creative thinking in the age of AI?" name="twitter:description"/>
+<meta content="https://contexto.gira.guru/og.jpg" name="twitter:image"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}
+/* Ajustes de jornada · versão para lideranças de RH — mesma identidade editorial */
+.heroi .resumo-programa {max-width: 45em; margin-top: 22px; font-size: clamp(17px, 1.45vw, 21px); line-height: 1.48; color: var(--tinta-suave); text-wrap: pretty; }
+.atalho-programa {margin-top: 26px;}
+.secao-empresas { background:var(--branco); margin-top:var(--respiro); padding-bottom:clamp(64px,8vw,120px); }
+.secao-empresas .cab-modulo {padding-top:20px;}
+.cab-modulo { padding-top:clamp(20px,3vw,40px); }
+.modulo-aberto {margin-top:clamp(36px,5vw,72px);}
+.modulo-aberto > .conteudo {padding:12px 0 0;position:relative;}
+.empresa-protocolo {border-top:1px solid var(--tinta);padding-top:32px;}
+.modulo-detalhe .blocos {margin-top:0;}
+.modulo-detalhe .bloco {border-bottom:1px solid var(--tinta);}
+.modulo-estatico .modulo-aberto {border-top:1px solid var(--fio-suave);padding-top:30px;}
+.modulo-estatico .titulo-secao {max-width:19ch;}
+.modulo-estatico .conteudo {padding-bottom:0;}
+.bio-grade {display:grid;grid-template-columns:minmax(190px,240px) minmax(0,1fr);gap:clamp(28px,5vw,76px);padding-top:clamp(32px,5vw,72px);margin-top:36px;border-top:1px solid var(--fio-suave);}
+.bio-metadados {display:grid;gap:12px;align-content:start;font-size:15px;line-height:1.5;}
+.bio-metadados .fio {border-top-color:var(--fio-suave);margin:10px 0 8px;}
+.bio-texto {max-width:41em;}
+.bio-texto p+p {text-indent:0;margin-top:1.15em;}
+.bio-texto p:last-child {font-family:var(--grotesca);font-size:15px;margin-top:28px;}
+@media (max-width:860px) {
+ .bio-grade {grid-template-columns:1fr;}
+ .bio-metadados {grid-template-columns:1fr;}
+ .secao-empresas {padding-bottom:72px;}
+ .secao-empresas .relogio {background:var(--branco);}
+ .modulo-estatico .titulo-secao {max-width:none;}
+}
+
+/* blocos colados */
+.secao.modulo-detalhe {padding-top:0;}
+.secao-empresas + .modulo-detalhe {padding-top:0;}
+.modulo-estatico + .modulo-detalhe {padding-top:clamp(40px,5vw,72px);}
+.modulo-detalhe + .modulo-detalhe .bloco {border-top:0;}
+/* painel da palavra-chave: ação */
+.painel .painel-acao {grid-column:2 / -1; display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center; padding-top:6px;}
+@media (max-width:1080px) { .painel .painel-acao {grid-column:1 / -1;} }
+/* quem facilita */
+.bio {display:grid; grid-template-columns:minmax(0,340px) minmax(0,1fr); gap:clamp(28px,5vw,80px); align-items:start; padding-top:clamp(28px,4vw,48px);}
+.bio-foto {display:grid; gap:10px;}
+.bio-foto canvas {display:block; width:100%; aspect-ratio:2/3; background:var(--branco);}
+.bio-info {display:grid; gap:18px; align-content:start; max-width:44em;}
+.bio-mais {display:none;}
+.recolhido.aberto .bio-mais {display:grid; gap:1em;}
+.bio-dados {display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; border-top:1px solid var(--fio-suave); padding-top:16px; margin:6px 0 0;}
+.bio-dados dt {font-size:11px; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:var(--tinta-suave);}
+.bio-dados dd {margin:4px 0 0; font-size:15px; line-height:1.45;}
+@media (max-width:860px) { .bio {grid-template-columns:minmax(0,1fr);} .bio-foto {max-width:300px;} .bio-dados {grid-template-columns:minmax(0,1fr);} }
+/* carrossel arrastável */
+.estante {cursor:grab; touch-action:pan-y; user-select:none; -webkit-user-select:none;}
+.estante.arrastando {cursor:grabbing;}
+.estante .trilho {animation:none;}
+/* foto: caracteres -> original */
+.bio-quadro {position:relative; cursor:pointer; outline-offset:4px;}
+.bio-quadro canvas {display:block; width:100%; aspect-ratio:2/3; background:var(--branco);}
+.bio-original {position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .6s ease;}
+.bio-quadro:hover .bio-original, .bio-quadro:focus-visible .bio-original, .bio-quadro.ver .bio-original {opacity:1;}
+/* junte-se antes do texto */
+.junte-topo {display:grid; justify-items:center; margin-top:clamp(56px,6vw,96px);}
+
+/* ===== 2026-11-06 · logos, painel, pontos, pasta ===== */
+.heroi { padding-top: 0 !important; }
+.heroi > .larg > .fio:first-child { display:none; }
+.heroi .barra-rot { padding-top: 14px; }
+.heroi h1 { margin-top: clamp(18px, 2.4vw, 36px) !important; }
+.cabeca .ident { display:flex; align-items:center; gap:14px; }
+.cabeca .logos { display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--tinta); border:0; }
+.cabeca .logos svg { width:22px; height:22px; display:block; }
+.cabeca .logos img { height:28px; width:auto; display:block; }
+.cabeca .logos:hover { opacity:.6; }
+.cabeca .ident .sep { width:1px; height:26px; background:var(--tinta); opacity:.35; }
+.painel { position:relative; }
+.painel .fechar { position:absolute; top:14px; right:0; width:36px; height:36px; display:grid; place-items:center; background:none; border:1px solid var(--tinta); cursor:pointer; color:var(--tinta); padding:0; }
+.painel .fechar:hover { background:var(--rosa); border-color:var(--rosa); }
+.painel .fechar svg { width:14px; height:14px; }
+.painel.fechado { display:none; }
+.pontos-cv { display:block; width:100%; }
+.pal-pontos { margin-top: clamp(40px,5vw,72px); border-top:1px solid var(--fio-suave); border-bottom:1px solid var(--fio-suave); }
+.pal-pontos canvas { height: clamp(200px, 22vw, 320px); }
+.pal-pontos .legenda { display:flex; gap:10px 28px; flex-wrap:wrap; padding:12px 0 14px; }
+.pal-pontos .legenda span { font-size:12px; letter-spacing:.09em; text-transform:uppercase; color:var(--apagado); transition:color .4s; }
+.pal-pontos .legenda span.on { color:var(--tinta); }
+.pal-pontos .legenda span.on b { color:var(--acento); }
+.pal-pontos .legenda b { font-weight:500; margin-right:6px; }
+.quinze { margin-top: clamp(64px, 7vw, 104px); }
+.quinze canvas { height: clamp(220px, 24vw, 340px); }
+.quinze .estado { font-size:12px; letter-spacing:.09em; text-transform:uppercase; color:var(--tinta-suave); padding-top:10px; min-height:1.6em; }
+.quinze + .pend { margin-top: clamp(28px,3vw,44px) !important; }
+.deskill { margin: 8px 0 clamp(40px,5vw,64px); }
+.deskill canvas { height: clamp(150px, 16vw, 230px); background:var(--branco); }
+.deskill .estado { display:flex; justify-content:space-between; gap:12px; font-size:12px; letter-spacing:.09em; text-transform:uppercase; color:var(--tinta-suave); padding-top:10px; }
+.pasta { margin-top: var(--respiro); }
+.pasta .pasta-cab { padding-bottom: 22px; }
+.pasta .abas { display:flex; gap:6px; align-items:flex-end; flex-wrap:wrap; border-bottom:1px solid var(--tinta); }
+.pasta .aba { appearance:none; font:inherit; cursor:pointer; display:grid; gap:6px; text-align:left; min-width:0; flex:1 1 0; padding:14px 18px 16px; background:var(--papel); color:var(--tinta); border:1px solid var(--tinta); border-bottom:0; margin-bottom:-1px; position:relative; transition:background .25s, transform .25s; transform:translateY(6px); }
+.pasta .aba:hover { background:var(--rosa); transform:translateY(0); }
+.pasta .aba .num { font-family:var(--mono); font-size:12px; color:var(--tinta-suave); }
+.pasta .aba .nome { font-family:var(--serifa); font-weight:300; font-size:clamp(22px,2.2vw,32px); line-height:1.02; letter-spacing:-.01em; }
+.pasta .aba .mais { position:absolute; top:14px; right:14px; width:12px; height:12px; transition:transform .3s; }
+.pasta .aba[aria-expanded="true"] { transform:translateY(0); background:var(--branco); border-bottom:1px solid var(--branco); padding-bottom:22px; }
+.pasta .aba[aria-expanded="true"] .mais { transform:rotate(45deg); }
+.pasta .aba.escura[aria-expanded="true"] { background:var(--tinta); color:var(--papel); border-color:var(--tinta); }
+.pasta .aba.escura[aria-expanded="true"] .num { color:#bdb8b2; }
+.pasta .aba.rosa-aba { background:var(--rosa); }
+.pasta .aba.rosa-aba:hover { background:var(--rosa-tinta); color:var(--papel); }
+.pasta .aba.rosa-aba:hover .num { color:var(--papel); }
+.pasta .aba.escura[aria-expanded="true"]:hover { background:var(--tinta); color:var(--papel); }
+.pasta .painel-aba { border:1px solid var(--tinta); border-top:0; background:var(--branco); }
+.pasta .painel-aba[hidden] { display:none; }
+.pasta .painel-aba > section { margin-top:0 !important; }
+.pasta .painel-aba > .preto .larg { padding-block: clamp(56px,7vw,104px) 64px; }
+.pasta .painel-aba > .secao { padding-top: clamp(24px,3vw,40px); padding-bottom: clamp(40px,5vw,72px); }
+.pasta .painel-aba .modulo-detalhe .bloco-aberto { border:0; }
+.pasta .dica-abas { font-size:12px; letter-spacing:.09em; text-transform:uppercase; color:var(--tinta-suave); margin-top:14px; }
+@media (max-width: 760px) {
+  .cabeca .logos img { height:22px; } .cabeca .logos svg { width:18px; height:18px; } .cabeca .ident { gap:10px; } .cabeca .ident .sep { height:20px; }
+  .pasta .abas { display:grid; grid-template-columns:1fr 1fr; gap:6px; border-bottom:0; }
+  .pasta .aba { transform:none; border-bottom:1px solid var(--tinta); margin-bottom:0; padding:12px 12px 14px; }
+  .pasta .aba[aria-expanded="true"] { border-bottom:1px solid var(--tinta); padding-bottom:14px; }
+  .pasta .painel-aba { border-top:1px solid var(--tinta); margin-top:6px; }
+  .pasta .aba .nome { font-size:20px; }
+  .painel .fechar { top:10px; }
+}
+</style><link rel="alternate" hreflang="pt-BR" href="https://contexto.gira.guru/"><link rel="alternate" hreflang="en" href="https://contexto.gira.guru/en/"><style>.cabeca .idioma{display:flex;align-items:center;gap:4px;margin-left:6px;font-family:"Instrument Sans","Helvetica Neue",Arial,sans-serif;font-size:12px;letter-spacing:.09em}.cabeca .idioma a{color:var(--tinta);text-decoration:none;border:1px solid transparent;padding:3px 6px;line-height:1}.cabeca .idioma a[aria-current]{border-color:var(--tinta)}.cabeca .idioma a:hover{text-decoration:underline;text-underline-offset:3px}</style></head><body>
+<meta content="cover" name="claude:viewport-fit-sides"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&amp;family=Instrument+Sans:wght@400;500;600&amp;family=Courier+Prime&amp;display=swap" rel="stylesheet"/>
+<style>
+/* layout: DS Clube de Contexto — chão branco, metade vazia, rótulos pendurados em 240px, blocos que abrem um de cada vez, círculos e pontos como hierarquia */
+:root {
+  --branco: #ffffff; --papel: #fbf8f4; --tinta: #141414; --tinta-suave: #5e5b57; --fio-suave: #d8d4cf; --apagado: #bdb8b2;
+  --rosa: #f6b4d0; --rosa-tinta: #c81e66; --amarelo-tinta: #7a6200;
+  --acento: var(--rosa-tinta);
+  --serifa: "Cormorant Garamond", Garamond, Georgia, serif;
+  --grotesca: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "Courier Prime", "Courier New", monospace;
+  --margem: clamp(20px, 4.45vw, 64px);
+  --respiro: clamp(56px, 7vw, 104px);
+  --topo: 60px;
+  color-scheme: light;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--branco); color: var(--tinta); font-family: var(--grotesca); font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+* { box-sizing: border-box; }
+p, h1, h2, h3, h4, ul, ol, figure { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+strong { font-weight: 600; }
+:focus-visible { outline: 2px solid var(--acento); outline-offset: 3px; }
+[id] { scroll-margin-top: calc(var(--topo) + 24px); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--branco); }
+
+.m { padding-left: max(var(--margem), env(safe-area-inset-left, 0px)); padding-right: max(var(--margem), env(safe-area-inset-right, 0px)); }
+.larg { max-width: 1440px; margin: 0 auto; }
+
+/* tipo */
+.ser { font-family: var(--serifa); font-weight: 300; letter-spacing: -.015em; }
+.it { font-style: italic; }
+.display { font-family: var(--serifa); font-weight: 300; font-size: clamp(64px, 11.1vw, 160px); line-height: .88; letter-spacing: -.03em; text-wrap: balance; }
+.titulo { font-family: var(--serifa); font-weight: 300; font-size: clamp(46px, 6.7vw, 96px); line-height: .94; letter-spacing: -.02em; text-wrap: balance; }
+.titulo-secao { font-family: var(--serifa); font-weight: 300; font-size: clamp(30px, 3.9vw, 56px); line-height: 1.02; letter-spacing: -.015em; text-wrap: balance; }
+.frase { font-family: var(--serifa); font-weight: 300; font-size: clamp(26px, 2.8vw, 40px); line-height: 1.14; letter-spacing: -.01em; }
+.frase strong, .titulo-secao strong { font-weight: 500; }
+.recuo { text-indent: clamp(40px, 6.7vw, 96px); }
+.leitura { font-family: var(--serifa); font-weight: 400; font-size: clamp(19px, 1.46vw, 21px); line-height: 1.5; max-width: 36em; }
+.leitura p + p { text-indent: 2em; margin-top: .2em; }
+.numero { font-family: var(--serifa); font-weight: 300; font-style: italic; font-size: clamp(24px, 2.1vw, 30px); line-height: 1; color: var(--amarelo-tinta); }
+.lista { font-size: clamp(21px, 2.2vw, 32px); line-height: 1.1; letter-spacing: -.02em; }
+.abertura { font-size: clamp(18px, 1.53vw, 22px); line-height: 1.38; letter-spacing: -.01em; text-wrap: pretty; }
+.lf { color: var(--tinta-suave); max-width: 34em; }
+.ui { font-size: 14px; line-height: 1.4; }
+.rotulo { font-size: 12px; line-height: 1.3; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; }
+.meta { font-size: 12px; line-height: 1.35; color: var(--tinta-suave); }
+.codigo { font-family: var(--mono); font-size: 13px; }
+.suave { color: var(--tinta-suave); }
+.fio { border: 0; border-top: 1px solid var(--tinta); margin: 0; height: 0; }
+.pend { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 28px; align-items: start; }
+.pend > .rotulo { padding-top: .7em; }
+.link { color: var(--tinta); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.link:hover { color: var(--acento); }
+.cita { font-size: 13px; color: var(--tinta-suave); }
+.cita a { color: var(--tinta-suave); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.cita a:hover { color: var(--acento); }
+.secao { padding-top: var(--respiro); }
+
+/* botões */
+.botao { appearance: none; display: inline-flex; align-items: center; gap: 10px; background: var(--tinta); color: var(--branco); border: 1px solid var(--tinta); border-radius: 0; padding: 12px 20px; font-size: 14px; cursor: pointer; text-decoration: none; transition: background .2s, border-color .2s; }
+.botao:hover { background: var(--acento); border-color: var(--acento); }
+.contorno { appearance: none; display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--tinta); border: 1px solid var(--tinta); border-radius: 0; padding: 9px 14px; font-size: 13px; cursor: pointer; text-decoration: none; transition: color .2s, border-color .2s; }
+.contorno:hover, .contorno[aria-pressed="true"] { color: var(--acento); border-color: var(--acento); }
+.contorno svg { width: 14px; height: 14px; flex: none; }
+.aviso-voto { font-family: var(--mono); font-size: 12px; color: var(--acento); }
+
+/* cabeça */
+.cabeca { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--branco); border-bottom: 1px solid var(--tinta); }
+.cabeca .larg { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: var(--topo); }
+.marca { font-family: var(--serifa); font-weight: 400; font-size: 26px; letter-spacing: -.01em; text-decoration: none; }
+.nav { display: flex; gap: 22px; font-size: 14px; }
+.nav a { text-decoration: none; }
+.nav a:hover { color: var(--acento); }
+.contador { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.contador .ponto { width: 9px; height: 9px; border-radius: 50%; background: var(--tinta); transition: transform .3s, background .3s; }
+.contador.pulsa .ponto { transform: scale(1.8); background: var(--acento); }
+.contador .num { font-family: var(--mono); font-size: 15px; font-variant-numeric: tabular-nums; }
+.contador .rot { font-size: 11px; color: var(--tinta-suave); line-height: 1.15; max-width: 80px; }
+
+/* abertura */
+.heroi { padding-top: clamp(40px, 5vw, 80px); }
+.heroi .barra-rot { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: baseline; padding: 12px 0 0; }
+.heroi h1 { margin-top: clamp(40px, 5vw, 72px); }
+.heroi .sub { display: block; font-size: clamp(30px, 4.2vw, 60px); line-height: 1; margin-top: .2em; color: var(--tinta); }
+.heroi .pergunta { margin-top: clamp(40px, 5vw, 72px); max-width: 22em; }
+.troca { display: inline-block; font-style: italic; color: var(--acento); transition: opacity .35s, transform .35s; }
+.troca.sai { opacity: 0; transform: translateY(-.25em); }
+.rede { position: relative; height: clamp(560px, 44vw, 620px); margin-top: clamp(40px, 5vw, 64px); border-top: 1px solid var(--tinta); overflow: hidden; }
+.rede canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.rede .dica { position: absolute; left: 0; top: 12px; z-index: 2; pointer-events: none; }
+.pal { position: absolute; left: 0; top: 0; z-index: 3; height: var(--ph, 42px); display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--tinta); border-radius: 999px; background: var(--branco); color: var(--tinta); font-size: clamp(14px, 1.2vw, 17px); white-space: nowrap; overflow: hidden; cursor: pointer; padding: 0; transition: width .9s cubic-bezier(.2,.8,.2,1), height .9s cubic-bezier(.2,.8,.2,1), background .4s, color .3s, border-color .3s; will-change: transform; }
+.pal span { padding: 0 1.05em; transition: opacity .5s .45s; }
+.pal.semente { height: 14px; background: var(--tinta); }
+.pal.semente span { opacity: 0; transition: none; }
+.pal:hover, .pal:focus-visible { border-color: var(--acento); color: var(--acento); }
+.pal[aria-pressed="true"] { background: var(--tinta); border-color: var(--tinta); color: var(--branco); }
+.pal.visto::after { content: ""; position: absolute; right: 7px; top: 7px; width: 5px; height: 5px; border-radius: 50%; background: var(--acento); }
+.painel { border-top: 1px solid var(--tinta); border-bottom: 1px solid var(--tinta); padding: 20px 0 28px; display: grid; grid-template-columns: 240px minmax(0, 1fr) minmax(0, 1fr) 150px; gap: 28px; align-items: start; min-height: 190px; }
+.painel h3 { font-family: var(--serifa); font-weight: 300; font-size: clamp(30px, 3vw, 44px); line-height: 1; letter-spacing: -.015em; }
+.painel .col p { font-size: 16px; line-height: 1.5; margin-top: 8px; }
+.painel .pontos { display: grid; justify-items: start; gap: 2px; }
+.painel .pontos .n { font-family: var(--serifa); font-weight: 300; font-size: 48px; line-height: 1; color: var(--amarelo-tinta); font-variant-numeric: lining-nums tabular-nums; }
+.painel.troca-on .col, .painel.troca-on h3 { animation: abre .35s ease; }
+
+/* revelar com a rolagem */
+.revelar .w { color: var(--apagado); transition: color .35s; }
+.revelar .w.on { color: var(--tinta); }
+
+/* benefícios do projeto */
+.benef { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; margin-top: 72px; }
+.benef h3 { font-family: var(--serifa); font-weight: 300; font-size: clamp(28px, 2.8vw, 40px); line-height: 1; padding-bottom: 14px; border-bottom: 1px solid var(--tinta); }
+.benef ol { display: grid; }
+.benef li a { display: grid; grid-template-columns: 22px minmax(0, 1fr) auto; gap: 12px; align-items: baseline; padding: 12px 0; border-bottom: 1px solid var(--fio-suave); text-decoration: none; }
+.benef li a::before { content: ""; width: 9px; height: 9px; border-radius: 50%; border: 1px solid var(--tinta); transform: translateY(-1px); transition: background .2s, border-color .2s; }
+.benef li a:hover { color: var(--acento); }
+.benef li a:hover::before { background: var(--acento); border-color: var(--acento); }
+.benef li .nome { font-size: 18px; }
+.benef li .conc { font-size: 13px; color: var(--tinta-suave); text-align: right; }
+.roi { background: var(--rosa); margin-top: 28px; padding: clamp(28px, 4vw, 56px); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 28px; align-items: end; }
+.roi .titulo-secao { font-size: clamp(36px, 4.6vw, 68px); }
+.roi .frase { font-size: clamp(22px, 2.2vw, 32px); }
+
+/* notas */
+.termo { appearance: none; background: none; border: 0; padding: 0 0 2px; cursor: pointer; font-family: var(--serifa); font-weight: 500; font-size: inherit; color: var(--tinta); border-bottom: 1px dashed var(--acento); display: inline-flex; align-items: baseline; gap: .35em; }
+.termo::after { content: ""; width: .32em; height: .32em; border-radius: 50%; background: var(--acento); transform: translateY(-.55em); }
+.termo:hover, .termo[aria-expanded="true"] { color: var(--acento); }
+.nota { border-top: 1px solid var(--fio-suave); margin-top: 24px; padding-top: 20px; display: grid; grid-template-columns: minmax(0, 1fr) 180px; gap: 28px; align-items: start; animation: abre .35s ease; }
+.nota .medidor { display: grid; justify-items: start; gap: 4px; }
+.nota .medidor .n { font-family: var(--serifa); font-weight: 300; font-size: 64px; line-height: 1; color: var(--amarelo-tinta); font-variant-numeric: lining-nums tabular-nums; }
+@keyframes abre { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+
+/* blocos */
+.blocos { margin-top: 72px; }
+.bloco { border-top: 1px solid var(--tinta); }
+.blocos > .bloco:last-child { border-bottom: 1px solid var(--tinta); }
+.bloco > summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 240px minmax(0, 1fr) 40px; gap: 28px; align-items: center; padding: clamp(22px, 2.4vw, 34px) 0; }
+.bloco > summary::-webkit-details-marker { display: none; }
+.bloco > summary .titulo-secao { transition: color .2s; }
+.bloco > summary:hover .titulo-secao { color: var(--acento); }
+.bloco > summary .meta { margin-top: 8px; }
+.bloco > summary .mais { justify-self: end; width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--tinta); display: grid; place-items: center; transition: transform .3s, background .3s, border-color .3s; }
+.bloco > summary .mais svg { width: 12px; height: 12px; }
+.bloco[open] > summary .mais { transform: rotate(45deg); background: var(--tinta); color: var(--branco); }
+.bloco .conteudo { padding: 8px 0 clamp(72px, 8vw, 120px); animation: abre .4s ease; position: relative; }
+
+/* tangentes */
+.tang { display: grid; grid-template-columns: minmax(0, 480px) minmax(0, 1fr); gap: clamp(28px, 4vw, 64px); align-items: start; margin-top: 56px; }
+.tang svg { width: 100%; height: auto; display: block; overflow: visible; }
+.tang .anel { fill: transparent; stroke: var(--tinta); stroke-width: 1; cursor: pointer; transition: stroke .2s, stroke-width .2s; }
+.tang .anel:hover { stroke: var(--acento); }
+.tang .anel.ativo { stroke: var(--acento); stroke-width: 2.2; }
+.tang .corda { stroke: var(--tinta); stroke-width: 1; }
+.tang .no { fill: var(--branco); stroke: var(--tinta); stroke-width: 1; }
+.tang .no.ativo { fill: var(--acento); stroke: var(--acento); }
+.tang text { font-family: var(--serifa); font-size: 21px; font-weight: 300; fill: var(--tinta); pointer-events: none; }
+.tang text.num { font-family: var(--grotesca); font-size: 12px; letter-spacing: .04em; }
+.tang text.ativo { fill: var(--acento); font-style: italic; }
+.itens-t { display: grid; }
+.item-t { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 16px; padding: 18px 0 22px; border-top: 1px solid var(--fio-suave); cursor: pointer; }
+.item-t:first-child { border-top-color: var(--tinta); }
+.item-t .numero { transition: color .2s; }
+.item-t.ativo .numero { color: var(--acento); }
+.item-t p { font-size: 17px; line-height: 1.5; }
+.voto { margin-top: 18px; display: grid; gap: 12px; }
+.voto .botoes { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.premio { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 20px; align-items: center; margin-top: 8px; padding-top: 16px; border-top: 1px solid var(--fio-suave); animation: abre .35s ease; }
+.premio canvas { width: 120px; height: 120px; }
+.premio .n { font-family: var(--serifa); font-weight: 300; font-size: 48px; line-height: 1; color: var(--amarelo-tinta); }
+
+/* convergência */
+.conv-wrap { margin-top: 24px; }
+.conv-cab { display: none; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+.conv svg { display: block; width: 100%; height: auto; overflow: visible; }
+.conv .curva { fill: none; stroke: #8f8a84; stroke-width: 1.3; transition: stroke .2s, stroke-width .2s; }
+.conv .curva.on { stroke: var(--acento); stroke-width: 2; }
+.conv text.lbl { font-family: var(--grotesca); fill: var(--tinta-suave); }
+.conv a text.lbl { cursor: pointer; transition: fill .2s; }
+.conv a:hover text.lbl, .conv a:focus text.lbl, .conv a.on text.lbl { fill: var(--acento); }
+.conv a:focus { outline: none; }
+.conv .cab { font-family: var(--serifa); font-weight: 400; fill: var(--tinta); }
+.conv .centro { font-family: var(--serifa); font-weight: 400; fill: var(--tinta); }
+.conv .pulso { fill: var(--acento); }
+.cta-linha { display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center; margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--fio-suave); }
+
+/* dobras */
+.dobras { margin-top: 40px; }
+.dobra { border-top: 1px solid var(--tinta); }
+.dobras > .dobra:last-child { border-bottom: 1px solid var(--tinta); }
+.dobra > summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 64px minmax(0, 1fr) 24px; gap: 16px; align-items: start; padding: 18px 0 20px; }
+.dobra > summary::-webkit-details-marker { display: none; }
+.dobra > summary .seta { width: 18px; height: 18px; margin-top: 8px; transition: transform .25s ease; }
+.dobra[open] > summary .seta { transform: rotate(180deg); color: var(--acento); }
+.dobra > summary:hover .lista { color: var(--acento); }
+.dobra > summary .resumo { color: var(--tinta-suave); margin-top: 6px; font-size: 16px; }
+.dobra .miolo { padding: 4px 40px 40px 80px; animation: abre .3s ease; }
+.piscar > summary .lista, .piscar > summary .titulo-secao { color: var(--acento); }
+.conceito { display: grid; gap: 14px; max-width: 46em; }
+.conceito h4 { font-family: var(--serifa); font-weight: 400; font-size: clamp(24px, 2vw, 30px); line-height: 1.15; }
+.corte { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+.recolhido.aberto .corte { display: block; -webkit-line-clamp: unset; }
+.revelar-btn { appearance: none; background: none; border: 0; padding: 0; font-size: 14px; cursor: pointer; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; justify-self: start; }
+.revelar-btn:hover { color: var(--acento); }
+
+/* pesquisas */
+.pesqs { margin-top: 32px; display: grid; }
+.pesq { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 28px; padding: 22px 0 26px; border-top: 1px solid var(--fio-suave); }
+.pesq .dado { display: grid; align-content: start; gap: 8px; }
+.pesq .dado .n { font-family: var(--serifa); font-weight: 300; font-size: clamp(38px, 3.4vw, 52px); line-height: .95; letter-spacing: -.02em; color: var(--amarelo-tinta); font-variant-numeric: lining-nums; }
+.pesq .dado .n.palavra { font-size: clamp(28px, 2.4vw, 36px); font-style: italic; }
+.pesq .dado .ins { font-size: 15px; line-height: 1.38; color: var(--tinta); }
+.pesq .p1 { font-size: 18.5px; line-height: 1.45; max-width: 40em; }
+.pesq .p2 { font-size: 15px; line-height: 1.55; max-width: 46em; margin-top: 10px; color: #2c2b29; }
+.pesq .cita { margin-top: 10px; }
+.pesq .acoes { display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; margin-top: 16px; }
+.pesq .ganho { font-family: var(--mono); font-size: 12px; color: var(--tinta-suave); margin-left: 4px; }
+.salvar svg path { fill: none; stroke: currentColor; stroke-width: 1.6; }
+.salvar[aria-pressed="true"] svg path { fill: currentColor; }
+
+/* participar */
+.tempo { margin-top: 64px; }
+.tempo .dobra > summary { grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) 24px; gap: 28px; }
+.tempo .quando { display: grid; gap: 6px; }
+.tempo .quando .ser { font-size: clamp(28px, 3vw, 44px); line-height: 1; }
+.tempo .dobra .miolo { padding: 0 40px 48px 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 28px; }
+.tempo .corpo { display: grid; gap: 18px; grid-column: 2; }
+.ganhos { display: grid; gap: 14px; }
+.ganhos li { display: grid; grid-template-columns: 16px minmax(0, 1fr); gap: 12px; }
+.ganhos li::before { content: ""; width: 9px; height: 9px; border-radius: 50%; border: 1px solid var(--tinta); margin-top: 7px; }
+.esperados { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin-top: 8px; }
+.esperado { border-top: 1px solid var(--tinta); padding-top: 18px; display: grid; gap: 12px; align-content: start; }
+.esperado svg { width: 72px; height: 72px; }
+.esperado h4 { font-family: var(--serifa); font-weight: 400; font-size: clamp(24px, 2.2vw, 32px); line-height: 1.05; }
+.esperado p { font-size: 15.5px; line-height: 1.5; }
+.esperado.destaque h4 { color: var(--acento); }
+.contato { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; padding-top: 8px; }
+.email { font-family: var(--serifa); font-size: 20px; }
+
+/* relógio */
+.prot-wrap { position: relative; }
+.prot-wrap .neuro { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+.prot-wrap > *:not(canvas) { position: relative; z-index: 1; }
+.relogio-grade { display: grid; grid-template-columns: minmax(0, 460px) minmax(0, 1fr); gap: clamp(28px, 5vw, 80px); margin-top: 48px; align-items: start; }
+.relogio { position: sticky; top: calc(var(--topo) + env(safe-area-inset-top, 0px) + 24px); }
+.relogio svg { width: 100%; height: auto; display: block; overflow: visible; }
+.relogio .min { fill: var(--fio-suave); transition: fill .15s; }
+.relogio .min.feito { fill: var(--tinta); }
+.relogio .marco { fill: var(--branco); stroke: var(--tinta); stroke-width: 1; }
+.relogio .marco.on { fill: var(--acento); stroke: var(--acento); }
+.relogio .mrot { font-family: var(--grotesca); font-size: 12px; fill: var(--tinta); letter-spacing: .04em; }
+.relogio .hora { font-family: var(--serifa); font-weight: 300; font-size: 68px; fill: var(--tinta); font-variant-numeric: lining-nums tabular-nums; }
+.relogio .etapa { font-family: var(--serifa); font-style: italic; font-weight: 400; font-size: 25px; fill: var(--acento); }
+.relogio .total { font-family: var(--grotesca); font-size: 12px; fill: var(--tinta-suave); letter-spacing: .12em; }
+.relogio .sobe { font-family: var(--grotesca); font-size: 14px; letter-spacing: .02em; }
+.relogio .ponteiro { stroke: var(--acento); stroke-width: 1.5; }
+.passos { display: grid; }
+.passo { padding: 22px 0 56px; border-top: 1px solid var(--fio-suave); min-height: calc(var(--dur) * 9px); transition: border-color .3s; }
+.passo:first-child { border-top-color: var(--tinta); }
+.passo.ativo { border-top-color: var(--acento); }
+.passo .cab-p { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; }
+.passo h3 { font-weight: 400; margin-top: 10px; }
+.passo.ativo h3 { color: var(--acento); }
+.passo > p { margin-top: 12px; font-size: 17px; max-width: 34em; }
+.passo .estudo { margin-top: 18px; padding-top: 14px; border-top: 1px dashed var(--fio-suave); display: grid; gap: 10px; max-width: 38em; }
+.passo .estudo h4 { font-family: var(--serifa); font-weight: 500; font-size: 22px; }
+.passo .estudo li { font-size: 15.5px; line-height: 1.5; }
+.passo .estudo li + li { margin-top: 8px; }
+
+/* corpo e mente */
+.cm { width: 100%; height: clamp(240px, 26vw, 360px); display: block; margin-top: 24px; }
+.assinatura { margin-top: 40px; padding-top: 22px; border-top: 1px solid var(--tinta); display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 28px; align-items: end; }
+.assinatura p.ass { font-family: var(--serifa); font-style: italic; font-weight: 300; font-size: clamp(36px, 5vw, 76px); line-height: 1; letter-spacing: -.02em; }
+.assinatura .quem { text-align: right; display: grid; gap: 4px; justify-items: end; }
+
+/* números grandes */
+.numeros { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin-top: 40px; }
+.numeros .grande { font-family: var(--serifa); font-weight: 300; font-size: clamp(80px, 11vw, 160px); line-height: .85; letter-spacing: -.04em; color: var(--amarelo-tinta); font-variant-numeric: lining-nums; }
+.numeros p { margin-top: 14px; font-size: 17px; max-width: 26em; }
+
+/* estante */
+.estante { overflow: hidden; margin-top: 40px; padding: 8px 0 12px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.trilho { display: flex; gap: 28px; width: max-content; animation: passa 90s linear infinite; }
+.estante:hover .trilho, .estante:focus-within .trilho { animation-play-state: paused; }
+@keyframes passa { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 14px)); } }
+.livro { width: clamp(170px, 16vw, 220px); display: grid; gap: 10px; flex: none; }
+.livro svg { width: 100%; height: auto; display: block; }
+
+/* fechamento */
+.preto { background: var(--tinta); color: var(--papel); margin-top: var(--respiro); }
+.preto .larg { padding-block: clamp(96px, 11vw, 160px) 72px; }
+.preto .fio { border-top-color: var(--papel); }
+.preto .leitura { color: var(--papel); }
+.preto .leitura strong { font-weight: 600; }
+.preto .cita { color: #bdb8b2; }
+.preto .final { font-family: var(--serifa); font-weight: 300; font-size: clamp(34px, 4.4vw, 64px); line-height: 1.02; letter-spacing: -.015em; max-width: 20ch; text-wrap: balance; margin-top: clamp(48px, 6vw, 96px); }
+.junte { display: grid; justify-items: center; gap: 18px; margin-top: clamp(72px, 8vw, 120px); text-align: center; }
+.junte a { font-family: var(--serifa); font-weight: 300; font-size: clamp(34px, 4.6vw, 68px); line-height: 1; letter-spacing: -.015em; background: var(--papel); color: var(--tinta); text-decoration: none; padding: .38em .9em .44em; border: 1px solid var(--papel); transition: background .25s, border-color .25s; }
+.junte a:hover { background: var(--rosa); border-color: var(--rosa); }
+
+/* outra coisa é possível */
+.rosa-final { background: var(--rosa); }
+.rosa-final .larg { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; align-items: center; padding-block: clamp(72px, 8vw, 120px); }
+.rosa-final canvas { width: 100%; max-width: 440px; aspect-ratio: 1; justify-self: end; display: block; }
+
+.rodape { padding-block: 28px 40px; }
+.rodape .linha { display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: center; padding-top: 16px; }
+.rodape .par { display: flex; gap: 14px; align-items: center; }
+.rodape .autoria { display: flex; gap: 12px; align-items: center; justify-content: flex-end; }
+.rodape .autoria svg { width: 28px; height: auto; }
+
+.toast { position: fixed; left: max(var(--margem), env(safe-area-inset-left, 0px)); bottom: calc(20px + env(safe-area-inset-bottom, 0px)); z-index: 40; background: var(--tinta); color: var(--branco); padding: 12px 18px; font-size: 14px; max-width: min(440px, calc(100vw - 40px)); transform: translateY(16px); opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s; }
+.toast.on { opacity: 1; transform: none; }
+.voo { position: fixed; left: 0; top: 0; z-index: 45; width: 7px; height: 7px; border-radius: 50%; background: var(--acento); pointer-events: none; }
+
+@media (max-width: 1080px) { .nav { display: none; } .painel { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .painel .tit { grid-column: 1 / -1; } }
+@media (max-width: 860px) {
+  .pend { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .pend > .rotulo { padding-top: 0; }
+  .painel { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .benef { grid-template-columns: minmax(0, 1fr); gap: 48px; }
+  .roi { grid-template-columns: minmax(0, 1fr); }
+  .bloco > summary { grid-template-columns: 44px minmax(0, 1fr) 32px; gap: 12px; }
+  .tang { grid-template-columns: minmax(0, 1fr); }
+  .tang svg { max-width: 420px; }
+  .nota { grid-template-columns: minmax(0, 1fr); }
+  .conv-cab { display: flex; }
+  .dobra > summary { grid-template-columns: 40px minmax(0, 1fr) 20px; gap: 10px; }
+  .dobra .miolo { padding: 0 0 32px 0; }
+  .pesq { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .tempo .dobra > summary { grid-template-columns: minmax(0, 1fr) 20px; }
+  .tempo .dobra > summary .quando, .tempo .dobra > summary .tit { grid-column: 1; }
+  .tempo .dobra > summary .seta { grid-column: 2; grid-row: 1; }
+  .tempo .dobra .miolo { grid-template-columns: minmax(0, 1fr); padding-right: 0; }
+  .tempo .corpo { grid-column: 1; }
+  .esperados { grid-template-columns: minmax(0, 1fr); }
+  .relogio-grade { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .relogio { top: calc(var(--topo) + env(safe-area-inset-top, 0px)); z-index: 2; background: var(--branco); padding: 10px 0; border-bottom: 1px solid var(--fio-suave); }
+  .relogio svg { max-width: 240px; margin: 0 auto; }
+  .passo { min-height: 0; }
+  .numeros { grid-template-columns: minmax(0, 1fr); }
+  .assinatura { grid-template-columns: minmax(0, 1fr); }
+  .assinatura .quem { justify-items: start; text-align: left; }
+  .rosa-final .larg { grid-template-columns: minmax(0, 1fr); }
+  .rosa-final canvas { justify-self: center; max-width: 320px; }
+  .rodape .linha { grid-template-columns: minmax(0, 1fr); }
+  .rodape .autoria { justify-content: flex-start; }
+  .contador .rot { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+  .revelar .w { color: var(--tinta); }
+  .estante { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+}
+
+/* English localization: allow longer keyword labels on small screens. */
+@media (max-width: 640px) { .rede { height: 740px; } }
+</style>
+<header class="cabeca m">
+<div class="larg">
+<div class="ident"><a aria-label="Maia Oazem · futures and creative studio · go to homepage" class="logos" href="https://gira.guru/"><svg aria-hidden="true" viewbox="0 0 100 100"><path d="M53 8L91 72H15Z" fill="currentColor"></path><path d="M43 94L9 36H77Z" fill="currentColor"></path></svg><img alt="" src="/lab/marca/arquivos/maia-oazem-tinta.svg"/></a><span aria-hidden="true" class="sep"></span><a class="marca" href="#topo">c/txt.</a><span class="idioma" role="group" aria-label="Idioma / Language"><a href="https://contexto.gira.guru/" lang="pt-BR" hreflang="pt-BR">PT</a><a href="https://contexto.gira.guru/en/" lang="en" hreflang="en" aria-current="page">EN</a></span></div>
+<nav aria-label="Sections" class="nav">
+<a href="#o-projeto">The program</a><a href="#bl-empresas">Organizations</a><a data-ir="#bl-humanos" href="#bl-humanos">Benefits</a><a href="#duplo-foco">Dual focus</a><a href="#participar">Join</a><a href="#quem-facilita">Facilitator</a>
+</nav>
+<div aria-label="Symbolic neural activation counter" class="contador" id="contador">
+<span aria-hidden="true" class="ponto"></span>
+<span class="num" id="ativ-num">0000</span>
+<span class="rot">neural activations</span>
+</div>
+</div>
+</header>
+<main id="topo">
+<section aria-labelledby="h-titulo" class="heroi m">
+<div class="larg">
+<hr class="fio"/>
+<div class="barra-rot"><p class="ui suave">Critical and creative development for teams and organizations in the age of AI.</p><p class="rotulo suave">São Paulo · 2026</p></div>
+<h1 class="display" id="h-titulo">context <span class="it">club</span><span class="sub ser">/ a gym for the mind</span></h1>
+<p class="frase pergunta">How can we <span class="troca" id="troca">strengthen</span> critical and creative thinking in the age of AI?</p>
+<p class="resumo-programa">An ongoing corporate program of reading, discussion, and collaborative thinking designed to strengthen critical thinking, creativity, and effective AI use across teams.</p>
+<div class="rede" id="rede">
+<canvas aria-hidden="true"></canvas>
+<p class="rotulo suave dica">keywords · tap to explore</p>
+<button class="pal semente" data-t="duplo" type="button"><span>dual focus</span></button>
+<button class="pal semente" data-t="neuro" type="button"><span>continuous learning</span></button>
+<button class="pal semente" data-t="leitura" type="button"><span>critical reading</span></button>
+<button class="pal semente" data-t="debate" type="button"><span>structured dialogue</span></button>
+<button class="pal semente" data-t="escrita" type="button"><span>independent thinking</span></button>
+<button class="pal semente" data-t="contextos" type="button"><span>original contexts</span></button>
+<button class="pal semente" data-t="bionico" type="button"><span>human–AI collaboration</span></button>
+<button class="pal semente" data-t="atencao" type="button"><span>sustained attention</span></button>
+<button class="pal semente" data-t="interpretacao" type="button"><span>interpretation</span></button>
+<button class="pal semente" data-t="interdisciplinaridade" type="button"><span>systems thinking</span></button>
+<button class="pal semente" data-t="critica" type="button"><span>critical thinking</span></button>
+<button class="pal semente" data-t="criatividade" type="button"><span>applied creativity</span></button>
+<button class="pal semente" data-t="memoria" type="button"><span>learning retention</span></button>
+<button class="pal semente" data-t="decisao" type="button"><span>decision-making autonomy</span></button>
+<button class="pal semente" data-t="diferenciacao" type="button"><span>differentiation</span></button>
+<button class="pal semente" data-t="protocolo" type="button"><span>weekly practice</span></button>
+</div>
+<div aria-live="polite" class="painel" id="painel"><button aria-label="Close" class="fechar" id="painel-fechar" type="button"><svg aria-hidden="true" viewbox="0 0 14 14"><path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="1.4"></path></svg></button>
+<div class="tit"><p class="rotulo suave">keyword</p><h3 id="p-termo" style="margin-top:10px">human–AI collaboration</h3></div>
+<div class="col"><p class="rotulo">what it means</p><p id="p-oque"></p></div>
+<div class="col"><p class="rotulo">how the club helps · teams and AI</p><p id="p-como"></p></div>
+<div class="pontos"><span class="n" id="p-n">+8</span><span class="meta" id="p-msg">activations for exploring each keyword</span></div>
+<div class="painel-acao"><a class="botao" data-ir="#bl-empresas" href="#bl-empresas">Show me how this works <span aria-hidden="true">↓</span></a><span class="meta">The corporate program.</span></div>
+</div>
+</div>
+</section>
+<section aria-label="The program" class="secao m" id="o-projeto">
+<div class="larg">
+<div class="pend">
+<p class="rotulo">the program</p>
+<div>
+<p class="frase recuo revelar" style="font-size:clamp(28px,3.4vw,48px)">A practice-based protocol designed to protect human critical and creative abilities in a new era when thinking can increasingly be outsourced to machines.</p>
+<p class="abertura" style="margin-top:48px;max-width:36em">The process brings together <strong>deep reading</strong>, <strong>open discussion</strong>, <strong>handwriting</strong> and <strong>the creation of original contexts</strong> for AI, strengthening both sides of this new workplace partnership: the augmented human.</p>
+</div>
+</div>
+<figure class="pal-pontos" id="pal-pontos" style="margin-inline:0;margin-bottom:0">
+<canvas aria-label="The words reading, discussion, writing, and context are made of points that disperse and reorganize." class="pontos-cv" role="img"></canvas>
+<figcaption class="legenda"><span data-i="0"><b>(1)</b>reading</span><span data-i="1"><b>(2)</b>discussion</span><span data-i="2"><b>(3)</b>writing</span><span data-i="3"><b>(4)</b>context</span></figcaption>
+</figure>
+<div class="benef">
+<div>
+<h3>benefits for <span class="it">people</span></h3>
+<ol>
+<li><a data-ir="#mh-atencao" href="#mh-atencao"><span class="nome">Attention</span><span class="conc">Focus for analysis and learning</span></a></li>
+<li><a data-ir="#mh-interpretacao" href="#mh-interpretacao"><span class="nome">Interpretation</span><span class="conc">Deeper reading and comprehension</span></a></li>
+<li><a data-ir="#mh-interdisciplinaridade" href="#mh-interdisciplinaridade"><span class="nome">Interdisciplinary thinking</span><span class="conc">Connections across disciplines and perspectives</span></a></li>
+<li><a data-ir="#mh-critica" href="#mh-critica"><span class="nome">Critical thinking</span><span class="conc">Questioning AI-generated answers</span></a></li>
+<li><a data-ir="#mh-criatividade" href="#mh-criatividade"><span class="nome">Creativity</span><span class="conc">Independent, non-standardized ideas</span></a></li>
+<li><a data-ir="#mh-memoria" href="#mh-memoria"><span class="nome">Memory</span><span class="conc">Knowledge retained within the team</span></a></li>
+<li><a data-ir="#mh-decisao" href="#mh-decisao"><span class="nome">Decision-making</span><span class="conc">Professional judgment and autonomy</span></a></li>
+</ol>
+</div>
+<div>
+<h3>benefits for <span class="it">AI</span></h3>
+<ol>
+<li><a data-ir="#ms-autoralidade" href="#ms-autoralidade"><span class="nome">Originality</span><span class="conc">Contexts developed by the teams themselves</span></a></li>
+<li><a data-ir="#ms-diferenciacao" href="#ms-diferenciacao"><span class="nome">Differentiation</span><span class="conc">Outputs that reflect the organization's knowledge</span></a></li>
+<li><a data-ir="#mh-critica" href="#mh-critica"><span class="nome">Better answers</span><span class="conc">better questions, more useful answers</span></a></li>
+</ol>
+</div>
+</div>
+<div class="roi">
+<div><p class="rotulo">the return that supports everything else</p><p class="titulo-secao" style="margin-top:14px">protecting <span class="it">human ROI</span></p></div>
+<div><p class="frase">Protecting the people who use AI protects the investment in AI.</p><p class="ui" style="margin-top:14px;max-width:34em">Short-term gains in AI productivity must not come at the expense of the cognitive abilities organizations will depend on for years to come.</p></div>
+</div>
+</div>
+</section>
+<!-- DESTAQUE PRINCIPAL · PROGRAMA CORPORATIVO -->
+<section aria-labelledby="h-empresas" class="secao secao-empresas m" id="bl-empresas">
+<div class="larg">
+<hr class="fio"/>
+<div class="pend cab-modulo">
+<p class="rotulo">flagship program · organizations</p>
+<div>
+<p class="numero">(01)</p>
+<h2 class="titulo" id="h-empresas" style="margin-top:16px">the club for <span class="it">organizations</span></h2>
+<p class="abertura" style="margin-top:20px;max-width:39em">Weekly sessions combining reading, dialogue, and writing original contexts for enterprise AI. Human development and better interactions with technology, through the same practice.</p>
+<p class="rotulo" style="margin-top:24px">120 minutes per week · 5 stages · groups of up to 15</p>
+</div>
+</div>
+<div class="modulo-aberto empresa-protocolo"><div class="conteudo prot-wrap" id="prot-wrap">
+<canvas aria-hidden="true" class="neuro" id="neuro"></canvas>
+<div class="relogio-grade">
+<div aria-hidden="true" class="relogio" id="relogio"></div>
+<ol class="passos" id="passos">
+<li class="passo" data-dur="20" data-ini="0" data-nome="check-in" id="passo-checkin" style="--dur:20"><div class="cab-p"><span class="numero">(01)</span><span class="codigo suave">20 min</span></div><h3 class="lista"><strong>Check-in</strong></h3><p><strong>Check-in</strong> to begin: 20 minutes to share how AI is being used and what questions are emerging at work and in everyday life.</p></li>
+<li class="passo" data-dur="25" data-ini="20" data-nome="reading" id="passo-leitura" style="--dur:25"><div class="cab-p"><span class="numero">(02)</span><span class="codigo suave">25 min</span></div><h3 class="lista"><strong>Reading</strong></h3><p><strong>Reading</strong> in depth, individually, for 25 minutes, annotating books, highlighting passages, and outlining context in personal notes.</p>
+<div class="estudo"><h4>Paper Has an Edge over Screens</h4><ul><li>A meta-analysis of <strong>54</strong> studies involving <strong>171,055</strong> participants found a small but statistically significant advantage for paper over screens (g ≈ <strong>0,21</strong>). <span class="cita">(<a href="https://www.sciencedirect.com/science/article/pii/S1747938X18300101" rel="noopener" target="_blank">Delgado et al., 2018</a>)</span></li></ul></div></li>
+<li class="passo" data-dur="45" data-ini="45" data-nome="discussion" id="passo-debate" style="--dur:45"><div class="cab-p"><span class="numero">(03)</span><span class="codigo suave">45 min</span></div><h3 class="lista"><strong>Discussion</strong></h3><p><strong>Discussion</strong> and synthesis of the readings for 45 minutes, agreeing on at least one shared context.</p>
+<div class="estudo"><h4>Discuss and Build</h4><ul><li>Discussion formats grounded in open questions, where participants present arguments, examine contradictions, and justify their interpretations, can improve aspects of comprehension <span class="cita">(<a href="https://eric.ed.gov/?id=EJ961480" rel="noopener" target="_blank">Graham and Hebert, 2011</a>)</span></li><li>Additional research identified more sophisticated reasoning in critical-analytical discussions, especially with authentic questions and responses that build on earlier contributions. <span class="cita">(<a href="https://www.sciencedirect.com/science/article/pii/S0883035509000020" rel="noopener" target="_blank">Soter et al., 2008</a>)</span></li></ul></div></li>
+<li class="passo" data-dur="20" data-ini="90" data-nome="writing" id="passo-escrita" style="--dur:20"><div class="cab-p"><span class="numero">(04)</span><span class="codigo suave">20 min</span></div><h3 class="lista"><strong>Writing</strong></h3><p><strong>Writing</strong> by hand for 20 minutes, producing a group-authored text to serve as context for the AI system.</p>
+<div class="estudo"><h4>Writing Makes Learning Stick</h4><ul><li>Writing about what was read improved comprehension compared with traditional reading activities, including rereading and discussion. <span class="cita">(<a href="https://eric.ed.gov/?id=EJ961480" rel="noopener" target="_blank">Graham and Hebert, 2011</a>)</span></li></ul></div></li>
+<li class="passo" data-dur="10" data-ini="110" data-nome="context" id="passo-contexto" style="--dur:10"><div class="cab-p"><span class="numero">(05)</span><span class="codigo suave">10 min</span></div><h3 class="lista"><strong>Context</strong></h3><p><strong>Context</strong> for the machine: 10 minutes with AI assistance to create a .md file that can be tested throughout the week.</p><p class="codigo suave" style="margin-top:14px">contexts/week.md</p></li>
+</ol>
+</div>
+<figure class="quinze" id="quinze" style="margin-inline:0;margin-bottom:0"><canvas aria-label="Fifteen points split into trios, two groups, three groups, and a circle." class="pontos-cv" role="img"></canvas><figcaption class="estado" id="quinze-estado">15 people</figcaption></figure>
+<div class="pend" style="margin-top:96px"><span></span><p class="frase">Groups of up to <strong>15 people,</strong> with <strong>monthly assessments of perceived human development</strong>, at the individual and collective levels, and of the <strong>AI systems'</strong>critical and creative capabilities.</p></div>
+</div></div>
+</div>
+</section>
+<!-- Benefícios para pessoas · bloco 02 -->
+<section aria-label="Benefits for people · section 02" class="secao m modulo-detalhe">
+<div class="larg"><div class="blocos"><details class="bloco" data-grupo="bloco" id="bl-humanos">
+<summary><span class="numero">(02)</span><span><span class="titulo-secao" style="display:block">Club benefits for <span class="it">People</span></span><span class="meta" style="display:block">the human mind · 7 benefits · 12 studies</span></span><span aria-hidden="true" class="mais"><svg viewbox="0 0 12 12"><path d="M6 0V12M0 6H12" stroke="currentColor" stroke-width="1.4"></path></svg></span></summary>
+<div class="conteudo">
+<p class="abertura lf">Seven abilities that uncritical AI use may weaken, and that the club's five stages help exercise, alongside what research tells us about each one.</p>
+<div class="conv-wrap">
+<div class="conv-cab"><p class="rotulo">the club</p><p class="rotulo">benefits</p></div>
+<div class="conv" id="conv-h"></div>
+</div>
+<div class="cta-linha"><a class="link ui" data-ir-lista="#mh-lista" href="#mh-lista">Explore the benefits ↓</a><p class="meta">Select a benefit to view the research.</p></div>
+<div class="dobras" id="mh-lista">
+<details class="dobra" data-grupo="mh" id="mh-atencao">
+<summary><span class="numero">(01)</span><span><span class="lista" style="display:block">Attention</span><span class="resumo" style="display:block">Overcoming Cognitive Passivity</span></span><svg aria-hidden="true" class="seta" viewbox="0 0 100 100"><path d="M50 8V88M22 60L50 88L78 60" fill="none" stroke="currentColor" stroke-linecap="square" stroke-width="6"></path></svg></summary>
+<div class="miolo">
+<div class="conceito"><h4>Overcoming Cognitive Passivity</h4><p class="leitura">Attention was already under pressure as information consumption changed in the internet and mobile eras. The rise of AI may intensify this trend. Attention—the foundation of critical thinking—could be at even greater risk.</p></div>
+<div class="pesqs">
+<article class="pesq" data-id="liu2026"><div class="dado"><span class="n">10 min</span><span class="ins">of AI assistance can already make complex tasks harder to perform independently</span></div><div><p class="p1">Researchers are investigating whether outsourcing thinking can have lingering effects even after brief interactions with AI.</p><p class="p2">In randomized experiments involving <strong>1,222</strong> participants, researchers <strong>found that roughly ten minutes of AI assistance could reduce persistence when facing problems and impair subsequent performance without the tool</strong>. AI helped participants solve exercises in the moment, but they were less likely to keep trying when they had to work independently.</p><p class="cita">(<a href="https://arxiv.org/abs/2604.04721" rel="noopener" target="_blank">Liu et al., 2026</a>)</p></div></article>
+<article class="pesq" data-id="ft2025"><div class="dado"><span class="n">2010</span><span class="ins">the beginning of declines in reading and reasoning, with young people reporting difficulty thinking</span></div><div><p class="p1">The ability to sustain attention was showing signs of strain before generative AI became widespread.</p><p class="p2"><strong>An analysis by the Financial Times, drawing on international assessments and longitudinal research, identified declines in reading and reasoning performance starting in the early 2010s, as well as an increase from the middle of that decade in the share of young people reporting difficulty thinking, concentrating, and learning</strong>. The analysis links these trends to shifts in information consumption, particularly from active exploration toward passive consumption of digital content.</p><p class="cita">(<a href="https://www.ft.com/content/a8016c64-63b7-458b-a371-e0e1c54a13fc" rel="noopener" target="_blank">Burn-Murdoch, 2025</a>)</p></div></article>
+</div>
+</div>
+</details>
+<details class="dobra" data-grupo="mh" id="mh-interpretacao">
+<summary><span class="numero">(02)</span><span><span class="lista" style="display:block">Interpretation</span><span class="resumo" style="display:block">Reading Is a Culturally Learned Skill</span></span><svg aria-hidden="true" class="seta" viewbox="0 0 100 100"><path d="M50 8V88M22 60L50 88L78 60" fill="none" stroke="currentColor" stroke-linecap="square" stroke-width="6"></path></svg></summary>
+<div class="miolo">
+<div class="conceito"><h4>Reading Is a Culturally Learned Skill</h4><p class="leitura">While spoken language is acquired spontaneously, reading requires deliberate instruction and cultural reinforcement. Our brains have not evolved specifically to read. Instead, they repurpose part of the visual cortex, which becomes specialized in letters: the “visual word form area,” what Dehaene calls the brain's “letterbox.” The system that lets us recognize an apple across different shapes also helps us recognize an A or a B in different fonts.</p></div>
+<div class="pesqs">
+<article class="pesq" data-id="wilson2013"><div class="dado"><span class="n">32%</span><span class="ins">slower cognitive decline among people who read and write frequently</span></div><div><p class="p1">Reading, writing, and interpreting information engage our cognitive abilities, helping exercise and maintain the processes involved in thinking.</p><p class="p2">A study following <strong>294</strong> older adults through annual assessments and postmortem brain examinations found that <strong>frequent participation in intellectually stimulating activities, including reading and writing, was associated with a 32% slower rate of cognitive decline</strong>. Among participants with little cognitive activity, decline was <strong>48%</strong> faster than among those with average activity levels.</p><p class="cita">(<a href="https://doi.org/10.1212/WNL.0b013e31829c5e8a" rel="noopener" target="_blank">Wilson et al., 2013</a>)</p></div></article>
+</div>
+</div>
+</details>
+<details class="dobra" data-grupo="mh" id="mh-interdisciplinaridade">
+<summary><span class="numero">(03)</span><span><span class="lista" style="display:block">Interdisciplinary Thinking</span><span class="resumo" style="display:block">Systems Thinking</span></span><svg aria-hidden="true" class="seta" viewbox="0 0 100 100"><path d="M50 8V88M22 60L50 88L78 60" fill="none" stroke="currentColor" stroke-linecap="square" stroke-width="6"></path></svg></summary>
+<div class="miolo">
+<div class="conceito"><h4>Systems Thinking</h4><p class="leitura">Because context is not drawn from a single book but emerges from the encounter between different readings and people, both individual and collective thinking can become more open to <strong>understanding the complex systems</strong> we inhabit and the relationships within them.</p></div>
+<div class="pesqs">
+<article class="pesq" data-id="chi2026"><div class="dado"><span class="n">55</span><span class="ins">studies suggest that crossing disciplines supports creativity</span></div><div><p class="p1">Combining knowledge from different disciplines can improve our ability to develop original ideas and interpretations.</p><p class="p2"><strong>A meta-analysis of 55 studies involving 7,490 students found significant positive effects of interdisciplinary teaching on creativity, particularly creative thinking processes and the ability to apply new ideas.</strong> The researchers identify knowledge recombination, integration of perspectives, and transfer of ideas across contexts as possible mechanisms behind these benefits.</p><p class="cita">(<a href="https://doi.org/10.1016/j.tsc.2026.102379" rel="noopener" target="_blank">Chi et al., 2026</a>)</p></div></article>
+</div>
+</div>
+</details>
+<details class="dobra" data-grupo="mh" id="mh-critica">
+<summary><span class="numero">(04)</span><span><span class="lista" style="display:block">Critical Thinking</span><span class="resumo" style="display:block">The Capacity to Question</span></span><svg aria-hidden="true" class="seta" viewbox="0 0 100 100"><path d="M50 8V88M22 60L50 88L78 60" fill="none" stroke="currentColor" stroke-linecap="square" stroke-width="6"></path></svg></summary>
+<div class="miolo">
+<div class="conceito"><h4>The Capacity to Question</h4><p class="leitura">Business consultancies are increasingly examining what happens when analytical reasoning and decision-making are outsourced to algorithms: immediate productivity gains may gradually erode an organization's human ROI and strategic capacity.</p></div>
+<div class="pesqs">
+<article class="pesq" data-id="bcg-deskilling"><div class="dado"><span class="n palavra">de-skilling</span><span class="ins">across the organization: the collective erosion of critical skills</span></div><div><p class="p1">This phenomenon now has a name in business: <strong>“distributed deskilling”</strong>—the collective and simultaneous erosion of essential human skills within a company due to excessive or uncritical use of artificial intelligence.</p><p class="cita">(Boston Consulting Group, 2026)</p></div></article>
+<article class="pesq" data-id="anthropic2026"><div class="dado"><span class="n">0,92</span><span class="ins">correlation: better human prompts, better AI responses</span></div><div><p class="p1">In another analysis of approximately <strong>1 million</strong> conversations with Claude, Anthropic identified a correlation of over <strong>0,92</strong> between the educational complexity of human prompts and the AI responses they elicited.</p><p class="p2"><strong>A reminder that the stronger the person's critical capabilities, the stronger the critical quality of the AI interaction</strong>.</p><p class="cita">(<a href="https://www.anthropic.com/research/anthropic-economic-index-january-2026-report" rel="noopener" target="_blank">Anthropic</a>, 2026)</p></div></article>
+<article class="pesq" data-id="lee2025"><div class="dado"><span class="n">319</span><span class="ins">workers: greater trust in AI, less critical effort</span></div><div><p class="p1">This was supported by a Microsoft study involving <strong>319</strong> workers.</p><p class="p2">The more people trusted AI, the less critical effort they reported. <strong>When we assume the machine knows everything, we discount our own knowledge—and even the need or possibility of challenging its answers.</strong> The study also found a shift in critical work toward verifying and integrating outputs, potentially displacing independent critique and synthesis.</p><p class="cita">(<a href="https://www.microsoft.com/en-us/research/publication/the-impact-of-generative-ai-on-critical-thinking-self-reported-reductions-in-cognitive-effort-and-confidence-effects-from-a-survey-of-knowledge-workers/" rel="noopener" target="_blank">Lee et al., Microsoft/CMU, 2025</a>)</p></div></article>
+<article class="pesq" data-id="gerlich2025"><div class="dado"><span class="n">666</span><span class="ins">people: frequent AI use linked to weaker critical thinking</span></div><div><p class="p1">A particularly pressing concern for younger people, especially those aged <strong>17 and 25</strong> who are still forming their critical understanding of the world.</p><p class="p2"><strong>A survey and test involving 666 participants linked frequent AI use with weaker critical thinking, mediated by the outsourcing of reasoning</strong>; it raises questions about young people's ability to think beyond the machine—and the limits of its reasoning.</p><p class="cita">(<a href="https://www.mdpi.com/2075-4698/15/1/6" rel="noopener" target="_blank">Gerlich, Societies 2025</a>)</p></div></article>
+</div>
+</div>
+</details>
+<details class="dobra" data-grupo="mh" id="mh-criatividade">
+<summary><span class="numero">(05)</span><span><span class="lista" style="display:block">Creativity</span><span class="resumo" style="display:block">Creativity</span></span><svg aria-hidden="true" class="seta" viewbox="0 0 100 100"><path d="M50 8V88M22 60L50 88L78 60" fill="none" stroke="currentColor" stroke-linecap="square" stroke-width="6"></path></svg></summary>
+<div class="miolo">
+<div class="conceito"><h4>Creative Gains, Similar Results</h4><p class="leitura">Creative Gains, Similar Results</p></div>
+<div class="pesqs">
+<article class="pesq" data-id="herdagdelen2026"><div class="dado"><span class="n">Even when someone feels that the work they produce with AI is more original and creative than what they might have produced alone—which can be true—the tendency of AI outputs to converge can make the results more alike.</span><span class="ins">of the time, experts adopted machine recommendations as their own</span></div><div><p class="p1">This tendency can affect even domain experts, as research on the often-invisible influence of AI agents suggests.</p><p class="p2">With strong deference to algorithmic suggestions and pressure to speed up complex analytical tasks, <strong>experts accepted the machine's choices 86% of the time and repeated its reasoning</strong>, while retaining a misleading sense of ownership over the final decision.</p><p class="cita">(Herdağdelen et al., 2026)</p></div></article>
+</div>
+</div>
+</details>
+<details class="dobra" data-grupo="mh" id="mh-memoria">
+<summary><span class="numero">(06)</span><span><span class="lista" style="display:block">Memory</span><span class="resumo" style="display:block">Learning Requires Active Ownership</span></span><svg aria-hidden="true" class="seta" viewbox="0 0 100 100"><path d="M50 8V88M22 60L50 88L78 60" fill="none" stroke="currentColor" stroke-linecap="square" stroke-width="6"></path></svg></summary>
+<div class="miolo">
+<div class="conceito recolhido" id="rec-memoria"><h4>Learning Requires Active Ownership</h4><p class="leitura corte">What we learn—or try to understand—with AI support may be less firmly retained. We can encounter an idea and use it successfully in the moment, only to find it fades more easily when the tool is gone. That creates an illusion of learning and dependence on a synthetic system to retrieve what we thought we knew. We already live with machine-extended memory. The professional who once accumulated knowledge through doing the work risks being replaced by someone who knows how they produced a result, but not what they produced.</p><button aria-expanded="false" class="revelar-btn" data-alvo="rec-memoria" type="button">Read more</button></div>
+<div class="pesqs">
+<article class="pesq" data-id="bastani2025"><div class="dado"><span class="n">−17%</span><span class="ins">performance after AI was removed, despite a 48% gain while using it</span></div><div><p class="p1">In an experiment involving nearly one thousand students, access to ChatGPT improved performance on mathematics exercises by <strong>48%</strong>.</p><p class="p2">However, when the tool was removed, those same students scored <strong>17%</strong> below peers who had never used AI.</p><p class="cita">(<a href="https://doi.org/10.1073/pnas.2422633122" rel="noopener" target="_blank">Bastani et al., 2025</a>)</p></div></article>
+<article class="pesq" data-id="kosmyna2025"><div class="dado"><span class="n">83,3%</span><span class="ins">could not quote what they had just written with AI</span></div><div><p class="p1">An EEG study of essay writing found weaker functional brain connectivity among participants using AI;</p><p class="p2"><strong>54</strong> students participated, and <strong>83,3%</strong> could not quote from what they had written, compared with <strong>11,1%</strong>who wrote without an LLM. The findings suggest a reduced sense of authorship and the phenomenon of “cognitive debt”: less of what is read—or “created”—remains with us.</p><p class="cita">(<a href="https://www.media.mit.edu/projects/your-brain-on-chatgpt/overview/" rel="noopener" target="_blank">Kosmyna et al., MIT, 2025</a>)</p></div></article>
+</div>
+</div>
+</details>
+<details class="dobra" data-grupo="mh" id="mh-decisao">
+<summary><span class="numero">(07)</span><span><span class="lista" style="display:block">Decision-making</span><span class="resumo" style="display:block">The Machine Always Knows</span></span><svg aria-hidden="true" class="seta" viewbox="0 0 100 100"><path d="M50 8V88M22 60L50 88L78 60" fill="none" stroke="currentColor" stroke-linecap="square" stroke-width="6"></path></svg></summary>
+<div class="miolo">
+<div class="conceito"><h4>The Machine Always Knows</h4><p class="leitura">Byung-Chul Han's concept of “datacracy” describes a society that increasingly assumes answers are contained in data and that humans cannot outperform sufficiently advanced intelligent systems when faced with a complex world. This belief can carry over into human–machine interactions. We may feel that we are deciding, while simply following the direction the machine has indicated. We become AI's physical agents in the world—and even for techno-optimists, that should not be taken as praise.</p></div>
+<div class="pesqs">
+<article class="pesq" data-id="marcoccia2026"><div class="dado"><span class="n">44% → 3%</span><span class="ins">willingness to say “I don't know” fell with AI assistance, while confidence increased</span></div><div><p class="p1">Across five experiments involving <strong>3.132</strong> participants, researchers selected questions on which the AI was deliberately wrong and gave its suggestions to participants.</p><p class="p2">In one replication, <strong>the willingness to answer “I don't know” fell from 44% to 3% with AI support. Despite the incorrect advice, human accuracy dropped while confidence rose.</strong> People were less accurate, yet <strong>2,5x</strong> more confident in their answers.</p><p class="cita">(<a href="https://arxiv.org/abs/2607.13562" rel="noopener" target="_blank">Marcoccia et al., 2026</a>)</p></div></article>
+</div>
+</div>
+</details>
+</div>
+<div class="cta-linha" style="margin-top:40px;border-top:0">
+<a class="botao" data-wa="Maia, could you send me the research cited by Context Club?" href="https://wa.me/5511941537453" rel="noopener" target="_blank">Request the studies for further reading →</a>
+<p class="ui suave"><span id="salvos-n">0</span> studies saved on this device</p>
+</div>
+</div>
+</details></div></div>
+</section>
+<!-- Benefícios para a IA · bloco 03 -->
+<section aria-label="Benefits for AI · section 03" class="secao m modulo-detalhe">
+<div class="larg"><div class="blocos"><details class="bloco" data-grupo="bloco" id="bl-maquinas">
+<summary><span class="numero">(03)</span><span><span class="titulo-secao" style="display:block">Club benefits for <span class="it">AI Systems</span></span><span class="meta" style="display:block">the synthetic mind · AI benefits · 2 capabilities</span></span><span aria-hidden="true" class="mais"><svg viewbox="0 0 12 12"><path d="M6 0V12M0 6H12" stroke="currentColor" stroke-width="1.4"></path></svg></span></summary>
+<div class="conteudo">
+<p class="abertura lf">What your organization's AI gains from contexts written by its own people.</p>
+<div class="conv-wrap">
+<div class="conv-cab"><p class="rotulo">the club</p><p class="rotulo">AI benefits</p></div>
+<div class="conv" id="conv-m"></div>
+</div>
+<div class="dobras">
+<details class="dobra" data-grupo="ms" id="ms-autoralidade">
+<summary><span class="numero">(01)</span><span><span class="lista" style="display:block">Originality</span><span class="resumo" style="display:block">The Emergence of Synthetic and Hybrid Culture</span></span><svg aria-hidden="true" class="seta" viewbox="0 0 100 100"><path d="M50 8V88M22 60L50 88L78 60" fill="none" stroke="currentColor" stroke-linecap="square" stroke-width="6"></path></svg></summary>
+<div class="miolo"><div class="conceito"><h4>The Emergence of Synthetic and Hybrid Culture</h4><p class="leitura">Combining different books requires the group to create something no single book says on its own—something that does not exist anywhere else. That context emerges from the group and becomes a source of organizational originality.</p></div><div class="pesqs"><article class="pesq" data-id="dellacqua2025"><div class="dado"><span class="n">3×</span><span class="ins">more likely to reach top ideas when teams work with AI together</span></div><div><p class="p1">AI performs better when working <strong>from ideas developed collectively</strong>, rather than replacing each individual person's thinking.</p><p class="p2">In a field experiment involving <strong>791 Procter &amp; Gamble professionals</strong>, Harvard and Wharton researchers compared individuals and teams, with and without AI, while developing real product ideas. Among the <strong>top 10% of ideas by quality,</strong> teams using AI were three times more likely to generate these ideas than individuals working alone without AI. With AI, proposals also became more likely to integrate technical and commercial perspectives, crossing functional silos. The club follows the same principle: the original context emerges from the group, and that is what differentiates what AI produces in return.</p><p class="cita">(<a href="https://www.hbs.edu/faculty/Pages/item.aspx?num=67197" rel="noopener" target="_blank">Dell’Acqua et al., 2025</a>)</p></div></article></div></div>
+</details>
+<details class="dobra" data-grupo="ms" id="ms-diferenciacao">
+<summary><span class="numero">(02)</span><span><span class="lista" style="display:block">Differentiation</span><span class="resumo" style="display:block">Moving Beyond Average Thinking</span></span><svg aria-hidden="true" class="seta" viewbox="0 0 100 100"><path d="M50 8V88M22 60L50 88L78 60" fill="none" stroke="currentColor" stroke-linecap="square" stroke-width="6"></path></svg></summary>
+<div class="miolo">
+<div class="conceito"><h4>Moving Beyond Average Thinking</h4><p class="leitura">Because most companies use the same AI systems, trained on similar knowledge bases, their outputs tend to converge—leaving less room for debate and distinctive critical or creative thinking.</p></div>
+<div class="pesqs">
+<article class="pesq" data-id="abdali2025"><div class="dado"><span class="n palavra">dialectics</span><span class="ins">how context improves AI reasoning</span></div><div><p class="p1">We can teach AI different ways of developing ideas by <strong>providing thinking frameworks as part of its context</strong>.</p><p class="p2">Microsoft researchers found that guiding language models with a method inspired by Hegelian dialectics—developing ideas, examining contradictions, and building syntheses—could <strong>improve performance on reasoning tasks</strong>. This opens the door to original contexts in which our own ways of thinking guide how AI interprets, questions, and develops responses.</p><p class="cita">(<a href="https://arxiv.org/abs/2501.14917" rel="noopener" target="_blank">Abdali et al., 2025</a>)</p></div></article>
+</div>
+</div>
+</details>
+</div>
+</div>
+</details></div></div>
+</section>
+<!-- DUPLO FOCO + BLOCO 04 -->
+<section aria-labelledby="h-duplo" class="secao m" id="duplo-foco">
+<div class="larg">
+<hr class="fio"/>
+<div class="pend" style="padding-top:14px">
+<p class="rotulo">dual focus</p>
+<div>
+<h2 class="titulo" id="h-duplo">dual focus: the human and the <span class="it">machine</span></h2>
+<p class="abertura lf" style="margin-top:20px">Why AI at work calls for renewed attention to the human mind.</p>
+</div>
+</div>
+<div class="pend" style="margin-top:56px">
+<span></span>
+<div class="leitura">
+<p>This program does not reject artificial intelligence. It recognizes that, just as the shift toward office and computer work changed our physical needs—creating greater awareness of ergonomics and sedentary time— <strong>outsourcing critical and creative work calls for new adaptive structures so that we do not lose our mental abilities</strong>and the qualities that make us human: the capacity to imagine what could and should come next.</p>
+<p style="text-indent:0;margin-top:28px"><span class="rotulo" style="font-family:var(--grotesca);margin-right:14px">note</span><button aria-controls="nota-neuro-c" aria-expanded="false" class="termo" id="nota-neuro" type="button">Neuroplasticity</button></p>
+<div class="nota" hidden="" id="nota-neuro-c">
+<div><p><strong>Neuroplasticity</strong>is the nervous system's ongoing ability to reorganize its structure, functions, and connections in response to experiences, learning, stimulation, or injury. <strong>If we stop asking our brains to read, reflect, connect, question, synthesize, write, imagine, and prototype, which abilities begin to lose their strength? And what might we lose while believing we are gaining something?</strong></p></div>
+<div aria-live="polite" class="medidor"><span class="n" id="nota-neuro-n">0</span><span class="meta">neural activations from this note</span></div>
+</div>
+</div>
+</div>
+<div class="blocos"><details class="bloco" data-grupo="bloco" id="bl-maquina">
+<summary><span class="numero">(04)</span><span><span class="titulo-secao" style="display:block">The machine gives. The machine also <span class="it">takes away.</span></span><span class="meta" style="display:block">3 studies · 1 question for you</span></span><span aria-hidden="true" class="mais"><svg viewbox="0 0 12 12"><path d="M6 0V12M0 6H12" stroke="currentColor" stroke-width="1.4"></path></svg></span></summary>
+<div class="conteudo">
+<div class="pend"><span></span><p class="frase recuo">What we <strong>delegate to technology, including AI, may grow weaker within us</strong>—as happened with spatial memory after GPS became widespread.</p></div>
+<div class="tang">
+<div id="tang-svg"></div>
+<ol class="itens-t" id="itens-t">
+<li class="item-t ativo"><span class="numero">(01)</span><div><p>Consider the case of <strong>London taxi drivers</strong>: having to memorize the city's streets to qualify for their license was associated with larger hippocampi than those found in the general population.</p><p class="cita" style="margin-top:6px">(Maguire et al., 2000)</p></div></li>
+<li class="item-t"><span class="numero">(02)</span><div><p>A related study appeared <strong>20 years later in the United States, after GPS became widespread.</strong> Among <strong>50</strong> drivers, researchers linked heavier GPS use with poorer spatial memory and changes involving the hippocampus.</p><p class="cita" style="margin-top:6px">(Dahmani and Bohbot, Scientific Reports, 2020)</p></div></li>
+<li class="item-t"><span class="numero">(03)</span><div>
+<p>AI may accelerate risks already being discussed in connection with falling reading performance and growing consumption of short-form video.</p>
+<div class="voto" id="voto-q1">
+<p class="rotulo">do you agree with this statement?</p>
+<div class="botoes"><button aria-pressed="false" class="contorno" data-voto="sim" type="button">Agree</button><button aria-pressed="false" class="contorno" data-voto="nao" type="button">Disagree</button></div>
+<div class="premio" hidden="" id="premio">
+<canvas aria-hidden="true" height="240" width="240"></canvas>
+<div><p class="n">+<span id="premio-n">0</span></p><p class="ui">neural activations for reflecting on this.</p><p class="meta" id="premio-txt" style="margin-top:4px"></p></div>
+</div>
+</div>
+</div></li>
+</ol>
+</div>
+</div>
+</details></div>
+</div>
+</section>
+<!-- Evidências para líderes · seção 05 -->
+<section aria-labelledby="h-bl-liderancas" class="secao m modulo-estatico" id="bl-liderancas">
+<div class="larg">
+<hr class="fio"/>
+<div class="pend cab-modulo">
+<p class="rotulo">evidence · leadership and HR</p>
+<div>
+<p class="numero">(05)</p>
+<h2 class="titulo-secao" id="h-bl-liderancas" style="margin-top:14px">leaders already face this challenge. the club offers a practical <span class="it">response.</span></h2>
+<p class="meta" style="margin-top:16px">Boston Consulting Group · June 2026</p>
+</div>
+</div>
+<div class="modulo-aberto"><div class="conteudo">
+<div class="pend"><span></span><div>
+<p class="abertura" style="max-width:36em">A study published on June 17, 2026, by Boston Consulting Group authors Sagar Goel, David Martin, and Charikleia Kaffe showed how concerns about this issue are spreading across organizations.</p>
+<figure class="deskill" id="deskill" style="margin-inline:0"><canvas aria-label="A bar of points gradually disappears to reveal the word deskilling." class="pontos-cv" role="img"></canvas><figcaption class="estado"><span>skills in use</span><span id="deskill-n">100%</span></figcaption></figure>
+<div class="numeros">
+<div><p class="grande">50%</p><p>already report <strong>AI-related skills erosion</strong> (including uncritical acceptance of AI outputs, slower development of junior professionals, and reduced diversity of thought—each reported by over 40%).</p></div>
+<div><p class="grande">60%+</p><p>foresee a material threat within the next 3 to 5 years</p></div>
+</div>
+<p class="cita" style="margin-top:32px"><strong>Full reference</strong>: Goel, S., Martin, D., &amp; Kaffe, C. (2026). <a href="https://www.bcg.com/publications/2026/when-everyone-uses-ai-companies-risk-critical-skills" rel="noopener" target="_blank">When Everyone Uses AI, Companies Risk Losing Critical Skills</a>. Boston Consulting Group, June 17, 2026.</p>
+</div></div>
+</div></div>
+</div>
+</section>
+<!-- Analogia corpo–mente · seção 06 -->
+<section aria-labelledby="h-bl-analogia" class="secao m modulo-estatico" id="bl-analogia">
+<div class="larg">
+<hr class="fio"/>
+<div class="pend cab-modulo">
+<p class="rotulo">the future of employee benefits</p>
+<div>
+<p class="numero">(06)</p>
+<h2 class="titulo-secao" id="h-bl-analogia" style="margin-top:14px">a gym for the <span class="it">mind</span></h2>
+<p class="meta" style="margin-top:16px">The body–mind analogy · section 06</p>
+</div>
+</div>
+<div class="modulo-aberto"><div class="conteudo">
+<div class="pend"><span></span><p class="leitura" style="max-width:40em"><strong>The body–mind analogy:</strong> when work stopped demanding physical exertion, we created gyms and benefits to keep our bodies active. As AI takes on more of our mental work, we need new structures that keep critical and creative thinking active.</p></div>
+<canvas aria-label="The words body and mind, composed of points that exchange places." class="cm" id="corpo-mente" role="img"></canvas>
+<div class="assinatura">
+<p class="ass">The next gym membership will be for the mind.</p>
+<div class="quem"><p class="ser" style="font-size:26px;font-weight:400">c/txt.</p><p class="meta">context club · a gym for the mind</p></div>
+</div>
+</div></div>
+</div>
+</section>
+<!-- PASTA COM ABAS · junte-se, biblioteca, facilitadora, participar -->
+<section aria-label="More about the club" class="pasta m" id="pasta">
+<div class="larg">
+<div class="pasta-cab"><p class="rotulo">open the folder</p></div>
+<div class="abas" role="tablist">
+<button aria-controls="pa-junte" aria-expanded="false" aria-selected="false" class="aba escura rosa-aba" id="aba-junte" role="tab" type="button"><span class="num">(01)</span><span class="nome">Join the club</span><svg aria-hidden="true" class="mais" viewbox="0 0 12 12"><path d="M6 0V12M0 6H12" stroke="currentColor" stroke-width="1.4"></path></svg></button>
+<button aria-controls="pa-biblioteca" aria-expanded="false" aria-selected="false" class="aba" id="aba-biblioteca" role="tab" type="button"><span class="num">(02)</span><span class="nome">The club's library</span><svg aria-hidden="true" class="mais" viewbox="0 0 12 12"><path d="M6 0V12M0 6H12" stroke="currentColor" stroke-width="1.4"></path></svg></button>
+<button aria-controls="pa-facilitadora" aria-expanded="false" aria-selected="false" class="aba" id="aba-facilitadora" role="tab" type="button"><span class="num">(03)</span><span class="nome">Maia Oazem: Facilitator</span><svg aria-hidden="true" class="mais" viewbox="0 0 12 12"><path d="M6 0V12M0 6H12" stroke="currentColor" stroke-width="1.4"></path></svg></button>
+<button aria-controls="pa-participar-aba" aria-expanded="false" aria-selected="false" class="aba" id="aba-participar-aba" role="tab" type="button"><span class="num">(04)</span><span class="nome">Other ways to join</span><svg aria-hidden="true" class="mais" viewbox="0 0 12 12"><path d="M6 0V12M0 6H12" stroke="currentColor" stroke-width="1.4"></path></svg></button>
+</div>
+<div aria-labelledby="aba-junte" class="painel-aba" hidden="" id="pa-junte" role="tabpanel">
+<section aria-label="Join the Club" class="preto m">
+<div class="larg">
+<hr class="fio"/>
+<p class="final">Artificial intelligence expands our intellectual capabilities while replacing precisely the processes through which we develop those <span class="it">capabilities.</span></p>
+<div class="junte junte-topo"><a href="mailto:maiaoazem@gira.guru?subject=Context%20Club%20%C2%B7%20Individuals">Join the Club.</a></div>
+<div class="pend" style="margin-top:80px">
+<span></span>
+<div class="leitura">
+<p>Better answers with AI do not necessarily mean more learning—or even better deliverables. Dependence on ready-made answers can undermine our ability to perform without the tools, persist through difficult tasks, and exercise independent judgment.</p>
+<p><strong>Repeated, uncritical AI use may affect our ability to think critically and creatively in the world. It may also diminish our ability to change that world in ways that reflect our own perspectives.</strong></p>
+<p>If, in the short term, the question cannot realistically be whether to use these tools, then <strong>it must become which human abilities we are no longer exercising while producing with them—and how to reconnect and strengthen those pathways</strong>.</p>
+</div>
+</div>
+<p class="cita" style="margin-top:56px">(Bastani et al., 2025; Kosmyna et al., 2025; Liu et al., 2026; Herdağdelen et al., 2026).</p>
+</div>
+</section>
+</div>
+<div aria-labelledby="aba-biblioteca" class="painel-aba" hidden="" id="pa-biblioteca" role="tabpanel">
+ The club's bookshelf · section 07 
+<section aria-label="The club bookshelf · section 07" class="secao m modulo-detalhe livros-secao">
+<div class="larg"><div class="blocos"><div class="bloco-aberto" id="bl-ler">
+<div class="conteudo">
+<p class="abertura lf">The books that shape gira.'s approach to thinking and inform each edition of the club.</p>
+<div class="estante" id="estante" role="list"><div class="trilho" id="trilho"></div></div>
+</div>
+</div></div></div>
+</section>
+</div>
+<div aria-labelledby="aba-facilitadora" class="painel-aba" hidden="" id="pa-facilitadora" role="tabpanel">
+<!-- QUEM FACILITA O CLUBE -->
+<section aria-labelledby="h-quem-facilita" class="secao m facilitadora" id="quem-facilita">
+<div class="larg">
+<hr class="fio"/>
+<div class="bio">
+<figure class="bio-foto">
+<div aria-label="Portrait of Maia Oazem. Hover or tap to reveal the original photo." class="bio-quadro" id="bio-quadro" role="img" tabindex="0">
+<canvas aria-hidden="true" id="matrix"></canvas>
+<img alt="" class="bio-original" loading="lazy" src="/contexto/maia-retrato.png"/>
+</div>
+<figcaption class="meta">Hover to see the original photo · Naira Mattia, Estúdio Praxe</figcaption>
+</figure>
+<div class="bio-info">
+<p class="rotulo">created and facilitated by</p>
+<h2 class="titulo-secao" id="h-quem-facilita">maia <span class="it">oazem</span></h2>
+<p class="ui suave">Temporal Artist · creator of the Context Club methodology</p>
+<div class="recolhido" id="rec-bio">
+<p class="abertura">Maia Oazem studies what happens to human thinking when AI becomes part of work. She created Context Club so teams could read, discuss, and write together again—and turn their thinking into context for machines.</p>
+<div class="bio-mais leitura" style="margin-top:1em">
+<p>Born in 1990, Maia grew up between dial-up internet and mobile phones. Today she researches how the mind is changing in the post-AI era. For fifteen years, she helped build innovation and futures practices at Oracle, Salesforce, Google Cloud, and Capgemini. At Capgemini she created Papillon, a post-AI transformation initiative, as well as the research projects Post-AI Futures and Futures of Finance.</p>
+<p>Her work has been featured by Veja, Época Negócios, Estadão, and CNBC, and presented at Febraban Tech. She teaches futures and applied AI at ESPM and serves on the board of the Brazilian Futures Association. Since 2016, she has led gira., a futures and creative strategy lab where the club's method and its collection of more than 100 books originated.</p>
+</div>
+</div>
+<button aria-expanded="false" class="revelar-btn" data-alvo="rec-bio" type="button">Read more</button>
+<dl class="bio-dados">
+<div><dt>at the club</dt><dd>Method design, book curation, and session facilitation</dd></div>
+<div><dt>background</dt><dd>Oracle · Salesforce · Google Cloud · Capgemini · gira.</dd></div>
+<div><dt>teaching</dt><dd>Futures and applied AI at ESPM · board member, ABF</dd></div>
+</dl>
+<p><a class="link ui" href="https://gira.guru/cv" rel="noopener noreferrer" target="_blank">Maia Oazem's résumé and projects ↗</a></p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div aria-labelledby="aba-participar-aba" class="painel-aba" hidden="" id="pa-participar-aba" role="tabpanel">
+<!-- TRÊS FORMAS DE PARTICIPAR -->
+<section aria-labelledby="h-part" class="secao m" id="participar">
+<div class="larg">
+<hr class="fio"/>
+<div class="pend" style="padding-top:14px">
+<p class="rotulo">join</p>
+<div>
+<h2 class="titulo" id="h-part">three ways to <span class="it">join</span></h2>
+<p class="abertura lf" style="margin-top:20px">For organizations, groups, and individuals. Find the format that fits your context.</p>
+</div>
+</div>
+<div class="tempo dobras">
+<details class="dobra" data-grupo="part" id="part-empresas" open="">
+<summary><span class="quando"><span class="meta">Launch</span><span class="ser">November 6, 2026</span></span><span class="tit"><span class="lista" style="display:block">Companies and Organizations</span><span class="resumo" style="display:block">Weekly cohorts within the company.</span></span><svg aria-hidden="true" class="seta" viewbox="0 0 100 100"><path d="M50 8V88M22 60L50 88L78 60" fill="none" stroke="currentColor" stroke-linecap="square" stroke-width="6"></path></svg></summary>
+<div class="miolo">
+<div class="corpo">
+<p style="font-size:17px"><strong>Focus</strong> on creating original contexts for critical and creative differentiation, protecting human capital (human ROI and symbiotic ROI), developing a better understanding of enterprise AI capabilities and limitations (AI literacy), and improving how teams generate ideas and critique them.</p>
+</div>
+<div class="esperados">
+<p class="rotulo" style="grid-column:1/-1">Expected outcomes</p>
+<div class="esperado">
+<svg aria-hidden="true" viewbox="0 0 100 100"><circle cx="37" cy="50" fill="none" r="28" stroke="#141414" stroke-width="2"></circle><circle cx="63" cy="50" fill="none" r="28" stroke="#141414" stroke-width="2"></circle><path d="M50 25.3A28 28 0 0 1 50 74.7A28 28 0 0 1 50 25.3Z" fill="#141414"></path></svg>
+<h4>Stronger Critical Thinking</h4>
+<p>The <a class="link" href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/3-skills-outlook/" rel="noopener" target="_blank"><em>Future of Jobs 2025</em></a> report ranks analytical thinking first among the skills employers consider essential—for the third report in a row—and creative thinking fourth.</p>
+</div>
+<div class="esperado destaque">
+<svg aria-hidden="true" viewbox="0 0 100 100"><path d="M37 22L65 50L37 78L9 50Z" fill="none" stroke="#141414" stroke-width="2"></path><path d="M63 22L91 50L63 78L35 50Z" fill="none" stroke="#141414" stroke-width="2"></path><path d="M35 50L50 35L65 50L50 65Z" fill="#c81e66"></path></svg>
+<h4>Human Capital ROI</h4>
+<p>Short-term AI productivity gains must not undermine the cognitive abilities organizations will depend on in the years ahead. Protecting the people who use AI protects the investment in AI.</p>
+</div>
+<div class="esperado">
+<svg aria-hidden="true" viewbox="0 0 100 100"><circle cx="38" cy="40" fill="none" r="22" stroke="#141414" stroke-width="2"></circle><circle cx="62" cy="40" fill="none" r="22" stroke="#141414" stroke-width="2"></circle><circle cx="50" cy="61" fill="none" r="22" stroke="#141414" stroke-width="2"></circle><circle cx="50" cy="47" fill="#141414" r="7"></circle></svg>
+<h4>Community</h4>
+<p>In-person meetings across departments build shared understanding and connections where hybrid work and individual AI use may have created isolation.</p>
+</div>
+</div>
+<div class="contato" style="grid-column:1/-1"><a class="botao" data-wa="Maia, I would like to discuss Context Club for companies and organizations." href="https://wa.me/5511941537453" rel="noopener" target="_blank">Request a conversation on WhatsApp →</a><a class="email link" href="mailto:maiaoazem@gira.guru?subject=Context%20Club%20%C2%B7%20Companies">maiaoazem@gira.guru</a><button class="contorno copiar" data-copiar="maiaoazem@gira.guru" type="button">Copy email</button></div>
+</div>
+</details>
+<details class="dobra" data-grupo="part" id="part-grupos">
+<summary><span class="quando"><span class="meta">Launch</span><span class="ser">November 2026</span></span><span class="tit"><span class="lista" style="display:block">Groups and Collectives</span><span class="resumo" style="display:block">Session 01: Saturday, November 28, 8:30 a.m.–12:30 p.m.</span></span><svg aria-hidden="true" class="seta" viewbox="0 0 100 100"><path d="M50 8V88M22 60L50 88L78 60" fill="none" stroke="currentColor" stroke-linecap="square" stroke-width="6"></path></svg></summary>
+<div class="miolo"><div class="corpo">
+<p style="font-size:17px"><strong>Focus</strong> on understanding how intelligent systems work (context, bias, deference, convergence, and AI literacy), learning to replicate the Context Club methodology, and exercising attention, interpretation, critical thinking, and creativity—with or without AI support.</p>
+<p style="font-size:17px"><strong>Location</strong>: Estúdio Praxe, República, São Paulo; <strong>Session 01</strong>: Saturday, November 28, 8:30 a.m.–12:30 p.m.</p>
+<div class="contato"><a class="botao" data-wa="Maia, I am interested in Context Club for groups and collectives." href="https://wa.me/5511941537453" rel="noopener" target="_blank">Express interest →</a><a class="email link" href="mailto:maiaoazem@gira.guru?subject=Context%20Club%20%C2%B7%20Groups">maiaoazem@gira.guru</a><button class="contorno copiar" data-copiar="maiaoazem@gira.guru" type="button">Copy email</button></div>
+</div></div>
+</details>
+<details class="dobra" data-grupo="part" id="part-individual">
+<summary><span class="quando"><span class="meta">Launch</span><span class="ser">January 2027</span></span><span class="tit"><span class="lista" style="display:block">Individuals</span><span class="resumo" style="display:block">In-person sessions, online learning, and a subscription.</span></span><svg aria-hidden="true" class="seta" viewbox="0 0 100 100"><path d="M50 8V88M22 60L50 88L78 60" fill="none" stroke="currentColor" stroke-linecap="square" stroke-width="6"></path></svg></summary>
+<div class="miolo"><div class="corpo">
+<p style="font-size:17px"><strong>Focus</strong> on building a routine that reconnects people with reading, independent critical thinking, and open-ended creativity, while preparing both human and machine for better interactions through context.</p>
+<ul class="ganhos">
+<li><p><strong>In-person sessions</strong>: Estúdio Praxe, República, São Paulo;</p></li>
+<li><p><strong>Training</strong>: online and self-paced;</p></li>
+<li><p><strong>Subscription model</strong>: a subscription delivering context cards with book excerpts, original writing, magazine clippings, and other materials that support the creation of independent, critical, and creative contexts.</p></li>
+</ul>
+<div class="contato"><a class="botao" data-wa="Maia, I am interested in the individual Context Club offering." href="https://wa.me/5511941537453" rel="noopener" target="_blank">Express interest →</a><a class="email link" href="mailto:maiaoazem@gira.guru?subject=Context%20Club%20%C2%B7%20Individuals">maiaoazem@gira.guru</a><button class="contorno copiar" data-copiar="maiaoazem@gira.guru" type="button">Copy email</button></div>
+</div></div>
+</details>
+</div>
+</div>
+</section>
+</div>
+<p class="dica-abas">Tap a tab to open · tap again to close</p>
+</div>
+</section>
+<section aria-label="Another world is possible" class="rosa-final m">
+<div class="larg">
+<div><hr class="fio"/><p class="titulo" style="margin-top:clamp(48px,6vw,96px)">another world is <span class="it">possible</span></p></div>
+<canvas aria-hidden="true" height="880" id="anel-rosa" width="880"></canvas>
+</div>
+</section>
+</main>
+<footer class="rodape m" id="rodape">
+<div class="larg">
+<div class="linha">
+<p class="ui">c/txt. · context club</p>
+<div class="par"><svg aria-label="futures and creative studio" height="22" viewbox="0 0 100 100" width="22"><path d="M53 8L91 72H15Z" fill="#141414"></path><path d="M43 94L9 36H77Z" fill="#141414"></path></svg><div><p class="ser it" style="font-size:18px;line-height:1.1">making it make sense</p><p class="meta" style="color:var(--tinta)">Futures-Informed Creativity</p></div></div>
+<div class="autoria"><svg aria-label="Maia Oazem" role="img" viewbox="20 19 576 656" xmlns="http://www.w3.org/2000/svg"><path d="M483 670.6C481.7 669.9 475 659.3 474.2 656.7C474 656.2 473.3 654.9 472.6 653.7C470.8 650.7 467.8 644.5 467.2 642.5C467 641.6 466.1 639.4 465.2 637.7C464.4 635.9 463.4 633.4 462.9 632.2C462.4 630.9 461.6 628.7 461 627.3C460.5 626 459.6 623.6 459 622C458.4 620.4 457.3 617.7 456.6 615.8C455.9 614 455.3 611.9 455.3 611.1C455.3 610.4 454.9 609 454.3 607.8C453.8 606.7 453.3 605.7 453.3 605.5C453.3 605.3 452.7 603 451.8 600.5C451 597.9 450.3 595.6 450.3 595.2C450.3 594.9 450 594.1 449.7 593.3C449.3 592.6 449 591.6 449 591C449 590.4 448.6 589.1 448.2 588C447.4 586.1 446.5 582.8 445.9 579.7C445.7 578.7 445.3 577.4 444.9 576.9C444.4 576.2 444.1 575.1 444 573.5C443.9 571.8 443.5 570.6 442.7 569.1C441.9 567.5 441.7 566.6 441.7 565.2C441.7 563.9 441.4 562.8 440.9 561.8C440.1 560.2 439.5 558.5 438.5 555.3C438.2 554.5 437.6 552.3 437 550.5C436.5 548.7 435.6 545.7 435.2 543.8C433.8 538.5 433 535.4 432.1 532.5C431.7 531 431.1 528.7 430.9 527.3C430.6 525.9 430 524.1 429.7 523.3C429.3 522.5 429 521.3 429 520.6C429 520 428.7 518.6 428.3 517.5C427.5 515.1 426 508.9 426 507.9C426 507.4 425.7 506.4 425.2 505.6C424.8 504.8 424 502.3 423.5 500C423 497.7 422.4 495.1 422.1 494.2C421.8 493.4 421.4 491.6 421.2 490.2C420.9 488.9 420.4 486.7 420 485.4C419.6 484 419.3 482.4 419.3 481.9C419.3 481.4 419.1 480.4 418.7 479.7C418 478.2 417.5 476.3 416.8 471.8C416.1 466.7 415.7 465 414.8 463.4C414 461.7 412.8 457.1 412.5 454.5C412.4 453.6 412 452.1 411.6 451.3C411.3 450.4 411 449.1 411 448.3C411 447.6 410.4 445.2 409.7 443C408.9 440.8 408.3 438.6 408.3 438C408.3 437 406.1 427.2 405.1 424.2C404.9 423.2 404.5 421.4 404.3 420.2C404.2 418.9 403.7 416.6 403.4 415C402.8 412.4 402.8 412.1 403.2 410.7C403.8 409.2 403.6 408.3 402.9 408.3C401.8 408.3 400.7 404.3 400.7 400.1C400.7 399.3 400.3 397.7 399.8 396.4C398.8 393.6 398.8 392.3 400.1 391.7C401.6 391 401.3 389.2 399.6 389.1C398.1 388.9 397.6 388.4 397.3 386.2C397.2 385.3 396.8 383.3 396.4 381.8C396 380.4 395.7 378.7 395.7 378.1C395.7 377.6 395.4 376.2 395 375.1C394 371.9 392.2 362.5 392.4 361.2C392.5 360.3 392.6 360.2 393.4 360.3C395.4 360.5 396 358.9 394.4 357.6C393.8 357.2 393.2 356.3 392.9 355.7C392.5 355.1 392 354.3 391.7 354C391.3 353.7 390.9 352.8 390.8 352.1C390.7 351.4 390.2 350.3 389.8 349.6C388.4 347.4 388.5 344.5 390 345.8C391.6 347.3 392.7 344.6 391.3 342.4C391 341.8 390.7 340.9 390.7 340.4C390.7 338.8 389.9 338.5 389.1 339.6C388.4 340.4 388.3 340.5 387.8 340C387 339.2 386 334.4 385.9 330.7C385.8 329.8 385.6 328.9 385.4 328.5C385.3 328.1 385 327.4 384.9 326.8C384.8 326.2 384.3 325.2 383.8 324.5C383.3 323.7 383 322.8 383 322.1C383 320.1 382 315.6 381.1 314C380.7 313.1 379.9 310.4 379.4 308C378.8 305.6 378.2 303.4 378 303C377.5 302.1 377 298.1 377.2 297.2C377.4 296.5 377.6 296.3 378.3 296.3C380.9 296.3 380.9 293.7 378.3 293C376.7 292.6 375.5 290.9 375 288.7C374.9 287.8 374.3 285.8 373.7 284.2C372.5 280.8 372.4 278.5 373.3 276.9C374.5 274.9 374.1 272.6 372.6 273.3C371.6 273.9 370.3 272.5 370.3 270.8C370.3 269.8 369.4 266.7 367.5 260.7C366.7 258.4 365.7 254.6 364.8 250.7C364.4 248.7 363.9 246.7 363.7 246.2C363 244.5 363.2 241.7 364.2 240.6C365.7 238.8 364.9 237.5 362.4 237.5C361.6 237.4 360.2 237.3 359.5 237.2C358.4 237 357.6 237.1 356 237.7C354.2 238.4 353.6 238.4 350.3 238.2C347.2 238 346.5 238.1 345.8 238.5C345.2 238.9 344.6 239 343.6 238.9C342.8 238.7 341.5 238.6 340.7 238.7C339.8 238.7 339 238.5 338.6 238.1C337.9 237.4 334 237.2 330.7 237.7C327.7 238.2 327.4 238.3 327.6 239.7C327.9 241.6 325.2 241.5 324.7 239.6C324.4 238.2 323.7 238.1 321.5 239.2C320.2 239.9 319.5 240 318.8 239.8C315.4 239 313.1 239.3 311.5 240.7C309.2 242.7 307 243.1 304.3 241.8C302.8 241.2 302.3 241.1 301.3 241.3C300.7 241.5 299.3 241.6 298.2 241.6C293.8 241.6 290.4 241.9 289.1 242.4C288.3 242.7 287.2 242.9 286.7 242.8C285.9 242.6 285.6 242.8 284.8 243.8C283.7 245.3 281.8 245.5 280.7 244.2C279.9 243.1 279.3 243.1 278.1 244.4C277.2 245.3 277.1 245.4 275.5 245.2C274.6 245.1 272.8 244.9 271.6 244.9C270 244.9 269.2 244.7 268.7 244.2C268 243.6 268 243.6 266.8 244.7C265.7 245.6 265.4 245.7 264.3 245.5C263.1 245.3 261.7 246.3 261.7 247.4C261.7 247.6 261.3 248.3 260.8 248.9C260.1 249.8 260 250.2 260.2 251.4C260.4 252.7 260.3 253 259.2 254.3C258.3 255.4 258 256.2 258 257C258 257.9 257.7 258.6 257 259.5C255.8 261 255.8 260.9 256.5 262.4C257.4 264.5 256.7 265.5 254.8 265.2C253.5 264.9 253.4 265.3 254.2 266.7C255.1 268.3 254.8 269.8 253.2 271.5C251.5 273.2 251 274.9 252.3 274.5C253.7 274.1 253.9 277.3 252.5 277.8C252.2 277.9 252 278.5 252 279.7C251.9 281.9 251.7 282.6 250.7 283.1C249.4 283.7 249.4 284.7 250.5 284.6C251.2 284.5 251.5 284.7 251.6 285.1C251.8 285.9 251.1 286.7 250.3 286.7C249.7 286.7 249.6 286.8 249.8 287.8C250.4 290.9 250.4 291.3 249.7 293.8C249.2 295.5 249 297.3 249 299.4C249 302.7 248.2 304.3 246.7 303.8C245.9 303.6 245.8 304.2 246.5 304.5C247 304.6 247 305 246.9 306.1C246.7 306.9 246.7 308.5 246.7 309.6C246.7 311.6 246.6 311.8 245.6 312.9C244.6 314 244.6 314 245 315.3C245.6 317.1 243.7 323.6 241.7 326.6C241.3 327.3 241.3 327.5 241.8 328.7C242.4 329.9 242.4 330 241.7 331.6C241.2 332.8 241 334.2 240.8 336.7C240.4 345.1 239.7 348.8 238.1 350.5C236.9 351.8 236.8 352.2 236.6 355.5C236.5 357 236.2 358.3 235.7 359.2C235.2 360.3 235 361.2 235 363.4C235 365.5 234.8 366.7 234.2 368.5C233.7 369.8 233.3 371.6 233.3 372.5C233.3 373.5 233.1 374.9 232.8 375.7C232.5 376.6 232.3 378 232.4 379.3C232.4 380.5 232.3 382.8 232.1 384.5C231.8 387 231.8 387.8 232.2 389.3C232.6 391.2 232.4 392.6 231.6 392.7C230.3 392.9 226.8 393 224.4 393C219.3 393 217.5 391.6 216.2 386.8C215.8 385.7 215.2 384.2 214.8 383.3C214.4 382.5 213.8 381 213.5 380C213.2 379 212.7 377.8 212.5 377.3C211.9 376.3 211.5 375.2 209.1 368.2C207.5 363.5 207.3 362.6 207.5 361.1C207.7 359.2 207.5 358.6 205.8 356.4C204 354 203 347.2 204.6 347.8C206.6 348.7 207.5 346.5 206 344.2C205.6 343.6 205.3 342.8 205.3 342.5C205.3 342.1 205 341.2 204.7 340.4C204.3 339.6 203.9 337.9 203.8 336.5C203.7 334.9 203.4 333.8 202.8 333C202.4 332.4 202 331.5 201.8 331C201.7 330.6 201.3 329.8 200.9 329.3C200.4 328.6 200.3 327.8 200.2 325.8C200.2 323.6 200 322.8 199.1 320.9C197.8 318.1 197.3 318.1 197.3 320.7C197.3 323.1 196.8 323.3 195.7 321.2C194.5 318.7 194.8 317.2 196.7 317.2C198.3 317.2 198.4 313 196.9 311.1C195.8 309.8 194.9 307.2 194.9 304.8C194.8 303.3 194.5 302.3 193.7 300.8C192.7 298.9 192.6 298.5 192.6 295.3C192.5 292 192.5 291.8 191.4 290.4C190 288.5 189.7 287.5 189.4 283.2C189.1 280.1 188.9 279.4 188.1 278.1C185.5 274 184.9 272.4 185.1 269.8C185.4 267.4 185.3 267.4 184.3 266.3C183.5 265.5 183.3 265 183.3 263.7C183.3 262 183 261.3 180.8 258.9C179.9 257.9 179.3 257 179.3 256.5C179.3 256.1 179 254.4 178.5 252.9C178.1 251.4 177.6 249.4 177.5 248.5C177.4 247.6 177.1 246.3 176.8 245.6C176.3 244.6 176.3 244.3 176.8 243C177.3 241.3 177.1 240.7 175.9 240C173.2 238.6 171 233.1 170.8 227.5C170.7 224.7 170.5 222.9 170.1 222.3C169.5 221.1 168.4 215.8 168.1 212.8C167.9 210.9 167.6 210.2 166.7 209C165.9 207.9 165.7 207.2 165.7 206.1C165.7 205.3 165.4 204.1 165 203.4C164.7 202.7 164.3 201.4 164.2 200.5C164 199.6 163.7 198.4 163.4 197.8C163.1 197.2 162.8 195.9 162.8 194.5C162.8 192.9 162.5 191.4 161.9 189.7C161.4 188.3 160.8 186.4 160.6 185.5C160.1 183.6 159.5 183.2 159 184.5C158.4 185.7 157.8 185.5 157 183.7C156 181.2 156.1 179.3 157.5 179.3C159 179.3 159.6 177.4 158.9 174.2C158.6 172.7 158.3 170.8 158.3 170C158.3 169.1 158.1 168.2 157.6 167.6C156.4 165.9 155.6 163.1 155.4 159.1C155.2 155.9 155 155.2 154.4 154.4C152.6 152.2 152.7 152.3 153.3 150.1C153.9 147.7 153.7 147.2 152.2 146.5C151.6 146.3 150.9 145.8 150.7 145.4C150 144.2 149.5 145.4 150 147.1C150.2 147.9 150.5 149.2 150.5 150.2C150.7 151.8 150.7 151.8 149.8 150.9C149.4 150.4 149 149.7 149 149.4C149 149.1 148.6 148.1 148.2 147.2C146.6 143.8 146 142.1 145.7 140.2C145.5 139.1 145.2 137.8 145.1 137.3C145 136.6 145.1 136.3 145.8 135.8C146.7 135.2 147 133.7 146.2 133.5C144.3 133 143.8 132.7 142.8 131.3C142.3 130.5 141.5 129.8 141.2 129.8C140.3 129.8 137.7 133.3 137.7 134.5C137.7 135.2 137.4 135.7 136.8 136.2C135.9 136.9 135.9 137 136.3 137.8C137 139.4 136.8 141.2 135.7 142.4C134.5 143.8 134.5 144.1 135.2 145.2C135.8 146.1 135.7 146.8 134.7 150.2C133.5 153.9 132.7 157.4 132.7 158.8C132.6 159.6 132.4 160.8 132.2 161.5C131.9 162.2 131.7 163.6 131.7 164.5C131.7 165.8 131.5 166.5 130.8 167.3C130.3 168.1 130 168.9 130 169.8C130 170.6 129.7 171.7 129.3 172.4C129 173.1 128.7 174.3 128.7 175C128.7 176.9 127.2 180.3 125.8 181.5C124.5 182.7 124.4 183.4 125.4 184.6C126.1 185.6 126 187 125.1 188.8C124.8 189.4 124.4 190.6 124.2 191.5C123.8 193.1 123.4 193.6 121.9 194.1C121.7 194.2 122 194.9 122.4 195.7C123.4 197.4 123.7 200.1 122.9 201.4C122.3 202.7 120 205.2 119.1 205.7C118 206.3 117.7 207.5 118.5 208.4C119.7 209.7 119.4 213.1 117.7 216C116.7 217.8 116.3 218.9 116.4 219.9C116.4 224.4 115.8 228.2 114.9 229.3C114.1 230.3 114 230.6 114.2 231.8C114.3 232.9 114.2 233.4 113.5 234.5C112.8 235.4 112.7 236 112.8 236.7C113.1 238.1 112.2 239.8 111.1 240.4C110 240.9 109.5 243.2 110.5 243.5C111.3 243.9 111.1 244.7 110.2 244.7C109.2 244.7 108.8 245.8 109.2 247.4C110.3 252 109.1 256.7 106.6 257.7C105 258.4 104.8 259.1 106 260.4C107.3 261.7 107.3 263.2 106.2 264.6C105.7 265.2 105.1 266.1 104.9 266.7C104.7 267.3 104.3 268.2 103.9 268.7C103.2 269.8 103.2 270.1 103.9 271.4C104.8 273.1 103.5 276.2 102.3 275.2C100.9 273.9 100.2 277.6 101.5 279.5C102.7 281.2 102.6 282.1 101 283.5C100.1 284.4 99.7 285.1 99.7 285.7C99.7 286.2 99.3 286.9 98.8 287.4C98.1 288 98 288.3 98.2 289.3C98.3 290 98.4 291.6 98.5 292.8C98.5 294.1 98.6 295.5 98.8 295.9C99.1 296.8 98.6 297.6 97.5 298C96.5 298.4 96 300.1 96.2 302C96.3 302.8 96.3 303.5 96 303.8C95.8 304 95.7 305.3 95.7 306.9C95.8 310.2 95.2 311.4 93.3 312.1C91.8 312.7 91.6 313.5 92.7 314.4C94 315.6 93.4 318 91.5 319.3C89.3 320.8 88.4 324.9 89.7 327.9C90.1 328.9 90.1 329.2 89.6 330C89.3 330.6 89 331.5 89 332C89 332.6 88.7 333.5 88.3 334C87.7 334.8 87.6 335.2 87.8 336.5C88 338 88 338 86.7 338.5C85.1 339.2 84.7 340.1 85.3 341.7C85.8 343.3 85.8 344.2 85 345.3C84.6 345.8 84.2 347.1 84 348.4C83.8 349.7 83.1 351.9 82.3 353.7C80.6 357.5 80.2 360.5 81.1 362.7C82.3 365.6 81.4 369 79.5 369C78.9 369 78.9 369 79.3 370.2C79.6 370.8 79.5 371.4 79 372.5C78.6 373.3 78.3 374.4 78.3 374.9C78.3 375.4 78 376.3 77.5 376.8C76.9 377.7 76.7 378.3 76.8 379.6C76.8 381 76.7 381.5 75.7 382.9C74.3 384.8 73.7 388.4 74.4 390.4C74.9 392 74.6 393 73.3 393.8C72 394.7 71.3 395.9 71.3 397.5C71.3 398.1 71.2 399.3 71 400.1C70.8 400.9 70.5 402.3 70.3 403.3C70 404.6 70 405.4 70.3 406.5C70.8 408.1 70.5 409.1 68.9 411.4C67.8 413.1 67.5 414.8 68.2 416.6C68.9 418.7 68.8 419.3 67.7 420.3C66.5 421.4 66.3 423 67.2 425.4C67.8 426.9 67.8 426.9 67 428C66.6 428.5 66.2 429.8 66 430.7C65.9 431.6 65.5 432.8 65.1 433.3C64.6 433.9 64.4 434.9 64.3 436.7C64.1 438.8 63.9 439.6 63 441.2C61.8 443.3 61.3 445.5 61.2 449.4C61.2 450.6 61 451.8 60.8 452C59.8 453.2 59.5 456.2 60.3 457.4C61.3 459.1 61.2 459.7 59.5 461.2C57.8 462.8 57.3 464.8 58 466.9C58.7 469.3 58 472.8 56.4 474.5C54.8 476.2 54.8 476.2 55.8 477.7C57.1 479.4 56.6 481 55 480.5C53.8 480.1 53.3 480.9 53.3 483C53.3 484 53.2 485 53 485.2C51.8 486.5 50.8 496.1 51.8 497C52.5 497.5 52.5 498.6 51.8 499.6C51.5 500.1 51.3 500.7 51.4 501.3C51.7 502.6 51.2 503.6 50 503.8C48.9 504.1 48.9 504.1 49.1 505.8C49.3 507.3 49.1 507.9 48.3 509.5C47.3 511.5 47.3 512.2 48.4 512.5C49.2 512.8 49.2 513.8 48.3 515.2C47.6 516.3 47.6 516.3 48.2 517.9C48.8 519.6 48.8 519.6 47.9 521.6C47.4 522.7 47 523.7 47 523.9C47 524.1 46.7 524.8 46.3 525.4C45.9 526.1 45.5 527.4 45.3 528.5C45.1 529.7 44.7 530.7 44.2 531.4C43.2 532.5 42.8 533.8 43.2 534.6C43.3 534.9 43.6 535.9 43.7 536.8C43.9 537.8 44.1 539.1 44.2 539.7C44.4 541 43.8 542 42.2 542.9C41 543.6 40.8 548.9 41.8 550C43 551.2 42.7 553.7 41 555.9C40.5 556.5 40.4 557.1 40.6 558.3C40.7 559.9 40.7 560 39.7 560.5C38.3 561.2 37.9 562.4 38.3 563.9C38.5 564.6 38.6 565.9 38.4 566.9C38.3 568.2 38.4 569 38.8 570C39.3 571 39.4 571.7 39.2 572.7C39 573.5 38.9 575.2 38.9 576.4C38.8 578.3 38.7 578.7 37.8 579.8C36.7 581 36.7 581 36.9 584.9C37 589.8 36.6 592.2 35.5 592.7C34.1 593.4 26.5 591.6 25.2 590.3C24.5 589.6 24.9 585.9 25.8 584C26.1 583.5 26.2 582.6 26.1 582.1C25.8 580.5 26.9 571.3 27.5 570.7C28.8 569.4 29.7 572.7 28.9 575.7C28.6 576.8 28.3 578.1 28.3 578.7C28.4 579.8 28.4 579.8 28.8 579C30 576.9 30.6 573.8 30.7 569.4C30.7 569 31 567.9 31.4 567C32.1 565.2 32.2 560.3 31.4 560.1C30.9 559.9 30 562 30 563.6C30 564.3 29.7 565.4 29.4 566.2L28.8 567.5L28.5 565.7C28.4 564.7 28.4 563.1 28.6 561.9C29.5 556.6 29.7 555.7 30.2 553.3C30.4 552 30.7 550.3 30.7 549.6C30.7 548.9 30.8 548 31 547.4C31.3 546.9 31.5 545 31.6 543.3C31.8 540.7 32 539.8 32.6 539C33.2 538.2 33.3 537.8 33.1 536.4C33 535.3 33.2 534 33.8 531.9C34.3 530.3 34.7 528.5 34.7 527.8C34.7 527.1 35 525.5 35.3 524.1C35.7 522.6 36 520.6 36.2 519.5C36.3 518.4 36.6 516.8 36.8 515.8C37.1 514.9 37.5 513 37.7 511.5C37.9 510 38.3 507.9 38.7 506.8C39 505.7 39.5 503.9 39.6 502.7C39.8 501.5 40.1 500.1 40.3 499.5C40.5 498.9 41 496.6 41.4 494.2C42 490 42.6 486.8 43.4 483.8C43.6 483.1 44 481 44.4 479.2C44.7 477.3 45.5 473.7 46.2 471.2C46.8 468.6 47.5 465.3 47.7 463.8C47.9 462.4 48.4 459.9 48.9 458.3C50.8 451.1 51.3 449.1 51.3 448.3C51.3 447.8 51.7 446 52.2 444.2C52.6 442.4 53 440.5 53 439.8C53 439.2 53.3 437.9 53.7 436.9C54 436 54.5 434.2 54.7 433C54.8 431.7 55.2 430.2 55.5 429.6C55.8 428.9 56 427.8 56 427.1C56 426.4 56.2 425.3 56.4 424.7C57 422.7 59.5 410.8 60 407.5C60.2 406.4 60.6 404.7 60.9 403.7C61.6 401.7 62.3 398.3 62.3 396.9C62.3 396 63.1 392.4 64.3 388.2C65.1 385.1 65.9 381.6 66.3 379.3C66.5 378.3 67 376.1 67.5 374.3C68 372.6 68.5 370 68.7 368.6C68.9 367.2 69.2 365.4 69.5 364.6C69.8 363.8 70.2 362 70.4 360.6C70.5 359.1 71.1 356.8 71.5 355.4C71.9 354 72.8 350.6 73.5 347.8C74.1 345.1 75.3 340.4 76 337.5C76.7 334.6 77.7 330.3 78.2 328C78.7 325.7 79.4 323 79.7 322C80.4 320 83.1 309.9 83.9 306.3C84.2 305.1 84.6 303.3 84.9 302.3C85.5 300.3 86.4 296.4 87.2 293C87.4 291.8 87.9 290.3 88.1 289.6C88.4 288.9 88.7 287.9 88.7 287.3C88.7 286.7 89.2 284.7 89.8 282.8C90.5 281 91 279.1 91 278.7C91 278.2 91.4 276.8 91.8 275.5C92.3 274.2 92.7 272.6 92.7 271.9C92.7 271.2 92.9 270.1 93.3 269.4C93.6 268.7 94 267.1 94.2 265.8C94.3 264.6 94.7 262.9 95 262.3C95.4 261.6 95.7 260.7 95.7 260.3C95.7 260 96 258.6 96.5 257.3C97 255.8 97.3 254.2 97.3 253C97.3 251.6 97.6 250.5 98.2 249.3C98.6 248.3 99 246.9 99 246.2C99 245.4 99.3 244.2 99.7 243.3C100.1 242.5 100.5 240.9 100.6 239.7C100.7 238.5 101 237 101.3 236.3C101.6 235.7 102 234.3 102.1 233.2C102.2 232 102.5 230.7 103 230C103.3 229.4 103.7 228.4 103.7 227.9C103.7 226.6 104.8 221.7 106 217.9C106.5 216.1 107 214.2 107 213.7C107 213.2 107.2 212.1 107.5 211.3C107.8 210.5 108.4 208 108.8 205.8C109.3 203.6 110 200.8 110.3 199.5C111 197.2 111.2 196.1 112.2 191.3C112.5 190 113 188 113.3 187C113.6 185.9 113.8 183.5 113.9 181.3C114 177.9 114.1 177.1 114.8 175.8C115.2 174.9 115.7 173.4 115.8 172.4C115.9 171.5 116.3 170 116.8 169.1C117.2 168.2 117.7 166.7 117.8 165.7C118.1 163.6 119.2 159 119.8 157.6C120.6 155.7 122 150.2 122 148.8C122 148.1 122.4 146.8 122.8 145.8C123.3 144.9 123.7 143.9 123.7 143.5C123.7 142.9 124.9 138.4 127.5 129.7C128.6 125.7 130.1 121.9 131.9 118.1C133.2 115.4 135.4 114.5 140.3 114.6C142.3 114.7 142.7 114.8 144.3 116C145.2 116.7 146.4 117.4 147 117.5C148.9 117.9 151 120.5 152 123.7C152.3 124.9 152.9 126.8 153.3 128C153.7 129.2 154.3 130.8 154.6 131.7C154.8 132.5 155.2 133.9 155.3 134.8C155.5 135.8 155.8 137.3 155.9 138.3C156.1 139.4 156.5 140.4 157.1 140.9C159.3 143.3 160 144.9 159.8 146.6C159.6 147.9 159.7 148.5 160.3 149.5C160.8 150.5 160.9 151.1 160.8 153.3C160.6 155.8 160.6 156.1 161.4 157.2C162.2 158.4 162.2 158.9 162.3 161.8C162.3 165.6 162.8 168.1 163.7 169.3C164.1 169.7 164.3 170.5 164.3 170.9C164.3 171.4 164.7 172.2 165.3 172.8C166.3 173.8 166.3 173.8 166 177C165.8 180.1 165.8 180.2 166.6 181.1C167.2 181.8 167.4 182.2 167.2 182.9C166.8 184.6 166.3 188.4 166.5 188.9C166.6 189.1 167.2 189.6 167.9 190C169.5 190.8 170.1 191.9 170.8 195.4C171.1 196.9 171.4 198.2 171.5 198.5C171.6 198.7 171.3 199.4 170.9 199.9C169.8 201.2 169.8 201.2 170.9 202.2C171.8 202.9 171.8 202.9 171.1 203.9C169.5 206.1 170.1 208.4 172.2 207.7C173.8 207 174.7 208.2 174.7 211.1C174.7 212.5 174.9 213.1 175.4 213.9C176.2 214.8 176.8 219.1 176.7 223C176.7 224.1 176.8 224.6 177.5 225.3C177.9 225.8 178.4 226.7 178.6 227.4C179.4 230.4 184.4 235 186.9 235C187.2 235 189.3 235.4 191.5 235.8C199 237.3 221 237.6 236.3 236.5C240.3 236.2 245.2 235.9 247.3 235.8C251.9 235.6 251.9 235.6 252.4 232.3C252.6 230.9 253 229 253.4 228C254.5 225 255.3 221.9 255.3 220.7C255.3 220 255.6 219.1 255.9 218.7C256.2 218.3 256.8 216.2 257.2 214C257.6 211.8 258.2 209.4 258.5 208.8C258.8 208.1 259.2 206.7 259.3 205.8C259.6 204.1 264.5 188.4 265.6 186C265.9 185.4 266.4 183.6 266.8 182C267.9 178.1 270.2 171.4 270.8 170.5C271.1 170 271.3 169.5 271.3 169.2C271.3 168.9 271.8 167.7 272.3 166.6C272.8 165.4 273.4 163.9 273.5 163.2C273.6 162.4 274.3 160.6 275 159C275.7 157.4 276.7 154.9 277.3 153.3C277.9 151.8 278.8 149.7 279.2 148.7C279.6 147.7 280.2 146.1 280.5 145.1C280.8 144.2 281.6 142.1 282.2 140.6C282.9 139.1 283.6 137.2 283.8 136.5C284.1 135.8 284.7 134.1 285.3 132.8C287.9 126.8 288.3 125.8 288.8 124.8C289.1 124.3 289.3 123.6 289.3 123.3C289.3 123 290.1 121.2 291 119.3C292 117.4 293 115.1 293.3 114.2C293.7 113.2 294.8 110.6 295.9 108.3C297 106 298.4 103 299 101.6C299.5 100.2 300.3 98.5 300.7 97.8C301 97.1 301.3 96.3 301.3 96.1C301.3 95.4 303.2 90.9 303.8 90.4C304.7 89.4 309.6 89.4 311.4 90.3C312.1 90.7 313.5 91.1 314.5 91.2C315.4 91.3 316.7 91.7 317.3 92C320.2 93.5 328.1 103.2 328.6 105.8C328.8 106.8 329.5 108 331.1 109.9C333.3 112.7 333.3 112.7 333.3 115C333.3 117.2 333.4 117.3 334.6 118.3C335.8 119.3 335.8 119.3 335.9 122.1C335.9 123.8 336.1 125.3 336.4 125.9C336.7 126.4 337.1 127.3 337.4 127.8C339.4 131.5 339.7 132.4 339.7 134.5C339.7 136.4 339.8 136.9 341 138.8C341.8 140 342.6 141.8 342.8 142.9C343.4 145.4 344.1 147.5 345.1 149.2C345.7 150.3 345.8 151 345.8 153.6C345.8 156.3 345.9 156.7 346.6 157.4C347.1 158 347.4 158.7 347.5 159.6C347.5 160.3 347.8 161.3 348.3 161.8C348.9 162.7 349 163.1 348.9 165.2C348.8 167.5 348.9 167.6 350.1 169.2C350.8 170.1 351.3 171.1 351.3 171.5C351.3 172 351.7 172.6 352.2 173C353.5 174 354.2 179.3 353.4 181.6C352.8 183 352.8 183 354 184.1C355.2 185.2 355.7 186.3 356.2 188.8C356.3 189.7 356.8 190.5 357.9 191.5C359.3 192.9 359.4 193.1 359.3 194.3C359.1 195.1 359.3 196 359.9 197.1C360.4 198.1 360.7 199.2 360.7 200.5C360.7 201.7 360.9 202.8 361.5 204C362 204.9 362.5 206.6 362.7 207.7C363 209.3 363.3 210.1 364.2 211.1C365 212 365.3 212.6 365.3 213.5C365.3 214.3 365.6 214.8 366.3 215.4C367.7 216.5 367.9 217.1 368.2 220.9C368.5 224.9 368.3 224.8 372.5 224.6C376.9 224.3 383.3 223.7 383.6 223.5C383.8 223.4 385.9 223.3 388.3 223.2C390.8 223 392.9 222.9 393.1 222.8C393.3 222.6 394.8 222.5 396.5 222.5C398.1 222.4 400 222.2 400.7 222C401.9 221.6 406.6 221.2 416 220.7C419.2 220.5 423.9 220.2 426.3 220C428.8 219.9 433.5 219.6 436.8 219.4C440.1 219.1 443.7 218.8 444.7 218.7C445.7 218.5 448.5 218.3 450.9 218.3C453.2 218.3 455.7 218.2 456.3 218C457.5 217.6 463.6 217.2 474.2 216.7C477.3 216.6 480 216.4 480.2 216.3C480.3 216.2 483.7 216 487.7 215.9C491.7 215.7 495.4 215.5 495.9 215.4C496.5 215.2 500 215.1 503.7 215.2C507.5 215.2 510.9 215.1 511.5 214.9C512.9 214.5 537.5 214.3 540.6 214.7C541.9 214.9 545.6 215.1 548.8 215.2C556.1 215.3 563.7 216 568.2 217C570.8 217.5 577 218.7 578.8 219C583 219.7 584.4 220 585.8 220.5C586.7 220.8 587.7 221 588.1 221C590.1 221 592.2 225.8 590.8 227C589.6 228 582.5 227.8 579.9 226.6C577.5 225.5 577.5 225.5 572.6 225.6C569.8 225.7 567.1 225.5 566.3 225.3C564.3 224.8 561.7 224.8 560.3 225.3C559.2 225.7 559 225.7 558.1 225C556.7 224 553.3 223.7 551.9 224.5C550.8 225.1 550.8 225.1 549.2 224.2C547.1 222.9 544.1 223.2 542.1 224.7C540.2 226.2 535.4 226.2 532.7 224.6C530.8 223.5 530.8 223.5 518.7 223.5C508.1 223.6 506.2 223.6 504.3 224.1C503.1 224.5 501.6 224.9 501 225C500.4 225.1 499.3 225.5 498.7 225.8C497.4 226.5 496.2 226.3 495.1 225.2C494.6 224.8 493.9 224.5 493.1 224.6C480.3 225 480.3 225 480.3 226.5C480.3 228.7 477.1 229 475.6 227C474.7 225.7 474.7 225.7 472.3 227.4C470.6 228.5 470 228.8 468.9 228.7C465.3 228.6 462.4 228.7 461.6 229C460.8 229.4 460.4 229.3 458.6 228.5C455.3 227 446 227.4 443.5 229.1C441.7 230.3 440.8 230.3 439.5 228.8C438.4 227.6 437.7 227.4 437 228.2C436.6 228.6 436.2 228.7 434.6 228.5C432.7 228.3 432.7 228.3 431.4 229.6C429.8 231.3 429.3 231.5 427.1 230.8C425.4 230.2 425.3 230.2 423.9 230.9C422 231.9 421.9 231.9 420.7 230.8C419.6 229.9 419.6 229.9 414.1 229.9C408.2 229.8 407.8 229.9 404.3 232.1C403.8 232.4 403.3 232.3 402 231.9C400.3 231.3 400.3 231.3 398.9 232.2C397.8 232.9 397.4 233 397 232.7C395.2 231.4 392 231.5 391 233C390.1 234.2 386.1 234.7 384.7 233.7C381.7 231.7 377.7 232.1 378.2 234.3C378.4 235.3 377.5 236.1 377.2 235.2C377.1 234.9 376.9 234.5 376.9 234.2C376.7 233.6 374.8 233.2 374.1 233.6C373.7 233.8 373.5 234.4 373.5 235.2C373.4 235.9 373.3 237.5 373.1 238.8C372.7 241 372.7 241.2 373.5 242.3C373.9 243 374.4 244.2 374.5 245C374.6 245.9 375.2 247.1 375.8 248C377 249.7 377.2 255 376.2 256.6C375.3 257.8 375.4 257.9 378.4 261.8C378.8 262.3 379.2 263.3 379.2 264.1C379.4 266.8 379.9 268.9 380.4 269.5C380.8 269.8 381 270.6 381 271.2C381 271.9 381.3 272.8 381.7 273.3C382.4 274.3 382.4 274.4 381.9 275.6C381.5 276.6 381.4 278 381.6 279.8C381.7 279.9 382.1 280 382.7 280C384.3 280 384.6 281.1 383.4 282.3C381.8 283.8 382 284.7 384.3 287.8C386.2 290.3 387.2 292.6 387.9 295.7C388 296.3 388.5 297.4 388.9 298.1C389.7 299.2 389.7 299.6 389.6 301.3C389.4 303.1 389.4 303.5 390.5 305.5C391.9 308.1 391.9 308.7 390.9 310.3C389.7 312.1 390 315.1 391.5 316C393.1 317 393.3 317.3 393.3 318.5C393.3 319.1 393.5 319.7 393.7 319.8C393.8 319.9 394.2 320.7 394.5 321.6C394.7 322.5 395.2 323.8 395.5 324.5C396.4 327 396.5 330.7 395.8 332C395.1 333.2 395 333 397.4 334.7C398.3 335.4 399.2 339.4 398.7 340.8C398.4 341.4 398.5 341.8 399.2 342.7C399.9 343.7 400 344.2 400 346.5C400 348.5 400.2 349.6 400.7 350.7C401.1 351.7 401.3 352.9 401.3 354.3C401.3 355.8 401.5 356.6 402 357.3C404 360.2 404.9 367.3 403.2 367.3C402.5 367.3 402 368.2 402.2 368.8C402.5 369.5 403.3 369.5 403.5 368.8C403.9 368 404.2 368.3 404.8 369.9C405.6 372 405.6 373.2 404.5 374.3C403.5 375.4 403.5 375.7 404.3 376.5C404.7 376.8 405 377.4 405 377.9C405 378.7 405.8 379.7 406.5 379.7C407.3 379.7 408 380.9 408 382.3C408 383.2 408.3 384.2 408.7 384.9C409.4 386.1 409.4 386.1 408.7 387.8C407.8 390 407.8 390 409.4 391.3C411 392.7 411.3 393.9 411.3 398.1C411.3 400.4 411.5 401.3 412 402.3C412.4 403.1 412.7 404 412.7 404.3C412.7 404.7 413 405.6 413.3 406.4C414 407.7 414 407.7 413.2 409.5C412.2 411.5 412.3 412.3 413.8 413.7C415.2 414.9 415.7 416.1 415.7 418.3C415.7 419.8 415.8 420.4 416.2 420.6C416.8 420.9 417.7 424.2 417.7 426.2C417.7 427.6 418.2 429.7 419.3 432C420.2 434.1 420.5 436.7 420 438.5C419.6 439.9 419.6 440.1 420.3 440.8C420.6 441.2 421.1 442.2 421.3 443C421.5 443.8 421.9 445 422.1 445.7C423.1 448.2 423.1 449.5 422.2 450.6C421.6 451.3 421.3 451.9 421.4 452.4C421.8 453.8 423.4 457.5 424 458.2C425 459.3 426.2 462.1 426.4 463.8C426.6 464.6 426.9 465.9 427.3 466.6C427.9 467.8 428.8 472.5 428.8 474.4C428.8 474.9 428.4 475.7 428 476.1C427.1 477.2 427.2 478 428.5 478.4C429.9 478.9 430.1 479.2 429.8 481.7C429.6 483.9 429.6 483.9 431.1 485.6C432.9 487.6 433.2 488.6 433.4 492.8C433.6 495.8 433.7 496.2 434.5 497C435.2 497.7 435.5 498.4 435.7 500.5C435.9 501.9 436.3 503.6 436.7 504.3C437 504.9 437.3 505.9 437.3 506.5C437.3 507 437.6 508.3 437.8 509.3C438.1 510.3 438.6 512.6 439 514.3C439.4 516.1 440.1 518.2 440.6 519C441.2 520 441.4 520.7 441.2 521.5C441.1 522.2 441.3 523 441.7 523.9C442 524.5 442.6 526.2 443 527.6C443.4 529 444 531 444.4 531.9C444.7 532.9 445 534.3 445 535C445 535.7 445.5 537.2 446.4 539C447.6 541.5 447.8 542.1 447.7 543.8C447.5 547.5 447.6 547.8 448.3 550.2C448.7 551.6 449 552.9 449 553.3C449 553.6 449.5 554.6 450.2 555.3C450.8 556.1 451.4 557.1 451.5 557.6C451.6 558.1 452 559.5 452.3 560.7C452.7 561.9 452.9 563.4 452.8 564.1C452.6 565 452.8 565.7 453.6 567.1C454.1 568 454.7 569.5 454.8 570.3C454.9 571.2 455.4 572.7 455.8 573.8C456.4 575.1 456.7 576 456.5 576.6C456.4 577.1 456.5 578 456.8 578.8C457.1 579.4 457.3 580.5 457.3 581.1C457.3 581.7 457.6 582.5 457.9 583C458.2 583.5 458.5 584.7 458.6 586.2C458.7 588.5 458.8 588.7 460.1 590C462.2 592.1 465.7 601.7 465 603.5C464.7 604.2 464.8 604.6 465.5 605.8C466 606.7 466.4 608 466.6 609.3C466.7 611.1 466.9 611.6 467.8 612.4C468.7 613.1 469 613.7 469.1 615C469.4 617 471.4 623.2 472.5 625.3C472.9 626.2 473.5 627.8 473.7 629C473.9 630.2 474.4 631.6 474.7 632.1C475.1 632.5 475.3 633.4 475.3 633.9C475.3 634.4 475.6 635.3 476 635.8C476.4 636.4 476.7 637.4 476.7 638C476.7 639.4 477.7 641.6 479.5 643.8C480.1 644.7 481.1 646.7 481.7 648.4C482.3 650.3 483.2 651.9 483.7 652.5C484.5 653.3 484.8 654.1 485 655.5C485.1 656.6 485.9 659 486.6 660.8C487.4 662.5 488 664.2 488 664.5C488 664.8 488.5 665.9 489.1 666.9C490.4 669.2 490.2 669.6 487.1 670.4C484.3 671.1 484.1 671.1 483 670.6ZM222.5 363.8C223.2 362 224.5 356.2 225.1 352.5C225.2 351.2 225.7 349.6 226.1 349C226.5 348.4 226.8 347.2 226.9 346.3C226.9 345.5 227.1 344.1 227.3 343.2C227.5 342.2 227.8 340.5 228 339.3C228.3 338.1 228.7 336.8 229 336.3C229.4 335.8 229.5 335 229.4 334.1C229.3 333.1 229.4 332.4 229.9 331.8C230.4 331 230.6 330.1 230.7 327.3C230.9 325 231.1 323.4 231.5 322.7C232 321.7 232.6 318.7 233 314.9C233.2 312.1 233.6 311.7 235 312.5C236.3 313.3 236.5 313.1 237.2 309.9C237.9 306.8 237.7 306.5 235.9 307.7C234.4 308.8 234.4 305.5 235.8 303.3C236.4 302.5 236.6 301.9 236.4 301.1C236.3 300.4 236.5 299.7 236.8 299.2C237.1 298.7 237.3 297.7 237.3 297C237.3 296.3 237.6 294.6 238 293.3C238.4 291.9 238.7 290.4 238.7 289.8C238.7 288.6 239.9 283.4 240.6 281.3C241.2 279.9 241.3 279.8 242.4 279.8C244.5 279.7 245 278.2 243.2 277.4C241.7 276.7 241.5 275.6 242.5 271.8C242.9 270 243.3 268.2 243.3 268C243.3 267.7 243.7 266.7 244.2 265.8C244.8 264.6 245 263.6 245 262.2C245 260.8 245.4 259.1 246.1 256.7C248.9 248.1 248.8 247.8 244.7 248.1C241.9 248.3 241.9 248.3 240.9 247.3C239.9 246.3 239.9 246.3 238.6 246.8C237.9 247.2 237 247.3 236.5 247.2C236 247.1 234.8 247.3 233.4 247.7C229.5 248.9 221.9 249.5 219.5 248.7C218.6 248.4 217.7 248.4 214.8 248.8C212.9 249.1 211 249.3 210.7 249.1C210.4 249 208.1 248.8 205.5 248.6C202.9 248.5 200 248.2 199 248C198 247.8 195.9 247.5 194.3 247.5C191.8 247.5 191.1 247.3 188.2 246C183.7 244.1 181.5 244.6 183.8 247C185 248.2 186.1 252 185.9 254.1C185.6 255.7 186.7 258.7 188.7 261.5C189.1 262.2 189.3 263.1 189.3 264.2C189.3 265.8 189.4 266 190.5 266.7C191.8 267.5 192.2 268.5 191.7 270C190.9 272.4 191.4 273.7 193.1 273.7C194.5 273.7 196 277.3 196 280.7C196 281.3 196.3 282.3 196.7 282.9C197.1 283.6 197.3 284.3 197.2 284.8C197.1 285.2 197.4 286.2 197.8 287.3C198.9 289.5 198.9 289.8 197.7 291.1C197.1 291.6 196.7 292.2 196.7 292.2C196.7 292.6 197.5 293.9 198 294.2C198.3 294.5 199.2 295.8 199.9 297.2C200.7 298.7 201.6 300.5 202.1 301.2C202.6 302.2 202.7 302.8 202.5 303.1C201.1 305 201.1 305.2 201.3 307.5C201.5 309.7 201.6 310 202.8 311.3C204.2 312.9 205.3 315.2 205.3 316.6C205.3 317.1 205.7 318.1 206.2 318.9C207.1 320.5 207.1 321.5 206.3 323.6C205.9 324.7 205.9 324.8 206.7 325.4C208.5 326.7 208.4 326.7 208.2 329C208 331.3 208 331.3 209.5 333.2C210.5 334.4 211 335.5 211 336.1C211 336.6 211.2 337.6 211.5 338.2C211.8 338.9 212.1 340.3 212.1 341.3C212.2 342.6 212.5 343.4 213.3 344.5C214.3 345.9 214.4 346.2 214.2 347.6C214.1 348.8 214.2 349.5 214.9 350.8C215.3 351.8 215.7 353.1 215.7 353.8C215.7 354.8 216 355.7 216.8 357C217.5 358 218 359 218 359.3C218 359.6 218.4 360.4 218.8 361.1C219.2 361.9 219.7 363 219.8 363.7C220.4 366.2 221.5 366.3 222.5 363.8ZM278.7 233.6C280.8 233.4 284.7 233.1 287.3 232.8C290 232.6 292.8 232.4 293.5 232.4C295.7 232.4 303.1 231.7 304.1 231.4C304.6 231.2 305.8 231 306.7 231C307.6 231 309.7 230.8 311.3 230.5C313 230.2 314.6 230 314.9 230.1C315.2 230.2 316.1 230.1 316.8 229.9C317.6 229.7 320.3 229.5 323 229.3C328.4 229 332.1 228.6 334.3 228.1C335.2 227.9 337.5 227.7 339.6 227.7C341.7 227.7 343.5 227.6 343.7 227.5C344 227.3 347.4 226.9 353.9 226.4C356 226.2 357.2 226 357.6 225.6C357.9 225.3 358.7 225 359.2 225C361.4 225 361.5 222.6 359.5 220.6C358.4 219.6 358.3 219.4 358.5 218.1C358.6 217.3 358.6 216.3 358.5 215.8C358.3 214.9 356.8 214.1 356.2 214.7C355.6 215.3 355.1 215 354 213.4C352.3 210.7 353.1 208.7 354.9 211C355.8 212 355.9 212 356.3 211.5C357.1 210.5 356.2 207 353.8 201.8C353.4 200.9 353 199.6 353 198.9C353 197.1 352 196.1 350.8 196.6C349.6 197.2 348.9 196.9 348 195.3C347 193.4 347.2 192.5 348.6 192.5C351.2 192.5 350.6 188.9 348.1 188.7C345.9 188.6 345.6 187.6 347.1 186.2C348.7 184.7 348.8 183.6 347.2 182.6C346 181.9 346 181.9 346.2 180C346.3 178.7 346.3 177.8 345.9 176.9C345.6 176.2 345.3 175 345.3 174.2C345.3 172.8 344.1 170.4 342.2 168.4C341.3 167.4 341.3 167.3 341.5 165.4C341.7 163.4 341.7 163.4 340.5 162.1C339.4 160.8 339.3 160.7 339.3 158.1C339.3 156.4 339.2 155.2 338.8 154.5C338.5 154 338.1 152.8 338 152C337.5 149.6 336.3 146.6 335.5 145.7C334.5 144.5 333.3 142.2 333.3 141.2C333.3 140.7 333 139.5 332.5 138.5C331.9 137.3 331.7 136.4 331.8 135.9C332.1 134.8 331.4 134.4 331 135.5C330.4 137 328.3 136 328.3 134.2C328.3 133.8 328 132.8 327.5 131.9C326.8 130.5 325.9 127.9 325.5 125.7C325.4 125.1 325.6 124 325.9 123.1C326.5 121.1 326.4 119.5 325.5 119.4C323.7 119.1 323.3 118.9 322.7 117.9C322.3 117.3 322 116.4 322 115.8C322 114.1 321.3 112.3 320.2 111.1C319.6 110.4 318.9 109.3 318.7 108.6C318.3 107.4 314.4 101.9 313.4 101.1C312.6 100.4 312 100.6 311.7 101.6C311.5 102.1 311 103 310.7 103.7C310.3 104.4 309.8 105.8 309.5 106.9C309.2 108.2 308.6 109.5 307.9 110.5C306.9 111.8 306.7 112.4 306.7 113.6C306.6 115.9 305.9 117.7 304.5 118.8C303.9 119.3 303.3 119.9 303.3 120.2C303.3 120.4 303 121 302.5 121.6C301.9 122.3 301.7 123.1 301.5 125.1C301.2 128.4 301.1 128.7 299 131.3C298 132.6 297.3 133.7 297.3 134.3C297.3 136 296.7 137.6 295.5 138.6C294.7 139.4 294.3 140 294.3 140.6C294.3 141.9 292.3 147.3 291.3 148.7C290.8 149.3 290.2 150.7 290 151.8C289.8 152.9 289.3 154.4 289 155.2C288.6 155.9 288.1 157.4 287.8 158.4C287.5 159.5 286.8 161 286.1 161.9C285.4 162.8 284.7 164.2 284.5 165.3C284.1 166.7 283.7 167.4 282.7 168.3C281.2 169.6 281.1 170.3 281.8 172.1C282.2 173.1 282.2 173.3 281.6 174.6C281.3 175.4 281 176.4 281 176.9C281 177.6 280.9 177.7 279.7 177.7C278.2 177.7 277.8 178.4 279 179C280.2 179.6 279.8 182.5 278 185.1C277.3 186.3 277.2 186.8 277.2 189.5C277.1 192.5 276.4 195.2 275.4 195.8C275.2 195.9 274.8 196.8 274.5 197.7C273.9 199.5 273.3 200 271.9 199.9C270.8 199.8 270.7 200.4 271.7 200.9C272.9 201.5 273.1 202.2 272.4 203.8C271.9 204.8 271.5 205.3 271 205.4C269.7 205.6 269.5 206.4 270.3 208C271.1 209.9 270.9 211.1 269.2 213.5C268.3 214.8 268 215.5 268 216.6C268 217.6 267.8 218.1 267.2 218.5C266.5 219 266.5 219.3 266.5 223.1C266.5 226.6 266.4 227.4 265.7 228.8C264.6 231.2 264.6 233.7 265.7 234C266.7 234.3 273.3 234.1 278.7 233.6ZM303.3 57.2C299.2 56 297.2 54.9 295.9 52.9C294.4 50.6 294.2 50.5 289.5 50.2C284.8 49.9 284.7 49.8 282.5 45.3C278.6 37.3 280.6 33.5 291 29.4C295.3 27.7 296.2 27.4 303.2 25.6C311.9 23.4 318.5 25.5 320.7 31.2C321.6 33.6 321.8 39.9 321.1 41.6C320.9 42.3 320.7 43.9 320.7 45.3C320.7 49.7 318.6 52.9 315.1 54.2C314.2 54.5 312.3 55.3 310.8 56C307.7 57.5 305.5 57.8 303.3 57.2Z" fill="currentColor" fill-rule="evenodd"></path></svg><p class="ui">by Maia Oazem</p></div>
+</div>
+<p class="meta" style="margin-top:24px">Neural activations symbolically represent your reading journey through this website. Votes and saved studies remain on this device only.</p>
+</div>
+</footer>
+<div aria-live="polite" class="toast" id="toast" role="status"></div>
+<script>
+(function(){
+'use strict';
+var $ = function(s, c){ return (c || document).querySelector(s); };
+var $$ = function(s, c){ return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+var RM = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var COR = { tinta:'#141414', suave:'#5e5b57', fio:'#d8d4cf', acento:'#c81e66', rosa:'#f6b4d0', branco:'#ffffff' };
+var WA = '5511941537453';
+var NS = 'http://www.w3.org/2000/svg';
+function el(t, a, p){ var e = document.createElementNS(NS, t); for (var k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; }
+function visivel(x){ return x && x.getClientRects().length > 0; }
+
+/* ---------- estado local ---------- */
+var CHAVE = 'ctxt.site.v1';
+var E = { ativ: 0, notas: {}, votos: {}, salvos: {}, ganhos: {}, abertos: {}, termos: {}, relogio: 0 };
+try { var g = JSON.parse(localStorage.getItem(CHAVE) || 'null'); if (g && typeof g === 'object') E = Object.assign(E, g); } catch (e) {}
+E.termos = E.termos || {}; E.relogio = E.relogio || 0;
+function guardar(){ try { localStorage.setItem(CHAVE, JSON.stringify(E)); } catch (e) {} }
+
+/* ---------- contador ---------- */
+var numEl = $('#ativ-num'), contEl = $('#contador'), mostrado = E.ativ;
+function fmt(n){ return String(Math.max(0, Math.round(n))).padStart(4, '0'); }
+numEl.textContent = fmt(E.ativ);
+function contar(alvo, de, ate, dur, f){
+  f = f || function(n){ return String(Math.round(n)); };
+  if (RM) { alvo.textContent = f(ate); return; }
+  var t0 = performance.now();
+  (function passo(t){ var p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3); alvo.textContent = f(de + (ate - de) * e); if (p < 1) requestAnimationFrame(passo); })(t0);
+}
+function pulsar(){ contEl.classList.add('pulsa'); setTimeout(function(){ contEl.classList.remove('pulsa'); }, 450); }
+function voo(origem){
+  if (RM || !origem || !visivel(origem)) return;
+  var a = origem.getBoundingClientRect(), b = $('.ponto', contEl).getBoundingClientRect();
+  for (var i = 0; i < 6; i++) {
+    var d = document.createElement('span'); d.className = 'voo'; document.body.appendChild(d);
+    var x0 = a.left + a.width / 2 + (Math.random() - .5) * 40, y0 = a.top + a.height / 2 + (Math.random() - .5) * 20;
+    var x1 = b.left + b.width / 2 - 3.5, y1 = b.top + b.height / 2 - 3.5;
+    var mx = (x0 + x1) / 2 + (Math.random() - .5) * 220, my = Math.min(y0, y1) - 60 - Math.random() * 120;
+    var an = d.animate([{ transform: 'translate(' + x0 + 'px,' + y0 + 'px) scale(.4)', opacity: 0 }, { transform: 'translate(' + mx + 'px,' + my + 'px) scale(1)', opacity: 1, offset: .45 }, { transform: 'translate(' + x1 + 'px,' + y1 + 'px) scale(.6)', opacity: .9 }], { duration: 800 + i * 70, easing: 'cubic-bezier(.4,0,.2,1)', fill: 'forwards' });
+    an.onfinish = (function(n){ return function(){ n.remove(); }; })(d);
+  }
+}
+function ganhar(n, origem){
+  var de = mostrado; E.ativ += n; mostrado = E.ativ; guardar(); voo(origem);
+  setTimeout(function(){ contar(numEl, de, E.ativ, 900, fmt); pulsar(); }, RM ? 0 : 650);
+}
+function ganharLeve(n){ E.ativ += n; mostrado = E.ativ; guardar(); numEl.textContent = fmt(E.ativ); pulsar(); }
+var toastEl = $('#toast'), toastT = null;
+function toast(msg){ toastEl.textContent = msg; toastEl.classList.add('on'); clearTimeout(toastT); toastT = setTimeout(function(){ toastEl.classList.remove('on'); }, 3600); }
+
+/* ---------- whatsapp e cópia ---------- */
+$$('[data-wa]').forEach(function(a){ a.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(a.getAttribute('data-wa')); });
+$$('.copiar').forEach(function(b){
+  b.addEventListener('click', function(){
+    var t = b.getAttribute('data-copiar');
+    var ok = function(){ toast("Email copied: " + t); };
+    var falha = function(){ var s = b.previousElementSibling; if (s) { var r = document.createRange(); r.selectNodeContents(s); var sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); } toast("Email selected. Copy it with Ctrl+C or ⌘C."); };
+    try { navigator.clipboard.writeText(t).then(ok, falha); } catch (e) { falha(); }
+  });
+});
+
+/* ---------- blocos e dobras: abre um, fecha os outros ---------- */
+var aoAbrir = {};
+function quandoAbrir(id, fn){ (aoAbrir[id] = aoAbrir[id] || []).push(fn); }
+var ancora = null;
+document.addEventListener('click', function(e){
+  var sm = e.target.closest && e.target.closest('details[data-grupo] > summary');
+  if (sm) ancora = { el: sm, top: sm.getBoundingClientRect().top };
+}, true);
+function segurar(d){
+  if (!ancora || ancora.el.parentNode !== d) return;
+  var a = ancora; ancora = null;
+  requestAnimationFrame(function(){
+    var dy = a.el.getBoundingClientRect().top - a.top;
+    if (Math.abs(dy) > 1) window.scrollTo({ top: window.scrollY + dy, behavior: 'instant' });
+  });
+}
+$$('details[data-grupo]').forEach(function(d){
+  if (d.open) E.abertos[d.id] = 1;
+  d.addEventListener('toggle', function(){
+    if (!d.open) { segurar(d); return; }
+    var gr = d.getAttribute('data-grupo');
+    $$('details[data-grupo="' + gr + '"]').forEach(function(o){ if (o !== d && o.open) o.open = false; });
+    segurar(d);
+    (aoAbrir[d.id] || []).forEach(function(fn){ fn(); });
+    if (!E.abertos[d.id]) { E.abertos[d.id] = 1; ganhar(d.classList.contains('bloco') ? 4 : 6, $('summary', d)); }
+  });
+});
+function navegar(sel){
+  var alvo = $(sel); if (!alvo) return;
+  if (window.abrirNaPasta) window.abrirNaPasta(alvo);
+  var bl = alvo.closest('details.bloco'); if (bl && !bl.open) bl.open = true;
+  if (alvo.tagName === 'DETAILS') alvo.open = true;
+  setTimeout(function(){ alvo.scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: 'start' }); }, 60);
+  alvo.classList.add('piscar'); setTimeout(function(){ alvo.classList.remove('piscar'); }, 1800);
+}
+$$('[data-ir]').forEach(function(a){ a.addEventListener('click', function(e){ e.preventDefault(); navegar(a.getAttribute('data-ir')); }); });
+$$('[data-ir-lista]').forEach(function(a){ a.addEventListener('click', function(e){ e.preventDefault(); $(a.getAttribute('data-ir-lista')).scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: 'start' }); }); });
+
+/* ---------- fortalecer / proteger ---------- */
+(function(){
+  var t = $('#troca'), ps = ["strengthen", "protect"], i = 0;
+  if (RM) return;
+  setInterval(function(){
+    t.classList.add('sai');
+    setTimeout(function(){ i = 1 - i; t.textContent = ps[i]; t.classList.remove('sai'); }, 360);
+  }, 2800);
+})();
+
+/* ---------- 1. rede de palavras e painel do termo ---------- */
+var TERMOS = {
+  "duplo": [
+    "dual focus",
+    "Developing human skills and improving AI outputs are complementary goals.",
+    "Sessions help teams develop their own thinking and turn what they learn into original contexts for enterprise AI."
+  ],
+  "neuro": [
+    "continuous learning",
+    "Building knowledge and perspective requires regular opportunities to read, reflect, and practice.",
+    "A weekly practice creates space to learn without always relying on AI's first answer."
+  ],
+  "leitura": [
+    "critical reading",
+    "The ability to read sources, understand arguments, and assess information before making decisions.",
+    "Individual reading of books and texts brings greater depth to conversations and decisions."
+  ],
+  "debate": [
+    "structured dialogue",
+    "A space where people from different disciplines compare interpretations, justify opinions, and learn together.",
+    "Exchanges between colleagues build shared knowledge and surface disagreements that AI may conceal."
+  ],
+  "escrita": [
+    "independent thinking",
+    "Forming a position before asking a tool to formulate one for us.",
+    "Collaborative writing captures reasoning, arguments, and decisions that can inform future AI use."
+  ],
+  "contextos": [
+    "original contexts",
+    "Documents containing concepts, criteria, and lessons developed by the team itself.",
+    "Each session produces material the team can test in enterprise AI to generate more context-aware responses."
+  ],
+  "bionico": [
+    "human–AI collaboration",
+    "A combination of human judgment, business knowledge, and AI processing capabilities.",
+    "The program strengthens people's knowledge and judgment while improving the context provided to AI tools."
+  ],
+  "atencao": [
+    "sustained attention",
+    "Essential for reading complex documents, noticing nuance, and asking relevant questions.",
+    "Activities without automatic answers create protected time for concentration and analysis."
+  ],
+  "interpretacao": [
+    "interpretation",
+    "The ability to understand what data, documents, and results really mean for an organization.",
+    "Reading and cross-functional discussion expand the perspectives used to evaluate AI-generated responses."
+  ],
+  "interdisciplinary thinking": [
+    "systems thinking",
+    "Connecting business functions, human impacts, and the consequences of decisions.",
+    "People with different perspectives create collective interpretations that can enrich AI contexts."
+  ],
+  "critica": [
+    "critical thinking",
+    "Questioning assumptions, evaluating evidence, and recognizing limitations—including in AI-generated answers.",
+    "Facilitated discussions strengthen argumentation and make human review part of the work process."
+  ],
+  "creativity": [
+    "applied creativity",
+    "Developing alternatives and new interpretations instead of merely selecting automated suggestions.",
+    "The team thinks before consulting AI, leaving room for ideas beyond the most statistically likely response."
+  ],
+  "memoria": [
+    "learning retention",
+    "The ability to retain and apply knowledge to new problems, even without the tool.",
+    "Reading, dialogue, and writing help the team make knowledge its own."
+  ],
+  "decisao": [
+    "decision-making autonomy",
+    "Exercising judgment, owning criteria, and deciding when a system should or should not be trusted.",
+    "Sessions prioritize human discussion and consensus before using AI as support."
+  ],
+  "diferenciacao": [
+    "differentiation",
+    "The ability to develop perspectives and solutions that reflect an organization's culture and expertise.",
+    "Team-generated contexts help reduce generic outputs and reflect the organization's accumulated knowledge."
+  ],
+  "protocolo": [
+    "weekly practice",
+    "An ongoing development practice rather than a one-off presentation.",
+    "The format includes 120 minutes per week across five stages, tracking participants' perceptions of human development and AI use."
+  ]
+};
+(function(){
+  var rede = $('#rede'), cv = $('canvas', rede), ctx = cv.getContext('2d'), pals = $$('.pal', rede);
+  var nos = [], arestas = [], pulsos = [], W = 0, H = 0, dpr = 1, foco = -1, sel = -1, vivo = true, ultimo = 0, abertas = false, VAL = 8;
+  var painel = $('#painel');
+  function mostrarTermo(k, i, clicado){
+    var t = TERMOS[k]; if (!t) return;
+    $('#p-termo').textContent = t[0]; $('#p-oque').textContent = t[1]; $('#p-como').textContent = t[2];
+    painel.classList.remove('troca-on'); void painel.offsetWidth; painel.classList.add('troca-on');
+    sel = i;
+    if (!clicado) return;
+    painel.classList.remove('fechado');
+    pals.forEach(function(p, j){ p.setAttribute('aria-pressed', j === i); });
+    if (!E.termos[k]) { E.termos[k] = 1; guardar(); ganhar(VAL, pals[i]); contar($('#p-n'), 0, VAL, 900, function(n){ return '+' + Math.round(n); }); $('#p-msg').textContent = "neural activations from this keyword"; }
+    else { $('#p-n').textContent = '+' + VAL; $('#p-msg').textContent = "you have already earned the activations for this keyword"; }
+    pals[i].classList.add('visto');
+    var r = painel.getBoundingClientRect();
+    if (r.bottom > innerHeight || r.top < 0) painel.scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: 'nearest' });
+  }
+  function rng(s){ return function(){ s = (s * 16807) % 2147483647; return (s - 1) / 2147483646; }; }
+  function montar(){
+    W = rede.clientWidth; H = rede.clientHeight; dpr = Math.min(2, window.devicePixelRatio || 1);
+    cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var estreito = W < 640, ph = estreito ? 34 : 42, r = rng(1171);
+    rede.style.setProperty('--ph', ph + 'px');
+    var rects = [], topo = 44, mx = estreito ? 6 : 24;
+    nos = [];
+    if (estreito) {
+      var linhas = [], atual = [], larg = 0, dispo = W - 2 * mx;
+      pals.forEach(function(p){ var w = $('span', p).scrollWidth + 2; p.dataset.w = w; if (atual.length && larg + w + 10 > dispo) { linhas.push(atual); atual = []; larg = 0; } atual.push({ p: p, w: w }); larg += w + 10; });
+      if (atual.length) linhas.push(atual);
+      var passoY = (H - topo - 10) / linhas.length;
+      linhas.forEach(function(l, li){
+        var soma = l.reduce(function(a, o){ return a + o.w; }, 0), sobra = Math.max(0, dispo - soma), x = mx;
+        var cortes = l.map(function(){ return r(); }), tot = cortes.reduce(function(a, b){ return a + b; }, 0) + r();
+        l.forEach(function(o, k){
+          x += sobra * cortes[k] / tot; var cy = topo + passoY * (li + .5) + (r() - .5) * Math.max(0, passoY - ph - 8);
+          rects.push({ x: x + o.w / 2, y: cy, w: o.w, h: ph });
+          nos.push({ pal: o.p, bx: x + o.w / 2, by: cy, w: o.w, h: ph, amp: 2 + r() * 2, ph: r() * 6.28, sp: .00035 + r() * .0003 });
+          x += o.w;
+        });
+      });
+    } else {
+      pals.forEach(function(p){
+        var w = $('span', p).scrollWidth + 2, h = ph, x, y, ok = false;
+        for (var t = 0; t < 600 && !ok; t++) {
+          x = mx + w / 2 + r() * (W - w - 2 * mx); y = topo + h / 2 + r() * (H - h - topo - 14);
+          ok = rects.every(function(q){ return Math.abs(x - q.x) > (w + q.w) / 2 + 26 || Math.abs(y - q.y) > (h + q.h) / 2 + 18; });
+        }
+        rects.push({ x: x, y: y, w: w, h: h }); p.dataset.w = w;
+        nos.push({ pal: p, bx: x, by: y, w: w, h: h, amp: 3 + r() * 5, ph: r() * 6.28, sp: .00035 + r() * .0003 });
+      });
+    }
+    var nd = estreito ? 16 : 46;
+    for (var k = 0; k < nd; k++) {
+      var x2, y2, ok2 = false;
+      for (var t2 = 0; t2 < 200 && !ok2; t2++) {
+        x2 = 8 + r() * (W - 16); y2 = topo + r() * (H - topo - 8);
+        ok2 = rects.every(function(q){ return Math.abs(x2 - q.x) > q.w / 2 + 16 || Math.abs(y2 - q.y) > q.h / 2 + 16; });
+      }
+      nos.push({ bx: x2, by: y2, r: 2.5 + r() * 4.5, cheio: r() > .35, amp: 6 + r() * 12, ph: r() * 6.28, sp: .0003 + r() * .0004 });
+    }
+    arestas = [];
+    var lim = estreito ? 120 : 190;
+    nos.forEach(function(a, i){
+      var viz = nos.map(function(b, j){ return { j: j, d: Math.hypot(a.bx - b.bx, a.by - b.by) }; }).filter(function(o){ return o.j !== i && o.d < lim; }).sort(function(p, q){ return p.d - q.d; }).slice(0, a.pal ? 3 : 2);
+      viz.forEach(function(o){ var lo = Math.min(i, o.j), hi = Math.max(i, o.j); if (!arestas.some(function(e){ return e[0] === lo && e[1] === hi; })) arestas.push([lo, hi]); });
+    });
+    pals.forEach(function(p){ p.style.width = p.classList.contains('semente') ? '14px' : p.dataset.w + 'px'; });
+    pos(performance.now()); desenhar(performance.now());
+  }
+  function idx(p){ for (var i = 0; i < nos.length; i++) if (nos[i].pal === p) return i; return -1; }
+  function pos(t){
+    nos.forEach(function(n){ n.x = n.bx + Math.sin(t * n.sp + n.ph) * (RM ? 0 : n.amp); n.y = n.by + Math.cos(t * n.sp * .8 + n.ph) * (RM ? 0 : n.amp * .7); if (n.pal) n.pal.style.transform = 'translate(' + n.x.toFixed(1) + 'px,' + n.y.toFixed(1) + 'px) translate(-50%,-50%)'; });
+  }
+  function desenhar(t){
+    ctx.clearRect(0, 0, W, H);
+    var f = foco >= 0 ? foco : (sel >= 0 ? idx(pals[sel]) : -1);
+    arestas.forEach(function(e){
+      var a = nos[e[0]], b = nos[e[1]], on = f >= 0 && (e[0] === f || e[1] === f);
+      ctx.strokeStyle = on ? COR.acento : COR.fio; ctx.lineWidth = on ? 1.4 : 1;
+      ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+    });
+    nos.forEach(function(n){ if (n.pal) return; ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, 6.2832); if (n.cheio) { ctx.fillStyle = COR.tinta; ctx.fill(); } else { ctx.fillStyle = COR.branco; ctx.fill(); ctx.strokeStyle = COR.tinta; ctx.lineWidth = 1; ctx.stroke(); } });
+    pulsos = pulsos.filter(function(p){ return t - p.t0 < p.dur; });
+    pulsos.forEach(function(p){
+      var e = arestas[p.e]; if (!e) return; var a = nos[p.dir ? e[0] : e[1]], b = nos[p.dir ? e[1] : e[0]], k = (t - p.t0) / p.dur;
+      ctx.beginPath(); ctx.arc(a.x + (b.x - a.x) * k, a.y + (b.y - a.y) * k, 3, 0, 6.2832); ctx.fillStyle = COR.acento; ctx.fill();
+    });
+  }
+  function laco(t){
+    if (!vivo) return;
+    pos(t);
+    var f = foco >= 0 ? foco : (sel >= 0 ? idx(pals[sel]) : -1);
+    if (!RM && t - ultimo > (f >= 0 ? 160 : 320) && arestas.length) {
+      ultimo = t;
+      var cand = f >= 0 ? arestas.map(function(e, i){ return (e[0] === f || e[1] === f) ? i : -1; }).filter(function(i){ return i >= 0; }) : null;
+      var ei = cand && cand.length && Math.random() < .7 ? cand[Math.floor(Math.random() * cand.length)] : Math.floor(Math.random() * arestas.length);
+      pulsos.push({ e: ei, t0: t, dur: 700 + Math.random() * 600, dir: f >= 0 ? arestas[ei][0] === f : Math.random() > .5 });
+    }
+    desenhar(t);
+    requestAnimationFrame(laco);
+  }
+  function abrir(){
+    if (abertas) return; abertas = true;
+    pals.forEach(function(p, i){
+      var fn = function(){ p.classList.remove('semente'); p.style.width = p.dataset.w + 'px'; };
+      if (RM) fn(); else setTimeout(fn, 250 + i * 110);
+    });
+  }
+  pals.forEach(function(p, i){
+    p.setAttribute('aria-pressed', 'false');
+    if (E.termos[p.getAttribute('data-t')]) p.classList.add('visto');
+    p.addEventListener('mouseenter', function(){ foco = idx(p); });
+    p.addEventListener('mouseleave', function(){ foco = -1; });
+    p.addEventListener('focus', function(){ foco = idx(p); });
+    p.addEventListener('blur', function(){ foco = -1; });
+    p.addEventListener('click', function(){ mostrarTermo(p.getAttribute('data-t'), i, true); });
+  });
+  var rz; window.addEventListener('resize', function(){ clearTimeout(rz); rz = setTimeout(montar, 180); });
+  montar();
+  mostrarTermo('bionico', pals.findIndex(function(p){ return p.getAttribute('data-t') === 'bionico'; }), false);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ montar(); abrir(); }); else abrir();
+  setTimeout(abrir, 1500);
+  if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ var v = es[0].isIntersecting; if (v && !vivo) { vivo = true; requestAnimationFrame(laco); } else if (!v) vivo = false; }).observe(rede);
+  requestAnimationFrame(laco);
+})();
+
+/* ---------- 2. texto que aparece com a rolagem ---------- */
+(function(){
+  var alvos = $$('.revelar');
+  alvos.forEach(function(x){
+    var walker = document.createTreeWalker(x, NodeFilter.SHOW_TEXT), nodes = [], n;
+    while ((n = walker.nextNode())) nodes.push(n);
+    nodes.forEach(function(tn){
+      var frag = document.createDocumentFragment();
+      tn.nodeValue.split(/(\s+)/).forEach(function(parte){
+        if (!parte) return;
+        if (/^\s+$/.test(parte)) frag.appendChild(document.createTextNode(parte));
+        else { var s = document.createElement('span'); s.className = 'w'; s.textContent = parte; frag.appendChild(s); }
+      });
+      tn.parentNode.replaceChild(frag, tn);
+    });
+    x._w = $$('.w', x); x._k = -1;
+  });
+  function rolar(){
+    var vh = innerHeight;
+    alvos.forEach(function(x){
+      var r = x.getBoundingClientRect(), p = (vh * .92 - r.top) / (r.height + vh * .45);
+      var k = Math.floor(Math.max(0, Math.min(1, p)) * x._w.length * 1.08);
+      if (k === x._k) return; x._k = k;
+      x._w.forEach(function(w, i){ w.classList.toggle('on', i < k); });
+    });
+  }
+  window.addEventListener('scroll', rolar, { passive: true }); window.addEventListener('resize', rolar); rolar();
+})();
+
+/* ---------- 3. nota da neuroplasticidade ---------- */
+(function(){
+  var b = $('#nota-neuro'), c = $('#nota-neuro-c'), n = $('#nota-neuro-n'), VAL = 27;
+  if (E.notas.neuro) n.textContent = VAL;
+  b.addEventListener('click', function(){
+    var abrir = c.hidden; c.hidden = !abrir; b.setAttribute('aria-expanded', abrir);
+    if (abrir && !E.notas.neuro) { E.notas.neuro = true; contar(n, 0, VAL, 1400); ganhar(VAL, b); }
+  });
+})();
+
+/* ---------- 4. círculos tangentes: Londres, GPS, IA ---------- */
+(function(){
+  var box = $('#tang-svg'), itens = $$('.item-t');
+  var R = [82, 160, 232], cx = 240, y0 = 34, W = 480, H = y0 + 2 * R[2] + 20;
+  var svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, role: 'img', 'aria-label': "Three tangent circles: London taxi drivers, GPS, and AI" }, box);
+  var nomes = ["London · 2000", 'GPS · 2020', "AI"], aneis = [], textos = [], nos = [];
+  for (var i = 2; i >= 0; i--) aneis[i] = el('circle', { cx: cx, cy: y0 + R[i], r: R[i], class: 'anel', tabindex: 0, 'aria-label': nomes[i] }, svg);
+  nos[0] = [el('circle', { cx: cx, cy: y0, r: 4.5, class: 'no' }, svg)];
+  for (var k = 0; k < 2; k++) {
+    var y = y0 + 2 * R[k], c2 = y0 + R[k + 1], hw = Math.sqrt(R[k + 1] * R[k + 1] - (y - c2) * (y - c2));
+    el('line', { x1: cx - hw, y1: y, x2: cx + hw, y2: y, class: 'corda' }, svg);
+    nos[k + 1] = [cx - hw, cx, cx + hw].map(function(x){ return el('circle', { cx: x, cy: y, r: 4.5, class: 'no' }, svg); });
+  }
+  for (var j = 0; j < 3; j++) {
+    var top = j === 0 ? y0 : y0 + 2 * R[j - 1], bot = y0 + 2 * R[j];
+    var t = el('text', { x: cx, y: (top + bot) / 2 + 8, 'text-anchor': 'middle' }, svg); t.textContent = nomes[j]; textos[j] = t;
+    var nt = el('text', { x: cx, y: top + 24, 'text-anchor': 'middle', class: 'num' }, svg); nt.textContent = '0' + (j + 1);
+  }
+  function ativar(i){
+    aneis.forEach(function(a, x){ a.classList.toggle('ativo', x === i); });
+    textos.forEach(function(a, x){ a.classList.toggle('ativo', x === i); });
+    nos.forEach(function(gg, x){ gg.forEach(function(n){ n.classList.toggle('ativo', x === i); }); });
+    itens.forEach(function(a, x){ a.classList.toggle('ativo', x === i); });
+  }
+  aneis.forEach(function(a, i){ a.addEventListener('click', function(){ ativar(i); }); a.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); ativar(i); } }); });
+  itens.forEach(function(it, i){ it.addEventListener('mouseenter', function(){ ativar(i); }); it.addEventListener('click', function(e){ if (!e.target.closest('button')) ativar(i); }); });
+  ativar(0);
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) ativar(itens.indexOf(e.target)); }); }, { rootMargin: '-45% 0px -45% 0px' });
+    itens.forEach(function(it){ io.observe(it); });
+  }
+})();
+
+/* ---------- anel de pontos ---------- */
+function anelPontos(cv, op){
+  var ctx = cv.getContext('2d'), S = cv.width, c = S / 2, pts = [], aneis = op.aneis || [8, 16, 24, 32], raio = S * .42, t0 = performance.now(), vivo = true;
+  aneis.forEach(function(n, k){ var r = raio * (k + 1) / aneis.length; for (var i = 0; i < n; i++) { var a = i / n * 6.2832 + k * .3; pts.push({ k: k, a: a, r: r, sx: Math.random() * S, sy: Math.random() * S }); } });
+  var soltos = []; for (var s = 0; s < (op.soltos || 0); s++) soltos.push({ x: Math.random() * S, y: Math.random() * S, vx: (Math.random() - .5) * .5, vy: (Math.random() - .5) * .5 });
+  function ease(x){ return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; }
+  function forma(t){
+    if (op.modo === 'montar') return Math.min(1, (t - t0) / 1500);
+    var u = ((t - t0) % 8200) / 1000;
+    if (u < 3.2) return 1; if (u < 4.6) return 1 - (u - 3.2) / 1.4; if (u < 5.6) return 0; if (u < 7.4) return (u - 5.6) / 1.8; return 1;
+  }
+  function quadro(t){
+    if (!vivo) return;
+    var f = RM ? 1 : ease(forma(t)), rot = RM ? 0 : t * .00004;
+    ctx.clearRect(0, 0, S, S);
+    pts.forEach(function(p){
+      var a = p.a + rot * (p.k % 2 ? -1 : 1), tx = c + Math.cos(a) * p.r, ty = c + Math.sin(a) * p.r;
+      ctx.beginPath(); ctx.arc(p.sx + (tx - p.sx) * f, p.sy + (ty - p.sy) * f, op.r || S * .011, 0, 6.2832); ctx.fillStyle = op.cor; ctx.fill();
+    });
+    soltos.forEach(function(p){ if (!RM) { p.x += p.vx; p.y += p.vy; if (p.x < 0 || p.x > S) p.vx *= -1; if (p.y < 0 || p.y > S) p.vy *= -1; } ctx.beginPath(); ctx.arc(p.x, p.y, (op.r || S * .011) * .8, 0, 6.2832); ctx.fillStyle = op.cor; ctx.fill(); });
+    if ((op.modo === 'montar' && forma(t) >= 1 && !op.soltos) || RM) return;
+    requestAnimationFrame(quadro);
+  }
+  requestAnimationFrame(quadro);
+  return { parar: function(){ vivo = false; }, seguir: function(){ if (!vivo) { vivo = true; requestAnimationFrame(quadro); } } };
+}
+
+/* ---------- 5. voto e prêmio ---------- */
+(function(){
+  var box = $('#voto-q1'), bs = $$('[data-voto]', box), pr = $('#premio'), VAL = 40;
+  function txt(){ return "You " + (E.votos.q1 === 'sim' ? "agree" : "disagree") + ". Your response was saved on this device."; }
+  function marcar(){ bs.forEach(function(b){ b.setAttribute('aria-pressed', E.votos.q1 === b.getAttribute('data-voto')); }); }
+  function mostrar(animar){
+    pr.hidden = false; $('#premio-txt').textContent = txt();
+    anelPontos($('canvas', pr), { modo: 'montar', aneis: [6, 12, 18], cor: COR.tinta, r: 4.5 });
+    if (animar) contar($('#premio-n'), 0, VAL, 1300); else $('#premio-n').textContent = VAL;
+  }
+  bs.forEach(function(b){ b.addEventListener('click', function(){
+    var primeira = !E.votos.q1; E.votos.q1 = b.getAttribute('data-voto'); guardar(); marcar();
+    if (primeira) { mostrar(true); ganhar(VAL, b); } else $('#premio-txt').textContent = txt();
+  }); });
+  marcar(); if (E.votos.q1) mostrar(false);
+})();
+
+/* ---------- 6. outra coisa é possível ---------- */
+(function(){
+  var cv = $('#anel-rosa'), a = anelPontos(cv, { modo: 'ciclo', aneis: [8, 16, 24, 32, 40], cor: COR.tinta, soltos: 9, r: 7 });
+  if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ if (es[0].isIntersecting) a.seguir(); else a.parar(); }).observe(cv);
+})();
+
+/* ---------- 7. diagramas: etapas → c/txt. → benefícios ---------- */
+function convergencia(box, esq, dir, cabs){
+  var curvasE = [], curvasD = [], vivo = false, pulsos = [], ultimo = 0, gp, montado = false;
+  function montar(){
+    var W = box.clientWidth; if (!W) return;
+    box.innerHTML = ''; curvasE = []; curvasD = []; pulsos = [];
+    var est = W < 720, fs = est ? 12.5 : 15, g = est ? 30 : 36;
+    var nT = Math.max(Math.ceil(esq.length / 2), Math.ceil(dir.length / 2)), nB = Math.max(Math.floor(esq.length / 2), Math.floor(dir.length / 2));
+    var xL = est ? 92 : Math.max(200, W * .19), xR = est ? W - 112 : Math.min(W - 230, W * .79), cx = (xL + xR) / 2, cy = 26 + (nT + .5) * g, H = cy + (nB + 1) * g + 16;
+    var svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, role: 'img', 'aria-label': "The club's five stages converge at c/txt. and lead to a series of benefits" }, box);
+    var gc = el('g', {}, svg); gp = el('g', {}, svg);
+    function ys(n){ var top = Math.ceil(n / 2), out = []; for (var i = 0; i < n; i++) out.push(i < top ? cy - (top - i + .5) * g : cy + (i - top + 1.5) * g); return out; }
+    function curva(x0, y, lado){ var a = x0 + lado * 36, k = (cx - a) * .42; return 'M' + x0 + ' ' + y + 'L' + a + ' ' + y + 'C' + (a + k) + ' ' + y + ' ' + (cx - k) + ' ' + cy + ' ' + cx + ' ' + cy; }
+    function rotulo(txt, alvo, x, y, anchor, path){
+      var pai = alvo ? el('a', { href: alvo }, svg) : el('g', {}, svg);
+      var t = el('text', { x: x, y: y + fs * .35, 'text-anchor': anchor, 'font-size': fs, class: 'lbl' }, pai); t.textContent = txt;
+      pai.addEventListener('mouseenter', function(){ path.classList.add('on'); pai.classList.add('on'); });
+      pai.addEventListener('mouseleave', function(){ path.classList.remove('on'); pai.classList.remove('on'); });
+      if (alvo) { pai.addEventListener('click', function(e){ e.preventDefault(); navegar(alvo); }); pai.addEventListener('focus', function(){ path.classList.add('on'); }); pai.addEventListener('blur', function(){ path.classList.remove('on'); }); }
+    }
+    var yE = ys(esq.length), yD = ys(dir.length);
+    esq.forEach(function(it, i){ var p = el('path', { d: curva(xL + 8, yE[i], 1), class: 'curva' }, gc); curvasE.push(p); rotulo(it[0], it[1], xL, yE[i], 'end', p); });
+    dir.forEach(function(it, i){ var p = el('path', { d: curva(xR - 8, yD[i], -1), class: 'curva' }, gc); curvasD.push(p); rotulo(it[0], it[1], xR, yD[i], 'start', p); });
+    if (!est) {
+      var t1 = el('text', { x: xL + 12, y: cy + 8, class: 'cab', 'font-size': 22 }, svg); t1.textContent = cabs[0];
+      var t2 = el('text', { x: xR - 12, y: cy + 8, class: 'cab', 'font-size': 22, 'text-anchor': 'end' }, svg); t2.textContent = cabs[1];
+    }
+    var tc = el('text', { x: cx, y: cy - (est ? 18 : 26), class: 'centro', 'font-size': est ? 20 : 28, 'text-anchor': 'middle' }, svg); tc.textContent = 'c/txt.';
+    el('circle', { cx: cx, cy: cy, r: est ? 6 : 8, fill: '#141414' }, svg);
+    curvasE.concat(curvasD).forEach(function(c){ c._len = c.getTotalLength(); });
+    montado = true;
+  }
+  function laco(t){
+    if (!vivo) return;
+    if (!RM && t - ultimo > 300 && curvasE.length) {
+      ultimo = t;
+      var d = el('circle', { r: 3, class: 'pulso' }, gp);
+      pulsos.push({ a: curvasE[Math.floor(Math.random() * curvasE.length)], b: curvasD[Math.floor(Math.random() * curvasD.length)], d: d, t0: t, dur: 2200 + Math.random() * 600 });
+    }
+    pulsos = pulsos.filter(function(p){
+      var k = (t - p.t0) / p.dur; if (k >= 1) { p.d.remove(); return false; }
+      var pt = k < .5 ? p.a.getPointAtLength(k * 2 * p.a._len) : p.b.getPointAtLength((1 - (k - .5) * 2) * p.b._len);
+      p.d.setAttribute('cx', pt.x); p.d.setAttribute('cy', pt.y); return true;
+    });
+    requestAnimationFrame(laco);
+  }
+  var rz; window.addEventListener('resize', function(){ clearTimeout(rz); rz = setTimeout(function(){ if (visivel(box)) montar(); }, 200); });
+  function ligar(){ if (box.clientWidth) montar(); if (!vivo) { vivo = true; requestAnimationFrame(laco); } }
+  if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ if (es[0].isIntersecting) { if (!montado) montar(); if (!vivo) { vivo = true; requestAnimationFrame(laco); } } else vivo = false; }).observe(box);
+  return { ligar: ligar };
+}
+var ETAPAS = [['Check-in', null], ["Reading", null], ["Discussion", null], ["Writing", null], ["Context", null]];
+var convH = convergencia($('#conv-h'), ETAPAS, [["Attention", '#mh-atencao'], ["Interpretation", '#mh-interpretacao'], ["Interdisciplinary thinking", '#mh-interdisciplinaridade'], ["Critical thinking", '#mh-critica'], ["Creativity", '#mh-criatividade'], ["Memory", '#mh-memoria'], ["Decision-making", '#mh-decisao']], ["the club", "for people"]);
+var convM = convergencia($('#conv-m'), ETAPAS, [["Originality", '#ms-autoralidade'], ["Differentiation", '#ms-diferenciacao']], ["the club", "for AI systems"]);
+quandoAbrir('bl-humanos', function(){ setTimeout(convH.ligar, 30); });
+quandoAbrir('bl-maquinas', function(){ setTimeout(convM.ligar, 30); });
+
+/* ---------- 8. pesquisas: salvar, concordar, discordar ---------- */
+(function(){
+  var ICONE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5H18V20.5L12 15.8L6 20.5Z"/></svg>';
+  function nSalvos(){ $('#salvos-n').textContent = Object.keys(E.salvos).filter(function(k){ return E.salvos[k]; }).length; }
+  $$('.pesq').forEach(function(p){
+    var id = p.getAttribute('data-id'), txt = $$('.p1, .p2', p).map(function(x){ return x.textContent; }).join(' ').trim(), n = Math.max(12, Math.round(txt.split(/\s+/).length / 2.2));
+    var acoes = document.createElement('div'); acoes.className = 'acoes';
+    acoes.innerHTML = '<button class="contorno salvar" type="button" aria-pressed="false">' + ICONE + '<span>Save</span></button>' +
+      '<button class="contorno" type="button" data-v="sim" aria-pressed="false">Agree</button>' +
+      '<button class="contorno" type="button" data-v="nao" aria-pressed="false">Disagree</button>' +
+      '<span class="ganho">this reading: +' + n + ' activations</span>';
+    var aviso = document.createElement('p'); aviso.className = 'aviso-voto'; aviso.setAttribute('role', 'status'); aviso.style.marginTop = '8px';
+    var cont = $('.p1', p).parentNode; cont.appendChild(acoes); cont.appendChild(aviso);
+    var sv = $('.salvar', acoes), vs = $$('[data-v]', acoes);
+    function marcar(){ sv.setAttribute('aria-pressed', !!E.salvos[id]); $('span', sv).textContent = E.salvos[id] ? "Saved" : "Save"; vs.forEach(function(b){ b.setAttribute('aria-pressed', E.votos[id] === b.getAttribute('data-v')); }); }
+    sv.addEventListener('click', function(){
+      E.salvos[id] = !E.salvos[id]; guardar(); marcar(); nSalvos();
+      if (E.salvos[id]) {
+        if (!E.ganhos['s-' + id]) { E.ganhos['s-' + id] = 1; ganhar(n, sv); toast("Saved on this device only · +" + n + " neural activations from this reading."); }
+        else toast("Saved on this device only.");
+      } else toast("Removed from studies saved on this device.");
+    });
+    vs.forEach(function(b){ b.addEventListener('click', function(){
+      var primeira = !E.votos[id]; E.votos[id] = b.getAttribute('data-v'); guardar(); marcar();
+      var qual = E.votos[id] === 'sim' ? "You agree" : "You disagree";
+      if (primeira) { ganhar(5, b); aviso.textContent = "+5 neural activations · " + qual + ". Response saved on this device."; }
+      else aviso.textContent = qual + ". Response updated on this device.";
+    }); });
+    marcar();
+  });
+  nSalvos();
+})();
+
+$$('.revelar-btn').forEach(function(b){
+  b.addEventListener('click', function(){ var r = document.getElementById(b.getAttribute('data-alvo')), ab = r.classList.toggle('aberto'); b.textContent = ab ? "Show less" : "Read more"; b.setAttribute('aria-expanded', ab); });
+});
+
+/* ---------- 9. relógio do protocolo ---------- */
+(function(){
+  var box = $('#relogio'), passos = $$('.passo'), bloco = $('#bl-empresas');
+  var S = 460, c = S / 2, R = 182, svg = el('svg', { viewBox: '0 0 ' + S + ' ' + S }, box), mins = [], marcos = [];
+  el('circle', { cx: c, cy: c, r: R - 34, fill: 'none', stroke: '#d8d4cf', 'stroke-width': 1 }, svg);
+  for (var i = 0; i < 120; i++) { var a = i / 120 * 6.2832 - 1.5708; mins.push(el('circle', { cx: c + Math.cos(a) * R, cy: c + Math.sin(a) * R, r: 3.4, class: 'min' }, svg)); }
+  var pont = el('line', { x1: c, y1: c - R + 34, x2: c, y2: c - R + 10, class: 'ponteiro' }, svg), ponta = el('circle', { cx: c, cy: c - R, r: 6, fill: '#c81e66' }, svg);
+  passos.forEach(function(p, k){
+    var ini = +p.getAttribute('data-ini'), a = ini / 120 * 6.2832 - 1.5708;
+    marcos.push(el('circle', { cx: c + Math.cos(a) * (R + 16), cy: c + Math.sin(a) * (R + 16), r: 6, class: 'marco' }, svg));
+    var t = el('text', { x: c + Math.cos(a) * (R + 38), y: c + Math.sin(a) * (R + 38) + 4, 'text-anchor': 'middle', class: 'mrot' }, svg); t.textContent = '0' + (k + 1);
+  });
+  var total = el('text', { x: c, y: c - 78, 'text-anchor': 'middle', class: 'total' }, svg); total.textContent = '120 MIN';
+  var hora = el('text', { x: c, y: c - 8, 'text-anchor': 'middle', class: 'hora' }, svg);
+  var etapa = el('text', { x: c, y: c + 28, 'text-anchor': 'middle', class: 'etapa' }, svg);
+  var gSobe = el('g', {}, svg);
+  var ultimoN = -1;
+  function atualizar(){
+    if (!bloco || !visivel(bloco)) return;
+    var linha = innerHeight * .5, m = 0, ativo = -1;
+    passos.forEach(function(p, k){
+      var r = p.getBoundingClientRect(), ini = +p.getAttribute('data-ini'), dur = +p.getAttribute('data-dur');
+      if (r.top <= linha) { ativo = k; m = ini + Math.min(1, (linha - r.top) / r.height) * dur; }
+    });
+    var ult = passos[passos.length - 1].getBoundingClientRect(); if (ult.bottom < linha) m = 120;
+    m = Math.max(0, Math.min(120, m));
+    var n = Math.floor(m);
+    if (n !== ultimoN) { mins.forEach(function(d, i){ d.classList.toggle('feito', i < n); }); ultimoN = n; }
+    if (n > E.relogio) { ganharLeve(n - E.relogio); E.relogio = n; guardar(); }
+    var ang = m / 120 * 6.2832 - 1.5708;
+    pont.setAttribute('x1', c + Math.cos(ang) * (R - 34)); pont.setAttribute('y1', c + Math.sin(ang) * (R - 34)); pont.setAttribute('x2', c + Math.cos(ang) * (R - 10)); pont.setAttribute('y2', c + Math.sin(ang) * (R - 10));
+    ponta.setAttribute('cx', c + Math.cos(ang) * R); ponta.setAttribute('cy', c + Math.sin(ang) * R);
+    var hh = Math.floor(m / 60), mm = Math.floor(m % 60);
+    hora.textContent = (hh < 10 ? '0' : '') + hh + ':' + (mm < 10 ? '0' : '') + mm;
+    etapa.textContent = ativo >= 0 ? passos[ativo].getAttribute('data-nome') : "arrival";
+    passos.forEach(function(p, k){ p.classList.toggle('ativo', k === ativo); });
+    marcos.forEach(function(d, k){ d.classList.toggle('on', k <= ativo); });
+  }
+  window.addEventListener('scroll', atualizar, { passive: true }); window.addEventListener('resize', atualizar);
+  quandoAbrir('bl-empresas', function(){ setTimeout(atualizar, 30); });
+  hora.textContent = '00:00'; etapa.textContent = "arrival";
+  atualizar();
+  /* palavras dos benefícios subindo dentro do relógio */
+  var PALAVRAS = ["attention", "interpretation", "originality", "critical thinking", "interdisciplinary thinking", "creativity", "differentiation", "memory", "decision-making", "human ROI"];
+  var sobem = [], ultimo = 0, iw = 0, vivo = false;
+  function laco(t){
+    if (!vivo) return;
+    if (t - ultimo > 1150) {
+      ultimo = t; var w = PALAVRAS[iw++ % PALAVRAS.length], maq = /autoralidade|diferenciação/.test(w);
+      var tx = el('text', { x: c, y: c + 126, 'text-anchor': 'middle', class: 'sobe', fill: maq ? '#c81e66' : '#141414', opacity: 0 }, gSobe); tx.textContent = w;
+      sobem.push({ t: tx, t0: t });
+    }
+    sobem = sobem.filter(function(s){
+      var k = (t - s.t0) / 3200; if (k >= 1) { s.t.remove(); return false; }
+      s.t.setAttribute('y', (c + 126 - k * 82).toFixed(1));
+      s.t.setAttribute('opacity', (k < .25 ? k / .25 : k > .7 ? (1 - k) / .3 : 1).toFixed(2));
+      return true;
+    });
+    requestAnimationFrame(laco);
+  }
+  if (!RM && 'IntersectionObserver' in window) new IntersectionObserver(function(es){ var v = es[0].isIntersecting; if (v && !vivo) { vivo = true; requestAnimationFrame(laco); } else if (!v) vivo = false; }).observe(box);
+})();
+
+/* ---------- 10. pontos neuronais passeando no protocolo ---------- */
+(function(){
+  var cv = $('#neuro'), sec = $('#prot-wrap'), ctx = cv.getContext('2d'), pts = [], W, H, XW, dpr, vivo = false;
+  function montar(){
+    W = sec.clientWidth; H = sec.clientHeight; if (!W) return; dpr = Math.min(2, devicePixelRatio || 1);
+    cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var n = W < 700 ? 12 : 30; pts = []; XW = W < 860 ? W : Math.min(W * .38, 560);
+    for (var i = 0; i < n; i++) pts.push({ x: Math.random() * XW, y: Math.random() * H, vx: (Math.random() - .5) * .35, vy: (Math.random() - .5) * .35, r: 1.8 + Math.random() * 3, cheio: Math.random() > .4 });
+  }
+  function quadro(){
+    if (!vivo) return;
+    ctx.clearRect(0, 0, W, H);
+    var top = -sec.getBoundingClientRect().top, vh = innerHeight, fraco = W < 860;
+    pts.forEach(function(p){ p.x += p.vx; p.y += p.vy; if (p.x < 0 || p.x > XW) p.vx *= -1; if (p.y < 0 || p.y > H) p.vy *= -1; });
+    ctx.lineWidth = 1;
+    for (var i = 0; i < pts.length; i++) { var a = pts[i]; if (a.y < top - 200 || a.y > top + vh + 200) continue;
+      for (var j = i + 1; j < pts.length; j++) { var b = pts[j], d = Math.hypot(a.x - b.x, a.y - b.y); if (d < 170) { ctx.strokeStyle = 'rgba(216,212,207,' + (1 - d / 170).toFixed(2) + ')'; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); } } }
+    pts.forEach(function(p){ ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.2832); if (p.cheio) { ctx.fillStyle = fraco ? 'rgba(20,20,20,.18)' : 'rgba(20,20,20,.5)'; ctx.fill(); } else { ctx.strokeStyle = fraco ? 'rgba(20,20,20,.18)' : 'rgba(20,20,20,.45)'; ctx.stroke(); } });
+    requestAnimationFrame(quadro);
+  }
+  quandoAbrir('bl-empresas', function(){ setTimeout(montar, 40); });
+  if ('ResizeObserver' in window) new ResizeObserver(function(){ if (sec.clientWidth) montar(); }).observe(sec);
+  if (!RM && 'IntersectionObserver' in window) new IntersectionObserver(function(es){ var v = es[0].isIntersecting; if (v && !vivo) { if (!pts.length) montar(); vivo = true; requestAnimationFrame(quadro); } else if (!v) vivo = false; }).observe(sec);
+})();
+
+/* ---------- 11. corpo e mente trocando pontos ---------- */
+(function(){
+  var cv = $('#corpo-mente'), ctx = cv.getContext('2d'), W, H, dpr, parts = [], vivo = false, ultimo = 0, rp = 2;
+  function montar(){
+    W = cv.clientWidth; H = cv.clientHeight; if (!W) return; dpr = Math.min(2, devicePixelRatio || 1);
+    cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var est = W < 640, fs = est ? Math.min(H * .42, W / 3.3) : Math.min(H * .78, W / 6), off = document.createElement('canvas'); off.width = W; off.height = H;
+    var o = off.getContext('2d'); o.fillStyle = '#000'; o.font = '300 ' + fs + 'px "Cormorant Garamond", Georgia, serif'; o.textBaseline = 'middle';
+    var passo = Math.max(4, Math.round(fs / 24)); rp = passo * .36;
+    function amostra(txt, x, y){ o.clearRect(0, 0, W, H); o.textAlign = 'center'; o.fillText(txt, x, y); var d = o.getImageData(0, 0, W, H).data, out = []; for (var yy = 0; yy < H; yy += passo) for (var xx = 0; xx < W; xx += passo) if (d[(yy * W + xx) * 4 + 3] > 140) out.push({ x: xx, y: yy }); return out; }
+    var sA = est ? amostra("body", W / 2, H * .27) : amostra("body", W * .27, H * .5);
+    var sB = est ? amostra("mind", W / 2, H * .73) : amostra("mind", W * .73, H * .5);
+    parts = [];
+    sA.forEach(function(s){ parts.push({ x: s.x, y: s.y, alvo: s, de: null, t0: 0, grupo: 'A' }); });
+    sB.forEach(function(s){ parts.push({ x: s.x, y: s.y, alvo: s, de: null, t0: 0, grupo: 'B' }); });
+    quadro(performance.now(), true);
+  }
+  function trocar(t){
+    var A = parts.filter(function(p){ return p.grupo === 'A' && !p.de; }), B = parts.filter(function(p){ return p.grupo === 'B' && !p.de; });
+    for (var k = 0; k < 7 && A.length && B.length; k++) {
+      var a = A.splice(Math.floor(Math.random() * A.length), 1)[0], b = B.splice(Math.floor(Math.random() * B.length), 1)[0];
+      var sa = a.alvo; a.de = { x: a.x, y: a.y }; b.de = { x: b.x, y: b.y }; a.alvo = b.alvo; b.alvo = sa; a.grupo = 'B'; b.grupo = 'A';
+      a.t0 = t + k * 60; b.t0 = t + k * 60; a.cima = Math.random() > .5; b.cima = !a.cima;
+    }
+  }
+  function quadro(t, unico){
+    if (!vivo && !unico) return;
+    if (!unico && !RM && t - ultimo > 1100) { ultimo = t; trocar(t); }
+    ctx.clearRect(0, 0, W, H);
+    parts.forEach(function(p){
+      var movendo = false;
+      if (p.de) {
+        var k = Math.max(0, Math.min(1, (t - p.t0) / 1500)), e = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+        var mx = (p.de.x + p.alvo.x) / 2, my = (p.de.y + p.alvo.y) / 2 + (p.cima ? -1 : 1) * H * .35;
+        p.x = (1 - e) * (1 - e) * p.de.x + 2 * (1 - e) * e * mx + e * e * p.alvo.x;
+        p.y = (1 - e) * (1 - e) * p.de.y + 2 * (1 - e) * e * my + e * e * p.alvo.y;
+        movendo = k < 1; if (k >= 1) p.de = null;
+      }
+      ctx.beginPath(); ctx.arc(p.x, p.y, movendo ? rp * 1.25 : rp, 0, 6.2832); ctx.fillStyle = movendo ? COR.acento : COR.tinta; ctx.fill();
+    });
+    if (!unico) requestAnimationFrame(quadro);
+  }
+  function iniciar(){ if (!cv.clientWidth) return; montar(); }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(iniciar); else iniciar();
+  quandoAbrir('bl-analogia', function(){ setTimeout(iniciar, 40); });
+  var rz; window.addEventListener('resize', function(){ clearTimeout(rz); rz = setTimeout(iniciar, 200); });
+  if (!RM && 'IntersectionObserver' in window) new IntersectionObserver(function(es){ var v = es[0].isIntersecting; if (v && !vivo) { if (!parts.length) iniciar(); vivo = true; requestAnimationFrame(quadro); } else if (!v) vivo = false; }).observe(cv);
+})();
+
+/* ---------- 12. estante passando ---------- */
+(function(){
+  var livros = [
+    ['Ursula K. Le Guin', "The Carrier Bag Theory of Fiction", 'lente'],
+    ['Achille Mbembe', "Democracy as a Community of Life", 'avanco'],
+    ['Byung-Chul Han', "The Spirit of Hope", 'losangos'],
+    ['Ailton Krenak', "Ancestral Future", 'edicao'],
+    ['bell hooks', "Teaching Critical Thinking", 'lente'],
+    ['bell hooks', "All About Love", 'avanco'],
+    ['Humberto Maturana', "Love and Play", 'losangos'],
+    ['D. W. Winnicott', "Playing and Reality", 'edicao'],
+    ['Paul B. Preciado', "I Am the Monster Who Speaks to You", 'lente'],
+    ['Ian Angus', "Facing the Anthropocene", 'avanco'],
+    ['Alfred Gell', "Art and Agency", 'losangos'],
+    ['Byung-Chul Han', "Infocracy", 'edicao'],
+    ['Marcello Tarì', "20 Theses on the Subversion of the Metropolis", 'lente']
+  ];
+  var FORMAS = {
+    lente: '<circle cx="37" cy="50" r="28" fill="none" stroke="#141414" stroke-width="3"/><circle cx="63" cy="50" r="28" fill="none" stroke="#141414" stroke-width="3"/><path d="M50 25.3A28 28 0 0 1 50 74.7A28 28 0 0 1 50 25.3Z" fill="#141414"/>',
+    avanco: '<path d="M10 20V80L56 50Z" fill="none" stroke="#141414" stroke-width="3"/><path d="M40 20V80L86 50Z" fill="none" stroke="#141414" stroke-width="3"/><path d="M40 39.6L56 50L40 60.4Z" fill="#141414"/>',
+    losangos: '<path d="M37 22L65 50L37 78L9 50Z" fill="none" stroke="#141414" stroke-width="3"/><path d="M63 22L91 50L63 78L35 50Z" fill="none" stroke="#141414" stroke-width="3"/><path d="M35 50L50 35L65 50L50 65Z" fill="#141414"/>',
+    edicao: '<path d="M16 41H60V85H16Z" fill="none" stroke="#141414" stroke-width="3"/><circle cx="60" cy="41" r="26" fill="none" stroke="#141414" stroke-width="3"/><path d="M60 41H34A26 26 0 0 0 60 67Z" fill="#141414"/>'
+  };
+  function linhas(t, max){ var out = [], l = ''; t.split(' ').forEach(function(w){ var n = l ? l + ' ' + w : w; if (n.length > max && l) { out.push(l); l = w; } else l = n; }); out.push(l); return out; }
+  function esc(s){ return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
+  function capa(b, i, oculto){
+    var ls = linhas(b[1], 14), fs = ls.length > 3 ? 21 : 24;
+    var tit = ls.map(function(l, k){ return '<text x="18" y="' + (96 + k * fs * 1.02) + '" font-family="Cormorant Garamond, Georgia, serif" font-weight="300" font-size="' + fs + '" fill="#141414" letter-spacing="-.3">' + esc(l) + '</text>'; }).join('');
+    var svg = '<svg viewBox="0 0 200 300" ' + (oculto ? 'aria-hidden="true"' : 'role="img" aria-label="' + esc(b[1]) + ', ' + esc(b[0]) + '"') + '>' +
+      '<rect x=".5" y=".5" width="199" height="299" fill="#ffffff" stroke="#d8d4cf"/>' +
+      '<line x1="18" y1="44" x2="182" y2="44" stroke="#141414" stroke-width="1"/>' +
+      '<text x="18" y="34" font-family="Instrument Sans, Arial, sans-serif" font-size="8.5" font-weight="500" letter-spacing="1.4" fill="#141414">' + esc(b[0].toUpperCase()) + '</text>' +
+      tit + '<g transform="translate(18 214) scale(.5)">' + FORMAS[b[2]] + '</g>' +
+      '<line x1="18" y1="272" x2="182" y2="272" stroke="#141414" stroke-width="1"/>' +
+      '<text x="18" y="288" font-family="Cormorant Garamond, Georgia, serif" font-size="13" fill="#141414">c/txt.</text>' +
+      '<text x="182" y="288" text-anchor="end" font-family="Courier Prime, monospace" font-size="9" fill="#5e5b57">(' + (i + 1 < 10 ? '0' : '') + (i + 1) + ')</text></svg>';
+    var f = document.createElement('figure'); f.className = 'livro'; if (oculto) f.setAttribute('aria-hidden', 'true'); else f.setAttribute('role', 'listitem');
+    f.innerHTML = svg + '<figcaption class="meta">' + esc(b[0]) + ' · <span style="color:#141414">' + esc(b[1]) + '</span></figcaption>';
+    return f;
+  }
+  var tr = $('#trilho');
+  livros.forEach(function(b, i){ tr.appendChild(capa(b, i, false)); });
+  if (!RM) livros.forEach(function(b, i){ tr.appendChild(capa(b, i, true)); });
+  else tr.style.animation = 'none';
+})();
+
+
+/* ---------- retrato em chuva de caracteres ---------- */
+(function(){
+  var cv = $('#matrix'); if (!cv) return;
+  var ctx = cv.getContext('2d'), img = new Image(), W, H, dpr, cel, cols, rows, luz = [], car = [], cabecas = [], vivo = false, pronto = false, ultimo = 0;
+  var GLIFOS = 'c/txt.context01ctxt.'.split('');
+  img.onload = function(){ pronto = true; montar(); if (visto && !RM) { vivo = true; requestAnimationFrame(quadro); } };
+  img.src = 'maia-retrato.png';
+  var visto = false;
+  function montar(){
+    if (!pronto || !cv.clientWidth) return;
+    W = cv.clientWidth; H = cv.clientHeight; dpr = Math.min(2, devicePixelRatio || 1);
+    cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    cel = Math.max(7, Math.round(W / 36)); cols = Math.floor(W / cel); rows = Math.floor(H / cel);
+    var off = document.createElement('canvas'); off.width = cols; off.height = rows;
+    var o = off.getContext('2d'); o.drawImage(img, 0, 0, cols, rows);
+    var d = o.getImageData(0, 0, cols, rows).data; luz = []; car = [];
+    for (var i = 0; i < cols * rows; i++) {
+      var l = (d[i * 4] * .3 + d[i * 4 + 1] * .59 + d[i * 4 + 2] * .11) / 255;
+      luz.push(1 - l);
+      car.push(GLIFOS[Math.floor(Math.random() * GLIFOS.length)]);
+    }
+    var ord = luz.slice().sort(function(x, y){ return x - y; }), lo = ord[Math.floor(ord.length * .35)], hi = ord[Math.floor(ord.length * .97)];
+    luz = luz.map(function(v){ var n = Math.max(0, Math.min(1, (v - lo) / (hi - lo))); return Math.pow(n, 1.6); });
+    cabecas = []; for (var c = 0; c < cols; c++) cabecas.push({ y: -Math.random() * rows * 1.5, v: .12 + Math.random() * .22 });
+    quadro(performance.now(), true);
+  }
+  function quadro(t, unico){
+    if (!unico && !vivo) return;
+    ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, W, H);
+    ctx.font = (cel * 1.05) + 'px "Courier Prime", "Courier New", monospace'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    if (!unico && t - ultimo > 90) { ultimo = t; for (var k = 0; k < cols; k++) car[Math.floor(Math.random() * car.length)] = GLIFOS[Math.floor(Math.random() * GLIFOS.length)]; }
+    for (var c = 0; c < cols; c++) {
+      var h = cabecas[c];
+      if (!unico && !RM) { h.y += h.v; if (h.y > rows + 18) { h.y = -Math.random() * rows * .6; h.v = .12 + Math.random() * .22; } }
+      for (var r = 0; r < rows; r++) {
+        var i = r * cols + c, base = luz[i], dist = h.y - r, rastro = (!RM && dist >= 0 && dist < 16) ? 1 - dist / 16 : 0;
+        var a = Math.max(base, rastro * .55 * (.35 + base));
+        if (a < .06) continue;
+        ctx.globalAlpha = Math.min(1, a);
+        ctx.fillStyle = (rastro > .92 || (rastro > .35 && base > .25)) ? '#c81e66' : '#141414';
+        ctx.fillText(car[i], c * cel + cel / 2, r * cel + cel / 2);
+      }
+    }
+    ctx.globalAlpha = 1;
+    if (!unico) requestAnimationFrame(quadro);
+  }
+  var rz; window.addEventListener('resize', function(){ clearTimeout(rz); rz = setTimeout(montar, 200); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(montar);
+  if ('IntersectionObserver' in window) new IntersectionObserver(function(es){
+    visto = es[0].isIntersecting;
+    if (visto && !vivo && pronto && !RM) { vivo = true; requestAnimationFrame(quadro); } else if (!visto) vivo = false;
+  }).observe(cv);
+})();
+
+/* ---------- estante arrastável ---------- */
+(function(){
+  var est = $('#estante'), tr = $('#trilho'); if (!est || !tr) return;
+  tr.style.animation = 'none';
+  var x = 0, arr = false, sobre = false, sx = 0, x0 = 0, ult = performance.now(), moveu = false;
+  function periodo(){ return (tr.scrollWidth + 28) / 2; }
+  function ajustar(){ var p = periodo(); if (!p) return; x = x % p; if (x > 0) x -= p; }
+  function laco(t){
+    var dt = Math.min(64, t - ult); ult = t;
+    if (est.getClientRects().length) {
+      if (!arr && !sobre && !RM) x -= dt * .035;
+      ajustar(); tr.style.transform = 'translateX(' + x.toFixed(1) + 'px)';
+    }
+    requestAnimationFrame(laco);
+  }
+  est.addEventListener('pointerdown', function(e){ arr = true; moveu = false; sx = e.clientX; x0 = x; est.classList.add('arrastando'); try { est.setPointerCapture(e.pointerId); } catch (er) {} });
+  est.addEventListener('pointermove', function(e){ if (!arr) return; var d = e.clientX - sx; if (Math.abs(d) > 3) moveu = true; x = x0 + d; });
+  function soltar(){ arr = false; est.classList.remove('arrastando'); }
+  est.addEventListener('pointerup', soltar); est.addEventListener('pointercancel', soltar);
+  est.addEventListener('mouseenter', function(){ sobre = true; }); est.addEventListener('mouseleave', function(){ sobre = false; soltar(); });
+  est.addEventListener('dragstart', function(e){ e.preventDefault(); });
+  requestAnimationFrame(laco);
+})();
+
+/* ---------- foto: tocar mostra a original ---------- */
+(function(){
+  var q = $('#bio-quadro'); if (!q) return;
+  q.addEventListener('click', function(){ q.classList.toggle('ver'); });
+  q.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); q.classList.toggle('ver'); } });
+})();
+
+/* ---------- 2026-11-06 · painel, pasta, pontos ---------- */
+(function(){
+  var pf = $('#painel-fechar'); if (pf) pf.addEventListener('click', function(){ $('#painel').classList.add('fechado'); $$('#rede .pal').forEach(function(p){ p.setAttribute('aria-pressed', 'false'); }); });
+})();
+
+/* pasta com abas */
+(function(){
+  var abas = $$('#pasta .aba');
+  function abrir(id, forcar){
+    abas.forEach(function(b){
+      var alvo = b.getAttribute('aria-controls'), pn = document.getElementById(alvo);
+      var on = alvo === id && (forcar || b.getAttribute('aria-expanded') !== 'true');
+      b.setAttribute('aria-expanded', on); b.setAttribute('aria-selected', on); pn.hidden = !on;
+    });
+    setTimeout(function(){ window.dispatchEvent(new Event('resize')); }, 30);
+  }
+  abas.forEach(function(b){ b.addEventListener('click', function(){ abrir(b.getAttribute('aria-controls')); }); });
+  window.abrirNaPasta = function(el){ var pn = el && el.closest && el.closest('.painel-aba'); if (pn && pn.hidden) { abrir(pn.id, true); return true; } return false; };
+  function porHash(h){ if (!h || h.length < 2) return; var el; try { el = document.querySelector(h); } catch (e) { return; } if (el && window.abrirNaPasta(el)) setTimeout(function(){ el.scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: 'start' }); }, 80); }
+  document.addEventListener('click', function(e){ var a = e.target.closest && e.target.closest('a[href^="#"]'); if (a && !a.hasAttribute('data-ir')) porHash(a.getAttribute('href')); }, true);
+  porHash(location.hash);
+})();
+
+/* utilitários de pontos */
+function cvPrep(cv){ var W = cv.clientWidth, H = cv.clientHeight, dpr = Math.min(2, devicePixelRatio || 1); cv.width = W * dpr; cv.height = H * dpr; var c = cv.getContext('2d'); c.setTransform(dpr, 0, 0, dpr, 0, 0); return { c: c, W: W, H: H }; }
+function amostrar(txt, W, H, fs, passo, x, y){
+  var off = document.createElement('canvas'); off.width = W; off.height = H; var o = off.getContext('2d');
+  o.fillStyle = '#000'; o.font = '300 ' + fs + 'px "Cormorant Garamond", Georgia, serif'; o.textBaseline = 'middle'; o.textAlign = 'center'; o.fillText(txt, x, y);
+  var d = o.getImageData(0, 0, W, H).data, out = [];
+  for (var yy = 0; yy < H; yy += passo) for (var xx = 0; xx < W; xx += passo) if (d[(yy * W + xx) * 4 + 3] > 128) out.push({ x: xx, y: yy });
+  return out;
+}
+function quandoVisivel(el, fn){ if (!('IntersectionObserver' in window)) { fn(true); return; } new IntersectionObserver(function(es){ fn(es[0].isIntersecting); }, { threshold: .15 }).observe(el); }
+function suave(k){ return k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2; }
+
+/* (1) leitura (2) debate (3) escrita (4) contexto */
+(function(){
+  var fig = $('#pal-pontos'); if (!fig) return;
+  var cv = $('canvas', fig), leg = $$('.legenda span', fig), PAL = ["reading", "discussion", "writing", "context"];
+  var g, alvos = [], ps = [], rp = 2, i = 0, fase = 'forma', t0 = 0, vivo = false, ok = false;
+  function montar(){
+    if (!cv.clientWidth) return; g = cvPrep(cv);
+    var est = g.W < 640, fs = est ? Math.min(g.H * .55, g.W / 4.4) : Math.min(g.H * .8, g.W / 6.2), passo = Math.max(4, Math.round(fs / 22)); rp = passo * .36;
+    alvos = PAL.map(function(w){ return amostrar(w, g.W, g.H, fs, passo, g.W / 2, g.H * .5); });
+    var n = Math.max.apply(null, alvos.map(function(a){ return a.length; }));
+    ps = []; for (var k = 0; k < n; k++) ps.push({ x: Math.random() * g.W, y: Math.random() * g.H, de: null, para: null, vis: 1 });
+    destinar(i); ps.forEach(function(p){ p.x = p.para.x; p.y = p.para.y; p.de = null; });
+    fase = 'forma'; t0 = performance.now(); ok = true; marcar(); desenhar(t0);
+  }
+  function destinar(j){
+    var a = alvos[j].slice().sort(function(){ return Math.random() - .5; });
+    ps.forEach(function(p, k){ p.de = { x: p.x, y: p.y }; if (k < a.length) { p.para = a[k]; p.vis = 1; } else { var b = a[k % a.length]; p.para = b; p.vis = 0; } });
+  }
+  function marcar(){ leg.forEach(function(s, k){ s.classList.toggle('on', k === i); }); }
+  function desenhar(t){
+    var c = g.c; c.clearRect(0, 0, g.W, g.H); var dt = t - t0;
+    ps.forEach(function(p){
+      var x = p.x, y = p.y, mov = false;
+      if (fase === 'solta' && p.solto) { var k = suave(Math.min(1, dt / 900)); x = p.de.x + (p.solto.x - p.de.x) * k; y = p.de.y + (p.solto.y - p.de.y) * k; mov = true; }
+      if (fase === 'junta') { var k2 = suave(Math.min(1, dt / 1300)); x = p.solto.x + (p.para.x - p.solto.x) * k2; y = p.solto.y + (p.para.y - p.solto.y) * k2; mov = k2 < 1; }
+      p.x = x; p.y = y;
+      var a = fase === 'junta' ? (p.vis ? 1 : 1 - Math.min(1, dt / 900)) : (fase === 'solta' ? 1 : p.vis);
+      if (a <= 0) return;
+      c.globalAlpha = a; c.beginPath(); c.arc(x, y, mov ? rp * 1.15 : rp, 0, 6.2832); c.fillStyle = mov && fase === 'solta' ? COR.acento : COR.tinta; c.fill();
+    });
+    c.globalAlpha = 1;
+  }
+  function quadro(t){
+    if (!vivo) return; var dt = t - t0;
+    if (fase === 'forma' && dt > 2200) {
+      fase = 'solta'; t0 = t;
+      ps.forEach(function(p){ p.de = { x: p.x, y: p.y }; var ang = Math.random() * 6.2832, r = 20 + Math.random() * Math.max(g.W, g.H) * .35; p.solto = { x: Math.max(4, Math.min(g.W - 4, p.x + Math.cos(ang) * r)), y: Math.max(4, Math.min(g.H - 4, p.y + Math.sin(ang) * r * .6)) }; });
+    } else if (fase === 'solta' && dt > 1100) {
+      fase = 'junta'; t0 = t; i = (i + 1) % PAL.length;
+      var a = alvos[i].slice().sort(function(){ return Math.random() - .5; });
+      ps.forEach(function(p, k){ p.solto = { x: p.x, y: p.y }; if (k < a.length) { p.para = a[k]; p.vis = 1; } else { p.para = a[k % a.length]; p.vis = 0; } });
+      marcar();
+    } else if (fase === 'junta' && dt > 1400) { fase = 'forma'; t0 = t; }
+    desenhar(t); requestAnimationFrame(quadro);
+  }
+  function iniciar(){ montar(); }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(iniciar); else iniciar();
+  var rz; window.addEventListener('resize', function(){ clearTimeout(rz); rz = setTimeout(montar, 200); });
+  quandoVisivel(fig, function(v){ if (v && !vivo && !RM) { if (!ok) montar(); vivo = true; t0 = performance.now(); requestAnimationFrame(quadro); } else if (!v) vivo = false; });
+})();
+
+/* 15 pontos: soltos, trios, dois grupos, três grupos, círculo */
+(function(){
+  var fig = $('#quinze'); if (!fig) return;
+  var cv = $('canvas', fig), rot = $('#quinze-estado'), g, ps = [], fase = 0, t0 = 0, vivo = false, r = 7;
+  var NOMES = ['15 people', 'in groups of three', 'in two groups', 'in three groups', 'in a circle'];
+  function nuvem(cx, cy, n, raio, ini){ var out = []; for (var k = 0; k < n; k++) { if (n === 1) { out.push({ x: cx, y: cy }); continue; } var a = (ini || -Math.PI / 2) + k * 6.2832 / n; out.push({ x: cx + Math.cos(a) * raio, y: cy + Math.sin(a) * raio }); } return out; }
+  function nuvemCheia(cx, cy, n, esp){ var out = [{ x: cx, y: cy }], anel = 1; while (out.length < n) { var m = Math.min(n - out.length, anel * 6); for (var k = 0; k < m; k++) { var a = k * 6.2832 / m + anel * .5; out.push({ x: cx + Math.cos(a) * esp * anel, y: cy + Math.sin(a) * esp * anel }); } anel++; } return out; }
+  function formas(){
+    var W = g.W, H = g.H, est = W < 640, e = est ? 18 : 26, f = [];
+    var rr = Math.random; var soltos = []; for (var k = 0; k < 15; k++) soltos.push({ x: W * (.08 + .84 * ((k * 0.618034) % 1)), y: H * (.15 + .7 * ((k * 0.381966 * 2.3 + (k % 3) * .21) % 1)) });
+    f.push(soltos);
+    var trios = []; for (var t = 0; t < 5; t++) { var cx = est ? W * (.2 + .3 * (t % 3)) + (t > 2 ? W * .15 : 0) : W * (.12 + .19 * t), cy = est ? H * (t < 3 ? .3 : .72) : H * (t % 2 ? .62 : .38); trios = trios.concat(nuvem(cx, cy, 3, e * .75)); } f.push(trios);
+    f.push(nuvemCheia(W * .3, H * .5, 8, e).concat(nuvemCheia(W * .7, H * .5, 7, e)));
+    f.push(nuvemCheia(W * .2, H * .5, 5, e).concat(nuvemCheia(W * .5, H * .5, 5, e), nuvemCheia(W * .8, H * .5, 5, e)));
+    f.push(nuvem(W / 2, H / 2, 15, Math.min(H * .38, W * .3)));
+    return f;
+  }
+  var F = [];
+  function montar(){ if (!cv.clientWidth) return; g = cvPrep(cv); r = g.W < 640 ? 5.5 : 7; F = formas(); if (!ps.length) for (var k = 0; k < 15; k++) ps.push({ x: F[0][k].x, y: F[0][k].y, de: null }); else ps.forEach(function(p, k){ var q = F[fase][k]; p.x = q.x; p.y = q.y; p.de = null; }); desenhar(performance.now()); }
+  function irPara(n, t){ fase = n; t0 = t; ps.forEach(function(p){ p.de = { x: p.x, y: p.y }; }); rot.textContent = NOMES[n]; }
+  function desenhar(t){
+    var c = g.c; c.clearRect(0, 0, g.W, g.H); var k = suave(Math.min(1, (t - t0) / 1400));
+    ps.forEach(function(p, j){
+      var q = F[fase][j]; if (p.de) { p.x = p.de.x + (q.x - p.de.x) * k; p.y = p.de.y + (q.y - p.de.y) * k; if (k >= 1) p.de = null; }
+      c.beginPath(); c.arc(p.x, p.y, r, 0, 6.2832); c.fillStyle = (fase === 4 && !p.de) ? COR.acento : COR.tinta; c.fill();
+    });
+  }
+  function quadro(t){ if (!vivo) return; if (t - t0 > 3000) irPara((fase + 1) % 5, t); desenhar(t); requestAnimationFrame(quadro); }
+  montar();
+  var rz; window.addEventListener('resize', function(){ clearTimeout(rz); rz = setTimeout(montar, 200); });
+  quandoVisivel(fig, function(v){ if (v && !vivo && !RM) { if (!g) montar(); vivo = true; t0 = performance.now(); requestAnimationFrame(quadro); } else if (!v) vivo = false; });
+})();
+
+/* de-skilling: barra de pontos que vão sumindo */
+(function(){
+  var fig = $('#deskill'); if (!fig) return;
+  var cv = $('canvas', fig), num = $('#deskill-n'), g, ps = [], ordem = [], rp = 2, t0 = 0, vivo = false, total = 0;
+  function montar(){
+    if (!cv.clientWidth) return; g = cvPrep(cv);
+    var est = g.W < 640, passo = est ? 6 : 8, fs = est ? Math.min(g.H * .7, g.W / 4.6) : Math.min(g.H * .86, g.W / 5.6); rp = passo * .3;
+    var letra = {}; amostrar('de-skilling', g.W, g.H, fs, passo, g.W / 2, g.H * .5).forEach(function(q){ letra[q.x + ',' + q.y] = 1; });
+    ps = []; for (var y = 0; y < g.H; y += passo) for (var x = 0; x < g.W; x += passo) ps.push({ x: x + passo / 2, y: y + passo / 2, l: !!letra[x + ',' + y], cai: Math.random() * .85 + (x / g.W) * .15 });
+    var dentro = ps.filter(function(p){ return p.l; });
+    ordem = dentro.sort(function(a, b){ return a.cai - b.cai; }); total = ps.length;
+    ordem.forEach(function(p, k){ p.ordem = k / ordem.length; });
+    t0 = performance.now(); desenhar(t0, RM ? 1 : 0);
+  }
+  function desenhar(t, forca){
+    var c = g.c; c.clearRect(0, 0, g.W, g.H);
+    var dt = t - t0, ciclo = 9000, fase = forca != null ? forca : Math.min(1, (dt % ciclo) / 5200), volta = forca == null && (dt % ciclo) > 7600 ? suave(Math.min(1, ((dt % ciclo) - 7600) / 1300)) : 0, perdidos = 0;
+    ps.forEach(function(p){
+      if (p.ordem == null) { c.fillStyle = COR.tinta; c.beginPath(); c.arc(p.x, p.y, rp, 0, 6.2832); c.fill(); return; }
+      var k = Math.max(0, Math.min(1, (fase - p.ordem * .8) / .2));
+      if (volta) k = k * (1 - volta);
+      if (k >= 1) { perdidos++; return; }
+      var y = p.y + k * k * g.H * .9;
+      c.globalAlpha = 1 - k; c.fillStyle = k > 0 ? COR.acento : COR.tinta;
+      c.beginPath(); c.arc(p.x, y, k > 0 ? rp * 1.15 : rp, 0, 6.2832); c.fill();
+      if (k > 0) perdidos += k;
+    });
+    c.globalAlpha = 1;
+    if (num) num.textContent = Math.round(100 * (1 - perdidos / total)) + '%';
+  }
+  function quadro(t){ if (!vivo) return; desenhar(t); requestAnimationFrame(quadro); }
+  montar();
+  var rz; window.addEventListener('resize', function(){ clearTimeout(rz); rz = setTimeout(montar, 200); });
+  quandoVisivel(fig, function(v){ if (v && !vivo && !RM) { if (!g) montar(); vivo = true; t0 = performance.now(); requestAnimationFrame(quadro); } else if (!v) vivo = false; });
+})();
+})();
+</script>
+</body></html>
