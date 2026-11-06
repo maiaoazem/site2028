@@ -1,4 +1,54 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}
+/* Ajustes de jornada · versão para lideranças de RH — mesma identidade editorial */
+.heroi .resumo-programa {max-width: 45em; margin-top: 22px; font-size: clamp(17px, 1.45vw, 21px); line-height: 1.48; color: var(--tinta-suave); text-wrap: pretty; }
+.atalho-programa {margin-top: 26px;}
+.secao-empresas { background:var(--branco); margin-top:var(--respiro); padding-bottom:clamp(64px,8vw,120px); }
+.secao-empresas .cab-modulo {padding-top:20px;}
+.cab-modulo { padding-top:clamp(20px,3vw,40px); }
+.modulo-aberto {margin-top:clamp(36px,5vw,72px);}
+.modulo-aberto > .conteudo {padding:12px 0 0;position:relative;}
+.empresa-protocolo {border-top:1px solid var(--tinta);padding-top:32px;}
+.modulo-detalhe .blocos {margin-top:0;}
+.modulo-detalhe .bloco {border-bottom:1px solid var(--tinta);}
+.modulo-estatico .modulo-aberto {border-top:1px solid var(--fio-suave);padding-top:30px;}
+.modulo-estatico .titulo-secao {max-width:19ch;}
+.modulo-estatico .conteudo {padding-bottom:0;}
+.bio-grade {display:grid;grid-template-columns:minmax(190px,240px) minmax(0,1fr);gap:clamp(28px,5vw,76px);padding-top:clamp(32px,5vw,72px);margin-top:36px;border-top:1px solid var(--fio-suave);}
+.bio-metadados {display:grid;gap:12px;align-content:start;font-size:15px;line-height:1.5;}
+.bio-metadados .fio {border-top-color:var(--fio-suave);margin:10px 0 8px;}
+.bio-texto {max-width:41em;}
+.bio-texto p+p {text-indent:0;margin-top:1.15em;}
+.bio-texto p:last-child {font-family:var(--grotesca);font-size:15px;margin-top:28px;}
+@media (max-width:860px) {
+ .bio-grade {grid-template-columns:1fr;}
+ .bio-metadados {grid-template-columns:1fr;}
+ .secao-empresas {padding-bottom:72px;}
+ .secao-empresas .relogio {background:var(--branco);}
+ .modulo-estatico .titulo-secao {max-width:none;}
+}
+
+/* blocos colados */
+.secao.modulo-detalhe {padding-top:0;}
+.secao-empresas + .modulo-detalhe {padding-top:0;}
+#participar + .modulo-detalhe {padding-top:clamp(40px,5vw,72px);}
+.modulo-detalhe + .modulo-detalhe .bloco {border-top:0;}
+/* painel da palavra-chave: ação */
+.painel .painel-acao {grid-column:2 / -1; display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center; padding-top:6px;}
+@media (max-width:1080px) { .painel .painel-acao {grid-column:1 / -1;} }
+/* quem facilita */
+.bio {display:grid; grid-template-columns:minmax(0,340px) minmax(0,1fr); gap:clamp(28px,5vw,80px); align-items:start; padding-top:clamp(28px,4vw,48px);}
+.bio-foto {display:grid; gap:10px;}
+.bio-foto canvas {display:block; width:100%; aspect-ratio:2/3; background:var(--branco);}
+.bio-info {display:grid; gap:18px; align-content:start; max-width:44em;}
+.bio-mais {display:none;}
+.recolhido.aberto .bio-mais {display:grid; gap:1em;}
+.bio-dados {display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; border-top:1px solid var(--fio-suave); padding-top:16px; margin:6px 0 0;}
+.bio-dados dt {font-size:11px; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:var(--tinta-suave);}
+.bio-dados dd {margin:4px 0 0; font-size:15px; line-height:1.45;}
+@media (max-width:860px) { .bio {grid-template-columns:minmax(0,1fr);} .bio-foto {max-width:300px;} .bio-dados {grid-template-columns:minmax(0,1fr);} }
+/* junte-se antes do texto */
+.junte-topo {display:grid; justify-items:center; margin-top:clamp(56px,6vw,96px);}
+</style></head><body>
 <title>Clube de Contexto</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="c/txt. · Clube de Contexto / Academia da Mente — como fortalecer a mente crítico-criativa na era da IA?">
@@ -364,7 +414,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   <div class="larg">
     <a class="marca" href="#topo">c/txt.</a>
     <nav class="nav" aria-label="Seções">
-      <a href="#o-projeto">O projeto</a><a href="#duplo-foco">Duplo foco</a><a href="#bl-humanos">Benefícios</a><a href="#participar">Participar</a><a href="#bl-empresas">Empresas</a><a href="#bl-ler">Livros</a>
+      <a href="#o-projeto">O projeto</a><a href="#bl-empresas">Empresas</a><a href="#bl-humanos" data-ir="#bl-humanos">Benefícios</a><a href="#duplo-foco">Duplo foco</a><a href="#participar">Participar</a><a href="#quem-facilita">Quem facilita</a>
     </nav>
     <a class="contador" id="contador" href="#rodape" title="Contador simbólico do seu percurso de leitura neste site">
       <span class="ponto" aria-hidden="true"></span>
@@ -375,44 +425,45 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 </header>
 
 <main id="topo">
-  <!-- ABERTURA -->
-  <section class="heroi m" aria-labelledby="h-titulo">
+
+<section class="heroi m" aria-labelledby="h-titulo">
     <div class="larg">
       <hr class="fio">
-      <div class="barra-rot"><p class="ui suave">Um protocolo presencial de leitura, debate e escrita para equipes que trabalham com IA.</p><p class="rotulo suave">São Paulo · 2026</p></div>
+      <div class="barra-rot"><p class="ui suave">Desenvolvimento crítico-criativo para equipes e organizações na era da IA.</p><p class="rotulo suave">São Paulo · 2026</p></div>
       <h1 class="display" id="h-titulo">clube de <span class="it">contexto</span><span class="sub ser">/ academia da mente</span></h1>
       <p class="frase pergunta">Como <span class="troca" id="troca">fortalecer</span> a mente crítico-criativa na era da IA?</p>
+      <p class="resumo-programa">Um programa corporativo contínuo de leitura, debate e elaboração para desenvolver pensamento crítico, criatividade e uso qualificado da IA nas equipes.</p>
       <div class="rede" id="rede">
         <canvas aria-hidden="true"></canvas>
         <p class="rotulo suave dica">palavras-chave · toque para abrir</p>
         <button class="pal semente" type="button" data-t="duplo"><span>duplo foco</span></button>
-        <button class="pal semente" type="button" data-t="neuro"><span>neuroplasticidade</span></button>
-        <button class="pal semente" type="button" data-t="leitura"><span>leitura profunda</span></button>
-        <button class="pal semente" type="button" data-t="debate"><span>debate aberto</span></button>
-        <button class="pal semente" type="button" data-t="escrita"><span>escrita manual</span></button>
+        <button class="pal semente" type="button" data-t="neuro"><span>aprendizagem contínua</span></button>
+        <button class="pal semente" type="button" data-t="leitura"><span>leitura crítica</span></button>
+        <button class="pal semente" type="button" data-t="debate"><span>debate estruturado</span></button>
+        <button class="pal semente" type="button" data-t="escrita"><span>elaboração própria</span></button>
         <button class="pal semente" type="button" data-t="contextos"><span>contextos autorais</span></button>
-        <button class="pal semente" type="button" data-t="bionico"><span>humano biônico</span></button>
-        <button class="pal semente" type="button" data-t="atencao"><span>atenção</span></button>
+        <button class="pal semente" type="button" data-t="bionico"><span>colaboração humano–IA</span></button>
+        <button class="pal semente" type="button" data-t="atencao"><span>atenção sustentada</span></button>
         <button class="pal semente" type="button" data-t="interpretacao"><span>interpretação</span></button>
-        <button class="pal semente" type="button" data-t="interdisciplinaridade"><span>interdisciplinaridade</span></button>
-        <button class="pal semente" type="button" data-t="critica"><span>crítica</span></button>
-        <button class="pal semente" type="button" data-t="criatividade"><span>criatividade</span></button>
-        <button class="pal semente" type="button" data-t="memoria"><span>memória</span></button>
-        <button class="pal semente" type="button" data-t="decisao"><span>decisão</span></button>
+        <button class="pal semente" type="button" data-t="interdisciplinaridade"><span>visão sistêmica</span></button>
+        <button class="pal semente" type="button" data-t="critica"><span>pensamento crítico</span></button>
+        <button class="pal semente" type="button" data-t="criatividade"><span>criatividade aplicada</span></button>
+        <button class="pal semente" type="button" data-t="memoria"><span>memória de aprendizagem</span></button>
+        <button class="pal semente" type="button" data-t="decisao"><span>autonomia de decisão</span></button>
         <button class="pal semente" type="button" data-t="diferenciacao"><span>diferenciação</span></button>
-        <button class="pal semente" type="button" data-t="protocolo"><span>protocolo</span></button>
+        <button class="pal semente" type="button" data-t="protocolo"><span>ritual semanal</span></button>
       </div>
       <div class="painel" id="painel" aria-live="polite">
-        <div class="tit"><p class="rotulo suave">palavra-chave</p><h3 id="p-termo" style="margin-top:10px">humano biônico</h3></div>
+        <div class="tit"><p class="rotulo suave">palavra-chave</p><h3 id="p-termo" style="margin-top:10px">colaboração humano–IA</h3></div>
         <div class="col"><p class="rotulo">o que é</p><p id="p-oque"></p></div>
-        <div class="col"><p class="rotulo">como o clube ajuda · humano e máquina</p><p id="p-como"></p></div>
+        <div class="col"><p class="rotulo">como o clube contribui · equipes e IA</p><p id="p-como"></p></div>
         <div class="pontos"><span class="n" id="p-n">+8</span><span class="meta" id="p-msg">ativações ao abrir cada palavra</span></div>
+        <div class="painel-acao"><a class="botao" href="#bl-empresas" data-ir="#bl-empresas">Me leve até como isso é possível <span aria-hidden="true">↓</span></a><span class="meta">O programa do clube em empresas.</span></div>
       </div>
     </div>
   </section>
 
-  <!-- O PROJETO -->
-  <section class="secao m" id="o-projeto" aria-label="O projeto">
+<section class="secao m" id="o-projeto" aria-label="O projeto">
     <div class="larg">
       <div class="pend">
         <p class="rotulo">o projeto</p>
@@ -424,23 +475,23 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 
       <div class="benef">
         <div>
-          <h3>benefícios <span class="it">humanos</span></h3>
+          <h3>benefícios para as <span class="it">pessoas</span></h3>
           <ol>
-            <li><a href="#mh-atencao" data-ir="#mh-atencao"><span class="nome">Atenção</span><span class="conc">Anti-Preguiça Cognitiva</span></a></li>
-            <li><a href="#mh-interpretacao" data-ir="#mh-interpretacao"><span class="nome">Interpretação</span><span class="conc">A Leitura é Aprendida Culturalmente</span></a></li>
-            <li><a href="#mh-interdisciplinaridade" data-ir="#mh-interdisciplinaridade"><span class="nome">Interdisciplinaridade</span><span class="conc">Pensamento Sistêmico</span></a></li>
-            <li><a href="#mh-critica" data-ir="#mh-critica"><span class="nome">Crítica</span><span class="conc">Capacidade de Crítica</span></a></li>
-            <li><a href="#mh-criatividade" data-ir="#mh-criatividade"><span class="nome">Criatividade</span><span class="conc">Ampliação Criativa na Zona Média</span></a></li>
-            <li><a href="#mh-memoria" data-ir="#mh-memoria"><span class="nome">Memória</span><span class="conc">A Aprendizagem é um Processo de Apropriação</span></a></li>
-            <li><a href="#mh-decisao" data-ir="#mh-decisao"><span class="nome">Decisão</span><span class="conc">A Máquina Sempre Sabe</span></a></li>
+            <li><a href="#mh-atencao" data-ir="#mh-atencao"><span class="nome">Atenção</span><span class="conc">Foco para analisar e aprender</span></a></li>
+            <li><a href="#mh-interpretacao" data-ir="#mh-interpretacao"><span class="nome">Interpretação</span><span class="conc">Leitura e compreensão aprofundada</span></a></li>
+            <li><a href="#mh-interdisciplinaridade" data-ir="#mh-interdisciplinaridade"><span class="nome">Interdisciplinaridade</span><span class="conc">Conexões entre áreas e repertórios</span></a></li>
+            <li><a href="#mh-critica" data-ir="#mh-critica"><span class="nome">Crítica</span><span class="conc">Questionamento de respostas da IA</span></a></li>
+            <li><a href="#mh-criatividade" data-ir="#mh-criatividade"><span class="nome">Criatividade</span><span class="conc">Ideias próprias e não padronizadas</span></a></li>
+            <li><a href="#mh-memoria" data-ir="#mh-memoria"><span class="nome">Memória</span><span class="conc">Conhecimento que permanece na equipe</span></a></li>
+            <li><a href="#mh-decisao" data-ir="#mh-decisao"><span class="nome">Decisão</span><span class="conc">Julgamento e autonomia profissional</span></a></li>
           </ol>
         </div>
         <div>
           <h3>benefícios de <span class="it">máquina</span></h3>
           <ol>
-            <li><a href="#ms-autoralidade" data-ir="#ms-autoralidade"><span class="nome">Autoralidade</span><span class="conc">Emergência da Cultura Sintética e Híbrida</span></a></li>
-            <li><a href="#ms-diferenciacao" data-ir="#ms-diferenciacao"><span class="nome">Diferenciação</span><span class="conc">Fuga da Média de Cognição e Elaboração</span></a></li>
-            <li><a href="#mh-critica" data-ir="#mh-critica"><span class="nome">Respostas melhores</span><span class="conc">quanto melhor a crítica humana, melhor a da IA</span></a></li>
+            <li><a href="#ms-autoralidade" data-ir="#ms-autoralidade"><span class="nome">Autoralidade</span><span class="conc">Contextos criados pelos próprios times</span></a></li>
+            <li><a href="#ms-diferenciacao" data-ir="#ms-diferenciacao"><span class="nome">Diferenciação</span><span class="conc">Respostas alinhadas ao repertório da empresa</span></a></li>
+            <li><a href="#mh-critica" data-ir="#mh-critica"><span class="nome">Respostas melhores</span><span class="conc">perguntas melhores, respostas mais úteis</span></a></li>
           </ol>
         </div>
       </div>
@@ -451,57 +502,45 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     </div>
   </section>
 
-  <!-- DUPLO FOCO -->
-  <section class="secao m" id="duplo-foco" aria-labelledby="h-duplo">
+<!-- DESTAQUE PRINCIPAL · PROGRAMA CORPORATIVO -->
+  <section class="secao secao-empresas m" id="bl-empresas" aria-labelledby="h-empresas">
     <div class="larg">
       <hr class="fio">
-      <div class="pend" style="padding-top:14px">
-        <p class="rotulo">duplo foco</p>
+      <div class="pend cab-modulo">
+        <p class="rotulo">programa principal · empresas</p>
         <div>
-          <h2 class="titulo" id="h-duplo">duplo foco: o humano e a <span class="it">máquina</span></h2>
-          <p class="abertura lf" style="margin-top:20px">Por que o uso da IA no trabalho pede um novo cuidado com a mente.</p>
+          <p class="numero">(01)</p>
+          <h2 class="titulo" id="h-empresas" style="margin-top:16px">o clube em <span class="it">empresas</span></h2>
+          <p class="abertura" style="margin-top:20px;max-width:39em">Encontros semanais para equipes, com leitura, debate e escrita de contextos próprios para a IA corporativa. Desenvolvimento humano e melhoria das interações com a tecnologia, na mesma prática.</p>
+          <p class="rotulo" style="margin-top:24px">120 minutos por semana · 5 etapas · turmas de até 15 pessoas</p>
+          <div class="cta-linha"><a class="botao" href="#part-empresas" data-ir="#part-empresas">Conheça o formato para sua empresa <span aria-hidden="true">↓</span></a><span class="meta">Conheça as etapas do encontro abaixo.</span></div>
         </div>
       </div>
-      <div class="pend" style="margin-top:56px">
-        <span></span>
-        <div class="leitura">
-          <p>O projeto não é uma recusa ao uso da Inteligência Artificial, mas a necessária compreensão de que, do mesmo jeito que a mudança para o trabalho de escritório e de computador mudou nossas necessidades corporais, com mais cuidado com ergonomia e tempo de corpo parado, <strong>a terceirização dos trabalhos críticos e criativos também faz necessário nascer novas estruturas adaptativas para que não percamos nossas habilidades mentais</strong>, e o que nos faz humanos, capazes de pensar qual a próxima coisa possível e necessária.</p>
-          <p style="text-indent:0;margin-top:28px"><span class="rotulo" style="font-family:var(--grotesca);margin-right:14px">nota</span><button class="termo" id="nota-neuro" type="button" aria-expanded="false" aria-controls="nota-neuro-c">Neuroplasticidade</button></p>
-          <div class="nota" id="nota-neuro-c" hidden>
-            <div><p><strong>Neuroplasticidade</strong>: é a capacidade contínua do sistema nervoso de reorganizar sua estrutura, funções e conexões em resposta a novas experiências, aprendizados, estímulos ou lesões. <strong>Se o cérebro deixa de ser requisitado para ler, elaborar, conectar, criticar, sintetizar, escrever, imaginar, prototipar, quais são os caminhos que perdemos a força muscular? E o que perdemos com o que acreditamos que estamos ganhando?</strong></p></div>
-            <div class="medidor" aria-live="polite"><span class="n" id="nota-neuro-n">0</span><span class="meta">ativações neuronais com esta nota</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="blocos">
-        <details class="bloco" id="bl-maquina" data-grupo="bloco">
-          <summary><span class="numero">(01)</span><span><span class="titulo-secao" style="display:block">A máquina dá. A máquina <span class="it">tira.</span></span><span class="meta" style="display:block">3 estudos · 1 pergunta para você</span></span><span class="mais" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M6 0V12M0 6H12" stroke="currentColor" stroke-width="1.4"/></svg></span></summary>
-          <div class="conteudo">
-            <div class="pend"><span></span><p class="frase recuo">O que <strong>delegamos às tecnologias, como a IA, tende a enfraquecer em nós</strong>, como aconteceu com a memória espacial com a chegada do GPS.</p></div>
-            <div class="tang">
-              <div id="tang-svg"></div>
-              <ol class="itens-t" id="itens-t">
-                <li class="item-t ativo"><span class="numero">(01)</span><div><p>É o caso dos <strong>Taxistas de Londres</strong>: pela necessidade de saber todas as ruas da cidade, o que era medido para tirar a licença, tinham o hipocampo maior que a média da população.</p><p class="cita" style="margin-top:6px">(Maguire et al., 2000)</p></div></li>
-                <li class="item-t"><span class="numero">(02)</span><div><p>E podemos correlacionar com um estudo de <strong>20 anos depois, nos Estados Unidos, após a chegada do GPS.</strong> Com <strong>50</strong> motoristas, conseguiram conectar o maior uso dos GPSs a uma pior memória espacial e uma mudança no hipocampo.</p><p class="cita" style="margin-top:6px">(Dahmani e Bohbot, Scientific Reports 2020)</p></div></li>
-                <li class="item-t"><span class="numero">(03)</span><div>
-                  <p>A IA é um acelerador desses riscos, já documentados desde o início da queda do nível de leitura na população, e aumento do consumo de vídeos curtos.</p>
-                  <div class="voto" id="voto-q1">
-                    <p class="rotulo">você concorda com esta afirmação?</p>
-                    <div class="botoes"><button class="contorno" type="button" data-voto="sim" aria-pressed="false">Concordo</button><button class="contorno" type="button" data-voto="nao" aria-pressed="false">Discordo</button></div>
-                    <div class="premio" id="premio" hidden>
-                      <canvas width="240" height="240" aria-hidden="true"></canvas>
-                      <div><p class="n">+<span id="premio-n">0</span></p><p class="ui">ativações neuronais por pensar sobre isso.</p><p class="meta" style="margin-top:4px" id="premio-txt"></p></div>
-                    </div>
-                  </div>
-                </div></li>
+      <div class="modulo-aberto empresa-protocolo"><div class="conteudo prot-wrap" id="prot-wrap">
+            <canvas class="neuro" id="neuro" aria-hidden="true"></canvas>
+            <p class="abertura"><strong>Estrutura do Protocolo</strong>: 120 minutos, semanal, em cinco etapas.</p>
+            <p class="abertura lf" style="margin-top:8px">Como funciona um encontro semanal dentro da empresa, minuto a minuto.</p>
+            <div class="relogio-grade">
+              <div class="relogio" id="relogio" aria-hidden="true"></div>
+              <ol class="passos" id="passos">
+                <li class="passo" id="passo-checkin" style="--dur:20" data-ini="0" data-dur="20" data-nome="check-in"><div class="cab-p"><span class="numero">(01)</span><span class="codigo suave">20 min</span></div><h3 class="lista"><strong>Check-in</strong></h3><p><strong>Check-in</strong> de chegada, por 20 minutos, fazendo atualização dos usos de IAs e questões que estão emergindo no trabalho e na vida;</p></li>
+                <li class="passo" id="passo-leitura" style="--dur:25" data-ini="20" data-dur="25" data-nome="leitura"><div class="cab-p"><span class="numero">(02)</span><span class="codigo suave">25 min</span></div><h3 class="lista"><strong>Leitura</strong></h3><p><strong>Leitura</strong> profunda individual, por 25 min, fazendo marcações nos livros, grifos e estruturas de contexto em anotações;</p>
+                  <div class="estudo"><h4>O Papel Ganha da Tela</h4><ul><li>Meta-análise de <strong>54</strong> estudos e <strong>171.055</strong> participantes confirma: Vantagem pequena, mas estatisticamente significativa, do papel sobre as telas (g ≈ <strong>0,21</strong>). <span class="cita">(<a href="https://www.sciencedirect.com/science/article/pii/S1747938X18300101" target="_blank" rel="noopener">Delgado et al., 2018</a>)</span></li></ul></div></li>
+                <li class="passo" id="passo-debate" style="--dur:45" data-ini="45" data-dur="45" data-nome="debate"><div class="cab-p"><span class="numero">(03)</span><span class="codigo suave">45 min</span></div><h3 class="lista"><strong>Debate</strong></h3><p><strong>Debate</strong> e agrupamento das leituras, por 45 min, fazendo, ao menos, 01 contexto escolhido por consenso;</p>
+                  <div class="estudo"><h4>Discutir e Construir</h4><ul><li>Diferentes abordagens de discussão, como encontros mediados por perguntas abertas, nos quais participantes apresentam argumentos, examinam contradições e precisam justificar suas interpretações, melhoram aspectos da compreensão <span class="cita">(<a href="https://eric.ed.gov/?id=EJ961480" target="_blank" rel="noopener">Graham e Hebert, 2011</a>)</span></li><li>Estudo complementar identificou raciocínios mais elaborados em discussões crítico-analíticas, com perguntas autênticas e construção sobre as falas anteriores. <span class="cita">(<a href="https://www.sciencedirect.com/science/article/pii/S0883035509000020" target="_blank" rel="noopener">Soter et al., 2008</a>)</span></li></ul></div></li>
+                <li class="passo" id="passo-escrita" style="--dur:20" data-ini="90" data-dur="20" data-nome="escrita"><div class="cab-p"><span class="numero">(04)</span><span class="codigo suave">20 min</span></div><h3 class="lista"><strong>Escrita</strong></h3><p><strong>Escrita</strong> humana manual, por 20 min, fazendo um texto do grupo para o contexto da máquina;</p>
+                  <div class="estudo"><h4>A Escrita Salva (na Memória)</h4><ul><li>Escrever sobre o que foi lido melhorou a compreensão em comparação com atividades tradicionais de leitura, incluindo releitura e discussão. <span class="cita">(<a href="https://eric.ed.gov/?id=EJ961480" target="_blank" rel="noopener">Graham e Hebert, 2011</a>)</span></li></ul></div></li>
+                <li class="passo" id="passo-contexto" style="--dur:10" data-ini="110" data-dur="10" data-nome="contexto"><div class="cab-p"><span class="numero">(05)</span><span class="codigo suave">10 min</span></div><h3 class="lista"><strong>Contexto</strong></h3><p><strong>Contexto</strong> de máquina, por 10 min, com suporte da IA fazendo um arquivo .md para ser testado durante a semana;</p><p class="codigo suave" style="margin-top:14px">contextos/semana.md</p></li>
               </ol>
             </div>
-          </div>
-        </details>
+            <div class="pend" style="margin-top:96px"><span></span><p class="frase">Turmas de até <strong>15 pessoas,</strong> com <strong>medição mensal da percepção de transformação humana</strong>, individual e coletiva, e das <strong>máquinas</strong>, capacidade crítica e criativa.</p></div>
+          </div></div>
+    </div>
+  </section>
 
-        <!-- BENEFÍCIOS PARA HUMANOS -->
-        <details class="bloco" id="bl-humanos" data-grupo="bloco">
+<!-- Benefícios para pessoas · bloco 02 -->
+  <section class="secao m modulo-detalhe" aria-label="Benefícios para pessoas · bloco 02">
+    <div class="larg"><div class="blocos"><details class="bloco" id="bl-humanos" data-grupo="bloco">
           <summary><span class="numero">(02)</span><span><span class="titulo-secao" style="display:block">Benefícios do Clube para <span class="it">Humanos</span></span><span class="meta" style="display:block">a mente humana · 7 benefícios · 12 pesquisas</span></span><span class="mais" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M6 0V12M0 6H12" stroke="currentColor" stroke-width="1.4"/></svg></span></summary>
           <div class="conteudo">
             <p class="abertura lf">Sete capacidades que o uso acrítico da IA enfraquece e que as cinco etapas do clube exercitam, com o que as pesquisas mostram sobre cada uma.</p>
@@ -585,10 +624,12 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
               <p class="ui suave"><span id="salvos-n">0</span> pesquisas salvas neste dispositivo</p>
             </div>
           </div>
-        </details>
+        </details></div></div>
+  </section>
 
-        <!-- BENEFÍCIOS PARA MÁQUINAS -->
-        <details class="bloco" id="bl-maquinas" data-grupo="bloco">
+<!-- Benefícios para a IA · bloco 03 -->
+  <section class="secao m modulo-detalhe" aria-label="Benefícios para a IA · bloco 03">
+    <div class="larg"><div class="blocos"><details class="bloco" id="bl-maquinas" data-grupo="bloco">
           <summary><span class="numero">(03)</span><span><span class="titulo-secao" style="display:block">Benefícios do Clube para <span class="it">Máquinas</span></span><span class="meta" style="display:block">a mente sintética · ganhos de máquinas · 2 benefícios</span></span><span class="mais" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M6 0V12M0 6H12" stroke="currentColor" stroke-width="1.4"/></svg></span></summary>
           <div class="conteudo">
             <p class="abertura lf">O que a IA da sua empresa ganha quando recebe contextos escritos pelo seu time.</p>
@@ -612,20 +653,118 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
               </details>
             </div>
           </div>
-        </details>
+        </details></div></div>
+  </section>
+
+<!-- DUPLO FOCO + BLOCO 04 -->
+  <section class="secao m" id="duplo-foco" aria-labelledby="h-duplo">
+    <div class="larg">
+      <hr class="fio">
+      <div class="pend" style="padding-top:14px">
+        <p class="rotulo">duplo foco</p>
+        <div>
+          <h2 class="titulo" id="h-duplo">duplo foco: o humano e a <span class="it">máquina</span></h2>
+          <p class="abertura lf" style="margin-top:20px">Por que o uso da IA no trabalho pede um novo cuidado com a mente.</p>
+        </div>
       </div>
+      <div class="pend" style="margin-top:56px">
+        <span></span>
+        <div class="leitura">
+          <p>O projeto não é uma recusa ao uso da Inteligência Artificial, mas a necessária compreensão de que, do mesmo jeito que a mudança para o trabalho de escritório e de computador mudou nossas necessidades corporais, com mais cuidado com ergonomia e tempo de corpo parado, <strong>a terceirização dos trabalhos críticos e criativos também faz necessário nascer novas estruturas adaptativas para que não percamos nossas habilidades mentais</strong>, e o que nos faz humanos, capazes de pensar qual a próxima coisa possível e necessária.</p>
+          <p style="text-indent:0;margin-top:28px"><span class="rotulo" style="font-family:var(--grotesca);margin-right:14px">nota</span><button class="termo" id="nota-neuro" type="button" aria-expanded="false" aria-controls="nota-neuro-c">Neuroplasticidade</button></p>
+          <div class="nota" id="nota-neuro-c" hidden>
+            <div><p><strong>Neuroplasticidade</strong>: é a capacidade contínua do sistema nervoso de reorganizar sua estrutura, funções e conexões em resposta a novas experiências, aprendizados, estímulos ou lesões. <strong>Se o cérebro deixa de ser requisitado para ler, elaborar, conectar, criticar, sintetizar, escrever, imaginar, prototipar, quais são os caminhos que perdemos a força muscular? E o que perdemos com o que acreditamos que estamos ganhando?</strong></p></div>
+            <div class="medidor" aria-live="polite"><span class="n" id="nota-neuro-n">0</span><span class="meta">ativações neuronais com esta nota</span></div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="blocos"><details class="bloco" id="bl-maquina" data-grupo="bloco">
+          <summary><span class="numero">(04)</span><span><span class="titulo-secao" style="display:block">A máquina dá. A máquina <span class="it">tira.</span></span><span class="meta" style="display:block">3 estudos · 1 pergunta para você</span></span><span class="mais" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M6 0V12M0 6H12" stroke="currentColor" stroke-width="1.4"/></svg></span></summary>
+          <div class="conteudo">
+            <div class="pend"><span></span><p class="frase recuo">O que <strong>delegamos às tecnologias, como a IA, tende a enfraquecer em nós</strong>, como aconteceu com a memória espacial com a chegada do GPS.</p></div>
+            <div class="tang">
+              <div id="tang-svg"></div>
+              <ol class="itens-t" id="itens-t">
+                <li class="item-t ativo"><span class="numero">(01)</span><div><p>É o caso dos <strong>Taxistas de Londres</strong>: pela necessidade de saber todas as ruas da cidade, o que era medido para tirar a licença, tinham o hipocampo maior que a média da população.</p><p class="cita" style="margin-top:6px">(Maguire et al., 2000)</p></div></li>
+                <li class="item-t"><span class="numero">(02)</span><div><p>E podemos correlacionar com um estudo de <strong>20 anos depois, nos Estados Unidos, após a chegada do GPS.</strong> Com <strong>50</strong> motoristas, conseguiram conectar o maior uso dos GPSs a uma pior memória espacial e uma mudança no hipocampo.</p><p class="cita" style="margin-top:6px">(Dahmani e Bohbot, Scientific Reports 2020)</p></div></li>
+                <li class="item-t"><span class="numero">(03)</span><div>
+                  <p>A IA é um acelerador desses riscos, já documentados desde o início da queda do nível de leitura na população, e aumento do consumo de vídeos curtos.</p>
+                  <div class="voto" id="voto-q1">
+                    <p class="rotulo">você concorda com esta afirmação?</p>
+                    <div class="botoes"><button class="contorno" type="button" data-voto="sim" aria-pressed="false">Concordo</button><button class="contorno" type="button" data-voto="nao" aria-pressed="false">Discordo</button></div>
+                    <div class="premio" id="premio" hidden>
+                      <canvas width="240" height="240" aria-hidden="true"></canvas>
+                      <div><p class="n">+<span id="premio-n">0</span></p><p class="ui">ativações neuronais por pensar sobre isso.</p><p class="meta" style="margin-top:4px" id="premio-txt"></p></div>
+                    </div>
+                  </div>
+                </div></li>
+              </ol>
+            </div>
+          </div>
+        </details></div>
     </div>
   </section>
 
-  <!-- COMO PARTICIPAR -->
+
+<!-- Evidências para líderes · seção 05 -->
+  <section class="secao m modulo-estatico " id="bl-liderancas" aria-labelledby="h-bl-liderancas">
+    <div class="larg">
+      <hr class="fio">
+      <div class="pend cab-modulo">
+        <p class="rotulo">evidências · liderança e RH</p>
+        <div>
+          <p class="numero">(05)</p>
+          <h2 class="titulo-secao" id="h-bl-liderancas" style="margin-top:14px">as lideranças já têm a necessidade. o clube tem uma boa <span class="it">resposta.</span></h2>
+          <p class="meta" style="margin-top:16px">Boston Consulting Group · junho de 2026</p>
+        </div>
+      </div>
+      <div class="modulo-aberto"><div class="conteudo">
+            <div class="pend"><span></span><div>
+              <p class="abertura" style="max-width:36em">O estudo publicado em 17 de junho de 2026, pela Boston Consulting Group, com autoria de Sagar Goel, David Martin e Charikleia Kaffe, demonstrou como esse medo já vai se alastrando pelas organizações.</p>
+              <div class="numeros">
+                <div><p class="grande">50%</p><p>já observam <strong>perda de habilidades associada</strong> ao uso de IA (aceitação das respostas de IA sem questionamento, desenvolvimento mais lento de profissionais juniores e menor diversidade de pensamento, tudo percebido por mais 40%)</p></div>
+                <div><p class="grande">60%+</p><p>preveem uma ameaça material nos próximos 3 a 5 anos</p></div>
+              </div>
+              <p class="cita" style="margin-top:32px"><strong>Referência completa</strong>: Goel, S., Martin, D., &amp; Kaffe, C. (2026). <a href="https://www.bcg.com/publications/2026/when-everyone-uses-ai-companies-risk-critical-skills" target="_blank" rel="noopener">When Everyone Uses AI, Companies Risk Losing Critical Skills</a>. Boston Consulting Group, 17 de junho de 2026.</p>
+            </div></div>
+          </div></div>
+    </div>
+  </section>
+
+<!-- Analogia corpo–mente · seção 06 -->
+  <section class="secao m modulo-estatico " id="bl-analogia" aria-labelledby="h-bl-analogia">
+    <div class="larg">
+      <hr class="fio">
+      <div class="pend cab-modulo">
+        <p class="rotulo">o futuro dos benefícios corporativos</p>
+        <div>
+          <p class="numero">(06)</p>
+          <h2 class="titulo-secao" id="h-bl-analogia" style="margin-top:14px">a academia para a <span class="it">mente</span></h2>
+          <p class="meta" style="margin-top:16px">A analogia corpo–mente · bloco 06</p>
+        </div>
+      </div>
+      <div class="modulo-aberto"><div class="conteudo">
+            <div class="pend"><span></span><p class="leitura" style="max-width:40em"><strong>Analogia corpo–mente:</strong> quando o trabalho deixou de exigir o corpo, criamos academias e benefícios para manter o corpo em uso. Quando a IA passa a fazer parte do nosso trabalho mental, precisamos de estruturas para manter essa mente crítico-criativa em uso.</p></div>
+            <canvas class="cm" id="corpo-mente" role="img" aria-label="As palavras corpo e mente, feitas de pontos, trocando pontos entre si"></canvas>
+            <div class="assinatura">
+              <p class="ass">A nova assinatura de academia será para a mente.</p>
+              <div class="quem"><p class="ser" style="font-size:26px;font-weight:400">c/txt.</p><p class="meta">clube de contexto · academia da mente</p></div>
+            </div>
+          </div></div>
+    </div>
+  </section>
+
+<!-- TRÊS FORMAS DE PARTICIPAR -->
   <section class="secao m" id="participar" aria-labelledby="h-part">
     <div class="larg">
       <hr class="fio">
       <div class="pend" style="padding-top:14px">
         <p class="rotulo">participar</p>
         <div>
-          <h2 class="titulo" id="h-part">como participar do <span class="it">clube?</span></h2>
-          <p class="abertura lf" style="margin-top:20px">Três formatos, do time inteiro na empresa à prática individual.</p>
+          <h2 class="titulo" id="h-part">três formas de <span class="it">participar</span></h2>
+          <p class="abertura lf" style="margin-top:20px">Para organizações, grupos e pessoas. Conheça a modalidade adequada a cada contexto.</p>
         </div>
       </div>
       <div class="tempo dobras">
@@ -680,75 +819,54 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     </div>
   </section>
 
-  <!-- EMPRESAS, ANALOGIA, LIDERANÇAS, LIVROS -->
-  <section class="secao m" aria-label="O clube em empresas">
-    <div class="larg">
-      <div class="blocos" style="margin-top:0">
-        <details class="bloco" id="bl-empresas" data-grupo="bloco">
-          <summary><span class="numero">(04)</span><span><span class="titulo-secao" style="display:block">O Clube em <span class="it">Empresas</span></span><span class="meta" style="display:block">critical mission · 120 minutos · 5 etapas</span></span><span class="mais" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M6 0V12M0 6H12" stroke="currentColor" stroke-width="1.4"/></svg></span></summary>
-          <div class="conteudo prot-wrap" id="prot-wrap">
-            <canvas class="neuro" id="neuro" aria-hidden="true"></canvas>
-            <p class="abertura"><strong>Estrutura do Protocolo</strong>: 120 minutos, semanal, em cinco etapas.</p>
-            <p class="abertura lf" style="margin-top:8px">Como funciona um encontro semanal dentro da empresa, minuto a minuto.</p>
-            <div class="relogio-grade">
-              <div class="relogio" id="relogio" aria-hidden="true"></div>
-              <ol class="passos" id="passos">
-                <li class="passo" id="passo-checkin" style="--dur:20" data-ini="0" data-dur="20" data-nome="check-in"><div class="cab-p"><span class="numero">(01)</span><span class="codigo suave">20 min</span></div><h3 class="lista"><strong>Check-in</strong></h3><p><strong>Check-in</strong> de chegada, por 20 minutos, fazendo atualização dos usos de IAs e questões que estão emergindo no trabalho e na vida;</p></li>
-                <li class="passo" id="passo-leitura" style="--dur:25" data-ini="20" data-dur="25" data-nome="leitura"><div class="cab-p"><span class="numero">(02)</span><span class="codigo suave">25 min</span></div><h3 class="lista"><strong>Leitura</strong></h3><p><strong>Leitura</strong> profunda individual, por 25 min, fazendo marcações nos livros, grifos e estruturas de contexto em anotações;</p>
-                  <div class="estudo"><h4>O Papel Ganha da Tela</h4><ul><li>Meta-análise de <strong>54</strong> estudos e <strong>171.055</strong> participantes confirma: Vantagem pequena, mas estatisticamente significativa, do papel sobre as telas (g ≈ <strong>0,21</strong>). <span class="cita">(<a href="https://www.sciencedirect.com/science/article/pii/S1747938X18300101" target="_blank" rel="noopener">Delgado et al., 2018</a>)</span></li></ul></div></li>
-                <li class="passo" id="passo-debate" style="--dur:45" data-ini="45" data-dur="45" data-nome="debate"><div class="cab-p"><span class="numero">(03)</span><span class="codigo suave">45 min</span></div><h3 class="lista"><strong>Debate</strong></h3><p><strong>Debate</strong> e agrupamento das leituras, por 45 min, fazendo, ao menos, 01 contexto escolhido por consenso;</p>
-                  <div class="estudo"><h4>Discutir e Construir</h4><ul><li>Diferentes abordagens de discussão, como encontros mediados por perguntas abertas, nos quais participantes apresentam argumentos, examinam contradições e precisam justificar suas interpretações, melhoram aspectos da compreensão <span class="cita">(<a href="https://eric.ed.gov/?id=EJ961480" target="_blank" rel="noopener">Graham e Hebert, 2011</a>)</span></li><li>Estudo complementar identificou raciocínios mais elaborados em discussões crítico-analíticas, com perguntas autênticas e construção sobre as falas anteriores. <span class="cita">(<a href="https://www.sciencedirect.com/science/article/pii/S0883035509000020" target="_blank" rel="noopener">Soter et al., 2008</a>)</span></li></ul></div></li>
-                <li class="passo" id="passo-escrita" style="--dur:20" data-ini="90" data-dur="20" data-nome="escrita"><div class="cab-p"><span class="numero">(04)</span><span class="codigo suave">20 min</span></div><h3 class="lista"><strong>Escrita</strong></h3><p><strong>Escrita</strong> humana manual, por 20 min, fazendo um texto do grupo para o contexto da máquina;</p>
-                  <div class="estudo"><h4>A Escrita Salva (na Memória)</h4><ul><li>Escrever sobre o que foi lido melhorou a compreensão em comparação com atividades tradicionais de leitura, incluindo releitura e discussão. <span class="cita">(<a href="https://eric.ed.gov/?id=EJ961480" target="_blank" rel="noopener">Graham e Hebert, 2011</a>)</span></li></ul></div></li>
-                <li class="passo" id="passo-contexto" style="--dur:10" data-ini="110" data-dur="10" data-nome="contexto"><div class="cab-p"><span class="numero">(05)</span><span class="codigo suave">10 min</span></div><h3 class="lista"><strong>Contexto</strong></h3><p><strong>Contexto</strong> de máquina, por 10 min, com suporte da IA fazendo um arquivo .md para ser testado durante a semana;</p><p class="codigo suave" style="margin-top:14px">contextos/semana.md</p></li>
-              </ol>
-            </div>
-            <div class="pend" style="margin-top:96px"><span></span><p class="frase">Turmas de até <strong>15 pessoas,</strong> com <strong>medição mensal da percepção de transformação humana</strong>, individual e coletiva, e das <strong>máquinas</strong>, capacidade crítica e criativa.</p></div>
-          </div>
-        </details>
-
-        <details class="bloco" id="bl-analogia" data-grupo="bloco" open>
-          <summary><span class="numero">(05)</span><span><span class="titulo-secao" style="display:block">Analogia corpo–<span class="it">mente</span></span><span class="meta" style="display:block">academia para a mente</span></span><span class="mais" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M6 0V12M0 6H12" stroke="currentColor" stroke-width="1.4"/></svg></span></summary>
-          <div class="conteudo">
-            <div class="pend"><span></span><p class="leitura" style="max-width:40em"><strong>Analogia corpo–mente:</strong> quando o trabalho deixou de exigir o corpo, criamos academias e benefícios para manter o corpo em uso. Quando a IA passa a fazer parte do nosso trabalho mental, precisamos de estruturas para manter essa mente crítico-criativa em uso.</p></div>
-            <canvas class="cm" id="corpo-mente" role="img" aria-label="As palavras corpo e mente, feitas de pontos, trocando pontos entre si"></canvas>
-            <div class="assinatura">
-              <p class="ass">A nova assinatura de academia será para a mente.</p>
-              <div class="quem"><p class="ser" style="font-size:26px;font-weight:400">c/txt.</p><p class="meta">clube de contexto · academia da mente</p></div>
-            </div>
-          </div>
-        </details>
-
-        <details class="bloco" id="bl-liderancas" data-grupo="bloco">
-          <summary><span class="numero">(06)</span><span><span class="titulo-secao" style="display:block">As lideranças já têm a necessidade. O Clube tem uma boa <span class="it">resposta.</span></span><span class="meta" style="display:block">Boston Consulting Group · 17 de junho de 2026</span></span><span class="mais" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M6 0V12M0 6H12" stroke="currentColor" stroke-width="1.4"/></svg></span></summary>
-          <div class="conteudo">
-            <div class="pend"><span></span><div>
-              <p class="abertura" style="max-width:36em">O estudo publicado em 17 de junho de 2026, pela Boston Consulting Group, com autoria de Sagar Goel, David Martin e Charikleia Kaffe, demonstrou como esse medo já vai se alastrando pelas organizações.</p>
-              <div class="numeros">
-                <div><p class="grande">50%</p><p>já observam <strong>perda de habilidades associada</strong> ao uso de IA (aceitação das respostas de IA sem questionamento, desenvolvimento mais lento de profissionais juniores e menor diversidade de pensamento, tudo percebido por mais 40%)</p></div>
-                <div><p class="grande">60%+</p><p>preveem uma ameaça material nos próximos 3 a 5 anos</p></div>
-              </div>
-              <p class="cita" style="margin-top:32px"><strong>Referência completa</strong>: Goel, S., Martin, D., &amp; Kaffe, C. (2026). <a href="https://www.bcg.com/publications/2026/when-everyone-uses-ai-companies-risk-critical-skills" target="_blank" rel="noopener">When Everyone Uses AI, Companies Risk Losing Critical Skills</a>. Boston Consulting Group, 17 de junho de 2026.</p>
-            </div></div>
-          </div>
-        </details>
-
-        <details class="bloco" id="bl-ler" data-grupo="bloco">
+<!-- A estante do clube · bloco 07 -->
+  <section class="secao m modulo-detalhe livros-secao" aria-label="A estante do clube · bloco 07">
+    <div class="larg"><div class="blocos"><details class="bloco" id="bl-ler" data-grupo="bloco">
           <summary><span class="numero">(07)</span><span><span class="titulo-secao" style="display:block">O que vamos <span class="it">ler?</span></span><span class="meta" style="display:block">13 livros da estante do clube</span></span><span class="mais" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M6 0V12M0 6H12" stroke="currentColor" stroke-width="1.4"/></svg></span></summary>
           <div class="conteudo">
             <p class="abertura lf">As leituras que formam a estrutura de pensamento da gira. e alimentam as edições do clube.</p>
             <div class="estante" id="estante" role="list"><div class="trilho" id="trilho"></div></div>
           </div>
-        </details>
+        </details></div></div>
+  </section>
+
+<!-- QUEM FACILITA O CLUBE -->
+  <section class="secao m facilitadora" id="quem-facilita" aria-labelledby="h-quem-facilita">
+    <div class="larg">
+      <hr class="fio">
+      <div class="bio">
+        <figure class="bio-foto">
+          <canvas id="matrix" role="img" aria-label="Retrato de Maia Oazem feito de caracteres em chuva de código"></canvas>
+          <figcaption class="meta">Maia Oazem · foto de Naira Mattia, Estúdio Praxe</figcaption>
+        </figure>
+        <div class="bio-info">
+          <p class="rotulo">quem facilita o clube</p>
+          <h2 class="titulo-secao" id="h-quem-facilita">maia <span class="it">oazem</span></h2>
+          <p class="ui suave">Artista Temporal · Pesquisadora Cultural · Estrategista Criativa</p>
+          <div class="recolhido" id="rec-bio">
+            <p class="abertura">Maia Oazem é uma artista temporal nascida e baseada em São Paulo. Sua prática atravessa pesquisa cultural, elaboração de futuros e estratégia criativa, e toma forma em ficção científica, design especulativo e transformação de organizações.</p>
+            <div class="bio-mais leitura" style="margin-top:1em">
+              <p>Nascida em 1990, pertence a uma geração que cresceu entrando e saindo da internet até a chegada do mobile, e agora estuda, a partir dessa vivência, o que nos acontece com o pós-IA. Passou quinze anos construindo outras coisas possíveis por dentro da Oracle, da Salesforce, do Google e da Capgemini, enquanto mantinha seu fluxo experimental na gira., laboratório que em 2027 abre sua segunda década como laborateliê. É conhecida por usar a ficção para guiar as estratégias, e pela estratégia nascida do que até então parecia ficção.</p>
+              <p>Seu trabalho foi destacado pela Veja, pela Época Negócios, pelo Estadão e pela CNBC, e apresentado no Febraban Tech e na Abradi. Leciona futuros e IA aplicada na ESPM, integra a diretoria da Associação Brasileira de Futuros, é signatária do projeto Design Centrado na Sociedade, do IF, e fez parte do grupo de ética em IA do Google. Seus roteiros de ficção científica foram selecionados no Brasil, no Canadá, nos Estados Unidos, na Índia, na Itália e no Japão.</p>
+            </div>
+          </div>
+          <button class="revelar-btn" type="button" data-alvo="rec-bio" aria-expanded="false">Continuar lendo</button>
+          <dl class="bio-dados">
+            <div><dt>trajetória</dt><dd>Oracle · Salesforce · Google · Capgemini · gira.</dd></div>
+            <div><dt>ensino e conselhos</dt><dd>ESPM · Associação Brasileira de Futuros</dd></div>
+            <div><dt>base</dt><dd>São Paulo · Brasil</dd></div>
+          </dl>
+          <p><a class="link ui" href="https://gira.guru/cv" target="_blank" rel="noopener noreferrer">Currículo e projetos de Maia Oazem ↗</a></p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FECHAMENTO -->
-  <section class="preto m" aria-label="Junte-se ao Clube">
+<section class="preto m" aria-label="Junte-se ao Clube">
     <div class="larg">
       <hr class="fio">
       <p class="final">A inteligência artificial amplia nossas capacidades intelectuais ao mesmo tempo que substitui justamente os processos pelos quais desenvolvemos essas <span class="it">capacidades.</span></p>
+      <div class="junte junte-topo"><a href="#participar">Junte-se ao Clube.</a></div>
       <div class="pend" style="margin-top:80px">
         <span></span>
         <div class="leitura">
@@ -757,20 +875,17 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
           <p>Se a questão, no curto prazo, não parece poder ser sobre usar ou não essas ferramentas, então <strong>ela precisa ser sobre quais capacidades humanas estamos deixando de exercitar durante essa produção, e como religar e exercitar essas sinapses</strong>.</p>
         </div>
       </div>
-      <div class="junte">
-        <a href="#participar">Junte-se ao Clube.</a>
-        <p class="cita">(Bastani et al., 2025; Kosmyna et al., 2025; Liu et al., 2026; Herdağdelen et al., 2026).</p>
-      </div>
+      <p class="cita" style="margin-top:56px">(Bastani et al., 2025; Kosmyna et al., 2025; Liu et al., 2026; Herdağdelen et al., 2026).</p>
     </div>
   </section>
 
-  <!-- OUTRA COISA É POSSÍVEL -->
-  <section class="rosa-final m" aria-label="Outra coisa é possível">
+<section class="rosa-final m" aria-label="Outra coisa é possível">
     <div class="larg">
       <div><hr class="fio"><p class="titulo" style="margin-top:clamp(48px,6vw,96px)">outra coisa é <span class="it">possível</span></p></div>
       <canvas id="anel-rosa" width="880" height="880" aria-hidden="true"></canvas>
     </div>
   </section>
+
 </main>
 
 <footer class="rodape m" id="rodape">
@@ -850,12 +965,26 @@ $$('.copiar').forEach(function(b){
 /* ---------- blocos e dobras: abre um, fecha os outros ---------- */
 var aoAbrir = {};
 function quandoAbrir(id, fn){ (aoAbrir[id] = aoAbrir[id] || []).push(fn); }
+var ancora = null;
+document.addEventListener('click', function(e){
+  var sm = e.target.closest && e.target.closest('details[data-grupo] > summary');
+  if (sm) ancora = { el: sm, top: sm.getBoundingClientRect().top };
+}, true);
+function segurar(d){
+  if (!ancora || ancora.el.parentNode !== d) return;
+  var a = ancora; ancora = null;
+  requestAnimationFrame(function(){
+    var dy = a.el.getBoundingClientRect().top - a.top;
+    if (Math.abs(dy) > 1) window.scrollTo({ top: window.scrollY + dy, behavior: 'instant' });
+  });
+}
 $$('details[data-grupo]').forEach(function(d){
   if (d.open) E.abertos[d.id] = 1;
   d.addEventListener('toggle', function(){
-    if (!d.open) return;
+    if (!d.open) { segurar(d); return; }
     var gr = d.getAttribute('data-grupo');
     $$('details[data-grupo="' + gr + '"]').forEach(function(o){ if (o !== d && o.open) o.open = false; });
+    segurar(d);
     (aoAbrir[d.id] || []).forEach(function(fn){ fn(); });
     if (!E.abertos[d.id]) { E.abertos[d.id] = 1; ganhar(d.classList.contains('bloco') ? 4 : 6, $('summary', d)); }
   });
@@ -882,22 +1011,86 @@ $$('[data-ir-lista]').forEach(function(a){ a.addEventListener('click', function(
 
 /* ---------- 1. rede de palavras e painel do termo ---------- */
 var TERMOS = {
-  duplo: ['duplo foco', 'Cuidar ao mesmo tempo das duas partes que hoje trabalham juntas: a pessoa e a IA que ela usa.', 'Cada encontro exercita a mente das pessoas e termina num contexto escrito por elas, que melhora as respostas da máquina.'],
-  neuro: ['neuroplasticidade', 'A capacidade do cérebro de reorganizar estruturas e conexões a partir do que vive, lê e aprende.', 'O clube devolve ao cérebro o que vinha sendo delegado à IA: ler, conectar, criticar e escrever. A máquina recebe o resultado desse exercício.'],
-  leitura: ['leitura profunda', 'Ler devagar, no papel, marcando, grifando e anotando.', '25 minutos de leitura individual em livros físicos. O que cada pessoa grifa vira matéria-prima do contexto que a IA vai receber.'],
-  debate: ['debate aberto', 'Conversa guiada por perguntas abertas, em que cada pessoa justifica a sua interpretação.', '45 minutos de debate que terminam em um contexto escolhido por consenso: uma leitura que nenhuma IA daria sozinha.'],
-  escrita: ['escrita manual', 'Escrever à mão antes de digitar, para que o pensamento fique em quem escreve.', '20 minutos de escrita do grupo, à mão. O texto humano é a base do contexto da máquina, e a autoria fica com as pessoas.'],
-  contextos: ['contextos autorais', 'Arquivos com o modo de pensar de um grupo, entregues à IA como contexto.', 'Cada encontro gera um arquivo .md testado durante a semana, para a IA responder a partir do repertório da empresa e não da média.'],
-  bionico: ['humano biônico', 'A nova dupla de trabalho: uma pessoa e a sua IA.', 'O clube potencializa as duas partes: a pessoa pensa melhor e a máquina recebe um contexto melhor.'],
-  atencao: ['atenção', 'A capacidade de sustentar o foco, ponta inicial de toda capacidade crítica.', 'Duas horas de leitura e conversa contínuas, sem resposta pronta. A atenção treinada pergunta melhor à máquina.'],
-  interpretacao: ['interpretação', 'Dar sentido ao que se lê. A leitura é aprendida e precisa de manutenção.', 'Ler e escrever toda semana mantém a estrutura de cognição. A interpretação do grupo vira o contexto que orienta a IA.'],
-  interdisciplinaridade: ['interdisciplinaridade', 'Cruzar áreas, livros e pessoas diferentes.', 'O contexto nasce do encontro de leituras diferentes. A IA ganha um repertório que não é o de todo mundo.'],
-  critica: ['crítica', 'Questionar, comparar e julgar o que se recebe, inclusive da máquina.', 'O debate exercita o questionamento. Quanto melhor a capacidade crítica do humano, melhor a capacidade crítica da IA.'],
-  criatividade: ['criatividade', 'Produzir ideias fora da média.', 'As ideias nascem no grupo antes da máquina, o que evita adotar as escolhas da IA como se fossem nossas.'],
-  memoria: ['memória', 'O que fica quando a ferramenta não está.', 'O que se lê, discute e escreve à mão fica. A IA recebe o que o grupo de fato aprendeu.'],
-  decisao: ['decisão', 'Escolher, e saber dizer "não sei" quando for o caso.', 'O grupo decide por consenso antes de consultar a máquina. A IA entra como apoio, não como autoridade.'],
-  diferenciacao: ['diferenciação', 'Respostas que não convergem para a média de todas as empresas.', 'Contextos autorais dão à IA da empresa estruturas de pensamento próprias.'],
-  protocolo: ['protocolo', '120 minutos por semana em cinco etapas: check-in, leitura, debate, escrita e contexto.', 'Um treino recorrente, com medição mensal da transformação percebida nas pessoas e nas máquinas.']
+  "duplo": [
+    "duplo foco",
+    "Desenvolver competências humanas e qualificar as respostas da IA como objetivos complementares.",
+    "Os encontros fortalecem a elaboração das equipes e transformam seus aprendizados em contextos próprios para a IA corporativa."
+  ],
+  "neuro": [
+    "aprendizagem contínua",
+    "Desenvolver repertório exige oportunidades recorrentes de leitura, reflexão e prática.",
+    "Um ritual semanal dá espaço para aprender sem depender sempre da primeira resposta da IA."
+  ],
+  "leitura": [
+    "leitura crítica",
+    "Capacidade de ler fontes, compreender argumentos e avaliar informações antes de decidir.",
+    "A leitura individual de textos e livros alimenta decisões e conversas com maior profundidade."
+  ],
+  "debate": [
+    "debate estruturado",
+    "Espaço em que diferentes áreas confrontam interpretações, justificam opiniões e aprendem juntas.",
+    "A troca entre profissionais cria repertório compartilhado e explicita desacordos que a IA pode ocultar."
+  ],
+  "escrita": [
+    "elaboração própria",
+    "Formular uma posição antes de pedir que uma ferramenta a formule por nós.",
+    "A escrita em grupo registra raciocínios, argumentos e decisões que podem orientar o uso posterior da IA."
+  ],
+  "contextos": [
+    "contextos autorais",
+    "Documentos com conceitos, critérios e aprendizados produzidos pela própria equipe.",
+    "Cada encontro gera material que pode ser testado na IA corporativa para produzir respostas mais contextualizadas."
+  ],
+  "bionico": [
+    "colaboração humano–IA",
+    "Combinação entre julgamento humano, conhecimento do negócio e capacidade de processamento da IA.",
+    "O programa desenvolve o repertório das pessoas enquanto melhora o contexto oferecido às ferramentas."
+  ],
+  "atencao": [
+    "atenção sustentada",
+    "Condição para ler documentos complexos, perceber nuances e formular perguntas relevantes.",
+    "Atividades sem respostas automáticas criam uma rotina protegida de concentração e análise."
+  ],
+  "interpretacao": [
+    "interpretação",
+    "Capacidade de compreender o que dados, documentos e resultados realmente significam para a organização.",
+    "Leitura e discussão entre áreas ampliam o repertório para avaliar respostas geradas por IA."
+  ],
+  "interdisciplinaridade": [
+    "visão sistêmica",
+    "Conectar diferentes áreas do negócio, impactos humanos e consequências das decisões.",
+    "Pessoas de repertórios distintos constroem interpretações coletivas que podem enriquecer os contextos da IA."
+  ],
+  "critica": [
+    "pensamento crítico",
+    "Questionar premissas, avaliar evidências e reconhecer limitações, inclusive das respostas de IA.",
+    "Debates guiados treinam a argumentação e tornam a revisão humana parte do processo de trabalho."
+  ],
+  "criatividade": [
+    "criatividade aplicada",
+    "Elaborar alternativas e novas interpretações em vez de apenas selecionar sugestões automáticas.",
+    "O grupo pensa antes de consultar a IA, preservando espaço para ideias diferentes da resposta mais provável."
+  ],
+  "memoria": [
+    "memória de aprendizagem",
+    "Capacidade de reter e mobilizar conhecimento em novos problemas, mesmo sem a ferramenta.",
+    "Leitura, diálogo e escrita incentivam a apropriação do conhecimento pela equipe."
+  ],
+  "decisao": [
+    "autonomia de decisão",
+    "Exercer julgamento, assumir critérios e decidir quando confiar ou não em um sistema.",
+    "Os encontros valorizam o debate e o consenso humano antes de usar a IA como apoio."
+  ],
+  "diferenciacao": [
+    "diferenciação",
+    "Capacidade de construir perspectivas e soluções que expressem a cultura e o conhecimento da empresa.",
+    "Contextos produzidos pelos times ajudam a reduzir respostas genéricas e a refletir o repertório organizacional."
+  ],
+  "protocolo": [
+    "ritual semanal",
+    "Uma prática contínua de desenvolvimento, mais próxima de um programa do que de uma palestra pontual.",
+    "São 120 minutos semanais em cinco etapas, com acompanhamento da percepção de evolução humana e do uso da IA."
+  ]
 };
 (function(){
   var rede = $('#rede'), cv = $('canvas', rede), ctx = cv.getContext('2d'), pals = $$('.pal', rede);
@@ -1259,7 +1452,7 @@ $$('.revelar-btn').forEach(function(b){
   var gSobe = el('g', {}, svg);
   var ultimoN = -1;
   function atualizar(){
-    if (!bloco.open) return;
+    if (!bloco || !visivel(bloco)) return;
     var linha = innerHeight * .5, m = 0, ativo = -1;
     passos.forEach(function(p, k){
       var r = p.getBoundingClientRect(), ini = +p.getAttribute('data-ini'), dur = +p.getAttribute('data-dur');
@@ -1424,6 +1617,60 @@ $$('.revelar-btn').forEach(function(b){
   else tr.style.animation = 'none';
 })();
 
+
+/* ---------- retrato em chuva de caracteres ---------- */
+(function(){
+  var cv = $('#matrix'); if (!cv) return;
+  var ctx = cv.getContext('2d'), img = new Image(), W, H, dpr, cel, cols, rows, luz = [], car = [], cabecas = [], vivo = false, pronto = false, ultimo = 0;
+  var GLIFOS = 'c/txt.contexto01ctxt.'.split('');
+  img.onload = function(){ pronto = true; montar(); if (visto && !RM) { vivo = true; requestAnimationFrame(quadro); } };
+  img.src = 'maia-retrato.png';
+  var visto = false;
+  function montar(){
+    if (!pronto || !cv.clientWidth) return;
+    W = cv.clientWidth; H = cv.clientHeight; dpr = Math.min(2, devicePixelRatio || 1);
+    cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    cel = Math.max(7, Math.round(W / 36)); cols = Math.floor(W / cel); rows = Math.floor(H / cel);
+    var off = document.createElement('canvas'); off.width = cols; off.height = rows;
+    var o = off.getContext('2d'); o.drawImage(img, 0, 0, cols, rows);
+    var d = o.getImageData(0, 0, cols, rows).data; luz = []; car = [];
+    for (var i = 0; i < cols * rows; i++) {
+      var l = (d[i * 4] * .3 + d[i * 4 + 1] * .59 + d[i * 4 + 2] * .11) / 255;
+      luz.push(1 - l);
+      car.push(GLIFOS[Math.floor(Math.random() * GLIFOS.length)]);
+    }
+    var ord = luz.slice().sort(function(x, y){ return x - y; }), lo = ord[Math.floor(ord.length * .35)], hi = ord[Math.floor(ord.length * .97)];
+    luz = luz.map(function(v){ var n = Math.max(0, Math.min(1, (v - lo) / (hi - lo))); return Math.pow(n, 1.6); });
+    cabecas = []; for (var c = 0; c < cols; c++) cabecas.push({ y: -Math.random() * rows * 1.5, v: .12 + Math.random() * .22 });
+    quadro(performance.now(), true);
+  }
+  function quadro(t, unico){
+    if (!unico && !vivo) return;
+    ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, W, H);
+    ctx.font = (cel * 1.05) + 'px "Courier Prime", "Courier New", monospace'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    if (!unico && t - ultimo > 90) { ultimo = t; for (var k = 0; k < cols; k++) car[Math.floor(Math.random() * car.length)] = GLIFOS[Math.floor(Math.random() * GLIFOS.length)]; }
+    for (var c = 0; c < cols; c++) {
+      var h = cabecas[c];
+      if (!unico && !RM) { h.y += h.v; if (h.y > rows + 18) { h.y = -Math.random() * rows * .6; h.v = .12 + Math.random() * .22; } }
+      for (var r = 0; r < rows; r++) {
+        var i = r * cols + c, base = luz[i], dist = h.y - r, rastro = (!RM && dist >= 0 && dist < 16) ? 1 - dist / 16 : 0;
+        var a = Math.max(base, rastro * .55 * (.35 + base));
+        if (a < .06) continue;
+        ctx.globalAlpha = Math.min(1, a);
+        ctx.fillStyle = (rastro > .92 || (rastro > .35 && base > .25)) ? '#c81e66' : '#141414';
+        ctx.fillText(car[i], c * cel + cel / 2, r * cel + cel / 2);
+      }
+    }
+    ctx.globalAlpha = 1;
+    if (!unico) requestAnimationFrame(quadro);
+  }
+  var rz; window.addEventListener('resize', function(){ clearTimeout(rz); rz = setTimeout(montar, 200); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(montar);
+  if ('IntersectionObserver' in window) new IntersectionObserver(function(es){
+    visto = es[0].isIntersecting;
+    if (visto && !vivo && pronto && !RM) { vivo = true; requestAnimationFrame(quadro); } else if (!visto) vivo = false;
+  }).observe(cv);
+})();
 })();
 </script>
 
