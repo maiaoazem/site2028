@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>SUN//FLORA · design system gerado por IA · lab aberto</title>
+<meta name="description" content="SUN//FLORA: design system generativo solarpunk com quatro elementos (Ar, Fogo, Água, Terra) como estados de luz. Prévias ao vivo e o .md para levar para a sua IA.">
+<meta property="og:title" content="SUN//FLORA · design system gerado por IA">
+<meta property="og:description" content="Uma base editorial, quatro estados de luz. Baixe o .md e leve para a sua IA.">
+<meta name="theme-color" content="#eef5ff">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+/* SUN//FLORA tokens — gerados de tokens.json */
+@font-face{font-family:'Bodoni Moda';src:url('/lab/design-systems/sunflora/fonts/BodoniModa-Variable.woff2') format('woff2');font-weight:400 900;font-style:normal;font-display:swap}
+@font-face{font-family:'Bodoni Moda';src:url('/lab/design-systems/sunflora/fonts/BodoniModa-Variable-Italic.woff2') format('woff2');font-weight:400 900;font-style:italic;font-display:swap}
+@font-face{font-family:'Alegreya Sans';src:url('/lab/design-systems/sunflora/fonts/AlegreyaSans-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Alegreya Sans';src:url('/lab/design-systems/sunflora/fonts/AlegreyaSans-400-Italic.woff2') format('woff2');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:'Alegreya Sans';src:url('/lab/design-systems/sunflora/fonts/AlegreyaSans-500.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Alegreya Sans';src:url('/lab/design-systems/sunflora/fonts/AlegreyaSans-700.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Alegreya Sans';src:url('/lab/design-systems/sunflora/fonts/AlegreyaSans-800.woff2') format('woff2');font-weight:800;font-style:normal;font-display:swap}
+@font-face{font-family:'IBM Plex Mono';src:url('/lab/design-systems/sunflora/fonts/IBMPlexMono-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'IBM Plex Mono';src:url('/lab/design-systems/sunflora/fonts/IBMPlexMono-500.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'IBM Plex Mono';src:url('/lab/design-systems/sunflora/fonts/IBMPlexMono-600.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
+:root,[data-theme="air"]{--surface:#eef5ff;--surface2:#cce2ff;--diffuse:#90bfff;--accent:#548bd7;--accent-strong:#3b7ad1;--highlight:#e0efff;--spectrum:#9cc7ff;--ink:#36577b;--ink-muted:#456486;--ambient-a:#80b6ff;--ambient-b:#d1e5ff;--art-accent:#a2c6f3;--line:#36577b3b;--line-soft:#36577b2b;--line-strong:#36577b59;--white:#ffffff;--glass-fill:rgba(255,255,255,0.39);--glass-tile:rgba(255,255,255,0.45);--glass-edge:rgba(255,255,255,0.91);--canvas-base:rgb(226,239,255);--canvas-haze:rgb(112,170,250);--canvas-secondary:rgb(162,204,255);--canvas-line:rgb(84,139,215);--canvas-glow:rgb(222,241,255);--canvas-life:rgb(107,178,148);--element-air:#548bd7;--element-fire:#dd6b91;--element-water:#4cb6b9;--element-earth:#7eab49;--shadow-artwork:0 18px 55px rgba(54,87,123,0.08);--shadow-glass-card:inset 0 1px 0 rgba(255,255,255,0.85), 0 20px 42px rgba(84,139,215,0.14);--shadow-nav:0 8px 24px rgba(54,87,123,0.04);--shadow-active:inset 0 1px 0 rgba(255,255,255,0.8), 0 0 0 1px #3b7ad1;--shadow-dot:0 0 0 4px rgba(84,139,215,0.14), 0 0 15px rgba(84,139,215,1);--shadow-panel:0 9px 30px rgba(54,87,123,0.04);}
+[data-theme="fire"]{--surface:#fff9f9;--surface2:#ffdeef;--diffuse:#ffd1b5;--accent:#dd6b91;--accent-strong:#d64e7b;--highlight:#fff1a9;--spectrum:#ffbad8;--ink:#894762;--ink-muted:#91536d;--ambient-a:#ffc5d9;--ambient-b:#ffeab9;--art-accent:#ffabbc;--line:#8947623b;--line-soft:#8947622b;--line-strong:#89476259;--white:#ffffff;--glass-fill:rgba(255,255,255,0.39);--glass-tile:rgba(255,255,255,0.45);--glass-edge:rgba(255,255,255,0.91);--canvas-base:rgb(255,248,249);--canvas-haze:rgb(255,172,199);--canvas-secondary:rgb(255,232,167);--canvas-line:rgb(225,107,145);--canvas-glow:rgb(255,243,182);--canvas-life:rgb(172,180,100);--element-air:#548bd7;--element-fire:#dd6b91;--element-water:#4cb6b9;--element-earth:#7eab49;--shadow-artwork:0 18px 55px rgba(137,71,98,0.08);--shadow-glass-card:inset 0 1px 0 rgba(255,255,255,0.85), 0 20px 42px rgba(221,107,145,0.14);--shadow-nav:0 8px 24px rgba(137,71,98,0.04);--shadow-active:inset 0 1px 0 rgba(255,255,255,0.8), 0 0 0 1px #d64e7b;--shadow-dot:0 0 0 4px rgba(221,107,145,0.14), 0 0 15px rgba(221,107,145,1);--shadow-panel:0 9px 30px rgba(54,87,123,0.04);}
+[data-theme="water"]{--surface:#f7ffff;--surface2:#d8f4fa;--diffuse:#baf0dd;--accent:#4cb6b9;--accent-strong:#3a9193;--highlight:#dcfff0;--spectrum:#8cdbef;--ink:#296c78;--ink-muted:#33737f;--ambient-a:#b7e9ff;--ambient-b:#c9ffe3;--art-accent:#95e6d9;--line:#296c783b;--line-soft:#296c782b;--line-strong:#296c7859;--white:#ffffff;--glass-fill:rgba(255,255,255,0.39);--glass-tile:rgba(255,255,255,0.45);--glass-edge:rgba(255,255,255,0.91);--canvas-base:rgb(246,254,255);--canvas-haze:rgb(135,211,240);--canvas-secondary:rgb(182,249,206);--canvas-line:rgb(76,182,185);--canvas-glow:rgb(227,255,244);--canvas-life:rgb(74,172,115);--element-air:#548bd7;--element-fire:#dd6b91;--element-water:#4cb6b9;--element-earth:#7eab49;--shadow-artwork:0 18px 55px rgba(41,108,120,0.08);--shadow-glass-card:inset 0 1px 0 rgba(255,255,255,0.85), 0 20px 42px rgba(76,182,185,0.14);--shadow-nav:0 8px 24px rgba(41,108,120,0.04);--shadow-active:inset 0 1px 0 rgba(255,255,255,0.8), 0 0 0 1px #3a9193;--shadow-dot:0 0 0 4px rgba(76,182,185,0.14), 0 0 15px rgba(76,182,185,1);--shadow-panel:0 9px 30px rgba(54,87,123,0.04);}
+[data-theme="earth"]{--surface:#fbfff5;--surface2:#e1f1c8;--diffuse:#ecf6b1;--accent:#7eab49;--accent-strong:#688d3c;--highlight:#fff3ab;--spectrum:#bde690;--ink:#4b6841;--ink-muted:#54704a;--ambient-a:#ccebab;--ambient-b:#fff3b3;--art-accent:#bee875;--line:#4b68413b;--line-soft:#4b68412b;--line-strong:#4b684159;--white:#ffffff;--glass-fill:rgba(255,255,255,0.39);--glass-tile:rgba(255,255,255,0.45);--glass-edge:rgba(255,255,255,0.91);--canvas-base:rgb(251,255,247);--canvas-haze:rgb(177,221,135);--canvas-secondary:rgb(253,239,166);--canvas-line:rgb(126,171,73);--canvas-glow:rgb(255,250,207);--canvas-life:rgb(82,150,83);--element-air:#548bd7;--element-fire:#dd6b91;--element-water:#4cb6b9;--element-earth:#7eab49;--shadow-artwork:0 18px 55px rgba(75,104,65,0.08);--shadow-glass-card:inset 0 1px 0 rgba(255,255,255,0.85), 0 20px 42px rgba(126,171,73,0.14);--shadow-nav:0 8px 24px rgba(75,104,65,0.04);--shadow-active:inset 0 1px 0 rgba(255,255,255,0.8), 0 0 0 1px #688d3c;--shadow-dot:0 0 0 4px rgba(126,171,73,0.14), 0 0 15px rgba(126,171,73,1);--shadow-panel:0 9px 30px rgba(54,87,123,0.04);}
+:root{--space-5:5px;--space-7:7px;--space-12:12px;--space-20:20px;--space-24:24px;--space-28:28px;--space-35:35px;--space-42:42px;--space-98:98px;--container:1360px;--radius-4:4px;--radius-5:5px;--radius-6:6px;--radius-7:7px;--radius-8:8px;--radius-glass:20px;--radius-pill:99px;--blur-glass:22px;--blur-panel:14px;--blur-material:12px;--blur-ambient:55px;--glass-refraction:0.72;--light-bloom:0.68;--life-density:0.54;--motion-pulse:0.40;--font-display:'Bodoni Moda', Didot, 'Bodoni MT', Georgia, serif;--font-sans:'Alegreya Sans', 'Segoe UI', Arial, sans-serif;--font-mono:'IBM Plex Mono', 'Courier New', monospace;}
+
+/* SUN//FLORA V4.2 — component styles, ported 1:1 from index.html.
+   Every colour, radius and shadow reads a token from tokens.css.
+   Wrap any surface in .sf to get the page ground, ink and sans text. */
+
+.sf{background:var(--surface);color:var(--ink);font-family:var(--font-sans);font-optical-sizing:auto;font-kerning:normal;font-variant-numeric:lining-nums;-webkit-font-smoothing:antialiased}
+.sf *{box-sizing:border-box}
+.sf button,.sf input{font:inherit}
+.sf button{cursor:pointer}
+.sf button:focus-visible,.sf a:focus-visible,.sf input:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.sf-mono{font-family:var(--font-mono);letter-spacing:.04em}
+.sf-display{font-family:var(--font-display);font-weight:400;letter-spacing:-.035em;font-optical-sizing:auto}
+
+/* Icon */
+.icon-glyph{display:inline-flex;align-items:center;justify-content:center;width:1.15em;height:1.15em;line-height:0;vertical-align:middle;flex:0 0 auto}
+.icon-glyph svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* Wordmark */
+.brand{font-family:var(--font-sans);font-size:25px;letter-spacing:-.04em;font-weight:800;white-space:nowrap;color:var(--ink);text-decoration:none}
+.brand span{color:var(--accent-strong);font-weight:500}
+.brand i{font-size:14px;vertical-align:top;margin-left:3px;font-style:normal;color:var(--accent-strong)}
+
+/* Status dot */
+.status-dot{display:inline-block;width:7px;height:7px;background:var(--accent-strong);border-radius:50%;box-shadow:var(--shadow-dot);flex-shrink:0}
+
+/* Section identity + kicker */
+.section-identity{display:flex;justify-content:space-between;gap:12px;align-items:center;padding-top:14px;border-top:1px solid var(--line-soft);font-family:var(--font-mono);font-size:10px;letter-spacing:.08em}
+.small-kicker{display:flex;align-items:center;gap:14px;font-family:var(--font-mono);font-size:10px;letter-spacing:.14em}
+.kicker-line{flex:1;border-top:1px solid var(--line);max-width:90px}
+
+/* Global mode switch (pill segmented control) */
+.global-mode-list{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.global-mode-list button{min-height:42px;padding:10px 6px;display:flex;gap:8px;align-items:center;justify-content:center;background:var(--glass-tile);color:var(--ink);border:1px solid var(--line-soft);border-radius:var(--radius-pill);font:500 10px var(--font-mono);letter-spacing:.06em;transition:background .3s,border-color .3s,box-shadow .3s}
+.global-mode-list button b{font-weight:600}
+.global-mode-list button[aria-pressed=true]{border-color:var(--accent-strong);background:var(--surface2);box-shadow:0 0 0 2px color-mix(in srgb,var(--accent),transparent 85%),inset 0 1px 0 #fff}
+
+/* Mode button (element selector tile) */
+.element-selector{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-5)}
+.mode-button{border:1px solid var(--line);border-radius:var(--radius-5);background:var(--glass-tile);color:var(--ink);display:flex;flex-direction:column;min-width:0;text-align:left;padding:13px 10px;transition:background .32s,transform .25s,border .25s}
+.mode-button span{font:9px var(--font-mono);letter-spacing:.04em;color:var(--ink-muted)}
+.mode-button b{font-weight:500;font-size:16px;margin-top:21px;line-height:1.1}
+.mode-button small{font:9px var(--font-mono);letter-spacing:.04em;color:var(--ink-muted);margin-top:8px}
+.mode-button.active,.mode-button[aria-pressed=true]{background:var(--surface2);border-color:var(--accent-strong);box-shadow:var(--shadow-active)}
+.mode-button:active{transform:scale(.97)}
+
+/* Buttons */
+.control-actions{display:flex;gap:var(--space-7)}
+.control-actions button{min-height:48px;border-radius:var(--radius-5);border:1px solid var(--ink);font:500 11px var(--font-mono);letter-spacing:.04em;white-space:nowrap}
+.action-main{flex:1;background:var(--ink);color:var(--white);display:flex;align-items:center;justify-content:space-between;padding:0 16px;gap:12px}
+.action-ghost{background:transparent;color:var(--ink);padding:0 13px}
+.secondary-actions button{flex:1;border-color:var(--line-strong);background:var(--glass-tile);color:var(--ink)}
+.code-buttons{display:flex;gap:10px}
+.code-buttons button{min-height:45px;padding:0 16px;color:var(--ink);background:transparent;border:1px solid var(--line-strong);border-radius:var(--radius-4);display:flex;align-items:center;gap:20px;font:500 11px var(--font-mono);letter-spacing:.04em}
+.code-buttons button:first-child{background:var(--ink);color:var(--white)}
+.header-cta{display:inline-block;font:10px var(--font-mono);letter-spacing:.12em;border:1px solid var(--line-strong);padding:12px 16px;border-radius:var(--radius-pill);color:var(--ink);text-decoration:none}
+.header-cta span{margin-left:15px}
+
+/* Range control */
+.range-control{margin-bottom:23px}
+.range-heading{display:flex;justify-content:space-between;align-items:center;font:10px var(--font-mono);letter-spacing:.05em;margin-bottom:12px}
+.range-heading output{font-weight:600;font-variant-numeric:tabular-nums}
+.sf input[type=range]{width:100%;height:3px;margin:0;cursor:pointer;-webkit-appearance:none;appearance:none;background:linear-gradient(90deg,var(--accent-strong),var(--accent) 45%,var(--diffuse));border-radius:10px}
+.sf input[type=range]::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--white);border:2px solid var(--accent-strong);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent),transparent 84%)}
+.sf input[type=range]::-moz-range-thumb{width:12px;height:12px;border-radius:50%;background:var(--white);border:2px solid var(--accent-strong)}
+
+/* Glass instruction card */
+.component-card{background:var(--glass-fill);border:1px solid var(--glass-edge);box-shadow:var(--shadow-glass-card);padding:var(--space-24);border-radius:var(--radius-glass);backdrop-filter:blur(var(--blur-glass)) saturate(1.7);-webkit-backdrop-filter:blur(var(--blur-glass)) saturate(1.7);position:relative;color:var(--ink);font:10px/1.65 var(--font-mono);letter-spacing:.04em}
+.component-card-head{display:flex;gap:10px;align-items:center;border-bottom:1px solid var(--line);padding-bottom:12px}
+.component-card-head strong{font-weight:600}
+.component-card-head>span:last-child{margin-left:auto}
+.component-card p{margin:28px 0;font-family:var(--font-sans);font-size:15px;line-height:1.6;letter-spacing:0}
+.component-command{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:16px;min-height:48px;font-size:11px}
+.component-command>span:last-child{margin-left:auto}
+.component-step{border:1px solid var(--accent-strong);border-radius:30px;min-width:28px;text-align:center}
+.step-progress{display:flex;gap:8px;margin-top:23px}
+.step-progress button{width:37px;height:31px;background:var(--glass-tile);color:var(--ink);border:1px solid var(--line);border-radius:var(--radius-glass);font:10px var(--font-mono)}
+.step-progress button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:var(--white)}
+.stage{padding:32px;border-radius:var(--radius-8);border:1px solid var(--glass-edge);background:radial-gradient(ellipse at 25% 36%,var(--ambient-a),transparent 48%),radial-gradient(ellipse at 75% 70%,var(--ambient-b),transparent 53%),linear-gradient(145deg,rgba(255,255,255,.76),var(--surface2))}
+
+/* Rule pair: fixed base vs elemental transformation */
+.rule-pair{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-12)}
+.rule-pair>div{min-height:112px;padding:20px 22px;border:1px solid var(--line-soft);background:rgba(255,255,255,.59);border-radius:var(--radius-5)}
+.rule-pair .rule-changing{border-color:var(--accent-strong);background:linear-gradient(120deg,rgba(255,255,255,.69),color-mix(in srgb,var(--surface2),transparent 32%))}
+.rule-pair span{display:block;font:10px/1.65 var(--font-mono);letter-spacing:.04em;color:var(--ink-muted);margin-bottom:10px}
+.rule-pair .rule-changing span{color:var(--ink);font-weight:600}
+.rule-pair p{margin:0;font-size:14px;line-height:1.6}
+
+/* Foundation tile */
+.foundation-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.foundation-grid>div{padding:23px;min-height:184px;display:flex;flex-direction:column;gap:12px;border:1px solid var(--line-soft);background:linear-gradient(140deg,rgba(255,255,255,.75),rgba(255,255,255,.2));border-radius:var(--radius-6)}
+.foundation-grid span{font:10px/1.65 var(--font-mono);letter-spacing:.04em;color:var(--ink-muted)}
+.foundation-grid b{font-family:var(--font-display);font-size:31px;font-weight:400;letter-spacing:-.02em;line-height:1.05}
+.foundation-grid p{font-size:13px;line-height:1.6;margin:0}
+
+/* Swatch */
+.palette{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+.swatch{border:1px solid var(--line);background:rgba(255,255,255,.58);border-radius:var(--radius-5);display:flex;flex-direction:column;overflow:hidden;min-width:0;padding:0;color:var(--ink);text-align:left}
+.swatch-color{height:112px;display:block}
+.swatch-bottom{padding:12px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font:10px var(--font-mono)}
+.swatch-bottom strong{font-weight:600}
+
+/* Light panels (the three gradient families) */
+.light-panels{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-12)}
+.light-panel{position:relative;border:1px solid var(--glass-edge);border-radius:var(--radius-6);min-height:200px;padding:20px;overflow:hidden;display:flex;flex-direction:column;align-items:start;justify-content:space-between}
+.gradient-atmosphere{background:linear-gradient(136deg,#fff,var(--surface2) 53%,var(--diffuse))}
+.gradient-sun{background:radial-gradient(circle at 56% 50%,var(--highlight),transparent 32%),radial-gradient(circle at 76% 24%,var(--ambient-b),transparent 68%),var(--surface2)}
+.gradient-prism{background:conic-gradient(from 40deg at 55% 50%,var(--surface2),var(--ambient-a),var(--highlight),var(--spectrum),var(--surface2),var(--ambient-b),var(--surface2))}
+.light-panel:after{content:'';position:absolute;width:75%;height:80%;border:1px solid rgba(255,255,255,.75);border-radius:47% 53% 37% 63%;top:27%;left:39%;transform:rotate(-23deg);box-shadow:0 0 20px rgba(255,255,255,.7),inset 0 0 23px rgba(255,255,255,.7);pointer-events:none}
+.light-panel>div,.light-panel>span{font:500 9px var(--font-mono);letter-spacing:.04em;position:relative;z-index:1}
+.light-panel b{font-family:var(--font-display);font-weight:400;font-size:43px;letter-spacing:-.03em;position:relative;z-index:1}
+
+/* Materials */
+.material-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-12)}
+.material-tile{border:1px solid var(--line-soft);border-radius:var(--radius-6);padding:12px;background:rgba(255,255,255,.46)}
+.material-demo{height:200px;display:grid;place-items:center;overflow:hidden;border-radius:var(--radius-4);position:relative}
+.clear-demo{background:radial-gradient(circle at 37% 27%,var(--ambient-b),transparent 43%),linear-gradient(120deg,var(--surface2),var(--diffuse))}
+.gel-demo{background:radial-gradient(circle at 75% 27%,var(--ambient-b),transparent 45%),var(--surface2)}
+.sphere-demo{background:radial-gradient(circle at 15% 80%,var(--ambient-a),transparent 50%),var(--surface2)}
+.material-glass{width:53%;aspect-ratio:1;border:1px solid rgba(255,255,255,.94);background:linear-gradient(146deg,rgba(255,255,255,.5),rgba(255,255,255,.08) 43%,rgba(255,255,255,.46));backdrop-filter:blur(var(--blur-material));border-radius:35%;box-shadow:inset 0 1px 12px rgba(255,255,255,.75),inset -6px -8px 25px rgba(117,168,229,.17),0 18px 30px rgba(66,110,160,.1);display:grid;place-items:center;font-size:56px;color:rgba(255,255,255,.8);transform:rotate(-18deg)}
+.material-gel{width:52%;aspect-ratio:1;border-radius:51% 49% 62% 38% / 42% 54% 46% 58%;background:radial-gradient(circle at 27% 23%,#fff 2%,transparent 24%),radial-gradient(circle at 70% 77%,var(--ambient-b),transparent 32%),radial-gradient(circle at 43% 48%,rgba(255,255,255,.04),var(--spectrum));border:2px solid rgba(255,255,255,.85);box-shadow:inset 10px 10px 20px rgba(255,255,255,.76),inset -18px -19px 25px color-mix(in srgb,var(--accent),transparent 47%),0 21px 31px color-mix(in srgb,var(--accent),transparent 78%);transform:rotate(-25deg);animation:sfGelFloat 8s ease-in-out infinite alternate}
+.material-sphere{width:55%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 29% 22%,#fff 0%,rgba(255,255,255,.7) 8%,transparent 32%),radial-gradient(circle at 73% 82%,var(--ink),transparent 35%),radial-gradient(circle at 23% 65%,var(--ambient-b),transparent 40%),linear-gradient(135deg,rgba(255,255,255,.95),var(--spectrum),rgba(255,255,255,.46),var(--accent));box-shadow:inset -12px -13px 23px color-mix(in srgb,var(--ink),transparent 66%),inset 12px 17px 23px rgba(255,255,255,.9),0 20px 27px color-mix(in srgb,var(--ink),transparent 80%);border:1px solid rgba(255,255,255,.98);animation:sfGelFloat 6s ease-in-out infinite alternate-reverse}
+.material-tile>div:last-child{padding:16px 4px 4px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.material-tile strong{font-size:16px;font-weight:500}
+.material-tile>div:last-child span{font:9px/1.3 var(--font-mono);letter-spacing:.04em;color:var(--ink-muted)}
+@keyframes sfGelFloat{0%{transform:translateY(8px) rotate(-15deg)}100%{transform:translateY(-9px) rotate(14deg)}}
+
+/* Orbit (component-shine) — Air/Fire: rings only; Water: globe + refractive rings; Earth: globe + fading rings */
+.orbit{position:relative;min-height:240px;display:grid;place-items:center}
+.orbit-globe{width:min(53%,200px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 31% 23%,#fff 0 4%,transparent 31%),radial-gradient(circle at 68% 72%,var(--ambient-b),transparent 44%),radial-gradient(circle at 44% 54%,rgba(255,255,255,.08) 0%,var(--spectrum) 80%,var(--accent));border:2px solid rgba(255,255,255,.85);box-shadow:inset 14px 12px 35px rgba(255,255,255,.84),inset -14px -11px 32px color-mix(in srgb,var(--accent),transparent 60%),0 0 70px color-mix(in srgb,var(--accent),transparent 68%);animation:sfLivingOrb 8s ease-in-out infinite alternate}
+.orbit-ring{position:absolute;width:76%;height:32%;border:3px solid rgba(255,255,255,.85);border-radius:50%;box-shadow:0 0 13px color-mix(in srgb,var(--accent),transparent 57%),inset 0 0 14px rgba(255,255,255,.9);transform:rotate(-26deg);animation:sfOrbit 13s linear infinite}
+.orbit-ring.two{width:59%;height:36%;transform:rotate(55deg);border-width:1px;animation-duration:21s;animation-direction:reverse}
+.orbit-ring.fade{animation:sfOrbit 13s linear infinite,sfFade 5s ease-in-out infinite alternate}
+@keyframes sfLivingOrb{from{transform:translateY(-6px) scale(.96)}to{transform:translateY(9px) scale(1.04)}}
+@keyframes sfOrbit{from{transform:rotate(-26deg)}to{transform:rotate(334deg)}}
+@keyframes sfFade{from{opacity:.05}to{opacity:1}}
+
+/* Terminal status + live label */
+.terminal-status{padding:12px;background:color-mix(in srgb,var(--surface2),transparent 25%);border-left:2px solid var(--accent-strong);font:10px/1.4 var(--font-mono);letter-spacing:.04em;min-height:41px}
+.code-preview{margin:0;overflow:auto;border:1px solid var(--line-soft);border-radius:var(--radius-7);background:rgba(255,255,255,.65);padding:24px;font:12px/1.95 var(--font-mono);color:var(--ink)}
+
+/* Glass type */
+.type-display{font-family:var(--font-display);font-size:96px;font-weight:400;letter-spacing:-.04em;line-height:1.1;color:rgba(255,255,255,.28);-webkit-text-stroke:1px var(--accent-strong);text-shadow:2px 4px 0 rgba(255,255,255,.75),2px 10px 18px rgba(102,151,201,.17);margin:0;white-space:nowrap}
+
+@media (prefers-reduced-motion:reduce){.material-gel,.material-sphere,.orbit-globe,.orbit-ring{animation:none}}
+
+/* ---------- página ---------- */
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--surface)}
+.page{min-height:100vh;transition:background .7s,color .5s;position:relative;isolation:isolate;overflow:clip}
+.page:before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 35% 30% at 5% 20%,var(--ambient-a),transparent 85%),radial-gradient(ellipse 45% 35% at 89% 5%,var(--ambient-b),transparent 88%);opacity:.4;filter:blur(55px);transition:background .7s}
+.wrap{width:min(1360px,calc(100% - 2*var(--space-42)));margin:0 auto}
+.sf h1,.sf h2,.sf h3{font-family:var(--font-display);font-weight:400;margin:0;font-optical-sizing:auto}
+.sf h1 em,.sf h2 em{font-style:italic}
+.lead{font-size:16px;line-height:1.65;max-width:40ch;margin:0}
+.lbl{font:10px/1.5 var(--font-mono);letter-spacing:.08em;text-transform:uppercase}
+.muted{color:var(--ink-muted)}
+
+/* abertura */
+.hero{padding:clamp(40px,7vw,90px) 0 clamp(32px,5vw,56px)}
+.hero h1{font-size:clamp(46px,13.6vw,190px);line-height:.86;letter-spacing:-.035em;margin:30px 0 0}
+.hero .sub{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;align-items:end;margin-top:clamp(24px,4vw,44px)}
+.hero h2{font-size:clamp(34px,4.4vw,64px);line-height:.95;letter-spacing:-.03em}
+.acoes-dl{display:flex;flex-wrap:wrap;gap:var(--space-7);margin-top:26px}
+.acoes-dl a{min-height:48px;display:inline-flex;align-items:center;gap:14px;padding:0 18px;border-radius:var(--radius-5);font:500 11px var(--font-mono);letter-spacing:.06em;text-decoration:none;border:1px solid var(--ink)}
+.acoes-dl .dl{background:var(--ink);color:var(--white)}
+.acoes-dl .ver{color:var(--ink);background:var(--glass-tile)}
+.acoes-dl a:hover{transform:translateY(-1px)}
+.nota-dl{margin-top:12px}
+
+/* navegação de atmosfera */
+.atmo{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px max(var(--space-42),calc((100vw - 1360px)/2));background:color-mix(in srgb,var(--surface),white 25%);border-block:1px solid var(--line-soft);box-shadow:var(--shadow-nav);backdrop-filter:blur(var(--blur-glass)) saturate(1.4);-webkit-backdrop-filter:blur(var(--blur-glass)) saturate(1.4);transition:background .7s}
+.atmo .global-mode-list{width:min(560px,62%)}
+.atmo .lbl{display:flex;align-items:center;gap:10px;white-space:nowrap}
+
+/* seções */
+.secao{padding:clamp(64px,8vw,98px) 0 0}
+.cab{display:flex;justify-content:space-between;align-items:end;gap:34px;margin:28px 0 36px}
+.cab h2{font-size:clamp(52px,7vw,110px);line-height:.86;letter-spacing:-.035em}
+.cab p{max-width:380px;margin:0;font-size:15px;line-height:1.65}
+.equacao{margin-top:10px;padding:20px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;gap:14px 18px;flex-wrap:wrap;background:rgba(255,255,255,.4);border-radius:var(--radius-5);font:10px/1.5 var(--font-mono);letter-spacing:.06em}
+.equacao i{font:40px var(--font-display);color:var(--accent-strong);font-style:normal}
+.equacao b{font-weight:500}
+
+/* elementos ao vivo */
+.elementos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-12)}
+.el{display:flex;flex-direction:column;text-align:left;padding:0;border:1px solid var(--line);border-radius:var(--radius-6);overflow:hidden;background:var(--surface2);color:var(--ink);font:inherit;cursor:pointer;transition:transform .3s,border-color .3s,box-shadow .3s}
+.el:hover{transform:translateY(-3px)}
+.el[aria-pressed=true]{border-color:var(--accent-strong);box-shadow:var(--shadow-active)}
+.el canvas{display:block;width:100%;aspect-ratio:4/5;background:var(--surface)}
+.el-txt{padding:16px 16px 18px;display:grid;gap:8px;background:var(--surface)}
+.el-txt b{font:400 26px/1 var(--font-display);letter-spacing:-.02em}
+.el-txt .lbl{color:var(--ink-muted)}
+.el-txt p{margin:0;font-size:13px;line-height:1.55}
+
+/* palco */
+.palco{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(320px,1fr);gap:20px;align-items:stretch}
+.cena{position:relative;border-radius:var(--radius-7);overflow:hidden;min-height:560px;box-shadow:var(--shadow-artwork)}
+.cena canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.cena .cruz{position:absolute;font:300 24px var(--font-sans);opacity:.6;z-index:2}
+.cena .topo-cena{position:absolute;left:28px;right:28px;top:22px;display:flex;justify-content:space-between;z-index:2}
+.cena .titulo-vidro{position:absolute;left:0;right:0;top:34%;text-align:center;z-index:2;pointer-events:none;font-family:var(--font-display);font-size:clamp(90px,13vw,210px);line-height:1;letter-spacing:-.06em;color:rgba(255,255,255,.28);-webkit-text-stroke:1px var(--accent-strong);text-shadow:2px 4px 0 rgba(255,255,255,.75),0 0 22px rgba(255,255,255,.9)}
+.cena .component-card{position:absolute;right:5%;bottom:7%;width:min(330px,60%);z-index:3}
+.controles{padding:var(--space-28);display:flex;flex-direction:column;gap:6px;background:linear-gradient(155deg,rgba(255,255,255,.78),rgba(255,255,255,.4));border:1px solid var(--glass-edge);border-radius:var(--radius-7);box-shadow:var(--shadow-panel);backdrop-filter:blur(var(--blur-panel));-webkit-backdrop-filter:blur(var(--blur-panel))}
+.controles h3{font-size:clamp(42px,4vw,64px);line-height:.9;letter-spacing:-.035em;margin:14px 0 22px}
+.controles .terminal-status{margin-top:auto}
+
+/* luz */
+.amostras{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin-bottom:var(--space-12)}
+.swatch-bottom span{color:var(--ink-muted)}
+
+/* tipografia */
+.vozes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-12)}
+.voz{border:1px solid var(--line-soft);border-radius:var(--radius-6);padding:22px;background:rgba(255,255,255,.55);display:flex;flex-direction:column;gap:14px;min-height:300px}
+.voz .amostra-d{font-family:var(--font-display);font-size:96px;line-height:.9;letter-spacing:-.035em}
+.voz .amostra-s{font-family:var(--font-sans);font-size:64px;line-height:1;font-weight:500}
+.voz .amostra-m{font-family:var(--font-mono);font-size:44px;line-height:1.05;font-weight:500;letter-spacing:-.01em}
+.voz h3{font-size:30px;letter-spacing:-.02em}
+.voz p{margin:0;font-size:14px;line-height:1.6}
+.voz .lbl{color:var(--ink-muted)}
+
+/* comp */
+.grade-comp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-12)}
+.bloco{overflow:hidden;border:1px solid var(--line-soft);border-radius:var(--radius-6);padding:22px;background:rgba(255,255,255,.5);display:flex;flex-direction:column;gap:18px}
+
+/* IA */
+.passos{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-12)}
+.passos li{border:1px solid var(--line-soft);border-radius:var(--radius-6);padding:22px;background:rgba(255,255,255,.55);display:flex;flex-direction:column;gap:12px}
+.passos b{font:400 30px/1 var(--font-display);letter-spacing:-.02em}
+.passos p{margin:0;font-size:14px;line-height:1.6}
+.prompt{margin-top:var(--space-12);display:grid;gap:10px}
+.prompt .code-preview{white-space:pre-wrap;min-height:0}
+.rodape{margin-top:clamp(64px,8vw,98px);border-top:1px solid var(--line-soft);padding:24px 0 40px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.rodape a{color:inherit}
+
+@media (max-width:1050px){.atmo>.lbl{display:none}.atmo{justify-content:center;padding:9px 12px}.atmo .global-mode-list{width:100%}.elementos{grid-template-columns:repeat(2,minmax(0,1fr))}.foundation-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:920px){.wrap{width:calc(100% - 40px)}.hero .sub,.palco{grid-template-columns:1fr}.cab{display:block}.cab p{margin-top:20px}.amostras{grid-template-columns:repeat(3,1fr)}.light-panels,.material-grid,.vozes,.passos,.grade-comp{grid-template-columns:1fr}.rule-pair{grid-template-columns:1fr}.cena{min-height:520px}}
+@media (max-width:560px){.cena{min-height:600px}.cena .titulo-vidro{top:17%;font-size:28vw}.cena .component-card{bottom:4%;padding:16px}.cena .component-card p{margin:14px 0}.cena .step-progress{margin-top:14px}.elementos{grid-template-columns:1fr 1fr;gap:8px}.el-txt{padding:12px}.el-txt b{font-size:21px}.el-txt p{display:none}.cena .component-card{width:84%;right:8%}.foundation-grid>div{padding:16px;min-height:0}.voz .amostra-d{font-size:72px}.global-mode-list button{font-size:9px;gap:5px;padding:8px 3px}}
+</style>
+</head>
+<body>
+<nav class="lab-nav" aria-label="Navegação">
+<style>
+.lab-nav{position:relative;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:8px 18px;flex-wrap:wrap;margin:0;padding:10px max(16px,env(safe-area-inset-left,0px));background:#fbf8f4;color:#141414;border-bottom:1px solid #141414;font:12px/1.2 "Instrument Sans","Helvetica Neue",Arial,sans-serif;letter-spacing:.09em;text-transform:uppercase;box-sizing:border-box;width:100%}
+.lab-nav a{color:inherit;text-decoration:none;border:0;display:inline-flex;align-items:center;gap:8px}
+.lab-nav a:hover{opacity:.6}
+.lab-nav .lab-nav-trilha{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.lab-nav .lab-nav-sep{opacity:.45}
+.lab-nav .lab-nav-atual{color:#5b5754}
+</style>
+<span class="lab-nav-trilha">
+<a href="/"><svg width="14" height="14" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M53 8L91 72H15Z"/><path fill="currentColor" d="M43 94L9 36H77Z"/></svg>Maia Oazem</a>
+<span class="lab-nav-sep" aria-hidden="true">/</span>
+<a href="/lab/">lab aberto</a>
+<span class="lab-nav-sep" aria-hidden="true">/</span>
+<span class="lab-nav-atual" aria-current="page">sunflora</span>
+</span>
+</nav>
+<div class="sf page" id="pagina" data-theme="air">
+
+<header class="wrap hero">
+  <div class="small-kicker"><span class="status-dot"></span> DESIGN SYSTEM 01 / GERADO POR IA <span class="kicker-line"></span> LABORATELIÊ · GIRA.</div>
+  <h1>SUN//FLORA</h1>
+  <div class="sub">
+    <h2>Light is a<br><em>living material.</em></h2>
+    <div>
+      <p class="lead">Um design system generativo solarpunk: uma base editorial com <strong>quatro modos de existência</strong> — Ar, Fogo, Água e Terra. Grid, vidro, tipografia e componentes ficam; luz, cor, física e linguagem mudam em tempo real.</p>
+      <div class="acoes-dl">
+        <a class="dl" href="/lab/design-systems/sunflora/sunflora-design-system.md" download="sunflora-design-system.md">BAIXAR O .MD PARA SUA IA <span aria-hidden="true">↓</span></a>
+        <a class="ver" href="#ia">COMO USAR <span aria-hidden="true">↘</span></a>
+      </div>
+      <p class="lbl muted nota-dl">.MD · 67 KB · CC BY-NC-SA 4.0 · FONTES SIL OFL</p>
+    </div>
+  </div>
+</header>
+
+<nav class="atmo" aria-label="Atmosfera da página">
+  <span class="lbl">ATMOSFERA <span class="status-dot"></span></span>
+  <div class="global-mode-list" role="group" aria-label="Mudar o elemento da página">
+    <button type="button" data-modo="air" aria-pressed="true">01 <b>AR</b></button>
+    <button type="button" data-modo="fire" aria-pressed="false">02 <b>FOGO</b></button>
+    <button type="button" data-modo="water" aria-pressed="false">03 <b>ÁGUA</b></button>
+    <button type="button" data-modo="earth" aria-pressed="false">04 <b>TERRA</b></button>
+  </div>
+  <span class="lbl" id="atual">01 / AR — LIVE</span>
+</nav>
+
+<main>
+<section class="wrap secao" aria-labelledby="t-base">
+  <div class="section-identity"><span>00 / GRAMÁTICA COMUM</span><span>INVARIANT SYSTEM DNA</span></div>
+  <div class="cab"><h2 id="t-base">Uma base.<br><em>Quatro estados.</em></h2><p>A identidade não é trocada por quatro estilos independentes. Cada elemento executa o mesmo sistema com parâmetros próprios — por isso os quatro são temas, e todo componente lê os mesmos tokens.</p></div>
+  <div class="foundation-grid">
+    <div><span>01 / SUPERFÍCIE</span><b>Quase branco</b><p>Interfaces claras e respiro. O elemento pinta a luz, não o fundo inteiro.</p></div>
+    <div><span>02 / MATÉRIA</span><b>Vidro vivo</b><p>Transparência, bordas especulares, gel e cromado líquido.</p></div>
+    <div><span>03 / GRAFISMO</span><b>Editorial + digital</b><p>Serifa monumental, microtexto técnico, retículas e linhas finas.</p></div>
+    <div><span>04 / MOVIMENTO</span><b>Natureza procedural</b><p>Órbitas, partículas e luz desenhadas por código. Nenhuma imagem, nenhuma planta.</p></div>
+  </div>
+  <div class="equacao"><span class="muted">FIXO</span><b>GRID + VIDRO + TIPOGRAFIA + UI + COMPOSIÇÃO</b><i>+</i><span class="muted">VARIÁVEL</span><b id="variavel">AZUL / BRANCO + SUSPENSÃO</b></div>
+</section>
+
+<section class="wrap secao" aria-labelledby="t-el">
+  <div class="section-identity"><span>01 / ELEMENTAL GRAMMAR</span><span>ONE LANGUAGE / FOUR PHYSICS</span></div>
+  <div class="cab"><h2 id="t-el">Four ways<br>of <em>becoming.</em></h2><p>As quatro prévias são desenhadas ao vivo, cada uma na sua atmosfera. Toque num elemento para vestir a página inteira com ele.</p></div>
+  <div class="elementos">
+    <button type="button" class="el" data-theme="air" data-modo="air" aria-pressed="true"><canvas data-cena="air" aria-hidden="true"></canvas><span class="el-txt"><span class="lbl">01 / AIR</span><b>Ar</b><p>Anéis orbitais sem globo; bolhas atravessam da direita para a esquerda.</p></span></button>
+    <button type="button" class="el" data-theme="fire" data-modo="fire" aria-pressed="false"><canvas data-cena="fire" aria-hidden="true"></canvas><span class="el-txt"><span class="lbl">02 / FIRE</span><b>Fogo</b><p>Anéis sem globo; bolhas sobem e derivam de leve à esquerda.</p></span></button>
+    <button type="button" class="el" data-theme="water" data-modo="water" aria-pressed="false"><canvas data-cena="water" aria-hidden="true"></canvas><span class="el-txt"><span class="lbl">03 / WATER</span><b>Água</b><p>Globo translúcido, órbitas refrativas e bolhas suspensas em órbita.</p></span></button>
+    <button type="button" class="el" data-theme="earth" data-modo="earth" aria-pressed="false"><canvas data-cena="earth" aria-hidden="true"></canvas><span class="el-txt"><span class="lbl">04 / EARTH</span><b>Terra</b><p>Um globo só; anéis que surgem e desaparecem em ciclos de luz.</p></span></button>
+  </div>
+</section>
+
+<section class="wrap secao" aria-labelledby="t-lab">
+  <div class="section-identity"><span>02 / ELEMENTAL PLAYGROUND</span><span class="live-indicator"><span class="status-dot"></span> GENERATIVE / LIVE</span></div>
+  <div class="palco" style="margin-top:28px">
+    <div class="cena">
+      <canvas id="cena" aria-label="Cena generativa do elemento ativo"></canvas>
+      <div class="topo-cena lbl"><span>SF // <span id="cenaNome">AIR</span></span><span>Y3K—<span id="cenaNum">01</span></span></div>
+      <span class="cruz" style="top:64px;left:26px" aria-hidden="true">+</span><span class="cruz" style="top:64px;right:26px" aria-hidden="true">+</span>
+      <div class="titulo-vidro" id="cenaTitulo" aria-hidden="true">AIR</div>
+      <div class="component-card">
+        <div class="component-card-head"><span class="icon-glyph" id="icone" aria-hidden="true"></span><strong id="cardTitulo">AIR / SYSTEM INSTRUCTION</strong><span id="cardConta">01 / 04</span></div>
+        <p id="cardNota">A atmosfera constrói espaço e circulação.</p>
+        <div class="component-command"><span class="component-step" id="passoN">01</span><span id="passoTxt">OPEN — CREATE SPACE</span><span aria-hidden="true">↗</span></div>
+        <div class="step-progress" role="group" aria-label="Escolher instrução"><button type="button" data-passo="0" aria-pressed="true">01</button><button type="button" data-passo="1" aria-pressed="false">02</button><button type="button" data-passo="2" aria-pressed="false">03</button><button type="button" data-passo="3" aria-pressed="false">04</button></div>
+      </div>
+    </div>
+    <aside class="controles" aria-label="Parâmetros do gerador">
+      <span class="lbl muted">CONFIGURATION / 01</span>
+      <h3>Atmosphere<br><em>machine.</em></h3>
+      <div class="element-selector" role="group" aria-label="Selecionar elemento" style="margin-bottom:20px">
+        <button type="button" class="mode-button" data-modo="air" aria-pressed="true"><span>01</span><b>AR</b><small>AIR</small></button>
+        <button type="button" class="mode-button" data-modo="fire" aria-pressed="false"><span>02</span><b>FOGO</b><small>FIRE</small></button>
+        <button type="button" class="mode-button" data-modo="water" aria-pressed="false"><span>03</span><b>ÁGUA</b><small>WATER</small></button>
+        <button type="button" class="mode-button" data-modo="earth" aria-pressed="false"><span>04</span><b>TERRA</b><small>EARTH</small></button>
+      </div>
+      <div class="range-control"><div class="range-heading"><label for="p-glass">GLASS / REFRACTION</label><output for="p-glass" id="o-glass">72%</output></div><input id="p-glass" data-p="glass" type="range" min="0" max="100" value="72"></div>
+      <div class="range-control"><div class="range-heading"><label for="p-glow">LIGHT / BLOOM</label><output for="p-glow" id="o-glow">68%</output></div><input id="p-glow" data-p="glow" type="range" min="0" max="100" value="68"></div>
+      <div class="range-control"><div class="range-heading"><label for="p-density">LIFE / DENSITY</label><output for="p-density" id="o-density">54%</output></div><input id="p-density" data-p="density" type="range" min="0" max="100" value="54"></div>
+      <div class="range-control"><div class="range-heading"><label for="p-speed">MOTION / PULSE</label><output for="p-speed" id="o-speed">40%</output></div><input id="p-speed" data-p="speed" type="range" min="0" max="100" value="40"></div>
+      <div class="control-actions"><button type="button" class="action-main" id="gerar"><span class="icon-glyph" data-icone="spark" aria-hidden="true"></span> NEW GENERATION <span>↗</span></button><button type="button" class="action-ghost" id="pausa" aria-pressed="false">Ⅱ PAUSE</button></div>
+      <div class="terminal-status" role="status" id="status" style="margin-top:20px">&gt; LIGHT ENGINE INITIALIZED / READY</div>
+    </aside>
+  </div>
+  <div class="rule-pair" style="margin-top:22px"><div class="rule-fixed"><span>BASE FIXA / COMPOSIÇÃO</span><p>Canvas procedural, serifa translúcida central, cruzes de enquadramento, caixa de instruções e espaço negativo.</p></div><div class="rule-changing"><span>TRANSFORMAÇÃO ELEMENTAL / COMPOSIÇÃO</span><p id="regraComp">Órbitas vítreas sem globo e bolhas atravessando a cena da direita para a esquerda.</p></div></div>
+</section>
+
+<section class="wrap secao" aria-labelledby="t-luz">
+  <div class="section-identity"><span>03 / DESIGN TOKENS</span><span>COLOR IS TRANSMITTED LIGHT</span></div>
+  <div class="cab"><h2 id="t-luz">Not colors.<br><em>Light states.</em></h2><p>Base quase branca, cor ambiente difusa e acentos localizados. O neon aparece nas refrações, nunca como superfície chapada dominante. Toque numa cor para copiar.</p></div>
+  <div class="amostras" id="amostras"></div>
+  <div class="light-panels">
+    <article class="light-panel gradient-atmosphere"><div>G01 / DIFFUSE ATMOSPHERE</div><b>Horizon</b><span>BACKGROUND / SOFT LIGHT</span></article>
+    <article class="light-panel gradient-sun"><div>G02 / RADIANT BLOOM</div><b>Sunfield</b><span>RADIANCE / SOFT CORE</span></article>
+    <article class="light-panel gradient-prism"><div>G03 / PRISMATIC EDGES</div><b>Iridescence</b><span>REFRACTION / CHROMATIC</span></article>
+  </div>
+</section>
+
+<section class="wrap secao" aria-labelledby="t-mat">
+  <div class="section-identity"><span>04 / MATERIAL</span><span>CRYSTAL / GEL / CHROME</span></div>
+  <div class="cab"><h2 id="t-mat">Almost<br><em>invisible.</em></h2><p>Peças atravessadas pela luz. O volume é desenhado por bordas, reflexos, sombra interna e transparência — nunca por cor chapada.</p></div>
+  <div class="material-grid">
+    <div class="material-tile"><div class="material-demo clear-demo"><div class="material-glass"><span class="icon-glyph" data-icone="spark" aria-hidden="true"></span></div></div><div><strong>M01 — Clear glass</strong><span>BLUR + EDGE LIGHT</span></div></div>
+    <div class="material-tile"><div class="material-demo gel-demo"><div class="material-gel"></div></div><div><strong>M02 — Liquid gel</strong><span>REFRACTION + PEARL</span></div></div>
+    <div class="material-tile"><div class="material-demo sphere-demo"><div class="material-sphere"></div></div><div><strong>M03 — Living chrome</strong><span>SILVER + SPECTRUM</span></div></div>
+  </div>
+</section>
+
+<section class="wrap secao" aria-labelledby="t-tipo">
+  <div class="section-identity"><span>05 / GLASS TYPOGRAPHY</span><span>TECNOANCESTRAL</span></div>
+  <div class="cab"><h2 id="t-tipo">Palavras também<br><em>são matéria.</em></h2><p>Três vozes, três tempos: a prensa de tipos, a pena caligráfica e a máquina de escrever, renascidas como fontes livres.</p></div>
+  <div class="vozes">
+    <div class="voz"><span class="lbl">DISPLAY · O ANCESTRAL</span><span class="amostra-d">Aa<em>g</em></span><h3>Bodoni Moda</h3><p>A Didone de Bodoni (Parma, séc. XVIII), refeita como fonte variável com tamanho óptico: os filetes viram fios de luz em 190px e engrossam em 25px.</p></div>
+    <div class="voz"><span class="lbl">TEXTO · A PONTE</span><span class="amostra-s">Aa<em>g</em></span><h3>Alegreya Sans</h3><p>De Juan Pablo del Peral, Huerta Tipográfica (Argentina): o ritmo da pena caligráfica dentro de uma letra sem serifa. Feita para ler.</p></div>
+    <div class="voz"><span class="lbl">MONO · O TECNOLÓGICO</span><span class="amostra-m">Aa_01</span><h3>IBM Plex Mono</h3><p>De Mike Abbink e Bold Monday, herdeira das letras da máquina de escrever Selectric. A voz dos comandos e dos microdados.</p></div>
+  </div>
+  <div class="type-showcase" style="margin-top:var(--space-12);border:1px solid var(--line-soft);border-radius:var(--radius-6);padding:22px 28px;background:linear-gradient(140deg,rgba(255,255,255,.8),var(--surface2));overflow:hidden">
+    <span class="lbl">T01 / TRANSLUCENT DISPLAY</span>
+    <div class="type-display" id="tipoVidro" aria-hidden="true" style="white-space:normal;font-size:clamp(56px,9vw,130px)">air / becoming</div>
+  </div>
+</section>
+
+<section class="wrap secao" aria-labelledby="t-comp">
+  <div class="section-identity"><span>06 / COMPONENTS</span><span>USEFUL MAGIC</span></div>
+  <div class="cab"><h2 id="t-comp">Useful<br><em>magic.</em></h2><p>Componentes que organizam informação sem competir com a matéria: contorno fino, fundo translúcido, numeração precisa e microinteração.</p></div>
+  <div class="grade-comp">
+    <div class="bloco"><span class="lbl muted">NAVEGAÇÃO / BOTÕES</span>
+      <div class="control-actions"><button type="button" class="action-main"><span class="icon-glyph" data-icone="spark" aria-hidden="true"></span> NEW GENERATION <span>↗</span></button><button type="button" class="action-ghost">Ⅱ PAUSE</button></div>
+      <div class="control-actions secondary-actions"><button type="button">EXPORT PNG ↓</button><button type="button">EXPORT CSS ↓</button></div>
+      <div class="small-kicker"><span class="status-dot"></span> 04 / LIVING ELEMENTAL ENGINE <span class="kicker-line"></span> LIVE</div>
+    </div>
+    <div class="bloco"><span class="lbl muted">ÓRBITA / COMPONENTE CSS</span>
+      <div class="orbit" style="width:min(100%,300px);aspect-ratio:1;min-height:0;margin:0 auto" id="orbita"><div class="orbit-ring"></div><div class="orbit-ring two"></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap secao" id="ia" aria-labelledby="t-ia">
+  <div class="section-identity"><span>07 / DESIGN HANDOFF</span><span>TAKE IT TO YOUR AI</span></div>
+  <div class="cab"><h2 id="t-ia">Leve a luz<br><em>para a sua IA.</em></h2><p>O sistema inteiro cabe num único arquivo .md: princípios, tokens das quatro atmosferas, CSS pronto, tipografia, componentes com HTML e ícones.</p></div>
+  <ol class="passos">
+    <li><span class="lbl muted">01 / BAIXE</span><b>O arquivo</b><p>Um .md de 67 KB, legível por pessoas e por qualquer modelo de linguagem.</p></li>
+    <li><span class="lbl muted">02 / ANEXE</span><b>Na conversa</b><p>Cole ou anexe o arquivo no Claude, no ChatGPT, no Gemini ou na ferramenta de código que você usa.</p></li>
+    <li><span class="lbl muted">03 / PEÇA</span><b>Em um elemento</b><p>Diga o que quer criar e em qual atmosfera. A IA usa os tokens e as regras, sem inventar cores.</p></li>
+  </ol>
+  <div class="prompt">
+    <span class="lbl muted">EXEMPLO DE PEDIDO</span>
+    <pre class="code-preview" id="pedido">Use o design system SUN//FLORA deste arquivo para criar uma landing page no elemento Água. Siga os tokens, as três vozes tipográficas e as regras de contraste.</pre>
+    <div class="code-buttons"><button type="button" id="copiar">COPIAR O PEDIDO <span>↗</span></button><a class="dl-inline" href="/lab/design-systems/sunflora/sunflora-design-system.md" download="sunflora-design-system.md" style="display:inline-flex;align-items:center;gap:20px;min-height:45px;padding:0 16px;border:1px solid var(--line-strong);border-radius:var(--radius-4);font:500 11px var(--font-mono);letter-spacing:.04em;color:var(--ink);text-decoration:none">BAIXAR O .MD <span>↓</span></a></div>
+  </div>
+  <footer class="rodape lbl">
+    <span>SUN//FLORA · DESIGN SYSTEM GERADO POR IA · MAIA OAZEM / LABORATELIÊ · GIRA.</span>
+    <span>CC BY-NC-SA 4.0 · FONTES SIL OFL 1.1 · <a href="/lab/">VOLTAR AO LAB ↑</a></span>
+  </footer>
+</section>
+</main>
+</div>
+
+<script>
+(function(){
+'use strict';
+var $=function(id){return document.getElementById(id)};
+var pagina=$('pagina');
+var reduz=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var ICONES={
+ spark:'<svg viewBox="0 0 24 24"><path d="M12 2.5v6.5M12 15v6.5M2.5 12H9M15 12h6.5M5.2 5.2l4.2 4.2M14.6 14.6l4.2 4.2M18.8 5.2l-4.2 4.2M9.4 14.6l-4.2 4.2"/></svg>',
+ air:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5.2"/><circle cx="12" cy="12" r="8.6" opacity=".72"/><circle cx="12" cy="12" r="11" opacity=".42"/></svg>',
+ fire:'<svg viewBox="0 0 24 24"><path d="M12 3.2c1.8 3.1.8 4.5 3 6.8 1.2 1.2 2.1 2.8 2.1 4.7 0 3-2.3 5.3-5.1 5.3S6.9 17.7 6.9 14.8c0-2.5 1.6-4.2 3.1-5.9 1.4-1.5 1.9-2.7 2-5.7z"/><path d="M12.4 10.3c.9 1.1 1.6 2 1.6 3.5 0 1.4-1 2.7-2.3 2.7s-2.2-1.1-2.2-2.4c0-1 .4-1.7 1.2-2.7.7-.8 1.1-1.4 1.7-3.1z" opacity=".65"/></svg>',
+ water:'<svg viewBox="0 0 24 24"><path d="M3 9c2.2 1.5 4.4 1.5 6.6 0s4.4-1.5 6.6 0 4.4 1.5 4.8 0"/><path d="M3 14c2.2 1.5 4.4 1.5 6.6 0s4.4-1.5 6.6 0 4.4 1.5 4.8 0"/><path d="M3 19c2.2 1.5 4.4 1.5 6.6 0s4.4-1.5 6.6 0 4.4 1.5 4.8 0"/></svg>',
+ earth:'<svg viewBox="0 0 24 24"><path d="M12 20v-7"/><path d="M12 13c0-3.6-2.4-5.7-6.4-5.7 0 3.6 2.7 5.7 6.4 5.7z"/><path d="M12 11.8c0-3.2 2.1-5.1 5.7-5.1 0 3.3-2.4 5.1-5.7 5.1z"/></svg>'
+};
+document.querySelectorAll('[data-icone]').forEach(function(e){e.innerHTML=ICONES[e.dataset.icone]});
+var M={
+ air:{num:'01',pt:'AR',en:'AIR',var:'AZUL / BRANCO + SUSPENSÃO',comp:'Órbitas vítreas sem globo e bolhas atravessando a cena da direita para a esquerda.',nota:'A atmosfera constrói espaço e circulação.',tipo:'air / becoming',passos:['OPEN — CREATE SPACE','BREATHE — RESET RHYTHM','CIRCULATE — MOVE ENERGY','CONNECT — SHARE THE FLOW'],globo:false,bolhas:'esquerda',aneis:'fixos'},
+ fire:{num:'02',pt:'FOGO',en:'FIRE',var:'ROSA / AMARELO + IRRADIAÇÃO',comp:'Anéis vítreos brilhantes sem globo; bolhas em ascensão luminosa com deriva à esquerda.',nota:'A atmosfera transforma energia em luz.',tipo:'fire / radiate',passos:['IGNITE — SET INTENT','TRANSFORM — ITERATE BOLDLY','RADIATE — AMPLIFY VALUE','CREATE — GROW TOGETHER'],globo:false,bolhas:'sobe',aneis:'fixos'},
+ water:{num:'03',pt:'ÁGUA',en:'WATER',var:'AZUL / VERDE + FLUIDEZ',comp:'Globo translúcido, órbitas refrativas e bolhas suspensas que orbitam.',nota:'A atmosfera produz movimento e regeneração.',tipo:'water / flow',passos:['FLOW — ENABLE CIRCULATION','PURIFY — FILTER & CLARIFY','NOURISH — SUPPORT GROWTH','REGENERATE — RENEW SYSTEMS'],globo:true,bolhas:'orbita',aneis:'fixos'},
+ earth:{num:'04',pt:'TERRA',en:'EARTH',var:'VERDE / AMARELO + CRESCIMENTO',comp:'Um globo translúcido central e anéis orbitais que se revelam e desaparecem.',nota:'A atmosfera cultiva sistemas vivos.',tipo:'earth / grow',passos:['GROUND — BUILD A BASE','NURTURE — FEED GROWTH','CULTIVATE — CREATE VALUE','REGENERATE — CLOSE THE LOOP'],globo:true,bolhas:'nenhuma',aneis:'pulsam'}
+};
+var estado={modo:'air',passo:0,glass:72,glow:68,density:54,speed:40,tocando:!reduz,seed:1};
+var status=function(t){$('status').textContent='> '+t};
+
+/* ---------- cor ---------- */
+function rgb(str){
+  str=(str||'').trim();
+  if(str[0]==='#'){var h=str.slice(1);if(h.length===3)h=h.split('').map(function(c){return c+c}).join('');return [parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)]}
+  var m=str.match(/[\d.]+/g);return m?[+m[0],+m[1],+m[2]]:[255,255,255];
+}
+function cores(el){var cs=getComputedStyle(el),g=function(n){return rgb(cs.getPropertyValue('--'+n))};
+  return {surface:g('surface'),surface2:g('surface2'),diffuse:g('diffuse'),accent:g('accent'),spectrum:g('spectrum'),highlight:g('highlight'),a:g('ambient-a'),b:g('ambient-b'),ink:g('ink'),glow:g('canvas-glow'),line:g('canvas-line')}}
+var c=function(v,a){return 'rgba('+(v[0]|0)+','+(v[1]|0)+','+(v[2]|0)+','+a+')'};
+
+/* ---------- motor ---------- */
+function rnd(seed){var s=seed%2147483647;if(s<=0)s+=2147483646;return function(){s=s*16807%2147483647;return (s-1)/2147483646}}
+function Cena(canvas,modo,fixo){
+  this.cv=canvas;this.ctx=canvas.getContext('2d');this.modoFixo=fixo?modo:null;this.modo=modo;this.bolhas=[];this.vis=true;this.cores=null;this.reset();
+}
+Cena.prototype.reset=function(){
+  var r=rnd(estado.seed*97+(this.modoFixo||'x').length*13);this.r=r;this.bolhas=[];
+  for(var i=0;i<60;i++)this.bolhas.push({x:r(),y:r(),s:.4+r()*1.2,v:.5+r(),f:r()*6.28,o:r()*6.28,rr:.18+r()*.5});
+  this.fase=r()*6.28;this.cores=null;
+};
+Cena.prototype.tam=function(){var d=Math.min(2,window.devicePixelRatio||1),w=this.cv.clientWidth,h=this.cv.clientHeight;if(!w||!h)return false;
+  if(this.cv.width!==Math.round(w*d)||this.cv.height!==Math.round(h*d)){this.cv.width=Math.round(w*d);this.cv.height=Math.round(h*d)}this.w=w;this.h=h;this.ctx.setTransform(d,0,0,d,0,0);return true};
+Cena.prototype.desenha=function(t){
+  if(!this.tam())return;var x=this.ctx,w=this.w,h=this.h,m=M[this.modoFixo||estado.modo];
+  if(!this.cores)this.cores=cores(this.cv);var k=this.cores;
+  var glass=estado.glass/100,glow=estado.glow/100,dens=estado.density/100,s=Math.min(w,h);
+  var bg=x.createLinearGradient(0,0,w,h);bg.addColorStop(0,c(k.surface,1));bg.addColorStop(1,c(k.diffuse,1));x.fillStyle=bg;x.fillRect(0,0,w,h);
+  var h1=x.createRadialGradient(w*.18,h*.22,0,w*.18,h*.22,s*.75);h1.addColorStop(0,c(k.a,.55*glow+.15));h1.addColorStop(1,c(k.a,0));x.fillStyle=h1;x.fillRect(0,0,w,h);
+  var h2=x.createRadialGradient(w*.85,h*.12,0,w*.85,h*.12,s*.8);h2.addColorStop(0,c(k.b,.7*glow+.2));h2.addColorStop(1,c(k.b,0));x.fillStyle=h2;x.fillRect(0,0,w,h);
+  var cx=w*.5,cy=h*.5,R=s*.24;
+  if(m.globo){
+    x.save();x.shadowColor=c(k.accent,.55*glow);x.shadowBlur=40*glow;
+    var g=x.createRadialGradient(cx-R*.35,cy-R*.4,R*.05,cx,cy,R);g.addColorStop(0,'rgba(255,255,255,.95)');g.addColorStop(.35,c(k.highlight,.35+.2*glass));g.addColorStop(.85,c(k.spectrum,.5+.3*glass));g.addColorStop(1,c(k.accent,.7));
+    x.fillStyle=g;x.beginPath();x.arc(cx,cy+Math.sin(t*.6)*s*.01,R,0,6.283);x.fill();x.restore();
+    x.strokeStyle='rgba(255,255,255,.9)';x.lineWidth=1.5;x.beginPath();x.arc(cx,cy+Math.sin(t*.6)*s*.01,R,0,6.283);x.stroke();
+  }
+  var aneis=[[1.95,.46,-.45,3,.13],[1.55,.62,.95,1.2,-.08],[2.35,.34,.2,1,.05]];
+  for(var i=0;i<aneis.length;i++){var a=aneis[i],al=.9;
+    if(m.aneis==='pulsam')al=Math.max(0,Math.sin(t*.9+i*2.1+this.fase))*.95;
+    x.save();x.translate(cx,cy);x.rotate(a[2]+t*a[4]);x.globalAlpha=al*(.5+.5*glass);
+    x.shadowColor=c(k.accent,.9);x.shadowBlur=14*glow+2;x.strokeStyle='rgba(255,255,255,.95)';x.lineWidth=a[3];
+    x.beginPath();x.ellipse(0,0,R*a[0],R*a[0]*a[1],0,0,6.283);x.stroke();x.restore();
+  }
+  var n=m.bolhas==='nenhuma'?0:Math.round(4+dens*34);
+  for(var j=0;j<n;j++){var b=this.bolhas[j],bx,by,rr=(3+b.s*7)*s/320;
+    if(m.bolhas==='esquerda'){bx=((b.x-t*.03*b.v)%1+1)%1*w*1.1-w*.05;by=(b.y*.8+.1)*h+Math.sin(t+b.f)*6}
+    else if(m.bolhas==='sobe'){var p=((b.y-t*.035*b.v)%1+1)%1;by=p*h*1.1-h*.05;bx=(b.x*.9+.05)*w-(1-p)*w*.08+Math.sin(t*1.3+b.f)*4}
+    else{var ang=b.o+t*.25*b.v*(j%2?1:-1),rad=R*(1.15+b.rr*1.6);bx=cx+Math.cos(ang)*rad;by=cy+Math.sin(ang)*rad*.42+Math.sin(t+b.f)*4}
+    var gb=x.createRadialGradient(bx-rr*.35,by-rr*.4,rr*.1,bx,by,rr);gb.addColorStop(0,'rgba(255,255,255,'+(.7+.3*glass)+')');gb.addColorStop(.7,c(k.spectrum,.12+.25*glass));gb.addColorStop(1,c(k.accent,.35));
+    x.fillStyle=gb;x.beginPath();x.arc(bx,by,rr,0,6.283);x.fill();x.strokeStyle='rgba(255,255,255,.9)';x.lineWidth=1;x.stroke();
+  }
+};
+var cenas=[];
+document.querySelectorAll('canvas[data-cena]').forEach(function(cv){cenas.push(new Cena(cv,cv.dataset.cena,true))});
+var principal=new Cena($('cena'),'air',false);cenas.push(principal);
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){cenas.forEach(function(s){if(s.cv===e.target)s.vis=e.isIntersecting})})});cenas.forEach(function(s){io.observe(s.cv)})}
+var relogio=0,ultimo=0;
+function quadro(ts){var dt=Math.min(.05,(ts-ultimo)/1000||0);ultimo=ts;if(estado.tocando)relogio+=dt*(.25+estado.speed/100*1.8);
+  cenas.forEach(function(s){if(s.vis)s.desenha(relogio)});requestAnimationFrame(quadro)}
+requestAnimationFrame(quadro);
+window.addEventListener('resize',function(){cenas.forEach(function(s){s.cores=null})});
+
+/* ---------- estado da página ---------- */
+var LABELS=[['surface','SURFACE'],['surface2','SOFT FIELD'],['diffuse','DIFFUSE'],['accent','ACCENT'],['highlight','HIGHLIGHT'],['spectrum','SPECTRUM']];
+function amostras(){var cs=getComputedStyle(pagina),el=$('amostras');el.innerHTML='';
+  LABELS.forEach(function(l){var hex=cs.getPropertyValue('--'+l[0]).trim().toUpperCase();var b=document.createElement('button');b.type='button';b.className='swatch';b.title='Copiar '+hex;
+    b.innerHTML='<span class="swatch-color" style="background:'+hex+'"></span><span class="swatch-bottom"><strong>'+l[1]+'</strong><span>'+hex+'</span></span>';
+    b.addEventListener('click',function(){copia(hex,'COLOR COPIED / '+hex)});el.appendChild(b)})}
+function copia(txt,msg){var ok=function(){status(msg)};if(navigator.clipboard)navigator.clipboard.writeText(txt).then(ok,ok);else ok()}
+function passo(i){estado.passo=i;var m=M[estado.modo];$('passoN').textContent='0'+(i+1);$('passoTxt').textContent=m.passos[i];
+  document.querySelectorAll('[data-passo]').forEach(function(b){b.setAttribute('aria-pressed',String(+b.dataset.passo===i))})}
+function modo(k){if(!M[k])return;estado.modo=k;var m=M[k];pagina.dataset.theme=k;
+  document.querySelectorAll('[data-modo]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.modo===k))});
+  $('atual').textContent=m.num+' / '+m.pt+' — LIVE';$('variavel').textContent=m.var;$('regraComp').textContent=m.comp;
+  $('cenaNome').textContent=m.en;$('cenaNum').textContent=m.num;$('cenaTitulo').textContent=m.en;
+  $('icone').innerHTML=ICONES[k];$('cardTitulo').textContent=m.en+' / SYSTEM INSTRUCTION';$('cardConta').textContent=m.num+' / 04';$('cardNota').textContent=m.nota;
+  $('tipoVidro').textContent=m.tipo;$('pedido').textContent='Use o design system SUN//FLORA deste arquivo para criar uma landing page no elemento '+m.pt.charAt(0)+m.pt.slice(1).toLowerCase()+'. Siga os tokens, as três vozes tipográficas e as regras de contraste.';
+  var orb=$('orbita');orb.innerHTML=(m.globo?'<div class="orbit-globe"></div>':'')+'<div class="orbit-ring'+(m.aneis==='pulsam'?' fade':'')+'"></div><div class="orbit-ring two'+(m.aneis==='pulsam'?' fade':'')+'"></div>';
+  var mt=document.querySelector('meta[name=theme-color]');if(mt)mt.content=getComputedStyle(pagina).getPropertyValue('--surface').trim();
+  principal.cores=null;passo(0);amostras();status('ATMOSPHERE / '+m.num+' / '+m.en);
+}
+document.querySelectorAll('[data-modo]').forEach(function(b){b.addEventListener('click',function(){modo(b.dataset.modo)})});
+document.querySelectorAll('[data-passo]').forEach(function(b){b.addEventListener('click',function(){passo(+b.dataset.passo);status('INSTRUCTION / '+(estado.passo+1)+' / '+M[estado.modo].en)})});
+document.querySelectorAll('input[data-p]').forEach(function(r){r.addEventListener('input',function(){estado[r.dataset.p]=+r.value;$('o-'+r.dataset.p).textContent=r.value+'%'})});
+$('gerar').addEventListener('click',function(){estado.seed=(estado.seed*7+11)%997+1;cenas.forEach(function(s){s.reset()});status('NEW GENERATION / SEED '+estado.seed)});
+var pausa=$('pausa');function rotulo(){pausa.textContent=estado.tocando?'Ⅱ PAUSE':'▶ PLAY';pausa.setAttribute('aria-pressed',String(!estado.tocando));pagina.style.setProperty('--play',estado.tocando?'running':'paused');
+  document.querySelectorAll('.material-gel,.material-sphere,.orbit-globe,.orbit-ring').forEach(function(e){e.style.animationPlayState=estado.tocando?'running':'paused'})}
+pausa.addEventListener('click',function(){estado.tocando=!estado.tocando;rotulo();status(estado.tocando?'MOTION / RESUMED':'MOTION / PAUSED')});
+$('copiar').addEventListener('click',function(){copia($('pedido').textContent,'PROMPT COPIED / READY FOR YOUR AI')});
+rotulo();modo('air');
+})();
+</script>
+</body>
+</html>

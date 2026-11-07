@@ -32,6 +32,15 @@ Ao criar uma página nova no lab, sempre:
 </nav>
 ```
 
+## Design systems gerados por IA (`/lab/design-systems`)
+
+Categoria própria no lab aberto, com contador próprio, logo depois de "ferramentas abertas". Cada design system mora em `lab/design-systems/<nome>/` e **sempre** tem:
+
+1. **Página `index.html` com prévias ao vivo** do sistema (cenas, componentes e tokens funcionando, troca de temas/estados), escrita na linguagem do próprio design system, com o menu superior do lab (`NOME-DA-FERRAMENTA` = nome da pasta).
+2. **O `.md` do sistema** na mesma pasta (`<nome>-design-system.md`): instruções para IA, princípios, tokens, CSS pronto, tipografia, componentes e ícones, num arquivo só.
+3. **Cartão no `lab/index.html`** na seção "design systems gerados por IA": o cartão (capa) leva à página; o botão "baixar o .md para sua IA" baixa o arquivo (`download`). Atualizar o contador da seção.
+4. Fontes do sistema servidas da própria pasta (`fonts/`, com a licença).
+
 ## Subdomínios
 
 `_worker.js` entrega uma pasta do repositório num subdomínio (hoje: `contexto.gira.guru` → `contexto/`). Para um subdomínio novo: acrescentar a linha em `SUBDOMINIOS` dentro de `_worker.js` e adicionar o domínio no Cloudflare (Workers & Pages → maia-oazem → Settings → Domains & Routes → Add → Custom domain). Links internos dessas páginas podem ser relativos (`#secao`) ou começar pela pasta (`/contexto/...`).
