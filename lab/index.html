@@ -67,6 +67,9 @@ h1,h2{margin:0;font-weight:300;font-family:var(--serif)}
 .ficha .nome b{font-weight:400;font-family:var(--serif);font-size:26px;line-height:1.1}
 .ficha p{font-family:var(--serif);font-size:19px;line-height:1.4}
 .ficha .data{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--cinza)}
+.ficha .baixar{align-self:flex-start;display:inline-flex;align-items:center;gap:10px;margin-top:4px;padding:11px 16px;border:1px solid var(--tinta);background:var(--tinta);color:var(--papel);font-size:12px;letter-spacing:.09em;text-transform:uppercase;line-height:1}
+.ficha .baixar:hover{opacity:1;background:var(--papel);color:var(--tinta)}
+.ficha .baixar small{font-size:11px;letter-spacing:.06em;opacity:.7;text-transform:none}
 
 .secao{padding-block:clamp(36px,5vw,64px) clamp(24px,3vw,40px)}
 .secao .cab{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end;padding-bottom:clamp(24px,3vw,36px)}
@@ -291,6 +294,42 @@ footer em{font-family:var(--serif);font-size:20px}
       <div class="ficha">
         <div class="nome"><b>/abstrato</b><span class="data" data-en="5 Nov 2026">5 nov. 2026</span></div>
         <p data-en="Form studies: abstract compositions with primary shapes, intersections and free gestures, in the inks and meanings of the Design System.">Estudos de forma: composições abstratas com formas primárias, intersecções e gestos livres, nas tintas e nos sentidos do Design System.</p>
+      </div>
+    </li>
+  </ul>
+
+  <!-- DESIGN SYSTEMS GERADOS POR IA -->
+  <div class="secao" style="padding-bottom:0">
+    <div class="cab" style="padding-bottom:0">
+      <h2 data-en="AI-generated <em>design systems</em>">design systems <em>gerados por IA</em></h2>
+      <p data-en="Complete visual systems made with AI, each in a single .md file for you to take to your own AIs: principles, tokens, typography, components and icons.">Sistemas visuais completos feitos com IA, cada um num único arquivo .md para você levar para as suas IAs: princípios, tokens, tipografia, componentes e ícones.</p>
+    </div>
+  </div>
+  <hr class="fio" style="margin-top:clamp(24px,3vw,36px)">
+  <div class="assin meta"><span>design systems</span><span>1</span></div>
+  <hr class="fio">
+  <ul class="capas">
+    <!-- SUN//FLORA · azul -->
+    <li class="ferramenta">
+      <a href="/lab/design-systems/sunflora-design-system.md" download="sunflora-design-system.md" aria-label="SUN//FLORA: baixar o .md">
+        <div class="capa azul">
+          <svg viewBox="0 0 100 140" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><clipPath id="sf-globo"><circle cx="50" cy="62" r="24"/></clipPath></defs>
+            <circle class="l" cx="50" cy="62" r="24"/>
+            <ellipse class="l" cx="50" cy="62" rx="48" ry="13" transform="rotate(-26 50 62)"/>
+            <ellipse class="s" cx="50" cy="62" rx="48" ry="13" transform="rotate(-26 50 62)" clip-path="url(#sf-globo)"/>
+          </svg>
+          <div class="linha" style="top:6%"><span>design system</span><span>01</span></div>
+          <div class="fio-capa" style="top:10.5%"></div>
+          <div class="t">sun//<em>flora</em></div>
+          <div class="fio-capa" style="bottom:10.5%"></div>
+          <div class="linha" style="bottom:6%"><span>laborateliê</span><span>gira.guru</span></div>
+        </div>
+      </a>
+      <div class="ficha">
+        <div class="nome"><b>SUN//FLORA</b><span class="data" data-en="7 Nov 2026">7 nov. 2026</span></div>
+        <p data-en="A generative solarpunk design system: one editorial base, four elements (Air, Fire, Water, Earth) as states of light, living glass and techno-ancestral type.">Um design system generativo solarpunk: uma base editorial, quatro elementos (Ar, Fogo, Água, Terra) como estados de luz, vidro vivo e tipografia tecnoancestral.</p>
+        <a class="baixar" href="/lab/design-systems/sunflora-design-system.md" download="sunflora-design-system.md"><span data-en="download the .md for your AI">baixar o .md para sua IA</span> <span aria-hidden="true">↓</span> <small>67 KB</small></a>
       </div>
     </li>
   </ul>
