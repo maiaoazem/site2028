@@ -1,0 +1,13 @@
+# estado local e dependências do Wrangler / Node
+.wrangler/
+node_modules/
+
+# segredos locais (use `wrangler secret put` para produção)
+.dev.vars
+.dev.vars.*
+.env
+.env.*
+
+# lixo de sistema
+.DS_Store
+__MACOSX/
