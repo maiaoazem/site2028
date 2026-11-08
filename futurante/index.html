@@ -7,7 +7,7 @@
 <meta name="description" content="Uma Ética Futurante em uma Cultura de Esperança: os 07 princípios de futuração do laborateliê da gira.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..500;1,6..96,400&family=DM+Sans:opsz,wght@9..40,400..600&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..500;1,6..96,400&family=DM+Sans:opsz,wght@9..40,400..600&family=Newsreader:ital,opsz,wght@0,6..72,300..400;1,6..72,300..400&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <style>
 /* ── MAISON 04 · paleta Bone / Space Indigo / Cherry Rose (+ Olive, Periwinkle na matriz) ── */
@@ -15,7 +15,7 @@
   --paper:#ece2d0; --white:#ffffff; --ink:#191919; --muted:#5f5b52; --hairline:#b9ad96; --soft:#e2d6c0;
   --blue:#1b264f; --red:#a4243b; --olive:#646f4b; --periwinkle:#9b7ede;
   --on-color:#ece2d0; --on-color-muted:rgba(236,226,208,.72); --on-color-line:rgba(236,226,208,.42);
-  --display:'Bodoni Moda',Georgia,serif; --reading:'Newsreader',Georgia,serif; --utility:'DM Sans',Arial,sans-serif;
+  --display:'Bodoni Moda',Georgia,serif; --statement:'Newsreader',Georgia,serif; --reading:'Newsreader',Georgia,serif; --utility:'DM Sans',Arial,sans-serif;
   --outer:clamp(20px,4.5vw,84px); --gutter:24px;
   --s2:8px; --s3:12px; --s4:18px; --s5:28px; --s6:44px; --s7:72px; --s8:112px; --s9:176px;
   --quick:180ms; --settle:320ms;
@@ -431,6 +431,16 @@ dialog.carta[open]{animation:rise 520ms cubic-bezier(.2,.7,.2,1) both;}
 .carta-q .label{color:var(--on-color-muted);}
 .carta-q p{margin:0;font-family:var(--display);font-size:clamp(1.6rem,2.6vw,2.6rem);line-height:1.08;letter-spacing:-.025em;}
 @media (max-width:820px){ .carta-grid,.carta-q{grid-template-columns:1fr;gap:var(--s3);} }
+
+/* Pastas: a faixa continua por baixo da pasta seguinte, para que, ao subir no hover, nunca apareça o fundo */
+.folder > summary .f-band{position:relative;}
+.folder:not([open]):not(:last-of-type) > summary .f-band::after{content:"";position:absolute;left:0;right:0;top:100%;height:calc(var(--s5) + 14px);background:inherit;pointer-events:none;}
+/* Frases longas (5+ palavras): Newsreader em corte de display. Bodoni Moda fica para títulos curtos, nomes e números. */
+.intro-lead,.lede,.horizon blockquote,.queer .big,.concept,.carta-q p,.bands p,.usar-ia-t{font-family:var(--statement);font-weight:300;font-variation-settings:"opsz" 72;letter-spacing:-.02em;}
+.intro-lead{line-height:1.06;letter-spacing:-.025em;}
+.queer .big{line-height:1.02;letter-spacing:-.025em;}
+.lede,.horizon blockquote,.carta-q p{line-height:1.12;}
+.concept{line-height:1.18;}
 </style>
 </head>
 <body>

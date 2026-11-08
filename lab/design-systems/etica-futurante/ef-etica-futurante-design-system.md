@@ -36,6 +36,8 @@ A peça impressa e a carta das prévias é a `Carta` (70 × 120 mm).
 6. **Menos texto na página, mais na carta.** A página mostra só o princípio, o nome e a frase curta; o texto completo fica na janela da carta e nas pastas.
 7. **Movimento leve e contínuo:** o anel gira (`orbit-turn`), as cartas flutuam (`card-float`) e entram com profundidade (`card-deal`); as pastas levantam no hover. Tudo respeita `prefers-reduced-motion`.
 8. **Imagens das cartas** só no destaque animado, nas páginas internas e na impressão.
+9. **Bodoni para títulos curtos, Newsreader para frases.** A Bodoni Moda é para títulos de até 4 palavras, nomes e números. Qualquer frase com 5 palavras ou mais (abertura, citação, pergunta, aviso, título longo) vai em Newsreader no corte de display (`statement`: peso 300, opsz 72, tracking −0.02em, entrelinha 1.04–1.12). O itálico continua marcando a palavra-chave.
+10. **Pastas sem fresta.** A faixa de cada pasta fechada continua por baixo da pasta seguinte (`::after` da mesma cor), para que, ao subir no hover, nunca apareça o fundo atrás dela.
 
 ### Implementação
 
@@ -102,6 +104,7 @@ Open-licensed families from Google Fonts (hosted; verify each license file befor
 | --- | --- | --- |
 | Display / logotype direction | Bodoni Moda (`--font-display`) | 400–500, tracking −0.045em to −0.025em; large, sculptural. |
 | Long-form editorial | Newsreader (`--font-reading`) | 400, normal tracking, 1.35–1.48 line-height, 17–21px. |
+| Statement (sentences of 5+ words at display size) | Newsreader display cut (`--font-statement`) | 300, opsz 72, tracking −0.02em, line-height 1.04–1.12. Bodoni stays for titles up to 4 words, names and numerals. |
 | Navigation, numbers, captions | DM Sans (`--font-utility`) | 400–600; uppercase sparingly, tracked +0.11em to +0.20em for metadata. |
 
 Desktop hierarchy (the type styles carry the maximum; use the fluid value in production):
@@ -260,10 +263,10 @@ Previews are plain HTML and CSS built on `tokens.css` and `components/bundle.css
 
 ### Tipografia
 
-Fontes (Google Fonts): Bodoni Moda (display), Newsreader (leitura), DM Sans (utilidade), Instrument Sans (topo do site).
+Fontes (Google Fonts): Bodoni Moda (display, títulos de até 4 palavras), Newsreader (leitura e, no corte de display, frases longas: `statement`), DM Sans (utilidade), Instrument Sans (topo do site).
 
 ```html
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..500;1,6..96,400&family=DM+Sans:opsz,wght@9..40,400..600&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..500;1,6..96,400&family=DM+Sans:opsz,wght@9..40,400..600&family=Newsreader:ital,opsz,wght@0,6..72,300..400;1,6..72,300..400&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
 ```
 
 | estilo | família | tamanho / entrelinha | uso |
@@ -272,7 +275,8 @@ Fontes (Google Fonts): Bodoni Moda (display), Newsreader (leitura), DM Sans (uti
 | `ef-big` | display | 144px / 0.88 | Título que abre a parte 1 (as cartas). clamp(3.2rem, 8.4vw, 9rem), com a parte final em itálico. |
 | `ef-principle` | display | 118px / 0.9 | Nome do princípio na carta que sobe: o destaque. clamp(3rem, 7vw, 7.4rem). |
 | `ef-folder` | display | 90px / 0.95 | Título da pasta. clamp(2.2rem, 5.4vw, 5.6rem), uma palavra em itálico. |
-| `ef-lead` | display | 77px / 1.02 | Frase de abertura sobre o 07 gigante. clamp(2.1rem, 4.6vw, 4.8rem), até 20ch. |
+| `ef-lead` | statement | 77px / 1.06 | Frase de abertura sobre o 07 gigante. clamp(2.1rem, 4.6vw, 4.8rem), até 20ch. |
+| `ef-statement` | statement | 44–77px / 1.04–1.12 | Toda frase de 5 palavras ou mais em tamanho de display: citações, perguntas das cartas, avisos, títulos longos. Newsreader 300, `font-variation-settings:"opsz" 72`, tracking −0.02em. |
 | `display-xl` | display | 184px / 0.88 | Chapter openers and the website hero. Desktop clamp(5.25rem, 10vw, 11.5rem); line-height 0.83–0.94. |
 | `display-l` | display | 120px / 0.94 | Secondary openers, moment tiles at scale. clamp(3.6rem, 7vw, 7.5rem). |
 | `section-heading` | display | 88px / 1.0 | Section headings. clamp(2.8rem, 5vw, 5.5rem). |
@@ -338,6 +342,7 @@ Fontes (Google Fonts): Bodoni Moda (display), Newsreader (leitura), DM Sans (uti
   --card-deal:760ms;
   --font-display:"Bodoni Moda", Georgia, serif;
   --font-reading:Newsreader, Georgia, serif;
+  --font-statement:Newsreader, Georgia, serif; /* peso 300, opsz 72: frases longas em tamanho de display */
   --font-utility:"DM Sans", Arial, sans-serif;
   --font-site:"Instrument Sans", "Helvetica Neue", Arial, sans-serif;
 }
@@ -746,6 +751,8 @@ footer .label{color:var(--on-color);}
 .folder > summary{list-style:none;cursor:pointer;display:block;position:relative;padding-top:30px;transition:transform var(--settle) cubic-bezier(.2,.7,.2,1);}
 .folder > summary::-webkit-details-marker{display:none;}
 .folder:not([open]) > summary:hover{transform:translateY(-14px);}
+.folder > summary .f-band{position:relative;}
+.folder:not([open]):not(:last-of-type) > summary .f-band::after{content:"";position:absolute;left:0;right:0;top:100%;height:calc(var(--s5) + 14px);background:inherit;pointer-events:none;}
 .folder .tab{position:absolute;top:0;left:calc(var(--outer) + var(--i) * min(16%, 200px));height:31px;min-width:150px;display:flex;align-items:center;padding:0 var(--s5) 0 var(--s4);clip-path:polygon(0 0,calc(100% - 22px) 0,100% 100%,0 100%);font-family:var(--utility);font-size:11px;font-weight:500;letter-spacing:.14em;}
 .folder .f-band{display:flex;justify-content:space-between;align-items:center;gap:var(--s4);min-height:150px;padding:var(--s5) var(--outer) calc(var(--s5) + 30px);}
 .folder h2{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,5.4vw,5.6rem);line-height:.95;letter-spacing:-.04em;}

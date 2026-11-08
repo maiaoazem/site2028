@@ -6,12 +6,12 @@
 <title>EF · Modelo Sintético de Aplicação da Ética Futurante</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=DM+Sans:wght@400;500;600&family=Instrument+Sans:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=DM+Sans:wght@400;500;600&family=Instrument+Sans:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300..400;1,6..72,300..400&display=swap" rel="stylesheet">
 <style>
 :root{
   --paper:#ECE2D0; --white:#FFFFFF; --ink:#191919; --muted:#5F5B52; --hairline:#B9AD96; --soft:#E2D6C0;
   --blue:#1B264F; --red:#A4243B; --on-color:#ECE2D0;
-  --display:"Bodoni Moda", "Didot", serif;
+  --display:"Bodoni Moda", "Didot", serif; --statement:'Newsreader',Georgia,serif;
   --reading:"Newsreader", Georgia, serif;
   --utility:"DM Sans", system-ui, sans-serif;
   --top:"Instrument Sans", system-ui, sans-serif;
@@ -193,6 +193,11 @@ em{font-style:italic}
 @media (prefers-reduced-motion:reduce){
   *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
 }
+
+/* Frases longas (5+ palavras): Newsreader em corte de display. Bodoni Moda fica para títulos curtos, nomes e números. */
+.ef-hero,.ef-big,.survey-t,.warn-t{font-family:var(--statement);font-weight:300;font-variation-settings:"opsz" 72;letter-spacing:-.02em;}
+.ef-hero{line-height:1;letter-spacing:-.025em;max-width:13ch;}
+.ef-big,.survey-t,.warn-t{line-height:1.04;letter-spacing:-.022em;}
 </style>
 </head>
 <body>

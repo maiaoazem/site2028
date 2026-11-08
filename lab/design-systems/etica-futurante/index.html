@@ -7,7 +7,7 @@
 <meta name="description" content="EF | Ética Futurante: design system híbrido, base MAISON 04 com a estrutura Maia Oazem. Cartas que giram e sobem, pastas, blocos azul e vermelho. Baixe o .md para sua IA.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..500;1,6..96,400&family=DM+Sans:opsz,wght@9..40,400..600&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..500;1,6..96,400&family=DM+Sans:opsz,wght@9..40,400..600&family=Newsreader:ital,opsz,wght@0,6..72,300..400;1,6..72,300..400&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
   --paper:#ece2d0;
@@ -89,7 +89,7 @@
 /* ══════════ EF · estrutura híbrida (MAISON 04 × Maia Oazem) ══════════
    Aliases curtos usados pelo código da página; todos apontam para tokens. */
 :root{
-  --display:var(--font-display); --reading:var(--font-reading); --utility:var(--font-utility); --site:var(--font-site);
+  --display:var(--font-display); --statement:'Newsreader',Georgia,serif; --reading:var(--font-reading); --utility:var(--font-utility); --site:var(--font-site);
   --outer:clamp(20px,4.5vw,var(--outer-max));
   --s2:var(--space-2); --s3:var(--space-3); --s4:var(--space-4); --s5:var(--space-5); --s6:var(--space-6); --s7:var(--space-7); --s8:var(--space-8); --s9:var(--space-9);
   --quick:var(--duration-quick); --settle:var(--duration-settle);
@@ -571,6 +571,17 @@ dialog.carta[open]{animation:rise 520ms cubic-bezier(.2,.7,.2,1) both;}
 
 
 
+
+/* Pastas: a faixa continua por baixo da pasta seguinte, para que, ao subir no hover, nunca apareça o fundo */
+.folder > summary .f-band{position:relative;}
+.folder:not([open]):not(:last-of-type) > summary .f-band::after{content:"";position:absolute;left:0;right:0;top:100%;height:calc(var(--s5) + 14px);background:inherit;pointer-events:none;}
+
+/* Frases longas (5+ palavras): Newsreader em corte de display. Bodoni Moda fica para títulos curtos, nomes e números. */
+.intro-lead,.lede,.horizon blockquote,.queer .big,.concept,.carta-q p,.bands p{font-family:var(--statement);font-weight:300;font-variation-settings:"opsz" 72;letter-spacing:-.02em;}
+.intro-lead{line-height:1.06;letter-spacing:-.025em;}
+.queer .big{line-height:1.02;letter-spacing:-.025em;}
+.lede,.horizon blockquote,.carta-q p{line-height:1.12;}
+.concept{line-height:1.18;}
 </style>
 </head>
 <body>
