@@ -62,6 +62,13 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .secoes a{text-decoration:none;}
 .secoes a:hover,.secoes a:focus-visible{text-decoration:underline;text-underline-offset:4px;}
 .assin.meta{font-size:12px;}
+.usar-ia{display:flex;justify-content:space-between;align-items:baseline;gap:6px 24px;flex-wrap:wrap;padding-block:14px;text-decoration:none;}
+.usar-ia-t{font-family:var(--display);font-weight:400;font-size:clamp(1.35rem,2.2vw,2rem);line-height:1.05;letter-spacing:-.02em;}
+.usar-ia-l{font-family:'Instrument Sans','Helvetica Neue',Arial,sans-serif;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--on-color-muted);}
+.usar-ia .seta{margin-left:6px;display:inline-block;}
+.usar-ia .seta{color:var(--on-color);transition:transform var(--quick) ease-out;}
+.usar-ia:hover .usar-ia-t,.usar-ia:focus-visible .usar-ia-t{font-style:italic;}
+.usar-ia:hover .seta,.usar-ia:focus-visible .seta{transform:translateX(4px);}
 .assin.meta b{font-weight:500;} .assin.meta i{color:var(--on-color-muted);}
 .menu-painel{position:fixed;inset:0;z-index:50;overflow-y:auto;}
 .menu-painel[hidden]{display:none;}
@@ -448,6 +455,11 @@ dialog.carta[open]{animation:rise 520ms cubic-bezier(.2,.7,.2,1) both;}
     <a href="#neomaqueerismo" data-open="neomaqueerismo">neomaqueerismo</a>
     <a href="#triade" data-open="triade">tríade de livros</a>
   </nav>
+  <hr class="sfio">
+  <a class="usar-ia" href="/futurante/ia/">
+    <span class="usar-ia-t">Use a <i>Ética Futurante</i> em sua IA</span>
+    <span class="usar-ia-l">pronto para Claude · Gemini · GPT · outros <span class="seta" aria-hidden="true">→</span></span>
+  </a>
   <hr class="sfio">
   <div class="field">
     <div class="stage">

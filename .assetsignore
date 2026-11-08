@@ -1,6 +1,25 @@
+# Arquivos do repositório que não devem ser servidos pelo site (gira.guru).
+# Sintaxe igual à do .gitignore.
+
+# estado local, dependências e segredos
 .git
-wrangler.jsonc
+.wrangler
+node_modules
+.dev.vars
+.dev.vars.*
+.env
+.env.*
+.DS_Store
+__MACOSX
+
+# configuração e código dos workers
 .assetsignore
-README.md
-CLAUDE.md
+.gitignore
 _worker.js
+wrangler.jsonc
+**/wrangler.jsonc
+**/wrangler.toml
+
+# instruções internas
+CLAUDE.md
+README.md

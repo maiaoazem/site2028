@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EF · Modelo Sintético de Aplicação da Ética Futurante</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=DM+Sans:wght@400;500;600&family=Instrument+Sans:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#ECE2D0; --white:#FFFFFF; --ink:#191919; --muted:#5F5B52; --hairline:#B9AD96; --soft:#E2D6C0;
+  --blue:#1B264F; --red:#A4243B; --on-color:#ECE2D0;
+  --display:"Bodoni Moda", "Didot", serif;
+  --reading:"Newsreader", Georgia, serif;
+  --utility:"DM Sans", system-ui, sans-serif;
+  --top:"Instrument Sans", system-ui, sans-serif;
+  --s1:4px; --s2:8px; --s3:12px; --s4:18px; --s5:28px; --s6:44px; --s7:72px; --s8:112px; --s9:176px;
+  --outer:clamp(20px, 4.5vw, 72px);
+  --rule:1px solid var(--ink);
+  --quick:180ms; --settle:320ms;
+}
+*{box-sizing:border-box;margin:0;padding:0;border-radius:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--reading);font-size:19px;line-height:1.42;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.wrap{padding-inline:var(--outer)}
+.ann{font-family:var(--utility);font-size:11px;letter-spacing:.14em;text-transform:uppercase;line-height:1.35}
+.muted{color:var(--muted)}
+em{font-style:italic}
+
+/* ---------- 1 · Topo ---------- */
+.top{background:var(--white);font-family:var(--top)}
+.top .row{flex-wrap:wrap;display:flex;justify-content:space-between;align-items:center;gap:var(--s4);padding:var(--s3) var(--outer);border-bottom:var(--rule)}
+.top .row:first-child{border-top:var(--rule)}
+.sig{text-decoration:none;display:flex;align-items:center;gap:var(--s2);font-size:14px}
+.voltar{font-size:12px;letter-spacing:.09em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:var(--s2);border:1px solid var(--ink);padding:0 var(--s3);min-height:36px;transition:background var(--quick) ease-out,color var(--quick) ease-out}
+.voltar span{transition:transform var(--quick) ease-out}
+.voltar:hover{background:var(--ink);color:var(--white)}
+.voltar:hover span{transform:translateX(-4px)}
+.sig svg{width:14px;height:14px}
+.top nav{display:flex;gap:var(--s2) var(--s5);flex-wrap:wrap}
+.top nav a{font-size:13px;text-decoration:none;letter-spacing:.02em}
+.top nav a:hover{text-decoration:underline;text-underline-offset:4px}
+
+/* ---------- 2 · Destaque ---------- */
+.hero{background:var(--blue);color:var(--on-color);position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;min-height:min(88vh,820px);align-items:center;padding-block:var(--s8)}
+.hero-text{grid-column:1 / span 7;position:relative;z-index:2}
+.ef-hero{font-family:var(--display);font-weight:400;font-size:clamp(3.2rem,6.6vw,7.4rem);line-height:.9;letter-spacing:-.04em;max-width:11ch}
+.ef-hero em{font-weight:400}
+.hero-sub{max-width:34ch;margin-top:var(--s6);font-size:clamp(17px,1.5vw,21px)}
+.top .hero-dl{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s2)}
+.hero-dl .ann{margin-right:var(--s2)}
+.hero-dl a{font-family:var(--utility);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ink);padding:0 var(--s3);min-height:36px;display:inline-flex;align-items:center;gap:var(--s2);transition:background var(--quick) ease-out,color var(--quick) ease-out}
+.hero-dl a::after{content:"↓";transition:transform var(--quick) ease-out}
+.hero-dl a:hover{background:var(--ink);color:var(--white)}
+.hero-dl a:hover::after{transform:translateY(3px)}
+.hero-orbit{position:absolute;right:-8vw;top:50%;width:min(78vw,980px);transform:translateY(-50%);z-index:1;opacity:.95}
+.hero-orbit .spin{transform-origin:500px 500px;animation:orbit-turn 160s linear infinite}
+@keyframes orbit-turn{to{transform:rotate(360deg)}}
+.hero-foot{border-top:1px solid var(--on-color);padding-block:var(--s4);display:flex;justify-content:space-between;gap:var(--s4);flex-wrap:wrap}
+.hero-foot em{font-family:var(--reading);text-transform:none;letter-spacing:0;font-size:15px}
+
+/* ---------- 3 · Modos de saber ---------- */
+.modes{padding-block:var(--s8)}
+.folio{display:inline-block;border:var(--rule);padding:6px 10px;margin-top:-1px;background:var(--paper)}
+.modes-head{border-top:var(--rule);display:flex;justify-content:space-between;gap:var(--s4);align-items:flex-start}
+.modes-intro{max-width:58ch;margin-block:var(--s6) var(--s7)}
+.quad{display:grid;grid-template-columns:1fr 1fr;border-top:var(--rule);border-bottom:var(--rule);position:relative}
+.q{padding:var(--s6) var(--s5);display:grid;grid-template-rows:auto 1fr auto;gap:var(--s5);min-height:340px}
+.q:nth-child(odd){border-right:var(--rule)}
+.q:nth-child(-n+2){border-bottom:var(--rule)}
+.q .tag{display:flex;gap:var(--s3);align-items:baseline}
+.q .tag b{font-family:var(--utility);font-weight:600;font-size:12px;letter-spacing:.12em;border:var(--rule);padding:3px 7px}
+.q h3{font-family:var(--display);font-weight:400;font-size:clamp(1.8rem,2.6vw,2.6rem);letter-spacing:-.025em;line-height:1}
+.q svg{width:100%;max-width:340px;height:180px;justify-self:center}
+.q p{max-width:30ch;font-size:clamp(19px,1.6vw,23px);line-height:1.3}
+.q .rule-line{font-family:var(--utility);font-size:13px;line-height:1.45;border-top:1px solid var(--hairline);padding-top:var(--s3)}
+
+/* ---------- 4 · Mapa ---------- */
+.map{background:var(--white);padding-block:var(--s8)}
+.ef-big{font-family:var(--display);font-weight:400;font-size:clamp(3rem,6.4vw,6.8rem);letter-spacing:-.04em;line-height:.94}
+.ef-big em{font-weight:400}
+.map-head{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-block:var(--s6) var(--s6)}
+.map-head .ef-big{grid-column:1 / span 7}
+.map-head p{grid-column:9 / span 4;align-self:end;font-size:17px}
+.legend{display:flex;gap:var(--s5);flex-wrap:wrap;border-top:var(--rule);border-bottom:1px solid var(--hairline);padding-block:var(--s3)}
+.legend span{display:flex;align-items:center;gap:var(--s2)}
+.legend svg{width:44px;height:14px}
+.map-scroll{overflow-x:auto;border-bottom:var(--rule)}
+.map-svg{display:block;min-width:960px;width:100%;height:auto}
+.node{cursor:pointer}
+.node circle.c{fill:var(--white);stroke:var(--ink);stroke-width:1;transition:fill var(--quick) ease-out}
+.node text.n{font-family:var(--display);font-size:24px;text-anchor:middle;dominant-baseline:central;fill:var(--ink);pointer-events:none}
+.node.on circle.c{fill:var(--blue)}
+.node.on text.n{fill:var(--on-color)}
+.node:hover circle.c{fill:var(--soft)}
+.node.on:hover circle.c{fill:var(--blue)}
+.node:focus{outline:none}
+.node:focus-visible circle.ring{stroke:var(--ink);stroke-width:1.25}
+.node circle.ring{fill:none;stroke:transparent}
+.lbl-code{font-family:var(--utility);font-size:10px;letter-spacing:.14em;text-anchor:middle;fill:var(--muted)}
+.lbl-name{font-family:var(--reading);font-size:15px;text-anchor:middle;fill:var(--ink)}
+.arc{fill:none;stroke:var(--hairline);stroke-width:1;transition:stroke var(--settle) ease-out}
+.arc.on{stroke:var(--ink);stroke-width:1.25}
+.arc.return{stroke-dasharray:3 5}
+.arc-lbl{font-family:var(--utility);font-size:10px;letter-spacing:.08em;text-anchor:middle;fill:var(--muted);paint-order:stroke;stroke:var(--white);stroke-width:5px;transition:fill var(--settle)}
+.arc-lbl.on{fill:var(--ink)}
+.seq{stroke:var(--ink);stroke-width:1;fill:none}
+.zone{font-family:var(--utility);font-size:10px;letter-spacing:.16em;fill:var(--muted)}
+
+.detail{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;padding-top:var(--s6);min-height:420px}
+.d-left{grid-column:1 / span 4;border-right:1px solid var(--hairline);padding-right:var(--s5)}
+.d-num{font-family:var(--display);font-size:clamp(6rem,11vw,10rem);line-height:.8;letter-spacing:-.05em}
+.d-name{font-family:var(--display);font-size:clamp(1.8rem,2.4vw,2.4rem);line-height:1.02;letter-spacing:-.025em;margin-top:var(--s4)}
+.d-count{margin-top:var(--s3)}
+.chips{display:flex;gap:6px;margin-top:var(--s5);flex-wrap:wrap}
+.chip{font-family:var(--utility);font-size:11px;font-weight:600;letter-spacing:.12em;padding:4px 8px;border:var(--rule)}
+.chip.dom{background:var(--ink);color:var(--paper)}
+.chip.off{border-color:var(--hairline);color:var(--hairline)}
+.chips-note{font-family:var(--utility);font-size:12px;margin-top:var(--s2);color:var(--muted)}
+.d-right{grid-column:5 / span 8}
+.d-q{font-family:var(--reading);font-size:clamp(21px,2vw,27px);line-height:1.32;max-width:40ch}
+.d-rows{margin-top:var(--s6);border-top:var(--rule)}
+.d-row{display:grid;grid-template-columns:180px 1fr;gap:var(--s4);padding-block:var(--s3);border-bottom:1px solid var(--hairline);font-size:17px}
+.d-row .ann{padding-top:5px}
+.d-row.trans{font-style:italic}
+
+/* ---------- 5 · Perguntas ---------- */
+.asks{padding-block:var(--s8)}
+.asks-title{margin-block:var(--s6) var(--s7);max-width:14ch}
+.asks-list{list-style:none;border-top:var(--rule)}
+.asks-list li{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;padding-block:var(--s5);border-bottom:1px solid var(--hairline);align-items:start}
+.asks-list li:last-child{border-bottom:var(--rule)}
+.a-num{grid-column:1 / span 2;font-family:var(--display);font-size:clamp(3rem,5vw,4.8rem);line-height:.85;letter-spacing:-.04em}
+.a-name{grid-column:3 / span 3;padding-top:10px}
+.a-q{grid-column:6 / span 7;font-size:clamp(20px,1.8vw,25px);line-height:1.34}
+
+/* ---------- 6 · Downloads ---------- */
+.dl{background:var(--white);padding-block:var(--s8)}
+.dl-head{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-block:var(--s6) var(--s7)}
+.dl-head .ef-big{grid-column:1 / span 7}
+.dl-head p{grid-column:9 / span 4;align-self:end;font-size:17px}
+.dl-arrow{display:inline-block;transition:transform var(--quick) ease-out}
+.dl-list{list-style:none;border-top:var(--rule);border-bottom:var(--rule)}
+.dl-list li{scroll-margin-top:var(--s7)}
+.dl-list li:target a{background:var(--paper)}
+.dl-list li:target .d-k{font-style:italic}
+.dl-list li + li{border-top:1px solid var(--hairline)}
+.dl-list a{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:center;padding-block:var(--s4);text-decoration:none;transition:background var(--quick) ease-out}
+.dl-list a:hover{background:var(--paper)}
+.d-i{grid-column:1 / span 1;padding-left:var(--s3)}
+.d-k{grid-column:2 / span 3;font-family:var(--display);font-size:clamp(1.6rem,2.4vw,2.3rem);letter-spacing:-.025em;line-height:1}
+.d-d{grid-column:5 / span 6;font-size:17px;line-height:1.4}
+.d-d .ann{font-size:10px;text-transform:none;letter-spacing:.06em}
+.d-b{grid-column:11 / span 2;justify-self:end;padding-right:var(--s3);border-bottom:1px solid var(--ink);padding-bottom:3px}
+.survey{margin-top:var(--s8);background:var(--blue);color:var(--on-color);display:grid;grid-template-columns:repeat(12,1fr);gap:24px;padding:var(--s7) var(--s6)}
+.survey > div:first-child{grid-column:1 / span 7}
+.survey-t{font-family:var(--display);font-weight:400;font-size:clamp(2.4rem,4.4vw,4.4rem);letter-spacing:-.035em;line-height:.98;margin-top:var(--s4)}
+.survey-r{grid-column:9 / span 4;align-self:end}
+.survey-r p{font-size:17px}
+.survey-cta{display:inline-flex;gap:var(--s3);margin-top:var(--s5);font-family:var(--utility);font-size:13px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--on-color);padding-bottom:6px;min-height:44px;align-items:flex-end}
+.survey-cta span{transition:transform var(--quick) ease-out}
+.survey-cta:hover span{transform:translateX(4px)}
+
+/* ---------- 7 · Aviso ---------- */
+.warn{background:var(--red);color:var(--on-color)}
+.warn-k{padding-top:var(--s8)}
+.warn-t{font-family:var(--display);font-size:clamp(2.2rem,4.6vw,4.8rem);letter-spacing:-.035em;line-height:1.02;max-width:20ch;margin-top:var(--s5)}
+.warn-link{display:inline-flex;gap:var(--s3);margin-block:var(--s6) var(--s8);font-family:var(--utility);font-size:13px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--on-color);padding-bottom:6px}
+.warn-link span{transition:transform var(--quick) ease-out}
+.warn-link:hover span{transform:translateX(4px)}
+.warn .row{display:flex;justify-content:space-between;gap:var(--s4);flex-wrap:wrap;padding-block:var(--s4);border-top:1px solid var(--on-color)}
+
+@media (max-width:860px){
+  .hero-text{grid-column:1 / -1}
+  .hero-orbit{opacity:.35;right:-30vw;width:120vw}
+  .quad{grid-template-columns:1fr}
+  .q:nth-child(odd){border-right:none}
+  .q:nth-child(-n+3){border-bottom:var(--rule)}
+  .map-head .ef-big,.map-head p{grid-column:1 / -1}
+  .d-left,.d-right{grid-column:1 / -1;border-right:none;padding-right:0}
+  .d-row{grid-template-columns:1fr}
+  .a-num,.a-name,.a-q,.dl-head .ef-big,.dl-head p,.survey > div:first-child,.survey-r{grid-column:1 / -1}
+    .d-i{display:none}
+  .d-k{grid-column:1 / -1}
+  .d-d{grid-column:1 / span 9}
+  .d-b{grid-column:10 / span 3}
+  .survey{padding:var(--s6) var(--s4)}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+}
+</style>
+</head>
+<body>
+
+<!-- 1 · Topo -->
+<header class="top">
+  <div class="row">
+    <a class="sig" href="/" aria-label="Maia Oazem · laborateliê — início">
+      <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M7 0 L8.2 5.8 L14 7 L8.2 8.2 L7 14 L5.8 8.2 L0 7 L5.8 5.8 Z" fill="currentColor"/></svg>
+      <span>Maia Oazem · laborateliê</span>
+    </a>
+    <a class="voltar" href="/futurante/"><span aria-hidden="true">←</span> voltar à Ética Futurante</a>
+  </div>
+  <div class="row">
+    <nav aria-label="Seções">
+      <a href="#informacoes">01 · Informações</a>
+      <a href="#mapa">02 · Mapa</a>
+      <a href="#perguntas">03 · Perguntas</a>
+      <a href="#downloads">04 · Downloads</a>
+    </nav>
+    <nav class="hero-dl" aria-label="Baixar o modelo">
+      <span class="ann muted">Baixe para</span>
+      <a href="#dl-claude">Claude</a><a href="#dl-gemini">Gemini</a><a href="#dl-gpt">GPT</a><a href="#dl-outros">Outros</a>
+    </nav>
+  </div>
+</header>
+
+<!-- 2 · Destaque -->
+<section class="hero" aria-labelledby="t-hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <p class="ann" style="margin-bottom:var(--s5)">Mapa de interações · sete blocos</p>
+      <h1 id="t-hero" class="ef-hero">Modelo Sintético de Aplicação da <em>Ética Futurante</em></h1>
+      <p class="hero-sub">Como a Ética Futurante foi adaptada para a cognição de máquina. Compreenda os caminhos, questione os processos e adapte para suas necessidades.</p>
+    </div>
+  </div>
+  <svg class="hero-orbit" viewBox="0 0 1000 1000" aria-hidden="true">
+    <g class="spin" fill="none" stroke="#ECE2D0" stroke-width="1" id="orbits"></g>
+  </svg>
+  <div class="wrap">
+    <div class="hero-foot ann"><span>Hope Culture · <em>o laborateliê da gira. é um hope lab</em></span><span>Outra coisa é possível · outra coisa é necessária</span></div>
+  </div>
+</section>
+
+<!-- 3 · Informações -->
+<section class="modes wrap" id="informacoes" aria-labelledby="t-modos">
+  <div class="modes-head"><span class="folio ann">01 / Como a IA trata informações no processo</span><span class="ann muted" style="padding-top:8px">[E] · [S] · [H] · [P]</span></div>
+  <p class="modes-intro" id="t-modos">A jornada sintética gera quatro tipos de marcação às informações. A marca não julga a ideia: diz de onde ela vem.</p>
+  <div class="quad">
+    <article class="q">
+      <div class="tag"><b>E</b><h3>Evidência</h3></div>
+      <svg viewBox="0 0 340 180" fill="none" stroke="#191919" stroke-width="1" aria-hidden="true">
+        <ellipse cx="170" cy="90" rx="58" ry="78"/><circle cx="170" cy="90" r="11" fill="#191919" stroke="none"/>
+        <line x1="40" y1="90" x2="104" y2="90"/><line x1="236" y1="90" x2="300" y2="90"/>
+      </svg>
+      <p>O que é verificado com pesquisa.</p>
+    </article>
+    <article class="q">
+      <div class="tag"><b>S</b><h3>Sinal</h3></div>
+      <svg viewBox="0 0 340 180" fill="none" stroke="#191919" stroke-width="1" aria-hidden="true">
+        <ellipse cx="170" cy="62" rx="130" ry="26" stroke-dasharray="4 5"/><ellipse cx="170" cy="122" rx="130" ry="34"/>
+        <circle cx="170" cy="62" r="5"/><circle cx="170" cy="122" r="8" fill="#191919" stroke="none"/>
+      </svg>
+      <p>O que é extrapolado de um acontecimento.</p>
+    </article>
+    <article class="q">
+      <div class="tag"><b>H</b><h3>Hipótese</h3></div>
+      <svg viewBox="0 0 340 180" fill="none" stroke="#191919" stroke-width="1" aria-hidden="true">
+        <circle cx="60" cy="90" r="6"/>
+        <path d="M66 90 C140 20 220 20 280 40"/><path d="M66 90 C150 55 220 55 285 66"/><path d="M66 90 L290 90"/>
+        <path d="M66 90 C150 125 220 125 285 114"/><path d="M66 90 C140 160 220 160 280 140"/>
+        <path d="M272 34 L280 40 L271 45"/><path d="M277 61 L285 66 L277 71"/><path d="M282 85 L290 90 L282 95"/>
+        <path d="M277 109 L285 114 L277 119"/><path d="M271 135 L280 140 L272 146"/>
+      </svg>
+      <p>O que é elaborado como estratégia a partir de sinais e evidências.</p>
+    </article>
+    <article class="q">
+      <div class="tag"><b>P</b><h3>Projeção</h3></div>
+      <svg viewBox="0 0 340 180" fill="none" stroke="#191919" stroke-width="1" aria-hidden="true">
+        <circle cx="50" cy="140" r="6" fill="#191919" stroke="none"/>
+        <path d="M56 136 C110 40 200 30 270 70" stroke-dasharray="4 5"/>
+        <path d="M262 62 L270 70 L259 73"/>
+        <circle cx="292" cy="84" r="16"/><circle cx="292" cy="84" r="30" stroke-dasharray="2 5"/>
+      </svg>
+      <p>O que é elaborado como cenário futuro a partir de sinais e evidências.</p>
+    </article>
+  </div>
+</section>
+
+<!-- 4 · Mapa -->
+<section class="map" id="mapa" aria-labelledby="t-mapa">
+  <div class="wrap">
+    <div class="modes-head"><span class="folio ann" style="background:var(--white)">02 / Mapa de interações</span><span class="ann muted" style="padding-top:8px">F → F-S → C → Q → EP → R → A</span></div>
+    <div class="map-head">
+      <h2 id="t-mapa" class="ef-big">Sete blocos, <em>um fio</em> e muitas linhas de rastro</h2>
+      <p>A linha reta é a ordem obrigatória: nenhuma etapa é pulada. Os arcos de baixo são a rastreabilidade, ou seja, de onde cada bloco tira o que precisa. O arco de cima é o retorno: o primeiro ato produz evidência nova e reabre a jornada. Toque num bloco para ver suas conexões.</p>
+    </div>
+    <div class="legend ann">
+      <span><svg viewBox="0 0 44 14"><line x1="0" y1="7" x2="40" y2="7" stroke="#191919"/><path d="M34 2 L41 7 L34 12" fill="none" stroke="#191919"/></svg>Ordem da jornada</span>
+      <span><svg viewBox="0 0 44 14"><path d="M2 2 A20 10 0 0 0 42 2" fill="none" stroke="#191919"/></svg>Rastro · de onde vem</span>
+      <span><svg viewBox="0 0 44 14"><path d="M2 12 A20 10 0 0 1 42 12" fill="none" stroke="#191919" stroke-dasharray="3 5"/></svg>Retorno · revisitar a hipótese</span>
+    </div>
+    <div class="map-scroll">
+      <svg class="map-svg" id="map" viewBox="0 0 1240 600" role="group" aria-label="Mapa de interações entre as sete etapas"></svg>
+    </div>
+    <div class="detail" id="detail" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- 5 · Perguntas -->
+<section class="asks wrap" id="perguntas" aria-labelledby="t-asks">
+  <div class="modes-head"><span class="folio ann">03 / As sete perguntas</span><span class="ann muted" style="padding-top:8px">O que a IA se pergunta antes de responder</span></div>
+  <h2 id="t-asks" class="ef-big asks-title">Sete perguntas <em>antes</em> de qualquer resposta</h2>
+  <ol class="asks-list" id="asks"></ol>
+</section>
+
+<!-- 6 · Downloads -->
+<section class="dl" id="downloads" aria-labelledby="t-dl">
+  <div class="wrap">
+    <div class="modes-head"><span class="folio ann" style="background:var(--white)">04 / Downloads</span><span class="ann muted" style="padding-top:8px">Skills · .md · .csv</span></div>
+    <div class="dl-head">
+      <h2 id="t-dl" class="ef-big">Leve o modelo <em>com você</em></h2>
+      <p>Skills prontas para Claude, Gemini e GPT, um arquivo .MD para usar em outros modelos e um pacote com o .MD e o .CSV das perguntas e textos das cartas, que pode servir de contexto.</p>
+    </div>
+    <ul class="dl-list" id="dlList"></ul>
+    <aside class="survey" aria-labelledby="t-survey">
+      <div>
+        <p class="ann">Pesquisa de uso</p>
+        <h3 id="t-survey" class="survey-t">Vai usar o modelo? <em>Conte como foi.</em></h3>
+      </div>
+      <div class="survey-r">
+        <p>Responda ao formulário de aceite e participe da pesquisa de uso do Modelo Sintético da Ética Futurante.</p>
+        <a class="survey-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSdb-VVoLvfVOx8_597i7fNFP__FoG5QRqzsc-HU0Ut6Q2GCMg/viewform?usp=publish-editor">Participar da pesquisa <span aria-hidden="true">→</span></a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- 7 · Aviso -->
+<footer class="warn">
+  <div class="wrap">
+    <p class="ann warn-k">Aviso</p>
+    <p class="warn-t">Vale toda nossa preocupação e questionamento em como a terceirização do pensamento crítico-criativo para IAs afeta o cérebro humano.</p>
+    <a class="warn-link" href="https://gira.guru/contexto">Leia mais em gira.guru/contexto <span aria-hidden="true">→</span></a>
+    <div class="row ann"><a href="/futurante/" style="text-decoration:none">← Ética Futurante</a><span>EF · Modelo Sintético de Aplicação da Ética Futurante · gira. / laborateliê</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* ---------- dados ---------- */
+  const S = [
+    {n:'1', code:'F', name:'Futuros buscados', count:'3 hipóteses', reg:{E:0,S:0,H:2,P:1},
+     op:'ONE DAY, TOMORROW · Agência Futurante',
+     q:'Que tipo de futuro está sendo buscado de forma acrítica? Sem imaginar que esse futuro não é o único possível?',
+     out:'Resumo do pedido + F1, F2, F3: imagem de mundo, suposição naturalizada, quem se beneficia, quem fica de fora, grau de inferência.',
+     from:'O pedido da pessoa e o futuro que a própria inação já está fazendo.',
+     to:'Cada F# vira a origem de duas ou três estratégias implícitas.',
+     trans:'Que mundo está sendo considerado o único horizonte natural?',
+     note:'São hipóteses sobre o pedido. A IA separa o futuro desejado explicitamente dos futuros que ela está inferindo.'},
+    {n:'2', code:'F-S', name:'Estratégias de futuração implícitas', count:'2–3 por futuro · 6 a 9', reg:{E:0,S:0,H:2,P:0},
+     op:'THE MOTHER IMAGINATION WORLD ORDER · Imaginação Fértil',
+     q:'O que está sendo buscado via conquista de uma vida em vez de cuidado com as vidas? O que está sendo buscado via conquista do que é e serve a alguém, em vez de semeado e cultivado em conjunto?',
+     out:'F1-S1 … F3-S3, cada uma com sua premissa: quem decide, quem cultiva, quem trabalha, quem usufrui, quem arca com os custos.',
+     from:'Os futuros F1, F2 e F3.',
+     to:'As estratégias dão origem às questões emergentes (Q) e às cadeias de efeito (R).',
+     trans:'Quais modos de fazer o futuro foram tratados como naturais e quais foram excluídos?',
+     note:'Hipóteses sobre os meios. Conquista, extração ou controle não são presumidos: são investigados.'},
+    {n:'3', code:'C', name:'Outros futuros possíveis', count:'3 contra-hipóteses', reg:{E:0,S:0,H:1,P:2},
+     op:'89 SECONDS TO HOPE · Horizontes de Esperança',
+     q:'Quais são os futuros possíveis não imaginados dessa questão? Os futuros que parecem impossíveis, oníricos, utópicos? E por que são assim, quais são os pilares que parecem sustentar sua impossibilidade?',
+     out:'C1, C2, C3: horizonte, pressuposto desnormalizado (governança, propriedade, tempo, trabalho, valor, pertencimento…) e barreira de viabilidade.',
+     from:'O que F e F-S trataram como natural.',
+     to:'Cada C ajuda a enfrentar uma Q e se torna o horizonte de uma ação A.',
+     trans:'Que outra coisa poderia existir se deixássemos de tratar a norma presente como necessidade eterna?',
+     note:'Projeções declaradas. O utópico não é previsão, e o desejável não é universal.'},
+    {n:'4', code:'Q', name:'Outras coisas necessárias', count:'3 a 5 questões emergentes', reg:{E:0,S:1,H:2,P:0},
+     op:'THIS IS OURSELVES · Eu-Mundo',
+     q:'O que já está dado no presente, no que está acontecendo ao redor, que demonstra que esses pilares nos causam danos e nos colocam na direção dos futuros distópicos? O que já demonstra que esses pilares devem ser repensados? Que outra coisa é necessária?',
+     out:'Q1 … Q5 com o vínculo: estratégia implícita → questão do presente → contra-hipótese, mais o mecanismo de mitigação e seu limite.',
+     from:'Uma F#-S# que produz a tensão e uma C# que ajuda a enfrentá-la.',
+     to:'Questões que o estado do presente vai examinar e que as ações vão enfrentar.',
+     trans:'O que outra coisa não é apenas possível, mas já começa a se tornar necessária?',
+     note:'As questões são tensões investigáveis, não diagnósticos. Por isso ainda não são evidência.'},
+    {n:'5', code:'EP', name:'Estado do presente', count:'uma leitura por questão', reg:{E:2,S:2,H:1,P:0},
+     op:'EMPATHY IS ALSO BIOTECHNOLOGY · Sensibilidade Ecossistêmica',
+     q:'O que a vida próxima a nós também conta sobre esses pilares que parecem imutáveis? Quais danos eles estão causando? Quais mudanças são necessárias? Que outras coisas são necessárias?',
+     out:'Para cada Q: o que se observa, em quem ou onde, o que a evidência sustenta, o que ela não permite concluir e o que falta verificar.',
+     from:'As Q#, para serem testadas contra o mundo.',
+     to:'Sinais e evidências que ancoram as cadeias de efeito (R).',
+     trans:'Que mundo já está sendo produzido no corpo, nas relações, nos territórios e nos demais seres?',
+     note:'É a única etapa em que a evidência é obrigatória. Sem fonte, a IA escreve “não verificado” e propõe como investigar de forma ética.'},
+    {n:'6', code:'R', name:'Estados especulativos futuros', count:'3 ou mais cadeias', reg:{E:0,S:1,H:1,P:2},
+     op:'HEALING MAKERS · Criador Consequente',
+     q:'Então, se não mudamos essa mentalidade, o que vamos continuar criando com essa criação? O que a resposta desejada ao início pelo usuário é capaz de continuar fazendo no mundo, de efeitos não planejados da inovação? Quais são as outras coisas possíveis que serão geradas de forma acrítica?',
+     out:'R1 … R3: ação → segunda ordem → terceira ordem, com hipótese causal, grau de incerteza e condição de mudança.',
+     from:'As estratégias (F-S) e os sinais do presente (EP).',
+     to:'Cadeias que as ações devem interromper ou redesenhar.',
+     trans:'O que esta inovação fará depois de terminar de cumprir aquilo para que foi projetada?',
+     note:'Projeções condicionais, ancoradas em sinais. Inclui também efeitos positivos e o efeito de não agir.'},
+    {n:'7', code:'A', name:'Outras coisas possíveis', count:'3 a 5 estratégias', reg:{E:0,S:1,H:2,P:1},
+     op:'RECLAIMING TECHNOLOGY · Tecnologia Comum',
+     q:'Assim, como a atual estrutura tecnológica e humana pode ser usada para elaborar outras coisas possíveis? Que tenham efeitos elaborados de forma crítica e criativa? Quais são as frestas não imaginadas para que o que é utópico possa ser perseguido, em vez de o que é distópico ser construído?',
+     out:'A1 … A5, cada uma com C# / Q# / R#, mudança de premissa, capacidades recombinadas, primeiro ato, agência e sinal de acompanhamento.',
+     from:'Um horizonte (C), uma questão (Q) e uma cadeia a interromper (R).',
+     to:'A síntese para agir e o primeiro ato verificável.',
+     trans:'Qual pequena alteração no fazer presente abre espaço real para outro mundo continuar sendo feito?',
+     note:'Hipóteses de ação. O critério de acompanhamento transforma o horizonte em sinais observáveis.'},
+    {n:'↺', code:'SÍNTESE', name:'Síntese para agir', count:'não é uma oitava etapa', reg:{E:1,S:0,H:0,P:0},
+     op:'Fecho da jornada',
+     q:'Qual premissa foi transformada? Quais caminhos ficaram disponíveis? Qual é o primeiro ato verificável?',
+     out:'Três respostas, sem conclusão moral abstrata e sem escolher pela pessoa.',
+     from:'As ações A1 … A5.',
+     to:'Evidência nova, produzida pelo primeiro ato, que reabre a jornada na etapa 1.',
+     trans:'O que o primeiro ato nos ensinou que muda a hipótese inicial?',
+     note:'O primeiro ato é o único ponto da jornada que produz evidência em vez de consumi-la.'}
+  ];
+
+  /* rastros: de → para, rótulo, profundidade */
+  const TRACE = [
+    {a:1,b:3,l:'Q deriva de F-S',ry:105},
+    {a:2,b:3,l:'C ajuda Q',ry:52},
+    {a:3,b:4,l:'EP examina Q',ry:52},
+    {a:1,b:5,l:'R parte de F-S',ry:178},
+    {a:4,b:5,l:'R ancora em EP',ry:52},
+    {a:2,b:6,l:'A persegue C',ry:210},
+    {a:3,b:6,l:'A enfrenta Q',ry:145},
+    {a:5,b:6,l:'A interrompe R',ry:52}
+  ];
+
+  const NS = 'http://www.w3.org/2000/svg';
+  const el = (t, at, parent) => { const e = document.createElementNS(NS, t); for (const k in at) e.setAttribute(k, at[k]); if (parent) parent.appendChild(e); return e; };
+
+  /* ---------- órbitas do destaque ---------- */
+  const og = document.getElementById('orbits');
+  for (let i = 0; i < 7; i++){
+    const g = el('g', {transform:`rotate(${i*180/7} 500 500)`}, og);
+    el('ellipse', {cx:500, cy:500, rx:430, ry:120 + i*14}, g);
+    const t = (i*53 % 360) * Math.PI/180;
+    const cx = 500 + 430*Math.cos(t), cy = 500 + (120+i*14)*Math.sin(t);
+    el('circle', {cx, cy, r: i%2 ? 7 : 9, fill: i%3===0 ? '#ECE2D0' : '#1B264F'}, g);
+  }
+  el('circle', {cx:500, cy:500, r:26, fill:'#ECE2D0', stroke:'none'}, og);
+
+  /* ---------- mapa ---------- */
+  const svg = document.getElementById('map');
+  const Y = 300, X = i => 80 + i*157.5, R = 26;
+  const defs = el('defs', {}, svg);
+  const mk = el('marker', {id:'ar', viewBox:'0 0 10 10', refX:'9', refY:'5', markerWidth:'9', markerHeight:'9', orient:'auto-start-reverse', markerUnits:'userSpaceOnUse'}, defs);
+  el('path', {d:'M1 1 L9 5 L1 9', fill:'none', stroke:'context-stroke', 'stroke-width':'1'}, mk);
+  const mk2 = el('marker', {id:'ar2', viewBox:'0 0 10 10', refX:'9', refY:'5', markerWidth:'9', markerHeight:'9', orient:'auto', markerUnits:'userSpaceOnUse'}, defs);
+  el('path', {d:'M1 1 L9 5 L1 9', fill:'none', stroke:'#191919', 'stroke-width':'1'}, mk2);
+
+  el('text', {x:12, y:200, class:'zone'}, svg).textContent = 'RETORNO';
+  el('text', {x:12, y:470, class:'zone'}, svg).textContent = 'RASTRO';
+
+  /* fio da ordem */
+  for (let i = 0; i < S.length-1; i++){
+    el('line', {x1:X(i)+R+4, y1:Y, x2:X(i+1)-R-6, y2:Y, class:'seq', 'marker-end':'url(#ar2)'}, svg);
+  }
+
+  const arcs = [];
+  /* retorno */
+  const ra = el('path', {d:`M ${X(7)} ${Y-R-124} A ${(X(7)-X(0))/2} 110 0 0 0 ${X(0)} ${Y-R-124}`, class:'arc return', 'marker-end':'url(#ar)'}, svg);
+  const rl = el('text', {x:(X(0)+X(7))/2, y:Y-R-124-118, class:'arc-lbl'}, svg);
+  rl.textContent = 'O PRIMEIRO ATO PRODUZ EVIDÊNCIA NOVA · REVISITE A HIPÓTESE';
+  arcs.push({p:ra, t:rl, a:7, b:0});
+
+  /* rastros */
+  TRACE.forEach(tr => {
+    const x1 = X(tr.a), x2 = X(tr.b), rx = (x2-x1)/2;
+    const p = el('path', {d:`M ${x1} ${Y+R} A ${rx} ${tr.ry} 0 0 0 ${x2} ${Y+R}`, class:'arc', 'marker-end':'url(#ar)'}, svg);
+    const t = el('text', {x:(x1+x2)/2, y:Y+R+tr.ry+14, class:'arc-lbl'}, svg);
+    t.textContent = tr.l.toUpperCase();
+    arcs.push({p, t, a:tr.a, b:tr.b});
+  });
+
+  /* nós */
+  const nodes = S.map((s, i) => {
+    const g = el('g', {class:'node', tabindex:'0', role:'button', 'aria-label':`Etapa ${s.n}: ${s.name}`}, svg);
+    const words = s.name.split(' ');
+    const lines = [];
+    let cur = '';
+    words.forEach(w => { if ((cur + ' ' + w).trim().length > 15 && cur){ lines.push(cur); cur = w; } else cur = (cur + ' ' + w).trim(); });
+    lines.push(cur);
+    const top = Y - R - 16 - (lines.length-1)*17;
+    el('rect', {x:X(i)-70, y:top-34, width:140, height:(Y+R+4)-(top-34), fill:'transparent'}, g);
+    el('text', {x:X(i), y:top - 20, class:'lbl-code'}, g).textContent = s.code;
+    lines.forEach((ln, k) => { el('text', {x:X(i), y:top + k*17, class:'lbl-name'}, g).textContent = ln; });
+    el('circle', {cx:X(i), cy:Y, r:R+6, class:'ring'}, g);
+    el('circle', {cx:X(i), cy:Y, r:R, class:'c'}, g);
+    el('text', {x:X(i), y:Y+1, class:'n'}, g).textContent = s.n;
+    g.addEventListener('click', () => select(i));
+    g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); select(i); } if (e.key === 'ArrowRight'){ nodes[(i+1)%S.length].focus(); } if (e.key === 'ArrowLeft'){ nodes[(i-1+S.length)%S.length].focus(); } });
+    return g;
+  });
+
+  const detail = document.getElementById('detail');
+  const chips = r => ['E','S','H','P'].map(k => `<span class="chip ${r[k]===2?'dom':r[k]===1?'':'off'}">${k}</span>`).join('');
+
+  function select(i){
+    nodes.forEach((n, k) => n.classList.toggle('on', k === i));
+    arcs.forEach(a => { const on = a.a === i || a.b === i; a.p.classList.toggle('on', on); a.t.classList.toggle('on', on); });
+    const s = S[i];
+    detail.innerHTML = `
+      <div class="d-left">
+        <p class="ann muted">${s.code} · ${s.op}</p>
+        <div class="d-num" style="margin-top:var(--s4)">${s.n === '↺' ? '↺' : '0' + s.n}</div>
+        <h3 class="d-name">${s.name}</h3>
+        <p class="d-count ann">${s.count}</p>
+        <div class="chips" aria-label="Modos de saber">${chips(s.reg)}</div>
+        <p class="chips-note">${s.note}</p>
+      </div>
+      <div class="d-right">
+        <p class="d-q">${s.q}</p>
+        <div class="d-rows">
+          <div class="d-row"><span class="ann muted">Recebe de</span><span>${s.from}</span></div>
+          <div class="d-row"><span class="ann muted">Entrega</span><span>${s.out}</span></div>
+          <div class="d-row"><span class="ann muted">Alimenta</span><span>${s.to}</span></div>
+          <div class="d-row trans"><span class="ann muted" style="font-style:normal">Transição</span><span>${s.trans}</span></div>
+        </div>
+      </div>`;
+  }
+  select(0);
+
+  /* ---------- perguntas ---------- */
+  const asks = document.getElementById('asks');
+  S.slice(0,7).forEach(st => {
+    const li = document.createElement('li');
+    li.innerHTML = `<span class="a-num">0${st.n}</span><span class="a-name ann">${st.code} · ${st.name}</span><p class="a-q">${st.q}</p>`;
+    asks.appendChild(li);
+  });
+
+  /* ---------- downloads ---------- */
+  const BASE = '/futurante/skills/';
+  const FILES = [
+    {id:'dl-claude', k:'Claude', d:'Skill pronta para Claude', f:'etica-futurante-claude.zip', t:'.zip · 13 KB'},
+    {id:'dl-gemini', k:'Gemini', d:'Skill pronta para Gemini', f:'etica-futurante-gemini.zip', t:'.zip · 34 KB'},
+    {id:'dl-gpt', k:'GPT', d:'Skill pronta para GPT', f:'etica-futurante-gpt.zip', t:'.zip · 17 KB'},
+    {id:'dl-outros', k:'Outros modelos', d:'Arquivo solto em Markdown, para usar em qualquer modelo', f:'SKILL.md', t:'.md · 32 KB'},
+    {id:'dl-contexto', k:'Contexto', d:'O .MD e o .CSV com as perguntas e os textos das cartas', f:'etica-futurante-md-csv.zip', t:'.zip · 19 KB'}
+  ];
+  const dl = document.getElementById('dlList');
+  FILES.forEach((x, i) => {
+    const li = document.createElement('li');
+    li.id = x.id;
+    li.innerHTML = `<a href="${BASE}${x.f}"><span class="d-i ann">0${i+1}</span><span class="d-k">${x.k}</span><span class="d-d">${x.d}<br><span class="ann muted">${x.f} · ${x.t}</span></span><span class="d-b ann">Baixar <span class="dl-arrow" aria-hidden="true">↓</span></span></a>`;
+    dl.appendChild(li);
+  });
+})();
+</script>
+</body>
+</html>
