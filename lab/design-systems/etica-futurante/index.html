@@ -1,0 +1,781 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EF | Ética Futurante · design system gerado por IA · lab aberto</title>
+<meta name="description" content="EF | Ética Futurante: design system híbrido, base MAISON 04 com a estrutura Maia Oazem. Cartas que giram e sobem, pastas, blocos azul e vermelho. Baixe o .md para sua IA.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..500;1,6..96,400&family=DM+Sans:opsz,wght@9..40,400..600&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#ece2d0;
+  --white:#ffffff;
+  --ink:#191919;
+  --muted:#5f5b52;
+  --hairline:#b9ad96;
+  --soft:#e2d6c0;
+  --moment-indigo:#1b264f;
+  --moment-olive:#646f4b;
+  --moment-periwinkle:#9b7ede;
+  --moment-rose:#a4243b;
+  --moment:var(--moment-indigo);
+  --on-moment:var(--white);
+  --blue:var(--moment-indigo);
+  --red:var(--moment-rose);
+  --olive:var(--moment-olive);
+  --periwinkle:var(--moment-periwinkle);
+  --on-color:var(--paper);
+  --on-color-muted:rgba(236,226,208,.72);
+  --on-color-line:rgba(236,226,208,.42);
+  --space-1:4px;
+  --space-2:8px;
+  --space-3:12px;
+  --space-4:18px;
+  --space-5:28px;
+  --space-6:44px;
+  --space-7:72px;
+  --space-8:112px;
+  --space-9:176px;
+  --gutter:24px;
+  --outer-min:24px;
+  --outer-max:84px;
+  --stack-top:72px;
+  --stack-step:14px;
+  --folder-overlap:30px;
+  --folder-tab:31px;
+  --radius-none:0;
+  --rule:1px;
+  --stroke-control:1.25px;
+  --focus-ring:2px;
+  --measure-min:52ch;
+  --measure-max:65ch;
+  --open-field:30%;
+  --duration-quick:180ms;
+  --duration-settle:320ms;
+  --duration-chapter:720ms;
+  --orbit-turn:70s;
+  --card-float:8s;
+  --card-deal:760ms;
+  --font-display:"Bodoni Moda", Georgia, serif;
+  --font-reading:Newsreader, Georgia, serif;
+  --font-utility:"DM Sans", Arial, sans-serif;
+  --font-site:"Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+}
+/* EF | Ética Futurante — estilos compartilhados. Carrega depois de tokens.css.
+   Parte 1: base MAISON 04 (classes m-). Parte 2: estrutura híbrida EF (a página gira.guru/futurante). */
+[data-moment="01"] { --moment: var(--moment-indigo);     --on-moment: var(--white); }
+[data-moment="02"] { --moment: var(--moment-olive);      --on-moment: var(--white); }
+[data-moment="03"] { --moment: var(--moment-periwinkle); --on-moment: var(--ink); }
+[data-moment="04"] { --moment: var(--moment-rose);       --on-moment: var(--white); }
+
+.m-page { background: var(--paper); color: var(--ink); font-family: var(--font-reading); margin: 0; font-variant-numeric: tabular-nums; }
+.m-label { font-family: var(--font-utility); font-size: 11px; line-height: 1.35; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; }
+.m-muted { color: var(--muted); }
+.m-display { font-family: var(--font-display); font-weight: 400; letter-spacing: -.035em; line-height: .92; margin: 0; }
+.m-body { font-family: var(--font-reading); font-size: 19px; line-height: 1.42; max-width: var(--measure-max); margin: 0; }
+.m-rule { border: 0; border-top: var(--rule) solid var(--ink); margin: 0; }
+.m-hair { border: 0; border-top: var(--rule) solid var(--hairline); margin: 0; }
+.m-tab { display: inline-block; border: var(--rule) solid currentColor; padding: 3px 8px 2px; }
+.m-field { background: var(--moment); color: var(--on-moment); }
+.m-arrow { display: inline-block; vertical-align: middle; transition: transform var(--duration-quick) ease-out; }
+.m-arrow path { fill: none; stroke: currentColor; stroke-width: var(--stroke-control); stroke-linecap: square; }
+.m-cta { display: inline-flex; align-items: center; gap: var(--space-3); min-height: var(--space-6); color: inherit; text-decoration: none; border-bottom: var(--rule) solid currentColor; font-family: var(--font-utility); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 500; padding-right: var(--space-1); }
+.m-cta:hover .m-arrow, .m-cta:focus-visible .m-arrow { transform: translateX(var(--space-1)); }
+.m-cta:focus-visible, a:focus-visible { outline: var(--focus-ring) solid currentColor; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .m-arrow { transition: none; } }
+
+/* ══════════ EF · estrutura híbrida (MAISON 04 × Maia Oazem) ══════════
+   Aliases curtos usados pelo código da página; todos apontam para tokens. */
+:root{
+  --display:var(--font-display); --reading:var(--font-reading); --utility:var(--font-utility); --site:var(--font-site);
+  --outer:clamp(20px,4.5vw,var(--outer-max));
+  --s2:var(--space-2); --s3:var(--space-3); --s4:var(--space-4); --s5:var(--space-5); --s6:var(--space-6); --s7:var(--space-7); --s8:var(--space-8); --s9:var(--space-9);
+  --quick:var(--duration-quick); --settle:var(--duration-settle);
+}
+/* ── MAISON 04 · paleta Bone / Space Indigo / Cherry Rose (+ Olive, Periwinkle na matriz) ── */
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:60px;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--reading);font-size:19px;line-height:1.42;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offset:3px;}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;}
+.label{font-family:var(--utility);font-size:11px;line-height:1.35;font-weight:500;letter-spacing:.14em;text-transform:uppercase;}
+.wrap{padding-inline:var(--outer);}
+.bleed{margin-inline:calc(var(--outer) * -1);padding-inline:var(--outer);}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+.fio{border:0;border-top:1px solid currentColor;margin:0;opacity:1;}
+/* blocos de cor */
+.blue{background:var(--blue);color:var(--on-color);}
+.red{background:var(--red);color:var(--on-color);}
+.blue .muted,.red .muted{color:var(--on-color-muted);}
+.muted{color:var(--muted);}
+/* cabeço corrido: fio · linha · fio */
+.cabeco{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s4);padding-block:var(--s3);border-top:1px solid currentColor;border-bottom:1px solid currentColor;}
+.blue .cabeco,.red .cabeco{border-color:var(--on-color-line);}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;}}
+
+/* ── 1. header azul: moldura + cartas em órbita ── */
+.hero{position:relative;min-height:max(680px,100vh);display:flex;flex-direction:column;overflow:hidden;}
+/* topo no padrão do site gira.guru (Instrument Sans, fios, assinatura, seções) */
+.sfio{border:0;border-top:1px solid currentColor;margin:0;}
+.blue .sfio{border-color:var(--on-color-line);}
+.assin{display:flex;justify-content:space-between;align-items:center;gap:10px 16px;flex-wrap:wrap;padding-block:14px;font-family:'Instrument Sans','Helvetica Neue',Arial,sans-serif;font-size:15px;}
+.assin .marcas{display:flex;align-items:center;gap:14px;text-decoration:none;}
+.logo-m{width:30px;height:34px;display:block;}
+.logo-m:not(.ok){display:none;}
+.fagulha{width:24px;height:24px;display:block;}
+.menu-botao{font-family:inherit;font-size:12px;letter-spacing:.09em;text-transform:uppercase;display:flex;align-items:center;gap:10px;padding:4px 0;min-height:44px;}
+.menu-botao:hover{opacity:.6;}
+.tracos{display:flex;flex-direction:column;gap:4px;width:20px;}
+.tracos i{display:block;height:1px;background:currentColor;}
+.tracos.fechar{position:relative;height:12px;}
+.tracos.fechar i{position:absolute;left:0;right:0;top:6px;}
+.tracos.fechar i:first-child{transform:rotate(45deg);} .tracos.fechar i:last-child{transform:rotate(-45deg);}
+.secoes{display:flex;flex-wrap:wrap;gap:6px 28px;padding-block:12px;font-family:'Instrument Sans','Helvetica Neue',Arial,sans-serif;font-size:12px;letter-spacing:.09em;text-transform:uppercase;}
+.secoes a{text-decoration:none;}
+.secoes a:hover,.secoes a:focus-visible{text-decoration:underline;text-underline-offset:4px;}
+.assin.meta{font-size:12px;}
+.assin.meta b{font-weight:500;} .assin.meta i{color:var(--on-color-muted);}
+.menu-painel{position:fixed;inset:0;z-index:50;overflow-y:auto;}
+.menu-painel[hidden]{display:none;}
+.menu-lista{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:40px;padding-block:clamp(24px,4vw,48px);}
+.smeta{font-family:'Instrument Sans',Arial,sans-serif;font-size:12px;padding-top:14px;}
+.menu-lista ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--on-color-line);}
+.menu-lista li{border-bottom:1px solid var(--on-color-line);}
+.menu-lista a{display:block;text-decoration:none;font-family:var(--display);font-size:clamp(32px,4.6vw,60px);line-height:1.1;padding-block:8px;letter-spacing:-.02em;}
+.menu-lista a:hover,.menu-lista a:focus-visible{font-style:italic;}
+.menu-lista .seta{display:inline-block;font-family:'Instrument Sans',Arial,sans-serif;font-size:.42em;vertical-align:.25em;margin-right:.4em;}
+@media (prefers-reduced-motion: no-preference){.menu-painel:not([hidden]){animation:painel .35s cubic-bezier(.2,.7,.2,1);} @keyframes painel{from{opacity:0;}to{opacity:1;}}}
+@media (max-width:860px){.menu-lista{grid-template-columns:1fr;gap:12px;}}
+@media (max-width:560px){.secoes{flex-wrap:nowrap;overflow-x:auto;gap:22px;scrollbar-width:none;}.secoes a{white-space:nowrap;}}
+.field{position:relative;flex:1;min-height:520px;}
+.stage{position:absolute;inset:0;perspective:2400px;perspective-origin:50% 42%;}
+.scene{position:absolute;inset:0;transform-style:preserve-3d;}
+.ring{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d;
+  --r:min(40vw,540px); --tilt:-15deg;
+  transform:rotateX(var(--tilt)) rotateY(0deg);}
+.stage{cursor:grab;touch-action:pan-y;}
+.stage.dragging{cursor:grabbing;}
+.orbit-card,.orbit-card img{-webkit-user-drag:none;user-select:none;}
+.orbit-card{--w:clamp(78px,9vw,112px);position:absolute;left:calc(var(--w)/-2);top:calc(var(--w)*-0.857);width:var(--w);aspect-ratio:7/12;
+  transform-style:preserve-3d;transform:rotateY(calc(var(--i) * 360deg / 7)) translateZ(var(--r));text-decoration:none;color:var(--ink);}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;}
+.front{background:var(--paper);padding:calc(var(--w)*.07);display:flex;flex-direction:column;gap:calc(var(--w)*.05);transition:transform var(--quick) ease-out;}
+.front img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--ink);}
+.mini-tab{align-self:center;font-family:var(--display);font-size:calc(var(--w)*.13);line-height:1;padding:2px 6px 1px;border:1px solid var(--ink);margin-top:-1px;}
+.mini-name{font-family:var(--display);font-size:calc(var(--w)*.115);line-height:1.02;letter-spacing:-.02em;margin-top:auto;}
+.back{transform:rotateY(180deg);background:var(--red);display:grid;place-items:center;}
+.back span{font-family:var(--display);color:var(--paper);font-size:calc(var(--w)*.2);border:1px solid var(--on-color-line);padding:4px 10px 2px;}
+.orbit-card:hover .front{transform:translateY(-6px);}
+.hero-title{position:absolute;left:0;right:0;top:40%;transform:translate3d(0,-50%,0);text-align:center;pointer-events:none;padding:0 var(--outer);}
+.hero-title h1,.hero-title .h1{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(2.8rem,6.6vw,6.6rem);line-height:.92;letter-spacing:-.04em;}
+.hero-title .sub{display:block;margin:var(--s4) 0 0;font-family:var(--display);font-weight:400;font-size:clamp(1.25rem,2.2vw,2rem);line-height:1.1;letter-spacing:-.015em;color:var(--on-color-muted);}
+.hero-title i{font-style:italic;}
+.hero-foot{display:flex;justify-content:space-between;gap:var(--s4);padding-block:var(--s3) var(--s5);border-top:1px solid var(--on-color-line);}
+.hero-title.mobile{display:none;}
+@media (max-width:640px){
+  .hero{min-height:0;}
+  .field{flex:none;min-height:0;height:330px;}
+  .stage{perspective:900px;}
+  .ring{--r:36vw;--tilt:-14deg;top:48%;}
+  .orbit-card{--w:66px;}
+  .scene > .hero-title{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}
+  .hero-title.mobile{display:block;position:static;transform:none;padding:0 0 var(--s6);text-align:left;}
+  .hero-title.mobile .h1{font-size:clamp(2.4rem,11vw,3.4rem);}
+  .assin.meta .hint{display:none;}
+}
+
+/* ── 2. abertura: recuo grande + metadados ── */
+.opening{position:relative;isolation:isolate;padding-block:var(--s9) var(--s9);display:grid;grid-template-columns:3fr 9fr;gap:var(--gutter);}
+.opening > *{position:relative;z-index:1;}
+.opening .seven-bg{position:absolute;z-index:0;right:-.04em;top:50%;transform:translateY(-52%);font-family:var(--display);font-weight:400;font-size:clamp(16rem,46vw,46rem);line-height:.8;letter-spacing:-.06em;color:#dfd2b9;pointer-events:none;user-select:none;}
+.opening .lead{margin:0;font-size:clamp(24px,2.9vw,40px);line-height:1.22;letter-spacing:-.005em;text-indent:24%;max-width:30ch;}
+.opening .seven{margin:var(--s6) 0 0;max-width:46ch;margin-left:auto;margin-right:12%;}
+.meta-row{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gutter);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding-block:var(--s4);}
+.meta-row div{display:flex;flex-direction:column;gap:6px;}
+.meta-row span:last-child{font-family:var(--display);font-size:22px;line-height:1.1;letter-spacing:-.01em;}
+@media (max-width:820px){
+  .opening{grid-template-columns:1fr;padding-block:var(--s8) var(--s8);}
+  .opening .seven-bg{font-size:72vw;}
+  .opening .lead{text-indent:18%;}
+  .opening .seven{margin:var(--s5) 0 0;}
+  .meta-row{grid-template-columns:1fr 1fr;row-gap:var(--s4);}
+}
+
+/* ── 3. vermelho: possível / necessária ── */
+
+
+/* ── 4. tríade: lista numerada ── */
+.triad{padding-block:var(--s8) var(--s8);}
+.triad-head{display:grid;grid-template-columns:3fr 9fr;gap:var(--gutter);align-items:baseline;margin-bottom:var(--s5);}
+.triad-head h2{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(1.8rem,3vw,2.8rem);line-height:1;letter-spacing:-.03em;}
+.triad-head h2 i{font-style:italic;}
+.triad-head p{margin:0;font-size:17px;color:var(--muted);}
+@media (max-width:820px){.triad-head{grid-template-columns:1fr;gap:var(--s2);}}
+.triad ol{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink);}
+.triad li{display:grid;grid-template-columns:64px 1fr auto;gap:var(--gutter);align-items:baseline;padding-block:var(--s3);border-bottom:1px solid var(--hairline);}
+.triad .n{font-family:var(--display);font-size:16px;color:var(--muted);}
+.triad .t{font-family:var(--display);font-style:italic;font-size:clamp(1.25rem,1.9vw,1.75rem);line-height:1;letter-spacing:-.025em;}
+.triad .a{text-align:right;color:var(--muted);}
+@media (max-width:820px){ .triad li{grid-template-columns:40px 1fr;} .triad .a{grid-column:2;text-align:left;} }
+
+/* ── menu de seções ── */
+.sections-nav{position:sticky;top:0;z-index:10;background:var(--paper);border-top:1px solid var(--ink);border-bottom:1px solid var(--hairline);}
+.sections-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:var(--s5);overflow-x:auto;scrollbar-width:none;}
+.sections-nav a{display:flex;align-items:center;gap:8px;min-height:52px;text-decoration:none;white-space:nowrap;border-bottom:1px solid transparent;transition:border-color var(--quick) ease-out;}
+.sections-nav a span{color:var(--muted);}
+.sections-nav a:hover,.sections-nav a[aria-current="true"]{border-bottom-color:var(--ink);}
+
+/* ── seções ── */
+.section{padding-block:var(--s7) var(--s8);}
+.section-title{display:grid;grid-template-columns:3fr 9fr;gap:var(--gutter);align-items:end;margin:var(--s7) 0 var(--s7);}
+.folio-big{font-family:var(--display);font-size:clamp(4rem,9vw,9rem);line-height:.8;color:var(--hairline);letter-spacing:-.04em;}
+.section-title h2{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(3rem,7vw,7.5rem);line-height:.9;letter-spacing:-.04em;}
+.section-title h2 i{font-style:italic;}
+
+/* olho em faixas */
+.bands{border-top:1px solid var(--ink);margin-bottom:var(--s7);}
+#mudar-como-mudamos .cols{margin-bottom:0;}
+.bands p{margin:0;display:grid;grid-template-columns:3fr 9fr;gap:var(--gutter);align-items:baseline;padding-block:var(--s4);border-bottom:1px solid var(--ink);font-family:var(--display);font-size:clamp(1.8rem,3.8vw,3.8rem);line-height:1;letter-spacing:-.03em;}
+.bands p .label{font-size:11px;letter-spacing:.14em;}
+.bands p:nth-child(2) span:last-child{font-style:italic;color:var(--muted);}
+.cols{display:grid;grid-template-columns:3fr 4.5fr 4.5fr;gap:var(--gutter);margin-bottom:var(--s8);}
+.cols p{margin:0 0 1em;}
+.cols .first::first-line{font-variant-caps:all-small-caps;letter-spacing:.06em;}
+@media (max-width:820px){
+  .section-title{grid-template-columns:1fr;gap:var(--s3);}
+  .bands p{grid-template-columns:1fr;gap:6px;}
+  .cols{grid-template-columns:1fr;}
+}
+
+/* lista dos 7 princípios */
+.toolkit-note{display:grid;grid-template-columns:9fr 3fr;gap:var(--gutter);align-items:end;border-top:2px solid var(--ink);padding-block:var(--s6) var(--s7);}
+.toolkit-note h3{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(3rem,7.4vw,8rem);line-height:.9;letter-spacing:-.045em;}
+.toolkit-note h3 i{font-style:italic;}
+.tk-side p{margin:var(--s3) 0 0;font-size:18px;line-height:1.4;color:var(--muted);}
+@media (max-width:820px){.toolkit-note{grid-template-columns:1fr;}}
+.principles{list-style:none;margin:0;padding:0;}
+.principles li{border-bottom:1px solid var(--hairline);}
+.principle summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:150px minmax(0,6fr) minmax(0,5fr) 150px;gap:var(--gutter);align-items:baseline;padding-block:var(--s7) var(--s7);transition:background var(--quick) ease-out;}
+.principle summary::-webkit-details-marker{display:none;}
+.p-num{font-family:var(--display);font-size:clamp(3rem,6.2vw,6.4rem);line-height:.9;letter-spacing:-.03em;color:var(--hairline);transition:color var(--quick) ease-out;}
+.principle summary:hover .p-num,.principle[open] .p-num{color:var(--red);}
+.p-name{display:block;font-family:var(--display);font-size:clamp(2.2rem,4.4vw,4.6rem);line-height:.96;letter-spacing:-.035em;}
+.p-label{display:block;margin-top:var(--s4);font-family:var(--utility);font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+.p-short{font-size:clamp(19px,1.6vw,23px);line-height:1.38;max-width:38ch;}
+.p-toggle{justify-self:end;display:inline-flex;align-items:center;gap:var(--s3);min-height:44px;font-family:var(--utility);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--ink);white-space:nowrap;}
+.p-toggle svg path{fill:none;stroke:currentColor;stroke-width:1.25;}
+.p-toggle svg{transition:transform var(--quick) ease-out;}
+.principle summary:hover .p-toggle svg{transform:translateX(4px);}
+.principle[open] .p-toggle svg{transform:rotate(90deg);}
+.t-close{display:none;} .principle[open] .t-open{display:none;} .principle[open] .t-close{display:inline;}
+.principle.flash summary{background:var(--soft);}
+.card-text{display:grid;grid-template-columns:150px minmax(0,6fr) minmax(0,5fr) 150px;gap:var(--s5) var(--gutter);padding-bottom:var(--s6);}
+.ct-concept{grid-column:2;}
+.ct-body{grid-column:3;}
+.card-text .label{display:block;color:var(--muted);margin-bottom:var(--s3);}
+.ct-body .label:not(:first-child){margin-top:var(--s5);}
+.concept{margin:0;font-family:var(--display);font-style:italic;font-size:clamp(1.5rem,2.2vw,2rem);line-height:1.12;letter-spacing:-.02em;}
+.ct-body p{margin:0 0 .8em;max-width:60ch;}
+/* a carta aparece dentro do bloco quando ele abre */
+.ct-card{margin:var(--s6) 0 0;max-width:340px;}
+.principle[open] .card-text{perspective:1200px;animation:rise 640ms cubic-bezier(.2,.7,.2,1) both;}
+@keyframes rise{from{opacity:0;transform:translateY(14px) rotateX(5deg) scale(.99);transform-origin:50% 0;}to{opacity:1;transform:none;}}
+.ct-concept{perspective:900px;}
+.principle[open] .ct-card{transform-style:preserve-3d;animation:deal 760ms cubic-bezier(.2,.7,.2,1) both, float 7s ease-in-out 760ms infinite;}
+@keyframes deal{from{opacity:0;transform:translate3d(0,24px,-60px) rotateX(10deg) rotateY(-6deg);}to{opacity:1;transform:none;}}
+@keyframes float{0%,100%{transform:none;}50%{transform:translate3d(0,-7px,12px) rotateX(1.6deg) rotateY(-2.4deg);}}
+@media (prefers-reduced-motion: reduce){.principle[open] .ct-card,.principle[open] .card-text{animation:none;}}
+.tarot{display:block;width:100%;height:auto;aspect-ratio:7/12;}
+.tarot .tbg{fill:var(--paper);}
+.tarot .tb{font-family:var(--utility);font-weight:500;letter-spacing:.16em;fill:var(--ink);text-transform:uppercase;}
+.tarot .tl{fill:none;stroke:var(--ink);stroke-width:1.5;}
+.tarot .th{stroke:var(--hairline);stroke-width:1.5;}
+.tarot .ttab{fill:var(--paper);stroke:var(--ink);stroke-width:1.5;}
+.tarot .tnum{font-family:var(--display);font-size:46px;fill:var(--ink);}
+.tarot .tp{font-family:var(--display);font-size:78px;letter-spacing:-.03em;fill:var(--ink);}
+.tarot .tn{font-family:var(--utility);font-weight:500;font-size:18px;letter-spacing:.16em;fill:var(--ink);}
+.tarot .tm{font-family:var(--utility);font-weight:500;font-size:16px;letter-spacing:.16em;fill:var(--muted);}
+.ct-card{outline:1px solid var(--hairline);outline-offset:-1px;}
+/* a pergunta futurante abre um bloco azul */
+.ct-question{grid-column:1 / -1;display:grid;grid-template-columns:150px minmax(0,6fr) minmax(0,5fr) 150px;gap:var(--gutter);padding:var(--s6) 0 var(--s7);margin-top:var(--s4);background:var(--blue);color:var(--on-color);margin-inline:calc(var(--outer) * -1);padding-inline:var(--outer);}
+.ct-question .label{grid-column:2;color:var(--on-color-muted);}
+.ct-question p{grid-column:3 / 5;margin:0;font-family:var(--display);font-size:clamp(1.7rem,2.8vw,2.8rem);line-height:1.08;letter-spacing:-.025em;}
+@media (max-width:900px){
+  .principle summary{grid-template-columns:64px 1fr;row-gap:var(--s4);padding-block:var(--s6);}
+  .p-short{grid-column:2;} .p-toggle{grid-column:2;justify-self:start;}
+  .card-text{grid-template-columns:64px 1fr;}
+  .ct-concept,.ct-body{grid-column:2;}
+  .ct-card{max-width:260px;}
+  .ct-question{grid-template-columns:64px 1fr;}
+  .ct-question .label,.ct-question p{grid-column:2;}
+}
+
+/* ── seções abre e fecha ── */
+.fold{border-top:1px solid var(--ink);transition:background var(--settle) ease-out;}
+.fold:not([open]){background:var(--white);}
+.fold:last-of-type{border-bottom:1px solid var(--ink);}
+.fold > summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:3fr 9fr;gap:var(--gutter);align-items:end;padding-block:var(--s6);}
+.fold > summary::-webkit-details-marker{display:none;}
+.fold .folio-big{font-size:clamp(3rem,6vw,6rem);}
+.fold .head{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s4);}
+.fold h2{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,5vw,5.2rem);line-height:.95;letter-spacing:-.035em;}
+.fold h2 i{font-style:italic;}
+.fold .mark{font-family:var(--utility);font-size:24px;line-height:1;width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--ink);flex:none;}
+.mark i{font-style:normal;display:block;transition:transform var(--quick) ease-out;}
+.fold[open] .mark i{transform:rotate(45deg);}
+.fold > summary:hover .folio-big{color:var(--red);}
+.fold-body{padding-bottom:var(--s8);}
+.fold-grid{display:grid;grid-template-columns:3fr 9fr;gap:var(--gutter);}
+.fold-grid .text{max-width:64ch;}
+.fold-grid .text p{margin:0 0 1em;}
+.lede{margin:0 0 var(--s6);font-family:var(--display);font-size:clamp(1.7rem,3vw,2.8rem);line-height:1.08;letter-spacing:-.025em;max-width:26ch;}
+.note{font-size:15px;line-height:1.45;color:var(--muted);border-top:1px solid var(--hairline);padding-top:var(--s3);margin-top:var(--s5);}
+@media (max-width:820px){ .fold > summary,.fold-grid{grid-template-columns:1fr;gap:var(--s3);} }
+
+/* esperança: cartaz azul com o horizonte */
+.horizon{margin-block:var(--s6) var(--s7);padding-block:var(--s5) var(--s7);}
+.horizon .cabeco{border-top:0;margin-bottom:var(--s7);}
+.horizon blockquote{margin:0;font-family:var(--display);font-size:clamp(1.8rem,3.4vw,3.4rem);line-height:1.1;letter-spacing:-.025em;max-width:28ch;}
+.horizon blockquote i{font-style:italic;}
+.horizon cite{display:block;margin-top:var(--s5);font-style:normal;}
+.walk{margin-top:var(--s7);position:relative;height:72px;}
+.walk .line{position:absolute;left:0;right:0;top:36px;border-top:1px solid var(--on-color-line);}
+.walk .me,.walk .hz{position:absolute;top:0;display:flex;flex-direction:column;align-items:center;gap:6px;transform:translateX(-50%);transition:left 120ms linear;}
+.walk .me i{display:block;width:10px;height:10px;background:var(--on-color);margin-top:25px;}
+.walk .hz i{display:block;width:1px;height:28px;background:var(--on-color);margin-top:22px;}
+.walk .label{white-space:nowrap;color:var(--on-color-muted);}
+.walk .steps{position:absolute;right:0;bottom:-6px;}
+
+/* por que futurante: espécime */
+.specimen{border-top:1px solid var(--ink);margin-bottom:var(--s7);}
+.specimen .row{display:grid;grid-template-columns:3fr 6fr 3fr;gap:var(--gutter);align-items:baseline;padding-block:var(--s5);border-bottom:1px solid var(--ink);}
+.specimen .word{font-family:var(--display);font-size:clamp(3rem,9vw,9rem);line-height:.9;letter-spacing:-.045em;white-space:nowrap;}
+.specimen .word i{font-style:italic;color:var(--red);}
+.specimen .row:first-child .word i{color:var(--muted);}
+.specimen .def{font-size:16px;line-height:1.45;margin:0;}
+.stem{display:inline-block;transition:opacity var(--settle) ease-out;}
+.stem.off{opacity:0;}
+@media (max-width:820px){ .specimen .row{grid-template-columns:1fr;gap:var(--s3);} }
+
+/* neomaqueerismo: matriz */
+.matrix{display:grid;grid-template-columns:1fr minmax(120px,.55fr) 1fr;grid-template-rows:auto auto auto;margin-block:var(--s7);position:relative;}
+.matrix::before,.matrix::after{content:'';position:absolute;background:var(--ink);}
+.matrix::before{left:0;right:0;top:50%;height:1px;}
+.matrix::after{top:0;bottom:0;left:50%;width:1px;}
+.q{position:relative;z-index:1;background:var(--paper);padding:var(--s5);max-width:420px;}
+.q-ma{grid-column:2;grid-row:1;justify-self:center;text-align:center;margin-bottom:var(--s6);width:min(420px,80vw);}
+.q-neo{grid-column:1;grid-row:2;justify-self:start;}
+.q-queer{grid-column:3;grid-row:2;justify-self:end;text-align:right;}
+.q-ismo{grid-column:2;grid-row:3;justify-self:center;text-align:center;margin-top:var(--s6);width:min(420px,80vw);}
+.q-center{grid-column:2;grid-row:2;align-self:center;justify-self:center;z-index:1;background:var(--paper);padding:var(--s3) var(--s4);border:1px solid var(--ink);}
+.q h3{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(2.4rem,4vw,3.6rem);line-height:.95;letter-spacing:-.03em;}
+.q .verb{display:inline-block;margin:var(--s2) 0 var(--s4);padding:3px 8px 2px;color:var(--white);}
+.q-ma .verb{background:var(--red);} .q-neo .verb{background:var(--blue);}
+.q-queer .verb{background:var(--periwinkle);color:var(--ink);} .q-ismo .verb{background:var(--olive);}
+.q strong{display:block;font-family:var(--reading);font-weight:400;font-style:italic;font-size:19px;line-height:1.3;margin-bottom:var(--s2);}
+.q p{margin:0;font-size:16px;line-height:1.45;}
+@media (max-width:820px){
+  .matrix{grid-template-columns:1fr;}
+  .matrix::before,.matrix::after,.q-center{display:none;}
+  .q,.q-ma,.q-ismo,.q-neo,.q-queer{grid-column:1;grid-row:auto;justify-self:stretch;text-align:left;width:auto;max-width:none;margin:0;padding:var(--s5) 0;border-top:1px solid var(--hairline);}
+}
+/* coda vermelha */
+.queer{padding-block:var(--s5) var(--s8);}
+.queer .cabeco{border-top:0;margin-bottom:var(--s7);}
+.queer .big{margin:0 0 var(--s6);font-family:var(--display);font-size:clamp(2.2rem,5.4vw,5.6rem);line-height:.95;letter-spacing:-.035em;max-width:16ch;}
+.queer .big i{font-style:italic;}
+.queer .grid{display:grid;grid-template-columns:3fr 9fr;gap:var(--gutter);}
+.queer .grid p{margin:0;max-width:62ch;font-size:20px;}
+@media (max-width:820px){ .queer .grid{grid-template-columns:1fr;} }
+
+/* ── final: tire uma carta ── */
+.draw{padding-block:var(--s8) var(--s8);}
+.draw .label{display:block;margin-bottom:var(--s5);}
+.draw button{display:flex;align-items:baseline;gap:.25em;font-family:var(--display);font-size:clamp(3.4rem,12vw,12.5rem);line-height:.88;letter-spacing:-.05em;text-align:left;}
+.draw button i{font-style:italic;}
+.draw svg{width:.6em;height:.3em;flex:none;transition:transform var(--quick) ease-out;}
+.draw svg path{fill:none;stroke:currentColor;stroke-width:1.2;vector-effect:non-scaling-stroke;}
+.draw button:hover svg{transform:translateX(12px);}
+.draw button:hover i{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.12em;}
+
+footer{padding-block:var(--s6) var(--s7);display:grid;grid-template-columns:3fr 9fr;gap:var(--gutter);color:var(--on-color-muted);}
+footer p{margin:0 0 6px;font-size:13px;line-height:1.5;}
+footer .label{color:var(--on-color);}
+@media (max-width:820px){footer{grid-template-columns:1fr;}}
+
+/* ══════════ v4 · versão resumida ══════════ */
+.white{background:var(--white);color:var(--ink);}
+
+/* abertura com o 07 atrás */
+.intro{position:relative;isolation:isolate;overflow:hidden;min-height:min(92vh,880px);display:flex;align-items:center;padding-block:var(--s9);}
+.intro .seven-bg{position:absolute;z-index:-1;right:-.05em;top:50%;transform:translateY(-50%);font-family:var(--display);font-size:clamp(18rem,58vw,60rem);line-height:.78;letter-spacing:-.07em;color:#dfd2b9;pointer-events:none;user-select:none;}
+.intro-lead{margin:0;max-width:20ch;font-family:var(--display);font-size:clamp(2.1rem,4.6vw,4.8rem);line-height:1.02;letter-spacing:-.035em;}
+.intro-lead i{font-style:italic;}
+@media (max-width:640px){ .intro{min-height:0;padding-block:var(--s8);} .intro .seven-bg{font-size:90vw;} }
+
+/* título dos princípios */
+.principles-sec{padding-bottom:var(--s8);}
+.big-h{margin:0 0 var(--s7);padding-top:var(--s5);border-top:2px solid var(--ink);font-family:var(--display);font-weight:400;font-size:clamp(3.2rem,8.4vw,9rem);line-height:.88;letter-spacing:-.05em;}
+.big-h i{font-style:italic;}
+
+/* parte 1 · cartas que sobem e empilham */
+.stack{list-style:none;margin:0;padding:0;--top:72px;}
+.stack-item{display:contents;}
+.anchor{display:block;height:0;scroll-margin-top:calc(var(--top) + 8px);}
+.stack-item + .stack-item .anchor{margin-top:14vh;}
+.stack-card{position:sticky;top:calc(var(--top) + var(--i) * 14px);min-height:min(78vh,760px);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--s6);align-items:center;padding:var(--s6) clamp(24px,4vw,64px);transform-origin:50% 0;will-change:transform;border:1px solid transparent;}
+.stack-card.white{border-color:var(--ink);}
+.sc-text{display:flex;flex-direction:column;align-self:stretch;}
+.sc-num{font-family:var(--display);font-size:clamp(3.6rem,7vw,7rem);line-height:.8;letter-spacing:-.04em;opacity:.55;}
+.sc-principle{margin:auto 0 0;padding-top:var(--s6);font-family:var(--display);font-weight:400;font-size:clamp(3rem,7vw,7.4rem);line-height:.9;letter-spacing:-.045em;}
+.sc-name{margin:var(--s4) 0 0;font-family:var(--display);font-style:italic;font-size:clamp(1.3rem,2vw,1.9rem);line-height:1.1;letter-spacing:-.015em;opacity:.72;}
+.sc-short{margin:var(--s6) 0 0;font-size:clamp(19px,1.7vw,24px);line-height:1.36;max-width:34ch;}
+.sc-more{align-self:flex-start;display:inline-flex;align-items:center;gap:var(--s3);min-height:44px;margin-top:var(--s5);font-family:var(--utility);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid currentColor;}
+.sc-more svg path{fill:none;stroke:currentColor;stroke-width:1.25;}
+.sc-more svg{transition:transform var(--quick) ease-out;}
+.sc-more:hover svg{transform:translateX(4px);}
+.sc-card{margin:0;justify-self:center;width:min(100%,340px);}
+.sc-card .tarot{animation:float 8s ease-in-out infinite;}
+.stack-card:nth-child(even) .sc-card .tarot{animation-delay:-3s;}
+@media (prefers-reduced-motion: reduce){ .sc-card .tarot{animation:none;} }
+@media (max-width:820px){
+  .stack{--top:60px;}
+  .stack-item + .stack-item .anchor{margin-top:8vh;}
+  .stack-card{grid-template-columns:1fr;min-height:0;padding:var(--s5) 20px var(--s6);gap:var(--s5);top:calc(var(--top) + var(--i) * 8px);}
+  .sc-principle{padding-top:var(--s5);}
+  .stack-card{position:sticky;}
+  .sc-card{position:absolute;top:var(--s5);right:20px;width:min(26vw,104px);}
+  .sc-principle{max-width:calc(100% - 8px);}
+  .sc-num{min-height:calc(min(26vw,104px) * 1.62);}
+}
+
+/* parte 2 · pastas */
+.folders{padding-top:var(--s7);padding-bottom:var(--s7);}
+.folders-head{display:flex;justify-content:space-between;padding-bottom:var(--s7);}
+.folder{position:relative;z-index:calc(var(--i) + 1);margin-top:-30px;background:transparent;}
+.folder:first-of-type{margin-top:0;}
+.folder > summary{list-style:none;cursor:pointer;display:block;position:relative;padding-top:30px;transition:transform var(--settle) cubic-bezier(.2,.7,.2,1);}
+.folder > summary::-webkit-details-marker{display:none;}
+.folder:not([open]) > summary:hover{transform:translateY(-14px);}
+.folder .tab{position:absolute;top:0;left:calc(var(--outer) + var(--i) * min(16%, 200px));height:31px;min-width:150px;display:flex;align-items:center;padding:0 var(--s5) 0 var(--s4);clip-path:polygon(0 0,calc(100% - 22px) 0,100% 100%,0 100%);font-family:var(--utility);font-size:11px;font-weight:500;letter-spacing:.14em;}
+.folder .f-band{display:flex;justify-content:space-between;align-items:center;gap:var(--s4);min-height:150px;padding:var(--s5) var(--outer) calc(var(--s5) + 30px);}
+.folder h2{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,5.4vw,5.6rem);line-height:.95;letter-spacing:-.04em;}
+.folder h2 i{font-style:italic;}
+.folder .mark{font-family:var(--utility);font-size:24px;line-height:1;width:44px;height:44px;display:grid;place-items:center;border:1px solid currentColor;flex:none;}
+.folder .mark i{font-style:normal;display:block;transition:transform var(--quick) ease-out;}
+.folder[open] .mark i{transform:rotate(45deg);}
+.folder.red .tab,.folder.red .f-band{background:var(--red);color:var(--on-color);}
+.folder.blue .tab,.folder.blue .f-band{background:var(--blue);color:var(--on-color);}
+.folder.white .tab,.folder.white .f-band{background:var(--white);color:var(--ink);}
+.folder.white .f-band{border-top:1px solid var(--ink);}
+.folder .tab,.folder .f-band{box-shadow:none;}
+.f-body{background:var(--paper);color:var(--ink);padding-top:var(--s7);padding-bottom:calc(var(--s8) + 30px);border-top:0;}
+.folder[open] .f-body{animation:unfold 520ms cubic-bezier(.2,.7,.2,1) both;}
+@keyframes unfold{from{opacity:0;transform:translateY(-18px);}to{opacity:1;transform:none;}}
+@media (prefers-reduced-motion: reduce){ .folder > summary,.folder[open] .f-body{transition:none;animation:none;} }
+.folder .triad{padding:0;}
+.folder .bands{margin-bottom:var(--s6);}
+@media (max-width:640px){
+  .folder .tab{left:calc(20px + var(--i) * 13%);min-width:96px;}
+  .folder .f-band{min-height:120px;}
+}
+
+/* carta inteira: diálogo */
+dialog.carta{width:min(1180px,calc(100vw - 32px));max-height:calc(100vh - 32px);padding:0;border:0;background:var(--paper);color:var(--ink);overflow:auto;}
+dialog.carta::backdrop{background:rgba(27,38,79,.86);}
+dialog.carta[open]{animation:rise 520ms cubic-bezier(.2,.7,.2,1) both;}
+.carta-in{padding:var(--s5) clamp(20px,4vw,56px) var(--s6);}
+.carta-top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ink);padding-bottom:var(--s3);margin-bottom:var(--s6);font-family:'Instrument Sans',Arial,sans-serif;}
+.carta-grid{display:grid;grid-template-columns:5fr 7fr;gap:var(--s6);}
+.carta-head h3{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(2.4rem,4.6vw,4.4rem);line-height:.92;letter-spacing:-.04em;}
+.carta-head .sc-name{margin-bottom:var(--s6);}
+.carta-grid .label{display:block;color:var(--muted);margin-bottom:var(--s3);}
+.carta-body .label:not(:first-child){margin-top:var(--s5);}
+.carta-body p{margin:0 0 .8em;max-width:60ch;}
+.carta-q{margin:0;padding:var(--s5) clamp(20px,4vw,56px) var(--s6);background:var(--blue);color:var(--on-color);display:grid;grid-template-columns:5fr 7fr;gap:var(--s6);}
+.carta-q .label{color:var(--on-color-muted);}
+.carta-q p{margin:0;font-family:var(--display);font-size:clamp(1.6rem,2.6vw,2.6rem);line-height:1.08;letter-spacing:-.025em;}
+@media (max-width:820px){ .carta-grid,.carta-q{grid-template-columns:1fr;gap:var(--s3);} }
+
+/* ── página do design system no lab aberto ── */
+.lab-nav{position:relative;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:8px 18px;flex-wrap:wrap;margin:0;padding:10px max(16px,env(safe-area-inset-left,0px));background:#fbf8f4;color:#141414;border-bottom:1px solid #141414;font:12px/1.2 "Instrument Sans","Helvetica Neue",Arial,sans-serif;letter-spacing:.09em;text-transform:uppercase;box-sizing:border-box;width:100%}
+.lab-nav a{color:inherit;text-decoration:none;border:0;display:inline-flex;align-items:center;gap:8px}
+.lab-nav a:hover{opacity:.6}
+.lab-nav .lab-nav-trilha{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.lab-nav .lab-nav-sep{opacity:.45}
+.lab-nav .lab-nav-atual{color:#5b5754}
+.ds-hero{padding-block:var(--s6) var(--s8);}
+.ds-hero .kick{display:flex;justify-content:space-between;gap:var(--s4);flex-wrap:wrap;padding-block:var(--s3);border-top:1px solid var(--on-color-line);border-bottom:1px solid var(--on-color-line);}
+.ds-hero h1{margin:var(--s8) 0 0;font-family:var(--display);font-weight:400;font-size:clamp(3.4rem,11vw,12rem);line-height:.86;letter-spacing:-.055em;}
+.ds-hero h1 i{font-style:italic;}
+.ds-hero .sub{display:grid;grid-template-columns:5fr 7fr;gap:var(--gutter);margin-top:var(--s7);align-items:start;}
+.ds-hero .sub h2{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(1.6rem,2.8vw,2.6rem);line-height:1.05;letter-spacing:-.025em;color:var(--on-color-muted);}
+.ds-hero .lead{margin:0;font-size:clamp(19px,1.6vw,23px);line-height:1.4;max-width:46ch;}
+.acoes-dl{display:flex;gap:var(--s4);flex-wrap:wrap;margin-top:var(--s5);}
+.acoes-dl a{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 18px;font-family:var(--site);font-size:12px;letter-spacing:.09em;text-transform:uppercase;text-decoration:none;border:1px solid var(--on-color);}
+.acoes-dl .dl{background:var(--on-color);color:var(--blue);}
+.acoes-dl a:hover{opacity:.75;}
+.nota-dl{margin-top:var(--s3);color:var(--on-color-muted);}
+.ds-sec{padding-block:var(--s8);border-top:1px solid var(--ink);}
+.ds-sec .head{display:grid;grid-template-columns:3fr 9fr;gap:var(--gutter);align-items:end;margin-bottom:var(--s7);}
+.ds-sec .head h2{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(2.6rem,6vw,6rem);line-height:.9;letter-spacing:-.045em;}
+.ds-sec .head h2 i{font-style:italic;}
+.ds-sec .head p{margin:var(--s4) 0 0;max-width:56ch;}
+.estr{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink);}
+.estr li{display:grid;grid-template-columns:56px 3fr 2fr 5fr 2fr;gap:var(--gutter);align-items:baseline;padding-block:var(--s4);border-bottom:1px solid var(--hairline);}
+.estr .n{font-family:var(--display);color:var(--muted);} .estr .t{font-family:var(--display);font-size:clamp(1.4rem,2.2vw,2rem);line-height:1.05;letter-spacing:-.02em;}
+.estr .d{font-size:17px;} .estr .k{text-align:right;}
+.prev{margin:0 0 var(--s7);}
+.prev-cap{display:flex;justify-content:space-between;gap:var(--s4);padding-block:var(--s3);border-top:1px solid var(--ink);}
+.prev-box{position:relative;overflow:hidden;border:1px solid var(--ink);background:var(--paper);margin-inline:calc(var(--outer) * -1);border-inline:0;}
+#prev-OrbitHero .orbit-card img{border:1px solid var(--ink);}
+.cores{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--s5) var(--gutter);}
+.cores li{display:flex;flex-direction:column;gap:6px;}
+.cores .sw{display:block;aspect-ratio:4/3;border:1px solid var(--hairline);}
+.cores b{font-family:var(--display);font-weight:400;font-size:24px;} .cores .u{font-size:15px;color:var(--muted);}
+.tipos{border-top:1px solid var(--ink);}
+.tipos div{display:grid;grid-template-columns:3fr 9fr;gap:var(--gutter);align-items:baseline;padding-block:var(--s4);border-bottom:1px solid var(--hairline);}
+.tipos .s{line-height:1;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.regras{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 var(--gutter);border-top:1px solid var(--ink);}
+.regras li{display:grid;grid-template-columns:44px 1fr;gap:var(--s3);padding-block:var(--s4);border-bottom:1px solid var(--hairline);}
+.regras .n{font-family:var(--display);font-size:22px;color:var(--red);} .regras p{margin:0;font-size:18px;} .regras b{font-weight:500;}
+.passos{list-style:none;margin:0 0 var(--s7);padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gutter);}
+.passos li{border-top:1px solid var(--on-color-line);padding-top:var(--s4);}
+.passos b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(1.6rem,2.6vw,2.4rem);line-height:1;margin:var(--s3) 0;}
+.pedido{border:1px solid var(--on-color-line);padding:var(--s5);display:grid;grid-template-columns:1fr auto;gap:var(--s5);align-items:end;}
+.pedido p{margin:var(--s3) 0 0;font-family:var(--display);font-size:clamp(1.3rem,2vw,1.8rem);line-height:1.2;letter-spacing:-.015em;}
+.pedido .bts{display:flex;flex-direction:column;gap:var(--s3);}
+.pedido button,.pedido a{display:inline-flex;align-items:center;justify-content:space-between;gap:10px;min-height:44px;padding:0 18px;font-family:var(--site);font-size:12px;letter-spacing:.09em;text-transform:uppercase;text-decoration:none;border:1px solid var(--on-color);}
+.pedido a{background:var(--on-color);color:var(--blue);}
+.ds-foot{display:flex;justify-content:space-between;gap:var(--s4);flex-wrap:wrap;padding-block:var(--s5);font-family:var(--site);font-size:12px;letter-spacing:.09em;text-transform:uppercase;}
+.ds-foot a{color:inherit;}
+@media (max-width:820px){
+  .ds-hero .sub,.ds-sec .head{grid-template-columns:1fr;}
+  .estr li{grid-template-columns:40px 1fr;} .estr .c,.estr .d,.estr .k{grid-column:2;text-align:left;}
+  .cores{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .tipos div{grid-template-columns:1fr;gap:6px;}
+  .regras,.passos{grid-template-columns:1fr;}
+  .pedido{grid-template-columns:1fr;}
+}
+
+ #prev-OrbitHero .orbit-card{--w:84px} #prev-OrbitHero .ring{--r:300px}
+
+ #prev-StackCards .scroller{height:640px;overflow:auto} #prev-StackCards .stack-card{min-height:520px} #prev-StackCards .sc-principle{font-size:clamp(2.6rem,6vw,5rem)} #prev-StackCards .big-h{font-size:clamp(2.6rem,7vw,6rem)}
+
+
+
+
+
+
+</style>
+</head>
+<body>
+<nav class="lab-nav" aria-label="Navegação">
+<span class="lab-nav-trilha">
+<a href="/"><svg width="14" height="14" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M53 8L91 72H15Z"></path><path fill="currentColor" d="M43 94L9 36H77Z"></path></svg>Maia Oazem</a>
+<span class="lab-nav-sep" aria-hidden="true">/</span>
+<a href="/lab/">lab aberto</a>
+<span class="lab-nav-sep" aria-hidden="true">/</span>
+<span class="lab-nav-atual" aria-current="page">ética futurante</span>
+</span>
+</nav>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="fagulha" viewBox="0 0 100 100"><path fill="currentColor" d="M53 8L91 72H15Z"/><path fill="currentColor" d="M43 94L9 36H77Z"/></symbol></svg>
+
+<header class="ds-hero blue wrap">
+  <div class="kick"><span class="label">Design system 02 / gerado por IA</span><span class="label">laborateliê · gira.</span></div>
+  <h1>EF | Ética <i>Futurante</i></h1>
+  <div class="sub">
+    <h2>Base MAISON 04<br>× estrutura <i>Maia Oazem</i></h2>
+    <div>
+      <p class="lead">Um design system híbrido para páginas e peças da Ética Futurante: tipografia, grade e paleta Bone da base MAISON 04 com a demarcação do sistema Maia Oazem. Azul e vermelho como blocos inteiros, cartas que giram e sobem, pastas que guardam o texto de apoio.</p>
+      <div class="acoes-dl">
+        <a class="dl" href="/lab/design-systems/etica-futurante/ef-etica-futurante-design-system.md" download="ef-etica-futurante-design-system.md">baixar o .md para sua IA <span aria-hidden="true">↓</span></a>
+        <a href="#ia">como usar <span aria-hidden="true">↘</span></a>
+        <a href="/futurante/">ver a página <span aria-hidden="true">↗</span></a>
+      </div>
+      <p class="label nota-dl">.md · 78 KB · CC BY-NC-SA 4.0 · fontes SIL OFL 1.1</p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="ds-sec wrap" aria-labelledby="t-estr">
+    <div class="head"><span class="label">00 / estrutura padrão</span><div><h2 id="t-estr">Oito partes, <i>sempre nesta ordem.</i></h2><p>Toda página EF nasce com esta estrutura. Cada parte é um componente do sistema.</p></div></div>
+    <ol class="estr"><li><span class="n">(01)</span><span class="t">Topo do site</span><span class="c label">SiteTop</span><span class="d">Fio · assinatura e menu · fio · seções · fio, igual à home de gira.guru.</span><span class="k label muted">azul</span></li><li><span class="n">(02)</span><span class="t">Destaque animado</span><span class="c label">OrbitHero</span><span class="d">As cartas giram em volta do título; arrastar gira. Único lugar da home com imagens.</span><span class="k label muted">azul</span></li><li><span class="n">(03)</span><span class="t">Abertura</span><span class="c label">Intro07</span><span class="d">Uma frase sobre o número gigante atrás de tudo.</span><span class="k label muted">Bone</span></li><li><span class="n">(04)</span><span class="t">Parte 1 · princípios</span><span class="c label">StackCards</span><span class="d">As cartas sobem com a rolagem e se empilham. O princípio é o destaque.</span><span class="k label muted">azul · vermelho · branco</span></li><li><span class="n">(05)</span><span class="t">Carta inteira</span><span class="c label">CardDialog</span><span class="d">O texto completo numa janela, com a pergunta num bloco azul.</span><span class="k label muted">Bone + azul</span></li><li><span class="n">(06)</span><span class="t">Parte 2 · suporte</span><span class="c label">Folders</span><span class="d">Pastas empilhadas com abas escalonadas.</span><span class="k label muted">vermelho · azul · branco</span></li><li><span class="n">(07)</span><span class="t">Fechamento</span><span class="c label">DrawBlock</span><span class="d">“Tire uma carta”: abre uma carta ao acaso.</span><span class="k label muted">vermelho</span></li><li><span class="n">(08)</span><span class="t">Rodapé</span><span class="c label">FooterEF</span><span class="d">Versão e créditos das imagens.</span><span class="k label muted">azul</span></li></ol>
+  </section>
+
+  <section class="ds-sec wrap" aria-labelledby="t-vivo">
+    <div class="head"><span class="label">01 / ao vivo</span><div><h2 id="t-vivo">Os componentes, <i>funcionando.</i></h2><p>As prévias usam o mesmo CSS do arquivo .md. Arraste o anel de cartas, role as cartas que sobem e abra as pastas.</p></div></div>
+    <figure class="prev" id="prev-SiteTop">
+      <figcaption class="prev-cap"><span class="label">01 · SiteTop</span><span class="label muted">Topo do site</span></figcaption>
+      <div class="prev-box"><header class="blue wrap" style="padding-bottom:12px"><hr class="sfio">
+  <div class="assin">
+    <a class="marcas" href="#"><svg class="logo-m" viewBox="20 19 576 656" aria-hidden="true"><use href="#m"></use></svg><svg class="fagulha" viewBox="0 0 100 100" aria-hidden="true"><use href="#fagulha"></use></svg><span>Maia Oazem · laborateliê</span></a>
+    <button type="button" class="menu-botao"><span class="tracos" aria-hidden="true"><i></i><i></i><i></i></span><span>menu</span></button>
+  </div>
+  <hr class="sfio">
+  <nav class="secoes" aria-label="Nesta página"><a href="#">os 07 princípios</a><a href="#">outra coisa é possível</a><a href="#">esperança acionável</a><a href="#">por que futurante?</a><a href="#">neomaqueerismo</a><a href="#">tríade de livros</a></nav>
+  <hr class="sfio"></header></div>
+    </figure>
+    <figure class="prev" id="prev-OrbitHero">
+      <figcaption class="prev-cap"><span class="label">02 · OrbitHero</span><span class="label muted">Destaque animado · arraste as cartas</span></figcaption>
+      <div class="prev-box"><header class="hero blue wrap" style="min-height:560px">
+  <div class="field" style="min-height:420px"><div class="stage"><div class="scene">
+    <nav class="ring" aria-label="As sete cartas"><a class="orbit-card" href="#" style="--i:0" draggable="false"><span class="face front"><span class="mini-tab">I</span><img src="/futurante/01.jpg" alt="" draggable="false"><span class="mini-name">Agência Futurante</span></span><span class="face back" aria-hidden="true"><span>I</span></span></a><a class="orbit-card" href="#" style="--i:1" draggable="false"><span class="face front"><span class="mini-tab">II</span><img src="/futurante/02.jpg" alt="" draggable="false"><span class="mini-name">Imaginação Fértil</span></span><span class="face back" aria-hidden="true"><span>II</span></span></a><a class="orbit-card" href="#" style="--i:2" draggable="false"><span class="face front"><span class="mini-tab">III</span><img src="/futurante/03.jpg" alt="" draggable="false"><span class="mini-name">Horizontes de Esperança</span></span><span class="face back" aria-hidden="true"><span>III</span></span></a><a class="orbit-card" href="#" style="--i:3" draggable="false"><span class="face front"><span class="mini-tab">IV</span><img src="/futurante/04.jpg" alt="" draggable="false"><span class="mini-name">Eu-Mundo</span></span><span class="face back" aria-hidden="true"><span>IV</span></span></a><a class="orbit-card" href="#" style="--i:4" draggable="false"><span class="face front"><span class="mini-tab">V</span><img src="/futurante/05.jpg" alt="" draggable="false"><span class="mini-name">Sensibilidade Ecossistêmica</span></span><span class="face back" aria-hidden="true"><span>V</span></span></a><a class="orbit-card" href="#" style="--i:5" draggable="false"><span class="face front"><span class="mini-tab">VI</span><img src="/futurante/06.jpg" alt="" draggable="false"><span class="mini-name">Criador Consequente</span></span><span class="face back" aria-hidden="true"><span>VI</span></span></a><a class="orbit-card" href="#" style="--i:6" draggable="false"><span class="face front"><span class="mini-tab">VII</span><img src="/futurante/07.jpg" alt="" draggable="false"><span class="mini-name">Tecnologia Comum</span></span><span class="face back" aria-hidden="true"><span>VII</span></span></a></nav>
+    <div class="hero-title"><h1>Uma Ética Futurante</h1><p class="sub">em uma Cultura de <i>Esperança</i></p></div>
+  </div></div></div>
+  <hr class="sfio"><div class="assin meta"><span><b>Hope Culture</b> · <i>o laborateliê da gira. é um hope lab</i></span><span class="hint">clique numa carta para lê-la</span></div>
+</header></div>
+    </figure>
+    <figure class="prev" id="prev-Intro07">
+      <figcaption class="prev-cap"><span class="label">03 · Intro07</span><span class="label muted">Abertura</span></figcaption>
+      <div class="prev-box"><section class="intro wrap" style="min-height:440px"><span class="seven-bg" aria-hidden="true">07</span><p class="intro-lead">Uma rede de princípios para transformar, coletiva e intencionalmente, os futuros que criamos, ao transformar nossos modos de criar <i>futuros.</i></p></section></div>
+    </figure>
+    <figure class="prev" id="prev-StackCards">
+      <figcaption class="prev-cap"><span class="label">04 · StackCards</span><span class="label muted">Parte 1 · cartas que sobem (role dentro do quadro)</span></figcaption>
+      <div class="prev-box"><div class="scroller wrap"><h2 class="big-h">Os 07 Princípios <i>de Futuração</i></h2><ol class="stack" style="--top:24px"><li class="stack-item"><span class="anchor" id="principio-1"></span><article class="stack-card blue" style="--i:0">
+  <div class="sc-text"><span class="sc-num" aria-hidden="true">I</span><h3 class="sc-principle">Agência Futurante</h3><p class="sc-name">One Day, Tomorrow</p><p class="sc-short">Frase curta do princípio, em uma ou duas linhas.</p>
+  <button type="button" class="sc-more">Ler a carta inteira<svg width="28" height="10" viewBox="0 0 28 10" aria-hidden="true"><path d="M0 5H26M21 1L26 5L21 9"/></svg></button></div>
+  <figure class="sc-card"><svg class="tarot" viewBox="0 0 700 1200" role="img" aria-label="Carta I: Agência Futurante, ONE DAY, TOMORROW">
+<defs><path id="k1-0" d="M76 54 H624"/><path id="k1-1" d="M646 76 V1124"/><path id="k1-2" d="M624 1146 H76"/><path id="k1-3" d="M54 1124 V76"/><clipPath id="k1-p"><rect x="118" y="148" width="464" height="619"/></clipPath></defs>
+<rect class="tbg" width="700" height="1200"/><text class="tb" style="font-size:16.4px"><textPath href="#k1-0" textLength="548" lengthAdjust="spacing">O presente é uma produção contínua de futuros.</textPath></text><text class="tb" style="font-size:16.4px"><textPath href="#k1-1" textLength="1048" lengthAdjust="spacing">O presente é uma produção contínua de futuros. · O presente é uma produção contínua de futuros.</textPath></text><text class="tb" style="font-size:16.4px"><textPath href="#k1-2" textLength="548" lengthAdjust="spacing">O presente é uma produção contínua de futuros.</textPath></text><text class="tb" style="font-size:16.4px"><textPath href="#k1-3" textLength="1048" lengthAdjust="spacing">O presente é uma produção contínua de futuros. · O presente é uma produção contínua de futuros.</textPath></text>
+<rect class="tl" x="42" y="42" width="12" height="12"/><rect class="tl" x="646" y="42" width="12" height="12"/><rect class="tl" x="646" y="1146" width="12" height="12"/><rect class="tl" x="42" y="1146" width="12" height="12"/>
+<rect class="tl" x="76" y="76" width="548" height="1048"/>
+<image href="/futurante/01.jpg" x="118" y="148" width="464" height="619" preserveAspectRatio="xMidYMid slice" clip-path="url(#k1-p)"/>
+<rect class="tl" x="118" y="148" width="464" height="619"/>
+<rect class="ttab" x="304" y="76" width="92" height="72"/><text class="tnum" x="350" y="129" text-anchor="middle">I</text>
+<text class="tp"><tspan x="114" y="870">Agência</tspan><tspan x="114" y="946">Futurante</tspan></text>
+<line class="th" x1="118" y1="1002" x2="582" y2="1002"/>
+<text class="tn"><tspan x="118" y="1050">ONE DAY, TOMORROW</tspan></text><text class="tm" x="582" y="1050" text-anchor="end">I / VII</text>
+</svg></figure></article></li><li class="stack-item"><span class="anchor" id="principio-2"></span><article class="stack-card red" style="--i:1">
+  <div class="sc-text"><span class="sc-num" aria-hidden="true">II</span><h3 class="sc-principle">Imaginação Fértil</h3><p class="sc-name">The Mother Imagination World Order</p><p class="sc-short">Frase curta do princípio, em uma ou duas linhas.</p>
+  <button type="button" class="sc-more">Ler a carta inteira<svg width="28" height="10" viewBox="0 0 28 10" aria-hidden="true"><path d="M0 5H26M21 1L26 5L21 9"/></svg></button></div>
+  <figure class="sc-card"><svg class="tarot" viewBox="0 0 700 1200" role="img" aria-label="Carta II: Imaginação Fértil, THE MOTHER IMAGINATION WORLD ORDER">
+<defs><path id="k2-0" d="M76 54 H624"/><path id="k2-1" d="M646 76 V1124"/><path id="k2-2" d="M624 1146 H76"/><path id="k2-3" d="M54 1124 V76"/><clipPath id="k2-p"><rect x="118" y="148" width="464" height="619"/></clipPath></defs>
+<rect class="tbg" width="700" height="1200"/><text class="tb" style="font-size:16.7px"><textPath href="#k2-0" textLength="548" lengthAdjust="spacing">Imaginar futuros a partir do que cultivamos, não</textPath></text><text class="tb" style="font-size:16.7px"><textPath href="#k2-1" textLength="1048" lengthAdjust="spacing">do que conquistamos. · Imaginar futuros a partir do que cultivamos, não do que conquistamos.</textPath></text><text class="tb" style="font-size:16.7px"><textPath href="#k2-2" textLength="548" lengthAdjust="spacing">Imaginar futuros a partir do que cultivamos, não</textPath></text><text class="tb" style="font-size:16.7px"><textPath href="#k2-3" textLength="1048" lengthAdjust="spacing">do que conquistamos. · Imaginar futuros a partir do que cultivamos, não do que conquistamos.</textPath></text>
+<rect class="tl" x="42" y="42" width="12" height="12"/><rect class="tl" x="646" y="42" width="12" height="12"/><rect class="tl" x="646" y="1146" width="12" height="12"/><rect class="tl" x="42" y="1146" width="12" height="12"/>
+<rect class="tl" x="76" y="76" width="548" height="1048"/>
+<image href="/futurante/02.jpg" x="118" y="148" width="464" height="619" preserveAspectRatio="xMidYMid slice" clip-path="url(#k2-p)"/>
+<rect class="tl" x="118" y="148" width="464" height="619"/>
+<rect class="ttab" x="304" y="76" width="92" height="72"/><text class="tnum" x="350" y="129" text-anchor="middle">II</text>
+<text class="tp"><tspan x="114" y="870">Imaginação</tspan><tspan x="114" y="946">Fértil</tspan></text>
+<line class="th" x1="118" y1="1002" x2="582" y2="1002"/>
+<text class="tn"><tspan x="118" y="1050">THE MOTHER IMAGINATION</tspan><tspan x="118" y="1076">WORLD ORDER</tspan></text><text class="tm" x="582" y="1050" text-anchor="end">II / VII</text>
+</svg></figure></article></li><li class="stack-item"><span class="anchor" id="principio-3"></span><article class="stack-card white" style="--i:2">
+  <div class="sc-text"><span class="sc-num" aria-hidden="true">III</span><h3 class="sc-principle">Horizontes de Esperança</h3><p class="sc-name">89 Seconds To Hope</p><p class="sc-short">Frase curta do princípio, em uma ou duas linhas.</p>
+  <button type="button" class="sc-more">Ler a carta inteira<svg width="28" height="10" viewBox="0 0 28 10" aria-hidden="true"><path d="M0 5H26M21 1L26 5L21 9"/></svg></button></div>
+  <figure class="sc-card"><svg class="tarot" viewBox="0 0 700 1200" role="img" aria-label="Carta III: Horizontes de Esperança, 89 SECONDS TO HOPE">
+<defs><path id="k3-0" d="M76 54 H624"/><path id="k3-1" d="M646 76 V1124"/><path id="k3-2" d="M624 1146 H76"/><path id="k3-3" d="M54 1124 V76"/><clipPath id="k3-p"><rect x="118" y="148" width="464" height="619"/></clipPath></defs>
+<rect class="tbg" width="700" height="1200"/><text class="tb" style="font-size:16.4px"><textPath href="#k3-0" textLength="548" lengthAdjust="spacing">Precisamos visualizar horizontes desejáveis para</textPath></text><text class="tb" style="font-size:16.4px"><textPath href="#k3-1" textLength="1048" lengthAdjust="spacing">reconhecer e reorientar nossas transformações. · Precisamos visualizar horizontes desejáveis para</textPath></text><text class="tb" style="font-size:16.4px"><textPath href="#k3-2" textLength="548" lengthAdjust="spacing">reconhecer e reorientar nossas transformações.</textPath></text><text class="tb" style="font-size:16.4px"><textPath href="#k3-3" textLength="1048" lengthAdjust="spacing">Precisamos visualizar horizontes desejáveis para reconhecer e reorientar nossas transformações.</textPath></text>
+<rect class="tl" x="42" y="42" width="12" height="12"/><rect class="tl" x="646" y="42" width="12" height="12"/><rect class="tl" x="646" y="1146" width="12" height="12"/><rect class="tl" x="42" y="1146" width="12" height="12"/>
+<rect class="tl" x="76" y="76" width="548" height="1048"/>
+<image href="/futurante/03.jpg" x="118" y="148" width="464" height="619" preserveAspectRatio="xMidYMid slice" clip-path="url(#k3-p)"/>
+<rect class="tl" x="118" y="148" width="464" height="619"/>
+<rect class="ttab" x="304" y="76" width="92" height="72"/><text class="tnum" x="350" y="129" text-anchor="middle">III</text>
+<text class="tp"><tspan x="114" y="870">Horizontes</tspan><tspan x="114" y="946">de Esperança</tspan></text>
+<line class="th" x1="118" y1="1002" x2="582" y2="1002"/>
+<text class="tn"><tspan x="118" y="1050">89 SECONDS TO HOPE</tspan></text><text class="tm" x="582" y="1050" text-anchor="end">III / VII</text>
+</svg></figure></article></li></ol><div style="height:400px"></div></div></div>
+    </figure>
+    <figure class="prev" id="prev-Carta">
+      <figcaption class="prev-cap"><span class="label">05 · Carta</span><span class="label muted">A carta · 70 × 120 mm</span></figcaption>
+      <div class="prev-box"><div style="padding:24px;display:flex;gap:24px"><div style="width:300px"><svg class="tarot" viewBox="0 0 700 1200" role="img" aria-label="Carta I: Agência Futurante, ONE DAY, TOMORROW">
+<defs><path id="t1-0" d="M76 54 H624"/><path id="t1-1" d="M646 76 V1124"/><path id="t1-2" d="M624 1146 H76"/><path id="t1-3" d="M54 1124 V76"/><clipPath id="t1-p"><rect x="118" y="148" width="464" height="619"/></clipPath></defs>
+<rect class="tbg" width="700" height="1200"/><text class="tb" style="font-size:16.4px"><textPath href="#t1-0" textLength="548" lengthAdjust="spacing">O presente é uma produção contínua de futuros.</textPath></text><text class="tb" style="font-size:16.4px"><textPath href="#t1-1" textLength="1048" lengthAdjust="spacing">O presente é uma produção contínua de futuros. · O presente é uma produção contínua de futuros.</textPath></text><text class="tb" style="font-size:16.4px"><textPath href="#t1-2" textLength="548" lengthAdjust="spacing">O presente é uma produção contínua de futuros.</textPath></text><text class="tb" style="font-size:16.4px"><textPath href="#t1-3" textLength="1048" lengthAdjust="spacing">O presente é uma produção contínua de futuros. · O presente é uma produção contínua de futuros.</textPath></text>
+<rect class="tl" x="42" y="42" width="12" height="12"/><rect class="tl" x="646" y="42" width="12" height="12"/><rect class="tl" x="646" y="1146" width="12" height="12"/><rect class="tl" x="42" y="1146" width="12" height="12"/>
+<rect class="tl" x="76" y="76" width="548" height="1048"/>
+<image href="/futurante/01.jpg" x="118" y="148" width="464" height="619" preserveAspectRatio="xMidYMid slice" clip-path="url(#t1-p)"/>
+<rect class="tl" x="118" y="148" width="464" height="619"/>
+<rect class="ttab" x="304" y="76" width="92" height="72"/><text class="tnum" x="350" y="129" text-anchor="middle">I</text>
+<text class="tp"><tspan x="114" y="870">Agência</tspan><tspan x="114" y="946">Futurante</tspan></text>
+<line class="th" x1="118" y1="1002" x2="582" y2="1002"/>
+<text class="tn"><tspan x="118" y="1050">ONE DAY, TOMORROW</tspan></text><text class="tm" x="582" y="1050" text-anchor="end">I / VII</text>
+</svg></div><div style="width:300px"><svg class="tarot" viewBox="0 0 700 1200" role="img" aria-label="Carta V: Sensibilidade Ecossistêmica, EMPATHY IS ALSO BIOTECHNOLOGY">
+<defs><path id="q5-0" d="M76 54 H624"/><path id="q5-1" d="M646 76 V1124"/><path id="q5-2" d="M624 1146 H76"/><path id="q5-3" d="M54 1124 V76"/><clipPath id="q5-p"><rect x="118" y="148" width="464" height="619"/></clipPath></defs>
+<rect class="tbg" width="700" height="1200"/><text class="tb" style="font-size:14.8px"><textPath href="#q5-0" textLength="548" lengthAdjust="spacing">Perceber o estado da vida é uma capacidade fundamental</textPath></text><text class="tb" style="font-size:14.8px"><textPath href="#q5-1" textLength="1048" lengthAdjust="spacing">para transformá-la com responsabilidade e cuidado. · Perceber o estado da vida é uma capacidade fundamental</textPath></text><text class="tb" style="font-size:14.8px"><textPath href="#q5-2" textLength="548" lengthAdjust="spacing">para transformá-la com responsabilidade e cuidado.</textPath></text><text class="tb" style="font-size:14.8px"><textPath href="#q5-3" textLength="1048" lengthAdjust="spacing">Perceber o estado da vida é uma capacidade fundamental para transformá-la com responsabilidade e cuidado.</textPath></text>
+<rect class="tl" x="42" y="42" width="12" height="12"/><rect class="tl" x="646" y="42" width="12" height="12"/><rect class="tl" x="646" y="1146" width="12" height="12"/><rect class="tl" x="42" y="1146" width="12" height="12"/>
+<rect class="tl" x="76" y="76" width="548" height="1048"/>
+<image href="/futurante/05.jpg" x="118" y="148" width="464" height="619" preserveAspectRatio="xMidYMid slice" clip-path="url(#q5-p)"/>
+<rect class="tl" x="118" y="148" width="464" height="619"/>
+<rect class="ttab" x="304" y="76" width="92" height="72"/><text class="tnum" x="350" y="129" text-anchor="middle">V</text>
+<text class="tp"><tspan x="114" y="870">Sensibilidade</tspan><tspan x="114" y="946">Ecossistêmica</tspan></text>
+<line class="th" x1="118" y1="1002" x2="582" y2="1002"/>
+<text class="tn"><tspan x="118" y="1050">EMPATHY IS ALSO</tspan><tspan x="118" y="1076">BIOTECHNOLOGY</tspan></text><text class="tm" x="582" y="1050" text-anchor="end">V / VII</text>
+</svg></div></div></div>
+    </figure>
+    <figure class="prev" id="prev-CardDialog">
+      <figcaption class="prev-cap"><span class="label">06 · CardDialog</span><span class="label muted">Carta inteira</span></figcaption>
+      <div class="prev-box"><div style="background:rgba(27,38,79,.86);padding:24px"><dialog class="carta" open style="position:static;margin:0 auto">
+  <div class="carta-in"><div class="carta-top"><span class="label">Carta I / VII</span><button type="button" class="menu-botao"><span class="tracos fechar" aria-hidden="true"><i></i><i></i></span><span>fechar</span></button></div>
+  <div class="carta-grid"><div class="carta-head"><h3>Agência Futurante</h3><p class="sc-name">One Day, Tomorrow</p><span class="label">Conceito</span><p class="concept">O presente é uma produção contínua de futuros.</p></div>
+  <div class="carta-body"><span class="label">Descrição</span><p>Reconhecer que tudo que existe está em transformação e que, por meio de nossas ações e relações, participamos da produção das condições de existência que virão.</p><span class="label">Compromisso</span><p>Não tratar o futuro como algo que simplesmente acontecerá conosco, nem confundir agência com capacidade de controlar o que virá.</p></div></div></div>
+  <div class="carta-q"><span class="label">Pergunta futurante</span><p>Que futuro estamos fazendo existir com aquilo que fazemos hoje?</p></div>
+</dialog></div></div>
+    </figure>
+    <figure class="prev" id="prev-Folders">
+      <figcaption class="prev-cap"><span class="label">07 · Folders</span><span class="label muted">Parte 2 · pastas (clique para abrir)</span></figcaption>
+      <div class="prev-box"><section class="folders"><div class="wrap folders-head"><span class="label">Para ir mais fundo</span><span class="label">05 pastas</span></div><details class="folder red" id="f1" style="--i:0"><summary><span class="tab"><span>01</span></span><span class="f-band"><h2>Outra coisa é <i>possível</i></h2><span class="mark" aria-hidden="true"><i>+</i></span></span></summary><div class="fold-body f-body wrap"><div class="fold-grid"><span class="label">Rótulo pendurado</span><div class="text"><p class="lede">A frase que abre o bloco.</p><p>O texto de apoio, em Newsreader, até 64 caracteres por linha.</p></div></div></div></details><details class="folder blue" id="f2" style="--i:1"><summary><span class="tab"><span>02</span></span><span class="f-band"><h2>Uma Esperança <i>Acionável</i></h2><span class="mark" aria-hidden="true"><i>+</i></span></span></summary><div class="fold-body f-body wrap"><div class="fold-grid"><span class="label">Rótulo pendurado</span><div class="text"><p class="lede">A frase que abre o bloco.</p><p>O texto de apoio, em Newsreader, até 64 caracteres por linha.</p></div></div></div></details><details class="folder white" id="f3" style="--i:2"><summary><span class="tab"><span>03</span></span><span class="f-band"><h2>Por que <i>Futurante?</i></h2><span class="mark" aria-hidden="true"><i>+</i></span></span></summary><div class="fold-body f-body wrap"><div class="fold-grid"><span class="label">Rótulo pendurado</span><div class="text"><p class="lede">A frase que abre o bloco.</p><p>O texto de apoio, em Newsreader, até 64 caracteres por linha.</p></div></div></div></details><details class="folder red" id="f4" style="--i:3"><summary><span class="tab"><span>04</span></span><span class="f-band"><h2>O <i>Neomaqueerismo</i></h2><span class="mark" aria-hidden="true"><i>+</i></span></span></summary><div class="fold-body f-body wrap"><div class="fold-grid"><span class="label">Rótulo pendurado</span><div class="text"><p class="lede">A frase que abre o bloco.</p><p>O texto de apoio, em Newsreader, até 64 caracteres por linha.</p></div></div></div></details><details class="folder blue" id="f5" style="--i:4" open><summary><span class="tab"><span>05</span></span><span class="f-band"><h2>Tríade de <i>livros</i> referência</h2><span class="mark" aria-hidden="true"><i>+</i></span></span></summary><div class="fold-body f-body wrap"><div class="fold-grid"><span class="label">Rótulo pendurado</span><div class="text"><p class="lede">A frase que abre o bloco.</p><p>O texto de apoio, em Newsreader, até 64 caracteres por linha.</p></div></div></div></details></section></div>
+    </figure>
+    <figure class="prev" id="prev-DrawBlock">
+      <figcaption class="prev-cap"><span class="label">08 · DrawBlock</span><span class="label muted">Fechamento</span></figcaption>
+      <div class="prev-box"><section class="draw red wrap" style="padding-block:72px"><span class="label">Uma carta ao acaso, entre as sete</span><button type="button" id="draw" style="font-size:clamp(3rem,10vw,8rem)">Tire uma <i>carta</i><svg viewBox="0 0 60 30" aria-hidden="true"><path d="M0 15H56M44 3L56 15L44 27"/></svg></button></section></div>
+    </figure>
+    <figure class="prev" id="prev-FooterEF">
+      <figcaption class="prev-cap"><span class="label">09 · FooterEF</span><span class="label muted">Rodapé</span></figcaption>
+      <div class="prev-box"><footer class="blue wrap"><span class="label">gira. · laborateliê</span><div><p>Ética Futurante 1.0 · Hope Culture · Imaginação Futurante. Material aberto e em construção.</p><p>Imagens das cartas: créditos de cada imagem, separados por " · ".</p></div></footer></div>
+    </figure>
+  </section>
+
+  <section class="ds-sec wrap" aria-labelledby="t-cor">
+    <div class="head"><span class="label">02 / cor</span><div><h2 id="t-cor">Azul e vermelho <i>como blocos.</i></h2><p>Um bloco de cor por vez na tela, separado do próximo por Bone ou branco. Texto em Bone sobre azul (11,4:1) e vermelho (5,7:1).</p></div></div>
+    <ul class="cores"><li><span class="sw" style="background:var(--blue)"></span><b>blue</b><span class="label muted">#1B264F</span><span class="u">Space Indigo · bloco</span></li><li><span class="sw" style="background:var(--red)"></span><b>red</b><span class="label muted">#A4243B</span><span class="u">Cherry Rose · bloco</span></li><li><span class="sw" style="background:var(--paper)"></span><b>paper</b><span class="label muted">#ECE2D0</span><span class="u">Bone · campo</span></li><li><span class="sw" style="background:var(--white)"></span><b>white</b><span class="label muted">#FFFFFF</span><span class="u">respiro entre blocos</span></li><li><span class="sw" style="background:var(--ink)"></span><b>ink</b><span class="label muted">#191919</span><span class="u">texto e fios</span></li><li><span class="sw" style="background:var(--muted)"></span><b>muted</b><span class="label muted">#5F5B52</span><span class="u">metadados</span></li><li><span class="sw" style="background:var(--hairline)"></span><b>hairline</b><span class="label muted">#B9AD96</span><span class="u">fios finos</span></li><li><span class="sw" style="background:var(--soft)"></span><b>soft</b><span class="label muted">#E2D6C0</span><span class="u">grupos discretos</span></li><li><span class="sw" style="background:var(--olive)"></span><b>olive</b><span class="label muted">#646F4B</span><span class="u">só marcas pequenas</span></li><li><span class="sw" style="background:var(--periwinkle)"></span><b>periwinkle</b><span class="label muted">#9B7EDE</span><span class="u">só marcas pequenas, texto ink</span></li></ul>
+  </section>
+
+  <section class="ds-sec wrap" aria-labelledby="t-tipo">
+    <div class="head"><span class="label">03 / tipografia</span><div><h2 id="t-tipo">Quatro vozes, <i>uma grade.</i></h2><p>Bodoni Moda para o que é enorme, Newsreader para ler, DM Sans para rótulos e Instrument Sans só no topo do site.</p></div></div>
+    <div class="tipos">
+      <div><span class="label muted">ef-hero · Bodoni Moda</span><span class="s" style="font-family:var(--display);font-size:clamp(2.4rem,6.6vw,6.6rem);letter-spacing:-.04em">Uma Ética Futurante</span></div>
+      <div><span class="label muted">ef-principle · Bodoni Moda</span><span class="s" style="font-family:var(--display);font-size:clamp(2rem,5vw,5rem);letter-spacing:-.045em">Agência <i>Futurante</i></span></div>
+      <div><span class="label muted">leitura · Newsreader 19px</span><span style="font-size:19px;max-width:60ch">Agir sabendo que cada ato / artefato de hoje já está fazendo um amanhã. E que na inação também há futuração.</span></div>
+      <div><span class="label muted">rótulo · DM Sans 11px</span><span class="label">Os 07 princípios · I — VII</span></div>
+      <div><span class="label muted">topo · Instrument Sans 12px</span><span style="font-family:var(--site);font-size:12px;letter-spacing:.09em;text-transform:uppercase">Maia Oazem · laborateliê</span></div>
+    </div>
+  </section>
+
+  <section class="ds-sec wrap" aria-labelledby="t-reg">
+    <div class="head"><span class="label">04 / regras do híbrido</span><div><h2 id="t-reg">O que faz <i>ser EF.</i></h2></div></div>
+    <ol class="regras"><li><span class="n">01</span><p><b>Cor é bloco inteiro.</b> Azul e vermelho de ponta a ponta, alternados; texto em Bone sobre eles. Olive e periwinkle só em marcas pequenas.</p></li><li><span class="n">02</span><p><b>Um bloco de cor por vez na tela</b>, separado do próximo por Bone ou branco.</p></li><li><span class="n">03</span><p><b>Fios de ponta a ponta</b> organizam o topo, os cabeços e as pastas.</p></li><li><span class="n">04</span><p><b>Escala com contraste:</b> uma coisa enorme por bloco e o resto pequeno.</p></li><li><span class="n">05</span><p><b>Um vazio grande por tela</b>, como o 07 da abertura.</p></li><li><span class="n">06</span><p><b>Menos texto na página, mais na carta.</b></p></li><li><span class="n">07</span><p><b>Movimento leve e contínuo:</b> o anel gira, as cartas flutuam e entram com profundidade, as pastas levantam. Tudo respeita o movimento reduzido.</p></li><li><span class="n">08</span><p><b>Imagens das cartas</b> só no destaque animado, nas páginas internas e na impressão.</p></li></ol>
+  </section>
+
+  <section class="ds-sec blue wrap" id="ia" aria-labelledby="t-ia" style="border-top:0">
+    <div class="head"><span class="label">05 / design handoff</span><div><h2 id="t-ia">Leve a ética <i>para a sua IA.</i></h2><p>O sistema inteiro cabe num único arquivo .md: estrutura, regras, tokens, CSS pronto e o HTML de cada componente.</p></div></div>
+    <ol class="passos">
+      <li><span class="label">01 / baixe</span><b>O arquivo</b><p>Um .md de 78 KB, legível por pessoas e por qualquer modelo de linguagem.</p></li>
+      <li><span class="label">02 / anexe</span><b>Na conversa</b><p>Cole ou anexe o arquivo no Claude, no ChatGPT, no Gemini ou na ferramenta de código que você usa.</p></li>
+      <li><span class="label">03 / peça</span><b>Uma página</b><p>Diga o que quer criar. A IA segue a estrutura padrão, os tokens e as regras, sem inventar cores.</p></li>
+    </ol>
+    <div class="pedido">
+      <div><span class="label">exemplo de pedido</span><p id="pedido">Use o design system EF | Ética Futurante deste arquivo para criar uma página com a estrutura padrão: topo do site, destaque com as cartas em órbita, abertura com o número gigante, cartas que sobem, pastas de apoio, “Tire uma carta” e rodapé. Siga os tokens, as fontes e as regras do híbrido.</p></div>
+      <div class="bts"><button type="button" id="copiar">copiar o pedido <span aria-hidden="true">↗</span></button><a href="/lab/design-systems/etica-futurante/ef-etica-futurante-design-system.md" download="ef-etica-futurante-design-system.md">baixar o .md <span aria-hidden="true">↓</span></a></div>
+    </div>
+  </section>
+</main>
+
+<footer class="blue wrap"><div class="ds-foot" style="grid-column:1/-1;width:100%"><span>EF | Ética Futurante · design system gerado por IA · Maia Oazem / laborateliê · gira.</span><span>CC BY-NC-SA 4.0 · fontes SIL OFL 1.1 · <a href="/lab/">voltar ao lab ↑</a></span></div></footer>
+
+<script>
+(()=>{const root=document.getElementById("prev-OrbitHero");const ring=root.querySelector('.ring'),stage=root.querySelector('.stage');const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;const base=reduce?0:-360/70;let a=0,v=base,d=null,last=performance.now();
+function f(n){const dt=Math.min(.05,(n-last)/1000);last=n;if(!d){v+=(base-v)*Math.min(1,dt*1.2);a+=v*dt;}ring.style.transform=`rotateX(var(--tilt)) rotateY(${a}deg)`;requestAnimationFrame(f);}requestAnimationFrame(f);
+stage.addEventListener('pointerdown',e=>{d={x:e.clientX,t:performance.now(),m:0,id:e.pointerId,c:false};});
+stage.addEventListener('pointermove',e=>{if(!d)return;const n=performance.now(),dx=e.clientX-d.x,k=dx*.28;a+=k;v=k/Math.max(.008,(n-d.t)/1000);d.m+=Math.abs(dx);d.x=e.clientX;d.t=n;if(!d.c&&d.m>6){stage.setPointerCapture(d.id);stage.classList.add('dragging');d.c=true;}});
+const end=()=>{if(!d)return;stage.classList.remove('dragging');if(performance.now()-d.t>120)v=base;v=Math.max(-240,Math.min(240,v));d=null;};stage.addEventListener('pointerup',end);stage.addEventListener('pointercancel',end);})();
+(()=>{const root=document.getElementById("prev-StackCards");const sc=root.querySelector('.scroller'),cards=[...root.querySelectorAll('.stack-card')];sc.addEventListener('scroll',()=>{const H=sc.clientHeight,top=sc.getBoundingClientRect().top;cards.forEach((c,i)=>{let d=0;for(let j=i+1;j<cards.length;j++){const r=cards[j].getBoundingClientRect().top-top,st=parseFloat(getComputedStyle(cards[j]).top);d+=Math.min(1,Math.max(0,(H-r)/(H-st)));}c.style.transform=d>0.001?`scale(${1-Math.min(d,4)*.035})`:'';});},{passive:true});})();
+
+const cp=document.getElementById('copiar');cp.addEventListener('click',()=>{if(navigator.clipboard)navigator.clipboard.writeText(document.getElementById('pedido').textContent).then(()=>{cp.firstChild.textContent='pedido copiado ';});});
+</script>
+</body>
+</html>
