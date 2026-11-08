@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ética Futurante — Hope Culture · gira.</title>
-<meta name="description" content="Uma Ética Futurante em uma Cultura de Esperança: sete princípios de futuração do laborateliê da gira.">
+<meta name="description" content="Uma Ética Futurante em uma Cultura de Esperança: os 07 princípios de futuração do laborateliê da gira.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..500;1,6..96,400&family=DM+Sans:opsz,wght@9..40,400..600&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
@@ -330,11 +330,104 @@ footer{padding-block:var(--s6) var(--s7);display:grid;grid-template-columns:3fr 
 footer p{margin:0 0 6px;font-size:13px;line-height:1.5;}
 footer .label{color:var(--on-color);}
 @media (max-width:820px){footer{grid-template-columns:1fr;}}
+
+/* ══════════ v4 · versão resumida ══════════ */
+.white{background:var(--white);color:var(--ink);}
+
+/* abertura com o 07 atrás */
+.intro{position:relative;isolation:isolate;overflow:hidden;min-height:min(92vh,880px);display:flex;align-items:center;padding-block:var(--s9);}
+.intro .seven-bg{position:absolute;z-index:-1;right:-.05em;top:50%;transform:translateY(-50%);font-family:var(--display);font-size:clamp(18rem,58vw,60rem);line-height:.78;letter-spacing:-.07em;color:#dfd2b9;pointer-events:none;user-select:none;}
+.intro-lead{margin:0;max-width:20ch;font-family:var(--display);font-size:clamp(2.1rem,4.6vw,4.8rem);line-height:1.02;letter-spacing:-.035em;}
+.intro-lead i{font-style:italic;}
+@media (max-width:640px){ .intro{min-height:0;padding-block:var(--s8);} .intro .seven-bg{font-size:90vw;} }
+
+/* título dos princípios */
+.principles-sec{padding-bottom:var(--s8);}
+.big-h{margin:0 0 var(--s7);padding-top:var(--s5);border-top:2px solid var(--ink);font-family:var(--display);font-weight:400;font-size:clamp(3.2rem,8.4vw,9rem);line-height:.88;letter-spacing:-.05em;}
+.big-h i{font-style:italic;}
+
+/* parte 1 · cartas que sobem e empilham */
+.stack{list-style:none;margin:0;padding:0;--top:72px;}
+.stack-item{display:contents;}
+.anchor{display:block;height:0;scroll-margin-top:calc(var(--top) + 8px);}
+.stack-item + .stack-item .anchor{margin-top:14vh;}
+.stack-card{position:sticky;top:calc(var(--top) + var(--i) * 14px);min-height:min(78vh,760px);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--s6);align-items:center;padding:var(--s6) clamp(24px,4vw,64px);transform-origin:50% 0;will-change:transform;border:1px solid transparent;}
+.stack-card.white{border-color:var(--ink);}
+.sc-text{display:flex;flex-direction:column;align-self:stretch;}
+.sc-num{font-family:var(--display);font-size:clamp(3.6rem,7vw,7rem);line-height:.8;letter-spacing:-.04em;opacity:.55;}
+.sc-principle{margin:auto 0 0;padding-top:var(--s6);font-family:var(--display);font-weight:400;font-size:clamp(3rem,7vw,7.4rem);line-height:.9;letter-spacing:-.045em;}
+.sc-name{margin:var(--s4) 0 0;font-family:var(--display);font-style:italic;font-size:clamp(1.3rem,2vw,1.9rem);line-height:1.1;letter-spacing:-.015em;opacity:.72;}
+.sc-short{margin:var(--s6) 0 0;font-size:clamp(19px,1.7vw,24px);line-height:1.36;max-width:34ch;}
+.sc-more{align-self:flex-start;display:inline-flex;align-items:center;gap:var(--s3);min-height:44px;margin-top:var(--s5);font-family:var(--utility);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid currentColor;}
+.sc-more svg path{fill:none;stroke:currentColor;stroke-width:1.25;}
+.sc-more svg{transition:transform var(--quick) ease-out;}
+.sc-more:hover svg{transform:translateX(4px);}
+.sc-card{margin:0;justify-self:center;width:min(100%,340px);}
+.sc-card .tarot{animation:float 8s ease-in-out infinite;}
+.stack-card:nth-child(even) .sc-card .tarot{animation-delay:-3s;}
+@media (prefers-reduced-motion: reduce){ .sc-card .tarot{animation:none;} }
+@media (max-width:820px){
+  .stack{--top:60px;}
+  .stack-item + .stack-item .anchor{margin-top:8vh;}
+  .stack-card{grid-template-columns:1fr;min-height:0;padding:var(--s5) 20px var(--s6);gap:var(--s5);top:calc(var(--top) + var(--i) * 8px);}
+  .sc-principle{padding-top:var(--s5);}
+  .stack-card{position:sticky;}
+  .sc-card{position:absolute;top:var(--s5);right:20px;width:min(26vw,104px);}
+  .sc-principle{max-width:calc(100% - 8px);}
+  .sc-num{min-height:calc(min(26vw,104px) * 1.62);}
+}
+
+/* parte 2 · pastas */
+.folders{padding-top:var(--s7);padding-bottom:var(--s7);}
+.folders-head{display:flex;justify-content:space-between;padding-bottom:var(--s7);}
+.folder{position:relative;z-index:calc(var(--i) + 1);margin-top:-30px;background:transparent;}
+.folder:first-of-type{margin-top:0;}
+.folder > summary{list-style:none;cursor:pointer;display:block;position:relative;padding-top:30px;transition:transform var(--settle) cubic-bezier(.2,.7,.2,1);}
+.folder > summary::-webkit-details-marker{display:none;}
+.folder:not([open]) > summary:hover{transform:translateY(-14px);}
+.folder .tab{position:absolute;top:0;left:calc(var(--outer) + var(--i) * min(16%, 200px));height:31px;min-width:150px;display:flex;align-items:center;padding:0 var(--s5) 0 var(--s4);clip-path:polygon(0 0,calc(100% - 22px) 0,100% 100%,0 100%);font-family:var(--utility);font-size:11px;font-weight:500;letter-spacing:.14em;}
+.folder .f-band{display:flex;justify-content:space-between;align-items:center;gap:var(--s4);min-height:150px;padding:var(--s5) var(--outer) calc(var(--s5) + 30px);}
+.folder h2{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,5.4vw,5.6rem);line-height:.95;letter-spacing:-.04em;}
+.folder h2 i{font-style:italic;}
+.folder .mark{font-family:var(--utility);font-size:24px;line-height:1;width:44px;height:44px;display:grid;place-items:center;border:1px solid currentColor;flex:none;}
+.folder .mark i{font-style:normal;display:block;transition:transform var(--quick) ease-out;}
+.folder[open] .mark i{transform:rotate(45deg);}
+.folder.red .tab,.folder.red .f-band{background:var(--red);color:var(--on-color);}
+.folder.blue .tab,.folder.blue .f-band{background:var(--blue);color:var(--on-color);}
+.folder.white .tab,.folder.white .f-band{background:var(--white);color:var(--ink);}
+.folder.white .f-band{border-top:1px solid var(--ink);}
+.folder .tab,.folder .f-band{box-shadow:none;}
+.f-body{background:var(--paper);color:var(--ink);padding-top:var(--s7);padding-bottom:calc(var(--s8) + 30px);border-top:0;}
+.folder[open] .f-body{animation:unfold 520ms cubic-bezier(.2,.7,.2,1) both;}
+@keyframes unfold{from{opacity:0;transform:translateY(-18px);}to{opacity:1;transform:none;}}
+@media (prefers-reduced-motion: reduce){ .folder > summary,.folder[open] .f-body{transition:none;animation:none;} }
+.folder .triad{padding:0;}
+.folder .bands{margin-bottom:var(--s6);}
+@media (max-width:640px){
+  .folder .tab{left:calc(20px + var(--i) * 13%);min-width:96px;}
+  .folder .f-band{min-height:120px;}
+}
+
+/* carta inteira: diálogo */
+dialog.carta{width:min(1180px,calc(100vw - 32px));max-height:calc(100vh - 32px);padding:0;border:0;background:var(--paper);color:var(--ink);overflow:auto;}
+dialog.carta::backdrop{background:rgba(27,38,79,.86);}
+dialog.carta[open]{animation:rise 520ms cubic-bezier(.2,.7,.2,1) both;}
+.carta-in{padding:var(--s5) clamp(20px,4vw,56px) var(--s6);}
+.carta-top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ink);padding-bottom:var(--s3);margin-bottom:var(--s6);font-family:'Instrument Sans',Arial,sans-serif;}
+.carta-grid{display:grid;grid-template-columns:5fr 7fr;gap:var(--s6);}
+.carta-head h3{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(2.4rem,4.6vw,4.4rem);line-height:.92;letter-spacing:-.04em;}
+.carta-head .sc-name{margin-bottom:var(--s6);}
+.carta-grid .label{display:block;color:var(--muted);margin-bottom:var(--s3);}
+.carta-body .label:not(:first-child){margin-top:var(--s5);}
+.carta-body p{margin:0 0 .8em;max-width:60ch;}
+.carta-q{margin:0;padding:var(--s5) clamp(20px,4vw,56px) var(--s6);background:var(--blue);color:var(--on-color);display:grid;grid-template-columns:5fr 7fr;gap:var(--s6);}
+.carta-q .label{color:var(--on-color-muted);}
+.carta-q p{margin:0;font-family:var(--display);font-size:clamp(1.6rem,2.6vw,2.6rem);line-height:1.08;letter-spacing:-.025em;}
+@media (max-width:820px){ .carta-grid,.carta-q{grid-template-columns:1fr;gap:var(--s3);} }
 </style>
 </head>
 <body>
 
-<!-- 1 · header azul: moldura mestra com as cartas em órbita -->
 <header class="hero blue wrap">
   <!-- topo do site gira.guru: assinatura, menu e seções entre fios -->
   <hr class="sfio">
@@ -348,44 +441,46 @@ footer .label{color:var(--on-color);}
   </div>
   <hr class="sfio">
   <nav class="secoes" aria-label="Nesta página">
-    <a href="#etica-futurante">ética futurante</a>
-    <a href="#esperanca-acionavel" data-open="esperanca-acionavel">uma esperança acionável</a>
+    <a href="#principios">os 07 princípios</a>
+    <a href="#outra-coisa" data-open="outra-coisa">outra coisa é possível</a>
+    <a href="#esperanca-acionavel" data-open="esperanca-acionavel">esperança acionável</a>
     <a href="#por-que-futurante" data-open="por-que-futurante">por que futurante?</a>
     <a href="#neomaqueerismo" data-open="neomaqueerismo">neomaqueerismo</a>
+    <a href="#triade" data-open="triade">tríade de livros</a>
   </nav>
   <hr class="sfio">
   <div class="field">
     <div class="stage">
       <div class="scene">
         <nav class="ring" aria-label="As sete cartas">
-      <a class="orbit-card" href="#principio-1" data-open="principio-1" style="--i:0" aria-label="I. Agência Futurante — ir para a carta">
-        <span class="face front"><span class="mini-tab">I</span><img src="01.jpg" alt="" loading="eager" decoding="async"><span class="mini-name">Agência Futurante</span></span>
-        <span class="face back" aria-hidden="true"><span>I</span></span>
-      </a>
-      <a class="orbit-card" href="#principio-2" data-open="principio-2" style="--i:1" aria-label="II. Imaginação Fértil — ir para a carta">
-        <span class="face front"><span class="mini-tab">II</span><img src="02.jpg" alt="" loading="eager" decoding="async"><span class="mini-name">Imaginação Fértil</span></span>
-        <span class="face back" aria-hidden="true"><span>II</span></span>
-      </a>
-      <a class="orbit-card" href="#principio-3" data-open="principio-3" style="--i:2" aria-label="III. Horizontes de Esperança — ir para a carta">
-        <span class="face front"><span class="mini-tab">III</span><img src="03.jpg" alt="" loading="eager" decoding="async"><span class="mini-name">Horizontes de Esperança</span></span>
-        <span class="face back" aria-hidden="true"><span>III</span></span>
-      </a>
-      <a class="orbit-card" href="#principio-4" data-open="principio-4" style="--i:3" aria-label="IV. Eu-Mundo — ir para a carta">
-        <span class="face front"><span class="mini-tab">IV</span><img src="04.jpg" alt="" loading="eager" decoding="async"><span class="mini-name">Eu-Mundo</span></span>
-        <span class="face back" aria-hidden="true"><span>IV</span></span>
-      </a>
-      <a class="orbit-card" href="#principio-5" data-open="principio-5" style="--i:4" aria-label="V. Sensibilidade Ecossistêmica — ir para a carta">
-        <span class="face front"><span class="mini-tab">V</span><img src="05.jpg" alt="" loading="eager" decoding="async"><span class="mini-name">Sensibilidade Ecossistêmica</span></span>
-        <span class="face back" aria-hidden="true"><span>V</span></span>
-      </a>
-      <a class="orbit-card" href="#principio-6" data-open="principio-6" style="--i:5" aria-label="VI. Criador Consequente — ir para a carta">
-        <span class="face front"><span class="mini-tab">VI</span><img src="06.jpg" alt="" loading="eager" decoding="async"><span class="mini-name">Criador Consequente</span></span>
-        <span class="face back" aria-hidden="true"><span>VI</span></span>
-      </a>
-      <a class="orbit-card" href="#principio-7" data-open="principio-7" style="--i:6" aria-label="VII. Tecnologia Comum — ir para a carta">
-        <span class="face front"><span class="mini-tab">VII</span><img src="07.jpg" alt="" loading="eager" decoding="async"><span class="mini-name">Tecnologia Comum</span></span>
-        <span class="face back" aria-hidden="true"><span>VII</span></span>
-      </a>
+          <a class="orbit-card" href="#principio-1" style="--i:0" draggable="false" aria-label="I. Agência Futurante: ir para a carta">
+            <span class="face front"><span class="mini-tab">I</span><img src="01.jpg" alt="" draggable="false" decoding="async"><span class="mini-name">Agência Futurante</span></span>
+            <span class="face back" aria-hidden="true"><span>I</span></span>
+          </a>
+          <a class="orbit-card" href="#principio-2" style="--i:1" draggable="false" aria-label="II. Imaginação Fértil: ir para a carta">
+            <span class="face front"><span class="mini-tab">II</span><img src="02.jpg" alt="" draggable="false" decoding="async"><span class="mini-name">Imaginação Fértil</span></span>
+            <span class="face back" aria-hidden="true"><span>II</span></span>
+          </a>
+          <a class="orbit-card" href="#principio-3" style="--i:2" draggable="false" aria-label="III. Horizontes de Esperança: ir para a carta">
+            <span class="face front"><span class="mini-tab">III</span><img src="03.jpg" alt="" draggable="false" decoding="async"><span class="mini-name">Horizontes de Esperança</span></span>
+            <span class="face back" aria-hidden="true"><span>III</span></span>
+          </a>
+          <a class="orbit-card" href="#principio-4" style="--i:3" draggable="false" aria-label="IV. Eu-Mundo: ir para a carta">
+            <span class="face front"><span class="mini-tab">IV</span><img src="04.jpg" alt="" draggable="false" decoding="async"><span class="mini-name">Eu-Mundo</span></span>
+            <span class="face back" aria-hidden="true"><span>IV</span></span>
+          </a>
+          <a class="orbit-card" href="#principio-5" style="--i:4" draggable="false" aria-label="V. Sensibilidade Ecossistêmica: ir para a carta">
+            <span class="face front"><span class="mini-tab">V</span><img src="05.jpg" alt="" draggable="false" decoding="async"><span class="mini-name">Sensibilidade Ecossistêmica</span></span>
+            <span class="face back" aria-hidden="true"><span>V</span></span>
+          </a>
+          <a class="orbit-card" href="#principio-6" style="--i:5" draggable="false" aria-label="VI. Criador Consequente: ir para a carta">
+            <span class="face front"><span class="mini-tab">VI</span><img src="06.jpg" alt="" draggable="false" decoding="async"><span class="mini-name">Criador Consequente</span></span>
+            <span class="face back" aria-hidden="true"><span>VI</span></span>
+          </a>
+          <a class="orbit-card" href="#principio-7" style="--i:6" draggable="false" aria-label="VII. Tecnologia Comum: ir para a carta">
+            <span class="face front"><span class="mini-tab">VII</span><img src="07.jpg" alt="" draggable="false" decoding="async"><span class="mini-name">Tecnologia Comum</span></span>
+            <span class="face back" aria-hidden="true"><span>VII</span></span>
+          </a>
         </nav>
         <div class="hero-title">
           <h1>Uma Ética Futurante</h1>
@@ -432,54 +527,28 @@ footer .label{color:var(--on-color);}
 </svg>
 
 <main>
-  <!-- 2 · abertura -->
-  <section class="wrap" aria-label="Apresentação">
-    <div class="opening">
-      <span class="seven-bg" aria-hidden="true">07</span>
-      <span class="label">Uma rede de princípios</span>
-      <div>
-        <p class="lead">Uma rede de princípios para perceber o mundo que fazemos, desnormalizar o que parece inevitável, imaginar outras possibilidades de vida e transformar, coletiva e intencionalmente, nossos modos de criar futuros.</p>
-        <p class="seven">Sete princípios para fazermos aquilo que desejamos ver continuar em ação e criação amanhã: cultivando em vez de conquistar, percebendo o mundo ao redor, e devolvendo ao comum o que se criar.</p>
-      </div>
-    </div>
+  <!-- abertura -->
+  <section class="intro wrap" aria-label="Apresentação">
+    <span class="seven-bg" aria-hidden="true">07</span>
+    <p class="intro-lead">Uma rede de princípios para transformar, coletiva e intencionalmente, os futuros que criamos, ao transformar nossos modos de criar <i>futuros.</i></p>
   </section>
 
-  <!-- menu de seções -->
-  <nav class="sections-nav wrap" aria-label="Seções">
-    <ul class="label">
-      <li><a href="#etica-futurante"><span>01</span>Ética Futurante</a></li>
-      <li><a href="#esperanca-acionavel" data-open="esperanca-acionavel"><span>02</span>Uma Esperança Acionável</a></li>
-      <li><a href="#por-que-futurante" data-open="por-que-futurante"><span>03</span>Por que Futurante?</a></li>
-      <li><a href="#neomaqueerismo" data-open="neomaqueerismo"><span>04</span>Neomaqueerismo</a></li>
-    </ul>
-  </nav>
-
-  <!-- 01 · Ética Futurante -->
-  <section class="section wrap" id="etica-futurante" aria-labelledby="h-etica">
-    <div class="section-title"><span class="folio-big" aria-hidden="true">01</span><h2 id="h-etica">Ética <i>Futurante</i></h2></div>
-
-    <div class="toolkit-note">
-      <h3>Os 7 princípios <i>de futuração</i></h3>
-      <div class="tk-side"><span class="label">I — VII</span><p>do nosso laborateliê, parte da construção do Toolkit de Design Mundizante</p></div>
-    </div>
-    <ol class="principles">
-        <li>
-          <details class="principle" id="principio-1">
-            <summary>
-              <span class="p-num">I</span>
-              <span class="p-head">
-                <span class="p-name">One Day, Tomorrow</span>
-                <span class="p-label">Agência Futurante</span>
-              </span>
-              <span class="p-short">Agir sabendo que cada ato / artefato de hoje já está fazendo um amanhã. E que na inação também há futuração.</span>
-              <span class="p-toggle" aria-hidden="true"><span class="t-open">Ler a carta</span><span class="t-close">Fechar</span><svg width="28" height="10" viewBox="0 0 28 10"><path d="M0 5H26M21 1L26 5L21 9"/></svg></span>
-            </summary>
-            <div class="card-text">
-              <div class="ct-concept">
-                <span class="label">Conceito</span>
-                <p class="concept">O presente é uma produção contínua de futuros.</p>
-                <figure class="ct-card"><svg class="tarot" viewBox="0 0 700 1200" role="img" aria-label="Carta I: Agência Futurante, ONE DAY, TOMORROW">
-<defs><path id="t1-0" d="M76 54 H624"/><path id="t1-1" d="M646 76 V1124"/><path id="t1-2" d="M624 1146 H76"/><path id="t1-3" d="M54 1124 V76"/><clipPath id="t1-p"><rect x="118" y="148" width="464" height="619"/></clipPath></defs>
+  <!-- parte 1 · os princípios, como cartas que sobem -->
+  <section class="principles-sec wrap" id="principios" aria-labelledby="h-principios">
+    <h2 class="big-h" id="h-principios">Os 07 Princípios <i>de Futuração</i></h2>
+    <ol class="stack">
+    <li class="stack-item">
+      <span class="anchor" id="principio-1"></span>
+      <article class="stack-card blue" style="--i:0" aria-labelledby="p1">
+        <div class="sc-text">
+          <span class="sc-num" aria-hidden="true">I</span>
+          <h3 id="p1" class="sc-principle"><span class="sr">I. </span>Agência Futurante</h3>
+          <p class="sc-name">One Day, Tomorrow</p>
+          <p class="sc-short">Agir sabendo que cada ato / artefato de hoje já está fazendo um amanhã. E que na inação também há futuração.</p>
+          <button type="button" class="sc-more" data-dialog="carta-1">Ler a carta inteira<svg width="28" height="10" viewBox="0 0 28 10" aria-hidden="true"><path d="M0 5H26M21 1L26 5L21 9"/></svg></button>
+        </div>
+        <figure class="sc-card"><svg class="tarot" viewBox="0 0 700 1200" role="img" aria-label="Carta I: Agência Futurante, ONE DAY, TOMORROW">
+<defs><path id="s1t1-0" d="M76 54 H624"/><path id="s1t1-1" d="M646 76 V1124"/><path id="s1t1-2" d="M624 1146 H76"/><path id="s1t1-3" d="M54 1124 V76"/><clipPath id="s1t1-p"><rect x="118" y="148" width="464" height="619"/></clipPath></defs>
 <rect class="tbg" width="700" height="1200"/><text class="tb" style="font-size:16.4px"><textPath href="#t1-0" textLength="548" lengthAdjust="spacing">O presente é uma produção contínua de futuros.</textPath></text><text class="tb" style="font-size:16.4px"><textPath href="#t1-1" textLength="1048" lengthAdjust="spacing">O presente é uma produção contínua de futuros. · O presente é uma produção contínua de futuros.</textPath></text><text class="tb" style="font-size:16.4px"><textPath href="#t1-2" textLength="548" lengthAdjust="spacing">O presente é uma produção contínua de futuros.</textPath></text><text class="tb" style="font-size:16.4px"><textPath href="#t1-3" textLength="1048" lengthAdjust="spacing">O presente é uma produção contínua de futuros. · O presente é uma produção contínua de futuros.</textPath></text>
 <rect class="tl" x="42" y="42" width="12" height="12"/><rect class="tl" x="646" y="42" width="12" height="12"/><rect class="tl" x="646" y="1146" width="12" height="12"/><rect class="tl" x="42" y="1146" width="12" height="12"/>
 <rect class="tl" x="76" y="76" width="548" height="1048"/>
@@ -490,37 +559,20 @@ footer .label{color:var(--on-color);}
 <line class="th" x1="118" y1="1002" x2="582" y2="1002"/>
 <text class="tn"><tspan x="118" y="1050">ONE DAY, TOMORROW</tspan></text><text class="tm" x="582" y="1050" text-anchor="end">I / VII</text>
 </svg></figure>
-              </div>
-              <div class="ct-body">
-                <span class="label">Descrição</span>
-                <p>Reconhecer que tudo que existe está em transformação e que, por meio de nossas ações e relações, participamos da produção das condições de existência que virão.</p><p>Hoje não é como era ontem. O amanhã não será como é hoje.</p><p>A transformação é inevitável, mas sua direção não está inteiramente determinada.</p><p>Cabe-nos desenvolver a capacidade de perceber os movimentos do presente, imaginar suas possibilidades, assim como outras, e agir intencionalmente em relação àquilo que desejamos tornar possível.</p>
-                <span class="label">Compromisso</span>
-                <p>Não tratar o futuro como algo que simplesmente acontecerá conosco, nem confundir agência com capacidade de controlar o que virá.</p>
-              </div>
-              <div class="ct-question">
-                <span class="label">Pergunta futurante</span>
-                <p>Que futuro estamos fazendo existir com aquilo que fazemos hoje?</p>
-              </div>
-            </div>
-          </details>
-        </li>
-        <li>
-          <details class="principle" id="principio-2">
-            <summary>
-              <span class="p-num">II</span>
-              <span class="p-head">
-                <span class="p-name">The Mother Imagination World Order</span>
-                <span class="p-label">Imaginação Fértil</span>
-              </span>
-              <span class="p-short">Contar, imaginar e possibilitar histórias de cultivo, não conquista. De cuidado e plantio. De semeaduras e gestações.</span>
-              <span class="p-toggle" aria-hidden="true"><span class="t-open">Ler a carta</span><span class="t-close">Fechar</span><svg width="28" height="10" viewBox="0 0 28 10"><path d="M0 5H26M21 1L26 5L21 9"/></svg></span>
-            </summary>
-            <div class="card-text">
-              <div class="ct-concept">
-                <span class="label">Conceito</span>
-                <p class="concept">Imaginar futuros a partir do que cultivamos, não do que conquistamos.</p>
-                <figure class="ct-card"><svg class="tarot" viewBox="0 0 700 1200" role="img" aria-label="Carta II: Imaginação Fértil, THE MOTHER IMAGINATION WORLD ORDER">
-<defs><path id="t2-0" d="M76 54 H624"/><path id="t2-1" d="M646 76 V1124"/><path id="t2-2" d="M624 1146 H76"/><path id="t2-3" d="M54 1124 V76"/><clipPath id="t2-p"><rect x="118" y="148" width="464" height="619"/></clipPath></defs>
+      </article>
+    </li>
+    <li class="stack-item">
+      <span class="anchor" id="principio-2"></span>
+      <article class="stack-card red" style="--i:1" aria-labelledby="p2">
+        <div class="sc-text">
+          <span class="sc-num" aria-hidden="true">II</span>
+          <h3 id="p2" class="sc-principle"><span class="sr">II. </span>Imaginação Fértil</h3>
+          <p class="sc-name">The Mother Imagination World Order</p>
+          <p class="sc-short">Contar, imaginar e possibilitar histórias de cultivo, não conquista. De cuidado e plantio. De semeaduras e gestações.</p>
+          <button type="button" class="sc-more" data-dialog="carta-2">Ler a carta inteira<svg width="28" height="10" viewBox="0 0 28 10" aria-hidden="true"><path d="M0 5H26M21 1L26 5L21 9"/></svg></button>
+        </div>
+        <figure class="sc-card"><svg class="tarot" viewBox="0 0 700 1200" role="img" aria-label="Carta II: Imaginação Fértil, THE MOTHER IMAGINATION WORLD ORDER">
+<defs><path id="s2t2-0" d="M76 54 H624"/><path id="s2t2-1" d="M646 76 V1124"/><path id="s2t2-2" d="M624 1146 H76"/><path id="s2t2-3" d="M54 1124 V76"/><clipPath id="s2t2-p"><rect x="118" y="148" width="464" height="619"/></clipPath></defs>
 <rect class="tbg" width="700" height="1200"/><text class="tb" style="font-size:16.7px"><textPath href="#t2-0" textLength="548" lengthAdjust="spacing">Imaginar futuros a partir do que cultivamos, não</textPath></text><text class="tb" style="font-size:16.7px"><textPath href="#t2-1" textLength="1048" lengthAdjust="spacing">do que conquistamos. · Imaginar futuros a partir do que cultivamos, não do que conquistamos.</textPath></text><text class="tb" style="font-size:16.7px"><textPath href="#t2-2" textLength="548" lengthAdjust="spacing">Imaginar futuros a partir do que cultivamos, não</textPath></text><text class="tb" style="font-size:16.7px"><textPath href="#t2-3" textLength="1048" lengthAdjust="spacing">do que conquistamos. · Imaginar futuros a partir do que cultivamos, não do que conquistamos.</textPath></text>
 <rect class="tl" x="42" y="42" width="12" height="12"/><rect class="tl" x="646" y="42" width="12" height="12"/><rect class="tl" x="646" y="1146" width="12" height="12"/><rect class="tl" x="42" y="1146" width="12" height="12"/>
 <rect class="tl" x="76" y="76" width="548" height="1048"/>
@@ -531,37 +583,20 @@ footer .label{color:var(--on-color);}
 <line class="th" x1="118" y1="1002" x2="582" y2="1002"/>
 <text class="tn"><tspan x="118" y="1050">THE MOTHER IMAGINATION</tspan><tspan x="118" y="1076">WORLD ORDER</tspan></text><text class="tm" x="582" y="1050" text-anchor="end">II / VII</text>
 </svg></figure>
-              </div>
-              <div class="ct-body">
-                <span class="label">Descrição</span>
-                <p>Deslocar a imaginação da lógica da conquista (a tomada de algo para si, a escassez, o herói que volta com o troféu) para narrativas centradas na fertilidade, na geração, no cuidado, no cultivo e na transformação interconectada da vida. Se fosse um herói, é o herói que cultiva o jardim, que rega a plantação, que protege das pragas, que colhe, que prepara, que serve. O herói é uma comunidade. A história da colheita é tão antiga quanto a da caçada. Ela só foi menos contada. Abundância não é acúmulo. É materialidade viva, com raiz na terra, que se regenera quando é cuidada.</p>
-                <span class="label">Compromisso</span>
-                <p>Não se trata de trocar o herói por uma heroína, nem de delegar o mundo às ‘mulheres’. Trata-se de reconhecer que muito do que nos é necessário foi delegado ‘ao feminino’, e que essas habilidades estão em todos nós. Cuidar, não para conquistar, mas para se permitir existir num ambiente de cuidado. O que se gera não pertence a quem gera, somos apenas meios de um processo natural, que nos gerou, e gerará continuamente mais vida, se assim permitirmos.</p>
-              </div>
-              <div class="ct-question">
-                <span class="label">Pergunta futurante</span>
-                <p>O que esta história demonstra sobre o cultivo e cuidado, a interconectividade das vidas, em vez da conquista e da batalha?</p>
-              </div>
-            </div>
-          </details>
-        </li>
-        <li>
-          <details class="principle" id="principio-3">
-            <summary>
-              <span class="p-num">III</span>
-              <span class="p-head">
-                <span class="p-name">89 Seconds to Hope</span>
-                <span class="p-label">Horizontes de Esperança</span>
-              </span>
-              <span class="p-short">Tornar visíveis múltiplos horizontes desejáveis e reconhecer como nossas ações estão nos aproximando ou afastando deles.</span>
-              <span class="p-toggle" aria-hidden="true"><span class="t-open">Ler a carta</span><span class="t-close">Fechar</span><svg width="28" height="10" viewBox="0 0 28 10"><path d="M0 5H26M21 1L26 5L21 9"/></svg></span>
-            </summary>
-            <div class="card-text">
-              <div class="ct-concept">
-                <span class="label">Conceito</span>
-                <p class="concept">Precisamos visualizar horizontes desejáveis para reconhecer e reorientar nossas transformações.</p>
-                <figure class="ct-card"><svg class="tarot" viewBox="0 0 700 1200" role="img" aria-label="Carta III: Horizontes de Esperança, 89 SECONDS TO HOPE">
-<defs><path id="t3-0" d="M76 54 H624"/><path id="t3-1" d="M646 76 V1124"/><path id="t3-2" d="M624 1146 H76"/><path id="t3-3" d="M54 1124 V76"/><clipPath id="t3-p"><rect x="118" y="148" width="464" height="619"/></clipPath></defs>
+      </article>
+    </li>
+    <li class="stack-item">
+      <span class="anchor" id="principio-3"></span>
+      <article class="stack-card white" style="--i:2" aria-labelledby="p3">
+        <div class="sc-text">
+          <span class="sc-num" aria-hidden="true">III</span>
+          <h3 id="p3" class="sc-principle"><span class="sr">III. </span>Horizontes de Esperança</h3>
+          <p class="sc-name">89 Seconds to Hope</p>
+          <p class="sc-short">Tornar visíveis múltiplos horizontes desejáveis e reconhecer como nossas ações estão nos aproximando ou afastando deles.</p>
+          <button type="button" class="sc-more" data-dialog="carta-3">Ler a carta inteira<svg width="28" height="10" viewBox="0 0 28 10" aria-hidden="true"><path d="M0 5H26M21 1L26 5L21 9"/></svg></button>
+        </div>
+        <figure class="sc-card"><svg class="tarot" viewBox="0 0 700 1200" role="img" aria-label="Carta III: Horizontes de Esperança, 89 SECONDS TO HOPE">
+<defs><path id="s3t3-0" d="M76 54 H624"/><path id="s3t3-1" d="M646 76 V1124"/><path id="s3t3-2" d="M624 1146 H76"/><path id="s3t3-3" d="M54 1124 V76"/><clipPath id="s3t3-p"><rect x="118" y="148" width="464" height="619"/></clipPath></defs>
 <rect class="tbg" width="700" height="1200"/><text class="tb" style="font-size:16.4px"><textPath href="#t3-0" textLength="548" lengthAdjust="spacing">Precisamos visualizar horizontes desejáveis para</textPath></text><text class="tb" style="font-size:16.4px"><textPath href="#t3-1" textLength="1048" lengthAdjust="spacing">reconhecer e reorientar nossas transformações. · Precisamos visualizar horizontes desejáveis para</textPath></text><text class="tb" style="font-size:16.4px"><textPath href="#t3-2" textLength="548" lengthAdjust="spacing">reconhecer e reorientar nossas transformações.</textPath></text><text class="tb" style="font-size:16.4px"><textPath href="#t3-3" textLength="1048" lengthAdjust="spacing">Precisamos visualizar horizontes desejáveis para reconhecer e reorientar nossas transformações.</textPath></text>
 <rect class="tl" x="42" y="42" width="12" height="12"/><rect class="tl" x="646" y="42" width="12" height="12"/><rect class="tl" x="646" y="1146" width="12" height="12"/><rect class="tl" x="42" y="1146" width="12" height="12"/>
 <rect class="tl" x="76" y="76" width="548" height="1048"/>
@@ -572,37 +607,20 @@ footer .label{color:var(--on-color);}
 <line class="th" x1="118" y1="1002" x2="582" y2="1002"/>
 <text class="tn"><tspan x="118" y="1050">89 SECONDS TO HOPE</tspan></text><text class="tm" x="582" y="1050" text-anchor="end">III / VII</text>
 </svg></figure>
-              </div>
-              <div class="ct-body">
-                <span class="label">Descrição</span>
-                <p>O relógio do fim conta um único tempo, em direção a uma única meia-noite, fatalista e final. Precisamos de outros relógios: cultivar imaginários plurais de futuros desejáveis que nos permitam perceber, avaliar e orientar as consequências das ações presentes. Como desenvolver instrumentos reflexivos que tornem perceptíveis as transformações que podem ampliar nossas possibilidades de existência? Não um único relógio universal da esperança, porque há múltiplas possibilidades de caminho, mas diferentes horizontes caminháveis, definidos por comunidades, territórios e formas de vida, que testam outras coisas possíveis. A esperança como um exercício de mapa de orientação, observação, reflexão e ação / reação.</p>
-                <span class="label">Compromisso</span>
-                <p>Criar meios para reconhecer sinais de aproximação ou afastamento dos futuros desejados, sem reduzir o futuro a uma contagem regressiva ou a um índice único.</p>
-              </div>
-              <div class="ct-question">
-                <span class="label">Pergunta futurante</span>
-                <p>De quais futuros desejáveis nossas ações estão nos aproximando ou afastando? E quanto caminhamos?</p>
-              </div>
-            </div>
-          </details>
-        </li>
-        <li>
-          <details class="principle" id="principio-4">
-            <summary>
-              <span class="p-num">IV</span>
-              <span class="p-head">
-                <span class="p-name">This is Ourselves</span>
-                <span class="p-label">Eu-Mundo</span>
-              </span>
-              <span class="p-short">Entender o outro como quem podemos ser em outro tempo, reconhecendo que, em cada ação, fazemos mundo, e somos feitos pelo mundo. E o outro é também um feito pelo mundo.</span>
-              <span class="p-toggle" aria-hidden="true"><span class="t-open">Ler a carta</span><span class="t-close">Fechar</span><svg width="28" height="10" viewBox="0 0 28 10"><path d="M0 5H26M21 1L26 5L21 9"/></svg></span>
-            </summary>
-            <div class="card-text">
-              <div class="ct-concept">
-                <span class="label">Conceito</span>
-                <p class="concept">Fazemos o mundo e somos (re)feitos por ele a cada ação.</p>
-                <figure class="ct-card"><svg class="tarot" viewBox="0 0 700 1200" role="img" aria-label="Carta IV: Eu-Mundo, THIS IS OURSELVES">
-<defs><path id="t4-0" d="M76 54 H624"/><path id="t4-1" d="M646 76 V1124"/><path id="t4-2" d="M624 1146 H76"/><path id="t4-3" d="M54 1124 V76"/><clipPath id="t4-p"><rect x="118" y="148" width="464" height="619"/></clipPath></defs>
+      </article>
+    </li>
+    <li class="stack-item">
+      <span class="anchor" id="principio-4"></span>
+      <article class="stack-card blue" style="--i:3" aria-labelledby="p4">
+        <div class="sc-text">
+          <span class="sc-num" aria-hidden="true">IV</span>
+          <h3 id="p4" class="sc-principle"><span class="sr">IV. </span>Eu-Mundo</h3>
+          <p class="sc-name">This is Ourselves</p>
+          <p class="sc-short">Entender o outro como quem podemos ser em outro tempo, reconhecendo que, em cada ação, fazemos mundo, e somos feitos pelo mundo. E o outro é também um feito pelo mundo.</p>
+          <button type="button" class="sc-more" data-dialog="carta-4">Ler a carta inteira<svg width="28" height="10" viewBox="0 0 28 10" aria-hidden="true"><path d="M0 5H26M21 1L26 5L21 9"/></svg></button>
+        </div>
+        <figure class="sc-card"><svg class="tarot" viewBox="0 0 700 1200" role="img" aria-label="Carta IV: Eu-Mundo, THIS IS OURSELVES">
+<defs><path id="s4t4-0" d="M76 54 H624"/><path id="s4t4-1" d="M646 76 V1124"/><path id="s4t4-2" d="M624 1146 H76"/><path id="s4t4-3" d="M54 1124 V76"/><clipPath id="s4t4-p"><rect x="118" y="148" width="464" height="619"/></clipPath></defs>
 <rect class="tbg" width="700" height="1200"/><text class="tb" style="font-size:16.6px"><textPath href="#t4-0" textLength="548" lengthAdjust="spacing">Fazemos o mundo e somos (re)feitos por ele a cada</textPath></text><text class="tb" style="font-size:16.6px"><textPath href="#t4-1" textLength="1048" lengthAdjust="spacing">ação. · Fazemos o mundo e somos (re)feitos por ele a cada ação. · Fazemos o mundo e somos</textPath></text><text class="tb" style="font-size:16.6px"><textPath href="#t4-2" textLength="548" lengthAdjust="spacing">(re)feitos por ele a cada ação. · Fazemos o mundo</textPath></text><text class="tb" style="font-size:16.6px"><textPath href="#t4-3" textLength="1048" lengthAdjust="spacing">e somos (re)feitos por ele a cada ação. · Fazemos o mundo e somos (re)feitos por ele a cada ação.</textPath></text>
 <rect class="tl" x="42" y="42" width="12" height="12"/><rect class="tl" x="646" y="42" width="12" height="12"/><rect class="tl" x="646" y="1146" width="12" height="12"/><rect class="tl" x="42" y="1146" width="12" height="12"/>
 <rect class="tl" x="76" y="76" width="548" height="1048"/>
@@ -613,37 +631,20 @@ footer .label{color:var(--on-color);}
 <line class="th" x1="118" y1="1002" x2="582" y2="1002"/>
 <text class="tn"><tspan x="118" y="1050">THIS IS OURSELVES</tspan></text><text class="tm" x="582" y="1050" text-anchor="end">IV / VII</text>
 </svg></figure>
-              </div>
-              <div class="ct-body">
-                <span class="label">Descrição</span>
-                <p>Não há separação entre quem age e o mundo em que se age. Somos a sociedade, fazemos a sociedade, e nos fazemos a cada gesto. Nossas ações participam da conservação e transformação das relações sociais, culturais e ecossistêmicas que também nos constituem. Aquilo que fazemos ao outro e ao mundo não existe isoladamente de nós. Seus efeitos circulam entre pessoas, comunidades, espécies e gerações, ainda que não sejam percebidos imediatamente. Somos simultaneamente produtos e produtores de nossas realidades. O outro também somos nós em outra temporalidade. O que o afeta, para o bem ou para o mal, também chegará até nós, talvez só demore mais, porque está sendo fabricado a partir de nós.</p>
-                <span class="label">Compromisso</span>
-                <p>Reconhecer o outro como legítimo outro na convivência, e parte do mesmo tecido. Porém, um tecido em que responsabilidades e capacidades de transformação são distribuídas de maneira desigual. Reconhecer nossa implicação nas consequências de nossas ações, no que fazemos no mundo, afetando todos os eu-mundos.</p>
-              </div>
-              <div class="ct-question">
-                <span class="label">Pergunta futurante</span>
-                <p>Quem estamos nos tornando por meio do mundo que estamos fazendo? E que tipo de pessoas esse mundo faz?</p>
-              </div>
-            </div>
-          </details>
-        </li>
-        <li>
-          <details class="principle" id="principio-5">
-            <summary>
-              <span class="p-num">V</span>
-              <span class="p-head">
-                <span class="p-name">Empathy is also Biotechnology</span>
-                <span class="p-label">Sensibilidade Ecossistêmica</span>
-              </span>
-              <span class="p-short">Perceber e escutar os sinais da vida ao redor, lendo no mundo o estado do mundo que estamos fazendo.</span>
-              <span class="p-toggle" aria-hidden="true"><span class="t-open">Ler a carta</span><span class="t-close">Fechar</span><svg width="28" height="10" viewBox="0 0 28 10"><path d="M0 5H26M21 1L26 5L21 9"/></svg></span>
-            </summary>
-            <div class="card-text">
-              <div class="ct-concept">
-                <span class="label">Conceito</span>
-                <p class="concept">Perceber o estado da vida é uma capacidade fundamental para transformá-la com responsabilidade e cuidado.</p>
-                <figure class="ct-card"><svg class="tarot" viewBox="0 0 700 1200" role="img" aria-label="Carta V: Sensibilidade Ecossistêmica, EMPATHY IS ALSO BIOTECHNOLOGY">
-<defs><path id="t5-0" d="M76 54 H624"/><path id="t5-1" d="M646 76 V1124"/><path id="t5-2" d="M624 1146 H76"/><path id="t5-3" d="M54 1124 V76"/><clipPath id="t5-p"><rect x="118" y="148" width="464" height="619"/></clipPath></defs>
+      </article>
+    </li>
+    <li class="stack-item">
+      <span class="anchor" id="principio-5"></span>
+      <article class="stack-card red" style="--i:4" aria-labelledby="p5">
+        <div class="sc-text">
+          <span class="sc-num" aria-hidden="true">V</span>
+          <h3 id="p5" class="sc-principle"><span class="sr">V. </span>Sensibilidade Ecossistêmica</h3>
+          <p class="sc-name">Empathy is also Biotechnology</p>
+          <p class="sc-short">Perceber e escutar os sinais da vida ao redor, lendo no mundo o estado do mundo que estamos fazendo.</p>
+          <button type="button" class="sc-more" data-dialog="carta-5">Ler a carta inteira<svg width="28" height="10" viewBox="0 0 28 10" aria-hidden="true"><path d="M0 5H26M21 1L26 5L21 9"/></svg></button>
+        </div>
+        <figure class="sc-card"><svg class="tarot" viewBox="0 0 700 1200" role="img" aria-label="Carta V: Sensibilidade Ecossistêmica, EMPATHY IS ALSO BIOTECHNOLOGY">
+<defs><path id="s5t5-0" d="M76 54 H624"/><path id="s5t5-1" d="M646 76 V1124"/><path id="s5t5-2" d="M624 1146 H76"/><path id="s5t5-3" d="M54 1124 V76"/><clipPath id="s5t5-p"><rect x="118" y="148" width="464" height="619"/></clipPath></defs>
 <rect class="tbg" width="700" height="1200"/><text class="tb" style="font-size:14.8px"><textPath href="#t5-0" textLength="548" lengthAdjust="spacing">Perceber o estado da vida é uma capacidade fundamental</textPath></text><text class="tb" style="font-size:14.8px"><textPath href="#t5-1" textLength="1048" lengthAdjust="spacing">para transformá-la com responsabilidade e cuidado. · Perceber o estado da vida é uma capacidade fundamental</textPath></text><text class="tb" style="font-size:14.8px"><textPath href="#t5-2" textLength="548" lengthAdjust="spacing">para transformá-la com responsabilidade e cuidado.</textPath></text><text class="tb" style="font-size:14.8px"><textPath href="#t5-3" textLength="1048" lengthAdjust="spacing">Perceber o estado da vida é uma capacidade fundamental para transformá-la com responsabilidade e cuidado.</textPath></text>
 <rect class="tl" x="42" y="42" width="12" height="12"/><rect class="tl" x="646" y="42" width="12" height="12"/><rect class="tl" x="646" y="1146" width="12" height="12"/><rect class="tl" x="42" y="1146" width="12" height="12"/>
 <rect class="tl" x="76" y="76" width="548" height="1048"/>
@@ -654,37 +655,20 @@ footer .label{color:var(--on-color);}
 <line class="th" x1="118" y1="1002" x2="582" y2="1002"/>
 <text class="tn"><tspan x="118" y="1050">EMPATHY IS ALSO</tspan><tspan x="118" y="1076">BIOTECHNOLOGY</tspan></text><text class="tm" x="582" y="1050" text-anchor="end">V / VII</text>
 </svg></figure>
-              </div>
-              <div class="ct-body">
-                <span class="label">Descrição</span>
-                <p>Reconhecer e valorizar as capacidades humanas, corporais, sociais, animais e ecológicas de perceber, comunicar e responder às condições da existência ao redor. Uma tecnologia não precisa ser artificial, digital ou industrial para ser um conhecimento válido e um pilar de transformação reconhecido. Uma planta que apresenta sinais de estresse pode nos convidar a investigar as condições de seu ambiente. Um animal fora de seu habitat pode indicar uma redistribuição de possibilidades, mas também a produção de inabitabilidades. A sensibilidade ao outro, às suas condições de vida e aos sinais do ambiente permite compreender relações, perceber transformações em curso e antecipar possibilidades. Todo ser vivo carrega o estado do mundo em que vive. Perceber o outro é perceber o estado do mundo.</p>
-                <span class="label">Compromisso</span>
-                <p>Não reduzir a empatia a sentimento, nem colocá-la abaixo das tecnologias digitais. E não usá-la para extrair, persuadir ou manipular. Ler o outro sem presumir o outro: a percepção é uma escuta, não uma projeção. Desenvolver tecnologias e modos de conhecer que ampliem, em vez de substituir indiscriminadamente, nossa capacidade de perceber e responder ao mundo vivo.</p>
-              </div>
-              <div class="ct-question">
-                <span class="label">Pergunta futurante</span>
-                <p>O que a vida ao redor está nos comunicando e nos anunciando sobre o mundo que estamos fazendo?</p>
-              </div>
-            </div>
-          </details>
-        </li>
-        <li>
-          <details class="principle" id="principio-6">
-            <summary>
-              <span class="p-num">VI</span>
-              <span class="p-head">
-                <span class="p-name">Healing Makers</span>
-                <span class="p-label">Criador Consequente</span>
-              </span>
-              <span class="p-short">Antes e durante a criação, perguntar o que essa criação vai continuar criando. E assumir a responsabilidade pelas suas reverberações.</span>
-              <span class="p-toggle" aria-hidden="true"><span class="t-open">Ler a carta</span><span class="t-close">Fechar</span><svg width="28" height="10" viewBox="0 0 28 10"><path d="M0 5H26M21 1L26 5L21 9"/></svg></span>
-            </summary>
-            <div class="card-text">
-              <div class="ct-concept">
-                <span class="label">Conceito</span>
-                <p class="concept">Somos responsáveis também pelo que nossas criações continuam criando.</p>
-                <figure class="ct-card"><svg class="tarot" viewBox="0 0 700 1200" role="img" aria-label="Carta VI: Criador Consequente, HEALING MAKERS">
-<defs><path id="t6-0" d="M76 54 H624"/><path id="t6-1" d="M646 76 V1124"/><path id="t6-2" d="M624 1146 H76"/><path id="t6-3" d="M54 1124 V76"/><clipPath id="t6-p"><rect x="118" y="148" width="464" height="619"/></clipPath></defs>
+      </article>
+    </li>
+    <li class="stack-item">
+      <span class="anchor" id="principio-6"></span>
+      <article class="stack-card white" style="--i:5" aria-labelledby="p6">
+        <div class="sc-text">
+          <span class="sc-num" aria-hidden="true">VI</span>
+          <h3 id="p6" class="sc-principle"><span class="sr">VI. </span>Criador Consequente</h3>
+          <p class="sc-name">Healing Makers</p>
+          <p class="sc-short">Antes e durante a criação, perguntar o que essa criação vai continuar criando. E assumir a responsabilidade pelas suas reverberações.</p>
+          <button type="button" class="sc-more" data-dialog="carta-6">Ler a carta inteira<svg width="28" height="10" viewBox="0 0 28 10" aria-hidden="true"><path d="M0 5H26M21 1L26 5L21 9"/></svg></button>
+        </div>
+        <figure class="sc-card"><svg class="tarot" viewBox="0 0 700 1200" role="img" aria-label="Carta VI: Criador Consequente, HEALING MAKERS">
+<defs><path id="s6t6-0" d="M76 54 H624"/><path id="s6t6-1" d="M646 76 V1124"/><path id="s6t6-2" d="M624 1146 H76"/><path id="s6t6-3" d="M54 1124 V76"/><clipPath id="s6t6-p"><rect x="118" y="148" width="464" height="619"/></clipPath></defs>
 <rect class="tbg" width="700" height="1200"/><text class="tb" style="font-size:16.7px"><textPath href="#t6-0" textLength="548" lengthAdjust="spacing">Somos responsáveis também pelo que nossas criações</textPath></text><text class="tb" style="font-size:16.7px"><textPath href="#t6-1" textLength="1048" lengthAdjust="spacing">continuam criando. · Somos responsáveis também pelo que nossas criações continuam criando.</textPath></text><text class="tb" style="font-size:16.7px"><textPath href="#t6-2" textLength="548" lengthAdjust="spacing">Somos responsáveis também pelo que nossas criações</textPath></text><text class="tb" style="font-size:16.7px"><textPath href="#t6-3" textLength="1048" lengthAdjust="spacing">continuam criando. · Somos responsáveis também pelo que nossas criações continuam criando.</textPath></text>
 <rect class="tl" x="42" y="42" width="12" height="12"/><rect class="tl" x="646" y="42" width="12" height="12"/><rect class="tl" x="646" y="1146" width="12" height="12"/><rect class="tl" x="42" y="1146" width="12" height="12"/>
 <rect class="tl" x="76" y="76" width="548" height="1048"/>
@@ -695,37 +679,20 @@ footer .label{color:var(--on-color);}
 <line class="th" x1="118" y1="1002" x2="582" y2="1002"/>
 <text class="tn"><tspan x="118" y="1050">HEALING MAKERS</tspan></text><text class="tm" x="582" y="1050" text-anchor="end">VI / VII</text>
 </svg></figure>
-              </div>
-              <div class="ct-body">
-                <span class="label">Descrição</span>
-                <p>Somos criadores, fazedores de mundo. Hoje, porém, a potência humana de fabricar parece a serviço de empurrar o relógio ao fim dos tempos: um fim do qual só se escapa dentro de um bunker. É preciso reconhecer que nosso fazer participa de sistemas maiores e produz transformações que ultrapassam seu objetivo imediato, direto. Criar exige considerar não apenas o que produzimos, mas o que nossas criações tornam e reforçam como possível e o que inviabilizam e dificultam. Precisamos nos curar da incapacidade de perceber o que estamos criando com aquilo que criamos. Toda criação continua criando depois de pronta. Suas reverberações atravessam o tecido do tempo, o tecido social e o tecido ecossistêmico. Diante de cada criação, perguntar continuamente: o que isto cria? O que isto vai criar com o que cria?</p>
-                <span class="label">Compromisso</span>
-                <p>Incorporar ao fazer criativo a responsabilidade por suas reverberações sociais, ambientais, culturais e temporais, inclusive indiretas ou inicialmente desconhecidas. Isso inclui reparar danos produzidos pelas práticas existentes e transformar os próprios processos de criação.</p>
-              </div>
-              <div class="ct-question">
-                <span class="label">Pergunta futurante</span>
-                <p>O que aquilo que criamos continuará criando? E o que estamos escolhendo não criar?</p>
-              </div>
-            </div>
-          </details>
-        </li>
-        <li>
-          <details class="principle" id="principio-7">
-            <summary>
-              <span class="p-num">VII</span>
-              <span class="p-head">
-                <span class="p-name">Reclaiming Technology</span>
-                <span class="p-label">Tecnologia Comum</span>
-              </span>
-              <span class="p-short">Devolver ao comum o que criamos com o que todos já criaram. Um ciclo de legado.</span>
-              <span class="p-toggle" aria-hidden="true"><span class="t-open">Ler a carta</span><span class="t-close">Fechar</span><svg width="28" height="10" viewBox="0 0 28 10"><path d="M0 5H26M21 1L26 5L21 9"/></svg></span>
-            </summary>
-            <div class="card-text">
-              <div class="ct-concept">
-                <span class="label">Conceito</span>
-                <p class="concept">A tecnologia como construção humana deve servir para ampliar as possibilidades de existência humana e das vidas ao redor.</p>
-                <figure class="ct-card"><svg class="tarot" viewBox="0 0 700 1200" role="img" aria-label="Carta VII: Tecnologia Comum, RECLAIMING TECHNOLOGY">
-<defs><path id="t7-0" d="M76 54 H624"/><path id="t7-1" d="M646 76 V1124"/><path id="t7-2" d="M624 1146 H76"/><path id="t7-3" d="M54 1124 V76"/><clipPath id="t7-p"><rect x="118" y="148" width="464" height="619"/></clipPath></defs>
+      </article>
+    </li>
+    <li class="stack-item">
+      <span class="anchor" id="principio-7"></span>
+      <article class="stack-card blue" style="--i:6" aria-labelledby="p7">
+        <div class="sc-text">
+          <span class="sc-num" aria-hidden="true">VII</span>
+          <h3 id="p7" class="sc-principle"><span class="sr">VII. </span>Tecnologia Comum</h3>
+          <p class="sc-name">Reclaiming Technology</p>
+          <p class="sc-short">Devolver ao comum o que criamos com o que todos já criaram. Um ciclo de legado.</p>
+          <button type="button" class="sc-more" data-dialog="carta-7">Ler a carta inteira<svg width="28" height="10" viewBox="0 0 28 10" aria-hidden="true"><path d="M0 5H26M21 1L26 5L21 9"/></svg></button>
+        </div>
+        <figure class="sc-card"><svg class="tarot" viewBox="0 0 700 1200" role="img" aria-label="Carta VII: Tecnologia Comum, RECLAIMING TECHNOLOGY">
+<defs><path id="s7t7-0" d="M76 54 H624"/><path id="s7t7-1" d="M646 76 V1124"/><path id="s7t7-2" d="M624 1146 H76"/><path id="s7t7-3" d="M54 1124 V76"/><clipPath id="s7t7-p"><rect x="118" y="148" width="464" height="619"/></clipPath></defs>
 <rect class="tbg" width="700" height="1200"/><text class="tb" style="font-size:17.0px"><textPath href="#t7-0" textLength="548" lengthAdjust="spacing">A tecnologia como construção humana deve</textPath></text><text class="tb" style="font-size:17.0px"><textPath href="#t7-1" textLength="1048" lengthAdjust="spacing">servir para ampliar as possibilidades de existência humana e das vidas ao redor.</textPath></text><text class="tb" style="font-size:17.0px"><textPath href="#t7-2" textLength="548" lengthAdjust="spacing">A tecnologia como construção humana deve</textPath></text><text class="tb" style="font-size:17.0px"><textPath href="#t7-3" textLength="1048" lengthAdjust="spacing">servir para ampliar as possibilidades de existência humana e das vidas ao redor.</textPath></text>
 <rect class="tl" x="42" y="42" width="12" height="12"/><rect class="tl" x="646" y="42" width="12" height="12"/><rect class="tl" x="646" y="1146" width="12" height="12"/><rect class="tl" x="42" y="1146" width="12" height="12"/>
 <rect class="tl" x="76" y="76" width="548" height="1048"/>
@@ -736,31 +703,24 @@ footer .label{color:var(--on-color);}
 <line class="th" x1="118" y1="1002" x2="582" y2="1002"/>
 <text class="tn"><tspan x="118" y="1050">RECLAIMING TECHNOLOGY</tspan></text><text class="tm" x="582" y="1050" text-anchor="end">VII / VII</text>
 </svg></figure>
-              </div>
-              <div class="ct-body">
-                <span class="label">Descrição</span>
-                <p>Reconhecer as tecnologias como resultado da produção, conservação e transformação coletiva de conhecimentos ao longo de gerações. Contestar sua naturalização como forças autônomas, inevitáveis ou exclusivamente pertencentes às instituições que atualmente as controlam. Afinal, nenhuma nasce de um só criador. A inteligência artificial torna isso evidente. Fruto de pesquisa acadêmica, ela foi alimentada por textos, imagens, vídeos e áudios produzidos por muitas pessoas, sem que tenham sido liberados para tal, e que hoje são impossíveis de separar do todo. O todo é uma produção do todo, e o todo deveria estar para o todo. Cultivar formas de participação, governança e apropriação social que permitam a pessoas e comunidades compreender, questionar, transformar, compartilhar benefícios e, quando necessário, recusar tecnologias. Reivindicar a tecnologia é reconhecê-la como herança comum e perguntar: como devolvemos ao comum o que criamos com ela?</p>
-                <span class="label">Compromisso</span>
-                <p>Orientar o desenvolvimento tecnológico para benefícios socialmente compartilhados, com responsabilidade por seus impactos e respeito à autonomia, à autoria e à diversidade cultural. Sem aceitar que o que foi produzido por todos seja controlado por poucos, nem que o argumento do comum sirva para justificar a extração e exploração sem consentimento e transparência.</p>
-              </div>
-              <div class="ct-question">
-                <span class="label">Pergunta futurante</span>
-                <p>Como podemos recuperar nossa capacidade de decidir o que nossas tecnologias fazem, para quem fazem e que mundos ajudam a produzir?</p>
-              </div>
-            </div>
-          </details>
-        </li>
+      </article>
+    </li>
     </ol>
   </section>
 
-  <!-- o porquê da ética: fechado, abaixo das cartas -->
-  <details class="fold wrap" id="mudar-como-mudamos">
-    <summary><span class="folio-big" aria-hidden="true">/</span><span class="head"><h2>É preciso mudar como <i>mudamos o mundo</i></h2><span class="mark" aria-hidden="true"><i>+</i></span></span></summary>
-    <div class="fold-body">
+  <!-- parte 2 · informação de suporte, como pastas -->
+  <section class="folders" aria-label="Para ir mais fundo">
+    <div class="wrap folders-head"><span class="label">Para ir mais fundo</span><span class="label">05 pastas</span></div>
+  <details class="folder red" id="outra-coisa" style="--i:0">
+    <summary>
+      <span class="tab"><span>01</span></span>
+      <span class="f-band"><h2>Outra coisa é <i>possível</i></h2><span class="mark" aria-hidden="true"><i>+</i></span></span>
+    </summary>
+    <div class="fold-body f-body wrap">
+
     <div class="bands">
-        <p><span class="label">/ 1</span><span>Outra coisa é possível /</span></p>
-        <p><span class="label">/ 2</span><span>É preciso mudar como mudamos o mundo /</span></p>
-        <p><span class="label">/ 3</span><span>Outra coisa é necessária /</span></p>
+                <p><span class="label">/</span><span>É preciso mudar como mudamos o mundo /</span></p>
+        <p><span class="label">/</span><span>Outra coisa é necessária /</span></p>
       </div>
       <div class="cols">
         <span></span>
@@ -772,13 +732,16 @@ footer .label{color:var(--on-color);}
           <p>É preciso desnormalizar como agimos no presente para habilitar esses futuros. Irmos para além da normalidade e da uniformidade: irmos às bordas, às emergências.</p>
         </div>
       </div>
+    
     </div>
   </details>
+  <details class="folder blue" id="esperanca-acionavel" style="--i:1">
+    <summary>
+      <span class="tab"><span>02</span></span>
+      <span class="f-band"><h2>Uma Esperança <i>Acionável</i></h2><span class="mark" aria-hidden="true"><i>+</i></span></span>
+    </summary>
+    <div class="fold-body f-body wrap">
 
-  <!-- 02 · Uma Esperança Acionável -->
-  <details class="fold wrap" id="esperanca-acionavel">
-    <summary><span class="folio-big" aria-hidden="true">02</span><span class="head"><h2>Uma Esperança <i>Acionável</i></h2><span class="mark" aria-hidden="true"><i>+</i></span></span></summary>
-    <div class="fold-body">
       <div class="fold-grid">
         <span class="label">Guia, não espera</span>
         <div class="text">
@@ -803,13 +766,16 @@ footer .label{color:var(--on-color);}
           <p class="note"><i>1.0 | Esse é um material aberto e em construção, na atual leitura de O espírito da esperança: Contra a sociedade do medo (Editora Vozes, 2024), do filósofo sul-coreano Byung-Chul Han, estou encontrando muito do que continua a suportar essa diferença entre uma esperança passiva e ativa.</i></p>
         </div>
       </div>
+    
     </div>
   </details>
+  <details class="folder white" id="por-que-futurante" style="--i:2">
+    <summary>
+      <span class="tab"><span>03</span></span>
+      <span class="f-band"><h2>Por que <i>Futurante?</i></h2><span class="mark" aria-hidden="true"><i>+</i></span></span>
+    </summary>
+    <div class="fold-body f-body wrap">
 
-  <!-- 03 · Por que Futurante? -->
-  <details class="fold wrap" id="por-que-futurante">
-    <summary><span class="folio-big" aria-hidden="true">03</span><span class="head"><h2>Por que <i>Futurante?</i></h2><span class="mark" aria-hidden="true"><i>+</i></span></span></summary>
-    <div class="fold-body">
       <div class="specimen">
         <div class="row"><span class="label">quem olha para o futuro</span><span class="word">futur<i>ista</i></span><p class="def">O sufixo <i>-ista</i> indica adesão, especialidade, posição. Diz de alguém <i>sobre</i> o futuro.</p></div>
         <div class="row"><span class="label">o que está em ação agora</span><span class="word"><span class="stem" id="stem">futur</span><i>ante</i></span><p class="def">O sufixo <i>-ante</i> é o do particípio presente: caminhante, pensante, futurante.</p></div>
@@ -822,13 +788,16 @@ footer .label{color:var(--on-color);}
           <p>Uma ética futurista pode ser estática, ou apenas estética; uma ética futurante se quer acionável, parte de um modelo de ação. Uma ética que se deseja na mesma diferença que Paulo Freire faz entre esperar e esperançar.</p>
         </div>
       </div>
+    
     </div>
   </details>
+  <details class="folder red" id="neomaqueerismo" style="--i:3">
+    <summary>
+      <span class="tab"><span>04</span></span>
+      <span class="f-band"><h2>O <i>Neomaqueerismo</i></h2><span class="mark" aria-hidden="true"><i>+</i></span></span>
+    </summary>
+    <div class="fold-body f-body wrap">
 
-  <!-- 04 · Neomaqueerismo -->
-  <details class="fold wrap" id="neomaqueerismo">
-    <summary><span class="folio-big" aria-hidden="true">04</span><span class="head"><h2>Neomaqueerismo</h2><span class="mark" aria-hidden="true"><i>+</i></span></span></summary>
-    <div class="fold-body">
       <div class="fold-grid">
         <span class="label">Futures Thinking · PUC</span>
         <div class="text">
@@ -853,17 +822,29 @@ footer .label{color:var(--on-color);}
           <p>Não apenas pela minha vivência e existência, mas pela compreensão que há no queer (nesse ser nem uma coisa e nem outra, mas uma terceira coisa) a capacidade de perceber, imaginar e habitar possibilidades de existência que o presente ainda não comporta, não entende e não produz de forma reforçada pelo centro. Uma existência futurante de inéditos. Os também freirianos inéditos viáveis.</p>
         </div>
       </div>
+    
     </div>
   </details>
-
-  <!-- tríade de livros -->
-  <section class="triad wrap" aria-label="Tríade de livros">
-    <div class="triad-head"><h2>Tríade de <i>livros</i></h2><p>Feito, principalmente, a partir da tríade de livros:</p></div>
-    <ol>
+  <details class="folder blue" id="triade" style="--i:4">
+    <summary>
+      <span class="tab"><span>05</span></span>
+      <span class="f-band"><h2>Tríade de <i>livros</i> referência</h2><span class="mark" aria-hidden="true"><i>+</i></span></span>
+    </summary>
+    <div class="fold-body f-body wrap">
+      <div class="fold-grid">
+        <span class="label">Feito, principalmente, a partir da tríade de livros</span>
+        <div class="text">
+          <div class="triad"><ol>
       <li><span class="n">(01)</span><span class="t">A Teoria da Bolsa de Ficção</span><span class="a label">Ursula K. Le Guin</span></li>
       <li><span class="n">(02)</span><span class="t">Amar e Brincar</span><span class="a label">Humberto Maturana e Gerda Verden-Zöller</span></li>
       <li><span class="n">(03)</span><span class="t">Futuro Ancestral</span><span class="a label">Ailton Krenak</span></li>
-    </ol>
+    </ol></div>
+          <p class="lede" style="margin-top:var(--s7)">Uma rede de princípios para perceber o mundo que fazemos, desnormalizar o que parece inevitável, imaginar outras possibilidades de vida e transformar, coletiva e intencionalmente, nossos modos de criar futuros.</p>
+          <p>Sete princípios para fazermos aquilo que desejamos ver continuar em ação e criação amanhã: cultivando em vez de conquistar, percebendo o mundo ao redor, e devolvendo ao comum o que se criar.</p>
+        </div>
+      </div>
+    </div>
+  </details>
   </section>
 
   <!-- final: tire uma carta -->
@@ -872,6 +853,147 @@ footer .label{color:var(--on-color);}
     <button type="button" id="draw">Tire uma <i>carta</i><svg viewBox="0 0 60 30" aria-hidden="true"><path d="M0 15H56M44 3L56 15L44 27"/></svg></button>
   </section>
 </main>
+
+<dialog class="carta" id="carta-1" aria-labelledby="d1">
+  <div class="carta-in">
+    <div class="carta-top"><span class="label">Carta I / VII</span><button type="button" class="menu-botao fechar-carta"><span class="tracos fechar" aria-hidden="true"><i></i><i></i></span><span>fechar</span></button></div>
+    <div class="carta-grid">
+      <div class="carta-head">
+        <h3 id="d1">Agência Futurante</h3>
+        <p class="sc-name">One Day, Tomorrow</p>
+        <span class="label">Conceito</span>
+        <p class="concept">O presente é uma produção contínua de futuros.</p>
+      </div>
+      <div class="carta-body">
+        <span class="label">Descrição</span>
+        <p>Reconhecer que tudo que existe está em transformação e que, por meio de nossas ações e relações, participamos da produção das condições de existência que virão.</p><p>Hoje não é como era ontem. O amanhã não será como é hoje.</p><p>A transformação é inevitável, mas sua direção não está inteiramente determinada.</p><p>Cabe-nos desenvolver a capacidade de perceber os movimentos do presente, imaginar suas possibilidades, assim como outras, e agir intencionalmente em relação àquilo que desejamos tornar possível.</p>
+        <span class="label">Compromisso</span>
+        <p>Não tratar o futuro como algo que simplesmente acontecerá conosco, nem confundir agência com capacidade de controlar o que virá.</p>
+      </div>
+    </div>
+  </div>
+  <div class="carta-q"><span class="label">Pergunta futurante</span><p>Que futuro estamos fazendo existir com aquilo que fazemos hoje?</p></div>
+</dialog>
+<dialog class="carta" id="carta-2" aria-labelledby="d2">
+  <div class="carta-in">
+    <div class="carta-top"><span class="label">Carta II / VII</span><button type="button" class="menu-botao fechar-carta"><span class="tracos fechar" aria-hidden="true"><i></i><i></i></span><span>fechar</span></button></div>
+    <div class="carta-grid">
+      <div class="carta-head">
+        <h3 id="d2">Imaginação Fértil</h3>
+        <p class="sc-name">The Mother Imagination World Order</p>
+        <span class="label">Conceito</span>
+        <p class="concept">Imaginar futuros a partir do que cultivamos, não do que conquistamos.</p>
+      </div>
+      <div class="carta-body">
+        <span class="label">Descrição</span>
+        <p>Deslocar a imaginação da lógica da conquista (a tomada de algo para si, a escassez, o herói que volta com o troféu) para narrativas centradas na fertilidade, na geração, no cuidado, no cultivo e na transformação interconectada da vida. Se fosse um herói, é o herói que cultiva o jardim, que rega a plantação, que protege das pragas, que colhe, que prepara, que serve. O herói é uma comunidade. A história da colheita é tão antiga quanto a da caçada. Ela só foi menos contada. Abundância não é acúmulo. É materialidade viva, com raiz na terra, que se regenera quando é cuidada.</p>
+        <span class="label">Compromisso</span>
+        <p>Não se trata de trocar o herói por uma heroína, nem de delegar o mundo às ‘mulheres’. Trata-se de reconhecer que muito do que nos é necessário foi delegado ‘ao feminino’, e que essas habilidades estão em todos nós. Cuidar, não para conquistar, mas para se permitir existir num ambiente de cuidado. O que se gera não pertence a quem gera, somos apenas meios de um processo natural, que nos gerou, e gerará continuamente mais vida, se assim permitirmos.</p>
+      </div>
+    </div>
+  </div>
+  <div class="carta-q"><span class="label">Pergunta futurante</span><p>O que esta história demonstra sobre o cultivo e cuidado, a interconectividade das vidas, em vez da conquista e da batalha?</p></div>
+</dialog>
+<dialog class="carta" id="carta-3" aria-labelledby="d3">
+  <div class="carta-in">
+    <div class="carta-top"><span class="label">Carta III / VII</span><button type="button" class="menu-botao fechar-carta"><span class="tracos fechar" aria-hidden="true"><i></i><i></i></span><span>fechar</span></button></div>
+    <div class="carta-grid">
+      <div class="carta-head">
+        <h3 id="d3">Horizontes de Esperança</h3>
+        <p class="sc-name">89 Seconds to Hope</p>
+        <span class="label">Conceito</span>
+        <p class="concept">Precisamos visualizar horizontes desejáveis para reconhecer e reorientar nossas transformações.</p>
+      </div>
+      <div class="carta-body">
+        <span class="label">Descrição</span>
+        <p>O relógio do fim conta um único tempo, em direção a uma única meia-noite, fatalista e final. Precisamos de outros relógios: cultivar imaginários plurais de futuros desejáveis que nos permitam perceber, avaliar e orientar as consequências das ações presentes. Como desenvolver instrumentos reflexivos que tornem perceptíveis as transformações que podem ampliar nossas possibilidades de existência? Não um único relógio universal da esperança, porque há múltiplas possibilidades de caminho, mas diferentes horizontes caminháveis, definidos por comunidades, territórios e formas de vida, que testam outras coisas possíveis. A esperança como um exercício de mapa de orientação, observação, reflexão e ação / reação.</p>
+        <span class="label">Compromisso</span>
+        <p>Criar meios para reconhecer sinais de aproximação ou afastamento dos futuros desejados, sem reduzir o futuro a uma contagem regressiva ou a um índice único.</p>
+      </div>
+    </div>
+  </div>
+  <div class="carta-q"><span class="label">Pergunta futurante</span><p>De quais futuros desejáveis nossas ações estão nos aproximando ou afastando? E quanto caminhamos?</p></div>
+</dialog>
+<dialog class="carta" id="carta-4" aria-labelledby="d4">
+  <div class="carta-in">
+    <div class="carta-top"><span class="label">Carta IV / VII</span><button type="button" class="menu-botao fechar-carta"><span class="tracos fechar" aria-hidden="true"><i></i><i></i></span><span>fechar</span></button></div>
+    <div class="carta-grid">
+      <div class="carta-head">
+        <h3 id="d4">Eu-Mundo</h3>
+        <p class="sc-name">This is Ourselves</p>
+        <span class="label">Conceito</span>
+        <p class="concept">Fazemos o mundo e somos (re)feitos por ele a cada ação.</p>
+      </div>
+      <div class="carta-body">
+        <span class="label">Descrição</span>
+        <p>Não há separação entre quem age e o mundo em que se age. Somos a sociedade, fazemos a sociedade, e nos fazemos a cada gesto. Nossas ações participam da conservação e transformação das relações sociais, culturais e ecossistêmicas que também nos constituem. Aquilo que fazemos ao outro e ao mundo não existe isoladamente de nós. Seus efeitos circulam entre pessoas, comunidades, espécies e gerações, ainda que não sejam percebidos imediatamente. Somos simultaneamente produtos e produtores de nossas realidades. O outro também somos nós em outra temporalidade. O que o afeta, para o bem ou para o mal, também chegará até nós, talvez só demore mais, porque está sendo fabricado a partir de nós.</p>
+        <span class="label">Compromisso</span>
+        <p>Reconhecer o outro como legítimo outro na convivência, e parte do mesmo tecido. Porém, um tecido em que responsabilidades e capacidades de transformação são distribuídas de maneira desigual. Reconhecer nossa implicação nas consequências de nossas ações, no que fazemos no mundo, afetando todos os eu-mundos.</p>
+      </div>
+    </div>
+  </div>
+  <div class="carta-q"><span class="label">Pergunta futurante</span><p>Quem estamos nos tornando por meio do mundo que estamos fazendo? E que tipo de pessoas esse mundo faz?</p></div>
+</dialog>
+<dialog class="carta" id="carta-5" aria-labelledby="d5">
+  <div class="carta-in">
+    <div class="carta-top"><span class="label">Carta V / VII</span><button type="button" class="menu-botao fechar-carta"><span class="tracos fechar" aria-hidden="true"><i></i><i></i></span><span>fechar</span></button></div>
+    <div class="carta-grid">
+      <div class="carta-head">
+        <h3 id="d5">Sensibilidade Ecossistêmica</h3>
+        <p class="sc-name">Empathy is also Biotechnology</p>
+        <span class="label">Conceito</span>
+        <p class="concept">Perceber o estado da vida é uma capacidade fundamental para transformá-la com responsabilidade e cuidado.</p>
+      </div>
+      <div class="carta-body">
+        <span class="label">Descrição</span>
+        <p>Reconhecer e valorizar as capacidades humanas, corporais, sociais, animais e ecológicas de perceber, comunicar e responder às condições da existência ao redor. Uma tecnologia não precisa ser artificial, digital ou industrial para ser um conhecimento válido e um pilar de transformação reconhecido. Uma planta que apresenta sinais de estresse pode nos convidar a investigar as condições de seu ambiente. Um animal fora de seu habitat pode indicar uma redistribuição de possibilidades, mas também a produção de inabitabilidades. A sensibilidade ao outro, às suas condições de vida e aos sinais do ambiente permite compreender relações, perceber transformações em curso e antecipar possibilidades. Todo ser vivo carrega o estado do mundo em que vive. Perceber o outro é perceber o estado do mundo.</p>
+        <span class="label">Compromisso</span>
+        <p>Não reduzir a empatia a sentimento, nem colocá-la abaixo das tecnologias digitais. E não usá-la para extrair, persuadir ou manipular. Ler o outro sem presumir o outro: a percepção é uma escuta, não uma projeção. Desenvolver tecnologias e modos de conhecer que ampliem, em vez de substituir indiscriminadamente, nossa capacidade de perceber e responder ao mundo vivo.</p>
+      </div>
+    </div>
+  </div>
+  <div class="carta-q"><span class="label">Pergunta futurante</span><p>O que a vida ao redor está nos comunicando e nos anunciando sobre o mundo que estamos fazendo?</p></div>
+</dialog>
+<dialog class="carta" id="carta-6" aria-labelledby="d6">
+  <div class="carta-in">
+    <div class="carta-top"><span class="label">Carta VI / VII</span><button type="button" class="menu-botao fechar-carta"><span class="tracos fechar" aria-hidden="true"><i></i><i></i></span><span>fechar</span></button></div>
+    <div class="carta-grid">
+      <div class="carta-head">
+        <h3 id="d6">Criador Consequente</h3>
+        <p class="sc-name">Healing Makers</p>
+        <span class="label">Conceito</span>
+        <p class="concept">Somos responsáveis também pelo que nossas criações continuam criando.</p>
+      </div>
+      <div class="carta-body">
+        <span class="label">Descrição</span>
+        <p>Somos criadores, fazedores de mundo. Hoje, porém, a potência humana de fabricar parece a serviço de empurrar o relógio ao fim dos tempos: um fim do qual só se escapa dentro de um bunker. É preciso reconhecer que nosso fazer participa de sistemas maiores e produz transformações que ultrapassam seu objetivo imediato, direto. Criar exige considerar não apenas o que produzimos, mas o que nossas criações tornam e reforçam como possível e o que inviabilizam e dificultam. Precisamos nos curar da incapacidade de perceber o que estamos criando com aquilo que criamos. Toda criação continua criando depois de pronta. Suas reverberações atravessam o tecido do tempo, o tecido social e o tecido ecossistêmico. Diante de cada criação, perguntar continuamente: o que isto cria? O que isto vai criar com o que cria?</p>
+        <span class="label">Compromisso</span>
+        <p>Incorporar ao fazer criativo a responsabilidade por suas reverberações sociais, ambientais, culturais e temporais, inclusive indiretas ou inicialmente desconhecidas. Isso inclui reparar danos produzidos pelas práticas existentes e transformar os próprios processos de criação.</p>
+      </div>
+    </div>
+  </div>
+  <div class="carta-q"><span class="label">Pergunta futurante</span><p>O que aquilo que criamos continuará criando? E o que estamos escolhendo não criar?</p></div>
+</dialog>
+<dialog class="carta" id="carta-7" aria-labelledby="d7">
+  <div class="carta-in">
+    <div class="carta-top"><span class="label">Carta VII / VII</span><button type="button" class="menu-botao fechar-carta"><span class="tracos fechar" aria-hidden="true"><i></i><i></i></span><span>fechar</span></button></div>
+    <div class="carta-grid">
+      <div class="carta-head">
+        <h3 id="d7">Tecnologia Comum</h3>
+        <p class="sc-name">Reclaiming Technology</p>
+        <span class="label">Conceito</span>
+        <p class="concept">A tecnologia como construção humana deve servir para ampliar as possibilidades de existência humana e das vidas ao redor.</p>
+      </div>
+      <div class="carta-body">
+        <span class="label">Descrição</span>
+        <p>Reconhecer as tecnologias como resultado da produção, conservação e transformação coletiva de conhecimentos ao longo de gerações. Contestar sua naturalização como forças autônomas, inevitáveis ou exclusivamente pertencentes às instituições que atualmente as controlam. Afinal, nenhuma nasce de um só criador. A inteligência artificial torna isso evidente. Fruto de pesquisa acadêmica, ela foi alimentada por textos, imagens, vídeos e áudios produzidos por muitas pessoas, sem que tenham sido liberados para tal, e que hoje são impossíveis de separar do todo. O todo é uma produção do todo, e o todo deveria estar para o todo. Cultivar formas de participação, governança e apropriação social que permitam a pessoas e comunidades compreender, questionar, transformar, compartilhar benefícios e, quando necessário, recusar tecnologias. Reivindicar a tecnologia é reconhecê-la como herança comum e perguntar: como devolvemos ao comum o que criamos com ela?</p>
+        <span class="label">Compromisso</span>
+        <p>Orientar o desenvolvimento tecnológico para benefícios socialmente compartilhados, com responsabilidade por seus impactos e respeito à autonomia, à autoria e à diversidade cultural. Sem aceitar que o que foi produzido por todos seja controlado por poucos, nem que o argumento do comum sirva para justificar a extração e exploração sem consentimento e transparência.</p>
+      </div>
+    </div>
+  </div>
+  <div class="carta-q"><span class="label">Pergunta futurante</span><p>Como podemos recuperar nossa capacidade de decidir o que nossas tecnologias fazem, para quem fazem e que mundos ajudam a produzir?</p></div>
+</dialog>
 
 <footer class="blue wrap">
   <span class="label">gira. · laborateliê</span>
@@ -975,22 +1097,46 @@ footer .label{color:var(--on-color);}
     tick();
   }
 
-  /* tire uma carta */
-  const draw = document.getElementById('draw');
-  if (draw) draw.addEventListener('click', () => {
-    const n = 1 + Math.floor(Math.random() * 7);
-    const el = document.getElementById('principio-' + n);
-    openTarget('principio-' + n);
-    el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
-    history.replaceState(null, '', '#principio-' + n);
+  /* carta inteira (diálogo) */
+  const openCard = n => { const d = document.getElementById('carta-' + n); if (d && !d.open) d.showModal(); };
+  document.querySelectorAll('[data-dialog]').forEach(b => b.addEventListener('click', () => openCard(b.dataset.dialog.split('-')[1])));
+  document.querySelectorAll('dialog.carta').forEach(d => {
+    d.querySelector('.fechar-carta').addEventListener('click', () => d.close());
+    d.addEventListener('click', e => { if (e.target === d) d.close(); });
   });
+
+  /* tire uma carta: abre uma carta inteira ao acaso */
+  const draw = document.getElementById('draw');
+  if (draw) draw.addEventListener('click', () => openCard(1 + Math.floor(Math.random() * 7)));
+
+  /* cartas que sobem: a de baixo recua um pouco quando a próxima chega */
+  const stackCards = [...document.querySelectorAll('.stack-card')];
+  if (stackCards.length && !reduce) {
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      stackCards.forEach((card, i) => {
+        let depth = 0;
+        for (let j = i + 1; j < stackCards.length; j++) {
+          const next = stackCards[j], r = next.getBoundingClientRect();
+          const stuckAt = parseFloat(getComputedStyle(next).top);
+          const p = Math.min(1, Math.max(0, (innerHeight - r.top) / (innerHeight - stuckAt)));
+          depth += p;
+        }
+        const s = 1 - Math.min(depth, 4) * 0.035;
+        card.style.transform = depth > 0.001 ? `scale(${s.toFixed(4)})` : '';
+      });
+    };
+    addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    addEventListener('resize', update); update();
+  }
 
   /* menu: marca a seção atual */
   const links = [...document.querySelectorAll('.sections-nav a')];
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) links.forEach(l => l.setAttribute('aria-current', String(l.getAttribute('href') === '#' + e.target.id)));
   }), { rootMargin: '-40% 0px -55% 0px' });
-  ['etica-futurante','esperanca-acionavel','por-que-futurante','neomaqueerismo'].forEach(id => { const el = document.getElementById(id); if (el) io.observe(el); });
+  [].forEach(id => { const el = document.getElementById(id); if (el) io.observe(el); });
 })();
 </script>
 </body>
